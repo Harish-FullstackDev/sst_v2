@@ -1,0 +1,221 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
+import panelImage from "@/assets/WhatWeDo/Enterprise Transformation Practice/BroaderTechnologyServices/governance-panel.png";
+
+// Same component pattern as DataIntelligence/GovernanceSAPDataDepth.jsx — this
+// section (Figma node 2749:1893) shares that exact name, header copy, and
+// two-card arrow-nav carousel behavior, just with this page's own 5
+// capability cards and photo instead of that page's 4. Cards 3–5 (Data
+// Migration & Governance, Change Management & Adoption, Cybersecurity &
+// Compliance — nodes 2749:1938/1949/1964) are the ones that scroll into view
+// as you click through.
+const ITEMS = [
+    {
+        title: "Cloud & Infrastructure Modernization",
+        desc: "Migrate and rearchitect infrastructure around the workloads that actually need to scale, not a lift and shift of everything at once.",
+    },
+    {
+        title: "Systems Integration & API Management",
+        desc: "Connect SAP to CRM, e-commerce, and third party platforms through governed APIs, not one off integrations that break on the next upgrade.",
+    },
+    {
+        title: "Data Migration & Governance",
+        desc: "Move, cleanse, and validate data across systems, with governance controls in place before go-live, not added after an audit flags them.",
+    },
+    {
+        title: "Change Management & Adoption",
+        desc: "Structured training and adoption planning so a new system gets used the way it was designed, not worked around.",
+    },
+    {
+        title: "Cybersecurity & Compliance",
+        desc: "Security built around your regulatory obligations, from access controls to data residency, not a generic checklist.",
+    },
+];
+
+const slideVariants = {
+    enter: (dir) => ({ opacity: 0, x: dir > 0 ? 32 : -32 }),
+    center: { opacity: 1, x: 0 },
+    exit: (dir) => ({ opacity: 0, x: dir > 0 ? -32 : 32 }),
+};
+
+// How long each card pair stays on screen before advancing. Longer than the
+// hover-row sections elsewhere on the site (2.5s) because these cards carry a
+// full sentence of copy that has to be readable before it moves on.
+const AUTOPLAY_MS = 5000;
+
+// The arrow glyph from Figma (solar:arrow-up-linear — nodes 2749:1924 for
+// prev, 2749:1931 for next). Both nodes export the SAME up-pointing arrow;
+// Figma rotates it to face left/right, which is what `rotate` reproduces
+// here. This replaced the literal "←"/"→" text characters, which rendered in
+// the body font — hence the curved, off-centre look, since a glyph's own
+// bearings decide where it sits in its line box, not the circle around it.
+//
+// Two deliberate departures from the raw export:
+//   - The circle is left to the button's own CSS border rather than baked in
+//     (the export includes it as a <rect>), so the enabled/disabled colours
+//     stay drivable from Tailwind classes.
+//   - The path is nudged by (-0.5, +0.5). Figma's own vector is slightly off
+//     centre: it spans x 10-22 and y 7-23, putting its centre at (16, 15)
+//     inside a 31x31 box whose centre is (15.5, 15.5). Correcting it is the
+//     "not centered inside the circle" part of the fix.
+function NavArrow({ direction }) {
+    return (
+        <svg
+            viewBox="0 0 31 31"
+            fill="none"
+            aria-hidden="true"
+            className={`size-full ${direction === "prev" ? "-rotate-90" : "rotate-90"}`}
+        >
+            <g transform="translate(-0.5 0.5)">
+                <path
+                    d="M16 23V7M10 13L16 7L22 13"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </g>
+        </svg>
+    );
+}
+
+export default function GovernanceSAPDataDepth() {
+    const searchParams = useSearchParams();
+    const sectionRef = useRef(null);
+    const [[index, direction], setPage] = useState([0, 1]);
+    const maxIndex = ITEMS.length - 1;
+    const active = ITEMS[index];
+    const next = ITEMS[index + 1] ?? ITEMS[0];
+
+    const goTo = (nextIndex, dir) => setPage([Math.max(0, Math.min(maxIndex, nextIndex)), dir]);
+
+    // Autoplay. Unlike the arrow buttons — which stay clamped at both ends, as
+    // they were — this wraps back to the first card, so the section keeps
+    // cycling instead of parking on the last one. Pauses while the pointer is
+    // over the carousel (or focus is inside it) so the copy can actually be
+    // read, and resumes from wherever it left off rather than resetting.
+    const [isPaused, setIsPaused] = useState(false);
+
+    useEffect(() => {
+        if (isPaused) return undefined;
+
+        const timer = setInterval(() => {
+            setPage(([current]) => [(current + 1) % ITEMS.length, 1]);
+        }, AUTOPLAY_MS);
+
+        return () => clearInterval(timer);
+    }, [isPaused]);
+
+    // Deep-link from the Enterprise page's Capabilities service list — see the
+    // matching effect in SapTransformation/SAPS4HANAMigrationImplementation.jsx.
+    useEffect(() => {
+        const service = searchParams.get("service");
+        if (!service) return;
+        const matchedIndex = ITEMS.findIndex((item) => item.title === service);
+        if (matchedIndex === -1) return;
+        setPage([matchedIndex, 1]);
+        sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, [searchParams]);
+
+    return (
+        <section
+            ref={sectionRef}
+            className="w-full bg-[#F5F6F6] py-10 sm:py-16 px-8 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16 scroll-mt-24"
+        >
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="flex flex-col items-center gap-4 max-w-[767px] text-center"
+            >
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Governance &amp; SAP Data Depth</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
+                    The principles that shape our data architecture approach.
+                </p>
+            </motion.div>
+
+            <div
+                className="relative w-full h-[520px] sm:h-[592px] overflow-hidden"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                onFocusCapture={() => setIsPaused(true)}
+                onBlurCapture={() => setIsPaused(false)}
+            >
+                <div className="absolute inset-y-0 left-0 w-full sm:w-1/2 bg-[#5c5c5c]">
+                    <Image src={panelImage} alt="SAP data governance panel screenshot" fill className="object-cover" />
+                </div>
+
+                <div className="absolute inset-x-4 sm:inset-x-auto sm:right-0 top-1/2 -translate-y-1/2 flex flex-col sm:flex-row gap-4 sm:gap-[21px]">
+                    <AnimatePresence mode="wait" custom={direction}>
+                        <motion.div
+                            key={index}
+                            custom={direction}
+                            variants={slideVariants}
+                            initial="enter"
+                            animate="center"
+                            exit="exit"
+                            transition={{ duration: 0.5, ease: "easeInOut" }}
+                            className="flex flex-col sm:flex-row gap-4 sm:gap-[21px]"
+                        >
+                            <div className="bg-[#0A2B3E] w-full sm:w-[439px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex flex-col justify-between gap-4 text-white">
+                                <div className="flex flex-col gap-4 sm:gap-6">
+                                    <h2 className="text-xl sm:text-2xl font-semibold">{active.title}</h2>
+                                    <p className="text-white sm:mt-25 text-sm sm:text-lg font-light leading-relaxed">
+                                        {active.desc}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="hidden sm:flex bg-white w-full sm:w-[439px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex-col justify-between gap-4 text-black">
+                                <div className="flex flex-col gap-4 sm:gap-6">
+                                    <h2 className="text-xl sm:text-2xl font-semibold">{next.title}</h2>
+                                    <p className="text-[#55595E] sm:mt-25 text-sm sm:text-lg font-light leading-relaxed">
+                                        {next.desc}
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </AnimatePresence>
+                </div>
+
+                <div className="absolute right-4 sm:right-0 bottom-4 sm:bottom-0 bg-white rounded-full flex items-center justify-center gap-[10px] h-[50px] sm:h-[61px] w-[210px] sm:w-[250px] px-2">
+                    <button
+                        type="button"
+                        aria-label="Previous"
+                        onClick={() => goTo(index - 1, -1)}
+                        disabled={index === 0}
+                        className={`flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border-[0.5px] shrink-0 transition-transform hover:scale-110 ${index === 0 ? "border-[#a4a7a5] text-[#a4a7a5]" : "border-black text-black"
+                            }`}
+                    >
+                        <NavArrow direction="prev" />
+                    </button>
+                    <div className="flex items-center gap-[10px]">
+                        {ITEMS.map((item, dotIndex) => (
+                            <button
+                                key={item.title}
+                                type="button"
+                                aria-label={`Go to slide ${dotIndex + 1}`}
+                                onClick={() => goTo(Math.min(dotIndex, maxIndex), dotIndex > index ? 1 : -1)}
+                                className={`size-[8px] rounded-full border-[0.5px] transition-colors ${dotIndex === index ? "bg-[#2d8ec5] border-[#2d8ec5]" : "border-black"
+                                    }`}
+                            />
+                        ))}
+                    </div>
+                    <button
+                        type="button"
+                        aria-label="Next"
+                        onClick={() => goTo(index + 1, 1)}
+                        disabled={index === maxIndex}
+                        className={`flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border-[0.5px] shrink-0 transition-transform hover:scale-110 ${index === maxIndex ? "border-[#a4a7a5] text-[#a4a7a5]" : "border-black text-black"
+                            }`}
+                    >
+                        <NavArrow direction="next" />
+                    </button>
+                </div>
+            </div>
+        </section>
+    );
+}

@@ -1,0 +1,25 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+export default function CareersHeroText({ as: Heading = "h1" }) {
+    return (
+        <div className="absolute inset-x-0 top-[18%] sm:top-[23%] px-8 py-6 sm:py-0 sm:px-10  lg:px-[64px]">
+            <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="w-full max-w-[1057px]"
+            >
+                <p className="text-white/90 text-sm sm:text-lg lg:text-xl uppercase tracking-wide font-light">
+                    Careers
+                </p>
+                <div className="mt-3 sm:mt-1 h-px w-full bg-white/40" />
+                <Heading className="text-white text-2xl sm:text-4xl lg:text-5xl font-medium capitalize mt-6 sm:mt-6 leading-tight">
+                    Build what enterprises depend on.
+                </Heading>
+
+            </motion.div>
+        </div>
+    );
+}

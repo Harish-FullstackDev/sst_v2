@@ -1,0 +1,150 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import card1 from "@/assets/WhatWeDo/Business Advisory/webp/Business_Business_Strategy.webp";
+import card2 from "@/assets/WhatWeDo/Business Advisory/webp/Business_Enterprise_architecture.webp";
+import card3 from "@/assets/WhatWeDo/Business Advisory/webp/Business_Transformation_Roadmap.webp";
+import card4 from "@/assets/WhatWeDo/Business Advisory/webp/Business_Business_process.webp";
+
+const CARDS = [
+    {
+        image: card1,
+        title: "Business Strategy",
+        desc: "Benchmark your current digital capabilities against industry standards to identify gaps and prioritize investment.",
+    },
+    {
+        image: card2,
+        title: "Enterprise Architecture",
+        desc: "We design the architecture that keeps your systems, processes, and data aligned to strategy as you scale.",
+    },
+    {
+        image: card3,
+        title: "Transformation Roadmap",
+        desc: "Design digital touchpoints that meet customers where they are and deepen engagement across every channel.",
+    },
+    {
+        image: card4,
+        title: "Business Process Consulting",
+        desc: "Sequence technology investments against business priorities so every initiative compounds toward long term goals.",
+    },
+];
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+export default function DigitalStrategy() {
+    // Autoplay: cycles which desktop card is "active" (hover-revealed state)
+    // automatically, same behavior as OurAIServices / IdentityManagementContinuousOperations.
+    // Pauses the instant the mouse enters the grid so manual hover still drives
+    // the active card, and resumes cycling from wherever it left off on mouse
+    // leave — it does not reset back to the first card.
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
+    const autoplayRef = useRef(null);
+
+    useEffect(() => {
+        if (isPaused) return undefined;
+
+        autoplayRef.current = setInterval(() => {
+            setActiveIndex((prev) => (prev + 1) % CARDS.length);
+        }, 3500);
+
+        return () => clearInterval(autoplayRef.current);
+    }, [isPaused]);
+
+    return (
+        <div className="w-full h-full flex flex-col items-center justify-center gap-10 sm:gap-[64px] px-6 sm:px-[64px] pt-10 sm:pt-[64px] pb-10 sm:pb-[32px]">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="flex flex-col items-center gap-2 text-center"
+            >
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Strategic Planning & Architecture</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
+                    Defining transformation roadmaps, business architecture, and process change.
+                </p>
+            </motion.div>
+
+            {/* Mobile: simple static stacked cards — no hover, description always visible.
+                Layout/design ported from OurAIServices' mobile treatment. */}
+            <div className="flex sm:hidden flex-col gap-8 w-full max-w-[1280px] mx-auto">
+                {CARDS.map((card, index) => (
+                    <motion.div
+                        key={card.title}
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.5, delay: index * 0.08 }}
+                        className="relative w-full h-[220px] overflow-hidden"
+                    >
+                        <Image src={card.image} alt={card.title} fill className="object-cover" />
+                        {/* Dark at the top, where this card's title and description sit — the
+                            same scrim BusinessProcessConsulting uses for its top-anchored text.
+                            Running it the other way (dark at the bottom) left the text over bare
+                            photo, so light images washed the titles out. */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/68 to-transparent" />
+                        <div className="absolute inset-0 flex flex-col justify-start gap-2 px-4 pt-5">
+                            <h2 className="text-white text-xl font-semibold">{card.title}</h2>
+                            <p className="text-white/85 text-sm font-light max-w-[280px]">{card.desc}</p>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+
+            {/* Desktop: bottom-anchored active-reveal grid — active card now driven by
+                state (hover OR autoplay) instead of pure CSS :hover, so autoplay can
+                drive the same reveal when the user isn't hovering. */}
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                className="hidden sm:grid lg:grid-cols-4 sm:grid-cols-2 gap-8 w-full"
+            >
+                {CARDS.map((card, index) => {
+                    const isActive = index === activeIndex;
+                    return (
+                        <motion.div
+                            key={card.title}
+                            variants={itemVariants}
+                            onMouseEnter={() => setActiveIndex(index)}
+                            className="relative w-full aspect-[278/290] overflow-hidden shadow-[0px_2px_8px_rgba(0,0,0,0.19)]"
+                        >
+                            <Image src={card.image} alt={card.title} fill className="object-cover" />
+                            <div
+                                className={`absolute inset-0 transition-colors duration-500 ${isActive ? "bg-black/70" : "bg-black/20"
+                                    }`}
+                            />
+                            {/* Bottom-anchored text block: default state shows only the title sitting
+                                low in the card (~12% inset); active state reveals the description
+                                below it. Anchoring to `bottom` instead of `top` means the block grows
+                                upward as the description expands, matching the Identity Management
+                                card behavior. */}
+                            <div className="absolute left-[12%] right-[12%] bottom-[12%] flex flex-col text-white">
+                                <h2 className="text-xl font-semibold">{card.title}</h2>
+                                <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+                                    <div className="overflow-hidden">
+                                        <p className="text-base font-light pt-2">{card.desc}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    );
+                })}
+            </motion.div>
+        </div>
+    );
+}

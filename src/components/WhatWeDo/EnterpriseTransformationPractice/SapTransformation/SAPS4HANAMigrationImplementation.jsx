@@ -1,0 +1,265 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import panelImage from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/capabilities-panel.png";
+import sap4HanaLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/sap-s4hana.svg";
+import riseWithSapLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/rise-with-sap.svg";
+import growWithSapLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/grow-with-sap.svg";
+import sapBtpLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/sap-btp.svg";
+import sapAnalyticsCloudLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/sap-analytics-cloud.svg";
+import sapBw4HanaLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/sap-bw4hana.svg";
+import sapAmsLogo from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/icons/sap-ams.svg";
+
+// Figma only fills in real copy for item 1's expanded panel — item 1's own
+// panel frame is still an empty skeleton placeholder there, so its copy below
+// is written to match the site's tone rather than sourced from Figma. Items
+// 2–7 now have real desc/bullet copy in Figma (get_design_context on each
+// item's panel frame) and are transcribed verbatim below.
+const ITEMS = [
+    {
+        title: "SAP S/4HANA Migration & Implementation",
+        logo: sap4HanaLogo,
+        desc: "End-to-end migration from ECC to S/4HANA, planned around your compliance deadlines and cutover windows, not a generic timeline.",
+        bullets: [
+            "Landscape assessment and readiness review",
+            "Migration path selection (greenfield, brownfield, or selective)",
+            "Data migration and validation",
+            "Cutover and hypercare support",
+        ],
+    },
+    {
+        title: "RISE with SAP",
+        logo: riseWithSapLogo,
+        desc: "Full RISE with SAP delivery infrastructure, migration, and managed operations bundled under a single SAP backed contract.",
+        bullets: [
+            "Contract and scope planning",
+            "Infrastructure provisioning",
+            "Migration execution",
+            "Ongoing operations under the RISE model",
+        ],
+    },
+    {
+        title: "GROW with SAP",
+        logo: growWithSapLogo,
+        desc: "Cloud native S/4HANA on SAP's best practice reference architecture, built for organizations without legacy customization to carry over.",
+        bullets: [
+            "Fit to standard workshops",
+            "Rapid configuration against best practice processes",
+            "Process adoption support",
+            "Go-live support",
+        ],
+    },
+    {
+        title: "SAP Business Technology Platform",
+        logo: sapBtpLogo,
+        desc: "Extend SAP without touching the core integration, automation, and app development on BTP, upgrade safe by design.",
+        bullets: [
+            "Integration Suite setup",
+            "Low-code app development",
+            "Workflow automation",
+            "API management and governance",
+        ],
+    },
+    {
+        title: "SAP Analytics Cloud",
+        logo: sapAnalyticsCloudLogo,
+        desc: "Planning, forecasting, and reporting built directly on your SAP data, no separate BI layer to maintain.",
+        bullets: [
+            "Planning model design",
+            "Predictive forecasting",
+            "Live connections to S/4HANA",
+            "Dashboard and report build",
+        ],
+    },
+    {
+        title: "SAP BW/4HANA",
+        logo: sapBw4HanaLogo,
+        desc: "Data warehousing built for SAP native reporting at enterprise scale, migrated or built fresh on HANA.",
+        bullets: [
+            "Migration from legacy BW",
+            "Data model design",
+            "Performance tuning",
+            "Reporting layer build",
+        ],
+    },
+    {
+        title: "Application Managed Services (AMS)",
+        logo: sapAmsLogo,
+        desc: "Ongoing support, monitoring, and continuous improvement for SAP environments already live, not just the ones we implement.",
+        bullets: [
+            "Incident and problem management",
+            "Basis and functional support",
+            "Regulatory and compliance updates",
+            "SLA backed reporting",
+        ],
+    },
+];
+
+export default function SAPS4HANAMigrationImplementation() {
+    const searchParams = useSearchParams();
+    const sectionRef = useRef(null);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const active = ITEMS[activeIndex];
+
+    // Deep-link from the Enterprise page's Capabilities service list: a
+    // ?service= param names one of ITEMS' titles verbatim, so the matching
+    // card opens and this section scrolls into view instead of the visitor
+    // landing at the top of the page and having to hunt for it.
+    useEffect(() => {
+        const service = searchParams.get("service");
+        if (!service) return;
+        const index = ITEMS.findIndex((item) => item.title === service);
+        if (index === -1) return;
+        setActiveIndex(index);
+        sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, [searchParams]);
+
+    return (
+        <section
+            ref={sectionRef}
+            className="w-full bg-[#f5f6f6] pt-10 pb-10 sm:pt-16 sm:pb-16 flex flex-col items-center gap-10 sm:gap-20 scroll-mt-24"
+        >
+            <div className="w-full px-6 sm:px-[64px] flex justify-center">
+                <motion.div
+                    key={active.title}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
+                >
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">{active.title}</h2>
+                    <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">{active.desc}</p>
+                </motion.div>
+            </div>
+
+            <div className="w-full pl-6 pr-6 sm:pl-[64px] sm:pr-0 flex flex-col lg:flex-row items-stretch">
+                {/* justify-between (not packed) so the 7 items spread across the full
+                    stretched height with visible gaps between each item's own border
+                    segment, rather than one continuous line — matching how
+                    EnterpriseSoftware.jsx (Digital Engineering) spaces its tab list.
+                    items-stretch on the row makes this column match the image panel's
+                    height exactly, so the first item's top lines up with the image's
+                    top edge and the last with its bottom edge. 40% width, not a fixed
+                    px column.
+                    gap-2 lg:gap-0, matching EnterpriseSoftware.jsx exactly: below lg
+                    there's no items-stretch-driven extra height for justify-between to
+                    distribute (the outer row is flex-col there, not flex-row), so
+                    without an explicit gap the 7 items sit flush and their border-l-3px
+                    segments visually merge into one continuous line. The explicit
+                    gap-2 is what actually separates them; it's dropped again at lg
+                    where justify-between takes back over. */}
+                <div className="flex flex-col justify-between w-full lg:w-[40%] gap-2 lg:gap-0 shrink-0">
+                    {ITEMS.map((item, index) => {
+                        const isActive = index === activeIndex;
+                        return (
+                            <button
+                                key={item.title}
+                                type="button"
+                                onMouseEnter={() => setActiveIndex(index)}
+                                onClick={() => setActiveIndex(index)}
+                                aria-pressed={isActive}
+                                className={`text-left w-full py-[12.5px] px-[15px] border-l-[3px] transition-colors ${isActive ? "border-[#2d8ec5]" : "border-[#6c6c6c]/60"
+                                    }`}
+                            >
+                                <h2
+                                    className={`font-houschka text-base sm:text-2xl font-semibold leading-[1.4] transition-colors ${isActive ? "text-[#10161d]" : "text-[#6c6c6c]/70"
+                                        }`}
+                                >
+                                    {item.title}
+                                </h2>
+                            </button>
+                        );
+                    })}
+                </div>
+
+                {/* Figma now has a real photo here (was a flat #1C5F85 placeholder) — one
+                    shared background behind all 7 items, not per-item photography,
+                    matching the single image asset the design actually provides. */}
+                <div className="w-full lg:w-[60%] flex flex-col mt-6 lg:mt-0">
+                    <div className="relative bg-[#1c5f85] w-full aspect-[825/587] overflow-hidden">
+                        <Image src={panelImage} alt="" fill className="object-cover" />
+                        {/* Card overlay: sm and up only. Fixed aspect-ratio image height
+                            shrinks a lot on a narrow phone, but the card's own text doesn't
+                            shrink with it — overlaid at mobile widths its content (title +
+                            4 bullets) is regularly taller than the image itself, and with
+                            the image's own overflow-hidden that meant the card's top got
+                            clipped clean off instead of just looking cramped. Below sm, the
+                            same copy renders as a normal in-flow block after the image
+                            instead (see the sibling block below) rather than trying to
+                            force it into a box that's fundamentally too short for it. */}
+                        {/* Card footprint (position/size against the image) is unchanged —
+                            still bottom-flush, top-31%, inset from the left/right. Figma's
+                            sibling item frames (e.g. "RISE with SAP") all share the same
+                            spec for this content: a 462×256 box centered inside the 571×403
+                            card — i.e. equal insets on every side (54.5/571 ≈ 9.55% left+right,
+                            73.5/403 ≈ 18.24% top+bottom), with justify-between spreading the
+                            title and bullets inside that box rather than a flat padding value.
+                            That symmetric inset is what reads as "centered" — a flat padding
+                            with top-anchored content always pools leftover space at the
+                            bottom once the copy is shorter than the card. */}
+                        <div className="hidden sm:block absolute left-[25%] right-[6%] top-[31%] bottom-0 bg-white">
+                            {/* The white card is deliberately OUTSIDE AnimatePresence: it
+                                stays mounted and static while the selection changes, so
+                                hovering the list swaps only the copy inside it. Animating
+                                the card itself made the whole white panel fade and slide
+                                on every hover, which read as the panel flickering rather
+                                than the content updating. */}
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={active.title}
+                                    initial={{ opacity: 0, y: 12 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -12 }}
+                                    transition={{ duration: 0.35, ease: "easeOut" }}
+                                    className="absolute left-[9.55%] right-[9.55%] top-[18.24%] bottom-[18.24%] flex flex-col justify-between gap-6"
+                                >
+                                    <div className="flex flex-col gap-6">
+                                        <div className="relative h-10 w-36 shrink-0">
+                                            <Image src={active.logo} alt="" fill className="object-contain object-left" />
+                                        </div>
+                                        <h2 className="text-[#10161d] text-base font-semibold leading-[1.4]">{active.desc}</h2>
+                                    </div>
+                                    <ul className="list-disc pl-5 flex flex-col gap-1 text-[#3d3d4e] text-lg font-light leading-[1.4]">
+                                        {active.bullets.map((bullet) => (
+                                            <li key={bullet}>{bullet}</li>
+                                        ))}
+                                    </ul>
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+                    </div>
+
+                    {/* Mobile only: same content as the overlay above, but as a plain
+                        in-flow block below the image instead of stacked on top of it. */}
+                    {/* Same split as the overlay above: the white block stays
+                        mounted, only its contents animate on selection change. */}
+                    <div className="sm:hidden bg-white p-6">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={active.title}
+                                initial={{ opacity: 0, y: 12 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -12 }}
+                                transition={{ duration: 0.35, ease: "easeOut" }}
+                                className="flex flex-col gap-6"
+                            >
+                                <div className="relative h-10 w-36 shrink-0">
+                                    <Image src={active.logo} alt="" fill className="object-contain object-left" />
+                                </div>
+                                <h3 className="text-[#10161d] text-base font-medium leading-[1.4]">{active.desc}</h3>
+                                <ul className="list-disc pl-5 flex flex-col gap-1 text-[#3d3d4e] text-lg font-light leading-[1.4]">
+                                    {active.bullets.map((bullet) => (
+                                        <li key={bullet}>{bullet}</li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        </AnimatePresence>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}

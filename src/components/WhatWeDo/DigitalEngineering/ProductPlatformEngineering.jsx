@@ -1,0 +1,82 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const CARDS = [
+    {
+        title: "Product Engineering",
+        desc: "We build digital products around business requirements, user needs, and technical scalability.",
+    },
+    {
+        title: "Rapid Prototyping",
+        desc: "We validate product concepts and technical approaches before full-scale development.",
+    },
+    {
+        title: "Platform Development",
+        desc: "We create reusable platforms and capabilities that support multiple enterprise applications.",
+    },
+    {
+        title: "Engineering Enablement",
+        desc: "Developer tooling, reusable components, and automation help teams deliver software faster.",
+    },
+];
+
+export default function ProductPlatformEngineering() {
+    return (
+        <section className="w-full pt-10 sm:pt-16 pb-6 sm:pb-0 px-8 sm:px-[0px] flex flex-col items-center gap-10 sm:gap-12">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="flex flex-col items-center gap-2 max-w-[767px] text-center px-6 sm:px-0"
+            >
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Product &amp; Platform Engineering</h2>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">
+                    Engineering capabilities that help enterprises build scalable digital products and platforms.
+                </p>
+            </motion.div>
+
+            {/* Mobile / tablet layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:hidden gap-6 w-full px-6 sm:px-0">
+                {CARDS.map((card, index) => (
+                    <motion.div
+                        key={card.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.4, delay: index * 0.06 }}
+                        className="border border-[#a5a5a5] bg-[#f5f6f6] flex flex-col gap-4 px-6 py-8"
+                    >
+                        <h2 className="text-[#2E3033] text-base font-semibold">{card.title}</h2>
+                        <p className="text-[#55595E] text-sm font-light">{card.desc}</p>
+                    </motion.div>
+                ))}
+            </div>
+
+            {/* Desktop layout — white title cards floating on top of a full-bleed Neutral/100 band that holds the descriptions */}
+            <div className="hidden lg:block relative w-full lg:min-h-[303px]">
+                <div className="absolute inset-x-0 top-[99px] bottom-0 bg-[#f5f6f6]" />
+
+                <div className="relative z-10 max-w-full mx-auto px-6 sm:px-[64px] grid grid-cols-4 gap-x-6 lg:gap-x-[50px]">
+                    {CARDS.map((card, index) => (
+                        <motion.div
+                            key={card.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.4, delay: index * 0.06 }}
+                            className="flex flex-col"
+                        >
+                            <div className="bg-white border border-[#a5a5a5] min-h-[121px] flex items-center px-8">
+                                <h2 className="text-[#2E3033] text-xl font-semibold ">{card.title}</h2>
+                            </div>
+                            <p className="text-[#55595E] justify-center text-center text-base sm:text-lg font-light pt-6 pb-10 pr-4">{card.desc}</p>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}
+
