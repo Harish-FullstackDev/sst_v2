@@ -9,7 +9,7 @@ export const metadata = {
     title: "Whitepapers | Support Studio Technologies",
     description: "Research and reference material on enterprise SAP, cloud and AI decisions. Published only once an asset exists — check back as the library grows.",
     url: "/whitepapers/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Whitepapers",
 };

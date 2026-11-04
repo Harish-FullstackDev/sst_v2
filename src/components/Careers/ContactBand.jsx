@@ -38,10 +38,10 @@ export default function ContactBand() {
                                     Email us for general queries, including marketing and partnership opportunities
                                 </p>
                                 <a
-                                    href="mailto:hr@ascendus.sa"
+                                    href="mailto:info@isupportz.com"
                                     className="block text-blue-600 hover:text-blue-700 font-medium text-sm"
                                 >
-                                    hr@ascendus.sa
+                                    info@isupportz.com
                                 </a>
                             </div>
                         </div>
@@ -54,10 +54,10 @@ export default function ContactBand() {
                                     Call us to speak to a member of our team. We are always happy to help
                                 </p>
                                 <a
-                                    href="tel:+966573956334"
+                                    href="tel:+914132191301"
                                     className="block text-blue-600 hover:text-blue-700 font-medium text-sm"
                                 >
-                                    +966 573956334
+                                    0413-2191301
                                 </a>
                             </div>
                         </div>

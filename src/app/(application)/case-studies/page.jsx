@@ -9,7 +9,7 @@ export const metadata = {
     title: "Client Outcomes and Case Studies | Support Studio Technologies",
     description: "Documented delivery evidence from enterprise technology programs, published with the client's approval and a stated measurement basis.",
     url: "/case-studies/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Client Outcomes and Case Studies",
 };

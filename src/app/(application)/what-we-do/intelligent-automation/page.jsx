@@ -9,7 +9,7 @@ export const metadata = {
     title: "Intelligent Process Automation Services | Support Studio Technologies",
     description: "Process discovery, RPA and workflow automation applied after the process itself has been corrected rather than before.",
     url: "/what-we-do/intelligent-automation/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Intelligent Process Automation Services",
 };

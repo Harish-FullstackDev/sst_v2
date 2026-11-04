@@ -9,7 +9,7 @@ export const metadata = {
     title: "Application Modernization and Digital Engineering | Support Studio Technologies",
     description: "Modernizing and building enterprise applications, APIs and integration layers where legacy architecture has become the constraint.",
     url: "/what-we-do/digital-engineering/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Application Modernization and Digital Engineering",
 };

@@ -9,7 +9,7 @@ export const metadata = {
     title: "Enterprise Cybersecurity and Digital Trust | Support Studio Technologies",
     description: "Identity, access, governance and security architecture embedded into the systems the business runs on, not added around them.",
     url: "/what-we-do/cybersecurity-digital-trust/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Enterprise Cybersecurity and Digital Trust",
 };

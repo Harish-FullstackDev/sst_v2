@@ -9,7 +9,7 @@ export const metadata = {
     title: "Business & Technology Advisory Services | Support Studio Technologies",
     description: "Target-state architecture, roadmap and business-case work produced in a form delivery teams can actually execute.",
     url: "/what-we-do/business-advisory/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Business & Technology Advisory Services",
 };

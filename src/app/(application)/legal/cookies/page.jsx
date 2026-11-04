@@ -9,7 +9,7 @@ export const metadata = {
     title: "Cookie Policy | Support Studio Technologies",
     description: "How Support Studio Technologies uses cookies and similar technologies on this site, what each category does, and how to manage your preferences.",
     url: "/legal/cookies/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Cookie Policy",
 };

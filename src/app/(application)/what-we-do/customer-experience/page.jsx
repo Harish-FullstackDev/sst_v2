@@ -9,7 +9,7 @@ export const metadata = {
     title: "CRM and Customer Experience Technology | Support Studio Technologies",
     description: "CRM architecture, Salesforce delivery and omnichannel journeys designed so customer context survives every handoff.",
     url: "/what-we-do/customer-experience/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "CRM and Customer Experience Technology",
 };
