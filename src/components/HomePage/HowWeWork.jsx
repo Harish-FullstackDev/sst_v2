@@ -1,122 +1,124 @@
 "use client";
 
-import Image from "next/image";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import corridorImg from "@/assets/HomePage/how_we_work.webp";
 
 const STEPS = [
     {
-        num: "1",
-        title: "Discover",
-        desc: "We start with your operations, not our service list, to identify where technology creates friction and where it can create value.",
+        number: "01",
+        title: "Assess & Blueprint",
+        desc: "We start with your current landscape and business requirements, mapping what the system needs to do before deciding how to build it.",
     },
     {
-        num: "2",
-        title: "Design",
-        desc: "One team builds and implements the same people who designed it, so nothing gets lost in translation.",
+        number: "02",
+        title: "Design & Configure",
+        desc: "We architect the solution against SAP best practice, whether that means a clean new build, an upgrade path, or a selective transition (greenfield, brownfield, or bluefield, whichever fits your landscape).",
     },
     {
-        num: "3",
-        title: "Implement",
-        desc: "We architect a solution built around your operations, not a one size fits all playbook.",
+        number: "03",
+        title: "Migrate, Integrate & Test",
+        desc: "Data migration, system integration, and testing happen before go-live, not as an afterthought once issues have already surfaced in production.",
     },
     {
-        num: "4",
-        title: "Run",
-        desc: "We continue to manage, monitor, and support your solutions after go-live to ensure they perform as expected.",
+        number: "04",
+        title: "Enable, Go-Live & Support",
+        desc: "Training and change management run alongside cutover, and we stay on through hypercare and beyond, monitoring, resolving, and looking for ways to get more value out of what's been built.",
     },
 ];
 
-// The numbered badge deliberately straddles the image/panel seam: 20px of its
-// 60px sits above the seam (over the image), the remaining 40px below it
-// (over the dark panel) — an intentional majority-below split, not a 50/50
-// overlap. Each step's own top padding is set to exactly that 40px (+ extra
-// breathing room), so its title/description always clears the badge with no
-// per-panel padding needed above the grid.
-const BADGE_SIZE = 60;
-const BADGE_OVERLAP_ABOVE = 20;
-const BADGE_OVERLAP_BELOW = BADGE_SIZE - BADGE_OVERLAP_ABOVE;
-const STEP_TOP_PADDING = BADGE_OVERLAP_BELOW + 48; // room below the badge before the title starts
-
 export default function HowWeWork() {
-    return (
-        // Full-bleed image band — no side padding here; the dark panel below carries
-        // its own full 64 bottom via pb-16, and the section above (Industries)
-        // already took the full 64 for this boundary since this band contributes 0.
-        <section className="relative w-full overflow-hidden">
-            {/* Figma (node 2700:1414/1413) actually splits this band roughly
-                43/57 image-to-panel, not 50/50 — the image div is 496px tall but
-                the dark panel is pulled up over its bottom 284px (mb-[-284px]),
-                leaving only ~212px of it genuinely visible. Reproduced here as a
-                real proportional relationship rather than a copied breakpoint: the
-                lg aspect ratio matches Figma's 1280x496 image exactly, and the
-                panel's overlap below is a %-of-width margin (284/1280 ≈ 22.2%,
-                CSS % margins resolve against the containing block's width, same
-                reference axis as the aspect ratio), so the same ~43/57 split holds
-                at any viewport width instead of only at 1280px. Mobile/tablet keep
-                their own taller aspect ratios (not in the Figma desktop frame at
-                all) since the heading needs more absolute height to stay readable
-                on a narrow screen — the width-proportional overlap still applies
-                on top of those. */}
-            {/* lg ratio nudged from Figma's raw 1280/496 to 1280/520 — a small,
-                deliberate bump (not itself in the Figma numbers) so the visible
-                slice reads at the same size Figma's own screenshot shows; the
-                overlap margin below is untouched, so this bump is the only lever
-                changing how much stays in view. */}
-            <div className="relative w-full aspect-[16/12] sm:aspect-[16/10] lg:aspect-[1280/520]">
-                <Image src={corridorImg} alt="" fill className="object-cover pointer-events-none" />
-                <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-                {/* Figma positions this block at a fixed 34px from the image's top
-                    (34/496 ≈ 7% of the image height) — the previous 14–16% was
-                    calibrated for the old, much taller image and was eating into the
-                    (now correctly shorter) band's remaining room, which is what let
-                    the panel/badges collide with the heading. gap-3 (12px) between
-                    the H1 and the subtitle+body pair matches Figma's Message
-                    Container; the subtitle and body are their own flush two-line
-                    block (no gap between them) same as Figma's two stacked <p>s. */}
-                <div className="absolute inset-x-0 top-[8%] flex flex-col items-center text-white text-center px-6 gap-3">
-                    <h2 className="text-xl sm:text-[28px] font-semibold leading-tight">How We Work</h2>
-                    <div className="flex flex-col leading-tight">
-                        <p className="text-base sm:text-lg font-light">A Clear Path From Problem to Production</p>
-                        <p className="text-base sm:text-lg font-light">
-                            No black boxes, no scope creep. Every engagement follows a process built for transparency and outcomes.
-                        </p>
-                    </div>
-                </div>
-            </div>
+    // Card "02" originally carried the accent styling as a static example of
+    // the hover/active look. That look is now driven by state so any card
+    // can show it: it starts on card index 1 (matching the original default),
+    // responds to hover/focus, and otherwise auto-advances every few seconds,
+    // pausing while the grid is hovered/focused.
+    const [activeIndex, setActiveIndex] = useState(1);
+    const [isPaused, setIsPaused] = useState(false);
 
-            <div className="relative z-10 -mt-[22.2%] bg-[#002C4F] pb-20 sm:pb-28 px-6 sm:px-[64px]">
-                <motion.div
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 sm:gap-x-10 gap-y-20 sm:gap-y-24"
-                >
-                    {STEPS.map((step) => (
+    useEffect(() => {
+        if (isPaused) return;
+        const id = setInterval(() => {
+            setActiveIndex((prev) => (prev + 1) % STEPS.length);
+        }, 3000);
+        return () => clearInterval(id);
+    }, [isPaused]);
+
+    return (
+        <section className="w-full bg-[#f3f6f9] pt-10 pb-10 sm:pt-16 sm:pb-16 px-6 sm:px-[64px]">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="flex flex-col items-center gap-2 max-w-[1094px] mx-auto text-center mb-10 sm:mb-14"
+            >
+                <h2 className="text-[#10161d] text-[28px] font-medium">
+                    A Delivery Approach Built Around <span className="text-[#0061AF]">SAP</span>, Not Adapted to It
+                </h2>
+
+            </motion.div>
+
+            <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                className="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 justify-between"
+                onMouseLeave={() => setIsPaused(false)}
+            >
+                {STEPS.map((step, index) => {
+                    const isActive = index === activeIndex;
+
+                    return (
                         <div
-                            key={step.num}
-                            // Narrower column (not the full grid-slot width) so the
-                            // description wraps onto more lines and reads taller rather
-                            // than wide, matching Figma.
-                            className="relative flex flex-col items-center gap-6 text-center max-w-[240px] mx-auto"
-                            style={{ paddingTop: STEP_TOP_PADDING }}
+                            key={step.number}
+                            tabIndex={0}
+                            onMouseEnter={() => {
+                                setIsPaused(true);
+                                setActiveIndex(index);
+                            }}
+                            onFocus={() => {
+                                setIsPaused(true);
+                                setActiveIndex(index);
+                            }}
+                            onBlur={() => setIsPaused(false)}
+                            // lg:pr-8: the 4 steps sit edge to edge (lg:gap-0), so without it each
+                            // description could run right up to the next step's border line.
+                            className={`flex flex-1 flex-col gap-6 pl-4 lg:pr-8 pb-10 border-l cursor-pointer transition-colors duration-300 ${isActive
+                                ? "border-[#2d8ec5]"
+                                : "border-[#d3dae2]"
+                                }`}
                         >
-                            <div
-                                className="absolute left-1/2 -translate-x-1/2 w-[60px] h-[60px] bg-white rounded-full flex items-center justify-center shrink-0 shadow-[0px_4px_8px_rgba(0,0,0,0.2)]"
-                                style={{ top: -BADGE_OVERLAP_ABOVE }}
+                            <p
+                                className={`text-lg font-medium transition-colors duration-300 ${isActive
+                                    ? "text-[#1c5f85]"
+                                    : "text-[#8794a3]"
+                                    }`}
                             >
-                                <span className="text-[#2E3033] text-3xl font-light">{step.num}</span>
-                            </div>
-                            <div className="flex flex-col gap-3 text-white">
-                                <h2 className="text-xl font-semibold">{step.title}</h2>
-                                <p className="text-base sm:text-lg font-extralight leading-[1.5]">{step.desc}</p>
-                            </div>
+                                {step.number}
+                            </p>
+
+                            <p
+                                className={`text-lg font-medium transition-colors duration-300 ${isActive
+                                    ? "text-[#1c5f85]"
+                                    : "text-[#8794a3]"
+                                    }`}
+                            >
+                                {step.title}
+                            </p>
+
+                            <p
+                                className={`text-base font-extralight leading-[1.59] transition-colors duration-300 ${isActive
+                                    ? "text-[#10161d]"
+                                    : "text-[#4a5568]"
+                                    }`}
+                            >
+                                {step.desc}
+                            </p>
                         </div>
-                    ))}
-                </motion.div>
-            </div>
+                    );
+                })}
+            </motion.div>
         </section>
     );
 }
-

@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../assets/Brand/Ascendus_Logo_Secondary.png";
+import logo from "../../assets/Navbar/SST_Updated_White.svg";
 import { useState } from "react";
 import { MdOutlineMailOutline } from "react-icons/md";
 import FBIcon from "../../assets/Footer/FacebookIcon.svg";
@@ -28,10 +28,10 @@ const Footer = () => {
   return (
     <>
       <footer className="bg-neutral-900 text-gray-400 p-8 md:p-16 ">
-        <div className="relative h-8 w-auto aspect-[4/1] mb-6 md:hidden">
+        <div className="relative h-8 w-auto aspect-[358.7/80] mb-6 md:hidden">
           <Image
             src={logo}
-            alt="Ascendus Logo"
+            alt="Support Studio Technologies Logo"
             fill
             style={{
               objectFit: "contain",
@@ -40,9 +40,23 @@ const Footer = () => {
           />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-16  pb-4 md:pb-12 mb-2">
-          <div className="space-x-3 md:col-span-1">
+          <div className="md:col-span-1">
+            {/* Logo — first column, so its left edge shares Quick Link's 64px inset.
+                h-10 (40px) + 46px margin = the 86px (mt-21.5) every other column's
+                heading drops by, so Quick Link stays level with them. */}
+            <div className="hidden md:block relative h-10 w-auto aspect-[358.7/80] mb-[46px]">
+              <Image
+                src={logo}
+                alt="Support Studio Technologies Logo"
+                fill
+                style={{
+                  objectFit: "contain",
+                  objectPosition: "left",
+                }}
+              />
+            </div>
             {/* Quick Link */}
-            <div className="mt-4 md:mt-21.5 mb-7.5 md:mb-12">
+            <div className="mt-4 md:mt-0 mb-7.5 md:mb-12">
               <h2 className="text-white text-base font-semibold mb-4">
                 Quick Link
               </h2>
@@ -428,17 +442,7 @@ const Footer = () => {
 
           {/* Get In Touch */}
           <div className="md:col-span-1">
-            <div className="hidden md:block relative h-8 sm:h-10 w-auto aspect-[4/1] mb-4 md:mb-[46px]">
-              <Image
-                src={logo}
-                alt="Ascendus Logo"
-                fill
-                style={{
-                  objectFit: "contain",
-                }}
-              />
-            </div>
-            <h2 className="text-white text-base font-semibold mb-4">
+            <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">
               Get In Touch
             </h2>
             <ul className="space-y-2">
@@ -544,43 +548,48 @@ const Footer = () => {
 
         </div>
 
-        {/* policy  */}
-        <div className="grid grid-cols-1 md:grid-cols-6  md:gap-16  ">
+        {/* policy — same 5-column grid as the link row above, placed in column 5 so
+            it lines up under Get In Touch */}
+        <div className="grid grid-cols-1 md:grid-cols-5 md:gap-16">
 
-          <div className="md:col-span-2 ">
+          <div className="md:col-start-5">
             <div className="space-x-3 md:col-span-1">
               <p className="text-sm text-white mb-4 md:mb-0">
                 <a
                   href="/legal/terms"
-                  className="hover:text-gray-300 transition-colors"
+                  className="whitespace-nowrap hover:text-gray-300 transition-colors"
                 >
                   Terms & Conditions
                 </a>
                 {" | "}
                 <a
                   href="/legal/privacy"
-                  className="hover:text-gray-300 transition-colors"
+                  className="whitespace-nowrap hover:text-gray-300 transition-colors"
                 >
                   Privacy Policy
                 </a>
                 <br />
                 <a
                   href="/legal/security"
-                  className="hover:text-gray-300 transition-colors"
+                  className="whitespace-nowrap hover:text-gray-300 transition-colors"
                 >
                   Security Policy
                 </a>
                 {" | "}
                 <a
                   href="/legal/cookies"
-                  className="hover:text-gray-300 transition-colors"
+                  className="whitespace-nowrap hover:text-gray-300 transition-colors"
                 >
                   Cookie Policy
                 </a>
               </p>
             </div>
-            <p className="text-sm text-white flex items-center min-h-[50px]">
-              © 2026 Ascendus. All Rights Reserved.
+            {/* One line, as on sst_website_current. It runs a little past the narrow
+                Get In Touch column into the footer padding, which only leaves room from
+                ~1400px up; below that it breaks between the two halves, never mid-phrase. */}
+            <p className="text-sm text-white min-h-[50px] pt-4 min-[1400px]:whitespace-nowrap">
+              <span className="whitespace-nowrap">© 2026 Ascendus.</span>{" "}
+              <span className="whitespace-nowrap">All Rights Reserved.</span>
             </p>
           </div>
 
@@ -633,54 +642,6 @@ const Footer = () => {
               />
             </a> */}
 
-          <div className="flex space-x-3 md:col-span-1">
-            {/* <a
-              href="#"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="Facebook"
-            >
-              <Image
-                src={FBIcon}
-                alt="Facebook"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a> */}
-
-            {/* <a
-              href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="LinkedIn"
-            >
-              <Image
-                src={LinkedinIcon}
-                alt="LinkedIn"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a>
-            <a
-              href="#"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="Twitter"
-            >
-              <Image
-                src={TwitterIcon}
-                alt="Twitter"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a> */}
-          </div>
-
-          <div className="md:col-span-1"></div>
-
-          <div className="md:col-span-1"></div>
           {/* <div className="flex space-x-3 md:col-span-1 min-h-[50px] mb-2">
             <a
               href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
@@ -745,7 +706,7 @@ const Footer = () => {
                 </a>
               </p>
             </div>
-            <p className="text-sm text-white flex items-center min-h-[50px]">
+            <p className="text-sm text-white min-h-[50px] pt-4">
               © 2026 Ascendus. All Rights Reserved.
             </p>
           </div> */}

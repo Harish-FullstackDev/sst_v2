@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 const STATS = [
-    { value: "300+", label: "Team of SAP Specialists" },
+    { value: "400+", label: "Team of SAP Specialists" },
     { value: "200+", label: "SAP Engagements Delivered" },
     { value: "12+", label: "Industries Served" },
     { value: "5+", label: "Years of Experience" },
@@ -27,10 +27,7 @@ function AnimatedStat({ value }) {
     const { prefix, number, suffix, decimals } = parseStatValue(value);
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.5 });
-    // Init to the real final number, not 0 — SSR/no-JS/bot/pre-scroll HTML must always
-    // show the actual value. The count-up below is a cosmetic replay for JS users who
-    // scroll it into view; it is never the only place the real number exists.
-    const [display, setDisplay] = useState(number);
+    const [display, setDisplay] = useState(0);
 
     useEffect(() => {
         if (!isInView) return;
@@ -52,7 +49,7 @@ function AnimatedStat({ value }) {
     }, [isInView, number]);
 
     return (
-        <p ref={ref} className="text-[#0061AF] text-[28px] font-medium leading-normal">
+        <p ref={ref} className="font-urbane text-[#2d8ec5] text-[28px] font-medium leading-normal">
             {prefix}
             {display.toFixed(decimals)}
             {suffix}
@@ -62,7 +59,10 @@ function AnimatedStat({ value }) {
 
 export default function ProofInNumbers() {
     return (
-        <section className="w-full bg-[#F5F6F6] px-8 py-10 sm:p-[64px]">
+        // Bottom hairline matches the Figma frame's border-b (top edge is already
+        // provided by TechnologyPartner's trailing rule right above this section —
+        // adding a top border here too would double that line).
+        <section className="w-full bg-white border-b border-[#8794a3] px-6 py-10 sm:px-[64px] sm:py-[64px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -70,25 +70,34 @@ export default function ProofInNumbers() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-10 sm:gap-16 "
             >
-
+                <h2 className="text-[#10161d] text-[28px] font-medium text-center">
+                    Numbers Worth Having a <span className="text-[#0061AF]">Conversation</span> About
+                </h2>
 
                 {/* Single row, never wraps to a second level — matches Figma. A 2x2 grid
-                    only on true mobile, where a one-row layout wouldn't fit at all. */}
-                <div className="grid w-full grid-cols-2 gap-x-6 gap-y-8 sm:flex sm:flex-row sm:flex-nowrap sm:items-stretch sm:justify-between sm:divide-x sm:divide-[#d3dae2]">
-                    {STATS.map((stat) => (
-                        <div
-                            key={stat.label}
-                            className="flex min-w-0 flex-1 flex-col gap-2 items-center sm:px-10 first:sm:pl-0 last:sm:pr-0"
-                        >
-                            <AnimatedStat value={stat.value} />
-                            {/* The single-line label is a desktop rule only: on mobile the
-                                two columns are ~150px wide and "SAP Engagements Delivered"
-                                on one line is ~230px, so nowrap there pushed the grid wider
-                                than the viewport and gave the whole page a horizontal
-                                scroll. Wraps below sm, stays on one line from sm up. */}
-                            <p className="text-[#55595E] text-base sm:text-lg font-light text-center sm:whitespace-nowrap">
-                                {stat.label}
-                            </p>
+                    only on true mobile, where a one-row layout wouldn't fit at all.
+                    Desktop: fixed 40px gap, group centered (not stretched full-width) —
+                    matches Figma's "gap-[40px] items-center justify-center" row, with a
+                    hairline divider (border/strong, self-stretch to row height) between
+                    items instead of per-item side padding + divide-x. */}
+                <div className="grid w-full grid-cols-2 gap-x-6 gap-y-8 sm:flex sm:flex-row sm:flex-nowrap sm:items-center sm:justify-center sm:gap-10">
+                    {STATS.map((stat, index) => (
+                        <div key={stat.label} className="contents">
+                            {index > 0 && (
+                                <div className="hidden w-px self-stretch bg-[#8794a3] sm:block" aria-hidden="true" />
+                            )}
+                            <div className="flex flex-col gap-2 items-start">
+                                <AnimatedStat value={stat.value} />
+                                {/* whitespace-nowrap only applies sm and up, where the row is a
+                                    single line with room to spare — mobile uses a narrow 2-col
+                                    grid instead (see the container comment above), and forcing
+                                    a label like "SAP Engagements Delivered" onto one line there
+                                    overflowed its cell and dragged the whole page's scrollable
+                                    width wider, causing a small horizontal pan on mobile. */}
+                                <p className="text-[#4a5568] text-lg font-light sm:whitespace-nowrap">
+                                    {stat.label}
+                                </p>
+                            </div>
                         </div>
                     ))}
                 </div>

@@ -24,7 +24,7 @@ const PARTNERS = [
 
 export default function OurProudPartners() {
     return (
-        <section className="w-full bg-white pt-10 pb-12 sm:pt-16 sm:pb-16 px-8 sm:px-[64px]">
+        <section className="w-full bg-[#f3f6f9] pt-10 pb-12 sm:pt-16 sm:pb-16 px-8 sm:px-[64px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +32,11 @@ export default function OurProudPartners() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-8 w-full"
             >
-                <p className="text-[#55595E] text-base sm:text-lg font-light text-center max-w-[818px]">Our Proud Partners</p>
+                {/* Same size, weight and accent as the FAQ heading below ("Actually Ask"). */}
+                <h2 className="text-xl sm:text-[28px] font-medium text-center max-w-[818px]">
+                    <span className="text-[#2E3033]">Our Proud </span>
+                    <span className="text-[#0061AF]">Partners</span>
+                </h2>
 
                 <div className="flex flex-wrap items-center justify-center gap-x-12 sm:gap-x-16 gap-y-6 w-full max-w-[1152px]">
                     {PARTNERS.map((partner) => (

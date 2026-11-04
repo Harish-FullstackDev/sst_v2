@@ -1,23 +1,26 @@
 "use client";
 
-// Standalone preview page, not linked from the Navbar or Footer per request —
-// reachable only by navigating directly to /ascendus.
+// Home page. Navbar, hero, the Services carousel, partners, FAQ, closing CTA
+// and footer are sst_v2's own; TechnologyPartner, ProofInNumbers,
+// WhyEnterprisePartnerWithUs, BuiltForHowEnterprisesRun, HowWeWork and
+// IndustriesWeServe come from the sst_website_current home page
+// (IndustriesWeServe showing sst_v2's industry data).
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import FutureFocusedInsights from "@/components/HomePage/FutureFocusedInsights";
 import ReadyToTransform from "@/components/HomePage/ReadyToTransform";
-import ProofInNumbers from "@/components/HomePage/ProofInNumbers";
 import customBg from "@/assets/HomePage/Homepage_CTA.webp";
 
 import Hero from "@/components/HomePage/Hero";
 import HeroText from "@/components/HomePage/HeroText";
-import AboutPartner from "@/components/HomePage/AboutPartner";
+import TechnologyPartner from "@/components/HomePage/TechnologyPartner";
+import ProofInNumbers from "@/components/HomePage/ProofInNumbers";
 import Services from "@/components/HomePage/Services";
-import WhyUs from "@/components/HomePage/WhyUs";
-import WhatWeDo from "@/components/HomePage/WhatWeDo";
-import Hiring from "@/components/HomePage/Hiring";
-import Industries from "@/components/HomePage/Industries";
+import WhyEnterprisePartnerWithUs from "@/components/HomePage/WhyEnterprisePartnerWithUs";
+import BuiltForHowEnterprisesRun from "@/components/HomePage/BuiltForHowEnterprisesRun";
 import HowWeWork from "@/components/HomePage/HowWeWork";
+import IndustriesWeServe from "@/components/HomePage/IndustriesWeServe";
+import OurProudPartners from "@/components/HomePage/OurProudPartners";
+import EnterpriseBuyerFAQ from "@/components/HomePage/EnterpriseBuyerFAQ";
 
 const page = () => {
     return (
@@ -35,22 +38,21 @@ const page = () => {
             </div>
 
             <div className="relative z-10 -mt-[460px] sm:-mt-[100vh] bg-white">
-                <AboutPartner />
+                <TechnologyPartner />
+                <ProofInNumbers />
                 <Services />
-                <WhyUs />
-                <WhatWeDo />
+                <WhyEnterprisePartnerWithUs />
+                <BuiltForHowEnterprisesRun />
+                <HowWeWork />
+                <IndustriesWeServe />
             </div>
 
-            <ProofInNumbers />
-            <Hiring />
-            <HowWeWork />
-            <Industries />
-            {/* <FutureFocusedInsights /> */}
+            <OurProudPartners />
+            <EnterpriseBuyerFAQ />
             <ReadyToTransform
                 title="Ready to Transform Your Business?"
                 description="Let's talk about where your technology is holding you back and what it would take to fix it for good."
                 bgImage={customBg}
-                hasOverlapAbove
             />
             <Footer />
         </div>

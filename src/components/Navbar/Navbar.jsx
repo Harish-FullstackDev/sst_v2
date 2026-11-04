@@ -5,8 +5,8 @@ import { IoMdMenu, IoMdClose } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import logo from "../../assets/Brand/Ascendus_Logo_Secondary.png";
-import logo2 from "../../assets/Brand/Ascendus_Logo_Primary.png";
+import logo from "../../assets/Navbar/SST_Updated_White.svg";
+import logo2 from "../../assets/Navbar/SST_Logo_Dark.svg";
 import logo4 from "../../assets/Brand/Ascendus_Wordmark_OnDark.svg";
 import logo5 from "../../assets/Brand/Ascendus_Wordmark_OnLight.svg";
 import { isValidRoute } from "../Constants/Routes/routes";
@@ -251,8 +251,28 @@ const Navbar = () => {
                 </Link>
               </div> */}
 
-              {/* Nav links start at the row's left edge, 64px in. */}
-              <div className="absolute left-0 pl-[64px]">
+              {/* Logo — row's left edge, 64px in. */}
+              <div className="flex items-center pl-[64px]">
+                <Link
+                  href="/"
+                  onClick={closeMenu}
+                  className="group flex items-center overflow-hidden"
+                >
+                  <div className="relative z-10 flex-shrink-0">
+                    <Image
+                      src={isNavbarLight ? logo2 : logo}
+                      alt="Support Studio Technologies Logo"
+                      width={180}
+                      height={40}
+                      className="h-8 sm:h-10 w-auto object-contain transition-all duration-300 ease-out"
+                    />
+                  </div>
+                </Link>
+              </div>
+
+              {/* Nav links — pinned to the row's right edge, ending 64px in. Relative so
+                  the What-we-do panel can anchor to this block's right edge. */}
+              <div className="relative ml-auto pr-[64px]">
                 <ul className="flex items-center gap-3">
                   <Link
                     href="/"
@@ -262,7 +282,7 @@ const Navbar = () => {
                     Home
                   </Link>
 
-                  <li className="relative group">
+                  <li className="group">
                     <button
                       type="button"
                       className={`${navLinkClass} after:content-none flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
@@ -285,9 +305,10 @@ const Navbar = () => {
                       </svg>
                     </button>
 
-                    {/* Dropdown — anchored to the trigger's left edge (not centered on
-                        it) since the nav now starts near the viewport's left edge; a
-                        centered 990px-wide panel would run off-screen to the left. */}
+                    {/* Dropdown — anchored to the nav block's right edge (the li is not
+                        positioned), so the panel's right edge lines up with the end of
+                        Careers. The menu sits at the right of the viewport, so a 990px
+                        panel opening from the trigger would run off-screen to the right. */}
                     {/* The padding is the hover bridge between the trigger and the
                         panel, so the cursor can cross the gap without dropping the
                         group-hover. It is sized to land the panel flush against the
@@ -300,7 +321,7 @@ const Navbar = () => {
                         invisible opacity-0 translate-y-3
                         group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
                         transition-all duration-300
-                        absolute left-0 top-full pt-[24px] z-50
+                        absolute right-[64px] top-full pt-[24px] z-50
                       "
                     >
                       {/* <div
@@ -450,32 +471,6 @@ const Navbar = () => {
                 </ul>
               </div>
 
-              {/* Logo — pinned to the right edge; ml-auto keeps it there regardless of
-                  the row's justify-between (the center menu is absolutely positioned,
-                  so this is the only real flex child otherwise free to drift). */}
-              <div className="hidden lg:flex items-center gap-3 ml-auto pr-[64px]">
-                {/* <LanguageSelector isNavbarLight={isNavbarLight} /> */}
-                {/* <ContactUsButton /> */}
-                {/* <BookAcallButton
-                  isNavbarLight={isNavbarLight}
-                  setShowCalendly={setShowCalendly} /> */}
-                <Link
-                  href="/"
-                  onClick={closeMenu}
-                  className="group flex items-center overflow-hidden"
-                >
-                  <div className="relative z-10 flex-shrink-0">
-                    <Image
-                      src={isNavbarLight ? logo2 : logo}
-                      alt="Ascendus Logo"
-                      width={160}
-                      height={40}
-                      className="h-8 sm:h-10 w-auto object-contain transition-all duration-300 ease-out"
-                    />
-                  </div>
-                </Link>
-
-              </div>
             </div>
           </div>
 
@@ -499,9 +494,9 @@ const Navbar = () => {
             <Link href="/" onClick={closeMenu} className="flex items-center p-2">
               <Image
                 src={isNavbarLight ? logo2 : logo}
-                alt="Ascendus Logo"
+                alt="Support Studio Technologies Logo"
                 className="h-8 sm:h-10 w-auto"
-                width={160}
+                width={180}
                 height={40}
               />
             </Link>
@@ -519,9 +514,9 @@ const Navbar = () => {
           <Link href="/" onClick={closeMenu}>
             <Image
               src={logo2}
-              alt="Ascendus Logo"
+              alt="Support Studio Technologies Logo"
               className="h-8 sm:h-10 w-auto"
-              width={160}
+              width={180}
               height={40}
             />
           </Link>

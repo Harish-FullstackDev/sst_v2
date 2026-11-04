@@ -49,7 +49,7 @@ const FULL_TEXT = WORDS.map((w) => w.text).join(" ");
 const REVEAL_START = 0.05;
 const REVEAL_END = 0.95;
 const DIM_COLOR = [199, 204, 209]; // #c7ccd1
-const FINAL_COLOR = [74, 85, 104]; // #55595E
+const FINAL_COLOR = [74, 85, 104]; // #4a5568
 const HIGHLIGHT_COLOR = [45, 142, 197]; // #2d8ec5
 
 function mixColor(a, b, t) {
@@ -119,14 +119,14 @@ export default function TechnologyPartner() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
-                            className="text-[#2E3033] text-xl sm:text-[28px] font-medium leading-[1.4]"
+                            className="text-[#10161D] text-[28px] font-medium leading-[1.4]"
                         >
                             A Technology Partner Built for Enterprise Complexity
                         </motion.h2>
 
                         <p
                             aria-label={FULL_TEXT}
-                            className="max-w-[1300px] text-xl sm:text-[28px] leading-[1.6] tracking-[0.28px]"
+                            className="capitalize max-w-[1300px] text-xl sm:text-[28px] leading-[1.6] tracking-[0.28px]"
                         >
                             <span aria-hidden="true">
                                 {WORDS.map((word, index) => (
@@ -147,18 +147,20 @@ export default function TechnologyPartner() {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                         className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 sm:gap-10 max-w-[1280px]"
                     >
-                        <h3 className="text-[#2E3033] text-xl sm:text-[28px] font-medium leading-[1.4] shrink-0">
-                            Built for Enterprise Execution
+                        {/* Same size, weight and accent as the other home headings. */}
+                        <h3 className="font-houschka-pro text-xl sm:text-[28px] font-medium leading-[1.4] shrink-0">
+                            <span className="text-[#2E3033]">Built for </span>
+                            <span className="text-[#0061AF]">Enterprise Execution</span>
                         </h3>
 
                         <div className="flex flex-col gap-6 w-full sm:max-w-[403px]">
-                            <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.6] tracking-[0.18px]">
+                            <p className="capitalize text-[#4a5568] text-lg font-light leading-[1.6] tracking-[0.18px]">
                                 We bring SAP, cloud, data, AI, and digital solutions together to help businesses
                                 simplify operations, stay compliant, and scale with confidence.
                             </p>
                             <Link
                                 href="/who-we-are"
-                                className="self-start rounded-[54px] border border-[#0a3a52] px-8 py-3 text-lg font-light text-[#0a3a52] text-center transition-colors hover:bg-[#0a3a52] hover:text-white"
+                                className="self-start border border-[#0a3a52] px-8 py-3 text-lg font-light text-[#0a3a52] text-center transition-colors hover:bg-[#0a3a52] hover:text-white"
                             >
                                 See Who We Are
                             </Link>
@@ -166,8 +168,12 @@ export default function TechnologyPartner() {
                     </motion.div>
 
                     {/* Fixed 64px (gap-10/16, same rhythm as above) below "Built for
-                        Enterprise Execution" — never anything but that distance. */}
-                    <div className="h-px w-full shrink-0 bg-[#8794a3]" />
+                        Enterprise Execution" — never anything but that distance.
+                        Negative margins matching this wrapper's own px-6/sm:px-[64px]
+                        break the rule out of that padding so it spans the full section
+                        width (edge to edge of the screen) instead of stopping at the
+                        64px inset like the text above it. */}
+                    <div className="-mx-6 sm:-mx-[64px] h-px shrink-0 bg-[#8794a3]" />
                 </div>
             </div>
         </section>

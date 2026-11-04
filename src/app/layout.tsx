@@ -17,8 +17,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ascendus.sa'),
   title: {
-    default: "Ascendus | Enterprise SAP & IT Consulting GCC",
-    template: "%s | Ascendus"
+    default: "Support Studio Technologies | Enterprise SAP & IT Consulting GCC",
+    template: "%s | Support Studio Technologies"
   },
   description: "Ascendus provides premium SAP consulting, IT managed services, and digital transformation solutions for enterprises in the UAE, Saudi Arabia, and the wider GCC region.",
   authors: [{ name: "Ascendus", url: "https://www.ascendus.sa" }],

@@ -157,8 +157,12 @@ export default function Services() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-col gap-2 max-w-[808px]"
                     >
-                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold leading-[1.4] tracking-[0.28px]">
-                            Everything an Enterprise Needs to Run on Modern Technology
+                        {/* Same size, weight and accent as the other home headings
+                            (Our Proud Partners, Questions Enterprise Buyers Actually Ask). */}
+                        <h2 className="text-xl sm:text-[28px] font-medium leading-[1.4]">
+                            <span className="text-[#2E3033]">Everything an </span>
+                            <span className="text-[#0061AF]">Enterprise Needs</span>
+                            <span className="text-[#2E3033]"> to Run on Modern Technology</span>
                         </h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5] max-w-[600px]">
                             A complete technology foundation that connects strategy, systems, security, data, and
