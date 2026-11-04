@@ -10,6 +10,7 @@ import {
   SkeletonFooter,
 } from "@/components/skeletons/SkeletonPrimitives";
 
+
 export default function AscendusLoading() {
   return (
     <div className="relative w-full bg-white overflow-hidden min-h-screen">
