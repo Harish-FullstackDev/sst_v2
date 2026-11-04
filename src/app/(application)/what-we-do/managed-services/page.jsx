@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/what-we-do/managed-services/" },
   description: "Managed operations covering incident and problem management, release support, service reporting and systematic root-cause elimination.",
   openGraph: {
-    title: "Application Managed Services | Ascendus",
+    title: "Application Managed Services | Support Studio Technologies",
     description: "Managed operations covering incident and problem management, release support, service reporting and systematic root-cause elimination.",
     url: "/what-we-do/managed-services/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Application Managed Services",
 };

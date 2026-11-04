@@ -8,7 +8,7 @@ export const securityPolicy = {
   Summary: {
     title: "Security Policy",
     paragraphs: [
-      "Ascendus is committed to protecting the confidentiality, integrity, and availability of the information entrusted to us. As a provider of SAP consulting and implementation, ERP and CRM modernization, cloud services, managed services, and custom application development, we recognize that information security is fundamental to our business and the trust our clients place in us.",
+      "Support Studio Technologies (SST) is committed to protecting the confidentiality, integrity, and availability of the information entrusted to us. As a provider of SAP consulting and implementation, ERP and CRM modernization, cloud services, managed services, and custom application development, we recognize that information security is fundamental to our business and the trust our clients place in us.",
     ],
   },
   title: "Our Approach to Security",
@@ -16,7 +16,7 @@ export const securityPolicy = {
     { text: "Security Vision", heading: true },
     "To maintain a secure, resilient, and reliable environment that safeguards information assets and supports our clients in addressing evolving cybersecurity, operational, and business risks.",
     { text: "Our Approach", heading: true },
-    "Ascendus maintains a comprehensive Information Security Program to protect the information and systems we own, manage, or access as part of our business operations and client engagements. Our approach includes:",
+    "SST maintains a comprehensive Information Security Program to protect the information and systems we own, manage, or access as part of our business operations and client engagements. Our approach includes:",
     {
       bullets: [
         "Physical, technical, and organizational security controls.",
@@ -32,6 +32,6 @@ export const securityPolicy = {
     },
     { text: "Governance", heading: true },
     "The Information Security Program is supported by internal policies, standards, and procedures and is regularly reviewed to ensure its effectiveness and alignment with evolving business, technology, and regulatory requirements.",
-    "This Policy applies to all employees, contractors, business partners, and authorized third parties with access to Ascendus' information assets, systems, or client environments. All individuals are expected to comply with this Policy, and any violation may result in disciplinary or contractual action, as applicable.",
+    "This Policy applies to all employees, contractors, business partners, and authorized third parties with access to SST's information assets, systems, or client environments. All individuals are expected to comply with this Policy, and any violation may result in disciplinary or contractual action, as applicable.",
   ],
 };

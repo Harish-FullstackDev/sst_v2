@@ -312,7 +312,7 @@ export default function GlobalPresenceMap() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Ascendus (Ascendus) combines local expertise with global delivery capabilities.<br />
+            Support Studio Technologies (SST) combines local expertise with global delivery capabilities.<br />
             With our headquarters in India and a strong footprint across the Middle East, we bring world-class enterprise solutions solutions closer to our clients.
           </motion.p>
         </motion.div>
@@ -326,7 +326,7 @@ export default function GlobalPresenceMap() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/worldmap.svg"
-                alt="World Map – Ascendus Office Locations"
+                alt="World Map – SST Office Locations"
                 className="block w-full h-auto rounded-xl pointer-events-none select-none opacity-90"
                 draggable={false}
               />

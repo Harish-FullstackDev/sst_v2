@@ -6,6 +6,7 @@ import CookieConsent from "../components/Cookies/CookieConsent";
 import ContactUsButton from "../components/Contactusbutton/contact_us_button";
 import { generateOrganizationSchema, generateWebsiteSchema } from "@/lib/seo";
 import { Metadata, Viewport } from "next";
+import { SITE_URL } from "@/lib/siteUrl";
 
 export const viewport: Viewport = {
   themeColor: "#2e3033",
@@ -15,15 +16,15 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.ascendus.sa'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Support Studio Technologies | Enterprise SAP & IT Consulting GCC",
     template: "%s | Support Studio Technologies"
   },
-  description: "Ascendus provides premium SAP consulting, IT managed services, and digital transformation solutions for enterprises in the UAE, Saudi Arabia, and the wider GCC region.",
-  authors: [{ name: "Ascendus", url: "https://www.ascendus.sa" }],
-  creator: "Ascendus Engineering",
-  publisher: "Ascendus",
+  description: "Support Studio Technologies provides premium SAP consulting, IT managed services, and digital transformation solutions for enterprises in the UAE, Saudi Arabia, and the wider GCC region.",
+  authors: [{ name: "Support Studio Technologies", url: SITE_URL }],
+  creator: "SST Engineering",
+  publisher: "Support Studio Technologies",
   formatDetection: {
     email: false,
     address: false,
@@ -41,15 +42,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    siteName: "Ascendus",
-    title: "Ascendus | Enterprise Technology, SAP and Managed Services",
-    description: "Ascendus designs, builds and runs enterprise technology — SAP, cloud, data, AI, engineering, security and managed operations — under one accountable team.",
+    siteName: "Support Studio Technologies",
+    title: "Support Studio Technologies | Enterprise Technology, SAP and Managed Services",
+    description: "Support Studio Technologies designs, builds and runs enterprise technology — SAP, cloud, data, AI, engineering, security and managed operations — under one accountable team.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Ascendus Enterprise Solutions",
+        alt: "Support Studio Technologies Enterprise Solutions",
       },
     ],
   },

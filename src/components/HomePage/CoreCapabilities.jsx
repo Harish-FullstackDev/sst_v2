@@ -22,7 +22,7 @@ import innovationImg from "@/assets/HomePage/Capabilities/innovation.webp";
 
 // Same 12 entries, same order, as the "What We Do" navbar dropdown
 // (Navbar.jsx) — that list is the source of truth for hrefs here.
-// Exported so other Ascendus sections (e.g. Services.jsx) can reuse the same
+// Exported so other SST sections (e.g. Services.jsx) can reuse the same
 // content/card count instead of maintaining a second copy.
 export const CAPABILITIES = [
     {

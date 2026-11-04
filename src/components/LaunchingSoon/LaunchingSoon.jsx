@@ -171,8 +171,8 @@ export default function LaunchingSoon() {
                 />
 
                 <header className="relative z-10 flex items-center justify-between px-6 py-6 md:px-12">
-                    <Link href="/" aria-label="Ascendus home">
-                        <Image src={logo} alt="Ascendus Logo" className="h-8 w-auto md:h-10.5" priority />
+                    <Link href="/" aria-label="SST home">
+                        <Image src={logo} alt="SST Logo" className="h-8 w-auto md:h-10.5" priority />
                     </Link>
                     <Link
                         href="/"

@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next';
 import { supabase } from '@/lib/supabaseClient';
 import { industryReportsData } from '@/data/industryReportsData';
+import { SITE_URL } from '@/lib/siteUrl';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.ascendus.sa';
+  const baseUrl = SITE_URL;
   const now = new Date().toISOString();
 
   // 1. Core static routes

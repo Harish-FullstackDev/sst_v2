@@ -39,7 +39,7 @@ const Map = () => {
         allowFullScreen="" 
         loading="lazy" 
         referrerPolicy="no-referrer-when-downgrade"
-        title="Ascendus Location">
+        title="SST Location">
       </iframe>
     </div>
   </div>

@@ -8,7 +8,7 @@ const resources = [
   },
   { name: "Security and Trust Blogs", type: "Blog" },
   { name: "Privacy Data Sheet", type: "Data Sheet" },
-  { name: "How Ascendus Scales Our Secure ERP", type: "Case Study" },
+  { name: "How SST Scales Our Secure ERP", type: "Case Study" },
   { name: "Cloud Migration Checklist", type: "Guide" },
 ];
 
@@ -72,7 +72,7 @@ const QuickResources = () => {
           variants={textVariants}
         >
           We believe transparency means giving our clients easy access to the
-          information they need. Explore our resources to understand how Ascendus
+          information they need. Explore our resources to understand how SST
           protects your enterprise.
         </motion.p>
 

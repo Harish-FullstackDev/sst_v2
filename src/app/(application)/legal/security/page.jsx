@@ -4,12 +4,12 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/legal/security/" },
-  description: "The technical and organizational controls Ascendus applies to protect data confidentiality, integrity and availability across its systems.",
+  description: "The technical and organizational controls Support Studio Technologies applies to protect data confidentiality, integrity and availability across its systems.",
   openGraph: {
-    title: "Security and Privacy Policy | Ascendus",
-    description: "The technical and organizational controls Ascendus applies to protect data confidentiality, integrity and availability across its systems.",
+    title: "Security and Privacy Policy | Support Studio Technologies",
+    description: "The technical and organizational controls Support Studio Technologies applies to protect data confidentiality, integrity and availability across its systems.",
     url: "/legal/security/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Security and Privacy Policy",
 };

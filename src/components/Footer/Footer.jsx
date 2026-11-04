@@ -117,7 +117,7 @@ const Footer = () => {
                   href="/ascenduspartner"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  Ascendus Partnership
+                  SST Partnership
                 </Link>
               </li>
               <li>
@@ -588,7 +588,7 @@ const Footer = () => {
                 Get In Touch column into the footer padding, which only leaves room from
                 ~1400px up; below that it breaks between the two halves, never mid-phrase. */}
             <p className="text-sm text-white min-h-[50px] pt-4 min-[1400px]:whitespace-nowrap">
-              <span className="whitespace-nowrap">© 2026 Ascendus.</span>{" "}
+              <span className="whitespace-nowrap">© 2026 Support Studio Technologies.</span>{" "}
               <span className="whitespace-nowrap">All Rights Reserved.</span>
             </p>
           </div>
@@ -707,7 +707,7 @@ const Footer = () => {
               </p>
             </div>
             <p className="text-sm text-white min-h-[50px] pt-4">
-              © 2026 Ascendus. All Rights Reserved.
+              © 2026 Support Studio Technologies. All Rights Reserved.
             </p>
           </div> */}
         </div>

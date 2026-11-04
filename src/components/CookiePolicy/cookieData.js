@@ -12,7 +12,7 @@ export const sectionContent = {
   Introduction: {
     title: "Cookie Policy",
     paragraphs: [
-      `This Cookie Policy explains how Ascendus ("Ascendus") uses cookies and the purposes for which they are used, and the choices available to you.`,
+      `This Cookie Policy explains how Support Studio Technologies ("SST") uses cookies and the purposes for which they are used, and the choices available to you.`,
       "By continuing to use our Website, you consent to the use of cookies as described in this Policy, unless you choose to disable them through your browser settings or cookie preferences.",
     ],
   },
@@ -21,19 +21,19 @@ export const sectionContent = {
     title: "What Are Cookies?",
     paragraphs: [
       "Cookies are small text files stored on your device when you visit a website. They help websites function efficiently, improve user experience, remember preferences, and provide information about how the Website is used.",
-      "Cookies set by Ascendus are referred to as first-party cookies, while cookies set by external service providers are referred to as third-party cookies. Third-party cookies may support features such as embedded maps, scheduling tools, and video content.",
+      "Cookies set by SST are referred to as first-party cookies, while cookies set by external service providers are referred to as third-party cookies. Third-party cookies may support features such as embedded maps, scheduling tools, and video content.",
     ],
   },
 
   "Cookies We Use": {
     title: "Cookies We Use",
     paragraphs: [
-      "Ascendus uses only the cookies necessary to support the functionality of the Website and its integrated services.",
+      "SST uses only the cookies necessary to support the functionality of the Website and its integrated services.",
     ],
     table: [
       {
         name: "cookie_consent",
-        provider: "Ascendus",
+        provider: "SST",
         purpose: "Stores your cookie preferences to prevent the consent banner from reappearing.",
         duration: "365 days",
       },
@@ -61,7 +61,7 @@ export const sectionContent = {
   "Third-Party Cookies": {
     title: "Third-Party Cookies",
     paragraphs: [
-      "Some features of our Website rely on third-party services such as Google Maps, Calendly, and YouTube. These providers may set cookies in accordance with their own privacy and cookie policies. Ascendus does not control the use of these cookies.",
+      "Some features of our Website rely on third-party services such as Google Maps, Calendly, and YouTube. These providers may set cookies in accordance with their own privacy and cookie policies. SST does not control the use of these cookies.",
     ],
   },
 
@@ -76,7 +76,7 @@ export const sectionContent = {
   "Changes To This Policy": {
     title: "Changes to This Cookie Policy",
     paragraphs: [
-      "Ascendus may update this Cookie Policy periodically to reflect changes in technology, legal requirements, or our use of cookies. The latest version will always be available on our Website.",
+      "SST may update this Cookie Policy periodically to reflect changes in technology, legal requirements, or our use of cookies. The latest version will always be available on our Website.",
     ],
   },
 
@@ -91,7 +91,7 @@ export const sectionContent = {
       {
         label: "Registered Address",
         value:
-          "Ascendus, 7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist., Riyadh 12624, Kingdom of Saudi Arabia.",
+          "SST, 7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist., Riyadh 12624, Kingdom of Saudi Arabia.",
         href: "https://maps.app.goo.gl/dwn46nzVzmjKjuP86",
       },
     ],

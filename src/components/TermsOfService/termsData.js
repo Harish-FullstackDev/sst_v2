@@ -17,28 +17,28 @@ export const sectionContent = {
   Summary: {
     title: "Terms of Use",
     paragraphs: [
-      `These Terms of Use govern your access to and use of the Ascendus website, client portals, applications, and online services (collectively, the "Services"). By accessing or using the Services, you agree to comply with these Terms. If you do not agree, you should discontinue use of the Services.`,
+      `These Terms of Use govern your access to and use of the Support Studio Technologies (SST) website, client portals, applications, and online services (collectively, the "Services"). By accessing or using the Services, you agree to comply with these Terms. If you do not agree, you should discontinue use of the Services.`,
     ],
   },
  
   "About the Services": {
     title: "About the Services",
     paragraphs: [
-      "Ascendus provides the Services to support its business operations and the delivery of SAP consulting, ERP and CRM solutions, cloud services, managed services, and custom application development. Where a specific service or client engagement is subject to separate contractual terms, those terms will prevail in the event of any conflict.",
+      "SST provides the Services to support its business operations and the delivery of SAP consulting, ERP and CRM solutions, cloud services, managed services, and custom application development. Where a specific service or client engagement is subject to separate contractual terms, those terms will prevail in the event of any conflict.",
     ],
   },
 
   "Intellectual Property": {
     title: "Intellectual Property",
     paragraphs: [
-      "Unless otherwise stated, all content, methodologies, documentation, software, trademarks, and other materials available through the Services are the intellectual property of Ascendus or its licensors and are protected by applicable intellectual property laws. Ownership of client-specific deliverables is governed by the applicable client agreement.",
+      "Unless otherwise stated, all content, methodologies, documentation, software, trademarks, and other materials available through the Services are the intellectual property of SST or its licensors and are protected by applicable intellectual property laws. Ownership of client-specific deliverables is governed by the applicable client agreement.",
     ],
   },
 
   "Limited License": {
     title: "Limited License",
     paragraphs: [
-      "Ascendus grants you a limited, non-exclusive, non-transferable license to access and use the Services for their intended purpose. You may not copy, modify, distribute, reproduce, or create derivative works from any content or materials without prior written permission.",
+      "SST grants you a limited, non-exclusive, non-transferable license to access and use the Services for their intended purpose. You may not copy, modify, distribute, reproduce, or create derivative works from any content or materials without prior written permission.",
     ],
   },
 
@@ -58,7 +58,7 @@ export const sectionContent = {
   "Third-Party Services": {
     title: "Third-Party Services",
     paragraphs: [
-      "The Services may contain links to or integrate with third-party websites, platforms, or services. Ascendus is not responsible for the content, security, or privacy practices of third-party services, which remain subject to their respective terms and policies.",
+      "The Services may contain links to or integrate with third-party websites, platforms, or services. SST is not responsible for the content, security, or privacy practices of third-party services, which remain subject to their respective terms and policies.",
     ],
   },
 
@@ -72,21 +72,21 @@ export const sectionContent = {
   Disclaimer: {
     title: "Disclaimer",
     paragraphs: [
-      `The Services are provided on an "as is" and "as available" basis, except where otherwise agreed in writing. Ascendus makes no warranties, express or implied, regarding the availability, accuracy, or fitness of the Services for a particular purpose.`,
+      `The Services are provided on an "as is" and "as available" basis, except where otherwise agreed in writing. SST makes no warranties, express or implied, regarding the availability, accuracy, or fitness of the Services for a particular purpose.`,
     ],
   },
 
   "Limitation Of Liability": {
     title: "Limitation of Liability",
     paragraphs: [
-      "To the maximum extent permitted by applicable law, Ascendus shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of the Services. Liability relating to specific client engagements is governed by the applicable contractual agreement.",
+      "To the maximum extent permitted by applicable law, SST shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of the Services. Liability relating to specific client engagements is governed by the applicable contractual agreement.",
     ],
   },
 
   Changes: {
     title: "Changes to These Terms",
     paragraphs: [
-      "Ascendus may update these Terms of Use from time to time. Continued use of the Services following the publication of revised Terms constitutes acceptance of those changes.",
+      "SST may update these Terms of Use from time to time. Continued use of the Services following the publication of revised Terms constitutes acceptance of those changes.",
     ],
   },
 
@@ -102,7 +102,7 @@ export const sectionContent = {
     paragraphs: [
       {
         parts: [
-          "For questions regarding these Terms of Use, please contact Ascendus using the contact details provided on our website or by emailing ",
+          "For questions regarding these Terms of Use, please contact SST using the contact details provided on our website or by emailing ",
           { text: "legal@ascendus.sa", href: "mailto:legal@ascendus.sa" },
           ".",
         ],

@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/what-we-do/business-advisory/" },
   description: "Target-state architecture, roadmap and business-case work produced in a form delivery teams can actually execute.",
   openGraph: {
-    title: "Business & Technology Advisory Services | Ascendus",
+    title: "Business & Technology Advisory Services | Support Studio Technologies",
     description: "Target-state architecture, roadmap and business-case work produced in a form delivery teams can actually execute.",
     url: "/what-we-do/business-advisory/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Business & Technology Advisory Services",
 };

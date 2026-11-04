@@ -26,11 +26,11 @@ export default function InnovationEdge() {
                 className="relative z-10 h-full flex flex-col justify-center gap-4 sm:gap-6 px-8 sm:px-[64px] py-10 sm:py-14 "
             >
                 <h2 className="text-white text-xl sm:text-[32px] font-semibold">
-                    Ascendus Innovation Edge
+                    SST Innovation Edge
                 </h2>
 
                 <p className="text-white text-base sm:text-lg sm:text-lg font-light sm:pb-6">
-                    Why enterprises choose Ascendus for emerging tech deployment.
+                    Why enterprises choose SST for emerging tech deployment.
                 </p>
 
                 {/* pl-5 was sm-only, so on mobile the list had no padding and list-disc

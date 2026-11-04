@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/what-we-do/experience-design/" },
   description: "Interface and service design for enterprise systems, including design systems that keep complex applications consistent as they grow.",
   openGraph: {
-    title: "Enterprise Experience Design | Ascendus",
+    title: "Enterprise Experience Design | Support Studio Technologies",
     description: "Interface and service design for enterprise systems, including design systems that keep complex applications consistent as they grow.",
     url: "/what-we-do/experience-design/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Enterprise Experience Design",
 };

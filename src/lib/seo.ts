@@ -4,16 +4,17 @@
  */
 
 import { InquiryOrigin } from "@/types/database.types";
+import { SITE_URL } from "@/lib/siteUrl";
 
 export const generateOrganizationSchema = () => {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Ascendus",
-    "alternateName": "Ascendus Technologies",
-    "url": "https://www.ascendus.sa",
-    "logo": "https://www.ascendus.sa/Brand/Ascendus_Logo_Primary.svg",
-    "description": "Ascendus is a premium enterprise IT and SAP consulting firm providing digital transformation, cloud managed services, and S/4HANA migration across the UAE, Saudi Arabia, and the GCC.",
+    "name": "Support Studio Technologies",
+    "alternateName": "SST",
+    "url": SITE_URL,
+    "logo": `${SITE_URL}/Brand/Ascendus_Icon_Primary.svg`,
+    "description": "Support Studio Technologies is a premium enterprise IT and SAP consulting firm providing digital transformation, cloud managed services, and S/4HANA migration across the UAE, Saudi Arabia, and the GCC.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist.",
@@ -41,8 +42,8 @@ export const generateWebsiteSchema = () => {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Ascendus",
-    "url": "https://www.ascendus.sa"
+    "name": "Support Studio Technologies",
+    "url": SITE_URL
   };
 };
 
@@ -54,7 +55,7 @@ export const generateBreadcrumbSchema = (crumbs: { name: string; item: string }[
       "@type": "ListItem",
       "position": index + 1,
       "name": crumb.name,
-      "item": crumb.item.startsWith('http') ? crumb.item : `https://www.ascendus.sa${crumb.item}`
+      "item": crumb.item.startsWith('http') ? crumb.item : `${SITE_URL}${crumb.item}`
     }))
   };
 };
@@ -66,12 +67,12 @@ export const generateServiceSchema = (service: { name: string; description: stri
     "serviceType": service.category || "IT Consulting",
     "provider": {
       "@type": "Organization",
-      "name": "Ascendus",
-      "url": "https://www.ascendus.sa"
+      "name": "Support Studio Technologies",
+      "url": SITE_URL
     },
     "name": service.name,
     "description": service.description,
-    "url": service.url.startsWith('http') ? service.url : `https://www.ascendus.sa${service.url}`,
+    "url": service.url.startsWith('http') ? service.url : `${SITE_URL}${service.url}`,
     "areaServed": [
       { "@type": "Country", "name": "United Arab Emirates" },
       { "@type": "Country", "name": "Saudi Arabia" },
