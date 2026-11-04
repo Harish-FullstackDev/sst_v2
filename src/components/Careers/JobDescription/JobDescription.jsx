@@ -1,185 +1,223 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { Clock, Link2, Check } from "lucide-react";
-import locationIcon from "@/assets/career/icons/location.svg";
-import modeOfWorkIcon from "@/assets/career/icons/mode of work.svg";
-import typeOfWorkIcon from "@/assets/career/icons/type of work.svg";
-import shareIcon from "@/assets/career/icons/share.svg";
-import ViewDetailsButton from "@/components/Careers/ViewDetailsButton";
+import Link from "next/link";
+import { Bookmark } from "lucide-react";
 
+import heroBg from "@/assets/career/job-details/hero-bg.png";
+import iconArrow from "@/assets/career/job-details/arrow-right-21-dark.svg";
+import { hrmsUrl } from "@/lib/jobs";
+import JobSectionAccordion from "./JobSectionAccordion";
+import SimilarJobCard from "./SimilarJobCard";
 
-function MetaItem({ icon, label }) {
-    return (
-        <span className="inline-flex items-center gap-1.5 text-sm text-[#4a5565]">
-            <Image src={icon} alt="" width={16} height={16} />
-            {label}
-        </span>
-    );
+// Job detail page body, laid out as ref/Carees.svg: careers sub-nav, a
+// full-width dark hero with the apply actions, then the job summary and
+// section accordions beside similar jobs. Hero art, accordion and job card are
+// ported from the HRMS portal (same Figma). Applying and saving happen in the
+// HRMS portal, which signs the candidate in first.
+
+const SUB_NAV = [
+    { label: "Search Jobs", href: "/careers", internal: true, current: true },
+    { label: "Saved Jobs", href: hrmsUrl("/saved-jobs") },
+    { label: "My Application", href: hrmsUrl("/my-profile") },
+];
+
+const ABOUT_SST =
+    "Support Studio Technologies (SST) designs, builds and runs enterprise technology for organisations across India and the GCC: SAP transformation, cloud and infrastructure, data and AI, digital engineering, cybersecurity and managed services, delivered by one accountable team.";
+
+const PAYMENT_NOTICE =
+    "Support Studio Technologies never asks candidates for payment at any stage of the hiring process. Apply only through this website or the SST careers portal, and report suspicious offers to info@isupportz.com.";
+
+// Same horizontal frame as the reference: 64px side margins at desktop.
+const FRAME = "mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-16";
+
+function formatDate(value) {
+    if (!value) return "";
+    return new Date(value).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 }
 
-function Badge({ children }) {
+function CareersSubNav() {
+    const linkClass = "whitespace-nowrap text-base text-[#0e2b4b] underline-offset-4 hover:underline";
     return (
-        <span className="inline-flex items-center bg-[#eceef2] px-2.5 py-1 text-xs font-medium text-[#030213]">
-            {children}
-        </span>
-    );
-}
-
-function BulletList({ items }) {
-    return (
-        <ul className="space-y-2">
-            {items.map((item) => (
-                <li key={item} className="flex gap-2 text-base leading-6 text-[#364153]">
-                    <span aria-hidden="true">•</span>
-                    <span>{item}</span>
-                </li>
-            ))}
-        </ul>
-    );
-}
-
-function IconButton({ icon, label, onClick, children }) {
-    return (
-        <button
-            type="button"
-            aria-label={label}
-            onClick={onClick}
-            className="flex h-9 w-9 items-center justify-center border border-black/10 bg-white text-[#0a0a0a] transition-colors hover:bg-slate-50"
-        >
-            {children ?? <Image src={icon} alt="" width={16} height={16} />}
-        </button>
-    );
-}
-
-export default function JobDescription({ job, otherJobs = [] }) {
-    const [copied, setCopied] = useState(false);
-
-    const handleShare = () => {
-        if (typeof window === "undefined") return;
-        if (navigator.share) {
-            navigator.share({ title: job.title, url: window.location.href }).catch(() => { });
-        } else {
-            navigator.clipboard.writeText(window.location.href);
-        }
-    };
-
-    const handleCopyLink = () => {
-        if (typeof window === "undefined") return;
-        navigator.clipboard.writeText(window.location.href);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-    };
-
-    return (
-        <div className="w-full space-y-4">
-            {/* Job Details Card */}
-            <div className="bg-white border border-black/10 p-5 sm:p-6">
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                    <div className="flex gap-4">
-                        <div className="border-l-5 border-[#2d8ec5] pl-4">
-                            <h1 className="text-base font-semibold text-[#0a0a0a]">{job.title}</h1>
-                            <p className="text-base text-[#4a5565] mt-1">{job.company}</p>
-                            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-2">
-                                <MetaItem icon={locationIcon} label={job.location} />
-                                <span className="text-[#4a5565] text-sm">•</span>
-                                <MetaItem icon={modeOfWorkIcon} label={job.modeOfWork} />
-                                <span className="text-[#4a5565] text-sm">•</span>
-                                <MetaItem icon={typeOfWorkIcon} label={job.typeOfWork} />
-                            </div>
-                            <div className="flex items-center gap-2 mt-2 text-sm text-[#6a7282]">
-                                <Clock className="w-4 h-4" />
-                                <span>{job.postedAgo}</span>
-                            </div>
-                            <div className="flex flex-wrap gap-2 mt-3">
-                                <Badge>{job.experienceLevel}</Badge>
-                                {/* <Badge>{job.typeOfWork}</Badge> */}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="flex gap-2 self-start">
-                        <IconButton icon={shareIcon} label="Share this job" onClick={handleShare} />
-                        <IconButton label="Copy link" onClick={handleCopyLink}>
-                            {copied ? <Check className="w-4 h-4" /> : <Link2 className="w-4 h-4" />}
-                        </IconButton>
-                    </div>
-                </div>
-
-                <div className="border-t border-black/10 mt-6 pt-6 pl-5 pr-9 space-y-6">
-                    <div>
-                        <h2 className="text-xl font-medium text-[#0a0a0a] mb-2">About the job</h2>
-                        <p className="text-base leading-6 text-[#364153]">{job.aboutJob}</p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-base font-medium text-[#0a0a0a] mb-2">Responsibilities</h3>
-                        <BulletList items={job.responsibilities} />
-                    </div>
-
-                    <div>
-                        <h3 className="text-base font-medium text-[#0a0a0a] mb-2">Qualifications</h3>
-                        <BulletList items={job.qualifications} />
-                    </div>
-                </div>
-            </div>
-
-            {/* Instant Apply Card */}
-            <div className="bg-white border border-black/10 p-5 sm:p-6">
-                <h3 className="text-base font-medium text-[#0a0a0a]">Apply for this role</h3>
-                <p className="text-sm text-[#4a5565] mt-1">Apply through the SST careers portal</p>
-
-                <div className="border-t border-black/10 mt-4 pt-4">
-                    <div className="bg-[#eff6ff] border border-[#bedbff] px-3.5 py-3">
-                        <p className="text-xs leading-4 text-[#1c398e]">
-                            <span className="font-bold">How it works:</span> Sign in or create an account, upload
-                            your resume and complete a few short steps. You can track your application status from
-                            your dashboard.
-                        </p>
-                    </div>
-
-                    <div className="flex flex-col gap-3 mt-4">
-                        <a
-                            href={job.applyUrl}
-                            className="w-full h-10 bg-[#030213] text-white text-sm font-medium flex items-center justify-center transition-colors hover:bg-black cursor-pointer"
-                        >
-                            Apply Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            {/* View More Jobs Card */}
-            {otherJobs.length > 0 && (
-                <div className="bg-white border border-black/10 p-5 sm:p-6">
-                    <h4 className="text-base font-medium text-[#0a0a0a] mb-3">View More Jobs</h4>
-                    <div className="space-y-4">
-                        {otherJobs.map((other) => (
-                            <div
-                                key={other.slug}
-                                className="flex items-center justify-between gap-4 border-l-4 border-[#2d8ec5] px-3 py-3"
+        <nav aria-label="Careers" className="w-full border-b border-black/10 bg-[#f5f6f6]">
+            <ul className={`${FRAME} flex gap-8 overflow-x-auto py-6`}>
+                {SUB_NAV.map((item) => (
+                    <li key={item.label}>
+                        {item.internal ? (
+                            <Link
+                                href={item.href}
+                                aria-current={item.current ? "page" : undefined}
+                                className={`${linkClass} ${item.current ? "underline" : ""}`}
                             >
-                                <div>
-                                    <p className="text-sm text-[#5c5c5c]">{other.title}</p>
-                                    <p className="text-xs font-light text-[#5c5c5c] mt-0.5">
-                                        {other.location} | {other.typeOfWork} | Experience: {other.experienceLevel}
-                                    </p>
-                                </div>
-                                <ViewDetailsButton href={`/careers/${other.slug}`} />
-                            </div>
-                        ))}
+                                {item.label}
+                            </Link>
+                        ) : (
+                            <a href={item.href} className={linkClass}>
+                                {item.label}
+                            </a>
+                        )}
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    );
+}
+
+function JobHero({ job }) {
+    const department = job.categories[0] || job.department;
+    // Admin data can repeat a value (location "Hybrid" with mode "Hybrid"), so
+    // repeats collapse into one chip.
+    const tags = [
+        ...new Set([job.typeOfWork, job.modeOfWork, job.location, department && `Dept: ${department}`].filter(Boolean)),
+    ];
+
+    return (
+        <section className="relative isolate w-full overflow-hidden bg-[#00223d]">
+            <Image src={heroBg} alt="" fill priority sizes="100vw" className="-z-10 object-cover object-right" />
+            {/* Phones show the bright right edge of the art behind the text; fade it. */}
+            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#00223d] via-[#00223d]/80 to-[#00223d]/40 sm:hidden" aria-hidden="true" />
+            <div className={`${FRAME} flex flex-col gap-8 py-8 sm:py-12`}>
+                <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-2">
+                        <h1 className="text-[28px] leading-[1.2] font-medium text-white capitalize sm:text-[32px]">
+                            {job.title}
+                        </h1>
+                        {job.jobCode && <p className="text-sm leading-[1.4] text-[#afc9e6] sm:text-base">Job ID: {job.jobCode}</p>}
                     </div>
-                    <Link
-                        href="/careers"
-                        className="mt-4 w-full h-9 border border-black/10 bg-white text-[#0a0a0a] text-sm font-medium flex items-center justify-center transition-colors hover:bg-slate-50"
-                    >
-                        View More Jobs
-                    </Link>
+                    <ul className="flex flex-wrap items-center gap-3 text-xs leading-[1.4] text-white sm:text-sm">
+                        {tags.map((tag) => (
+                            <li key={tag} className="rounded-md bg-[rgba(221,241,253,0.1)] p-[6px]">
+                                {tag}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-            )}
+
+                <div className="flex flex-wrap items-start gap-4">
+                    <a
+                        href={job.applyUrl}
+                        className="group flex h-11 w-full items-center justify-center gap-1 rounded-lg bg-[#f8f8f8] text-lg leading-[1.2] font-medium text-[#0e2b4b] drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-colors hover:bg-white sm:w-[264px]"
+                    >
+                        Apply for this Position
+                        <Image
+                            src={iconArrow}
+                            alt=""
+                            className="h-4 w-[21px] transition-transform duration-300 group-hover:translate-x-1"
+                        />
+                    </a>
+                    {/* Saving needs a candidate account, so this opens the job in the
+                        HRMS portal, which signs the candidate in and has the toggle. */}
+                    <a
+                        href={job.hrmsJobUrl}
+                        className="flex h-11 items-center gap-2 rounded-lg border border-[#8695a7] px-3 text-lg leading-[1.2] font-medium text-white transition-colors hover:border-white"
+                    >
+                        <Bookmark className="size-5" aria-hidden="true" />
+                        Save Job
+                    </a>
+                </div>
+            </div>
+        </section>
+    );
+}
+
+function DetailRow({ label, value }) {
+    if (!value) return null;
+    return (
+        <div className="flex gap-3">
+            <dt className="w-32 shrink-0 font-medium text-[#0e2b4b]">{label}</dt>
+            <dd>{value}</dd>
         </div>
     );
 }
 
+export default function JobDescription({ job, otherJobs = [] }) {
+    const experience = [job.experienceLevel, job.minExperienceYears > 0 ? `${job.minExperienceYears}+ years` : ""]
+        .filter(Boolean)
+        .join(", ");
+
+    const sections = [
+        job.responsibilities.length > 0 && {
+            title: "Roles and Responsibilities",
+            items: job.responsibilities,
+        },
+        {
+            title: "Job Description",
+            content: (
+                <dl className="flex flex-col gap-1.5">
+                    <DetailRow label="Department" value={job.department} />
+                    <DetailRow label="Experience" value={experience} />
+                    <DetailRow label="Location" value={job.location} />
+                    <DetailRow label="Mode of work" value={job.modeOfWork} />
+                    <DetailRow label="Type of work" value={job.typeOfWork} />
+                    <DetailRow label="Skills" value={job.skills.join(", ")} />
+                    <DetailRow label="Openings" value={job.vacancies > 1 ? String(job.vacancies) : ""} />
+                    <DetailRow label="Posted" value={job.postedAgo} />
+                    <DetailRow label="Apply by" value={formatDate(job.closesOn)} />
+                </dl>
+            ),
+        },
+        job.qualifications.length > 0 && {
+            title: "Qualification",
+            items: job.qualifications,
+        },
+        {
+            title: "About SST",
+            content: (
+                <p>
+                    {ABOUT_SST}{" "}
+                    <Link href="/who-we-are" className="text-[#0061af] underline-offset-2 hover:underline">
+                        Learn more about us
+                    </Link>
+                </p>
+            ),
+        },
+        {
+            title: "Important Notice",
+            // HR's optional notes for this posting first, then the standing notice.
+            items: [...job.notes, PAYMENT_NOTICE],
+        },
+    ].filter(Boolean);
+
+    return (
+        <>
+            <CareersSubNav />
+            <JobHero job={job} />
+
+            <div className={`${FRAME} grid gap-12 py-8 sm:py-10 lg:grid-cols-[minmax(0,776fr)_minmax(0,470fr)] lg:gap-4`}>
+                <div className="flex flex-col gap-6 lg:border-r-[0.5px] lg:border-[#8695a7] lg:pr-14">
+                    {job.aboutJob && (
+                        <div className="flex flex-col gap-4">
+                            <h2 className="text-lg leading-[1.2] font-medium text-[#0e2b4b]">Job Summary</h2>
+                            <p className="text-sm leading-[1.4] whitespace-pre-line text-[#415773]">{job.aboutJob}</p>
+                        </div>
+                    )}
+
+                    {sections.map((section) => (
+                        <JobSectionAccordion key={section.title} title={section.title} items={section.items}>
+                            {section.content}
+                        </JobSectionAccordion>
+                    ))}
+                </div>
+
+                {otherJobs.length > 0 && (
+                    <aside className="flex flex-col gap-6 lg:pl-4">
+                        <h2 className="text-lg leading-[1.2] font-medium text-[#0061af]">Similar jobs</h2>
+                        <ul className="flex flex-col gap-10">
+                            {otherJobs.map((other) => (
+                                <li key={other.slug}>
+                                    <SimilarJobCard job={other} />
+                                </li>
+                            ))}
+                        </ul>
+                        <Link
+                            href="/careers"
+                            className="flex h-11 items-center justify-center rounded-lg border border-[#8695a7] text-base font-medium text-[#0e2b4b] transition-colors hover:border-[#0061af] hover:text-[#0061af]"
+                        >
+                            View all open roles
+                        </Link>
+                    </aside>
+                )}
+            </div>
+        </>
+    );
+}

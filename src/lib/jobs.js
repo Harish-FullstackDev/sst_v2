@@ -16,6 +16,11 @@ export function hrmsApplyUrl(slug) {
     return `${HRMS_URL}/jobs/${encodeURIComponent(slug)}/apply`;
 }
 
+// Any other HRMS portal page, e.g. hrmsUrl("/saved-jobs").
+export function hrmsUrl(path) {
+    return `${HRMS_URL}${path}`;
+}
+
 function formatPostedAgo(dateString) {
     if (!dateString) return "";
     const posted = new Date(dateString);
@@ -52,7 +57,12 @@ function mapJob(row) {
         qualifications: row.qualifications || [],
         notes: row.notes || [],
         skills: row.skills || [],
+        vacancies: row.vacancies ?? null,
+        minExperienceYears: row.min_experience_years ?? null,
+        closesOn: row.closes_on ?? null,
         applyUrl: hrmsApplyUrl(row.slug),
+        // HRMS job page, where a signed-in candidate can save the job.
+        hrmsJobUrl: hrmsUrl(`/jobs/${encodeURIComponent(row.slug)}`),
     };
 }
 
