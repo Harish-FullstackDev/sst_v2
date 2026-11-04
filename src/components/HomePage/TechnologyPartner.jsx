@@ -142,26 +142,28 @@ export default function TechnologyPartner() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 sm:gap-10 max-w-[1280px]"
+                    className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 sm:gap-10 max-w-[1280px]"
                 >
-                    {/* Same size, weight and accent as the other home headings. */}
-                    <h3 className="font-houschka-pro text-xl sm:text-[28px] font-semibold leading-[1.4] shrink-0">
-                        <span className="text-[#2E3033]">Built for </span>
-                        <span className="text-[#0061AF]">Enterprise Execution</span>
-                    </h3>
-
-                    <div className="flex flex-col gap-6 w-full sm:max-w-[403px]">
+                    {/* Heading with its description stacked underneath; the button sits
+                        to the right, vertically centered against that whole text block. */}
+                    <div className="flex flex-col gap-2 max-w-[640px]">
+                        {/* Same size, weight and accent as the other home headings. */}
+                        <h3 className="font-houschka-pro text-xl sm:text-[28px] font-semibold leading-[1.4]">
+                            <span className="text-[#2E3033]">Built for </span>
+                            <span className="text-[#0061AF]">Enterprise Execution</span>
+                        </h3>
                         <p className="capitalize text-[#4a5568] text-lg font-light leading-[1.6] tracking-[0.18px]">
                             We bring SAP, cloud, data, AI, and digital solutions together to help businesses
                             simplify operations, stay compliant, and scale with confidence.
                         </p>
-                        <Link
-                            href="/who-we-are"
-                            className="self-start border border-[#0a3a52] px-8 py-3 text-lg font-light text-[#0a3a52] text-center transition-colors hover:bg-[#0a3a52] hover:text-white"
-                        >
-                            See Who We Are
-                        </Link>
                     </div>
+
+                    <Link
+                        href="/who-we-are"
+                        className="self-start sm:self-center shrink-0 border border-[#0a3a52] px-8 py-3 text-lg font-light text-[#0a3a52] text-center transition-colors hover:bg-[#0a3a52] hover:text-white"
+                    >
+                        See Who We Are
+                    </Link>
                 </motion.div>
 
                 {/* Fixed 64px (gap-10/16, same rhythm as above) below "Built for
