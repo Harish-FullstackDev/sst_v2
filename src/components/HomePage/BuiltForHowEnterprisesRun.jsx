@@ -47,7 +47,7 @@ export default function BuiltForHowEnterprisesRun() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-1 max-w-[714px] mx-auto text-center mb-10 sm:mb-14"
             >
-                <h2 className="text-[#10161d] text-[28px] font-medium">
+                <h2 className="text-[#10161d] text-[28px] font-semibold">
                     Built for How Enterprises <span className="text-[#0061AF]">Actually Run</span>
                 </h2>
                 <p className="text-[#4a5568] text-lg font-light">

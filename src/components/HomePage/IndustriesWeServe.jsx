@@ -176,7 +176,7 @@ export default function IndustriesWeServe() {
                 className="w-full bg-[#10161d] flex flex-col sm:flex-row"
             >
                 <div className="flex flex-col justify-center gap-2 px-6 py-10 sm:px-[64px] sm:py-16 sm:w-[457px] shrink-0">
-                    <h2 className="text-white text-[28px] font-medium">
+                    <h2 className="text-white text-[28px] font-semibold">
                         <span className="text-[#0061AF]">Industries</span> We Serve
                     </h2>
                     <p className="text-white/70 text-lg font-light">

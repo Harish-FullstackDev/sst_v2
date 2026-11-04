@@ -70,33 +70,36 @@ export default function ProofInNumbers() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-10 sm:gap-16 "
             >
-                <h2 className="text-[#10161d] text-[28px] font-medium text-center">
+                <h2 className="text-[#10161d] text-[28px] font-semibold text-center">
                     Numbers Worth Having a <span className="text-[#0061AF]">Conversation</span> About
                 </h2>
 
                 {/* Single row, never wraps to a second level — matches Figma. A 2x2 grid
                     only on true mobile, where a one-row layout wouldn't fit at all.
-                    Desktop: fixed 40px gap, group centered (not stretched full-width) —
-                    matches Figma's "gap-[40px] items-center justify-center" row, with a
-                    hairline divider (border/strong, self-stretch to row height) between
-                    items instead of per-item side padding + divide-x. */}
-                <div className="grid w-full grid-cols-2 gap-x-6 gap-y-8 sm:flex sm:flex-row sm:flex-nowrap sm:items-center sm:justify-center sm:gap-10">
+                    Desktop: the row spans the full content width and each stat gets an
+                    equal flex-1 column with its block centered in it, so the spare width
+                    is shared out between the stats instead of piling up as empty space
+                    on both sides of a tightly centered group. A hairline divider
+                    (border/strong, self-stretch to row height) sits between columns. */}
+                <div className="grid w-full grid-cols-2 gap-x-6 gap-y-8 xl:flex xl:flex-row xl:flex-nowrap xl:items-center xl:gap-10">
                     {STATS.map((stat, index) => (
                         <div key={stat.label} className="contents">
                             {index > 0 && (
-                                <div className="hidden w-px self-stretch bg-[#8794a3] sm:block" aria-hidden="true" />
+                                <div className="hidden w-px self-stretch bg-[#8794a3] xl:block" aria-hidden="true" />
                             )}
-                            <div className="flex flex-col gap-2 items-start">
-                                <AnimatedStat value={stat.value} />
-                                {/* whitespace-nowrap only applies sm and up, where the row is a
-                                    single line with room to spare — mobile uses a narrow 2-col
-                                    grid instead (see the container comment above), and forcing
-                                    a label like "SAP Engagements Delivered" onto one line there
-                                    overflowed its cell and dragged the whole page's scrollable
-                                    width wider, causing a small horizontal pan on mobile. */}
-                                <p className="text-[#4a5568] text-lg font-light sm:whitespace-nowrap">
-                                    {stat.label}
-                                </p>
+                            <div className="flex justify-center xl:flex-1">
+                                <div className="flex flex-col gap-2 items-center text-center">
+                                    <AnimatedStat value={stat.value} />
+                                    {/* whitespace-nowrap only applies sm and up, where the row is a
+                                        single line with room to spare — mobile uses a narrow 2-col
+                                        grid instead (see the container comment above), and forcing
+                                        a label like "SAP Engagements Delivered" onto one line there
+                                        overflowed its cell and dragged the whole page's scrollable
+                                        width wider, causing a small horizontal pan on mobile. */}
+                                    <p className="text-[#4a5568] text-lg font-light xl:whitespace-nowrap">
+                                        {stat.label}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     ))}

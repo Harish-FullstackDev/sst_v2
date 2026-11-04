@@ -159,7 +159,7 @@ export default function Services() {
                     >
                         {/* Same size, weight and accent as the other home headings
                             (Our Proud Partners, Questions Enterprise Buyers Actually Ask). */}
-                        <h2 className="text-xl sm:text-[28px] font-medium leading-[1.4]">
+                        <h2 className="text-xl sm:text-[28px] font-semibold leading-[1.4]">
                             <span className="text-[#2E3033]">Everything an </span>
                             <span className="text-[#0061AF]">Enterprise Needs</span>
                             <span className="text-[#2E3033]"> to Run on Modern Technology</span>

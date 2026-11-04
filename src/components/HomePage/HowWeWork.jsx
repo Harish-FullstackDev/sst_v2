@@ -52,7 +52,7 @@ export default function HowWeWork() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[1094px] mx-auto text-center mb-10 sm:mb-14"
             >
-                <h2 className="text-[#10161d] text-[28px] font-medium">
+                <h2 className="text-[#10161d] text-[28px] font-semibold">
                     A Delivery Approach Built Around <span className="text-[#0061AF]">SAP</span>, Not Adapted to It
                 </h2>
 

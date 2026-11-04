@@ -53,7 +53,7 @@ export default function EnterpriseBuyerFAQ() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-2 w-full"
             >
-                <h2 className="text-xl sm:text-[28px] font-medium">
+                <h2 className="text-xl sm:text-[28px] font-semibold">
                     <span className="text-[#2E3033]">Questions Enterprise Buyers </span>
                     <span className="text-[#0061AF]">Actually Ask</span>
                 </h2>

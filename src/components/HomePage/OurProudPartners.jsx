@@ -33,7 +33,7 @@ export default function OurProudPartners() {
                 className="flex flex-col items-center gap-8 w-full"
             >
                 {/* Same size, weight and accent as the FAQ heading below ("Actually Ask"). */}
-                <h2 className="text-xl sm:text-[28px] font-medium text-center max-w-[818px]">
+                <h2 className="text-xl sm:text-[28px] font-semibold text-center max-w-[818px]">
                     <span className="text-[#2E3033]">Our Proud </span>
                     <span className="text-[#0061AF]">Partners</span>
                 </h2>
