@@ -12,18 +12,18 @@ import { isValidRoute } from "../Constants/Routes/routes";
 import ContactUsButton from "../Contactusbutton/contact_us_button";
 import BookAcallButton from "../BookAcallButton/BookAcall_button";
 import CalendlyModal from "../CommonComponents/CommonCalendy";
+import { MENUS } from "./menuLinks";
 
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showCalendly, setShowCalendly] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  // Which mobile-menu dropdown (by label) is expanded, if any.
+  const [openMobileMenu, setOpenMobileMenu] = useState(null);
   const pathname = usePathname();
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isCapabilitiesOpen, setIsCapabilitiesOpen] = useState(false);
-  const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
 
   const lightThemeRoutes = ["/legal/privacy/", "/ascenduserrors/", "/legal/terms/"];
 
@@ -114,51 +114,9 @@ const Navbar = () => {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
-    setIsServicesOpen(false);
+    setOpenMobileMenu(null);
   };
 
-
-  const servicesMenu = {
-    capabilities: [
-      { name: "Enterprise Transformation", href: "/what-we-do/enterprise-transformation" },
-      { name: "Artificial Intelligence", href: "/what-we-do/artificial-intelligence" },
-      { name: "Cloud & Infrastructure", href: "/what-we-do/cloud-infrastructure" },
-      { name: "Data & Intelligence", href: "/what-we-do/data-intelligence" },
-      { name: "Digital Engineering", href: "/what-we-do/digital-engineering" },
-      { name: "Customer Experience", href: "/what-we-do/customer-experience" },
-
-      { name: "Experience Design", href: "/what-we-do/experience-design" },
-      { name: "Intelligent Automation", href: "/what-we-do/intelligent-automation" },
-      { name: "Cybersecurity & Digital Trust", href: "/what-we-do/cybersecurity-digital-trust" },
-      { name: "Managed Services", href: "/what-we-do/managed-services" },
-      { name: "Business Advisory", href: "/what-we-do/business-advisory" },
-      { name: "Innovation & Emerging Technologies", href: "/what-we-do/innovation-emerging-technologies" },
-    ],
-
-    industries: [
-      { name: "Manufacturing", href: "/services" },
-      { name: "Construction & EPC", href: "/services" },
-      { name: "Oil & Gas", href: "/services" },
-      { name: "Retail", href: "/services" },
-      { name: "Healthcare", href: "/services" },
-      { name: "Logistics", href: "/services" },
-
-      { name: "Government", href: "/services" },
-      { name: "Utilities", href: "/services" },
-      { name: "Financial Services", href: "/services" },
-      { name: "Real Estate", href: "/services" },
-    ],
-  };
-
-  const capabilityColumns = [
-    servicesMenu.capabilities.slice(0, 6),
-    servicesMenu.capabilities.slice(6),
-  ];
-
-  const industryColumns = [
-    servicesMenu.industries.slice(0, 6),
-    servicesMenu.industries.slice(6),
-  ];
 
   return (
     <>
@@ -282,162 +240,68 @@ const Navbar = () => {
                     Home
                   </Link>
 
-                  <li className="group">
-                    <button
-                      type="button"
-                      className={`${navLinkClass} after:content-none flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
-                        }`}
-                    >
-                      What we do
-
-                      <svg
-                        className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </button>
-
-                    {/* Dropdown — anchored to the nav block's right edge (the li is not
-                        positioned), so the panel's right edge lines up with the end of
-                        Careers. The menu sits at the right of the viewport, so a 990px
-                        panel opening from the trigger would run off-screen to the right. */}
-                    {/* The padding is the hover bridge between the trigger and the
-                        panel, so the cursor can cross the gap without dropping the
-                        group-hover. It is sized to land the panel flush against the
-                        navbar's bottom edge rather than below it: this wrapper starts at
-                        the trigger's bottom, and the trigger is centred in an 80px row,
-                        leaving ~21px of slack beneath it. At 30px the panel cleared the
-                        navbar by ~9px and a strip of the page showed through. */}
-                    <div
-                      className="
-                        invisible opacity-0 translate-y-3
-                        group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
-                        transition-all duration-300
-                        absolute right-[64px] top-full pt-[24px] z-50
-                      "
-                    >
-                      {/* <div
-                        className={`absolute top-[18px] left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 border-l border-t transition-colors duration-500 ${isNavbarLight
-                          ? "bg-white/80 border-gray-200/30"
-                          : "bg-neutral-900/85 border-white/10"
+                  {MENUS.map((menu) => (
+                    <li key={menu.label} className="relative group">
+                      <button
+                        type="button"
+                        className={`${navLinkClass} after:content-none flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
                           }`}
-                      /> */}
+                      >
+                        {menu.label}
 
+                        <svg
+                          className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </button>
+
+                      {/* Single-column list, so the panel opens straight under its own
+                          trigger. The padding is the hover bridge between the trigger and
+                          the panel, sized to land the panel flush against the navbar's
+                          bottom edge (the trigger is centred in an 80px row, leaving
+                          ~21px of slack beneath it). */}
                       <div
-                        // className={`rounded-3xl shadow-2xl min-w-[1150px] p-8 border transition-colors duration-500 backdrop-blur-md ${isNavbarLight
-                        //   ? "bg-white/80 border-gray-200/30 text-gray-800"
-                        //   : "bg-neutral-900/80 border-white/20 text-white"
-                        //   }`}
-                        className={`shadow-2xl min-w-[990px] p-8 pl-20 border transition-colors duration-500 backdrop-blur-xl ${isNavbarLight
-                          ? "bg-white/80 border-gray-200/30 text-gray-800"
-                          : "bg-white/10 border-white/20 text-white"
-                          }`}
+                        className="
+                          invisible opacity-0 translate-y-3
+                          group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
+                          transition-all duration-300
+                          absolute left-0 top-full pt-[24px] z-50
+                        "
                       >
-                        {/* <div className="grid grid-cols-4 gap-10"> */}
-                        <div className="grid grid-cols-2 gap-10">
-
-                          {/* Capability Column 1 */}
-                          <div>
-                            <h3
-                              className={`text-sm font-semibold uppercase tracking-wider mb-5 ${isNavbarLight ? "text-black" : "text-white"
-                                }`}
-                            >
-                              Capabilities
-                            </h3>
-
-                            <ul className="space-y-2">
-                              {capabilityColumns[0].map((item) => (
-                                <li key={item.name}>
-                                  <Link
-                                    href={item.href}
-                                    className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
-                                      ? "hover:bg-gray-100 text-gray-700"
-                                      : "hover:bg-white/10 text-white/80"
-                                      }`}
-                                  >
-                                    {item.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          {/* Capability Column 2 */}
-                          <div className="pt-9">
-                            <ul className="space-y-2">
-                              {capabilityColumns[1].map((item) => (
-                                <li key={item.name}>
-                                  <Link
-                                    href={item.href}
-                                    className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
-                                      ? "hover:bg-gray-100 text-gray-700"
-                                      : "hover:bg-white/10 text-white/80"
-                                      }`}
-                                  >
-                                    {item.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          {/* Industry Column 1 */}
-                          {/* <div>
-                            <h3
-                              className={`text-sm font-semibold uppercase tracking-wider mb-5 ${isNavbarLight ? "text-black" : "text-white"
-                                }`}
-                            >
-                              Industries
-                            </h3>
- 
-                            <ul className="space-y-2">
-                              {industryColumns[0].map((item) => (
-                                <li key={item.name}>
-                                  <Link
-                                    href={item.href}
-                                    className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
-                                      ? "hover:bg-gray-100 text-gray-700"
-                                      : "hover:bg-white/10 text-white/80"
-                                      }`}
-                                  >
-                                    {item.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div> */}
-
-                          {/* Industry Column 2 */}
-                          {/* <div className="pt-9">
-                            <ul className="space-y-2">
-                              {industryColumns[1].map((item) => (
-                                <li key={item.name}>
-                                  <Link
-                                    href={item.href}
-                                    className={`block px-2 py-1 rounded-md text-sm transition ${isNavbarLight
-                                      ? "hover:bg-gray-100 text-gray-700"
-                                      : "hover:bg-white/10 text-white/80"
-                                      }`}
-                                  >
-                                    {item.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div> */}
-
+                        <div
+                          className={`shadow-2xl min-w-[260px] p-6 border transition-colors duration-500 backdrop-blur-xl ${isNavbarLight
+                            ? "bg-white/80 border-gray-200/30 text-gray-800"
+                            : "bg-white/10 border-white/20 text-white"
+                            }`}
+                        >
+                          <ul className="space-y-2">
+                            {menu.items.map((item) => (
+                              <li key={item.name}>
+                                <Link
+                                  href={item.href}
+                                  className={`block px-2 py-1 rounded-md text-sm whitespace-nowrap transition ${isNavbarLight
+                                    ? "hover:bg-gray-100 text-gray-700"
+                                    : "hover:bg-white/10 text-white/80"
+                                    }`}
+                                >
+                                  {item.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       </div>
-                    </div>
-                  </li>
+                    </li>
+                  ))}
 
 
                   <li>
@@ -547,75 +411,59 @@ const Navbar = () => {
               </Link>
             </li>
 
-            <li>
-              <div
-                className={`w-full flex items-center justify-between ${pathname.startsWith("/services") ? "bg-gray-100" : ""
-                  }`}
-              >
-                <div
-                  className={`flex-1 py-3 px-4 text-2xl sm:text-3xl font-medium rounded-lg ${pathname.startsWith("/services")
-                    ? "text-[#2d8ec5]"
-                    : "text-gray-800"
-                    }`}
-                >
-                  What we do
-                </div>
+            {MENUS.map((menu) => {
+              const isOpen = openMobileMenu === menu.label;
+              const isActive = menu.items.some((item) => pathname.startsWith(item.href));
 
-                <button
-                  onClick={() => setIsServicesOpen(!isServicesOpen)}
-                  className="py-3 px-4 text-gray-800 hover:text-[#2d8ec5] transition-colors duration-300 flex items-center justify-center"
-                  aria-label="Toggle Services dropdown"
-                >
-                  <svg
-                    className={`w-6 h-6 transition-transform duration-300 ${isServicesOpen ? "rotate-180" : ""
+              return (
+                <li key={menu.label}>
+                  <button
+                    type="button"
+                    onClick={() => setOpenMobileMenu(isOpen ? null : menu.label)}
+                    className={`w-full flex items-center justify-between py-3 px-4 text-2xl sm:text-3xl font-medium text-left transition-colors duration-300 ${isActive
+                      ? "text-[#2d8ec5] bg-gray-100"
+                      : "text-gray-800 hover:text-[#2d8ec5]"
                       }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                    aria-expanded={isOpen}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-              </div>
+                    {menu.label}
+                    <svg
+                      className={`w-6 h-6 transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+                        }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
 
-              {/* Dropdown */}
-              <div
-                className={`overflow-hidden transition-all duration-300 ${isServicesOpen ? "max-h-[3000px] mt-2" : "max-h-0"
-                  }`}
-              >
-
-                <div className="bg-gray-50 border border-gray-200 overflow-hidden">
-                  {/* Capabilities is the only category left now that Industries is
-                      removed, so it no longer needs its own nested open/close toggle —
-                      it just shows directly as soon as "What we do" itself is expanded. */}
-                  <div className="px-4 py-4">
-                    <span className="font-medium text-gray-800">
-                      Capabilities
-                    </span>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-[1000px] mt-2" : "max-h-0"
+                      }`}
+                  >
+                    <ul className="bg-gray-50 border border-gray-200 py-3">
+                      {menu.items.map((item) => (
+                        <li key={item.name}>
+                          <Link
+                            href={item.href}
+                            onClick={closeMenu}
+                            className="block pl-8 pr-4 py-2 text-gray-600 hover:text-[#2d8ec5]"
+                          >
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-
-                  <div className="mx-4 border-t border-gray-200" />
-                  <ul className="pb-3">
-                    {servicesMenu.capabilities.map((item) => (
-                      <li key={item.name}>
-                        <Link
-                          href={item.href}
-                          onClick={closeMenu}
-                          className="block pl-8 pr-4 py-2 text-gray-600 hover:text-[#2d8ec5]"
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </li>
+                </li>
+              );
+            })}
 
             <li>
               <Link
