@@ -1,14 +1,14 @@
-# Ascendus
+# Support Studio Technologies
 
-> Ascendus is a technology consulting and implementation partner delivering SAP transformation, enterprise technology, and digital services to enterprises across Saudi Arabia and the GCC region.
+> Support Studio Technologies is a technology consulting and implementation partner delivering SAP transformation, enterprise technology, and digital services to enterprises across Saudi Arabia and the GCC region.
 
-Ascendus helps organizations modernize through SAP-led transformation, cloud and infrastructure, data and AI, cybersecurity, digital engineering, and customer experience services, with regional compliance and delivery expertise for the KSA/GCC market.
+Support Studio Technologies helps organizations modernize through SAP-led transformation, cloud and infrastructure, data and AI, cybersecurity, digital engineering, and customer experience services, with regional compliance and delivery expertise for the KSA/GCC market.
 
 ## Company
 
 - [Who We Are](https://www.ascendus.sa/who-we-are): Company overview, principles, and delivery approach.
 - [Careers](https://www.ascendus.sa/careers): Open roles and hiring process.
-- [Contact](https://www.ascendus.sa/contact): Get in touch with Ascendus.
+- [Contact](https://www.ascendus.sa/contact): Get in touch with Support Studio Technologies.
 - [Book a Consultation](https://www.ascendus.sa/book-a-consultation): Schedule a call with the team.
 
 ## What We Do

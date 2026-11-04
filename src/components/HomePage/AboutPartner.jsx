@@ -22,7 +22,7 @@ export default function AboutPartner() {
                         Make Enterprise Technology Work as One System.
                     </h2>
                     <p className="mt-4 text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
-                        Most enterprise programs are not lost on strategy. They are lost in the handoffs: between the firm that designed the architecture and the firm that built it, between the project that went live and the team that has to run it, between a compliance requirement and the system that was already in production when it arrived. Ascendus keeps design, build and run under one accountable team, so architecture context is not re-learned at every stage.
+                        Most enterprise programs are not lost on strategy. They are lost in the handoffs: between the firm that designed the architecture and the firm that built it, between the project that went live and the team that has to run it, between a compliance requirement and the system that was already in production when it arrived. SST keeps design, build and run under one accountable team, so architecture context is not re-learned at every stage.
                     </p>
                     <UnderlineArrowLink
                         href="/who-we-are"

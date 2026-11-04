@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/book-a-consultation/" },
   description: "Book a working session with an architect or practice lead. Choose the consultation type and tell us what your estate looks like now.",
   openGraph: {
-    title: "Book a Consultation | Ascendus",
+    title: "Book a Consultation | Support Studio Technologies",
     description: "Book a working session with an architect or practice lead. Choose the consultation type and tell us what your estate looks like now.",
     url: "/book-a-consultation/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Book a Consultation",
 };

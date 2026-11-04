@@ -22,7 +22,7 @@ export default function CareerLoading() {
         <SkeletonHeroLight tall={true} />
       </div>
 
-      {/* Why Join Ascendus Section */}
+      {/* Why Join SST Section */}
       <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
         <SkeletonSectionHeading />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
@@ -61,7 +61,7 @@ export default function CareerLoading() {
         </div>
       </section>
 
-      {/* Joining Ascendus / CTA section */}
+      {/* Joining SST / CTA section */}
       <section className="py-20 px-6 md:px-12 bg-slate-50">
         <div className="max-w-5xl mx-auto">
           <SkeletonSplitSection imageRight={false} />

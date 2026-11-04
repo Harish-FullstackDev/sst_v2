@@ -1,6 +1,6 @@
 # Project Installation & Requirements Guide
 
-This file provides system requirements, package dependencies, environment configuration, and instructions to install all packages and run the **Ascendus Website** project.
+This file provides system requirements, package dependencies, environment configuration, and instructions to install all packages and run the **SST Website** project.
 
 ---
 

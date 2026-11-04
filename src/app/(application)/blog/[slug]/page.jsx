@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
         const firstSectionText = stripHtml(staticBlog.sections?.[0]?.content);
         const description = firstSectionText
             ? `${firstSectionText.slice(0, 157)}${firstSectionText.length > 157 ? "..." : ""}`
-            : `Read "${staticBlog.title}" on the Ascendus blog.`;
+            : `Read "${staticBlog.title}" on the Support Studio Technologies blog.`;
         return {
             title: staticBlog.title,
             description,
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }) {
     const firstSectionText = stripHtml(blog.sections?.[0]?.content);
     const description = firstSectionText
         ? `${firstSectionText.slice(0, 157)}${firstSectionText.length > 157 ? "..." : ""}`
-        : `Read "${blog.title}" on the Ascendus blog.`;
+        : `Read "${blog.title}" on the Support Studio Technologies blog.`;
 
     return {
         title: blog.title,

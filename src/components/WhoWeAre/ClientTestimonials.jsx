@@ -5,37 +5,37 @@ import { motion } from "framer-motion";
 
 const testimonials = [
     {
-        text: "Migrating our core ERP to S/4HANA felt like a massive risk, but the Ascendus team handled the heavy lifting seamlessly. Downtime during the go-live weekend was minimal, and our finance team was up and running by Monday morning without major hiccups.",
+        text: "Migrating our core ERP to S/4HANA felt like a massive risk, but the SST team handled the heavy lifting seamlessly. Downtime during the go-live weekend was minimal, and our finance team was up and running by Monday morning without major hiccups.",
         image: "/blog/default-author.svg",
         name: "David Vance",
         role: "VP of IT Operations",
     },
     {
-        text: "Our legacy portal was customer-facing and badly needed a modern UX refresh. The Ascendus design team ran great stakeholder workshops, got straight to the root of our user friction points, and delivered a slick UI that our users actually enjoy navigating now.",
+        text: "Our legacy portal was customer-facing and badly needed a modern UX refresh. The SST design team ran great stakeholder workshops, got straight to the root of our user friction points, and delivered a slick UI that our users actually enjoy navigating now.",
         image: "/blog/default-author.svg",
         name: "Elena Rostova",
         role: "Director of Digital Product",
     },
     {
-        text: "Working with Ascendus has been a game changer for our day-to-day operations. Their team actually takes the time to listen, understand our bottlenecks, and deliver practical solutions rather than pushing cookie-cutter frameworks. Highly recommend them.",
+        text: "Working with SST has been a game changer for our day-to-day operations. Their team actually takes the time to listen, understand our bottlenecks, and deliver practical solutions rather than pushing cookie-cutter frameworks. Highly recommend them.",
         image: "/blog/default-author.svg",
         name: "Rachel Bennett",
         role: "Director of Strategy",
     },
     {
-        text: "Honestly, what stood out the most was their adaptability. Midway through the project, our internal priorities shifted unexpectedly, and instead of pushing back with endless change orders, the Ascendus team pivoted smoothly with us. They felt less like an external vendor and more like an extension of our own team.",
+        text: "Honestly, what stood out the most was their adaptability. Midway through the project, our internal priorities shifted unexpectedly, and instead of pushing back with endless change orders, the SST team pivoted smoothly with us. They felt less like an external vendor and more like an extension of our own team.",
         image: "/blog/default-author.svg",
         name: "Sarah Jenkins",
         role: "Chief Operating Officer",
     },
     {
-        text: "Excellent technical expertise and great project delivery overall. Would definitely collaborate with Ascendus again on future initiatives.",
+        text: "Excellent technical expertise and great project delivery overall. Would definitely collaborate with SST again on future initiatives.",
         image: "/blog/default-author.svg",
         name: "Anita Patel",
         role: "VP of Enterprise Solutions",
     },
     {
-        text: "Ascendus helped us make sense of a complicated SAP transformation. They understood both the technology and the business side, which made the entire process much easier for our team.",
+        text: "SST helped us make sense of a complicated SAP transformation. They understood both the technology and the business side, which made the entire process much easier for our team.",
         image: "/blog/default-author.svg",
         name: "Michael Turner",
         role: "VP, Enterprise Applications",
@@ -47,7 +47,7 @@ const testimonials = [
         role: "Product Director",
     },
     {
-        text: "We've worked with a number of technology partners over the years, and Ascendus stood out for how well they understood the bigger picture. They didn't just focus on the immediate task.",
+        text: "We've worked with a number of technology partners over the years, and SST stood out for how well they understood the bigger picture. They didn't just focus on the immediate task.",
         image: "/blog/default-author.svg",
         name: "Jennifer Moore",
         role: "VP, Technology",
@@ -59,7 +59,7 @@ const testimonials = [
         role: "VP, Business Transformation",
     },
     {
-        text: "Our customer journey had become fragmented over time. Ascendus helped us step back, understand where the real friction was, and create a much more consistent experience.",
+        text: "Our customer journey had become fragmented over time. SST helped us step back, understand where the real friction was, and create a much more consistent experience.",
         image: "/blog/default-author.svg",
         name: "Sophie Anderson",
         role: "Customer Experience Director",
@@ -77,7 +77,7 @@ const testimonials = [
         role: "Head of Business Systems",
     },
     {
-        text: "Starting fresh gave us an opportunity to do things differently. Ascendus helped us make the most of that rather than simply recreating what we already had.",
+        text: "Starting fresh gave us an opportunity to do things differently. SST helped us make the most of that rather than simply recreating what we already had.",
         image: "/blog/default-author.svg",
         name: "Daniel Wilson",
         role: "COO",
@@ -89,7 +89,7 @@ const testimonials = [
         role: "Business Transformation Lead",
     },
     {
-        text: "RISE was a significant change for us, and there were plenty of questions at the beginning. Ascendus helped us work through those decisions without making the process feel overwhelming.",
+        text: "RISE was a significant change for us, and there were plenty of questions at the beginning. SST helped us work through those decisions without making the process feel overwhelming.",
         image: "/blog/default-author.svg",
         name: "Priya Nair",
         role: "Director of IT",

@@ -190,7 +190,7 @@ const Navbar = () => {
                   }
                 `}
               />
-              {/* Left Logo Area with Ascendus and SAP logos */}
+              {/* Left Logo Area with SST and SAP logos */}
               {/* <div className="flex items-center gap-3 px-4 sm:px-8 lg:px-10">
                 <Link
                   href="/"
@@ -201,7 +201,7 @@ const Navbar = () => {
               {/* <div className="relative z-10 flex-shrink-0">
                     <Image
                       src={logo3}
-                      alt="Ascendus Icon"
+                      alt="SST Icon"
                       width={124}
                       height={101}
                       className="h-8.5 w-auto object-contain transition-all duration-300 ease-out"
@@ -225,7 +225,7 @@ const Navbar = () => {
                   >
                     <Image
                       src={isNavbarLight ? logo5 : logo4}
-                      alt="Ascendus"
+                      alt="SST"
                       width={344}
                       height={60}
                       className="block h-6 w-auto max-w-none object-contain"

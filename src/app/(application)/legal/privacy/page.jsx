@@ -4,12 +4,12 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/legal/privacy/" },
-  description: "How Ascendus collects, uses, stores and protects personal data submitted through this site, and the rights available to you under applicable law.",
+  description: "How Support Studio Technologies collects, uses, stores and protects personal data submitted through this site, and the rights available to you under applicable law.",
   openGraph: {
-    title: "Privacy Policy | Ascendus",
-    description: "How Ascendus collects, uses, stores and protects personal data submitted through this site, and the rights available to you under applicable law.",
+    title: "Privacy Policy | Support Studio Technologies",
+    description: "How Support Studio Technologies collects, uses, stores and protects personal data submitted through this site, and the rights available to you under applicable law.",
     url: "/legal/privacy/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Privacy Policy",
 };

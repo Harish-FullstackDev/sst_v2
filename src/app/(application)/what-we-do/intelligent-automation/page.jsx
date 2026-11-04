@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/what-we-do/intelligent-automation/" },
   description: "Process discovery, RPA and workflow automation applied after the process itself has been corrected rather than before.",
   openGraph: {
-    title: "Intelligent Process Automation Services | Ascendus",
+    title: "Intelligent Process Automation Services | Support Studio Technologies",
     description: "Process discovery, RPA and workflow automation applied after the process itself has been corrected rather than before.",
     url: "/what-we-do/intelligent-automation/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Intelligent Process Automation Services",
 };

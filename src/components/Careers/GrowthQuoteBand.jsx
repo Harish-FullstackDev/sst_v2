@@ -32,7 +32,7 @@ export default function GrowthQuoteBand() {
                             <p className="text-[#3d3d4e] text-sm opacity-60 mt-1">
                                 Chief Human Resources Officer (CHRO)
                                 <br />
-                                Ascendus
+                                SST
                             </p>
                         </div>
                     </div>

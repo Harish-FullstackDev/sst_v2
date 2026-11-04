@@ -9,11 +9,11 @@ export const generateOrganizationSchema = () => {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Ascendus",
-    "alternateName": "Ascendus Technologies",
+    "name": "Support Studio Technologies",
+    "alternateName": "Support Studio Technologies",
     "url": "https://www.ascendus.sa",
     "logo": "https://www.ascendus.sa/Brand/Ascendus_Logo_Primary.svg",
-    "description": "Ascendus is a premium enterprise IT and SAP consulting firm providing digital transformation, cloud managed services, and S/4HANA migration across the UAE, Saudi Arabia, and the GCC.",
+    "description": "Support Studio Technologies is a premium enterprise IT and SAP consulting firm providing digital transformation, cloud managed services, and S/4HANA migration across the UAE, Saudi Arabia, and the GCC.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist.",
@@ -41,7 +41,7 @@ export const generateWebsiteSchema = () => {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Ascendus",
+    "name": "Support Studio Technologies",
     "url": "https://www.ascendus.sa"
   };
 };
@@ -66,7 +66,7 @@ export const generateServiceSchema = (service: { name: string; description: stri
     "serviceType": service.category || "IT Consulting",
     "provider": {
       "@type": "Organization",
-      "name": "Ascendus",
+      "name": "Support Studio Technologies",
       "url": "https://www.ascendus.sa"
     },
     "name": service.name,
