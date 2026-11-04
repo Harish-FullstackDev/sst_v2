@@ -6,6 +6,7 @@ import CookieConsent from "../components/Cookies/CookieConsent";
 import ContactUsButton from "../components/Contactusbutton/contact_us_button";
 import { generateOrganizationSchema, generateWebsiteSchema } from "@/lib/seo";
 import { Metadata, Viewport } from "next";
+import { SITE_URL } from "@/lib/siteUrl";
 
 export const viewport: Viewport = {
   themeColor: "#2e3033",
@@ -15,13 +16,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.ascendus.sa'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Support Studio Technologies | Enterprise SAP & IT Consulting GCC",
     template: "%s | Support Studio Technologies"
   },
   description: "Support Studio Technologies provides premium SAP consulting, IT managed services, and digital transformation solutions for enterprises in the UAE, Saudi Arabia, and the wider GCC region.",
-  authors: [{ name: "Support Studio Technologies", url: "https://www.ascendus.sa" }],
+  authors: [{ name: "Support Studio Technologies", url: SITE_URL }],
   creator: "SST Engineering",
   publisher: "Support Studio Technologies",
   formatDetection: {
