@@ -13,7 +13,7 @@ export const metadata = {
     title: "Terms & Conditions | Support Studio Technologies",
     description: "The terms governing your use of the Support Studio Technologies website, including acceptable use, intellectual property and limitation of liability.",
     url: "/legal/terms/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
 }
 

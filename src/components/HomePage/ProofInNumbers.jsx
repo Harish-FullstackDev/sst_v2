@@ -75,16 +75,16 @@ export default function ProofInNumbers() {
                 </h2>
 
                 {/* Single row, never wraps to a second level — matches Figma. A 2x2 grid
-                    only on true mobile, where a one-row layout wouldn't fit at all.
+                    below lg (1024px), where the one-row layout (~850px) would overflow.
                     Desktop: fixed 40px gap, group centered (not stretched full-width) —
                     matches Figma's "gap-[40px] items-center justify-center" row, with a
                     hairline divider (border/strong, self-stretch to row height) between
                     items instead of per-item side padding + divide-x. */}
-                <div className="grid w-full grid-cols-2 gap-x-6 gap-y-8 sm:flex sm:flex-row sm:flex-nowrap sm:items-center sm:justify-center sm:gap-10">
+                <div className="grid w-full grid-cols-2 gap-x-6 gap-y-8 lg:flex lg:flex-row lg:flex-nowrap lg:items-center lg:justify-center lg:gap-10">
                     {STATS.map((stat, index) => (
                         <div key={stat.label} className="contents">
                             {index > 0 && (
-                                <div className="hidden w-px self-stretch bg-[#8794a3] sm:block" aria-hidden="true" />
+                                <div className="hidden w-px self-stretch bg-[#8794a3] lg:block" aria-hidden="true" />
                             )}
                             <div className="flex flex-col gap-2 items-start">
                                 <AnimatedStat value={stat.value} />
@@ -94,7 +94,7 @@ export default function ProofInNumbers() {
                                     a label like "SAP Engagements Delivered" onto one line there
                                     overflowed its cell and dragged the whole page's scrollable
                                     width wider, causing a small horizontal pan on mobile. */}
-                                <p className="text-[#4a5568] text-lg font-light sm:whitespace-nowrap">
+                                <p className="text-[#4a5568] text-lg font-light lg:whitespace-nowrap">
                                     {stat.label}
                                 </p>
                             </div>

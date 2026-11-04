@@ -8,14 +8,14 @@ export default function PositioningStatement() {
     return (
         <section className="w-full px-8 py-10 sm:pl-[64px] sm:pr-[64px] sm:py-[64px] bg-[#f5f6f6]">
 
-            <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-[143px]">
+            <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-12 xl:gap-[143px]">
                 {/* Content */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="w-full lg:w-[700px] shrink-0 flex flex-col gap-2 text-[#3d3d4e]"
+                    className="w-full lg:flex-1 lg:min-w-0 lg:max-w-[700px] flex flex-col gap-2 text-[#3d3d4e]"
                 >
                     <h2 className="text-xl sm:text-[28px] text-[#2E3033] font-semibold leading-normal">
                         Positioning Statement
@@ -36,7 +36,7 @@ export default function PositioningStatement() {
                         ease: "easeOut",
                         delay: 0.1,
                     }}
-                    className="relative w-full lg:w-[467px] lg:ml-auto shrink-0 aspect-[467/357] overflow-hidden"
+                    className="relative w-full lg:w-[467px] lg:max-w-[40%] lg:ml-auto shrink-0 aspect-[467/357] overflow-hidden"
                 >
                     <Image src={matterPhoto} alt="" fill className="object-cover" />
                 </motion.div>

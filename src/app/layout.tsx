@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: "Support Studio Technologies designs, builds and runs enterprise technology — SAP, cloud, data, AI, engineering, security and managed operations — under one accountable team.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.png?v=2",
         width: 1200,
         height: 630,
         alt: "Support Studio Technologies Enterprise Solutions",

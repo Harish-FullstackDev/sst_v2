@@ -9,7 +9,7 @@ export const metadata = {
     title: "About Support Studio Technologies | Enterprise Technology Services",
     description: "Who Support Studio Technologies is, how we are structured, where we deliver from, and what a client can independently verify before engaging us.",
     url: "/who-we-are/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: { absolute: "About Support Studio Technologies | Enterprise Technology Services" },
 };

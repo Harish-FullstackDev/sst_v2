@@ -448,18 +448,18 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="tel:+966573956334"
+                  href="tel:+914132191301"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  +966 573956334
+                  0413-2191301
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@ascendus.sa"
-                  className="hover:text-white transition-colors duration-200"
+                  href="mailto:info@isupportz.com"
+                  className="break-all hover:text-white transition-colors duration-200"
                 >
-                  info@ascendus.sa
+                  info@isupportz.com
                 </a>
               </li>
               <li>
@@ -470,12 +470,12 @@ const Footer = () => {
               <li>
 
                 <a
-                  href="https://maps.app.goo.gl/r13crYbGJBBuQiSE7"
+                  href="https://www.google.com/maps/search/?api=1&query=192+Kamaraj+Salai+Puducherry+605013"
                   className="hover:text-white transition-colors duration-200"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist., <br /> Riyadh 12624, KSA
+                  #192, Kamaraj Salai, Puducherry, India, <br /> Pin Code - 605013
 
                 </a>
               </li>
@@ -584,11 +584,11 @@ const Footer = () => {
                 </a>
               </p>
             </div>
-            {/* One line, as on sst_website_current. It runs a little past the narrow
-                Get In Touch column into the footer padding, which only leaves room from
-                ~1400px up; below that it breaks between the two halves, never mid-phrase. */}
-            <p className="text-sm text-white min-h-[50px] pt-4 min-[1400px]:whitespace-nowrap">
-              <span className="whitespace-nowrap">© 2026 Support Studio Technologies.</span>{" "}
+            {/* Breaks between the two halves when the Get In Touch column is too
+                narrow, never mid-phrase. Forcing one line overflowed the viewport
+                once the company name became "Support Studio Technologies". */}
+            <p className="text-sm text-white min-h-[50px] pt-4">
+              <span>© 2026 Support Studio Technologies.</span>{" "}
               <span className="whitespace-nowrap">All Rights Reserved.</span>
             </p>
           </div>

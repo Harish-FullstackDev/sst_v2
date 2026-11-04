@@ -9,7 +9,7 @@ export const metadata = {
     title: "Cloud Infrastructure and Modernization Services | Support Studio Technologies",
     description: "Cloud migration, workload modernization and the operating model, monitoring and resilience practices that keep platforms running afterwards.",
     url: "/what-we-do/cloud-infrastructure/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Cloud Infrastructure and Modernization Services",
 };

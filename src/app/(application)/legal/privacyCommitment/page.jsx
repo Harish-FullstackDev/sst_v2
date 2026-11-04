@@ -9,7 +9,7 @@ export const metadata = {
     title: "Our Privacy Commitment | Support Studio Technologies",
     description: "The principles Support Studio Technologies follows when handling client and candidate data, and how those principles are enforced in practice.",
     url: "/legal/privacyCommitment/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Our Privacy Commitment",
 };

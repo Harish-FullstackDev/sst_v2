@@ -41,7 +41,7 @@ const ContactInfo = () => {
               />
             </div>
             <span className="text-gray-700 text-base">
-              <a className="hover:text-blue-500 transition-colors duration-200" href="tel:+966573956334" target="_blank">+966 573956334</a></span>
+              <a className="hover:text-blue-500 transition-colors duration-200" href="tel:+914132191301" target="_blank">0413-2191301</a></span>
           </div>
 
           {/* Email */}
@@ -57,7 +57,7 @@ const ContactInfo = () => {
             </div>
             <div className="text-gray-700 text-base">
               <div>
-                <a className="hover:text-blue-500 transition-colors duration-200" href="mailto:info@ascendus.sa" target="_blank">info@ascendus.sa</a></div>
+                <a className="hover:text-blue-500 transition-colors duration-200" href="mailto:info@isupportz.com" target="_blank">info@isupportz.com</a></div>
             </div>
           </div>
 
@@ -90,15 +90,38 @@ const ContactInfo = () => {
 
             {/* Address */}
             <a
-              href="https://maps.app.goo.gl/r13crYbGJBBuQiSE7"
+              href="https://www.google.com/maps/search/?api=1&query=192+Kamaraj+Salai+Puducherry+605013"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-gray-700 text-base leading-relaxed hover:text-blue-500 transition-colors duration-200"
             >
-              <p className="text-[#2E3033] font-semibold">Headquarters</p>
+              <p className="text-[#2E3033] font-semibold">Regional Headquarters</p>
               <p>
-                7731 King Saud Ibn Abdulaziz Saud, <br /> 2839 Al Murabba Dist., <br /> Riyadh 12624, KSA
+                #192, Kamaraj Salai, <br /> Puducherry, India, <br /> Pin Code - 605013
               </p>
+            </a>
+          </div>
+
+          {/* delivery center */}
+          <div className="flex items-start gap-4">
+            <div className="relative w-6 h-6 flex-shrink-0 mt-1">
+              <Image
+                src={careerlocation}
+                alt="Location Pin Icon"
+                width={24}
+                height={24}
+                className="pointer-events-none"
+              />
+            </div>
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Riyadh+Saudi+Arabia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-gray-700 text-base leading-relaxed hover:text-blue-500 transition-colors duration-200"
+            >
+              <p className="text-[#2E3033] font-semibold">Delivery Center</p>
+              <p>Riyadh, KSA</p>
             </a>
           </div>
           {/* Address with Interactive Location Preview */}

@@ -9,7 +9,7 @@ export const metadata = {
     title: "Privacy Policy | Support Studio Technologies",
     description: "How Support Studio Technologies collects, uses, stores and protects personal data submitted through this site, and the rights available to you under applicable law.",
     url: "/legal/privacy/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Privacy Policy",
 };

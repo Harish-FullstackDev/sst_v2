@@ -82,8 +82,8 @@ const InteractiveLocationPreview = () => {
     };
 
     // Google Maps location URL details
-    const mapsUrl = "https://maps.app.goo.gl/dwn46nzVzmjKjuP86";
-    const mapEmbedUrl = "https://www.google.com/maps?q=7731+King+Saud+Ibn+Abdulaziz+Saud%2C+2839+Al+Murabba+Dist.%2C+Riyadh+12624%2C+Saudi+Arabia&output=embed";
+    const mapsUrl = "https://www.google.com/maps/search/?api=1&query=192+Kamaraj+Salai+Puducherry+605013";
+    const mapEmbedUrl = "https://www.google.com/maps?q=192+Kamaraj+Salai%2C+Puducherry+605013%2C+India&output=embed";
 
     // Framer Motion variants
     const cardVariants = {
@@ -189,10 +189,10 @@ const InteractiveLocationPreview = () => {
                         aria-haspopup="true"
                         aria-expanded={isOpen || isBottomSheetOpen}
                     >
-                        <p className="text-black font-semibold"> Head Office (Saudi Arabia) </p>
+                        <p className="text-black font-semibold"> Head Office (India) </p>
                         <p>
-                            7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist.,
-                            Riyadh 12624
+                            #192, Kamaraj Salai, Puducherry,
+                            India - 605013
                         </p>
 
                         <a
@@ -307,7 +307,7 @@ const InteractiveLocationPreview = () => {
                                                     <div className="w-12 h-[3px] bg-blue-500 rounded-full mt-1.5 mb-3" />
 
                                                     <p className="text-xs text-slate-200 leading-relaxed font-light">
-                                                        7731 King Saud Ibn Abdulaziz Saud, Riyadh 12624
+                                                        #192, Kamaraj Salai, Puducherry 605013
                                                     </p>
                                                 </div>
 
@@ -432,7 +432,7 @@ const InteractiveLocationPreview = () => {
                                     <div>
                                         <h4 className="text-xs uppercase tracking-wider font-semibold text-slate-400">Head Office Address</h4>
                                         <p className="text-sm text-slate-200 mt-1 leading-relaxed">
-                                            7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist., Riyadh 12624, Saudi Arabia
+                                            #192, Kamaraj Salai, Puducherry 605013, India
                                         </p>
                                     </div>
                                 </div>
@@ -441,7 +441,7 @@ const InteractiveLocationPreview = () => {
                                 <div className="flex gap-3 pt-2">
                                     {/* Call Action */}
                                     <a
-                                        href="tel:+966573956334"
+                                        href="tel:+914132191301"
                                         className="flex-1 py-3 px-2 bg-slate-900 hover:bg-slate-800 active:bg-slate-800/80 border border-white/10 rounded-xl flex flex-col items-center justify-center gap-1 text-white transition-colors"
                                     >
                                         <Phone className="w-5 h-5 text-cyan-400" />

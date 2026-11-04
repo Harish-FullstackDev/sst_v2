@@ -214,7 +214,7 @@ export default function SmokeLoader({ onComplete }) {
           {/* Logo */}
           <div className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48">
             <Image
-              src="/Brand/Ascendus_Icon_Primary.svg"
+              src="/icon.png"
               alt="SST Logo"
               fill
               className="object-contain drop-shadow-2xl"

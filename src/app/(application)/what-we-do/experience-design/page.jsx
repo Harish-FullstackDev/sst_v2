@@ -9,7 +9,7 @@ export const metadata = {
     title: "Enterprise Experience Design | Support Studio Technologies",
     description: "Interface and service design for enterprise systems, including design systems that keep complex applications consistent as they grow.",
     url: "/what-we-do/experience-design/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Enterprise Experience Design",
 };

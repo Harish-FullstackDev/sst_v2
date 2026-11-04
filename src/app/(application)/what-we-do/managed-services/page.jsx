@@ -9,7 +9,7 @@ export const metadata = {
     title: "Application Managed Services | Support Studio Technologies",
     description: "Managed operations covering incident and problem management, release support, service reporting and systematic root-cause elimination.",
     url: "/what-we-do/managed-services/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: "Application Managed Services",
 };

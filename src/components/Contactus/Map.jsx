@@ -34,7 +34,7 @@ const Map = () => {
   <div className="px-6 pt-6 pb-2 ">
     <div className="relative w-full h-0 pb-[97.5%] overflow-hidden rounded-lg">
       <iframe 
-        src="https://www.google.com/maps?q=7731+King+Saud+Ibn+Abdulaziz+Saud%2C+2839+Al+Murabba+Dist.%2C+Riyadh+12624%2C+Saudi+Arabia&output=embed"
+        src="https://www.google.com/maps?q=192+Kamaraj+Salai%2C+Puducherry+605013%2C+India&output=embed"
         className="absolute top-0 left-0 w-120 h-100 border-0"
         allowFullScreen="" 
         loading="lazy" 
@@ -127,7 +127,7 @@ const Map = () => {
             </div>
             <div className="text-center sm:text-left">
               <h3 className="text-sm sm:text-base font-semibold text-[#202020]">Email</h3>
-              <p className="text-sm sm:text-base text-[#615E5B] break-all sm:break-normal">info@ascendus.sa</p>
+              <p className="text-sm sm:text-base text-[#615E5B] break-all sm:break-normal">info@isupportz.com</p>
             </div>
           </div>
 

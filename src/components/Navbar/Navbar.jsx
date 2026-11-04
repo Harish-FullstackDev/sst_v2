@@ -7,8 +7,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import logo from "../../assets/Navbar/SST_Updated_White.svg";
 import logo2 from "../../assets/Navbar/SST_Logo_Dark.svg";
-import logo4 from "../../assets/Brand/Ascendus_Wordmark_OnDark.svg";
-import logo5 from "../../assets/Brand/Ascendus_Wordmark_OnLight.svg";
 import { isValidRoute } from "../Constants/Routes/routes";
 // import LanguageSelector from "../languageselector/Language_selector.jsx";
 import ContactUsButton from "../Contactusbutton/contact_us_button";

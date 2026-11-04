@@ -116,7 +116,7 @@ export const sectionContent = {
       {
         parts: [
           "For questions, requests, or concerns regarding this Privacy Policy or the processing of your personal information, please contact SST at ",
-          { text: "legal@ascendus.sa", href: "mailto:legal@ascendus.sa" },
+          { text: "info@isupportz.com", href: "mailto:info@isupportz.com" },
           " or through the Contact Us section of our website.",
         ],
       },

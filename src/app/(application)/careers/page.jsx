@@ -9,7 +9,7 @@ export const metadata = {
     title: "Careers at Support Studio Technologies",
     description: "Engineering, SAP, cloud, data and delivery roles at Support Studio Technologies, with the employing entity and work location stated on every posting.",
     url: "/careers/",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
   title: { absolute: "Careers at Support Studio Technologies" },
 };
