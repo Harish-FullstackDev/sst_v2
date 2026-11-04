@@ -38,23 +38,25 @@ const Navbar = () => {
                           after:left-0
                           after:-bottom-1
                           after:h-[2px]
-                          after:w-full
-                          after:scale-x-0
-                          after:origin-left
-                          after:transition-transform
+                          after:w-0
+                          after:transition-[width]
                           after:duration-300
                           after:content-['']
- 
-                          hover:after:scale-x-100
+
+                          hover:after:w-full
                         `;
+  // The underline grows by width, not scale-x: a running transform puts the
+  // 2px line on its own GPU layer, where a fractional y position blurs it
+  // across an extra pixel row — thick while sliding, snapping thin once the
+  // animation ends. Width keeps it painted the same way throughout.
 
   // No blue anywhere, active or hover — the underline is always after:bg-current,
   // so it (and the text above it) just match whatever color the link already is
   // in each navbar state (white on the dark/top-of-page navbar, black on the
   // scrolled/bright navbar). Active links show that line permanently
-  // (after:scale-x-100); inactive links reveal the same line on hover only
-  // (via navLinkClass's hover:after:scale-x-100).
-  const activeLinkClass = "after:scale-x-100 after:bg-current";
+  // (after:w-full); inactive links reveal the same line on hover only
+  // (via navLinkClass's hover:after:w-full).
+  const activeLinkClass = "after:w-full after:bg-current";
   const inactiveLinkClass = "after:bg-current";
 
   const isLight = lightThemeRoutes.includes(pathname) || !isValidRoute(pathname);
