@@ -11,7 +11,7 @@ export default function JobSectionAccordion({ title, items = [], children, defau
     const panelId = useId();
 
     return (
-        <div className="w-full overflow-hidden rounded-lg bg-[#ecf2f9]">
+        <div className="w-full overflow-hidden bg-[#ecf2f9]">
             <button
                 type="button"
                 aria-expanded={open}
@@ -20,7 +20,7 @@ export default function JobSectionAccordion({ title, items = [], children, defau
                 className="flex h-14 w-full cursor-pointer items-center justify-between gap-4 p-3 text-left"
             >
                 <span className="text-lg leading-[1.2] font-medium text-[#0e2b4b]">{title}</span>
-                <span aria-hidden="true" className="relative size-[26px] shrink-0 rounded bg-[#afc9e6]">
+                <span aria-hidden="true" className="relative size-[26px] shrink-0 bg-[#afc9e6]">
                     <span className="absolute top-1/2 left-1/2 h-[1.625px] w-[13px] -translate-1/2 bg-[#0061af]" />
                     <span
                         className={`absolute top-1/2 left-1/2 h-[1.625px] w-[13px] -translate-1/2 bg-[#0061af] transition-transform duration-300 ${

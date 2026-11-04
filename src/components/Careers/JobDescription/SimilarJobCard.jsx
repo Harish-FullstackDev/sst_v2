@@ -22,7 +22,7 @@ export default function SimilarJobCard({ job }) {
     const subtitle = job.categories[0] ?? job.typeOfWork;
 
     return (
-        <Link href={`/careers/${job.slug}`} className="group flex flex-col gap-4 rounded-xl bg-[#f7f7f7] p-6">
+        <Link href={`/careers/${job.slug}`} className="group flex flex-col gap-4 bg-[#f7f7f7] p-6">
             <div className="flex items-start justify-between gap-4 border-b-[0.5px] border-[#8695a7] pb-2">
                 <div className="flex flex-col gap-[6px] capitalize text-[#0e2b4b]">
                     <h3 className="text-lg leading-[1.2] font-medium">{job.title}</h3>
@@ -30,7 +30,7 @@ export default function SimilarJobCard({ job }) {
                 </div>
 
                 {/* Figma turns the 21×16 arrow -47° to point up-right. */}
-                <span className="flex size-[38px] shrink-0 items-center justify-center rounded-full bg-[#0061af] transition-colors duration-300 group-hover:bg-[#005192]">
+                <span className="flex size-[38px] shrink-0 items-center justify-center bg-[#0061af] transition-colors duration-300 group-hover:bg-[#005192]">
                     <Image
                         src={iconArrow}
                         alt=""

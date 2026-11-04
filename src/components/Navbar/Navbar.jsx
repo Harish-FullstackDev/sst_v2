@@ -288,7 +288,7 @@ const Navbar = () => {
                               <li key={item.name}>
                                 <Link
                                   href={item.href}
-                                  className={`block px-2 py-1 rounded-md text-sm whitespace-nowrap transition ${isNavbarLight
+                                  className={`block px-2 py-1 text-sm whitespace-nowrap transition ${isNavbarLight
                                     ? "hover:bg-gray-100 text-gray-700"
                                     : "hover:bg-white/10 text-white/80"
                                     }`}

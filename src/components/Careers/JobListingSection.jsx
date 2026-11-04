@@ -47,7 +47,7 @@ function FilterSelect({ label, value, options, onChange, width }) {
             <select
                 value={value}
                 onChange={(event) => onChange(event.target.value)}
-                className={`h-[34px] cursor-pointer appearance-none truncate w-full ${width} rounded-[6px] border border-[#c9d0d8] bg-white py-[7px] pl-[13px] pr-[43px] text-[14px] leading-[1.4] text-[#374151] outline-none focus:border-[#0061af]`}
+                className={`h-[34px] cursor-pointer appearance-none truncate w-full ${width} border border-[#c9d0d8] bg-white py-[7px] pl-[13px] pr-[43px] text-[14px] leading-[1.4] text-[#374151] outline-none focus:border-[#0061af]`}
             >
                 <option value="">{label}</option>
                 {options.map((option) => (
@@ -82,7 +82,7 @@ function JobRow({ job }) {
     const href = `/careers/${job.slug}`;
 
     return (
-        <article className="flex flex-col gap-4 rounded-[12px] bg-[#f7f7f7] p-5 sm:p-6">
+        <article className="flex flex-col gap-4 bg-[#f7f7f7] p-5 sm:p-6">
             <div className="flex flex-col gap-4 border-b-[0.5px] border-[#8695a7] pb-2 sm:min-h-[67px] sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex flex-col gap-[6px] text-[#0e2b4b]">
                     <h3 className="text-xl sm:text-2xl font-medium leading-[1.2]">
@@ -95,7 +95,7 @@ function JobRow({ job }) {
 
                 <Link
                     href={href}
-                    className="flex h-[33px] w-[126px] shrink-0 items-center justify-center rounded-[4px] bg-[#0061af] text-[14px] leading-[1.4] text-[#f8f8f8] transition-colors hover:bg-[#005192]"
+                    className="flex h-[33px] w-[126px] shrink-0 items-center justify-center bg-[#0061af] text-[14px] leading-[1.4] text-[#f8f8f8] transition-colors hover:bg-[#005192]"
                 >
                     View More
                 </Link>
@@ -235,7 +235,7 @@ export default function JobListingSection() {
                             value={search}
                             onChange={(event) => setSearch(event.target.value)}
                             placeholder="Search by job title, keyword or location"
-                            className="w-full rounded-[8px] border border-[#c9d0d8] bg-white pb-3 pl-[41px] pr-[17px] pt-[11px] text-[14px] leading-[1.4] text-[#111827] outline-none placeholder:text-[#8695a7] focus:border-[#0061af]"
+                            className="w-full border border-[#c9d0d8] bg-white pb-3 pl-[41px] pr-[17px] pt-[11px] text-[14px] leading-[1.4] text-[#111827] outline-none placeholder:text-[#8695a7] focus:border-[#0061af]"
                         />
                     </label>
 
@@ -279,7 +279,7 @@ export default function JobListingSection() {
                     {loading ? (
                         <ul className="flex flex-col gap-4" aria-busy="true">
                             {Array.from({ length: 3 }).map((_, index) => (
-                                <li key={index} className="h-[188px] animate-pulse rounded-[12px] bg-[#f7f7f7]" />
+                                <li key={index} className="h-[188px] animate-pulse bg-[#f7f7f7]" />
                             ))}
                         </ul>
                     ) : filteredJobs.length === 0 ? (
@@ -316,7 +316,7 @@ export default function JobListingSection() {
                                 type="button"
                                 onClick={() => setPage(pageNumber)}
                                 aria-current={pageNumber === page ? "page" : undefined}
-                                className={`flex items-center justify-center size-6 rounded text-sm font-semibold transition-colors ${pageNumber === page
+                                className={`flex items-center justify-center size-6 text-sm font-semibold transition-colors ${pageNumber === page
                                     ? "border border-[#0061af] text-[#0061af]"
                                     : "text-black opacity-50 hover:opacity-80"
                                     }`}

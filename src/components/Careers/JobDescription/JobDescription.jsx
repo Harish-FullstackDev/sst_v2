@@ -86,7 +86,7 @@ function JobHero({ job }) {
                     </div>
                     <ul className="flex flex-wrap items-center gap-3 text-xs leading-[1.4] text-white sm:text-sm">
                         {tags.map((tag) => (
-                            <li key={tag} className="rounded-md bg-[rgba(221,241,253,0.1)] p-[6px]">
+                            <li key={tag} className="bg-[rgba(221,241,253,0.1)] p-[6px]">
                                 {tag}
                             </li>
                         ))}
@@ -96,7 +96,7 @@ function JobHero({ job }) {
                 <div className="flex flex-wrap items-start gap-4">
                     <a
                         href={job.applyUrl}
-                        className="group flex h-11 w-full items-center justify-center gap-1 rounded-lg bg-[#f8f8f8] text-lg leading-[1.2] font-medium text-[#0e2b4b] drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-colors hover:bg-white sm:w-[264px]"
+                        className="group flex h-11 w-full items-center justify-center gap-1 bg-[#f8f8f8] text-lg leading-[1.2] font-medium text-[#0e2b4b] drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-colors hover:bg-white sm:w-[264px]"
                     >
                         Apply for this Position
                         <Image
@@ -109,7 +109,7 @@ function JobHero({ job }) {
                         HRMS portal, which signs the candidate in and has the toggle. */}
                     <a
                         href={job.hrmsJobUrl}
-                        className="flex h-11 items-center gap-2 rounded-lg border border-[#8695a7] px-3 text-lg leading-[1.2] font-medium text-white transition-colors hover:border-white"
+                        className="flex h-11 items-center gap-2 border border-[#8695a7] px-3 text-lg leading-[1.2] font-medium text-white transition-colors hover:border-white"
                     >
                         <Bookmark className="size-5" aria-hidden="true" />
                         Save Job
@@ -211,7 +211,7 @@ export default function JobDescription({ job, otherJobs = [] }) {
                         </ul>
                         <Link
                             href="/careers"
-                            className="flex h-11 items-center justify-center rounded-lg border border-[#8695a7] text-base font-medium text-[#0e2b4b] transition-colors hover:border-[#0061af] hover:text-[#0061af]"
+                            className="flex h-11 items-center justify-center border border-[#8695a7] text-base font-medium text-[#0e2b4b] transition-colors hover:border-[#0061af] hover:text-[#0061af]"
                         >
                             View all open roles
                         </Link>
