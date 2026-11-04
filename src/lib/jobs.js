@@ -1,6 +1,23 @@
-import { supabase } from "@/lib/supabaseClient";
+// Careers job postings, read from the HRMS Supabase project's `jobs` table
+// (managed by HR in the HRMS portal; schema in HrmsSST
+// supabase/migrations/20261102000000_hiring.sql). RLS makes published jobs
+// readable with the publishable key. Applications are taken by the HRMS
+// portal itself: see hrmsApplyUrl().
+import { hrmsSelect } from "@/lib/hrmsClient";
+
+const PUBLISHED = "published";
+const COMPANY = "Support Studio Technologies";
+
+const HRMS_URL = (process.env.NEXT_PUBLIC_HRMS_URL || "").replace(/\/$/, "");
+
+// Where "Apply" sends a candidate: the HRMS route that signs them in (or up)
+// and starts the apply flow for this job.
+export function hrmsApplyUrl(slug) {
+    return `${HRMS_URL}/jobs/${encodeURIComponent(slug)}/apply`;
+}
 
 function formatPostedAgo(dateString) {
+    if (!dateString) return "";
     const posted = new Date(dateString);
     const days = Math.max(0, Math.floor((Date.now() - posted.getTime()) / (1000 * 60 * 60 * 24)));
 
@@ -20,8 +37,10 @@ function formatPostedAgo(dateString) {
 function mapJob(row) {
     return {
         slug: row.slug,
+        jobCode: row.job_code ?? null,
         title: row.title,
-        company: row.company,
+        company: COMPANY,
+        department: row.department ?? "",
         location: row.location,
         modeOfWork: row.mode_of_work,
         typeOfWork: row.type_of_work,
@@ -31,45 +50,29 @@ function mapJob(row) {
         aboutJob: row.about_job,
         responsibilities: row.responsibilities || [],
         qualifications: row.qualifications || [],
+        notes: row.notes || [],
+        skills: row.skills || [],
+        applyUrl: hrmsApplyUrl(row.slug),
     };
 }
 
 export async function getAllJobs() {
-    const { data, error } = await supabase
-        .from("jobs")
-        .select("*")
-        .eq("status", "Open")
-        .order("posted_at", { ascending: false });
-
-    if (error) throw error;
-
-    return (data || []).map(mapJob);
+    const rows = await hrmsSelect("jobs", { select: "*", status: `eq.${PUBLISHED}`, order: "posted_at.desc" });
+    return rows.map(mapJob);
 }
 
 export async function getJobBySlug(slug) {
-    const { data, error } = await supabase
-        .from("jobs")
-        .select("*")
-        .eq("slug", slug)
-        .eq("status", "Open")
-        .maybeSingle();
-
-    if (error) throw error;
-    if (!data) return null;
-
-    return mapJob(data);
+    const [row] = await hrmsSelect("jobs", { select: "*", status: `eq.${PUBLISHED}`, slug: `eq.${slug}`, limit: "1" });
+    return row ? mapJob(row) : null;
 }
 
 export async function getOtherJobs(slug, limit = 3) {
-    const { data, error } = await supabase
-        .from("jobs")
-        .select("*")
-        .eq("status", "Open")
-        .neq("slug", slug)
-        .order("posted_at", { ascending: false })
-        .limit(limit);
-
-    if (error) throw error;
-
-    return (data || []).map(mapJob);
+    const rows = await hrmsSelect("jobs", {
+        select: "*",
+        status: `eq.${PUBLISHED}`,
+        slug: `neq.${slug}`,
+        order: "posted_at.desc",
+        limit: String(limit),
+    });
+    return rows.map(mapJob);
 }

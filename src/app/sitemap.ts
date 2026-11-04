@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { supabase } from '@/lib/supabaseClient';
+import { hrmsSelect } from '@/lib/hrmsClient';
 import { industryReportsData } from '@/data/industryReportsData';
 import { SITE_URL } from '@/lib/siteUrl';
 
@@ -13,7 +14,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/who-we-are',
     '/contact',
     '/careers',
-    '/careers/apply',
     '/book-a-consultation',
     '/trustcenter',
     '/ascenduspartner',
@@ -102,7 +102,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   try {
-    const { data: jobs } = await supabase.from('jobs').select('slug, updated_at').eq('status', 'Open');
+    const jobs = await hrmsSelect('jobs', { select: 'slug,updated_at', status: 'eq.published' });
     (jobs || []).forEach((row: any) => {
       dynamicRoutes.push({
         url: `${baseUrl}/careers/${row.slug}/`,
