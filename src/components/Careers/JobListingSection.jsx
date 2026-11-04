@@ -1,26 +1,140 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import searchIcon from "@/assets/career/icons/Search Icon.svg";
-import clearFilterIcon from "@/assets/career/icons/Clear filter.svg";
+import { motion } from "framer-motion";
+import iconSearch from "@/assets/career/icons/search-16.svg";
+import iconChevron from "@/assets/career/icons/chevron-down-18.svg";
+import iconReset from "@/assets/career/icons/reset-24.svg";
+import iconLocation from "@/assets/career/icons/location-pin-17x21.svg";
+import iconBriefcase from "@/assets/career/icons/briefcase-meta-24.svg";
+import iconClock from "@/assets/career/icons/clock-meta-24.svg";
 import prevPageIcon from "@/assets/career/icons/previous page toggle.svg";
 import nextPageIcon from "@/assets/career/icons/Next page toggle arrow.svg";
-import ViewDetailsButton from "./ViewDetailsButton";
 import { getAllJobs } from "@/lib/jobs";
 import { AREA_OF_INTEREST } from "@/components/Constants/Career/filterCategories";
 
-const PAGE_SIZE = 6;
+const PAGE_SIZE = 10;
+
+// Filters sit in one row above the list (search on its own line, dropdowns
+// under it), following ascendus_website_dev's /careers/open-positions/. Area
+// of Interest uses the fixed department list; the other dropdowns are built
+// from the live jobs so they only ever offer values that return results.
+// `field` is the key on a mapped job (see mapJob in src/lib/jobs.js).
+const FILTERS = [
+    { key: "area", label: "Area of Interest", field: "categories", width: "sm:w-[190px]" },
+    { key: "location", label: "Location", field: "location", width: "sm:w-[150px]" },
+    { key: "experience", label: "Experience Level", field: "experienceLevel", width: "sm:w-[186px]" },
+    { key: "workType", label: "Work Type", field: "typeOfWork", width: "sm:w-[150px]" },
+];
+
+const EMPTY_FILTERS = Object.fromEntries(FILTERS.map((filter) => [filter.key, ""]));
+
+// A job field can be a single value or a list (categories), and admin-entered
+// values may differ in case from the option text.
+function jobMatches(job, field, selected) {
+    const values = [].concat(job[field] ?? []);
+    return values.some((value) => value?.toLowerCase() === selected.toLowerCase());
+}
+
+// A native select sizes itself to its longest option, so each one gets an
+// explicit width and a long selected value truncates.
+function FilterSelect({ label, value, options, onChange, width }) {
+    return (
+        <label className="relative flex w-full min-w-0 sm:inline-flex sm:w-auto sm:shrink-0">
+            <span className="sr-only">{label}</span>
+            <select
+                value={value}
+                onChange={(event) => onChange(event.target.value)}
+                className={`h-[34px] cursor-pointer appearance-none truncate w-full ${width} rounded-[6px] border border-[#c9d0d8] bg-white py-[7px] pl-[13px] pr-[43px] text-[14px] leading-[1.4] text-[#374151] outline-none focus:border-[#0061af]`}
+            >
+                <option value="">{label}</option>
+                {options.map((option) => (
+                    <option key={option} value={option}>
+                        {option}
+                    </option>
+                ))}
+            </select>
+            <Image
+                src={iconChevron}
+                alt=""
+                className="pointer-events-none absolute right-[13px] top-1/2 size-[18px] -translate-y-1/2"
+            />
+        </label>
+    );
+}
+
+function Meta({ icon, children }) {
+    return (
+        <span className="flex items-center gap-[6px] whitespace-nowrap">
+            {icon}
+            {children}
+        </span>
+    );
+}
+
+// One full-width row per job: title + department over a 0.5px rule with View
+// More on the right, then a one-line summary and location / experience /
+// work type.
+function JobRow({ job }) {
+    const subtitle = job.categories[0] ?? job.department;
+    const href = `/careers/${job.slug}`;
+
+    return (
+        <article className="flex flex-col gap-4 rounded-[12px] bg-[#f7f7f7] p-5 sm:p-6">
+            <div className="flex flex-col gap-4 border-b-[0.5px] border-[#8695a7] pb-2 sm:min-h-[67px] sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-col gap-[6px] text-[#0e2b4b]">
+                    <h3 className="text-xl sm:text-2xl font-medium leading-[1.2]">
+                        <Link href={href} className="transition-colors hover:text-[#0061af]">
+                            {job.title}
+                        </Link>
+                    </h3>
+                    {subtitle && <p className="text-base leading-[1.5]">{subtitle}</p>}
+                </div>
+
+                <Link
+                    href={href}
+                    className="flex h-[33px] w-[126px] shrink-0 items-center justify-center rounded-[4px] bg-[#0061af] text-[14px] leading-[1.4] text-[#f8f8f8] transition-colors hover:bg-[#005192]"
+                >
+                    View More
+                </Link>
+            </div>
+
+            {job.aboutJob && (
+                <p className="line-clamp-2 text-base leading-[1.5] text-[#415773] lg:line-clamp-1">{job.aboutJob}</p>
+            )}
+
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-base capitalize leading-[1.5] text-[#0e2b4b]">
+                {job.location && (
+                    <Meta
+                        icon={
+                            <span className="flex size-6 items-center justify-center">
+                                <Image src={iconLocation} alt="" width={17} height={21} />
+                            </span>
+                        }
+                    >
+                        {job.location}
+                    </Meta>
+                )}
+                {job.experienceLevel && (
+                    <Meta icon={<Image src={iconBriefcase} alt="" width={24} height={24} />}>{job.experienceLevel}</Meta>
+                )}
+                {job.typeOfWork && (
+                    <Meta icon={<Image src={iconClock} alt="" width={24} height={24} />}>{job.typeOfWork}</Meta>
+                )}
+            </div>
+        </article>
+    );
+}
 
 export default function JobListingSection() {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("");
-    const [selectedCategories, setSelectedCategories] = useState([]);
+    const [filters, setFilters] = useState(EMPTY_FILTERS);
     const [page, setPage] = useState(1);
-    const [filtersOpen, setFiltersOpen] = useState(false);
+    const listRef = useRef(null);
 
     useEffect(() => {
         let isMounted = true;
@@ -42,12 +156,15 @@ export default function JobListingSection() {
         };
     }, []);
 
-    const categoryCounts = useMemo(() => {
-        const counts = {};
-        AREA_OF_INTEREST.forEach((category) => {
-            counts[category] = jobs.filter((job) => job.categories.includes(category)).length;
-        });
-        return counts;
+    const filterOptions = useMemo(() => {
+        const distinct = (field) =>
+            [...new Set(jobs.map((job) => job[field]).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+        return {
+            area: AREA_OF_INTEREST,
+            location: distinct("location"),
+            experience: distinct("experienceLevel"),
+            workType: distinct("typeOfWork"),
+        };
     }, [jobs]);
 
     const filteredJobs = useMemo(() => {
@@ -55,101 +172,43 @@ export default function JobListingSection() {
         return jobs.filter((job) => {
             const matchesSearch =
                 !query ||
-                job.location.toLowerCase().includes(query) ||
-                job.title.toLowerCase().includes(query);
-            const matchesCategory =
-                selectedCategories.length === 0 ||
-                job.categories.some((category) => selectedCategories.includes(category));
-            return matchesSearch && matchesCategory;
+                [job.title, job.location, ...job.categories].some((field) => field?.toLowerCase().includes(query));
+            const matchesFilters = FILTERS.every(
+                (filter) => !filters[filter.key] || jobMatches(job, filter.field, filters[filter.key])
+            );
+            return matchesSearch && matchesFilters;
         });
-    }, [jobs, search, selectedCategories]);
+    }, [jobs, search, filters]);
 
     const totalPages = Math.max(1, Math.ceil(filteredJobs.length / PAGE_SIZE));
-    const paginatedJobs = filteredJobs.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+    const pageStart = (page - 1) * PAGE_SIZE;
+    const paginatedJobs = filteredJobs.slice(pageStart, pageStart + PAGE_SIZE);
 
     useEffect(() => {
         setPage(1);
-    }, [search, selectedCategories]);
+    }, [search, filters]);
 
-    const toggleCategory = (category) => {
-        setSelectedCategories((prev) =>
-            prev.includes(category) ? prev.filter((item) => item !== category) : [...prev, category]
-        );
-    };
+    // Each page starts from its first role rather than wherever the previous
+    // page's list was scrolled to.
+    useEffect(() => {
+        listRef.current?.scrollTo({ top: 0 });
+    }, [page, search, filters]);
 
-    const clearFilters = () => {
+    const hasActiveFilters = search !== "" || Object.values(filters).some(Boolean);
+
+    const reset = () => {
         setSearch("");
-        setSelectedCategories([]);
+        setFilters(EMPTY_FILTERS);
     };
-
-    const hasActiveFilters = search !== "" || selectedCategories.length > 0;
-
-    const sidebar = (
-        <div className="flex flex-col gap-7 w-full lg:w-[324px] shrink-0">
-            <div className="flex flex-col gap-3">
-                <div className="flex items-center justify-between">
-                    <span className="text-[18px] text-black">Filters</span>
-                    <button
-                        type="button"
-                        onClick={clearFilters}
-                        disabled={!hasActiveFilters}
-                        className="flex items-center gap-1.5 text-[12px] text-black transition-opacity hover:opacity-70 disabled:opacity-40"
-                    >
-                        Clear filters
-                        <Image src={clearFilterIcon} alt="" width={16} height={16} />
-                    </button>
-                </div>
-                <div className="h-px w-full bg-[#e5e5e5]" />
-            </div>
-
-            <label className="flex items-center gap-2.5 h-[30px] border-[0.5px] border-[#7f7f7f] px-[10px]">
-                <Image src={searchIcon} alt="" width={14} height={14} />
-                <input
-                    type="text"
-                    value={search}
-                    onChange={(event) => setSearch(event.target.value)}
-                    placeholder="Search roles"
-                    className="w-full bg-transparent text-[10px] font-thin text-[#6c6c6c] outline-none placeholder:text-[#6c6c6c]"
-                />
-            </label>
-
-            <div className="flex flex-col gap-3">
-                <span className="text-[16px] text-black">Area of Interest</span>
-                <div className="flex flex-col">
-                    {AREA_OF_INTEREST.map((category) => {
-                        const count = categoryCounts[category];
-                        const disabled = count === 0;
-                        return (
-                            <label
-                                key={category}
-                                className={`flex items-center gap-2.5 h-10 px-2.5 text-[14px] text-black transition-colors ${disabled ? "opacity-40" : "cursor-pointer hover:bg-black/[0.02]"
-                                    }`}
-                            >
-                                <input
-                                    type="checkbox"
-                                    checked={selectedCategories.includes(category)}
-                                    onChange={() => toggleCategory(category)}
-                                    disabled={disabled}
-                                    className="size-3.5 accent-[#2d8ec5]"
-                                />
-                                <span className="flex-1">{category}</span>
-                                <span className="text-black font-light">{count}</span>
-                            </label>
-                        );
-                    })}
-                </div>
-            </div>
-        </div>
-    );
 
     return (
-        <section id="job-listings" className="w-full pt-5 pb-10 sm:pb-8 sm:pt-8 scroll-mt-24">
+        <section id="job-listings" className="w-full bg-white px-6 pt-10 pb-10 sm:px-[64px] sm:pt-16 sm:pb-16 scroll-mt-24">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="text-center mb-10 sm:mb-16"
+                className="text-center mb-10 sm:mb-12"
             >
                 <p className="text-base sm:text-lg text-[#55595E]">Opportunities</p>
                 <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033] mt-2">Find Work That Matches Your Expertise.</h2>
@@ -160,115 +219,122 @@ export default function JobListingSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="relative w-full bg-[#F5F6F6] shadow-[0px_1px_30.9px_rgba(0,0,0,0.14)] px-5 sm:px-32 py-10 sm:py-16"
+                className="flex w-full flex-col gap-6"
             >
-                <div aria-hidden className="hidden lg:block absolute top-2 bottom-2 right-2 w-[6px] rounded-full bg-[#d7d7d7]">
-                    <div className="w-full h-2/3 rounded-full bg-[#c5c2c2] shadow-[inset_0px_4px_4px_rgba(0,0,0,0.25)]" />
-                </div>
+                {/* Filters — across the top of the list. */}
+                <div className="flex flex-col gap-3">
+                    <label className="relative block">
+                        <span className="sr-only">Search jobs</span>
+                        <Image
+                            src={iconSearch}
+                            alt=""
+                            className="pointer-events-none absolute left-[14px] top-1/2 size-4 -translate-y-1/2"
+                        />
+                        <input
+                            type="search"
+                            value={search}
+                            onChange={(event) => setSearch(event.target.value)}
+                            placeholder="Search by job title, keyword or location"
+                            className="w-full rounded-[8px] border border-[#c9d0d8] bg-white pb-3 pl-[41px] pr-[17px] pt-[11px] text-[14px] leading-[1.4] text-[#111827] outline-none placeholder:text-[#8695a7] focus:border-[#0061af]"
+                        />
+                    </label>
 
-                <button
-                    type="button"
-                    onClick={() => setFiltersOpen((prev) => !prev)}
-                    className="lg:hidden flex items-center justify-between w-full border border-[#a9a9a9] px-4 py-2.5 mb-4 text-sm text-[#5c5c5c] bg-white"
-                >
-                    Filters
-                    <span>{filtersOpen ? "−" : "+"}</span>
-                </button>
+                    <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center">
+                        {FILTERS.map((filter) => (
+                            <FilterSelect
+                                key={filter.key}
+                                label={filter.label}
+                                width={filter.width}
+                                value={filters[filter.key]}
+                                options={filterOptions[filter.key]}
+                                onChange={(value) => setFilters((prev) => ({ ...prev, [filter.key]: value }))}
+                            />
+                        ))}
 
-                <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 lg:pr-4">
-                    <AnimatePresence initial={false}>
-                        {filtersOpen && (
-                            <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: "auto", opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.25, ease: "easeInOut" }}
-                                className="overflow-hidden lg:hidden"
-                            >
-                                {sidebar}
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-
-                    <div className="hidden lg:block">{sidebar}</div>
-
-                    <div className="hidden lg:block w-px bg-[#ddd]" />
-
-                    <div className="flex-1 flex flex-col gap-6">
-                        <div className="flex flex-col gap-3">
-                            {loading ? (
-                                <p className="text-sm text-[#5c5c5c] py-10 text-center">Loading open roles...</p>
-                            ) : paginatedJobs.length === 0 ? (
-                                <p className="text-sm text-[#5c5c5c] py-10 text-center">
-                                    No roles match your current filters. Adjust your search criteria or check back
-                                    as new opportunities become available.
-                                </p>
-                            ) : (
-                                paginatedJobs.map((job, index) => (
-                                    <motion.div
-                                        key={job.slug}
-                                        initial={{ opacity: 0, y: 16 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true, amount: 0.3 }}
-                                        transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
-                                        whileHover={{ scale: 1.015 }}
-                                        className="group flex flex-row items-center justify-between gap-3 sm:gap-4 bg-white border-l-4 border-transparent px-5 py-4 transition-all duration-300 hover:border-[#2d8ec5] hover:shadow-[1px_3px_12px_rgba(0,0,0,0.18)]"
-                                    >
-                                        {/* min-w-0 so this column can shrink below its
-                                            longest word instead of pushing the button
-                                            out of the card on a narrow screen. */}
-                                        <div className="min-w-0">
-                                            <p className="text-[16px] text-black">{job.title}</p>
-                                            <p className="text-[14px] font-light text-[#6c6c6c] mt-1">
-                                                {job.location} | {job.typeOfWork} | {job.experienceLevel}
-                                            </p>
-                                        </div>
-                                        <ViewDetailsButton
-                                            href={`/careers/${job.slug}`}
-                                            className="shrink-0"
-                                        />
-                                    </motion.div>
-                                ))
-                            )}
-                        </div>
-
-                        {totalPages > 1 && (
-                            <div className="flex items-center justify-end gap-3 pt-2">
-                                <button
-                                    type="button"
-                                    onClick={() => setPage((prev) => Math.max(1, prev - 1))}
-                                    disabled={page === 1}
-                                    className="flex items-center justify-center size-6 disabled:opacity-30"
-                                    aria-label="Previous page"
-                                >
-                                    <Image src={prevPageIcon} alt="" width={20} height={20} />
-                                </button>
-                                {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
-                                    <button
-                                        key={pageNumber}
-                                        type="button"
-                                        onClick={() => setPage(pageNumber)}
-                                        className={`flex items-center justify-center size-6 rounded text-sm font-semibold transition-colors ${pageNumber === page
-                                            ? "border border-[#2d8ec5] text-[#2d8ec5]"
-                                            : "text-black opacity-50 hover:opacity-80"
-                                            }`}
-                                    >
-                                        {pageNumber}
-                                    </button>
-                                ))}
-                                <button
-                                    type="button"
-                                    onClick={() => setPage((prev) => Math.min(totalPages, prev + 1))}
-                                    disabled={page === totalPages}
-                                    className="flex items-center justify-center size-6 disabled:opacity-30"
-                                    aria-label="Next page"
-                                >
-                                    <Image src={nextPageIcon} alt="" width={20} height={20} />
-                                </button>
-                            </div>
-                        )}
+                        <button
+                            type="button"
+                            onClick={reset}
+                            disabled={!hasActiveFilters}
+                            className="col-span-2 justify-self-end sm:ml-auto flex items-center gap-1 px-2 py-[6px] text-base leading-[1.5] text-[#6b7280] transition-opacity hover:opacity-70 disabled:opacity-50"
+                        >
+                            <Image src={iconReset} alt="" className="size-6" />
+                            Reset
+                        </button>
                     </div>
                 </div>
+
+                {!loading && filteredJobs.length > 0 && (
+                    <p className="text-sm text-[#6b7280]">
+                        Showing {pageStart + 1}–{pageStart + paginatedJobs.length} of {filteredJobs.length}{" "}
+                        {filteredJobs.length === 1 ? "role" : "roles"}
+                    </p>
+                )}
+
+                {/* Up to 10 roles per page, scrolling inside this box so the page
+                    itself stays short; the pagination below moves to the next 10. */}
+                <div
+                    ref={listRef}
+                    className="max-h-[clamp(480px,70vh,760px)] overflow-y-auto pr-2 sm:pr-3 [scrollbar-width:thin] [scrollbar-color:#c5c2c2_#ececec]"
+                >
+                    {loading ? (
+                        <ul className="flex flex-col gap-4" aria-busy="true">
+                            {Array.from({ length: 3 }).map((_, index) => (
+                                <li key={index} className="h-[188px] animate-pulse rounded-[12px] bg-[#f7f7f7]" />
+                            ))}
+                        </ul>
+                    ) : filteredJobs.length === 0 ? (
+                        <p className="py-10 text-center text-base leading-[1.5] text-[#415773]">
+                            {jobs.length === 0
+                                ? "There are no open positions right now."
+                                : "No roles match your search. Try clearing a filter."}
+                        </p>
+                    ) : (
+                        <ul className="flex flex-col gap-4">
+                            {paginatedJobs.map((job) => (
+                                <li key={job.slug}>
+                                    <JobRow job={job} />
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+
+                {totalPages > 1 && (
+                    <nav aria-label="Job list pages" className="flex items-center justify-end gap-3">
+                        <button
+                            type="button"
+                            onClick={() => setPage((prev) => Math.max(1, prev - 1))}
+                            disabled={page === 1}
+                            className="flex items-center justify-center size-6 disabled:opacity-30"
+                            aria-label="Previous page"
+                        >
+                            <Image src={prevPageIcon} alt="" width={20} height={20} />
+                        </button>
+                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
+                            <button
+                                key={pageNumber}
+                                type="button"
+                                onClick={() => setPage(pageNumber)}
+                                aria-current={pageNumber === page ? "page" : undefined}
+                                className={`flex items-center justify-center size-6 rounded text-sm font-semibold transition-colors ${pageNumber === page
+                                    ? "border border-[#0061af] text-[#0061af]"
+                                    : "text-black opacity-50 hover:opacity-80"
+                                    }`}
+                            >
+                                {pageNumber}
+                            </button>
+                        ))}
+                        <button
+                            type="button"
+                            onClick={() => setPage((prev) => Math.min(totalPages, prev + 1))}
+                            disabled={page === totalPages}
+                            className="flex items-center justify-center size-6 disabled:opacity-30"
+                            aria-label="Next page"
+                        >
+                            <Image src={nextPageIcon} alt="" width={20} height={20} />
+                        </button>
+                    </nav>
+                )}
             </motion.div>
         </section>
     );
