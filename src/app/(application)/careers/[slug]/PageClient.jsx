@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 import CareersLayout from "@/components/Careers/CareersLayout";
+import ContactBand from "@/components/Careers/ContactBand";
 import JobDescription from "@/components/Careers/JobDescription/JobDescription";
 
 const PageClient = ({ job, otherJobs }) => {
@@ -24,21 +26,20 @@ const PageClient = ({ job, otherJobs }) => {
     }
 
     return (
-        <CareersLayout
-            showContactBand
-            breadcrumbs={
-                <>
-                    <Link href="/careers" className="text-[#4a5565] hover:text-[#0061af] transition-colors">
-                        Careers
-                    </Link>
-                    <ChevronRight className="w-4 h-4 text-[#4a5565]" aria-hidden="true" />
-                    <span className="text-[#0061af]">{job.title}</span>
-                    <ChevronRight className="w-4 h-4 text-[#4a5565]" aria-hidden="true" />
-                </>
-            }
-        >
-            <JobDescription job={job} otherJobs={otherJobs} />
-        </CareersLayout>
+        <div className="min-h-screen bg-white flex flex-col font-sans">
+            <Navbar />
+            {/* Dark band behind the fixed, transparent-at-top navbar (Navbar renders
+                its own 64/68px spacer; pull this band up into it). */}
+            <div className="-mt-[64px] lg:-mt-[68px] h-[64px] lg:h-[68px] bg-[#081a2c]" aria-hidden="true" />
+
+            <main className="flex-grow">
+                <JobDescription job={job} otherJobs={otherJobs} />
+            </main>
+
+            {/* "Why Join Us" band, kept from the previous design */}
+            <ContactBand />
+            <Footer />
+        </div>
     );
 };
 

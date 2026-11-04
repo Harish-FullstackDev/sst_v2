@@ -325,14 +325,6 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/whitepapers"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Whitepapers
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/blog"
                   className="hover:text-white transition-colors duration-200"
                 >
@@ -462,7 +454,9 @@ const Footer = () => {
             it lines up under Get In Touch */}
         <div className="grid grid-cols-1 md:grid-cols-5 md:gap-16">
 
-          <div className="md:col-start-5">
+          {/* Full width below xl: column 5 is too narrow there to hold
+              "© 2026 Support Studio Technologies." on one line. */}
+          <div className="md:col-span-5 xl:col-span-1 xl:col-start-5">
             <div className="space-x-3 md:col-span-1">
               <p className="text-sm text-white mb-4 md:mb-0">
                 <a
@@ -494,11 +488,10 @@ const Footer = () => {
                 </a>
               </p>
             </div>
-            {/* Breaks between the two halves when the Get In Touch column is too
-                narrow, never mid-phrase. Forcing one line overflowed the viewport
-                once the company name became "Support Studio Technologies". */}
+            {/* The company name never breaks; "All Rights Reserved." moves to the
+                next line when the column is too narrow for both. */}
             <p className="text-sm text-white min-h-[50px] pt-4">
-              <span>© 2026 Support Studio Technologies.</span>{" "}
+              <span className="whitespace-nowrap">© 2026 Support Studio Technologies.</span>{" "}
               <span className="whitespace-nowrap">All Rights Reserved.</span>
             </p>
           </div>
