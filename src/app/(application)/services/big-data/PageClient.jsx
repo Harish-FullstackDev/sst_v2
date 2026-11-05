@@ -5,12 +5,18 @@ import Footer from "@/components/Footer/Footer";
 
 import Hero from "@/components/Services/BigData/Hero";
 import HeroText from "@/components/Services/BigData/HeroText";
-import BigDataStatement from "@/components/Services/BigData/BigDataStatement";
-import WhyBigData from "@/components/Services/BigData/WhyBigData";
-import BigDataServices from "@/components/Services/BigData/BigDataServices";
-import BigDataAdvantages from "@/components/Services/BigData/BigDataAdvantages";
-import BigDataPipeline from "@/components/Services/BigData/BigDataPipeline";
-import BigDataOutcomes from "@/components/Services/BigData/BigDataOutcomes";
+// TODO: section component not committed yet (d806cf3).
+// import BigDataStatement from "@/components/Services/BigData/BigDataStatement";
+// TODO: section component not committed yet (d806cf3).
+// import WhyBigData from "@/components/Services/BigData/WhyBigData";
+// TODO: section component not committed yet (d806cf3).
+// import BigDataServices from "@/components/Services/BigData/BigDataServices";
+// TODO: section component not committed yet (d806cf3).
+// import BigDataAdvantages from "@/components/Services/BigData/BigDataAdvantages";
+// TODO: section component not committed yet (d806cf3).
+// import BigDataPipeline from "@/components/Services/BigData/BigDataPipeline";
+// TODO: section component not committed yet (d806cf3).
+// import BigDataOutcomes from "@/components/Services/BigData/BigDataOutcomes";
 import ReadyToTransform from "@/components/Services/BigData/ReadyToTransform";
 
 const page = () => {
@@ -29,13 +35,13 @@ const page = () => {
             </div>
 
             <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
-                <BigDataStatement />
-                <WhyBigData />
-                <BigDataServices />
+                {/* <BigDataStatement /> */}
+                {/* <WhyBigData /> */}
+                {/* <BigDataServices /> */}
             </div>
-            <BigDataAdvantages />
-            <BigDataPipeline />
-            <BigDataOutcomes />
+            {/* <BigDataAdvantages /> */}
+            {/* <BigDataPipeline /> */}
+            {/* <BigDataOutcomes /> */}
             <ReadyToTransform
                 title="Empower Your Business with Big Data for Unparalleled Growth."
                 description="Discover the possibilities. Contact us for a personalized demo."

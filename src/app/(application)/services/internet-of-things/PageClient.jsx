@@ -5,12 +5,18 @@ import Footer from "@/components/Footer/Footer";
 
 import Hero from "@/components/Services/InternetOfThings/Hero";
 import HeroText from "@/components/Services/InternetOfThings/HeroText";
-import IotOverview from "@/components/Services/InternetOfThings/IotOverview";
-import IotServices from "@/components/Services/InternetOfThings/IotServices";
-import WhyIot from "@/components/Services/InternetOfThings/WhyIot";
-import IotArchitecture from "@/components/Services/InternetOfThings/IotArchitecture";
-import IotDelivery from "@/components/Services/InternetOfThings/IotDelivery";
-import IotIndustries from "@/components/Services/InternetOfThings/IotIndustries";
+// TODO: section component not committed yet (d806cf3).
+// import IotOverview from "@/components/Services/InternetOfThings/IotOverview";
+// TODO: section component not committed yet (d806cf3).
+// import IotServices from "@/components/Services/InternetOfThings/IotServices";
+// TODO: section component not committed yet (d806cf3).
+// import WhyIot from "@/components/Services/InternetOfThings/WhyIot";
+// TODO: section component not committed yet (d806cf3).
+// import IotArchitecture from "@/components/Services/InternetOfThings/IotArchitecture";
+// TODO: section component not committed yet (d806cf3).
+// import IotDelivery from "@/components/Services/InternetOfThings/IotDelivery";
+// TODO: section component not committed yet (d806cf3).
+// import IotIndustries from "@/components/Services/InternetOfThings/IotIndustries";
 import ReadyToTransform from "@/components/Services/InternetOfThings/ReadyToTransform";
 
 const page = () => {
@@ -29,13 +35,13 @@ const page = () => {
             </div>
 
             <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
-                <IotOverview />
-                <IotServices />
+                {/* <IotOverview /> */}
+                {/* <IotServices /> */}
             </div>
-            <WhyIot />
-            <IotArchitecture />
-            <IotDelivery />
-            <IotIndustries />
+            {/* <WhyIot /> */}
+            {/* <IotArchitecture /> */}
+            {/* <IotDelivery /> */}
+            {/* <IotIndustries /> */}
             <ReadyToTransform
                 title="Elevate Your Business with IoT (Internet of Things) – Where Innovation Meets Efficiency."
                 description="Discover the possibilities. Contact us for a personalized demo."

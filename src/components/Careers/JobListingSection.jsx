@@ -17,8 +17,8 @@ import { AREA_OF_INTEREST } from "@/components/Constants/Career/filterCategories
 
 const PAGE_SIZE = 10;
 
-// Filters sit in one row above the list (search on its own line, dropdowns
-// under it), following ascendus_website_dev's /careers/open-positions/. Area
+// Filters sit in one row above the list (search first, then the dropdowns),
+// following ascendus_website_dev's /careers/open-positions/. Area
 // of Interest uses the fixed department list; the other dropdowns are built
 // from the live jobs so they only ever offer values that return results.
 // `field` is the key on a mapped job (see mapJob in src/lib/jobs.js).
@@ -223,23 +223,26 @@ export default function JobListingSection() {
             >
                 {/* Filters — across the top of the list. */}
                 <div className="flex flex-col gap-3">
-                    <label className="relative block">
-                        <span className="sr-only">Search jobs</span>
-                        <Image
-                            src={iconSearch}
-                            alt=""
-                            className="pointer-events-none absolute left-[14px] top-1/2 size-4 -translate-y-1/2"
-                        />
-                        <input
-                            type="search"
-                            value={search}
-                            onChange={(event) => setSearch(event.target.value)}
-                            placeholder="Search by job title, keyword or location"
-                            className="w-full border border-[#c9d0d8] bg-white pb-3 pl-[41px] pr-[17px] pt-[11px] text-[14px] leading-[1.4] text-[#111827] outline-none placeholder:text-[#8695a7] focus:border-[#0061af]"
-                        />
-                    </label>
-
+                    {/* Search leads the row, ahead of Area of Interest, taking the
+                        spare width. Below xl the dropdowns leave it too little
+                        room, so it gets its own line above them. */}
                     <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center">
+                        <label className="relative col-span-2 block sm:w-full xl:w-auto xl:min-w-[260px] xl:flex-1">
+                            <span className="sr-only">Search jobs</span>
+                            <Image
+                                src={iconSearch}
+                                alt=""
+                                className="pointer-events-none absolute left-[14px] top-1/2 size-4 -translate-y-1/2"
+                            />
+                            <input
+                                type="search"
+                                value={search}
+                                onChange={(event) => setSearch(event.target.value)}
+                                placeholder="Search by job title, keyword or location"
+                                className="h-[34px] w-full border border-[#c9d0d8] bg-white pl-[41px] pr-[17px] text-[14px] leading-[1.4] text-[#111827] outline-none placeholder:text-[#8695a7] focus:border-[#0061af]"
+                            />
+                        </label>
+
                         {FILTERS.map((filter) => (
                             <FilterSelect
                                 key={filter.key}
