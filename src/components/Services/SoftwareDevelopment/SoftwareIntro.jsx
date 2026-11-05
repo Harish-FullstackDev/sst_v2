@@ -1,0 +1,52 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+import introPhoto from "@/assets/Services/SoftwareDevelopment/intro.jpg";
+
+const CREDENTIALS = ["Software Development Expert", "Certified Agile Practitioner", "DevOps Specialist"];
+
+export default function SoftwareIntro() {
+    return (
+        <section className="w-full px-8 py-10 sm:px-[64px] sm:py-[64px] bg-[#f5f6f6]">
+            {/* Image leads on desktop; on mobile the copy comes first. */}
+            <div className="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-12 xl:gap-[100px]">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="relative w-full lg:w-[520px] lg:max-w-[45%] shrink-0 aspect-[4/3] overflow-hidden"
+                >
+                    <Image src={introPhoto} alt="Laptop running a business application" fill className="object-cover" />
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                    className="w-full lg:flex-1 lg:min-w-0 flex flex-col gap-2"
+                >
+                    <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Develop, Innovate, Excel.</p>
+                    <h2 className="text-xl sm:text-[28px] text-[#2E3033] font-semibold leading-normal">
+                        Cutting-Edge Software Solutions for Your Business
+                    </h2>
+                    <p className="pt-2 text-base sm:text-lg text-[#55595E] font-light leading-relaxed">
+                        Software Development delivers cutting-edge solutions, surpassing traditional methods with
+                        real-time capabilities, enhanced performance, and streamlined processes.
+                    </p>
+
+                    <ul className="flex flex-col gap-3 pt-5">
+                        {CREDENTIALS.map((label) => (
+                            <li key={label} className="flex items-center gap-3 text-[#2E3033] text-base sm:text-lg font-light">
+                                <span className="h-px w-6 shrink-0 bg-[#2d8ec5]" aria-hidden />
+                                {label}
+                            </li>
+                        ))}
+                    </ul>
+                </motion.div>
+            </div>
+        </section>
+    );
+}

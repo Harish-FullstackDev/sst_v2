@@ -5,18 +5,12 @@ import Footer from "@/components/Footer/Footer";
 
 import Hero from "@/components/Services/CyberSecurity/Hero";
 import HeroText from "@/components/Services/CyberSecurity/HeroText";
-// TODO: section component not committed yet (d806cf3).
-// import CyberOverview from "@/components/Services/CyberSecurity/CyberOverview";
-// TODO: section component not committed yet (d806cf3).
-// import CyberServices from "@/components/Services/CyberSecurity/CyberServices";
-// TODO: section component not committed yet (d806cf3).
-// import WhyCyber from "@/components/Services/CyberSecurity/WhyCyber";
-// TODO: section component not committed yet (d806cf3).
-// import CyberMatters from "@/components/Services/CyberSecurity/CyberMatters";
-// TODO: section component not committed yet (d806cf3).
-// import CyberApproach from "@/components/Services/CyberSecurity/CyberApproach";
-// TODO: section component not committed yet (d806cf3).
-// import CyberAssessment from "@/components/Services/CyberSecurity/CyberAssessment";
+import CyberOverview from "@/components/Services/CyberSecurity/CyberOverview";
+import CyberServices from "@/components/Services/CyberSecurity/CyberServices";
+import WhyCyber from "@/components/Services/CyberSecurity/WhyCyber";
+import CyberMatters from "@/components/Services/CyberSecurity/CyberMatters";
+import CyberApproach from "@/components/Services/CyberSecurity/CyberApproach";
+import CyberAssessment from "@/components/Services/CyberSecurity/CyberAssessment";
 import ReadyToTransform from "@/components/Services/CyberSecurity/ReadyToTransform";
 
 const page = () => {
@@ -35,13 +29,13 @@ const page = () => {
             </div>
 
             <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
-                {/* <CyberOverview /> */}
-                {/* <CyberServices /> */}
+                <CyberOverview />
+                <CyberServices />
             </div>
-            {/* <WhyCyber /> */}
-            {/* <CyberMatters /> */}
-            {/* <CyberApproach /> */}
-            {/* <CyberAssessment /> */}
+            <WhyCyber />
+            <CyberMatters />
+            <CyberApproach />
+            <CyberAssessment />
             <ReadyToTransform
                 title="Protect Your Business with Cybersecurity – Where Trust Meets Innovation."
                 description="Discover the possibilities. Contact us for a personalized demo."

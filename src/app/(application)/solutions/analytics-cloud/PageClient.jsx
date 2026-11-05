@@ -5,9 +5,15 @@ import Footer from "@/components/Footer/Footer";
 
 import Hero from "@/components/Solutions/AnalyticsCloud/Hero";
 import HeroText from "@/components/Solutions/AnalyticsCloud/HeroText";
+import SacOverview from "@/components/Solutions/AnalyticsCloud/SacOverview";
+import SacPlatform from "@/components/Solutions/AnalyticsCloud/SacPlatform";
+import SacFeatures from "@/components/Solutions/AnalyticsCloud/SacFeatures";
+import SacConnections from "@/components/Solutions/AnalyticsCloud/SacConnections";
+import SacAudience from "@/components/Solutions/AnalyticsCloud/SacAudience";
+import SacAdoption from "@/components/Solutions/AnalyticsCloud/SacAdoption";
+import WhySac from "@/components/Solutions/AnalyticsCloud/WhySac";
 import ReadyToTransform from "@/components/Solutions/AnalyticsCloud/ReadyToTransform";
 
-// Only the hero and CTA sections exist for this solution so far.
 const page = () => {
     return (
         <div className="min-h-screen bg-white flex flex-col font-sans">
@@ -22,8 +28,15 @@ const page = () => {
                     <HeroText />
                 </div>
             </div>
-            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white" />
-
+            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
+                <SacOverview />
+                <SacPlatform />
+            </div>
+            <SacFeatures />
+            <SacConnections />
+            <SacAudience />
+            <SacAdoption />
+            <WhySac />
             <ReadyToTransform
                 title="Turn Data Into Decisions With SAP Analytics Cloud Today!"
                 description="Discover the possibilities. Contact us for a personalized demo."

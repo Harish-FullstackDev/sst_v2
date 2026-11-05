@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import heroBg from "@/assets/Services/MicrosoftMigration/hero.webp"; // TODO: MicrosoftRollout art not committed yet
+import heroBg from "@/assets/Services/MicrosoftRollout/hero.webp";
 
 export default function Hero() {
     return (

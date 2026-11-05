@@ -5,9 +5,14 @@ import Footer from "@/components/Footer/Footer";
 
 import Hero from "@/components/Services/SapMigration/Hero";
 import HeroText from "@/components/Services/SapMigration/HeroText";
+import MigrationOverview from "@/components/Services/SapMigration/MigrationOverview";
+import MigrationEssential from "@/components/Services/SapMigration/MigrationEssential";
+import MigrationProducts from "@/components/Services/SapMigration/MigrationProducts";
+import MigrationScenarios from "@/components/Services/SapMigration/MigrationScenarios";
+import MigrationPhases from "@/components/Services/SapMigration/MigrationPhases";
+import MigrationOutcomes from "@/components/Services/SapMigration/MigrationOutcomes";
 import ReadyToTransform from "@/components/Services/SapMigration/ReadyToTransform";
 
-// Only the hero and CTA sections exist for this service so far.
 const page = () => {
     return (
         <div className="min-h-screen bg-white flex flex-col font-sans">
@@ -22,10 +27,17 @@ const page = () => {
                     <HeroText />
                 </div>
             </div>
-            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white" />
+            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
+                <MigrationOverview />
+                <MigrationEssential />
+            </div>
+            <MigrationProducts />
+            <MigrationScenarios />
+            <MigrationPhases />
+            <MigrationOutcomes />
 
             <ReadyToTransform
-                title="Start Your SAP Migration Today!"
+                title="Transform Your Enterprise Through SAP Migration Excellence"
                 description="Discover the possibilities. Contact us for a personalized demo."
                 buttonLabel="Get in Touch"
             />

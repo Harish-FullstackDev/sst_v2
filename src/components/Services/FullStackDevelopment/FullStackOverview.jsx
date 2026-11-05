@@ -31,6 +31,10 @@ export default function FullStackOverview() {
                         </li>
                     ))}
                 </ul>
+                <p className="max-w-[900px] text-base sm:text-lg font-light text-[#55595E]">
+                    Full-Stack Development provides comprehensive web solutions, integrating advanced front-end
+                    interfaces with robust back-end systems for optimal performance and seamless user experiences.
+                </p>
             </motion.div>
 
             <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-[clamp(3rem,8vw,143px)]">

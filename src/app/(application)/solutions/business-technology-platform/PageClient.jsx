@@ -5,9 +5,14 @@ import Footer from "@/components/Footer/Footer";
 
 import Hero from "@/components/Solutions/BusinessTechnologyPlatform/Hero";
 import HeroText from "@/components/Solutions/BusinessTechnologyPlatform/HeroText";
+import BtpOverview from "@/components/Solutions/BusinessTechnologyPlatform/BtpOverview";
+import BtpStrengths from "@/components/Solutions/BusinessTechnologyPlatform/BtpStrengths";
+import BtpAreas from "@/components/Solutions/BusinessTechnologyPlatform/BtpAreas";
+import BtpFeatures from "@/components/Solutions/BusinessTechnologyPlatform/BtpFeatures";
+import BtpCleanCore from "@/components/Solutions/BusinessTechnologyPlatform/BtpCleanCore";
+import WhyBtp from "@/components/Solutions/BusinessTechnologyPlatform/WhyBtp";
 import ReadyToTransform from "@/components/Solutions/BusinessTechnologyPlatform/ReadyToTransform";
 
-// Only the hero and CTA sections exist for this solution so far.
 const page = () => {
     return (
         <div className="min-h-screen bg-white flex flex-col font-sans">
@@ -22,8 +27,14 @@ const page = () => {
                     <HeroText />
                 </div>
             </div>
-            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white" />
-
+            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
+                <BtpOverview />
+                <BtpStrengths />
+            </div>
+            <BtpAreas />
+            <BtpFeatures />
+            <BtpCleanCore />
+            <WhyBtp />
             <ReadyToTransform
                 title="Innovate Faster With SAP Business Technology Platform Today!"
                 description="Discover the possibilities. Contact us for a personalized demo."

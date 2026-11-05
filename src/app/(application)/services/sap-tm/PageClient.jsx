@@ -5,9 +5,14 @@ import Footer from "@/components/Footer/Footer";
 
 import Hero from "@/components/Services/SapTm/Hero";
 import HeroText from "@/components/Services/SapTm/HeroText";
+import TmOverview from "@/components/Services/SapTm/TmOverview";
+import TmEfficiency from "@/components/Services/SapTm/TmEfficiency";
+import TmKeyFactors from "@/components/Services/SapTm/TmKeyFactors";
+import TmLifecycle from "@/components/Services/SapTm/TmLifecycle";
+import TmCompliance from "@/components/Services/SapTm/TmCompliance";
+import TmIndustries from "@/components/Services/SapTm/TmIndustries";
 import ReadyToTransform from "@/components/Services/SapTm/ReadyToTransform";
 
-// Only the hero and CTA sections exist for this service so far.
 const page = () => {
     return (
         <div className="min-h-screen bg-white flex flex-col font-sans">
@@ -22,10 +27,17 @@ const page = () => {
                     <HeroText />
                 </div>
             </div>
-            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white" />
+            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
+                <TmOverview />
+                <TmEfficiency />
+            </div>
+            <TmKeyFactors />
+            <TmLifecycle />
+            <TmCompliance />
+            <TmIndustries />
 
             <ReadyToTransform
-                title="Transform Logistics With SAP Transportation Management Today!"
+                title="Empower Your Project Management With SAP T&M Time Tracking and Cost Control"
                 description="Discover the possibilities. Contact us for a personalized demo."
                 buttonLabel="Get in Touch"
             />

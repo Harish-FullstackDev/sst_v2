@@ -5,9 +5,14 @@ import Footer from "@/components/Footer/Footer";
 
 import Hero from "@/components/Solutions/CustomerRelationshipManagement/Hero";
 import HeroText from "@/components/Solutions/CustomerRelationshipManagement/HeroText";
+import CrmOverview from "@/components/Solutions/CustomerRelationshipManagement/CrmOverview";
+import CrmModules from "@/components/Solutions/CustomerRelationshipManagement/CrmModules";
+import CrmStatement from "@/components/Solutions/CustomerRelationshipManagement/CrmStatement";
+import WhyCrm from "@/components/Solutions/CustomerRelationshipManagement/WhyCrm";
+import CrmOutcomes from "@/components/Solutions/CustomerRelationshipManagement/CrmOutcomes";
+import CrmApproach from "@/components/Solutions/CustomerRelationshipManagement/CrmApproach";
 import ReadyToTransform from "@/components/Solutions/CustomerRelationshipManagement/ReadyToTransform";
 
-// Only the hero and CTA sections exist for this solution so far.
 const page = () => {
     return (
         <div className="min-h-screen bg-white flex flex-col font-sans">
@@ -22,8 +27,14 @@ const page = () => {
                     <HeroText />
                 </div>
             </div>
-            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white" />
-
+            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
+                <CrmOverview />
+                <CrmModules />
+            </div>
+            <CrmStatement />
+            <WhyCrm />
+            <CrmOutcomes />
+            <CrmApproach />
             <ReadyToTransform
                 title="Strengthen Customer Relationships With SAP CRM Today!"
                 description="Discover the possibilities. Contact us for a personalized demo."
