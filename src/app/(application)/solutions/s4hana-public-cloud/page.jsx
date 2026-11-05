@@ -1,0 +1,40 @@
+import PageClient from "./PageClient";
+import { generateBreadcrumbSchema, generateServiceSchema } from "@/lib/seo";
+import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
+
+export const metadata = {
+  alternates: { canonical: "/solutions/s4hana-public-cloud/" },
+  description: "SAP S/4HANA Public Cloud: the agile, scalable cloud ERP with rapid deployment, automated updates, built-in AI and analytics, and predictable pricing without upfront hardware costs.",
+  openGraph: {
+    title: "SAP S/4HANA Public Cloud | Support Studio Technologies",
+    description: "SAP S/4HANA Public Cloud: the agile, scalable cloud ERP with rapid deployment, automated updates, built-in AI and analytics, and predictable pricing without upfront hardware costs.",
+    url: "/solutions/s4hana-public-cloud/",
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
+  },
+  title: "SAP S/4HANA Public Cloud",
+};
+
+export default function Page() {
+  const breadcrumbSchema = generateBreadcrumbSchema(
+    buildBreadcrumbItems("/solutions/s4hana-public-cloud/")
+  );
+  const serviceSchema = generateServiceSchema({
+    name: metadata.title,
+    description: metadata.description,
+    url: "/solutions/s4hana-public-cloud/",
+  });
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <PageClient />
+    </>
+  );
+}

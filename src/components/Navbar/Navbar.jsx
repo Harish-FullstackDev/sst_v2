@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,12 +14,19 @@ import BookAcallButton from "../BookAcallButton/BookAcall_button";
 import CalendlyModal from "../CommonComponents/CommonCalendy";
 import { MENUS } from "./menuLinks";
 
+const MegaChevron = () => (
+  <svg className="w-4 h-4 shrink-0 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+  </svg>
+);
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showCalendly, setShowCalendly] = useState(false);
   // Which mobile-menu dropdown (by label) is expanded, if any.
   const [openMobileMenu, setOpenMobileMenu] = useState(null);
+  // …and which category inside it (SAP, Cloud…).
+  const [openMobileCategory, setOpenMobileCategory] = useState(null);
   const pathname = usePathname();
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -107,6 +114,48 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
+
+  // Desktop mega menu: which menu is open, and which category / item inside it
+  // is hovered. The first category is pre-selected so the panel never opens empty.
+  const [openMegaMenu, setOpenMegaMenu] = useState(null);
+  const [activeCategory, setActiveCategory] = useState(null);
+  const [activeItem, setActiveItem] = useState(null);
+  const megaCloseTimer = useRef(null);
+
+  const openMega = (menu) => {
+    clearTimeout(megaCloseTimer.current);
+    if (openMegaMenu === menu.label) return;
+    setOpenMegaMenu(menu.label);
+    setActiveCategory(menu.items[0]);
+    setActiveItem(null);
+  };
+
+  const closeMega = () => {
+    clearTimeout(megaCloseTimer.current);
+    setOpenMegaMenu(null);
+  };
+
+  const scheduleMegaClose = () => {
+    clearTimeout(megaCloseTimer.current);
+    megaCloseTimer.current = setTimeout(() => setOpenMegaMenu(null), 150);
+  };
+
+  useEffect(() => () => clearTimeout(megaCloseTimer.current), []);
+
+  // Close on navigation, and whenever the navbar hides itself on scroll.
+  useEffect(() => {
+    closeMega();
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!visible) closeMega();
+  }, [visible]);
+
+  const megaRowClass = (isCurrent) =>
+    `flex items-center justify-between gap-4 px-3 py-2.5 transition-colors duration-200 ${isNavbarLight
+      ? isCurrent ? "bg-gray-100 text-black" : "text-gray-700 hover:bg-gray-100 hover:text-black"
+      : isCurrent ? "bg-white/10 text-white" : "text-white/75 hover:bg-white/10 hover:text-white"
+    }`;
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -228,9 +277,9 @@ const Navbar = () => {
                 </Link>
               </div>
 
-              {/* Nav links — pinned to the row's right edge, ending 64px in. Relative so
-                  the What-we-do panel can anchor to this block's right edge. */}
-              <div className="relative ml-auto pr-[64px]">
+              {/* Nav links — pinned to the row's right edge, ending 64px in. Deliberately
+                  not positioned: the mega menu anchors to the full-width row instead. */}
+              <div className="ml-auto pr-[64px]">
                 <ul className="flex items-center gap-3">
                   <Link
                     href="/"
@@ -240,68 +289,151 @@ const Navbar = () => {
                     Home
                   </Link>
 
-                  {MENUS.map((menu) => (
-                    <li key={menu.label} className="relative group">
-                      <button
-                        type="button"
-                        className={`${navLinkClass} after:content-none flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
-                          }`}
-                      >
-                        {menu.label}
+                  {MENUS.map((menu) => {
+                    const isOpen = openMegaMenu === menu.label;
+                    const isActive = pathname.startsWith(menu.href);
 
-                        <svg
-                          className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </button>
-
-                      {/* Single-column list, so the panel opens straight under its own
-                          trigger. The padding is the hover bridge between the trigger and
-                          the panel, sized to land the panel flush against the navbar's
-                          bottom edge (the trigger is centred in an 80px row, leaving
-                          ~21px of slack beneath it). */}
-                      <div
-                        className="
-                          invisible opacity-0 translate-y-3
-                          group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
-                          transition-all duration-300
-                          absolute left-0 top-full pt-[24px] z-50
-                        "
+                    return (
+                      <li
+                        key={menu.label}
+                        onMouseEnter={() => openMega(menu)}
+                        onMouseLeave={scheduleMegaClose}
+                        onKeyDown={(e) => e.key === "Escape" && closeMega()}
                       >
-                        <div
-                          className={`shadow-2xl min-w-[260px] p-6 border transition-colors duration-500 backdrop-blur-xl ${isNavbarLight
-                            ? "bg-white/80 border-gray-200/30 text-gray-800"
-                            : "bg-white/10 border-white/20 text-white"
+                        <Link
+                          href={menu.href}
+                          onFocus={() => openMega(menu)}
+                          onClick={closeMega}
+                          aria-expanded={isOpen}
+                          className={`${navLinkClass} ${isActive ? activeLinkClass : inactiveLinkClass} flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
                             }`}
                         >
-                          <ul className="space-y-2">
-                            {menu.items.map((item) => (
-                              <li key={item.name}>
+                          {menu.label}
+
+                          <svg
+                            className={`w-4 h-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </Link>
+
+                        {/* Full-width mega menu, at least 65vh tall and growing to fit its longest
+                            column rather than scrolling (only a viewport shorter than the menu
+                            itself scrolls the panel as a whole). Neither this <li> nor the links block is
+                            positioned, so the panel anchors to the 80px navbar row and spans
+                            the viewport edge to edge, flush under it. The pointer crosses
+                            ~21px of row between trigger and panel; the close delay in
+                            scheduleMegaClose covers that gap. Three columns like the live
+                            site: category → its items → an item's children. */}
+                        <div
+                          className={`
+                            absolute left-0 top-full w-full z-50
+                            transition-all duration-300
+                            ${isOpen ? "visible opacity-100 translate-y-0" : "invisible opacity-0 translate-y-3"}
+                          `}
+                        >
+                          <div
+                            className={`flex flex-col min-h-[65vh] max-h-[calc(100vh-80px)] shadow-2xl border-y backdrop-blur-xl transition-colors duration-500 ${isNavbarLight
+                              ? "bg-white/90 border-gray-200/30 text-gray-800"
+                              : "bg-neutral-900/70 border-white/15 text-white"
+                              }`}
+                          >
+                            {/* The scroll lives on this inner box, not the blurred panel: a
+                                backdrop-filter element that is itself a scroll container
+                                loses its blur in Chrome. */}
+                            <div className="flex-1 min-h-0 overflow-y-auto flex flex-col">
+                            <div className="flex-1 grid grid-cols-[minmax(220px,0.9fr)_1fr_1fr] gap-x-[clamp(24px,4vw,64px)] px-[64px] py-[clamp(24px,4vh,48px)]">
+                              {/* Column 1 — categories */}
+                              <div className={`flex flex-col min-h-0 border-r pr-[clamp(16px,2vw,32px)] ${isNavbarLight ? "border-gray-200" : "border-white/15"}`}>
+                                <p className={`text-xs uppercase tracking-[0.2em] ${isNavbarLight ? "text-gray-500" : "text-white/50"}`}>
+                                  {menu.label}
+                                </p>
+                                <ul className="mt-4 flex-1 space-y-1">
+                                  {menu.items.map((category) => {
+                                    const isCurrent = activeCategory?.id === category.id;
+                                    return (
+                                      <li key={category.id}>
+                                        <Link
+                                          href={category.href}
+                                          onMouseEnter={() => {
+                                            setActiveCategory(category);
+                                            setActiveItem(null);
+                                          }}
+                                          onFocus={() => {
+                                            setActiveCategory(category);
+                                            setActiveItem(null);
+                                          }}
+                                          onClick={closeMega}
+                                          className={megaRowClass(isCurrent)}
+                                        >
+                                          <span className="text-[clamp(1rem,1.25vw,1.25rem)] font-medium">{category.name}</span>
+                                          <MegaChevron />
+                                        </Link>
+                                      </li>
+                                    );
+                                  })}
+                                </ul>
                                 <Link
-                                  href={item.href}
-                                  className={`block px-2 py-1 text-sm whitespace-nowrap transition ${isNavbarLight
-                                    ? "hover:bg-gray-100 text-gray-700"
-                                    : "hover:bg-white/10 text-white/80"
-                                    }`}
+                                  href={menu.href}
+                                  onClick={closeMega}
+                                  className={`mt-4 inline-flex items-center gap-2 text-sm font-medium underline-offset-4 hover:underline ${isNavbarLight ? "text-gray-900" : "text-white"}`}
                                 >
-                                  {item.name}
+                                  View all {menu.label.toLowerCase()}
+                                  <span aria-hidden="true">→</span>
                                 </Link>
-                              </li>
-                            ))}
-                          </ul>
+                              </div>
+
+                              {/* Column 2 — the hovered category's items */}
+                              <ul className="space-y-1 pt-8">
+                                {activeCategory?.items.map((item) => {
+                                  const isCurrent = activeItem?.name === item.name;
+                                  const rowProps = {
+                                    onMouseEnter: () => setActiveItem(item),
+                                    onFocus: () => setActiveItem(item),
+                                    className: megaRowClass(isCurrent),
+                                  };
+                                  return (
+                                    <li key={item.name}>
+                                      {item.children ? (
+                                        <button type="button" {...rowProps} className={`${rowProps.className} w-full text-left`}>
+                                          <span className="text-sm uppercase tracking-wide">{item.name}</span>
+                                          <MegaChevron />
+                                        </button>
+                                      ) : (
+                                        <Link href={item.href} onClick={closeMega} {...rowProps}>
+                                          <span className="text-sm uppercase tracking-wide">{item.name}</span>
+                                        </Link>
+                                      )}
+                                    </li>
+                                  );
+                                })}
+                              </ul>
+
+                              {/* Column 3 — the hovered item's children, when it has any */}
+                              <ul className="space-y-1 pt-8">
+                                {activeItem?.children?.map((child) => (
+                                  <li key={child.href}>
+                                    <Link href={child.href} onClick={closeMega} className={megaRowClass(pathname.startsWith(child.href))}>
+                                      <span className="text-sm uppercase tracking-wide">{child.name}</span>
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                  ))}
+                      </li>
+                    );
+                  })}
 
 
                   <li>
@@ -413,7 +545,7 @@ const Navbar = () => {
 
             {MENUS.map((menu) => {
               const isOpen = openMobileMenu === menu.label;
-              const isActive = menu.items.some((item) => pathname.startsWith(item.href));
+              const isActive = pathname.startsWith(menu.href);
 
               return (
                 <li key={menu.label}>
@@ -444,21 +576,75 @@ const Navbar = () => {
                   </button>
 
                   <div
-                    className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-[1000px] mt-2" : "max-h-0"
+                    className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-[3000px] mt-2" : "max-h-0"
                       }`}
                   >
                     <ul className="bg-gray-50 border border-gray-200 py-3">
-                      {menu.items.map((item) => (
-                        <li key={item.name}>
-                          <Link
-                            href={item.href}
-                            onClick={closeMenu}
-                            className="block pl-8 pr-4 py-2 text-gray-600 hover:text-[#2d8ec5]"
-                          >
-                            {item.name}
-                          </Link>
-                        </li>
-                      ))}
+                      <li>
+                        <Link
+                          href={menu.href}
+                          onClick={closeMenu}
+                          className="block pl-8 pr-4 py-2 font-medium text-gray-800 hover:text-[#2d8ec5]"
+                        >
+                          All {menu.label.toLowerCase()}
+                        </Link>
+                      </li>
+                      {menu.items.map((category) => {
+                        const isCategoryOpen = openMobileCategory === category.id;
+                        return (
+                          <li key={category.id}>
+                            <button
+                              type="button"
+                              onClick={() => setOpenMobileCategory(isCategoryOpen ? null : category.id)}
+                              aria-expanded={isCategoryOpen}
+                              className="w-full flex items-center justify-between pl-8 pr-4 py-2 text-left font-medium text-gray-800 hover:text-[#2d8ec5]"
+                            >
+                              {category.name}
+                              <svg
+                                className={`w-4 h-4 transition-transform duration-300 ${isCategoryOpen ? "rotate-180" : ""}`}
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                              </svg>
+                            </button>
+                            {isCategoryOpen && (
+                              <ul className="pb-2">
+                                {category.items.map((item) => (
+                                  <li key={item.name}>
+                                    {item.children ? (
+                                      <>
+                                        <p className="pl-12 pr-4 pt-2 pb-1 text-xs uppercase tracking-wide text-gray-400">
+                                          {item.name}
+                                        </p>
+                                        {item.children.map((child) => (
+                                          <Link
+                                            key={child.href}
+                                            href={child.href}
+                                            onClick={closeMenu}
+                                            className="block pl-16 pr-4 py-1.5 text-gray-600 hover:text-[#2d8ec5]"
+                                          >
+                                            {child.name}
+                                          </Link>
+                                        ))}
+                                      </>
+                                    ) : (
+                                      <Link
+                                        href={item.href}
+                                        onClick={closeMenu}
+                                        className="block pl-12 pr-4 py-1.5 text-gray-600 hover:text-[#2d8ec5]"
+                                      >
+                                        {item.name}
+                                      </Link>
+                                    )}
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 </li>
