@@ -11,6 +11,7 @@ import ScmPillars from "@/components/Solutions/SupplyChainManagement/ScmPillars"
 import ScmModules from "@/components/Solutions/SupplyChainManagement/ScmModules";
 import ScmOutcomes from "@/components/Solutions/SupplyChainManagement/ScmOutcomes";
 import WhyScm from "@/components/Solutions/SupplyChainManagement/WhyScm";
+import ScmFaq from "@/components/Solutions/SupplyChainManagement/ScmFaq";
 
 const page = () => {
     return (
@@ -33,6 +34,7 @@ const page = () => {
             <ScmModules />
             <ScmOutcomes />
             <WhyScm />
+            <ScmFaq />
             <ReadyToTransform
                 title="Optimize Operations with SAP SCM for Efficient Supply Chain Management"
                 description="Discover the possibilities. Contact us for a personalized demo."

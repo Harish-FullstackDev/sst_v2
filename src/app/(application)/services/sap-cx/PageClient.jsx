@@ -10,6 +10,7 @@ import WhyCx from "@/components/Services/SapCx/WhyCx";
 import CxCapabilities from "@/components/Services/SapCx/CxCapabilities";
 import CxSuccessFactors from "@/components/Services/SapCx/CxSuccessFactors";
 import CxMethodology from "@/components/Services/SapCx/CxMethodology";
+import CxUseCases from "@/components/Services/SapCx/CxUseCases";
 import ReadyToTransform from "@/components/Services/SapCx/ReadyToTransform";
 
 const page = () => {
@@ -32,6 +33,7 @@ const page = () => {
             </div>
             <CxCapabilities />
             <CxSuccessFactors />
+            <CxUseCases />
             <CxMethodology />
 
             <ReadyToTransform

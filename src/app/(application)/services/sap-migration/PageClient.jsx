@@ -10,7 +10,6 @@ import MigrationEssential from "@/components/Services/SapMigration/MigrationEsse
 import MigrationProducts from "@/components/Services/SapMigration/MigrationProducts";
 import MigrationScenarios from "@/components/Services/SapMigration/MigrationScenarios";
 import MigrationPhases from "@/components/Services/SapMigration/MigrationPhases";
-import MigrationOutcomes from "@/components/Services/SapMigration/MigrationOutcomes";
 import ReadyToTransform from "@/components/Services/SapMigration/ReadyToTransform";
 
 const page = () => {
@@ -34,7 +33,6 @@ const page = () => {
             <MigrationProducts />
             <MigrationScenarios />
             <MigrationPhases />
-            <MigrationOutcomes />
 
             <ReadyToTransform
                 title="Transform Your Enterprise Through SAP Migration Excellence"

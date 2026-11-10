@@ -1,133 +1,152 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+
 import assessPhoto from "@/assets/Services/SapMigration/phase-assess.webp";
 import cleansePhoto from "@/assets/Services/SapMigration/phase-cleanse.webp";
 import mockPhoto from "@/assets/Services/SapMigration/phase-mock.webp";
 import cutoverPhoto from "@/assets/Services/SapMigration/phase-cutover.webp";
 import hypercarePhoto from "@/assets/Services/SapMigration/phase-hypercare.webp";
 
-const PHASES = [
+const TABS = [
     {
+        label: "Assess & Plan",
         title: "Assess & Plan",
         desc: "We review the current landscape, data volumes, custom code, and interfaces, then agree the migration approach and timeline.",
-        image: assessPhoto,
+        img: assessPhoto,
     },
     {
+        label: "Cleanse & Map",
         title: "Cleanse & Map",
         desc: "Legacy data is cleansed, deduplicated, and mapped to the target SAP structures so only accurate, consistent data moves across.",
-        image: cleansePhoto,
+        img: cleansePhoto,
     },
     {
+        label: "Mock Migrations",
         title: "Mock Migrations",
         desc: "Repeatable trial loads and comprehensive testing validate migrated data and applications before anything touches production.",
-        image: mockPhoto,
+        img: mockPhoto,
     },
     {
+        label: "Cutover",
         title: "Cutover",
         desc: "A rehearsed cutover plan moves the business onto the new SAP system within a controlled window, with minimal disruption.",
-        image: cutoverPhoto,
+        img: cutoverPhoto,
     },
     {
+        label: "Hypercare",
         title: "Hypercare",
         desc: "Users and support teams are trained and supported while the new system settles, so issues are resolved quickly after go-live.",
-        image: hypercarePhoto,
+        img: hypercarePhoto,
     },
 ];
 
 export default function MigrationPhases() {
     const [active, setActive] = useState(0);
-    const phase = PHASES[active];
+    const [isPaused, setIsPaused] = useState(false);
+
+    useEffect(() => {
+        if (isPaused) return;
+
+        const interval = setInterval(() => {
+            setActive((prev) => (prev + 1) % TABS.length);
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, [isPaused]);
+
+    const activeTab = TABS[active];
 
     return (
-        <section className="w-full bg-white px-8 py-10 sm:px-[64px] sm:py-[64px]">
+        <section className="w-full py-10 sm:py-[64px] px-8 sm:px-0 flex flex-col items-center gap-8 sm:gap-[45px]">
+            {/* Heading */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-8 sm:mb-12"
+                className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How a Migration Runs</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
+                    How a Migration Runs
+                </h2>
+
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    Five phases that keep data integrity and business continuity intact from first assessment to
-                    life on the new platform.
+                    Five phases that keep data integrity and business continuity intact from first assessment to go-live.
                 </p>
             </motion.div>
 
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="flex flex-col lg:flex-row gap-6 lg:gap-12"
-            >
-                {/* Tabs: horizontal scroll strip on mobile, vertical list on desktop */}
-                <div
-                    role="tablist"
-                    className="flex lg:flex-col gap-2 lg:gap-0 overflow-x-auto lg:overflow-visible -mx-8 px-8 sm:mx-0 sm:px-0 lg:w-[34%] shrink-0 lg:border-l lg:border-[#E2E5EA]"
-                >
-                    {PHASES.map((item, index) => {
-                        const isActive = index === active;
-                        return (
-                            <button
-                                key={item.title}
-                                type="button"
-                                role="tab"
-                                aria-selected={isActive}
-                                onClick={() => setActive(index)}
-                                onMouseEnter={() => setActive(index)}
-                                className={`relative shrink-0 flex items-center gap-3 sm:gap-4 text-left px-4 py-3 lg:px-6 lg:py-5 border lg:border-0 transition-colors duration-300 ${isActive
-                                    ? "border-[#2d8ec5] bg-[#f5f6f6] lg:bg-[#f5f6f6]"
-                                    : "border-[#E2E5EA] hover:bg-[#f5f6f6]/60"
-                                    }`}
-                            >
-                                <span
-                                    className={`hidden lg:block absolute -left-px top-0 h-full w-[3px] transition-colors duration-300 ${isActive ? "bg-[#2d8ec5]" : "bg-transparent"
-                                        }`}
-                                />
-                                <span
-                                    className={`text-sm sm:text-base font-semibold ${isActive ? "text-[#2d8ec5]" : "text-[#a5a5a5]"}`}
-                                >
-                                    {String(index + 1).padStart(2, "0")}
-                                </span>
-                                <span
-                                    className={`whitespace-nowrap lg:whitespace-normal text-base sm:text-xl ${isActive ? "text-[#2E3033] font-semibold" : "text-[#55595E] font-light"
-                                        }`}
-                                >
-                                    {item.title}
-                                </span>
-                            </button>
-                        );
-                    })}
+            {/* Content */}
+            <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-[100px] w-full lg:pl-[64px]">
+                {/* Tabs */}
+                <div className="flex flex-col justify-between w-full lg:w-96 h-auto lg:h-[420px] gap-2 lg:gap-0 shrink-0">
+                    {TABS.map((tab, index) => (
+                        <button
+                            key={tab.label}
+                            type="button"
+                            onMouseEnter={() => {
+                                setActive(index);
+                                setIsPaused(true);
+                            }}
+                            onMouseLeave={() => {
+                                setIsPaused(false);
+                            }}
+                            onClick={() => setActive(index)}
+                            className={`text-left border-l-[3px] flex items-center h-12 px-3.5 transition-colors ${index === active
+                                ? "border-[#2d8ec5] text-black"
+                                : "border-[#6c6c6c] text-[#6c6c6c] opacity-70"
+                                }`}
+                        >
+                            <h2 className="text-base sm:text-2xl font-semibold">
+                                {tab.label}
+                            </h2>
+                        </button>
+                    ))}
                 </div>
 
-                {/* Panel */}
-                <div className="relative w-full lg:flex-1 lg:min-w-0 min-h-[320px] sm:min-h-[380px] overflow-hidden bg-black">
+                {/* Image panel */}
+                <div className="relative w-full lg:flex-1 aspect-[798/446] mx-auto lg:mx-0 overflow-hidden">
                     <AnimatePresence mode="wait">
                         <motion.div
-                            key={phase.title}
+                            key={active}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.4 }}
                             className="absolute inset-0"
                         >
-                            <Image src={phase.image} alt="" fill className="object-cover" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
-                            <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 flex flex-col gap-2 sm:gap-3 max-w-[640px]">
-                                <p className="text-white/70 text-sm sm:text-base font-light uppercase tracking-wide">
-                                    Phase {active + 1} of {PHASES.length}
+                            <Image
+                                src={activeTab.img}
+                                alt={activeTab.title}
+                                fill
+                                className="object-cover"
+                                priority={active === 0}
+                            />
+
+                            {/* Gradient */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+
+                            {/* Text */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.3, delay: 0.1 }}
+                                className="absolute left-6 right-6 sm:left-[55px] sm:right-auto bottom-6 sm:bottom-[46px] sm:w-[462px] text-white flex flex-col gap-3"
+                            >
+                                <h2 className="text-xl font-semibold">
+                                    {activeTab.title}
+                                </h2>
+
+                                <p className="text-white/90 text-base sm:text-lg font-light leading-relaxed">
+                                    {activeTab.desc}
                                 </p>
-                                <h3 className="text-white text-xl sm:text-[28px] font-semibold">{phase.title}</h3>
-                                <p className="text-white/85 text-base sm:text-lg font-light leading-relaxed">{phase.desc}</p>
-                            </div>
+                            </motion.div>
                         </motion.div>
                     </AnimatePresence>
                 </div>
-            </motion.div>
+            </div>
         </section>
     );
 }

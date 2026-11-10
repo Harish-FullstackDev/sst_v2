@@ -1,85 +1,129 @@
 "use client";
 
+import { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import ingestPhoto from "@/assets/Services/BigData/pipeline-ingest.webp";
 import processPhoto from "@/assets/Services/BigData/pipeline-process.webp";
 import storePhoto from "@/assets/Services/BigData/pipeline-store.webp";
 import governPhoto from "@/assets/Services/BigData/pipeline-govern.webp";
 
-const STAGES = [
-    {
-        title: "Ingest",
-        desc: "Integrate diverse sources so data flows seamlessly into one platform for comprehensive analysis.",
-        img: ingestPhoto,
-    },
-    {
-        title: "Process",
-        desc: "Process data at speed with distributed engines built for efficient large-scale analytics.",
-        img: processPhoto,
-    },
-    {
-        title: "Store",
-        desc: "Securely store and scale structured and unstructured data in the cloud.",
-        img: storePhoto,
-    },
-    {
-        title: "Govern",
-        desc: "Keep data governed, high quality, and compliant so every decision rests on reliable information.",
-        img: governPhoto,
-    },
+const ITEMS = [
+    { title: "Ingest", desc: "Integrate diverse sources so data flows seamlessly into one platform for comprehensive analysis.", image: ingestPhoto },
+    { title: "Process", desc: "Process data at speed with distributed engines built for efficient large-scale analytics.", image: processPhoto },
+    { title: "Store", desc: "Securely store and scale structured and unstructured data in the cloud.", image: storePhoto },
+    { title: "Govern", desc: "Keep data governed, high quality, and compliant so every decision rests on reliable information.", image: governPhoto },
 ];
 
+const ROTATE_INTERVAL = 4500;
+
 export default function BigDataPipeline() {
+    const [active, setActive] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setActive((prev) => (prev + 1) % ITEMS.length);
+        }, ROTATE_INTERVAL);
+        return () => clearInterval(timer);
+    }, [active]);
+
     return (
-        <section className="w-full bg-white px-8 py-10 sm:px-[64px] sm:py-[64px] flex flex-col gap-10 sm:gap-16">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[0px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center"
+                className="flex flex-col items-center gap-2 max-w-[780px] mx-auto text-center"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">The Big Data Pipeline</h2>
-                <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    How data moves from raw sources to trusted, analysis-ready information.
-                </p>
+                <p className="text-[#55595E] text-base sm:text-lg font-light">How data moves from raw sources to trusted, analysis-ready information.</p>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full">
-                {STAGES.map((stage, index) => (
-                    <motion.div
-                        key={stage.title}
-                        initial={{ opacity: 0, y: 24 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
-                        className="group relative h-[300px] sm:h-[380px] lg:h-[460px] overflow-hidden"
-                    >
-                        <Image
-                            src={stage.img}
-                            alt={stage.title}
-                            fill
-                            className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10" />
-                        <div className="absolute inset-0 bg-[#2d8ec5]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
+            <div className="flex flex-col lg:flex-row max-w-screen mx-auto lg:h-[500px] pt-16 md:pt-16">
+                <div className="relative hidden lg:block w-full h-[220px] lg:h-full lg:w-[35%] shrink-0 overflow-hidden">
 
-                        <span className="absolute top-5 left-6 sm:left-8 text-white/90 text-base sm:text-lg font-light">
-                            0{index + 1}
-                        </span>
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={ITEMS[active].title}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.5 }}
+                            className="absolute inset-0"
+                        >
+                            <Image
+                                src={ITEMS[active].image}
+                                alt={ITEMS[active].title}
+                                fill
+                                className="object-cover"
+                            />
+                        </motion.div>
+                    </AnimatePresence>
 
-                        {/* Description always visible below lg (no hover on touch), revealed on hover at lg */}
-                        <div className="absolute inset-x-6 sm:inset-x-8 bottom-6 sm:bottom-8 flex flex-col gap-3">
-                            <h2 className="text-white text-xl sm:text-[28px] font-semibold drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)] transition-transform duration-500 ease-out group-hover:-translate-y-1">
-                                {stage.title}
-                            </h2>
-                            <p className="text-white text-sm sm:text-base font-light overflow-hidden transition-all duration-500 ease-out lg:max-h-0 lg:opacity-0 lg:-translate-y-2 lg:group-hover:max-h-40 lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
-                                {stage.desc}
-                            </p>
-                        </div>
-                    </motion.div>
-                ))}
+                </div>
+
+                <div className="flex flex-col w-full lg:flex-1">
+                    {ITEMS.map((item, index) => {
+                        const isActive = index === active;
+                        return (
+                            // Fragment, not a wrapper element: the buttons size themselves with
+                            // sm:h-1/4 against this flex column, which a per-item wrapper would
+                            // reparent and break at lg.
+                            <Fragment key={item.title}>
+                                <AnimatePresence initial={false}>
+                                    {isActive && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: 220, opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.4, ease: "easeInOut" }}
+                                            className="relative w-full shrink-0 overflow-hidden lg:hidden"
+                                        >
+                                            <Image
+                                                src={item.image}
+                                                alt={item.title}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+
+                                <button
+                                    type="button"
+                                    onClick={() => setActive(index)}
+                                    className={`relative text-left flex flex-col justify-center gap-3 px-6 sm:px-8 sm:h-1/4 border-b border-[#cac9c9] last:border-b-0 overflow-hidden bg-[#F8FAFC] ${isActive ? "py-6 sm:py-6" : "py-6 sm:py-0"
+                                        }`}
+                                >
+                                    {isActive && (
+                                        <motion.div
+                                            layoutId="pipeline-active-highlight"
+                                            className="absolute inset-0 bg-[#E8EBEF] border-l-[12px] border-l-[#1C5F85]"
+                                            transition={{ duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
+                                        />
+                                    )}
+                                    <div className="relative flex flex-col gap-3 ">
+                                        <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h2>
+                                        <AnimatePresence initial={false}>
+                                            {isActive && (
+                                                <motion.p
+                                                    initial={{ opacity: 0, height: 0 }}
+                                                    animate={{ opacity: 1, height: "auto" }}
+                                                    exit={{ opacity: 0, height: 0 }}
+                                                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                                                    className="overflow-hidden text-[#55595E] text-base w-[80%] font-normal"
+                                                >
+                                                    {item.desc}
+                                                </motion.p>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
+                                </button>
+                            </Fragment>
+                        );
+                    })}
+                </div>
             </div>
         </section>
     );

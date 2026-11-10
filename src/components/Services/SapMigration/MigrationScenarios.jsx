@@ -8,126 +8,114 @@ import hanaDbPhoto from "@/assets/Services/SapMigration/scenario-hana-db.webp";
 import cloudPhoto from "@/assets/Services/SapMigration/scenario-cloud.webp";
 import legacyPhoto from "@/assets/Services/SapMigration/scenario-legacy.webp";
 
-const CARDS = [
+const SCENARIOS = [
     {
+        image: s4hanaPhoto,
         title: "ECC to SAP S/4HANA",
         desc: "Move from SAP ECC onto SAP S/4HANA for improved performance, simplified processes, and real-time analytics.",
-        image: s4hanaPhoto,
     },
     {
+        image: hanaDbPhoto,
         title: "Database to SAP HANA",
         desc: "Shift existing SAP systems onto the SAP HANA database to speed up processing and reporting.",
-        image: hanaDbPhoto,
     },
     {
+        image: cloudPhoto,
         title: "On-Premise to Cloud",
         desc: "Relocate SAP workloads from ageing data centres to scalable cloud infrastructure.",
-        image: cloudPhoto,
     },
     {
+        image: legacyPhoto,
         title: "Legacy Systems to SAP",
         desc: "Bring data and processes from non-SAP or home-grown systems into a modern SAP environment.",
-        image: legacyPhoto,
     },
 ];
 
+const AUTOPLAY_INTERVAL = 2500;
+
+// Desktop reveals one card at a time on a timer; hover takes over.
 export default function MigrationScenarios() {
-    // Cycles the revealed card, pausing while the grid is hovered or focused.
-    const [active, setActive] = useState(0);
-    const [isPaused, setIsPaused] = useState(false);
+    const [autoIndex, setAutoIndex] = useState(0);
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+    const activeIndex = hoveredIndex ?? autoIndex;
 
     useEffect(() => {
-        if (isPaused) return;
+        if (hoveredIndex !== null) return;
         const id = setInterval(() => {
-            setActive((prev) => (prev + 1) % CARDS.length);
-        }, 3000);
+            setAutoIndex((i) => (i + 1) % SCENARIOS.length);
+        }, AUTOPLAY_INTERVAL);
         return () => clearInterval(id);
-    }, [isPaused]);
+    }, [hoveredIndex]);
 
     return (
-        <section className="w-full bg-[#f5f6f6] py-10 px-8 sm:p-16">
+        <section className="w-full bg-[#f5f6f6] px-8 py-10 sm:px-[64px] sm:py-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col gap-2 max-w-[767px] mb-10 sm:mb-[50px]"
+                className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-16"
             >
-                <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Migrate, Modernize, Thrive.</p>
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Migration Scenarios We Deliver</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    Wherever your landscape starts, the move is planned around your data, your processes, and your
-                    business calendar.
+                    Migrate, Modernize, Thrive. Wherever your landscape starts, the move is planned around your data and your processes.
                 </p>
             </motion.div>
 
-            {/* Mobile: stacked cards with descriptions always visible */}
+            {/* Mobile: static stacked cards, description always visible — no hover. */}
             <div className="flex sm:hidden flex-col gap-4">
-                {CARDS.map((card, index) => (
+                {SCENARIOS.map((scenario, index) => (
                     <motion.div
-                        key={card.title}
+                        key={scenario.title}
                         initial={{ opacity: 0, y: 24 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5, delay: index * 0.08 }}
-                        className="relative w-full min-h-[220px] overflow-hidden"
+                        className="relative w-full h-[220px] overflow-hidden"
                     >
-                        <Image src={card.image} alt="" fill className="object-cover" />
+                        <Image src={scenario.image} alt={scenario.title} fill className="object-cover" />
                         <div className="absolute inset-0 bg-black/60" />
-                        <div className="relative flex flex-col justify-start gap-2 px-4 pt-5 pb-6">
-                            <h3 className="text-white text-xl font-semibold">{card.title}</h3>
-                            <p className="text-white/85 text-sm font-light max-w-[280px]">{card.desc}</p>
+                        <div className="absolute inset-0 flex flex-col justify-start gap-2 px-4 pt-5">
+                            <h2 className="text-white text-xl font-semibold">{scenario.title}</h2>
+                            <p className="text-white/85 text-sm font-light max-w-[280px]">{scenario.desc}</p>
                         </div>
                     </motion.div>
                 ))}
             </div>
 
-            {/* Desktop: hover-reveal; active card widens and reveals its description */}
-            <div
-                className="hidden sm:grid grid-cols-2 lg:flex gap-6 lg:h-[420px] w-full"
-                onMouseLeave={() => setIsPaused(false)}
-            >
-                {CARDS.map((card, index) => {
-                    const isActive = active === index;
+            {/* Desktop: auto-advancing reveal grid, hover takes over on demand. */}
+            <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 lg:gap-[43px]">
+                {SCENARIOS.map((scenario, index) => {
+                    const isActive = activeIndex === index;
                     return (
                         <motion.div
-                            key={card.title}
+                            key={scenario.title}
                             initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
-                            onMouseEnter={() => {
-                                setIsPaused(true);
-                                setActive(index);
-                            }}
-                            onFocus={() => {
-                                setIsPaused(true);
-                                setActive(index);
-                            }}
-                            tabIndex={0}
-                            className={`relative overflow-hidden aspect-[4/5] lg:aspect-auto lg:h-full transition-[flex-grow] duration-700 ease-out ${isActive ? "lg:flex-[2_1_0%]" : "lg:flex-[1_1_0%]"
-                                }`}
+                            onMouseEnter={() => setHoveredIndex(index)}
+                            onMouseLeave={() => setHoveredIndex(null)}
+                            className="relative aspect-[258/335] overflow-hidden"
                         >
                             <Image
-                                src={card.image}
-                                alt=""
+                                src={scenario.image}
+                                alt={scenario.title}
                                 fill
                                 className={`object-cover transition-transform duration-700 ease-out ${isActive ? "scale-105" : ""}`}
                             />
                             <div
-                                className={`absolute inset-0 transition-colors duration-500 ${isActive ? "bg-black/65" : "bg-black/30"}`}
+                                className={`absolute inset-0 transition-colors duration-500 ${isActive ? "bg-black/70" : "bg-black/20"}`}
                             />
-                            <div className="absolute inset-x-0 bottom-0 px-6 pb-6 flex flex-col gap-2">
-                                <h3 className="text-white text-xl sm:text-2xl font-semibold">{card.title}</h3>
-                                <div
-                                    className={`grid transition-[grid-template-rows] duration-500 ease-out ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                                        }`}
-                                >
-                                    <div className="overflow-hidden">
-                                        <p className="text-white/85 text-base lg:text-lg font-light leading-relaxed max-w-[420px]">
-                                            {card.desc}
-                                        </p>
-                                    </div>
+                            <div className="absolute inset-0 flex items-start justify-start px-6 py-10 text-left">
+                                <h2 className="text-white text-xl sm:text-2xl font-semibold">{scenario.title}</h2>
+                            </div>
+                            <div
+                                className={`absolute inset-x-0 bottom-0 px-6 pb-6 grid transition-[grid-template-rows] duration-500 ease-out ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                                    }`}
+                            >
+                                <div className="overflow-hidden">
+                                    <p className="text-white/85 text-base sm:text-lg font-light pt-2">{scenario.desc}</p>
                                 </div>
                             </div>
                         </motion.div>

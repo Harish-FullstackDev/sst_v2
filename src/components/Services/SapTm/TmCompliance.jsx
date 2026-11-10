@@ -13,40 +13,46 @@ const POINTS = [
 
 export default function TmCompliance() {
     return (
-        <section className="relative w-full bg-[#f5f6f6] px-8 py-10 sm:px-[64px] sm:py-[64px]">
-            <div className="relative lg:min-h-[520px] flex flex-col lg:block">
-                {/* Wide photo on the left; the white card overlaps it from the right on desktop */}
+        <section className="relative z-10 w-full pt-10 sm:pt-16 pb-10 sm:pb-16">
+            <div className="flex w-full flex-col lg:flex-row">
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="relative w-full lg:w-[66%] aspect-[16/10] lg:aspect-auto lg:absolute lg:inset-y-0 lg:left-0 overflow-hidden"
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="group relative h-[360px] w-full shrink-0 overflow-hidden sm:h-[460px] lg:h-[588px] lg:w-[578px]"
                 >
-                    <Image src={compliancePhoto} alt="" fill className="object-cover" />
+                    <Image
+                        src={compliancePhoto}
+                        alt=""
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/45" />
+                    <div className="absolute inset-x-6 bottom-6 flex flex-col gap-2 sm:bottom-8 lg:inset-x-auto lg:bottom-[24%] lg:left-[20.8%] lg:right-[14.5%]">
+                        <h2 className="font-heading text-xl sm:text-[28px] font-semibold text-white">
+                            Robust Time Tracking and Cost Control
+                        </h2>
+                        <p className="text-base font-light leading-snug text-white/90 sm:text-lg">
+                            Compliance &amp; Reporting
+                        </p>
+                    </div>
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-                    className="relative z-10 bg-white w-full lg:w-[48%] lg:ml-auto lg:mt-[64px] p-6 sm:p-10 lg:p-12 flex flex-col gap-4 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
-                >
-                    <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Compliance &amp; Reporting</p>
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                        Robust Time Tracking and Cost Control
-                    </h2>
-                    <p className="text-[#55595E] text-base sm:text-lg font-light">
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                    className="relative w-full lg:max-w-[800px] self-center min-h-[400px] lg:h-[480px] bg-white shadow-[2px_2px_46px_rgba(0,0,0,0.15)] flex flex-col justify-center px-6 sm:px-12 py-12" >
+
+                    <p className="text-[#55595E] text-base sm:text-lg font-light mb-6">
                         SAP T&amp;M ensures regulatory compliance while giving finance and project teams the detailed
                         reporting they need to keep every project under control.
                     </p>
-                    <ul className="flex flex-col gap-3 pt-2">
+                    <ul className="list-disc pl-5 text-lg font-light leading-[40px] text-[#55595E] sm:pl-6">
                         {POINTS.map((point) => (
-                            <li key={point} className="flex items-start gap-3 text-[#2E3033] text-base sm:text-lg font-light">
-                                <span className="mt-2.5 size-2 shrink-0 bg-[#2d8ec5]" aria-hidden="true" />
-                                {point}
-                            </li>
+                            <li key={point}>{point}</li>
                         ))}
                     </ul>
                 </motion.div>

@@ -37,8 +37,8 @@ const page = () => {
             <RolloutOutcomes />
 
             <ReadyToTransform
-                title="Empower Your Business With Microsoft Rollout Services, Where Strategy Meets Execution"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Empower Your Business With Microsoft Rollout Services"
+                description="Where strategy meets execution. Discover the possibilities. Contact us for a personalized demo."
                 buttonLabel="Get in Touch"
             />
             <Footer />

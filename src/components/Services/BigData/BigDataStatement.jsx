@@ -10,40 +10,51 @@ const CREDENTIALS = [
 
 export default function BigDataStatement() {
     return (
-        <section className="w-full bg-white px-8 py-10 sm:px-[64px] sm:py-[64px]">
-            <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-16 w-full">
-                {/* Left: eyebrow + statement, with a blue rule marking it as the page's thesis */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="flex flex-col gap-4 w-full lg:flex-[3_1_0%] lg:min-w-0 border-l-[3px] border-[#2d8ec5] pl-5 sm:pl-8"
-                >
-                    <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Analyze, Adapt, Achieve</p>
-                    <p className="text-[#2E3033] text-xl sm:text-[28px] lg:text-[32px] font-light leading-snug">
-                        Big Data unlocks groundbreaking potential with real-time analytics, scalable processing, and a
-                        cohesive data strategy to drive informed decision-making and innovation.
-                    </p>
-                </motion.div>
-
-                {/* Right: credentials strip from the old page, stacked as chips */}
-                <motion.ul
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="flex flex-wrap lg:flex-col lg:items-start gap-2 sm:gap-3 w-full lg:flex-[2_1_0%] lg:min-w-0"
-                >
-                    {CREDENTIALS.map((item) => (
-                        <li
-                            key={item}
-                            className="border border-[#2d8ec5]/50 bg-white px-3 py-1 text-sm sm:text-base font-light text-[#2d8ec5]"
+        <section className="w-full">
+            <div className="w-full px-8 sm:p-16 py-10 ">
+                <div className="grid w-full lg:grid-cols-[1fr_auto_1fr] items-center gap-0">
+                    <div className="flex flex-col gap-2 max-sm:text-center">
+                        <motion.h2
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="text-xl sm:text-[28px] font-semibold text-[#2E3033]"
                         >
-                            {item}
-                        </li>
-                    ))}
-                </motion.ul>
+                            Analyze, Adapt, Achieve
+                        </motion.h2>
+
+                        <motion.p
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="mb-4 text-[#55595E] text-base sm:text-lg font-light max-w-[560px]"
+                        >
+                            Big Data unlocks groundbreaking potential with real-time analytics, scalable processing,
+                            and a cohesive data strategy to drive informed decision-making and innovation.
+                        </motion.p>
+                    </div>
+                    <div className="hidden lg:flex justify-center px-10">
+                        <div className="w-0.5 h-40 bg-[#2D8EC5]" />
+                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        // Mobile: centered under the heading, and mt-4 on top of the
+                        // description's own mb-4 makes the 32px gap the stacked layout needs
+                        // (the grid is gap-0 because at lg these are side-by-side columns).
+                        className="justify-self-start max-w-[467px] max-sm:mt-4 max-sm:justify-self-center"
+                    >
+                        <ul className="list-disc marker:text-[#7f7f7f] pl-16 max-sm:pl-5 space-y-3 text-[#55595E] text-base sm:text-lg font-light">
+                            {CREDENTIALS.map((point) => (
+                                <li key={point}>{point}</li>
+                            ))}
+                        </ul>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );

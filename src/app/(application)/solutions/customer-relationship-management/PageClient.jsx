@@ -36,7 +36,7 @@ const page = () => {
             <CrmOutcomes />
             <CrmApproach />
             <ReadyToTransform
-                title="Strengthen Customer Relationships With SAP CRM Today!"
+                title="Optimize Operations with SAP CRM Solutions Today!"
                 description="Discover the possibilities. Contact us for a personalized demo."
                 buttonLabel="Get in Touch"
             />

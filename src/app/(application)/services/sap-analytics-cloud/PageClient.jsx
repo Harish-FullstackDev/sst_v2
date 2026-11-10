@@ -9,6 +9,8 @@ import SacIdealSolution from "@/components/Services/SapAnalyticsCloud/SacIdealSo
 import SacPlatform from "@/components/Services/SapAnalyticsCloud/SacPlatform";
 import SacSuccessFactors from "@/components/Services/SapAnalyticsCloud/SacSuccessFactors";
 import SacMethodology from "@/components/Services/SapAnalyticsCloud/SacMethodology";
+import SacUseCases from "@/components/Services/SapAnalyticsCloud/SacUseCases";
+import SacFaq from "@/components/Services/SapAnalyticsCloud/SacFaq";
 import ReadyToTransform from "@/components/Services/SapAnalyticsCloud/ReadyToTransform";
 
 const page = () => {
@@ -30,7 +32,9 @@ const page = () => {
                 <SacPlatform />
             </div>
             <SacSuccessFactors />
+            <SacUseCases />
             <SacMethodology />
+            <SacFaq />
 
             <ReadyToTransform
                 title="Unlock Smarter Decisions With SAP SAC Today!"

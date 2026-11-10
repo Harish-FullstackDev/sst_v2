@@ -38,7 +38,7 @@ const page = () => {
 
             <ReadyToTransform
                 title="Elevate Your Web Presence With Full-Stack Development"
-                description="Innovation and seamless integration. Discover the possibilities. Contact us for a personalized demo."
+                description="Discover the possibilities. Contact us for a personalized demo."
                 buttonLabel="Get in Touch"
             />
             <Footer />
