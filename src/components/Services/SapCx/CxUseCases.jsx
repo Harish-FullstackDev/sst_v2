@@ -14,7 +14,7 @@ const POINTS = [
 export default function CxUseCases() {
     return (
         <section className="w-full">
-            <div className="w-full px-8 py-10 sm:p-16">
+            <div className="w-full px-8 pt-10 pb-8 sm:px-16 sm:pt-16 sm:pb-8">
                 <div className="grid w-full lg:grid-cols-[1fr_auto_1fr] items-center gap-0">
 
                     {/* Left — centered in the stacked mobile layout; at lg it is the left
