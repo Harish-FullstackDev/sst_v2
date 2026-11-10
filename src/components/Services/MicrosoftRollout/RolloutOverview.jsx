@@ -36,13 +36,16 @@ export default function RolloutOverview() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[#D5D9DE] mt-6 border border-[#D5D9DE]">
+                    <ul className="flex flex-wrap gap-3 pt-4">
                         {HIGHLIGHTS.map((item) => (
-                            <div key={item} className="bg-white px-4 py-3 sm:py-4 text-[#2E3033] text-base font-semibold">
+                            <li
+                                key={item}
+                                className="bg-white border border-[#d3dae2] px-4 py-2 text-[#55595E] text-sm sm:text-base font-light"
+                            >
                                 {item}
-                            </div>
+                            </li>
                         ))}
-                    </div>
+                    </ul>
                 </motion.div>
 
                 <motion.div

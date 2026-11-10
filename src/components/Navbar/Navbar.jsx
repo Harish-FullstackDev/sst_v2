@@ -14,6 +14,22 @@ import BookAcallButton from "../BookAcallButton/BookAcall_button";
 import CalendlyModal from "../CommonComponents/CommonCalendy";
 import { MENUS } from "./menuLinks";
 
+const trimSlash = (path) => (path.length > 1 ? path.replace(/\/+$/, "") : path);
+
+// Where the current page sits in a mega menu: its category, the item under it,
+// and (for grouped items) the child link. Null when the page is not in the menu.
+function findMenuPath(menu, pathname) {
+  const here = trimSlash(pathname || "");
+  for (const category of menu.items) {
+    for (const item of category.items) {
+      if (item.href && trimSlash(item.href) === here) return { category, item, child: null };
+      const child = item.children?.find((c) => trimSlash(c.href) === here);
+      if (child) return { category, item, child };
+    }
+  }
+  return null;
+}
+
 const MegaChevron = () => (
   <svg className="w-4 h-4 shrink-0 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -126,8 +142,11 @@ const Navbar = () => {
     clearTimeout(megaCloseTimer.current);
     if (openMegaMenu === menu.label) return;
     setOpenMegaMenu(menu.label);
-    setActiveCategory(menu.items[0]);
-    setActiveItem(null);
+    // Open on the current page's branch so the reader sees where they are;
+    // anywhere else, start from the first category.
+    const current = findMenuPath(menu, pathname);
+    setActiveCategory(current?.category ?? menu.items[0]);
+    setActiveItem(current?.item.children ? current.item : null);
   };
 
   const closeMega = () => {
@@ -151,13 +170,28 @@ const Navbar = () => {
     if (!visible) closeMega();
   }, [visible]);
 
-  const megaRowClass = (isCurrent) =>
-    `flex items-center justify-between gap-4 px-3 py-2.5 transition-colors duration-200 ${isNavbarLight
-      ? isCurrent ? "bg-gray-100 text-black" : "text-gray-700 hover:bg-gray-100 hover:text-black"
-      : isCurrent ? "bg-white/10 text-white" : "text-white/75 hover:bg-white/10 hover:text-white"
+  // isCurrent: the row being hovered or expanded. isHere: the row is on the
+  // current page's path, marked with an accent bar and colour that stay put
+  // while the reader hovers elsewhere.
+  const megaRowClass = (isCurrent, isHere = false) =>
+    `flex items-center justify-between gap-4 px-3 py-2.5 border-l-2 transition-colors duration-200 ${isHere ? "border-[#2d8ec5]" : "border-transparent"
+    } ${isNavbarLight
+      ? `${isCurrent ? "bg-gray-100" : "hover:bg-gray-100"} ${isHere ? "text-[#2d8ec5]" : isCurrent ? "text-black" : "text-gray-700 hover:text-black"}`
+      : `${isCurrent ? "bg-white/10" : "hover:bg-white/10"} ${isHere ? "text-[#7cc4ec]" : isCurrent ? "text-white" : "text-white/75 hover:text-white"}`
     }`;
 
   const toggleMenu = () => {
+    if (!isMenuOpen) {
+      // Unfold the drawer down to the current page.
+      for (const menu of MENUS) {
+        const current = findMenuPath(menu, pathname);
+        if (current) {
+          setOpenMobileMenu(menu.label);
+          setOpenMobileCategory(current.category.id);
+          break;
+        }
+      }
+    }
     setIsMenuOpen(!isMenuOpen);
   };
 
@@ -290,6 +324,7 @@ const Navbar = () => {
                   </Link>
 
                   {MENUS.map((menu) => {
+                    const herePath = findMenuPath(menu, pathname);
                     const isOpen = openMegaMenu === menu.label;
                     const isActive = pathname.startsWith(menu.href);
 
@@ -359,6 +394,7 @@ const Navbar = () => {
                                   <ul className="mt-4 flex-1 space-y-1">
                                     {menu.items.map((category) => {
                                       const isCurrent = activeCategory?.id === category.id;
+                                      const isHere = herePath?.category.id === category.id;
                                       return (
                                         <li key={category.id}>
                                           <Link
@@ -372,7 +408,8 @@ const Navbar = () => {
                                               setActiveItem(null);
                                             }}
                                             onClick={closeMega}
-                                            className={megaRowClass(isCurrent)}
+                                            className={megaRowClass(isCurrent, isHere)}
+                                            aria-current={isHere ? "true" : undefined}
                                           >
                                             <span className="text-[clamp(1rem,1.25vw,1.25rem)] font-medium">{category.name}</span>
                                             <MegaChevron />
@@ -395,10 +432,12 @@ const Navbar = () => {
                                 <ul className="space-y-1 pt-8">
                                   {activeCategory?.items.map((item) => {
                                     const isCurrent = activeItem?.name === item.name;
+                                    const isHere = herePath?.category.id === activeCategory?.id && herePath?.item.name === item.name;
                                     const rowProps = {
                                       onMouseEnter: () => setActiveItem(item),
                                       onFocus: () => setActiveItem(item),
-                                      className: megaRowClass(isCurrent),
+                                      className: megaRowClass(isCurrent, isHere),
+                                      "aria-current": isHere ? (item.children ? "true" : "page") : undefined,
                                     };
                                     return (
                                       <li key={item.name}>
@@ -421,7 +460,12 @@ const Navbar = () => {
                                 <ul className="space-y-1 pt-8">
                                   {activeItem?.children?.map((child) => (
                                     <li key={child.href}>
-                                      <Link href={child.href} onClick={closeMega} className={megaRowClass(pathname.startsWith(child.href))}>
+                                      <Link
+                                        href={child.href}
+                                        onClick={closeMega}
+                                        aria-current={herePath?.child?.href === child.href ? "page" : undefined}
+                                        className={megaRowClass(herePath?.child?.href === child.href, herePath?.child?.href === child.href)}
+                                      >
                                         <span className="text-sm uppercase tracking-wide">{child.name}</span>
                                       </Link>
                                     </li>
@@ -591,13 +635,14 @@ const Navbar = () => {
                       </li>
                       {menu.items.map((category) => {
                         const isCategoryOpen = openMobileCategory === category.id;
+                        const mobileHere = findMenuPath(menu, pathname);
                         return (
                           <li key={category.id}>
                             <button
                               type="button"
                               onClick={() => setOpenMobileCategory(isCategoryOpen ? null : category.id)}
                               aria-expanded={isCategoryOpen}
-                              className="w-full flex items-center justify-between pl-8 pr-4 py-2 text-left font-medium text-gray-800 hover:text-[#2d8ec5]"
+                              className={`w-full flex items-center justify-between pl-8 pr-4 py-2 text-left font-medium hover:text-[#2d8ec5] ${mobileHere?.category.id === category.id ? "text-[#2d8ec5]" : "text-gray-800"}`}
                             >
                               {category.name}
                               <svg
@@ -615,7 +660,7 @@ const Navbar = () => {
                                   <li key={item.name}>
                                     {item.children ? (
                                       <>
-                                        <p className="pl-12 pr-4 pt-2 pb-1 text-xs uppercase tracking-wide text-gray-400">
+                                        <p className={`pl-12 pr-4 pt-2 pb-1 text-xs uppercase tracking-wide ${mobileHere?.category.id === category.id && mobileHere?.item.name === item.name ? "text-[#2d8ec5]" : "text-gray-400"}`}>
                                           {item.name}
                                         </p>
                                         {item.children.map((child) => (
@@ -623,7 +668,8 @@ const Navbar = () => {
                                             key={child.href}
                                             href={child.href}
                                             onClick={closeMenu}
-                                            className="block pl-16 pr-4 py-1.5 text-gray-600 hover:text-[#2d8ec5]"
+                                            aria-current={mobileHere?.child?.href === child.href ? "page" : undefined}
+                                            className={`block pl-16 pr-4 py-1.5 hover:text-[#2d8ec5] ${mobileHere?.child?.href === child.href ? "text-[#2d8ec5] font-medium" : "text-gray-600"}`}
                                           >
                                             {child.name}
                                           </Link>
@@ -633,7 +679,8 @@ const Navbar = () => {
                                       <Link
                                         href={item.href}
                                         onClick={closeMenu}
-                                        className="block pl-12 pr-4 py-1.5 text-gray-600 hover:text-[#2d8ec5]"
+                                        aria-current={mobileHere?.category.id === category.id && mobileHere?.item.name === item.name ? "page" : undefined}
+                                        className={`block pl-12 pr-4 py-1.5 hover:text-[#2d8ec5] ${mobileHere?.category.id === category.id && mobileHere?.item.name === item.name ? "text-[#2d8ec5] font-medium" : "text-gray-600"}`}
                                       >
                                         {item.name}
                                       </Link>
