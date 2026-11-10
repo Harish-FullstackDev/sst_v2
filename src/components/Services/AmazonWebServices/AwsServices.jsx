@@ -1,51 +1,45 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { LuArchive, LuDatabase, LuGlobe, LuNetwork, LuServer, LuSquareFunction } from "react-icons/lu";
 import { motion } from "framer-motion";
-import ec2Icon from "@/assets/Services/AmazonWebServices/icons/ec2.svg";
-import s3Icon from "@/assets/Services/AmazonWebServices/icons/s3.svg";
-import rdsIcon from "@/assets/Services/AmazonWebServices/icons/rds.svg";
-import lambdaIcon from "@/assets/Services/AmazonWebServices/icons/lambda.svg";
-import vpcIcon from "@/assets/Services/AmazonWebServices/icons/vpc.svg";
-import cloudFrontIcon from "@/assets/Services/AmazonWebServices/icons/cloudfront.svg";
 
 const CARDS = [
     {
         title: "Amazon EC2",
         subtitle: "Elastic Compute Cloud",
         desc: "New EC2 instances optimized for high-performance workloads, GPU-based compute, and burstable computing to scale efficiently for any demand.",
-        icon: ec2Icon,
+        icon: LuServer,
     },
     {
         title: "Amazon S3",
         subtitle: "Simple Storage Service",
         desc: "Enhanced with intelligent tiering, better cost optimization, and secure data storage with Amazon S3 Glacier for long-term archiving.",
-        icon: s3Icon,
+        icon: LuArchive,
     },
     {
         title: "Amazon RDS",
         subtitle: "Relational Database Service",
         desc: "Supports more complex workflows with multi-step processes, enhanced integration with event-driven applications, and extended query execution time.",
-        icon: rdsIcon,
+        icon: LuDatabase,
     },
     {
         title: "AWS Lambda",
         subtitle: "Serverless Compute",
         desc: "Supports more complex workflows with multi-step Lambda functions, enhanced integration with event-driven applications, and extended execution time.",
-        icon: lambdaIcon,
+        icon: LuSquareFunction,
     },
     {
         title: "Amazon VPC",
         subtitle: "Virtual Private Cloud",
         desc: "Advanced network configurations, PrivateLink connections, cross-region VPC peering, and high availability solutions for securing cloud resources.",
-        icon: vpcIcon,
+        icon: LuNetwork,
     },
     {
         title: "Amazon CloudFront",
         subtitle: "Content Delivery Network",
         desc: "Improved with real-time analytics, advanced caching, dynamic content delivery, and low-latency solutions for global content distribution.",
-        icon: cloudFrontIcon,
+        icon: LuGlobe,
     },
 ];
 
@@ -138,7 +132,7 @@ export default function AwsServices() {
                                 // card to the tallest, so longer copy never spills out.
                                 className="snap-start shrink-0 w-[260px] sm:w-[335px] min-h-[300px] sm:min-h-[380px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col items-center text-center px-6 sm:px-7 py-7 sm:py-8"
                             >
-                                <Image src={card.icon} alt="" width={44} height={44} className="mb-5" />
+                                <card.icon aria-hidden="true" strokeWidth={1.5} className="size-[44px] mb-5 text-[#1C5F85]" />
                                 <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{card.title}</h2>
                                 <p className="text-[#2D8EC5] text-sm sm:text-base font-light mt-1">{card.subtitle}</p>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light mt-5">{card.desc}</p>

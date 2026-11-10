@@ -1,57 +1,49 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { LuBanknote, LuChartColumn, LuClock, LuScale, LuStar, LuUserCog, LuUserPlus, LuUsers } from "react-icons/lu";
 import { motion } from "framer-motion";
-import coreHrIcon from "@/assets/Solutions/HumanCapitalManagement/team.svg";
-import timeIcon from "@/assets/Solutions/HumanCapitalManagement/Section_24_7Monitoring.svg";
-import payrollIcon from "@/assets/Solutions/HumanCapitalManagement/iconamoon_invoice-thin.svg";
-import talentIcon from "@/assets/Solutions/HumanCapitalManagement/Section_CustomerPersonalization_Card2_PersonCheck.svg";
-import selfServiceIcon from "@/assets/Solutions/HumanCapitalManagement/Section4_icon1_OneView.svg";
-import recruitmentIcon from "@/assets/Solutions/HumanCapitalManagement/Section4_icon2_Journeys.svg";
-import reportingIcon from "@/assets/Solutions/HumanCapitalManagement/Section_OperationalReporting.svg";
-import complianceIcon from "@/assets/Solutions/HumanCapitalManagement/Section_DataProtection_PrivacyControls.svg";
 
 const CARDS = [
     {
         title: "Core HR Management",
         desc: "Handle employee data and organizational structures effectively with the Personnel Administration (PA) and Organizational Management (OM) modules. PA manages employee records, personal information, and employment history, keeping data accurate and up to date. OM structures organizational hierarchies, roles, and reporting lines, enabling efficient management of organizational changes and workforce planning. Together, they provide a robust foundation for HR operations, enhancing data accuracy and organizational clarity.",
-        icon: coreHrIcon,
+        icon: LuUsers,
     },
     {
         title: "Time & Attendance Management",
         desc: "Track employee time, attendance, and leave efficiently to ensure accurate working-hour calculations and compliance with labor regulations, through automated time tracking, leave request management, and monitoring of attendance patterns. Organizations maintain accurate payroll, improve workforce productivity, and adhere to legal requirements, minimizing compliance risks and administrative burdens.",
-        icon: timeIcon,
+        icon: LuClock,
     },
     {
         title: "Payroll Processing",
         desc: "Process employee salaries, wages, and taxes seamlessly with comprehensive payroll functionality, including automated calculation of gross and net pay, deductions, and tax withholdings. The system ensures timely and accurate payroll processing, adheres to regulatory requirements, and provides detailed reports, enhancing financial accuracy and reducing administrative effort.",
-        icon: payrollIcon,
+        icon: LuBanknote,
     },
     {
         title: "Talent Management",
         desc: "Support employee development, performance appraisal, and succession planning with specialized modules for recruitment, training, and career development. These modules streamline hiring, facilitate continuous learning through targeted training programs, and enable effective performance evaluations. By fostering career growth and planning for future leadership, organizations cultivate a skilled and motivated workforce.",
-        icon: talentIcon,
+        icon: LuStar,
     },
     {
         title: "Employee and Manager Self-Service",
         desc: "Empower employees and managers to handle HR tasks independently through self-service portals. Employees update personal information, request leave, and view pay slips, while managers approve requests, access team data, and generate reports. This autonomy enhances efficiency, reduces administrative workload, and improves user satisfaction and engagement.",
-        icon: selfServiceIcon,
+        icon: LuUserCog,
     },
     {
         title: "Recruitment and Onboarding",
         desc: "Manage the entire recruitment process seamlessly with SAP HCM, from job posting through to onboarding new hires, including applicant tracking, interview scheduling, and integration with external recruitment channels. The result is a streamlined hiring experience, better candidate engagement, smooth transitions into the organization, and higher overall recruitment efficiency.",
-        icon: recruitmentIcon,
+        icon: LuUserPlus,
     },
     {
         title: "Reporting and Analytics",
         desc: "Monitor HR metrics, analyze workforce trends, and gain insights into employee performance and engagement with comprehensive dashboards, customizable reports, and data visualization. Data-driven insights help organizations optimize HR strategies, improve decision-making, and enhance overall workforce effectiveness and satisfaction.",
-        icon: reportingIcon,
+        icon: LuChartColumn,
     },
     {
         title: "Compliance & Regulatory Support",
         desc: "Ensure compliance with labor laws, payroll taxation, and data privacy regulations through capabilities that incorporate country-specific requirements. The system automates regulatory updates, ensures accurate payroll processing, and manages data securely, minimizing compliance risks and maintaining trust with employees and regulatory authorities alike.",
-        icon: complianceIcon,
+        icon: LuScale,
     },
 ];
 
@@ -143,7 +135,7 @@ export default function HcmFeatures() {
                                 className="snap-start shrink-0 w-[min(300px,80vw)] sm:w-[380px] min-h-[320px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col items-start text-left px-6 sm:px-8 py-7 sm:py-8"
                             >
                                 <div className="flex items-center justify-between w-full mb-5">
-                                    <Image src={card.icon} alt="" width={44} height={44} className="size-11" />
+                                    <card.icon aria-hidden="true" strokeWidth={1.5} className="size-11 text-[#1C5F85]" />
                                     <span className="text-[#2d8ec5] text-base font-semibold">{String(index + 1).padStart(2, "0")}</span>
                                 </div>
                                 <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{card.title}</h2>

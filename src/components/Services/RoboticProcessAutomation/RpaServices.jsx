@@ -1,45 +1,39 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { LuBot, LuChartColumn, LuKeyboard, LuReceipt, LuUserPlus, LuWorkflow } from "react-icons/lu";
 import { motion } from "framer-motion";
-import dataEntryIcon from "@/assets/Services/RoboticProcessAutomation/icons/data-entry.svg";
-import workflowIcon from "@/assets/Services/RoboticProcessAutomation/icons/workflow.svg";
-import onboardingIcon from "@/assets/Services/RoboticProcessAutomation/icons/onboarding.svg";
-import invoiceIcon from "@/assets/Services/RoboticProcessAutomation/icons/invoice.svg";
-import reportingIcon from "@/assets/Services/RoboticProcessAutomation/icons/reporting.svg";
-import chatbotIcon from "@/assets/Services/RoboticProcessAutomation/icons/chatbot.svg";
 
 const CARDS = [
     {
         title: "Data Entry Automation",
         desc: "Automates the entry of data across systems, reducing errors and speeding up processing time.",
-        icon: dataEntryIcon,
+        icon: LuKeyboard,
     },
     {
         title: "Workflow Automation",
         desc: "Automates end-to-end processes such as document handling, approvals, and invoicing, improving consistency and efficiency.",
-        icon: workflowIcon,
+        icon: LuWorkflow,
     },
     {
         title: "Customer Onboarding",
         desc: "Streamlines the onboarding process by automating form filling, document verification, and account setup, reducing time and manual effort.",
-        icon: onboardingIcon,
+        icon: LuUserPlus,
     },
     {
         title: "Invoice Processing",
         desc: "Automates the processing and validation of invoices, minimizing human errors and accelerating payment cycles.",
-        icon: invoiceIcon,
+        icon: LuReceipt,
     },
     {
         title: "Automated Reporting",
         desc: "Automatically compiles and generates reports from multiple data sources, saving time and ensuring accuracy.",
-        icon: reportingIcon,
+        icon: LuChartColumn,
     },
     {
         title: "Chatbots & Virtual Assistants",
         desc: "Automates customer interactions, supporting 24/7 customer service and improving response time for inquiries and tasks.",
-        icon: chatbotIcon,
+        icon: LuBot,
     },
 ];
 
@@ -148,7 +142,7 @@ export default function RpaServices() {
                                 // card still matches the tallest one and the row stays even.
                                 className="snap-start shrink-0 w-[260px] sm:w-[335px] min-h-[280px] sm:min-h-[360px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col items-center text-center px-6 sm:px-7 py-7 sm:py-8"
                             >
-                                <Image src={card.icon} alt="" width={44} height={44} className="mb-5" />
+                                <card.icon aria-hidden="true" strokeWidth={1.5} className="size-[44px] mb-5 text-[#1C5F85]" />
                                 <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{card.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light mt-5">{card.desc}</p>
                             </motion.div>

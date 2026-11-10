@@ -101,24 +101,29 @@ export default function MigrationBenefits() {
                 {/* Image panel */}
                 <div className="w-full lg:flex-1 min-w-0">
                     <div className="relative w-full aspect-[798/446] overflow-hidden">
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={active}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.4 }}
-                                className="absolute inset-0"
-                            >
-                                <Image src={activeTab.img} alt="" fill className="object-cover" />
+                        {/* Every image stays mounted and cross-fades on opacity, so switching tabs never blanks the box; only the copy swaps, after the image has started to change. */}
+                        <div className="absolute inset-0">
+                            {TABS.map((tab, index) => (
+                                <Image
+                                    key={index}
+                                    src={tab.img}
+                                    alt={index === active ? "" : ""}
+                                    fill
+                                    className={`object-cover transition-opacity duration-700 ease-in-out ${index === active ? "opacity-100" : "opacity-0"}`}
+                                    priority={index === 0}
+                                />
+                            ))}
 
                                 {/* Gradient + overlaid text from sm up; on phones the image is too
                                     short to hold the copy, so it renders below instead. */}
                                 <div className="absolute inset-0 hidden sm:block bg-gradient-to-t from-black/70 to-transparent" />
+                                <AnimatePresence mode="wait">
                                 <motion.div
+                                    key={active}
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.3, delay: 0.1 }}
+                                    exit={{ opacity: 0, y: -6 }}
+                                    transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
                                     className="absolute hidden sm:flex left-10 right-10 bottom-10 lg:left-[55px] lg:right-auto lg:bottom-[46px] lg:max-w-[462px] text-white flex-col gap-3"
                                 >
                                     <h2 className="text-xl font-semibold">{activeTab.title}</h2>
@@ -126,8 +131,9 @@ export default function MigrationBenefits() {
                                         {activeTab.desc}
                                     </p>
                                 </motion.div>
-                            </motion.div>
-                        </AnimatePresence>
+                                </AnimatePresence>
+                            </div>
+                        
                     </div>
                     <p className="sm:hidden mt-4 text-[#55595E] text-base font-light">{activeTab.desc}</p>
                 </div>

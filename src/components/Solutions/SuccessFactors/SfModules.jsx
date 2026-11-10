@@ -110,31 +110,37 @@ export default function SfModules() {
 
                 <div className="flex flex-col w-full lg:flex-1 min-w-0">
                     <div className="relative w-full aspect-[798/446] lg:aspect-auto lg:flex-1 lg:min-h-[446px] overflow-hidden bg-[#565656]">
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={active}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.4 }}
-                                className="absolute inset-0"
-                            >
-                                <Image src={activeTab.img} alt={activeTab.label} fill className="object-cover" />
+                        {/* Every image stays mounted and cross-fades on opacity, so switching tabs never blanks the box; only the copy swaps, after the image has started to change. */}
+                        <div className="absolute inset-0">
+                            {TABS.map((tab, index) => (
+                                <Image
+                                    key={index}
+                                    src={tab.img}
+                                    alt={index === active ? tab.label : ""}
+                                    fill
+                                    className={`object-cover transition-opacity duration-700 ease-in-out ${index === active ? "opacity-100" : "opacity-0"}`}
+                                    priority={index === 0}
+                                />
+                            ))}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
 
                                 {/* Overlay copy on wide screens only; the descriptions are too long
                                     to sit over a short mobile image, so they move below it there. */}
+                                <AnimatePresence mode="wait">
                                 <motion.div
+                                    key={active}
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.3, delay: 0.1 }}
+                                    exit={{ opacity: 0, y: -6 }}
+                                    transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
                                     className="hidden lg:flex absolute left-[55px] right-[55px] bottom-[46px] max-w-[560px] text-white flex-col gap-3"
                                 >
                                     <h2 className="text-2xl font-semibold">{activeTab.label}</h2>
                                     <p className="text-white/90 text-lg font-light leading-relaxed">{activeTab.desc}</p>
                                 </motion.div>
-                            </motion.div>
-                        </AnimatePresence>
+                                </AnimatePresence>
+                            </div>
+                        
                     </div>
 
                     <div className="lg:hidden flex flex-col gap-3 bg-white px-6 py-6">

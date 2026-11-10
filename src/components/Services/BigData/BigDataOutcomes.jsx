@@ -1,30 +1,26 @@
 "use client";
 
-import Image from "next/image";
+import { LuBrainCircuit, LuDatabase, LuLightbulb, LuMaximize2 } from "react-icons/lu";
 import { motion } from "framer-motion";
-import insightIcon from "@/assets/Services/BigData/icons/insight.svg";
-import scaleIcon from "@/assets/Services/BigData/icons/scale.svg";
-import singleTruthIcon from "@/assets/Services/BigData/icons/single-truth.svg";
-import aiReadyIcon from "@/assets/Services/BigData/icons/ai-ready.svg";
 
 const OUTCOMES = [
     {
-        icon: insightIcon,
+        icon: LuLightbulb,
         title: "Actionable Insight",
         desc: "Uncover trends and understand consumer behavior to make data-driven decisions with confidence.",
     },
     {
-        icon: scaleIcon,
+        icon: LuMaximize2,
         title: "Scale Without Limits",
         desc: "Store and process large, complex datasets as they grow, without slowing the business down.",
     },
     {
-        icon: singleTruthIcon,
+        icon: LuDatabase,
         title: "A Single Source of Truth",
         desc: "A cohesive data strategy that brings every source together under consistent governance.",
     },
     {
-        icon: aiReadyIcon,
+        icon: LuBrainCircuit,
         title: "AI-Ready Data",
         desc: "Clean, well-managed data that powers real-time intelligence and predictive analytics.",
     },
@@ -57,7 +53,7 @@ export default function BigDataOutcomes() {
                         className="group bg-white flex flex-col gap-5 px-6 py-8 border-b-[3px] border-transparent transition-[border-color,box-shadow] duration-300 hover:border-[#2d8ec5] hover:shadow-xl"
                     >
                         <div className="relative size-10 sm:size-12 shrink-0 transition-transform duration-300 group-hover:-translate-y-1">
-                            <Image src={item.icon} alt="" fill className="object-contain" />
+                            <item.icon aria-hidden="true" strokeWidth={1.5} className="size-full text-[#1C5F85]" />
                         </div>
                         <h2 className="text-[#2E3033] text-xl font-semibold">{item.title}</h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>

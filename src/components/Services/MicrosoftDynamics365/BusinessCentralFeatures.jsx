@@ -1,27 +1,21 @@
 "use client";
 
-import Image from "next/image";
+import { LuChartColumn, LuClipboardList, LuLandmark, LuPuzzle, LuShoppingCart, LuTruck } from "react-icons/lu";
 import { motion } from "framer-motion";
-import financialManagementIcon from "@/assets/Services/MicrosoftDynamics365/financial-management.svg";
-import salesServiceIcon from "@/assets/Services/MicrosoftDynamics365/sales-service.svg";
-import supplyChainIcon from "@/assets/Services/MicrosoftDynamics365/supply-chain.svg";
-import reportingAnalyticsIcon from "@/assets/Services/MicrosoftDynamics365/reporting-analytics.svg";
-import projectManagementIcon from "@/assets/Services/MicrosoftDynamics365/project-management.svg";
-import microsoftEcosystemIcon from "@/assets/Services/MicrosoftDynamics365/microsoft-ecosystem.svg";
 
 const ROW_1 = [
     {
-        icon: financialManagementIcon,
+        icon: LuLandmark,
         title: "Financial Management",
         desc: "Manages finances, assets, and cash flow with multi-currency and multi-company support.",
     },
     {
-        icon: salesServiceIcon,
+        icon: LuShoppingCart,
         title: "Sales & Service Management",
         desc: "Tracks opportunities, manages contacts, and supports service orders in Business Central.",
     },
     {
-        icon: supplyChainIcon,
+        icon: LuTruck,
         title: "Supply Chain Management",
         desc: "Connects purchasing, inventory, and warehouse activity so stock levels and order fulfilment stay under control.",
     },
@@ -29,23 +23,23 @@ const ROW_1 = [
 
 const ROW_2 = [
     {
-        icon: reportingAnalyticsIcon,
+        icon: LuChartColumn,
         title: "Reporting and Analytics",
         desc: "Real-time insights, built-in reports, and Power BI integration for informed decisions.",
     },
     {
-        icon: projectManagementIcon,
+        icon: LuClipboardList,
         title: "Project Management",
         desc: "Manages projects end to end: budgeting, resources, timesheets, and reporting, ensuring progress and allocation.",
     },
     {
-        icon: microsoftEcosystemIcon,
+        icon: LuPuzzle,
         title: "Integration with Microsoft Ecosystem",
         desc: "Integrates with Office 365, Power Platform, and Azure for enhanced productivity and scalability.",
     },
 ];
 
-const Card = ({ icon, title, desc, index }) => (
+const Card = ({ icon: Icon, title, desc, index }) => (
     <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +48,7 @@ const Card = ({ icon, title, desc, index }) => (
         className="flex flex-col gap-4"
     >
         <div className="relative size-10 shrink-0">
-            <Image src={icon} alt="" fill className="object-contain" />
+            <Icon aria-hidden="true" strokeWidth={1.5} className="size-full text-[#1C5F85]" />
         </div>
         <h2 className="text-[#2E3033] text-xl font-semibold">{title}</h2>
         <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">{desc}</p>

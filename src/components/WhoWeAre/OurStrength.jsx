@@ -25,7 +25,9 @@ const itemVariants = {
 
 export default function OurStrength() {
     return (
-        <section className="w-full px-8 sm:px-[64px] pt-8 pb-0 sm:pt-16 sm:pb-8">
+        <section className="w-full px-8 sm:px-[64px] pt-0 pb-10 sm:pb-16">
+            {/* Hairline separating this section from Discover What Set Us Apart above. */}
+            <div aria-hidden="true" className="h-px w-full bg-[#2E3033]/15 mb-8 sm:mb-16" />
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -64,7 +66,6 @@ export default function OurStrength() {
                     </React.Fragment>
                 ))}
             </motion.div>
-            <div className="w-full h-px bg-gray-100 max-w-[1300px] mx-auto mt-0 sm:mt-16" />
         </section>
     );
 }

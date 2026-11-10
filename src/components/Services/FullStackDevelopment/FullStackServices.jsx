@@ -100,28 +100,34 @@ export default function FullStackServices() {
                 </div>
 
                 <div className="relative w-full lg:flex-1 aspect-[798/446] overflow-hidden">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={active}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.4 }}
-                            className="absolute inset-0"
-                        >
-                            <Image src={activeTab.img} alt={activeTab.title} fill className="object-cover" />
+                    {/* Every image stays mounted and cross-fades on opacity, so switching tabs never blanks the box; only the copy swaps, after the image has started to change. */}
+                    <div className="absolute inset-0">
+                        {TABS.map((tab, index) => (
+                            <Image
+                                key={index}
+                                src={tab.img}
+                                alt={index === active ? tab.title : ""}
+                                fill
+                                className={`object-cover transition-opacity duration-700 ease-in-out ${index === active ? "opacity-100" : "opacity-0"}`}
+                                priority={index === 0}
+                            />
+                        ))}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                            <AnimatePresence mode="wait">
                             <motion.div
+                                key={active}
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.3, delay: 0.1 }}
+                                exit={{ opacity: 0, y: -6 }}
+                                transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
                                 className="absolute left-5 right-5 bottom-5 sm:left-[7%] sm:right-auto sm:bottom-[10%] sm:max-w-[462px] text-white flex flex-col gap-2 sm:gap-3"
                             >
                                 <h2 className="text-lg sm:text-xl font-semibold">{activeTab.title}</h2>
                                 <p className="text-white/90 text-sm sm:text-lg font-light leading-relaxed">{activeTab.desc}</p>
                             </motion.div>
-                        </motion.div>
-                    </AnimatePresence>
+                            </AnimatePresence>
+                        </div>
+                    
                 </div>
             </div>
         </section>

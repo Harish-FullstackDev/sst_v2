@@ -1,27 +1,21 @@
 "use client";
 
-import Image from "next/image";
+import { LuCalculator, LuClipboardCheck, LuFileCheck, LuFilePlus, LuPlug, LuSend } from "react-icons/lu";
 import { motion } from "framer-motion";
-import validationIcon from "@/assets/Services/EInvoicing/icons/validation.svg";
-import generationIcon from "@/assets/Services/EInvoicing/icons/generation.svg";
-import transmissionIcon from "@/assets/Services/EInvoicing/icons/transmission.svg";
-import taxIcon from "@/assets/Services/EInvoicing/icons/tax.svg";
-import auditIcon from "@/assets/Services/EInvoicing/icons/audit.svg";
-import erpIcon from "@/assets/Services/EInvoicing/icons/erp.svg";
 
 const ROW_1 = [
     {
-        icon: validationIcon,
+        icon: LuFileCheck,
         title: "Invoice Validation",
         desc: "Real-time validation of invoices against compliance standards and tax regulations.",
     },
     {
-        icon: generationIcon,
+        icon: LuFilePlus,
         title: "Invoice Generation",
         desc: "Automated creation of invoices with dynamic templates for personalized and professional communication.",
     },
     {
-        icon: transmissionIcon,
+        icon: LuSend,
         title: "Invoice Transmission",
         desc: "Seamless electronic delivery of invoices through secure platforms, ensuring timely receipt by recipients.",
     },
@@ -29,23 +23,23 @@ const ROW_1 = [
 
 const ROW_2 = [
     {
-        icon: taxIcon,
+        icon: LuCalculator,
         title: "Tax Compliance",
         desc: "Integrated tax calculation and reporting to ensure adherence to regulatory requirements.",
     },
     {
-        icon: auditIcon,
+        icon: LuClipboardCheck,
         title: "Audit and Reporting",
         desc: "Comprehensive tracking, audit trails, and detailed reporting to ensure transparency and simplify financial audits.",
     },
     {
-        icon: erpIcon,
+        icon: LuPlug,
         title: "Integration with ERP Systems",
         desc: "Seamless integration with popular ERP solutions like SAP, Oracle, and Microsoft Dynamics for smooth workflow automation.",
     },
 ];
 
-const Card = ({ icon, title, desc, index }) => (
+const Card = ({ icon: Icon, title, desc, index }) => (
     <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +48,7 @@ const Card = ({ icon, title, desc, index }) => (
         className="flex flex-col gap-4"
     >
         <div className="relative size-10 shrink-0">
-            <Image src={icon} alt="" fill className="object-contain" />
+            <Icon aria-hidden="true" strokeWidth={1.5} className="size-full text-[#1C5F85]" />
         </div>
         <h2 className="text-[#2E3033] text-xl font-semibold">{title}</h2>
         <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">{desc}</p>

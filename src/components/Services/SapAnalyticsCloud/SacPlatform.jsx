@@ -1,24 +1,21 @@
 "use client";
 
-import Image from "next/image";
+import { LuChartColumn, LuClipboardList, LuTrendingUp } from "react-icons/lu";
 import { motion } from "framer-motion";
-import biIcon from "@/assets/Services/SapAnalyticsCloud/icons/business-intelligence.svg";
-import planningIcon from "@/assets/Services/SapAnalyticsCloud/icons/planning.svg";
-import predictiveIcon from "@/assets/Services/SapAnalyticsCloud/icons/predictive.svg";
 
 const PILLARS = [
     {
-        icon: biIcon,
+        icon: LuChartColumn,
         title: "Business Intelligence",
         desc: "Explore data and report on performance in one place, so every decision is backed by data.",
     },
     {
-        icon: planningIcon,
+        icon: LuClipboardList,
         title: "Planning",
         desc: "Bring planning into the same platform as your analytics to improve planning across the business.",
     },
     {
-        icon: predictiveIcon,
+        icon: LuTrendingUp,
         title: "Predictive Analytics",
         desc: "Look ahead with predictive capabilities that support operational efficiency and business growth.",
     },
@@ -55,7 +52,7 @@ export default function SacPlatform() {
                         <span className="absolute top-6 right-6 text-[#E2E5EA] text-4xl sm:text-5xl font-semibold leading-none">
                             {String(index + 1).padStart(2, "0")}
                         </span>
-                        <Image src={pillar.icon} alt="" width={48} height={48} className="size-10 sm:size-12" />
+                        <pillar.icon aria-hidden="true" strokeWidth={1.5} className="size-10 sm:size-12 text-[#1C5F85]" />
                         <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{pillar.title}</h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{pillar.desc}</p>
                     </motion.div>

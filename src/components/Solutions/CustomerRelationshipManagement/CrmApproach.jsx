@@ -62,7 +62,7 @@ export default function CrmApproach() {
                                 src={step.image}
                                 alt={step.title}
                                 fill
-                                className="object-cover grayscale-[40%] transition-[transform,filter] duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
+                                className="object-cover grayscale-[40%] transition-[filter] duration-700 ease-in-out group-hover:grayscale-0"
                             />
                         </div>
                         {/* Step rail: number on a line that links the four stages */}
@@ -71,7 +71,7 @@ export default function CrmApproach() {
                                 {String(index + 1).padStart(2, "0")}
                             </span>
                             <div className="h-px flex-1 bg-[#d3dae2] relative overflow-hidden">
-                                <div className="absolute inset-0 origin-left scale-x-0 bg-[#2d8ec5] transition-transform duration-500 ease-out group-hover:scale-x-100" />
+                                <div className="absolute inset-0 origin-left scale-x-0 bg-[#2d8ec5] transition-transform duration-700 ease-in-out group-hover:scale-x-100" />
                             </div>
                         </div>
                         <h3 className="text-[#2E3033] text-xl sm:text-2xl font-semibold mt-3">{step.title}</h3>

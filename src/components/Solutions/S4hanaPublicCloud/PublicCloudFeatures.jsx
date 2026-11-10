@@ -99,38 +99,45 @@ export default function PublicCloudFeatures() {
                 {/* Image panel. The description overlays the image only at xl, where the image
                     is tall enough to hold it; below xl it sits under the image so it never clips. */}
                 <div className="w-full lg:flex-1 lg:min-w-0">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={active}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.4 }}
-                            className="flex flex-col gap-5"
-                        >
+                    {/* Every image stays mounted and cross-fades on opacity, so switching tabs never blanks the box; only the copy swaps, after the image has started to change. */}
+                    <div className="flex flex-col gap-5">
                             <div className="relative w-full aspect-[798/446] overflow-hidden bg-[#e6e6e6]">
-                                <Image src={activeTab.img} alt={activeTab.title} fill sizes="(min-width: 1024px) 60vw, 100vw" className="object-cover" />
+                                {TABS.map((tab, index) => (
+                                    <Image
+                                        key={index}
+                                        src={tab.img}
+                                        alt={index === active ? tab.title : ""}
+                                        fill
+                                        sizes="(min-width: 1024px) 60vw, 100vw"
+                                        className={`object-cover transition-opacity duration-700 ease-in-out ${index === active ? "opacity-100" : "opacity-0"}`}
+                                        priority={index === 0}
+                                    />
+                                ))}
 
                                 {/* Gradient */}
                                 <div className="hidden xl:block absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
 
+                                <AnimatePresence mode="wait">
                                 <motion.div
+                                    key={active}
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.3, delay: 0.1 }}
+                                    exit={{ opacity: 0, y: -6 }}
+                                    transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
                                     className="hidden xl:flex absolute left-[55px] bottom-[46px] w-[520px] text-white flex-col gap-3"
                                 >
                                     <h2 className="text-xl font-semibold">{activeTab.title}</h2>
                                     <p className="text-white/90 text-lg font-light leading-relaxed">{activeTab.desc}</p>
                                 </motion.div>
+                                </AnimatePresence>
                             </div>
 
                             <div className="flex xl:hidden flex-col gap-3">
                                 <h2 className="text-[#2E3033] text-xl font-semibold">{activeTab.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{activeTab.desc}</p>
                             </div>
-                        </motion.div>
-                    </AnimatePresence>
+                        </div>
+                    
                 </div>
             </div>
         </section>

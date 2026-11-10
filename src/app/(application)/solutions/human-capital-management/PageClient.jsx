@@ -34,8 +34,8 @@ const page = () => {
             </div>
             <HcmScenarios />
             <WhyHcm />
-            <HcmStatement />
             <HcmDelivery />
+            <HcmStatement />
             <HcmFaq />
             <ReadyToTransform
                 title="Unlock the Power of SAP Human Capital Management for Your Enterprise Today!"

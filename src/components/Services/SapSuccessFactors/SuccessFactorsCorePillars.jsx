@@ -1,60 +1,51 @@
 "use client";
 
-import Image from "next/image";
+import { LuAward, LuBadgeCheck, LuBookOpen, LuClipboardList, LuCloud, LuFileText, LuRocket, LuUsers, LuWallet } from "react-icons/lu";
 import { motion } from "framer-motion";
-import certifiedIcon from "@/assets/Services/SapSuccessFactors/icons/certified.svg";
-import knowledgeTransferIcon from "@/assets/Services/SapSuccessFactors/icons/knowledge-transfer.svg";
-import pricingIcon from "@/assets/Services/SapSuccessFactors/icons/pricing.svg";
-import customerCentricIcon from "@/assets/Services/SapSuccessFactors/icons/customer-centric.svg";
-import documentationIcon from "@/assets/Services/SapSuccessFactors/icons/documentation.svg";
-import practicesIcon from "@/assets/Services/SapSuccessFactors/icons/practices.svg";
-import catalystIcon from "@/assets/Services/SapSuccessFactors/icons/catalyst.svg";
-import planningIcon from "@/assets/Services/SapSuccessFactors/icons/planning.svg";
-import deploymentIcon from "@/assets/Services/SapSuccessFactors/icons/deployment.svg";
 
 const ITEMS = [
     {
-        icon: certifiedIcon,
+        icon: LuBadgeCheck,
         title: "Certified SAP Experts",
         desc: "Work with certified professionals who provide expertise to ensure smooth implementation and continued success.",
     },
     {
-        icon: knowledgeTransferIcon,
+        icon: LuBookOpen,
         title: "Knowledge Transfer",
         desc: "Access effective knowledge sharing through easy-to-understand instructional videos.",
     },
     {
-        icon: pricingIcon,
+        icon: LuWallet,
         title: "Flexible Pricing Models",
         desc: "Choose from flexible plans tailored to your needs, with transparent pricing and free services.",
     },
     {
-        icon: customerCentricIcon,
+        icon: LuUsers,
         title: "Customer-Centric Solutions",
         desc: "Develop solutions that focus on your specific business needs, fostering long-term success.",
     },
     {
-        icon: documentationIcon,
+        icon: LuFileText,
         title: "Comprehensive Documentation",
         desc: "Benefit from thorough documentation and rigorous testing to ensure the highest quality.",
     },
     {
-        icon: practicesIcon,
+        icon: LuAward,
         title: "Industry-Leading Practices",
         desc: "Implement recognized industry standards and best practices for business success.",
     },
     {
-        icon: catalystIcon,
+        icon: LuRocket,
         title: "SAP SuccessFactors Catalyst",
         desc: "Quick, efficient deployment with SAP tools that accelerate your transformation journey.",
     },
     {
-        icon: planningIcon,
+        icon: LuClipboardList,
         title: "Proficient Business Planning",
         desc: "Support business growth with structured, data-driven planning and decision-making tools.",
     },
     {
-        icon: deploymentIcon,
+        icon: LuCloud,
         title: "Cloud vs On-Premise",
         desc: "Select the best deployment model, cloud or on-premise, depending on your business needs, budget, and infrastructure.",
     },
@@ -91,7 +82,7 @@ export default function SuccessFactorsCorePillars() {
                         className={`flex flex-col gap-8 lg:pl-8 ${index % 3 !== 0 ? "lg:border-l lg:border-[#929292]" : ""
                             }`}
                     >
-                        <Image src={item.icon} alt="" width={32} height={32} className="size-8" />
+                        <item.icon aria-hidden="true" strokeWidth={1.5} className="size-8 text-[#1C5F85]" />
                         <div className="flex flex-col gap-4">
                             <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h2>
                             <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>

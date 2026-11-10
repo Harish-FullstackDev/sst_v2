@@ -1,24 +1,21 @@
 "use client";
 
-import Image from "next/image";
+import { LuClipboardList, LuLightbulb, LuTarget } from "react-icons/lu";
 import { motion } from "framer-motion";
-import planningIcon from "@/assets/Solutions/AnalyticsCloud/icon-planning.svg";
-import insightsIcon from "@/assets/Solutions/AnalyticsCloud/icon-insights.svg";
-import alignmentIcon from "@/assets/Solutions/AnalyticsCloud/icon-alignment.svg";
 
 const REASONS = [
     {
-        icon: planningIcon,
+        icon: LuClipboardList,
         title: "Improved Planning",
         desc: "SAP Analytics Cloud uses machine learning for accurate planning, forecasting, and real-time monitoring of expenses.",
     },
     {
-        icon: insightsIcon,
+        icon: LuLightbulb,
         title: "Useful Insights",
         desc: "SAP Analytics Cloud offers AI-powered data visualization and BI for faster, informed business decision-making insights.",
     },
     {
-        icon: alignmentIcon,
+        icon: LuTarget,
         title: "Proper Alignment",
         desc: "SAP Analytics Cloud streamlines expense alignment across various departments, enhancing productivity with real-time collaborative insights.",
     },
@@ -52,7 +49,7 @@ export default function WhySac() {
                         className="bg-white border border-[#d3d5d8] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.08)] flex flex-col items-center text-center gap-4 px-6 py-8 sm:px-8 sm:py-10 h-full"
                     >
                         <div className="flex items-center justify-center size-16 sm:size-[72px] rounded-full bg-[#2d8ec5]/10">
-                            <Image src={reason.icon} alt="" width={48} height={48} className="size-9 sm:size-10" />
+                            <reason.icon aria-hidden="true" strokeWidth={1.5} className="size-9 sm:size-10 text-[#1C5F85]" />
                         </div>
                         <h3 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{reason.title}</h3>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{reason.desc}</p>

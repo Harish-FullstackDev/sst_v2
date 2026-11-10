@@ -1,36 +1,31 @@
 "use client";
 
-import Image from "next/image";
+import { LuRadar, LuRotateCcw, LuSearch, LuShield, LuSiren } from "react-icons/lu";
 import { motion } from "framer-motion";
-import identifyIcon from "@/assets/Services/CyberSecurity/icons/identify.svg";
-import protectIcon from "@/assets/Services/CyberSecurity/icons/protect.svg";
-import detectIcon from "@/assets/Services/CyberSecurity/icons/detect.svg";
-import respondIcon from "@/assets/Services/CyberSecurity/icons/respond.svg";
-import recoverIcon from "@/assets/Services/CyberSecurity/icons/recover.svg";
 
 const STEPS = [
     {
-        icon: identifyIcon,
+        icon: LuSearch,
         title: "Identify",
         desc: "Map your systems, sensitive data, and users to understand where the real risks sit.",
     },
     {
-        icon: protectIcon,
+        icon: LuShield,
         title: "Protect",
         desc: "Apply network security, endpoint protection, access controls, and encryption.",
     },
     {
-        icon: detectIcon,
+        icon: LuRadar,
         title: "Detect",
         desc: "Monitor systems in real time to spot threats before they escalate.",
     },
     {
-        icon: respondIcon,
+        icon: LuSiren,
         title: "Respond",
         desc: "Act on a tested incident response plan to contain and neutralize attacks.",
     },
     {
-        icon: recoverIcon,
+        icon: LuRotateCcw,
         title: "Recover",
         desc: "Restore operations quickly and minimize downtime after an incident.",
     },
@@ -67,7 +62,7 @@ export default function CyberApproach() {
                             className="group flex lg:flex-col items-start lg:items-center gap-5 lg:gap-4 lg:text-center"
                         >
                             <div className="relative shrink-0 size-16 bg-[#f5f6f6] border border-[#E2E5EA] flex items-center justify-center transition-colors duration-300 group-hover:border-[#2d8ec5]">
-                                <Image src={step.icon} alt="" width={36} height={36} className="size-9" />
+                                <step.icon aria-hidden="true" strokeWidth={1.5} className="size-9 text-[#1C5F85]" />
                             </div>
                             <div className="flex flex-col gap-2 min-w-0">
                                 <span className="text-[#2d8ec5] text-sm sm:text-base font-light">0{index + 1}</span>

@@ -1,72 +1,63 @@
 "use client";
 
-import Image from "next/image";
+import { LuCircleCheck, LuCode, LuFileText, LuFlaskConical, LuGauge, LuLayoutDashboard, LuMap, LuRocket, LuServer } from "react-icons/lu";
 import { motion } from "framer-motion";
-import optimizationIcon from "@/assets/Services/SapConversionEccToS4hana/icons/experience-optimization.svg";
-import plansIcon from "@/assets/Services/SapConversionEccToS4hana/icons/product-strategy.svg";
-import rehostIcon from "@/assets/Services/SapConversionEccToS4hana/icons/mvp-design.svg";
-import customCodeIcon from "@/assets/Services/SapConversionEccToS4hana/icons/design-systems.svg";
-import testingIcon from "@/assets/Services/SapConversionEccToS4hana/icons/experience-analytics.svg";
-import validateIcon from "@/assets/Services/SapConversionEccToS4hana/icons/product-validation.svg";
-import fioriIcon from "@/assets/Services/SapConversionEccToS4hana/icons/feature-prioritization.svg";
-import documentationIcon from "@/assets/Services/SapConversionEccToS4hana/icons/design-operations.svg";
-import futureProofIcon from "@/assets/Services/SapConversionEccToS4hana/icons/continuous-improvement.svg";
 
 const ROWS = [
     [
         {
-            icon: optimizationIcon,
+            icon: LuGauge,
             title: "Conversion Rate Optimization",
             desc: "A conversion process that is faster than the traditional conversion method.",
         },
         {
-            icon: plansIcon,
+            icon: LuMap,
             title: "Free Access to S/4HANA Plans",
             desc: "Free services offered with our implementation packages.",
         },
         {
-            icon: rehostIcon,
+            icon: LuServer,
             title: "Re-hosting Approach",
             desc: "Rehost your digital journey using the “Lift & Shift” business approach.",
         },
     ],
     [
         {
-            icon: customCodeIcon,
+            icon: LuCode,
             title: "Customization & Creativity",
             desc: "Use custom code reduction for a streamlined and efficient system.",
         },
         {
-            icon: testingIcon,
+            icon: LuFlaskConical,
             title: "Miscellaneous Testing",
             desc: "Simulate transitions to resolve issues and minimize downtime.",
         },
         {
-            icon: validateIcon,
+            icon: LuCircleCheck,
             title: "Verify & Validate",
             desc: "A predefined model ensures data validation between SAP ECC and S/4HANA.",
         },
     ],
     [
         {
-            icon: fioriIcon,
+            icon: LuLayoutDashboard,
             title: "Fiori Phase Activation",
             desc: "Gradual activation of Fiori allows end users to make the UI/UX transition smoothly.",
         },
         {
-            icon: documentationIcon,
+            icon: LuFileText,
             title: "Rich Documentation & Testing",
             desc: "We record and report best business statements.",
         },
         {
-            icon: futureProofIcon,
+            icon: LuRocket,
             title: "Future-Proof Technology",
             desc: "Future-proof your SAP ERP with S/4HANA.",
         },
     ],
 ];
 
-const Card = ({ icon, title, desc, index }) => (
+const Card = ({ icon: Icon, title, desc, index }) => (
     <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +66,7 @@ const Card = ({ icon, title, desc, index }) => (
         className="flex flex-col gap-4"
     >
         <div className="relative size-10 shrink-0">
-            <Image src={icon} alt="" fill className="object-contain" />
+            <Icon aria-hidden="true" strokeWidth={1.5} className="size-full text-[#1C5F85]" />
         </div>
         <h2 className="text-[#2E3033] text-xl font-semibold">{title}</h2>
         <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">{desc}</p>
