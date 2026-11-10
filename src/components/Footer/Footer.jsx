@@ -28,7 +28,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-neutral-900 text-gray-400 p-8 md:p-16 ">
+      <footer className="bg-neutral-900 text-gray-400 px-8 py-8 md:px-16 md:pt-16 md:pb-9">
         <div className="relative h-8 w-auto aspect-[358.7/80] mb-6 md:hidden">
           <Image
             src={logo}
@@ -166,7 +166,7 @@ const Footer = () => {
 
             {/* <div className="flex space-x-3 md:col-span-1">
               {/* <a
-              href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
+              href="https://www.linkedin.com/company/supportstudiotechnologies/posts/?feedView=all"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
@@ -401,7 +401,7 @@ const Footer = () => {
             </div> */}
             <div className="flex space-x-3 md:col-span-1 min-h-[50px] mb-2 mt-4">
               <a
-                href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
+                href="https://www.linkedin.com/company/supportstudiotechnologies/posts/?feedView=all"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
@@ -416,7 +416,7 @@ const Footer = () => {
                 />
               </a>
               <a
-                href="https://www.instagram.com/ascendus.ksa"
+                href="https://www.instagram.com/isupportz.official/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
@@ -431,7 +431,7 @@ const Footer = () => {
                 />
               </a>
               <a
-                href="https://x.com/ascendus_ksa"
+                href="https://x.com/isupportz?s=11"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
@@ -450,169 +450,26 @@ const Footer = () => {
 
         </div>
 
-        {/* policy — same 5-column grid as the link row above, placed in column 5 so
-            it lines up under Get In Touch */}
-        <div className="grid grid-cols-1 md:grid-cols-5 md:gap-16">
-
-          {/* Full width below xl: column 5 is too narrow there to hold
-              "© 2026 Support Studio Technologies." on one line. */}
-          <div className="md:col-span-5 xl:col-span-1 xl:col-start-5">
-            <div className="space-x-3 md:col-span-1">
-              <p className="text-sm text-white mb-4 md:mb-0">
-                <a
-                  href="/legal/terms"
-                  className="whitespace-nowrap hover:text-gray-300 transition-colors"
-                >
+        {/* Legal row — links above the copyright, right-aligned under a hairline rule, as on ascendus_website_dev's footer. */}
+        <div className="border-t border-white/20 mt-8 pt-8 flex flex-col items-center md:items-end gap-3 text-sm text-white text-center md:text-right">
+          <p className="flex flex-wrap justify-center md:justify-end gap-x-2 gap-y-1">
+                <a href="/legal/terms" className="whitespace-nowrap hover:text-gray-300 transition-colors">
                   Terms & Conditions
                 </a>
-                {" | "}
-                <a
-                  href="/legal/privacy"
-                  className="whitespace-nowrap hover:text-gray-300 transition-colors"
-                >
+                <span aria-hidden="true">|</span>
+                <a href="/legal/privacy" className="whitespace-nowrap hover:text-gray-300 transition-colors">
                   Privacy Policy
                 </a>
-                <br />
-                <a
-                  href="/legal/security"
-                  className="whitespace-nowrap hover:text-gray-300 transition-colors"
-                >
+                <span aria-hidden="true">|</span>
+                <a href="/legal/security" className="whitespace-nowrap hover:text-gray-300 transition-colors">
                   Security Policy
                 </a>
-                {" | "}
-                <a
-                  href="/legal/cookies"
-                  className="whitespace-nowrap hover:text-gray-300 transition-colors"
-                >
+                <span aria-hidden="true">|</span>
+                <a href="/legal/cookies" className="whitespace-nowrap hover:text-gray-300 transition-colors">
                   Cookie Policy
                 </a>
-              </p>
-            </div>
-            {/* The company name never breaks; "All Rights Reserved." moves to the
-                next line when the column is too narrow for both. */}
-            <p className="text-sm text-white min-h-[50px] pt-4">
-              <span className="whitespace-nowrap">© 2026 Support Studio Technologies.</span>{" "}
-              <span className="whitespace-nowrap">All Rights Reserved.</span>
-            </p>
-          </div>
-
-
-
-
-          {/* <a
-              href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="LinkedIn"
-            >
-              <Image
-                src={LinkedinIcon}
-                alt="LinkedIn"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a>
-            <a
-              href="https://www.instagram.com/ascendus.ksa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="Instagram"
-            >
-              <Image
-                src={InstagramIcon}
-                alt="Instagram"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a> */}
-          {/* <a
-              href="https://calendly.com/ascendus"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="Calendly"
-            >
-              <Image
-                src={CalendlyIcon}
-                alt="Calendly"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a> */}
-
-          {/* <div className="flex space-x-3 md:col-span-1 min-h-[50px] mb-2">
-            <a
-              href="https://www.linkedin.com/company/ascendus-company/?viewAsMember=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="LinkedIn"
-            >
-              <Image
-                src={LinkedinIcon}
-                alt="LinkedIn"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a>
-            <a
-              href="https://www.instagram.com/ascendus.ksa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="Instagram"
-            >
-              <Image
-                src={InstagramIcon}
-                alt="Instagram"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a>
-          </div> */}
-          {/* <div className="md:col-span-2 ">
-            <div className="space-x-3 md:col-span-1">
-              <p className="text-sm text-white mb-4 md:mb-0">
-                <a
-                  href="/legal/terms"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  Terms & Conditions
-                </a>
-                {" | "}
-                <a
-                  href="/legal/privacy"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  Privacy Policy
-                </a>
-                <br />
-                <a
-                  href="/legal/security"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  Security Policy
-                </a>
-                {" | "}
-                <a
-                  href="/legal/cookies"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  Cookie Policy
-                </a>
-              </p>
-            </div>
-            <p className="text-sm text-white min-h-[50px] pt-4">
-              © 2026 Support Studio Technologies. All Rights Reserved.
-            </p>
-          </div> */}
+          </p>
+          <p className="md:whitespace-nowrap">© 2026 Support Studio Technologies. All Rights Reserved.</p>
         </div>
       </footer >
     </>

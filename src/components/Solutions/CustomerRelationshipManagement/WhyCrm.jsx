@@ -2,70 +2,64 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import whyImage from "@/assets/Solutions/CustomerRelationshipManagement/why.webp";
+import gainsImage from "@/assets/Solutions/CustomerRelationshipManagement/why.webp";
 
-const REASONS = [
-    {
-        title: "Seamless Integration",
-        desc: "SAP CRM integrates with ERP for unified customer data, synchronized processes, and enhanced operational efficiency.",
-    },
-    {
-        title: "Comprehensive Functionality",
-        desc: "SAP CRM manages sales, marketing, customer service, and analytics effectively.",
-    },
-    {
-        title: "Scalability and Customization",
-        desc: "SAP CRM scales and customizes for diverse business needs and environments.",
-    },
+const GAINS = [
+    { title: "Seamless Integration", desc: "SAP CRM integrates with ERP for unified customer data, synchronized processes, and enhanced operational efficiency." },
+    { title: "Comprehensive Functionality", desc: "SAP CRM manages sales, marketing, customer service, and analytics effectively." },
+    { title: "Scalability and Customization", desc: "SAP CRM scales and customizes for diverse business needs and environments." },
 ];
 
 export default function WhyCrm() {
     return (
-        <section className="w-full bg-white px-8 py-10 sm:px-[64px] sm:py-[64px]">
-            <div className="flex flex-col lg:flex-row lg:items-stretch gap-8 lg:gap-16">
+        <section className="w-full py-10 sm:py-[32px]">
+            <div className="w-full bg-[#F5F6F6] flex flex-col items-center gap-10 sm:gap-16 px-6 sm:px-[64px] py-8 sm:py-[32px]">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="flex flex-col justify-center gap-8 w-full lg:flex-1 min-w-0"
+                    className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
                 >
-                    <div className="flex flex-col gap-2">
-                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                            Why Choose Customer Relationship Management?
-                        </h2>
-                        <p className="text-[#55595E] text-base sm:text-lg font-light">
-                            What SAP CRM adds to the way you win and keep customers.
-                        </p>
-                    </div>
-
-                    <ul className="flex flex-col">
-                        {REASONS.map((reason, index) => (
-                            <li
-                                key={reason.title}
-                                className="group flex items-start gap-5 sm:gap-6 py-5 border-b border-[#d3d5d8] last:border-b-0"
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why Choose Customer Relationship Management?</h2>
+                    <p className="text-[#55595E] text-base sm:text-lg font-light">
+                        What SAP CRM adds to the way you win and keep customers.
+                    </p>
+                </motion.div>
+                <div className="w-full flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-[47px]">
+                    <motion.div
+                        initial={{ opacity: 0, x: -24 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="flex flex-col gap-4 sm:gap-[15px] w-full lg:flex-1"
+                    >
+                        <div className="relative w-full aspect-[546/440]">
+                            <Image src={gainsImage} alt="" fill className="object-cover" />
+                        </div>
+                    </motion.div>
+                    <div className="flex flex-col gap-8 sm:gap-10 lg:gap-0 lg:justify-between w-full lg:flex-1">
+                        {GAINS.map((gain, index) => (
+                            <motion.div
+                                key={gain.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.06 }}
+                                className="group flex flex-col gap-4 sm:gap-[23px] w-full"
                             >
-                                <span className="text-[#2d8ec5] text-xl sm:text-2xl font-semibold leading-none pt-1 transition-transform duration-300 group-hover:translate-x-1">
-                                    {String(index + 1).padStart(2, "0")}
-                                </span>
-                                <div className="flex flex-col gap-1 min-w-0">
-                                    <h3 className="text-[#2E3033] text-lg sm:text-xl font-semibold">{reason.title}</h3>
-                                    <p className="text-[#55595E] text-base sm:text-lg font-light">{reason.desc}</p>
+                                <div className="flex flex-col gap-3 sm:gap-5">
+                                    <h2 className="text-[#2E3033] text-xl font-semibold">{gain.title}</h2>
+                                    <p className="text-[#55595E] text-base sm:text-lg font-light">{gain.desc}</p>
                                 </div>
-                            </li>
+                                <div className="relative w-[139px] h-[2px]">
+                                    <div className="absolute left-0 top-1/2 w-full h-px -translate-y-1/2 bg-[#3d3d4e]/40" />
+                                    <div className="absolute left-0 top-1/2 w-full h-[2px] -translate-y-1/2 origin-left bg-[#0061AF] scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100" />
+                                </div>
+                            </motion.div>
                         ))}
-                    </ul>
-                </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0, x: 24 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="relative w-full lg:w-[45%] lg:max-w-[600px] aspect-[4/3] lg:aspect-auto lg:min-h-[440px] shrink-0 overflow-hidden bg-[#565656]"
-                >
-                    <Image src={whyImage} alt="" fill className="object-cover" />
-                </motion.div>
+                    </div>
+                </div>
             </div>
         </section>
     );

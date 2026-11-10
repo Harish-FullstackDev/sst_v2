@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import overviewImage from "@/assets/Solutions/SupplyChainManagement/overview.webp";
 
 const KEY_FEATURES = [
     "Demand Planning",
@@ -18,57 +16,69 @@ const KEY_FEATURES = [
 
 export default function ScmOverview() {
     return (
-        <section className="w-full bg-white px-8 py-10 sm:px-[64px] sm:py-[64px] flex flex-col gap-10 sm:gap-12">
-            <div className="flex flex-col-reverse lg:flex-row gap-8 lg:gap-[48px] items-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="relative w-full lg:w-[46%] lg:max-w-[600px] aspect-[1024/400] lg:aspect-[600/420] shrink-0 overflow-hidden"
-                >
-                    <Image src={overviewImage} alt="" fill className="object-cover" />
-                </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="flex flex-col gap-4 w-full lg:flex-1"
-                >
-                    <p className="text-[#2d8ec5] text-base sm:text-lg font-light">From raw material sourcing to customer delivery</p>
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Supply Chain Management</h2>
-                    <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
-                        SAP Supply Chain Management (SCM) is a software solution by SAP, a leading multinational
-                        corporation. SCM focuses on optimizing and streamlining supply chain processes, covering
-                        everything from raw material sourcing to customer delivery.
-                    </p>
-                    <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
-                        Integrated with other SAP modules, SCM provides end-to-end visibility and control.
-                    </p>
-                </motion.div>
-            </div>
-
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col gap-4"
-            >
-                <h2 className="text-[#2E3033] text-lg sm:text-xl font-semibold">Key features include</h2>
-                <ul className="flex flex-wrap gap-3">
-                    {KEY_FEATURES.map((item) => (
-                        <li
-                            key={item}
-                            className="border border-[#d3d5d8] bg-[#f5f6f6] px-4 py-2 text-[#55595E] text-sm sm:text-base font-light transition-colors duration-300 hover:border-[#2d8ec5] hover:text-[#2E3033]"
+        <section className="w-full">
+            <div className="w-full px-8 sm:p-16 py-10 ">
+                <div className="grid w-full lg:grid-cols-[1fr_auto_1fr] items-center gap-0">
+                    <div className="flex flex-col gap-2 max-sm:text-center">
+                        <motion.h2
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="text-xl sm:text-[28px] font-semibold text-[#2E3033]"
                         >
-                            {item}
-                        </li>
-                    ))}
-                </ul>
-            </motion.div>
+                            Supply Chain Management
+                        </motion.h2>
+
+                        <motion.p
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="text-[#2d8ec5] text-base sm:text-lg font-light"
+                        >
+                            From raw material sourcing to customer delivery
+                        </motion.p>
+
+                        <motion.p
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.15 }}
+                            className="flex flex-col gap-4 mb-4 text-[#55595E] text-base sm:text-lg font-light"
+                        >
+                            <span>
+                                SAP Supply Chain Management (SCM) is a software solution by SAP, a leading multinational
+                                corporation. SCM focuses on optimizing and streamlining supply chain processes, covering
+                                everything from raw material sourcing to customer delivery.
+                            </span>
+                            <span>
+                                Integrated with other SAP modules, SCM provides end-to-end visibility and control.
+                            </span>
+                        </motion.p>
+                    </div>
+                    <div className="hidden lg:flex justify-center px-10">
+                        <div className="w-0.5 h-80 bg-[#2D8EC5]" />
+                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        // Mobile: centered under the heading, and mt-4 on top of the
+                        // description's own mb-4 makes the 32px gap the stacked layout needs
+                        // (the grid is gap-0 because at lg these are side-by-side columns).
+                        className="justify-self-start max-w-[467px] flex flex-col gap-4 max-sm:mt-4 max-sm:justify-self-center"
+                    >
+                        <h3 className="text-[#2E3033] text-xl font-semibold lg:pl-16 max-sm:text-center">Key features include</h3>
+                        <ul className="list-disc marker:text-[#7f7f7f] pl-16 max-sm:pl-5 space-y-3 text-[#55595E] text-base sm:text-lg font-light">
+                            {KEY_FEATURES.map((point) => (
+                                <li key={point}>{point}</li>
+                            ))}
+                        </ul>
+                    </motion.div>
+                </div>
+            </div>
         </section>
     );
 }

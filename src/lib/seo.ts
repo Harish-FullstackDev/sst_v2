@@ -23,8 +23,9 @@ export const generateOrganizationSchema = () => {
       "addressCountry": "IN"
     },
     "sameAs": [
-      "https://www.linkedin.com/company/ascendus-company/?viewAsMember=true",
-      "https://x.com/ascendus_ksa"
+      "https://www.linkedin.com/company/supportstudiotechnologies/posts/?feedView=all",
+      "https://www.instagram.com/isupportz.official/",
+      "https://x.com/isupportz?s=11"
     ],
     "contactPoint": [
       {
