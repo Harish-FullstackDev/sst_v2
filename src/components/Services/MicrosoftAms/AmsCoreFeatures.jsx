@@ -1,42 +1,36 @@
 "use client";
 
-import Image from "next/image";
+import { LuGauge, LuLifeBuoy, LuPuzzle, LuShieldCheck, LuUsers, LuWrench } from "react-icons/lu";
 import { motion } from "framer-motion";
-import performanceIcon from "@/assets/Services/MicrosoftAms/performance.svg";
-import maintenanceIcon from "@/assets/Services/MicrosoftAms/maintenance.svg";
-import resourcesIcon from "@/assets/Services/MicrosoftAms/resources.svg";
-import securityIcon from "@/assets/Services/MicrosoftAms/security.svg";
-import supportIcon from "@/assets/Services/MicrosoftAms/support.svg";
-import ecosystemIcon from "@/assets/Services/MicrosoftAms/ecosystem.svg";
 
 const ITEMS = [
     {
-        icon: performanceIcon,
+        icon: LuGauge,
         title: "Application Performance Management",
         desc: "Ensure peak application performance with continuous monitoring, tuning, and optimization.",
     },
     {
-        icon: maintenanceIcon,
+        icon: LuWrench,
         title: "Proactive Maintenance",
         desc: "Stay ahead of issues with regular updates, patches, and proactive issue resolution.",
     },
     {
-        icon: resourcesIcon,
+        icon: LuUsers,
         title: "Resource Management",
         desc: "Optimize resource allocation and usage to maximize operational efficiency.",
     },
     {
-        icon: securityIcon,
+        icon: LuShieldCheck,
         title: "Data Security & Compliance",
         desc: "Protect sensitive data and ensure compliance with industry standards and regulations.",
     },
     {
-        icon: supportIcon,
+        icon: LuLifeBuoy,
         title: "End-to-End Support",
         desc: "Get comprehensive support for application deployment, updates, and troubleshooting.",
     },
     {
-        icon: ecosystemIcon,
+        icon: LuPuzzle,
         title: "Integration with Microsoft Ecosystem",
         desc: "Seamlessly integrate applications with Microsoft 365, Azure, and Dynamics 365 for enhanced functionality.",
     },
@@ -75,7 +69,7 @@ export default function AmsCoreFeatures() {
                         className={`flex flex-col gap-8 lg:gap-12 lg:pl-8 ${index % 3 !== 0 ? "lg:border-l lg:border-[#929292]" : ""
                             }`}
                     >
-                        <Image src={item.icon} alt="" width={40} height={40} />
+                        <item.icon aria-hidden="true" strokeWidth={1.5} className="size-[40px] text-[#1C5F85]" />
                         <div className="flex flex-col gap-4 sm:gap-5">
                             <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h2>
                             <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>

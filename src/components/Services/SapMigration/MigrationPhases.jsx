@@ -108,31 +108,30 @@ export default function MigrationPhases() {
 
                 {/* Image panel */}
                 <div className="relative w-full lg:flex-1 aspect-[798/446] mx-auto lg:mx-0 overflow-hidden">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={active}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.4 }}
-                            className="absolute inset-0"
-                        >
+                    {/* Every image stays mounted and cross-fades on opacity, so switching tabs never blanks the box; only the copy swaps, after the image has started to change. */}
+                    <div className="absolute inset-0">
+                        {TABS.map((tab, index) => (
                             <Image
-                                src={activeTab.img}
-                                alt={activeTab.title}
+                                key={index}
+                                src={tab.img}
+                                alt={index === active ? tab.title : ""}
                                 fill
-                                className="object-cover"
-                                priority={active === 0}
+                                className={`object-cover transition-opacity duration-700 ease-in-out ${index === active ? "opacity-100" : "opacity-0"}`}
+                                priority={index === 0}
                             />
+                        ))}
 
                             {/* Gradient */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
                             {/* Text */}
+                            <AnimatePresence mode="wait">
                             <motion.div
+                                key={active}
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.3, delay: 0.1 }}
+                                exit={{ opacity: 0, y: -6 }}
+                                transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
                                 className="absolute left-6 right-6 sm:left-[55px] sm:right-auto bottom-6 sm:bottom-[46px] sm:w-[462px] text-white flex flex-col gap-3"
                             >
                                 <h2 className="text-xl font-semibold">
@@ -143,8 +142,9 @@ export default function MigrationPhases() {
                                     {activeTab.desc}
                                 </p>
                             </motion.div>
-                        </motion.div>
-                    </AnimatePresence>
+                            </AnimatePresence>
+                        </div>
+                    
                 </div>
             </div>
         </section>

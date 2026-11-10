@@ -1,24 +1,21 @@
 "use client";
 
-import Image from "next/image";
+import { LuChartColumn, LuPlug, LuZap } from "react-icons/lu";
 import { motion } from "framer-motion";
-import unifiedIntegrationIcon from "@/assets/Solutions/BusinessTechnologyPlatform/icon-unified-integration.svg";
-import agilityIcon from "@/assets/Solutions/BusinessTechnologyPlatform/icon-agility.svg";
-import insightsIcon from "@/assets/Solutions/BusinessTechnologyPlatform/icon-insights.svg";
 
 const REASONS = [
     {
-        icon: unifiedIntegrationIcon,
+        icon: LuPlug,
         title: "Unified Integration",
         desc: "BTP integrates processes, data, and apps, enhancing operational efficiency seamlessly.",
     },
     {
-        icon: agilityIcon,
+        icon: LuZap,
         title: "Innovation & Agility",
         desc: "BTP enables rapid cloud app development, deployment, scalability, and market responsiveness.",
     },
     {
-        icon: insightsIcon,
+        icon: LuChartColumn,
         title: "Analytics & Insights",
         desc: "BTP enhances decision-making with analytics and AI, boosting efficiency and competitiveness.",
     },
@@ -53,7 +50,7 @@ export default function WhyBtp() {
                             index > 0 ? "lg:border-l" : "lg:pl-0"
                         } ${index === REASONS.length - 1 ? "lg:pr-0" : ""}`}
                     >
-                        <Image src={reason.icon} alt="" width={48} height={48} className="size-11 sm:size-12" />
+                        <reason.icon aria-hidden="true" strokeWidth={1.5} className="size-11 sm:size-12 text-[#1C5F85]" />
                         <h3 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{reason.title}</h3>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{reason.desc}</p>
                     </motion.div>

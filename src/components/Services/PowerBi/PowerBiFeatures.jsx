@@ -1,45 +1,39 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { LuActivity, LuChartPie, LuLayoutDashboard, LuPlug, LuSparkles, LuUsers } from "react-icons/lu";
 import { motion } from "framer-motion";
-import dataIntegrationIcon from "@/assets/Services/PowerBi/data-integration.svg";
-import interactiveDashboardsIcon from "@/assets/Services/PowerBi/interactive-dashboards.svg";
-import realTimeAnalyticsIcon from "@/assets/Services/PowerBi/real-time-analytics.svg";
-import customVisualizationsIcon from "@/assets/Services/PowerBi/custom-visualizations.svg";
-import aiDrivenInsightsIcon from "@/assets/Services/PowerBi/ai-driven-insights.svg";
-import collaborativeReportingIcon from "@/assets/Services/PowerBi/collaborative-reporting.svg";
 
 const CARDS = [
     {
         title: "Data Integration",
         desc: "Connect multiple data sources, including databases, Excel, and cloud services, for a unified analytics experience.",
-        icon: dataIntegrationIcon,
+        icon: LuPlug,
     },
     {
         title: "Interactive Dashboards",
         desc: "Create dynamic, visually engaging dashboards for tracking KPIs, performance metrics, and trends.",
-        icon: interactiveDashboardsIcon,
+        icon: LuLayoutDashboard,
     },
     {
         title: "Real-Time Analytics",
         desc: "Access live data streams for up-to-the-minute insights and smarter decision-making.",
-        icon: realTimeAnalyticsIcon,
+        icon: LuActivity,
     },
     {
         title: "Custom Visualizations",
         desc: "Design custom visuals tailored to your business needs for clearer and more impactful presentations.",
-        icon: customVisualizationsIcon,
+        icon: LuChartPie,
     },
     {
         title: "AI-Driven Insights",
         desc: "Leverage AI tools for predictive analytics, anomaly detection, and automated data insights.",
-        icon: aiDrivenInsightsIcon,
+        icon: LuSparkles,
     },
     {
         title: "Collaborative Reporting",
         desc: "Share reports securely across teams, departments, or stakeholders with role-based access.",
-        icon: collaborativeReportingIcon,
+        icon: LuUsers,
     },
 ];
 
@@ -143,7 +137,7 @@ export default function PowerBiFeatures() {
                                 // the tallest one and the row stays even.
                                 className="snap-start shrink-0 w-[260px] sm:w-[335px] min-h-[280px] sm:min-h-[360px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col items-center text-center px-6 sm:px-7 py-7 sm:py-8"
                             >
-                                <Image src={card.icon} alt="" width={44} height={44} className="mb-5" />
+                                <card.icon aria-hidden="true" strokeWidth={1.5} className="size-[44px] mb-5 text-[#1C5F85]" />
                                 <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{card.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light mt-5">{card.desc}</p>
                             </motion.div>

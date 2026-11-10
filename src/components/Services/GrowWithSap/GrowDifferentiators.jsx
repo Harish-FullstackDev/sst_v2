@@ -1,72 +1,63 @@
 "use client";
 
-import Image from "next/image";
+import { LuChartColumn, LuCloud, LuGlobe, LuLeaf, LuLightbulb, LuPiggyBank, LuRocket, LuShieldCheck, LuWorkflow } from "react-icons/lu";
 import { motion } from "framer-motion";
-import scalableCloudIcon from "@/assets/Services/GrowWithSap/icons/scalable-cloud.svg";
-import costEfficiencyIcon from "@/assets/Services/GrowWithSap/icons/cost-efficiency.svg";
-import dataInsightsIcon from "@/assets/Services/GrowWithSap/icons/data-insights.svg";
-import innovationIcon from "@/assets/Services/GrowWithSap/icons/innovation.svg";
-import implementationIcon from "@/assets/Services/GrowWithSap/icons/implementation.svg";
-import globalReachIcon from "@/assets/Services/GrowWithSap/icons/global-reach.svg";
-import processIcon from "@/assets/Services/GrowWithSap/icons/process-optimization.svg";
-import securityIcon from "@/assets/Services/GrowWithSap/icons/security.svg";
-import sustainabilityIcon from "@/assets/Services/GrowWithSap/icons/sustainability.svg";
 
 const ROWS = [
     [
         {
-            icon: scalableCloudIcon,
+            icon: LuCloud,
             title: "Scalable Cloud Solutions",
             desc: "Enables business growth through SAP's adaptable cloud infrastructure.",
         },
         {
-            icon: costEfficiencyIcon,
+            icon: LuPiggyBank,
             title: "Cost Efficiency",
             desc: "Reduces operational costs with SAP's integrated, modular systems.",
         },
         {
-            icon: dataInsightsIcon,
+            icon: LuChartColumn,
             title: "Data-Driven Insights",
             desc: "Leverages advanced analytics for informed, real-time decision-making.",
         },
     ],
     [
         {
-            icon: innovationIcon,
+            icon: LuLightbulb,
             title: "Innovation at Scale",
             desc: "Access to cutting-edge technologies like AI and machine learning.",
         },
         {
-            icon: implementationIcon,
+            icon: LuRocket,
             title: "Streamlined Implementation",
             desc: "Rapid deployment with pre-configured industry solutions.",
         },
         {
-            icon: globalReachIcon,
+            icon: LuGlobe,
             title: "Global Reach",
             desc: "SAP's worldwide network opens up global market opportunities.",
         },
     ],
     [
         {
-            icon: processIcon,
+            icon: LuWorkflow,
             title: "Business Process Optimization",
             desc: "Increases efficiency with advanced business process intelligence tools.",
         },
         {
-            icon: securityIcon,
+            icon: LuShieldCheck,
             title: "Security and Compliance",
             desc: "Built-in security features and industry-specific compliance standards.",
         },
         {
-            icon: sustainabilityIcon,
+            icon: LuLeaf,
             title: "Sustainability Focus",
             desc: "Promotes sustainable practices through smart resource management solutions.",
         },
     ],
 ];
 
-const Card = ({ icon, title, desc, index }) => (
+const Card = ({ icon: Icon, title, desc, index }) => (
     <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +66,7 @@ const Card = ({ icon, title, desc, index }) => (
         className="flex flex-col gap-4"
     >
         <div className="relative size-10 shrink-0">
-            <Image src={icon} alt="" fill className="object-contain" />
+            <Icon aria-hidden="true" strokeWidth={1.5} className="size-full text-[#1C5F85]" />
         </div>
         <h2 className="text-[#2E3033] text-xl font-semibold">{title}</h2>
         <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">{desc}</p>

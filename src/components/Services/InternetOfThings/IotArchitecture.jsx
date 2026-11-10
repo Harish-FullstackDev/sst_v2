@@ -1,30 +1,26 @@
 "use client";
 
-import Image from "next/image";
+import { LuChartColumn, LuCpu, LuLayers, LuWifi } from "react-icons/lu";
 import { motion } from "framer-motion";
-import devicesIcon from "@/assets/Services/InternetOfThings/icons/devices.svg";
-import connectivityIcon from "@/assets/Services/InternetOfThings/icons/connectivity.svg";
-import platformIcon from "@/assets/Services/InternetOfThings/icons/platform.svg";
-import analyticsIcon from "@/assets/Services/InternetOfThings/icons/analytics.svg";
 
 const LAYERS = [
     {
-        icon: devicesIcon,
+        icon: LuCpu,
         title: "Devices & Sensors",
         desc: "Smart devices, wearables, sensors, and GPS trackers capture what is happening in the physical world.",
     },
     {
-        icon: connectivityIcon,
+        icon: LuWifi,
         title: "Connectivity",
         desc: "Devices connect to the internet for seamless communication, control, and data exchange.",
     },
     {
-        icon: platformIcon,
+        icon: LuLayers,
         title: "IoT Platform",
         desc: "A central platform manages devices remotely and triggers automated, data-driven actions.",
     },
     {
-        icon: analyticsIcon,
+        icon: LuChartColumn,
         title: "Analytics & Insight",
         desc: "Real-time analytics turn device data into actionable insights and predictions.",
     },
@@ -67,7 +63,7 @@ export default function IotArchitecture() {
                         >
                             <div className="flex items-center justify-between">
                                 <div className="relative size-10 sm:size-12 shrink-0">
-                                    <Image src={layer.icon} alt="" fill className="object-contain" />
+                                    <layer.icon aria-hidden="true" strokeWidth={1.5} className="size-full text-[#1C5F85]" />
                                 </div>
                                 <span className="text-[#2d8ec5] text-sm sm:text-base font-light">Layer 0{index + 1}</span>
                             </div>

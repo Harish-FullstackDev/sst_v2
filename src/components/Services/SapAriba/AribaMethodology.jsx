@@ -1,36 +1,31 @@
 "use client";
 
-import Image from "next/image";
+import { LuPencilRuler, LuRocket, LuSearch, LuSettings, LuUsers } from "react-icons/lu";
 import { motion } from "framer-motion";
-import assessIcon from "@/assets/Services/SapAriba/icons/assess.svg";
-import designIcon from "@/assets/Services/SapAriba/icons/design.svg";
-import configureIcon from "@/assets/Services/SapAriba/icons/configure.svg";
-import enableIcon from "@/assets/Services/SapAriba/icons/enable.svg";
-import launchIcon from "@/assets/Services/SapAriba/icons/launch.svg";
 
 const PHASES = [
     {
-        icon: assessIcon,
+        icon: LuSearch,
         title: "Assess Procurement",
         desc: "We review current sourcing, purchasing, and payment processes to find where spend, time, and risk are being lost.",
     },
     {
-        icon: designIcon,
+        icon: LuPencilRuler,
         title: "Design the Solution",
         desc: "We map your procurement policies to SAP Ariba best practices and agree approval flows, catalogues, and roles.",
     },
     {
-        icon: configureIcon,
+        icon: LuSettings,
         title: "Configure & Integrate",
         desc: "We configure SAP Ariba and connect it to SAP S/4HANA or your existing ERP so orders, receipts, and invoices flow end to end.",
     },
     {
-        icon: enableIcon,
+        icon: LuUsers,
         title: "Enable Suppliers",
         desc: "We onboard suppliers onto the network, set up catalogues and electronic invoicing, and support them through their first transactions.",
     },
     {
-        icon: launchIcon,
+        icon: LuRocket,
         title: "Launch & Improve",
         desc: "We support go-live, train buyers and approvers, and use procurement analytics to keep refining the process.",
     },
@@ -64,7 +59,7 @@ export default function AribaMethodology() {
                         <div key={phase.title} className="flex flex-col gap-4 sm:gap-[18px]">
                             <div className="flex items-start gap-x-[clamp(1.5rem,5vw,4rem)] gap-y-2">
                                 <div className="relative size-10 sm:size-12 shrink-0">
-                                    <Image src={phase.icon} alt="" fill className="object-contain" />
+                                    <phase.icon aria-hidden="true" strokeWidth={1.5} className="size-full text-[#1C5F85]" />
                                 </div>
                                 <div className="flex-1 min-w-0 flex flex-col gap-2 sm:gap-3">
                                     <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{phase.title}</h2>

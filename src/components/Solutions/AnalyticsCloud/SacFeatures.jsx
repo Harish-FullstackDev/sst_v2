@@ -104,18 +104,20 @@ export default function SacFeatures() {
 
             <div className="flex flex-col lg:flex-row lg:items-stretch gap-0 w-full bg-[#f5f6f6]">
                 <div className="relative w-full lg:w-[55%] aspect-[16/10] lg:aspect-auto lg:min-h-[420px] shrink-0 overflow-hidden bg-[#565656]">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={active}
-                            initial={{ opacity: 0, scale: 1.03 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.45 }}
-                            className="absolute inset-0"
-                        >
-                            <Image src={activeTab.img} alt={activeTab.title} fill className="object-cover" />
-                        </motion.div>
-                    </AnimatePresence>
+                    {/* Every image stays mounted and cross-fades on opacity, so switching tabs never blanks the box; only the copy swaps, after the image has started to change. */}
+                    <div className="absolute inset-0">
+                        {TABS.map((tab, index) => (
+                            <Image
+                                key={index}
+                                src={tab.img}
+                                alt={index === active ? tab.title : ""}
+                                fill
+                                className={`object-cover transition-opacity duration-700 ease-in-out ${index === active ? "opacity-100" : "opacity-0"}`}
+                                priority={index === 0}
+                            />
+                        ))}
+                        </div>
+                    
                 </div>
 
                 <div className="flex flex-col justify-center w-full lg:flex-1 min-w-0 px-6 py-8 sm:px-10 sm:py-10">

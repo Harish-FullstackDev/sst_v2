@@ -112,32 +112,38 @@ export default function AiMlServices() {
                     over it, because these descriptions are too long for a phone-sized overlay. */}
                 <div className="flex flex-col gap-5 w-full lg:flex-1 lg:min-w-0">
                     <div className="relative w-full aspect-[798/446] overflow-hidden bg-[#565656]">
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={active}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.4 }}
-                                className="absolute inset-0"
-                            >
-                                <Image src={activeTab.img} alt={activeTab.title} fill className="object-cover" />
+                        {/* Every image stays mounted and cross-fades on opacity, so switching tabs never blanks the box; only the copy swaps, after the image has started to change. */}
+                        <div className="absolute inset-0">
+                            {TABS.map((tab, index) => (
+                                <Image
+                                    key={index}
+                                    src={tab.img}
+                                    alt={index === active ? tab.title : ""}
+                                    fill
+                                    className={`object-cover transition-opacity duration-700 ease-in-out ${index === active ? "opacity-100" : "opacity-0"}`}
+                                    priority={index === 0}
+                                />
+                            ))}
 
                                 {/* Gradient */}
                                 <div className="hidden lg:block absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
 
                                 {/* Text (desktop overlay) */}
+                                <AnimatePresence mode="wait">
                                 <motion.div
+                                    key={active}
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.3, delay: 0.1 }}
+                                    exit={{ opacity: 0, y: -6 }}
+                                    transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
                                     className="hidden lg:flex absolute left-[48px] right-[48px] bottom-[40px] max-w-[560px] text-white flex-col gap-3"
                                 >
                                     <h2 className="text-xl font-semibold">{activeTab.title}</h2>
                                     <p className="text-white/90 text-lg font-light leading-relaxed">{activeTab.desc}</p>
                                 </motion.div>
-                            </motion.div>
-                        </AnimatePresence>
+                                </AnimatePresence>
+                            </div>
+                        
                     </div>
 
                     {/* Text (mobile / tablet) */}

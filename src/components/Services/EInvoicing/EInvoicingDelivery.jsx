@@ -1,30 +1,26 @@
 "use client";
 
-import Image from "next/image";
+import { LuLifeBuoy, LuPencilRuler, LuPlug, LuSearch } from "react-icons/lu";
 import { motion } from "framer-motion";
-import assessIcon from "@/assets/Services/EInvoicing/icons/assess.svg";
-import designIcon from "@/assets/Services/EInvoicing/icons/design.svg";
-import integrateIcon from "@/assets/Services/EInvoicing/icons/integrate.svg";
-import supportIcon from "@/assets/Services/EInvoicing/icons/support.svg";
 
 const STEPS = [
     {
-        icon: assessIcon,
+        icon: LuSearch,
         title: "Assess Requirements",
         desc: "We map your invoicing flows, volumes, and the tax and format requirements that apply in each country you operate in.",
     },
     {
-        icon: designIcon,
+        icon: LuPencilRuler,
         title: "Design the Solution",
         desc: "We define invoice templates, validation rules, transmission channels, and the integration points with your ERP.",
     },
     {
-        icon: integrateIcon,
+        icon: LuPlug,
         title: "Integrate & Test",
         desc: "We connect the e-invoicing platform to your ERP and test end to end, including validation, rejection, and correction scenarios.",
     },
     {
-        icon: supportIcon,
+        icon: LuLifeBuoy,
         title: "Go Live & Support",
         desc: "We switch over in planned phases, monitor transmission and compliance status, and adjust as regulations evolve.",
     },
@@ -58,7 +54,7 @@ export default function EInvoicingDelivery() {
                         <div key={step.title} className="flex flex-col gap-4 sm:gap-[18px]">
                             <div className="flex items-start gap-x-[clamp(1.5rem,5vw,4rem)] gap-y-2">
                                 <div className="relative size-10 sm:size-12 shrink-0">
-                                    <Image src={step.icon} alt="" fill className="object-contain" />
+                                    <step.icon aria-hidden="true" strokeWidth={1.5} className="size-full text-[#1C5F85]" />
                                 </div>
                                 <div className="flex-1 min-w-0 flex flex-col gap-2 sm:gap-3">
                                     <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{step.title}</h2>

@@ -1,54 +1,46 @@
 "use client";
 
-import Image from "next/image";
+import { LuActivity, LuAward, LuBadgeCheck, LuCloud, LuHeartHandshake, LuLayers, LuPlug, LuUserCheck } from "react-icons/lu";
 import { motion } from "framer-motion";
-import certifiedIcon from "@/assets/Services/SapCx/icons/certified.svg";
-import integrationIcon from "@/assets/Services/SapCx/icons/integration.svg";
-import personalizedIcon from "@/assets/Services/SapCx/icons/personalized.svg";
-import customerCentricIcon from "@/assets/Services/SapCx/icons/customer-centric.svg";
-import scalableIcon from "@/assets/Services/SapCx/icons/scalable.svg";
-import realTimeIcon from "@/assets/Services/SapCx/icons/real-time.svg";
-import bestPracticesIcon from "@/assets/Services/SapCx/icons/best-practices.svg";
-import cloudIcon from "@/assets/Services/SapCx/icons/cloud.svg";
 
 const ITEMS = [
     {
-        icon: certifiedIcon,
+        icon: LuBadgeCheck,
         title: "Certified SAP CX Professionals",
         desc: "Collaborate with experts who deliver tailored CX solutions for your business needs.",
     },
     {
-        icon: integrationIcon,
+        icon: LuPlug,
         title: "Seamless Integration",
         desc: "Integrate customer engagement processes with existing systems for a unified view of your customers.",
     },
     {
-        icon: personalizedIcon,
+        icon: LuUserCheck,
         title: "Personalized Experiences",
         desc: "Deliver targeted, personalized experiences to customers using AI-driven insights.",
     },
     {
-        icon: customerCentricIcon,
+        icon: LuHeartHandshake,
         title: "Customer-Centric Culture",
         desc: "Design effective, profitable business solutions.",
     },
     {
-        icon: scalableIcon,
+        icon: LuLayers,
         title: "Scalable Solutions",
         desc: "Adopt solutions that grow with your business to meet evolving customer expectations.",
     },
     {
-        icon: realTimeIcon,
+        icon: LuActivity,
         title: "Real-Time Data Insights",
         desc: "Make informed decisions with real-time customer data and advanced analytics.",
     },
     {
-        icon: bestPracticesIcon,
+        icon: LuAward,
         title: "Proven Best Practices",
         desc: "Leverage industry-standard practices to enhance customer relationships and loyalty.",
     },
     {
-        icon: cloudIcon,
+        icon: LuCloud,
         title: "Cloud Flexibility",
         desc: "Utilize SAP CX's cloud-based tools for flexibility and scalability in customer management.",
     },
@@ -80,7 +72,7 @@ export default function CxSuccessFactors() {
                         transition={{ duration: 0.4, delay: (index % 4) * 0.08 }}
                         className="group bg-white border border-[#E2E5EA] flex flex-col gap-4 p-6 sm:p-8 transition-colors duration-300 hover:border-[#2d8ec5]"
                     >
-                        <Image src={item.icon} alt="" width={48} height={48} className="size-10 sm:size-12" />
+                        <item.icon aria-hidden="true" strokeWidth={1.5} className="size-10 sm:size-12 text-[#1C5F85]" />
                         <h2 className="text-[#2E3033] text-lg sm:text-xl font-semibold">{item.title}</h2>
                         <p className="text-[#55595E] text-base font-light leading-relaxed">{item.desc}</p>
                         <div className="mt-auto h-[2px] w-10 bg-[#2d8ec5] transition-all duration-300 group-hover:w-full" />

@@ -1,42 +1,36 @@
 "use client";
 
-import Image from "next/image";
+import { LuActivity, LuClipboardList, LuCompass, LuRocket, LuSearch, LuWrench } from "react-icons/lu";
 import { motion } from "framer-motion";
-import discoverIcon from "@/assets/Services/RiseWithSap/icons/discover.svg";
-import prepareIcon from "@/assets/Services/RiseWithSap/icons/prepare.svg";
-import exploreIcon from "@/assets/Services/RiseWithSap/icons/explore.svg";
-import realizeIcon from "@/assets/Services/RiseWithSap/icons/realize.svg";
-import deployIcon from "@/assets/Services/RiseWithSap/icons/deploy.svg";
-import runIcon from "@/assets/Services/RiseWithSap/icons/run.svg";
 
 const PHASES = [
     {
-        icon: discoverIcon,
+        icon: LuSearch,
         title: "Discover",
         desc: "We assess your current landscape and business priorities to frame the case for moving to SAP S/4HANA Cloud.",
     },
     {
-        icon: prepareIcon,
+        icon: LuClipboardList,
         title: "Prepare",
         desc: "We set up the project, the team, and the plan, and confirm the scope, timeline, and governance for the move.",
     },
     {
-        icon: exploreIcon,
+        icon: LuCompass,
         title: "Explore",
         desc: "We run fit-to-standard workshops against SAP best practices to decide where standard processes fit and where gaps remain.",
     },
     {
-        icon: realizeIcon,
+        icon: LuWrench,
         title: "Realize",
         desc: "We configure, extend, integrate, and test the solution in iterative cycles, with supervised configuration at each step.",
     },
     {
-        icon: deployIcon,
+        icon: LuRocket,
         title: "Deploy",
         desc: "We prepare data, users, and cutover so the new system goes live with minimal disruption to daily operations.",
     },
     {
-        icon: runIcon,
+        icon: LuActivity,
         title: "Run",
         desc: "We stay with you after go-live to stabilise operations, adopt new SAP releases, and keep improving the solution.",
     },
@@ -71,7 +65,7 @@ export default function RiseMethodology() {
                         <div key={phase.title} className="flex flex-col gap-4 sm:gap-[18px]">
                             <div className="flex items-start gap-x-[clamp(1.5rem,5vw,4rem)] gap-y-2">
                                 <div className="relative size-10 sm:size-12 shrink-0">
-                                    <Image src={phase.icon} alt="" fill className="object-contain" />
+                                    <phase.icon aria-hidden="true" strokeWidth={1.5} className="size-full text-[#1C5F85]" />
                                 </div>
                                 <div className="flex-1 min-w-0 flex flex-col gap-2 sm:gap-3">
                                     <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{phase.title}</h2>

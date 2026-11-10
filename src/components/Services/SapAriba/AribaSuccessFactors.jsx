@@ -1,54 +1,46 @@
 "use client";
 
-import Image from "next/image";
+import { LuActivity, LuAward, LuBadgeCheck, LuCloud, LuHandshake, LuLayers, LuPiggyBank, LuPlug } from "react-icons/lu";
 import { motion } from "framer-motion";
-import certifiedIcon from "@/assets/Services/SapAriba/icons/certified.svg";
-import integrationIcon from "@/assets/Services/SapAriba/icons/integration.svg";
-import collaborationIcon from "@/assets/Services/SapAriba/icons/collaboration.svg";
-import realTimeIcon from "@/assets/Services/SapAriba/icons/real-time.svg";
-import scalableIcon from "@/assets/Services/SapAriba/icons/scalable.svg";
-import costEfficiencyIcon from "@/assets/Services/SapAriba/icons/cost-efficiency.svg";
-import bestPracticesIcon from "@/assets/Services/SapAriba/icons/best-practices.svg";
-import cloudIcon from "@/assets/Services/SapAriba/icons/cloud.svg";
 
 const ITEMS = [
     {
-        icon: certifiedIcon,
+        icon: LuBadgeCheck,
         title: "Certified SAP Ariba Experts",
         desc: "Work with certified professionals who ensure the successful implementation of SAP Ariba to drive your business forward.",
     },
     {
-        icon: integrationIcon,
+        icon: LuPlug,
         title: "Seamless Integration",
         desc: "Integrate procurement processes with your existing systems for greater efficiency and streamlined operations.",
     },
     {
-        icon: collaborationIcon,
+        icon: LuHandshake,
         title: "Supplier Collaboration",
         desc: "Improve collaboration with suppliers through secure, cloud-based platforms for better communication and transparency.",
     },
     {
-        icon: realTimeIcon,
+        icon: LuActivity,
         title: "Real-Time Data & Insights",
         desc: "Leverage real-time data to make informed decisions that enhance procurement and supplier management.",
     },
     {
-        icon: scalableIcon,
+        icon: LuLayers,
         title: "Scalable Solutions",
         desc: "Choose solutions that grow with your business, offering flexibility and scalability for all stages of growth.",
     },
     {
-        icon: costEfficiencyIcon,
+        icon: LuPiggyBank,
         title: "Cost Efficiency",
         desc: "Reduce procurement costs through automation, improved supplier selection, and streamlined processes.",
     },
     {
-        icon: bestPracticesIcon,
+        icon: LuAward,
         title: "Proven Best Practices",
         desc: "Implement industry-leading procurement practices to drive greater success and optimize supply chain performance.",
     },
     {
-        icon: cloudIcon,
+        icon: LuCloud,
         title: "Cloud-Based Platform",
         desc: "Access SAP Ariba's cloud-based platform anywhere, anytime, ensuring greater flexibility and reduced operational overhead.",
     },
@@ -82,7 +74,7 @@ export default function AribaSuccessFactors() {
                         transition={{ duration: 0.4, delay: (index % 2) * 0.08 }}
                         className="flex flex-col gap-4 sm:gap-6"
                     >
-                        <Image src={item.icon} alt="" width={48} height={48} className="size-10 sm:size-12" />
+                        <item.icon aria-hidden="true" strokeWidth={1.5} className="size-10 sm:size-12 text-[#1C5F85]" />
                         <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                     </motion.div>

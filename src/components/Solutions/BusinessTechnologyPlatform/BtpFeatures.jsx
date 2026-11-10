@@ -1,42 +1,36 @@
 "use client";
 
-import Image from "next/image";
+import { LuBrainCircuit, LuChartColumn, LuCode, LuLayers, LuPlug, LuShieldCheck } from "react-icons/lu";
 import { motion } from "framer-motion";
-import unifiedPlatformIcon from "@/assets/Solutions/BusinessTechnologyPlatform/icon-unified-platform.svg";
-import appDevelopmentIcon from "@/assets/Solutions/BusinessTechnologyPlatform/icon-app-development.svg";
-import integrationIcon from "@/assets/Solutions/BusinessTechnologyPlatform/icon-integration.svg";
-import analyticsIcon from "@/assets/Solutions/BusinessTechnologyPlatform/icon-analytics.svg";
-import intelligentIcon from "@/assets/Solutions/BusinessTechnologyPlatform/icon-intelligent.svg";
-import securityIcon from "@/assets/Solutions/BusinessTechnologyPlatform/icon-security.svg";
 
 const FEATURES = [
     {
-        icon: unifiedPlatformIcon,
+        icon: LuLayers,
         title: "Unified Platform",
         desc: "Simplify application development, integration, and management across cloud and on-premises environments with SAP BTP's unified platform. Address diverse business needs effortlessly from one centralized hub.",
     },
     {
-        icon: appDevelopmentIcon,
+        icon: LuCode,
         title: "Smart Application Development",
         desc: "Build intelligent applications quickly and easily using SAP BTP's comprehensive suite of development tools. Utilize industry-standard languages and frameworks to create innovative solutions tailored to your business requirements.",
     },
     {
-        icon: integrationIcon,
+        icon: LuPlug,
         title: "Seamless Integration",
         desc: "Connect applications, data, and processes seamlessly across your enterprise with SAP BTP's powerful integration services. Enable real-time data exchange, streamline processes, and gain valuable insights with ease.",
     },
     {
-        icon: analyticsIcon,
+        icon: LuChartColumn,
         title: "Advanced Analytics",
         desc: "Drive informed decision-making with SAP BTP's advanced analytics capabilities. Uncover hidden patterns and trends in your data using cutting-edge technologies like machine learning and predictive analytics.",
     },
     {
-        icon: intelligentIcon,
+        icon: LuBrainCircuit,
         title: "Intelligent Technologies",
         desc: "Leverage AI, IoT, and blockchain technologies to transform your business processes and unlock new revenue streams. Infuse intelligence into every aspect of your operations for increased efficiency and innovation.",
     },
     {
-        icon: securityIcon,
+        icon: LuShieldCheck,
         title: "Security and Compliance",
         desc: "Ensure the security and compliance of your data and applications with SAP BTP's robust security features. Protect sensitive information, mitigate cyber threats, and maintain regulatory compliance with confidence.",
     },
@@ -71,7 +65,7 @@ export default function BtpFeatures() {
                         {/* Accent bar grows across the top edge on hover */}
                         <div className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-[#2d8ec5] transition-transform duration-500 ease-out group-hover:scale-x-100" />
                         <div className="flex items-center justify-between w-full">
-                            <Image src={feature.icon} alt="" width={48} height={48} className="size-11 sm:size-12" />
+                            <feature.icon aria-hidden="true" strokeWidth={1.5} className="size-11 sm:size-12 text-[#1C5F85]" />
                             <span className="text-[#2d8ec5] text-base sm:text-lg font-semibold">
                                 {String(index + 1).padStart(2, "0")}
                             </span>

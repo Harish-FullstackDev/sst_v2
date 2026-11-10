@@ -1,36 +1,31 @@
 "use client";
 
-import Image from "next/image";
+import { LuCompass, LuHeart, LuSprout, LuStar, LuTrendingUp } from "react-icons/lu";
 import { motion } from "framer-motion";
-import navigationIcon from "@/assets/Services/UiUxDesign/icons/navigation.svg";
-import conversionIcon from "@/assets/Services/UiUxDesign/icons/conversion.svg";
-import loyaltyIcon from "@/assets/Services/UiUxDesign/icons/loyalty.svg";
-import brandIcon from "@/assets/Services/UiUxDesign/icons/brand.svg";
-import growthIcon from "@/assets/Services/UiUxDesign/icons/growth.svg";
 
 const ITEMS = [
     {
-        icon: navigationIcon,
+        icon: LuCompass,
         title: "Easier Navigation",
         desc: "A seamless, intuitive design helps users find what they need without friction.",
     },
     {
-        icon: conversionIcon,
+        icon: LuTrendingUp,
         title: "Higher Conversion Rates",
         desc: "Clear journeys and well-placed actions turn more visitors into customers.",
     },
     {
-        icon: loyaltyIcon,
+        icon: LuHeart,
         title: "Customer Loyalty",
         desc: "Positive experiences bring users back and build lasting relationships with your brand.",
     },
     {
-        icon: brandIcon,
+        icon: LuStar,
         title: "Stronger Brand Perception",
         desc: "A polished, consistent experience shapes how customers see and trust your business.",
     },
     {
-        icon: growthIcon,
+        icon: LuSprout,
         title: "Long-Term Success",
         desc: "Better outcomes today and a lasting edge in an increasingly competitive market.",
     },
@@ -69,7 +64,7 @@ export default function UiUxBusinessImpact() {
                         className={`group flex flex-col gap-4 border border-[#d3d5d8] bg-[#f5f6f6] px-6 py-7 sm:px-8 sm:py-8 transition-colors duration-300 hover:border-[#2d8ec5] hover:bg-white ${index === ITEMS.length - 1 ? "sm:col-span-2" : ""}`}
                     >
                         <div className="flex size-14 items-center justify-center rounded-full bg-white transition-colors duration-300 group-hover:bg-[#f5f6f6]">
-                            <Image src={item.icon} alt="" width={32} height={32} className="size-8" />
+                            <item.icon aria-hidden="true" strokeWidth={1.5} className="size-8 text-[#1C5F85]" />
                         </div>
                         <h3 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h3>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>

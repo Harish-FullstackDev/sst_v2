@@ -1,36 +1,31 @@
 "use client";
 
-import Image from "next/image";
+import { LuArrowRightLeft, LuListChecks, LuRocket, LuSearch, LuSettings } from "react-icons/lu";
 import { motion } from "framer-motion";
-import discoverIcon from "@/assets/Services/GrowWithSap/icons/discover.svg";
-import fitToStandardIcon from "@/assets/Services/GrowWithSap/icons/fit-to-standard.svg";
-import configureIcon from "@/assets/Services/GrowWithSap/icons/configure.svg";
-import migrateIcon from "@/assets/Services/GrowWithSap/icons/migrate.svg";
-import goLiveIcon from "@/assets/Services/GrowWithSap/icons/go-live.svg";
 
 const STEPS = [
     {
-        icon: discoverIcon,
+        icon: LuSearch,
         title: "Discover & Plan",
         desc: "We confirm business goals and scope, so the project starts from a working SAP S/4HANA Cloud baseline.",
     },
     {
-        icon: fitToStandardIcon,
+        icon: LuListChecks,
         title: "Fit-to-Standard",
         desc: "We walk your teams through preconfigured best-practice processes and agree where standard fits and where small extensions are needed.",
     },
     {
-        icon: configureIcon,
+        icon: LuSettings,
         title: "Configure & Extend",
         desc: "We configure the system under supervision and build side-by-side extensions on SAP BTP, keeping the core clean for upgrades.",
     },
     {
-        icon: migrateIcon,
+        icon: LuArrowRightLeft,
         title: "Migrate & Test",
         desc: "We load master and transactional data with SAP migration tools and test end-to-end business scenarios.",
     },
     {
-        icon: goLiveIcon,
+        icon: LuRocket,
         title: "Go Live & Grow",
         desc: "We support cutover and the first weeks of operation, then help you adopt new capabilities with each SAP release.",
     },
@@ -67,7 +62,7 @@ export default function GrowMethodology() {
                         <div key={step.title} className="flex flex-col gap-4 sm:gap-[18px]">
                             <div className="flex items-start gap-x-[clamp(1.5rem,5vw,4rem)] gap-y-2">
                                 <div className="relative size-10 sm:size-12 shrink-0">
-                                    <Image src={step.icon} alt="" fill className="object-contain" />
+                                    <step.icon aria-hidden="true" strokeWidth={1.5} className="size-full text-[#1C5F85]" />
                                 </div>
                                 <div className="flex-1 min-w-0 flex flex-col gap-2 sm:gap-3">
                                     <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{step.title}</h2>

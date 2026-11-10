@@ -2,48 +2,43 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { LuBriefcase, LuChartColumn, LuHeadset, LuMegaphone, LuMessagesSquare, LuShoppingCart } from "react-icons/lu";
 import { motion, AnimatePresence } from "framer-motion";
 import circleIcon from "@/assets/Solutions/CustomerRelationshipManagement/accordion-toggle-circle.svg";
-import salesIcon from "@/assets/Solutions/CustomerRelationshipManagement/icon-sales.svg";
-import marketingIcon from "@/assets/Solutions/CustomerRelationshipManagement/icon-marketing.svg";
-import serviceIcon from "@/assets/Solutions/CustomerRelationshipManagement/icon-service.svg";
-import commerceIcon from "@/assets/Solutions/CustomerRelationshipManagement/icon-commerce.svg";
-import interactionCenterIcon from "@/assets/Solutions/CustomerRelationshipManagement/icon-interaction-center.svg";
-import analyticsIcon from "@/assets/Solutions/CustomerRelationshipManagement/icon-analytics.svg";
 
 const MODULES = [
     {
-        icon: salesIcon,
+        icon: LuBriefcase,
         title: "Sales",
         desc: "The sales module helps in managing sales processes efficiently by providing tools for lead management, opportunity tracking, quotation management, order processing, and sales performance analytics.",
         benefits: "Increased sales productivity, better lead conversion rates, and improved visibility into sales pipelines.",
     },
     {
-        icon: marketingIcon,
+        icon: LuMegaphone,
         title: "Marketing",
         desc: "The marketing module enables businesses to plan, execute, and analyze marketing campaigns across multiple channels such as email, social media, and events. It includes features for campaign management, segmentation, lead scoring, and marketing analytics.",
         benefits: "Targeted marketing efforts, improved customer engagement, and better ROI on marketing spend.",
     },
     {
-        icon: serviceIcon,
+        icon: LuHeadset,
         title: "Service",
         desc: "The service module focuses on managing customer service operations, including service ticketing, service request management, service level agreements (SLAs), and customer support analytics.",
         benefits: "Exceptional customer service, reduced resolution times, and enhanced customer satisfaction and loyalty.",
     },
     {
-        icon: commerceIcon,
+        icon: LuShoppingCart,
         title: "Commerce",
         desc: "This module enables businesses to create and manage online storefronts, including product catalog management, pricing, promotions, and order fulfillment. It supports both B2B and B2C commerce scenarios and facilitates seamless integration with back-end systems for inventory and order management.",
         benefits: "Increased online sales, enhanced customer experience, and streamlined order processing.",
     },
     {
-        icon: interactionCenterIcon,
+        icon: LuMessagesSquare,
         title: "Interaction Center",
         desc: "The interaction center module provides a centralized platform for handling customer interactions across various communication channels such as phone, email, chat, and social media. It includes features for case management, knowledge management, and real-time communication tools for agents.",
         benefits: "Improved customer service efficiency, faster issue resolution, and consistent customer experience across channels.",
     },
     {
-        icon: analyticsIcon,
+        icon: LuChartColumn,
         title: "Analytics",
         desc: "The analytics module offers powerful reporting and analytics capabilities, allowing businesses to gain insights into customer behavior, sales performance, marketing effectiveness, and service quality. It includes pre-built dashboards, customizable reports, and predictive analytics tools for data-driven decision-making.",
         benefits: "Improved business intelligence, better strategic planning, and enhanced operational efficiency.",
@@ -87,7 +82,7 @@ export default function CrmModules() {
                                     aria-expanded={isOpen}
                                 >
                                     <span className="flex items-center gap-4 sm:gap-6 min-w-0">
-                                        <Image src={item.icon} alt="" width={48} height={48} className="size-9 sm:size-11 shrink-0" />
+                                        <item.icon aria-hidden="true" strokeWidth={1.5} className="size-9 sm:size-11 shrink-0 text-[#1C5F85]" />
                                         <span className="text-[#2E3033] text-lg sm:text-2xl font-semibold">
                                             <span className="text-[#2d8ec5] mr-3">{String(index + 1).padStart(2, "0")}</span>
                                             {item.title}

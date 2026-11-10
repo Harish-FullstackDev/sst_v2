@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 
 const CARDS = [
     {
-        title: "Front End",
+        title: "Frontend",
         desc: "Responsive interfaces built with modern frameworks such as React and Next.js, tested across browsers and devices.",
     },
     {
-        title: "Back End",
+        title: "Backend",
         desc: "Application logic and services on platforms such as Node.js, .NET, Java, or Python, chosen to fit the project.",
     },
     {
-        title: "Data",
+        title: "Database",
         desc: "Relational and NoSQL databases modelled, indexed, and backed up for reliable storage and fast retrieval.",
     },
     {

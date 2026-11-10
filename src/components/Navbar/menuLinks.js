@@ -108,7 +108,7 @@ export const SOLUTIONS = [
   },
   {
     id: "crm",
-    name: "CRM",
+    name: "Customer Experience",
     href: "/solutions#crm",
     items: [
       { name: "Customer Relationship Management", href: "/solutions/customer-relationship-management" },

@@ -1,63 +1,54 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { LuChartColumn, LuCloud, LuGlobe, LuHandshake, LuLightbulb, LuRefreshCw, LuShieldCheck, LuTrendingUp, LuZap } from "react-icons/lu";
 import { motion } from "framer-motion";
-import scalableCloudIcon from "@/assets/Services/RiseWithSap/icons/scalable-cloud.svg";
-import innovationIcon from "@/assets/Services/RiseWithSap/icons/integrated-innovation.svg";
-import dataDrivenIcon from "@/assets/Services/RiseWithSap/icons/data-driven.svg";
-import agileIcon from "@/assets/Services/RiseWithSap/icons/agile-processes.svg";
-import acceleratedIcon from "@/assets/Services/RiseWithSap/icons/accelerated.svg";
-import globalReachIcon from "@/assets/Services/RiseWithSap/icons/global-reach.svg";
-import longTermIcon from "@/assets/Services/RiseWithSap/icons/long-term.svg";
-import securityIcon from "@/assets/Services/RiseWithSap/icons/security.svg";
-import ecosystemIcon from "@/assets/Services/RiseWithSap/icons/ecosystem.svg";
 
 const CARDS = [
     {
         title: "Scalable Cloud Solutions",
         desc: "Enables seamless growth with flexible, scalable cloud infrastructure and applications.",
-        icon: scalableCloudIcon,
+        icon: LuCloud,
     },
     {
         title: "Integrated Innovation",
         desc: "Access to cutting-edge tools, like AI and machine learning.",
-        icon: innovationIcon,
+        icon: LuLightbulb,
     },
     {
         title: "Data-Driven Decisions",
         desc: "Leverages advanced analytics for real-time, informed decision-making processes.",
-        icon: dataDrivenIcon,
+        icon: LuChartColumn,
     },
     {
         title: "Agile Business Processes",
         desc: "Customizable and modular solutions streamline operations and enhance efficiency.",
-        icon: agileIcon,
+        icon: LuRefreshCw,
     },
     {
         title: "Accelerated Transformation",
         desc: "Rapid implementation reduces time to value for businesses and investors.",
-        icon: acceleratedIcon,
+        icon: LuZap,
     },
     {
         title: "Global Reach",
         desc: "Serves clients worldwide with localized, adaptable industry solutions.",
-        icon: globalReachIcon,
+        icon: LuGlobe,
     },
     {
         title: "Long-Term Growth",
         desc: "Future-proof solutions designed to adapt to evolving business needs.",
-        icon: longTermIcon,
+        icon: LuTrendingUp,
     },
     {
         title: "Comprehensive Security",
         desc: "Built-in security and compliance measures safeguard client data and operations.",
-        icon: securityIcon,
+        icon: LuShieldCheck,
     },
     {
         title: "Collaborative Ecosystem",
         desc: "Strong partnerships with SAP and industry leaders drive shared success.",
-        icon: ecosystemIcon,
+        icon: LuHandshake,
     },
 ];
 
@@ -148,7 +139,7 @@ export default function RiseDifferentiators() {
                                 // and the default stretch alignment keeps the row even.
                                 className="snap-start shrink-0 w-[260px] sm:w-[335px] min-h-[280px] sm:min-h-[320px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col items-center text-center px-6 sm:px-7 py-7 sm:py-8"
                             >
-                                <Image src={card.icon} alt="" width={44} height={44} className="mb-5 size-11" />
+                                <card.icon aria-hidden="true" strokeWidth={1.5} className="mb-5 size-11 text-[#1C5F85]" />
                                 <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{card.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light mt-5">{card.desc}</p>
                             </motion.div>
