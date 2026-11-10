@@ -27,7 +27,9 @@ const STEPS = [
 
 export default function CxMethodology() {
     return (
-        <section className="w-full px-8 py-10 sm:px-[64px] sm:py-[64px]">
+        <section className="w-full px-8 pt-8 pb-10 sm:px-[64px] sm:pt-8 sm:pb-[64px]">
+            {/* Hairline separating this section from Where SAP CX Makes a Difference; 32px sits on either side. */}
+            <div aria-hidden="true" className="h-px w-full bg-[#2E3033]/15 -mt-8 mb-8" />
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
