@@ -4,10 +4,10 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/services/robotic-process-automation/" },
-  description: "Robotic Process Automation (RPA) services from Support Studio Technologies: data entry, workflow, onboarding, invoice processing, reporting and chatbot automation that cut errors and speed up operations.",
+  description: "Robotic Process Automation (RPA) services: data entry, workflow, onboarding, invoice processing, reporting and chatbot automation that cut errors.",
   openGraph: {
     title: "Robotic Process Automation | Support Studio Technologies",
-    description: "Robotic Process Automation (RPA) services from Support Studio Technologies: data entry, workflow, onboarding, invoice processing, reporting and chatbot automation that cut errors and speed up operations.",
+    description: "Robotic Process Automation (RPA) services: data entry, workflow, onboarding, invoice processing, reporting and chatbot automation that cut errors.",
     url: "/services/robotic-process-automation/",
     images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },

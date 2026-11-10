@@ -4,10 +4,10 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/services/sap-rollout/" },
-  description: "SAP Rollout ensures unified system deployment across locations, optimizing processes, enhancing decision-making, and fostering customer satisfaction, achieving operational efficiency and competitive advantage.",
+  description: "SAP Rollout services for unified system deployment across locations, optimizing processes, improving decision-making and driving operational efficiency.",
   openGraph: {
     title: "SAP Rollout | Support Studio Technologies",
-    description: "SAP Rollout ensures unified system deployment across locations, optimizing processes, enhancing decision-making, and fostering customer satisfaction, achieving operational efficiency and competitive advantage.",
+    description: "SAP Rollout services for unified system deployment across locations, optimizing processes, improving decision-making and driving operational efficiency.",
     url: "/services/sap-rollout/",
     images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },

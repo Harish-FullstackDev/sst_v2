@@ -48,7 +48,7 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const lightThemeRoutes = ["/legal/privacy/", "/ascenduserrors/", "/legal/terms/"];
+  const lightThemeRoutes = ["/legal/privacy/", "/sst-errors/", "/legal/terms/", "/legal/disclaimer/"];
 
   const navLinkClass = `
                           relative py-2 px-3
@@ -302,7 +302,7 @@ const Navbar = () => {
                   <div className="relative z-10 flex-shrink-0">
                     <Image
                       src={isNavbarLight ? logo2 : logo}
-                      alt="Support Studio Technologies Logo"
+                      alt="Support Studio Technologies logo"
                       width={180}
                       height={40}
                       className="h-8 sm:h-10 w-auto object-contain transition-all duration-300 ease-out"
@@ -482,8 +482,8 @@ const Navbar = () => {
 
                   <li>
                     <Link
-                      href="/who-we-are"
-                      className={`${navLinkClass} ${pathname === "/who-we-are/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                      href="/about-us"
+                      className={`${navLinkClass} ${pathname === "/about-us/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       About Us
@@ -534,7 +534,7 @@ const Navbar = () => {
             <Link href="/" onClick={closeMenu} className="flex items-center p-2">
               <Image
                 src={isNavbarLight ? logo2 : logo}
-                alt="Support Studio Technologies Logo"
+                alt="Support Studio Technologies logo"
                 className="h-8 sm:h-10 w-auto"
                 width={180}
                 height={40}
@@ -554,7 +554,7 @@ const Navbar = () => {
           <Link href="/" onClick={closeMenu}>
             <Image
               src={logo2}
-              alt="Support Studio Technologies Logo"
+              alt="Support Studio Technologies logo"
               className="h-8 sm:h-10 w-auto"
               width={180}
               height={40}
@@ -700,8 +700,8 @@ const Navbar = () => {
 
             <li>
               <Link
-                href="/who-we-are"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/who-we-are/"
+                href="/about-us"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 ${pathname === "/about-us/"
                   ? "text-[#2d8ec5] bg-gray-100"
                   : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}

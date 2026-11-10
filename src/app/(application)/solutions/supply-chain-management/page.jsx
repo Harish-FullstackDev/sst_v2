@@ -4,10 +4,10 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/solutions/supply-chain-management/" },
-  description: "SAP Supply Chain Management: an integrated supply chain management solution with robust supply chain optimization tools and advanced logistics and planning capabilities.",
+  description: "SAP Supply Chain Management: an integrated supply chain solution with robust optimization tools and advanced logistics and planning capabilities.",
   openGraph: {
     title: "Supply Chain Management | Support Studio Technologies",
-    description: "SAP Supply Chain Management: an integrated supply chain management solution with robust supply chain optimization tools and advanced logistics and planning capabilities.",
+    description: "SAP Supply Chain Management: an integrated supply chain solution with robust optimization tools and advanced logistics and planning capabilities.",
     url: "/solutions/supply-chain-management/",
     images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },

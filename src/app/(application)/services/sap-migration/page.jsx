@@ -4,10 +4,10 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/services/sap-migration/" },
-  description: "Migration in SAP ensures updated systems, improved functionality, and compatibility with modern business needs, enhancing efficiency, data integrity, and leveraging new technologies for sustainable growth.",
+  description: "SAP migration services that update your systems, improve functionality and data integrity, and align SAP with modern business needs for sustainable growth.",
   openGraph: {
     title: "SAP Migration | Support Studio Technologies",
-    description: "Migration in SAP ensures updated systems, improved functionality, and compatibility with modern business needs, enhancing efficiency, data integrity, and leveraging new technologies for sustainable growth.",
+    description: "SAP migration services that update your systems, improve functionality and data integrity, and align SAP with modern business needs for sustainable growth.",
     url: "/services/sap-migration/",
     images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },

@@ -63,7 +63,7 @@ export default function TeamAdoption() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full h-[300px] sm:h-[420px] lg:h-auto lg:flex-[475_1_0%] aspect-auto lg:aspect-[475/563] overflow-hidden"
                 >
-                    <Image src={serviceDesignPhoto} alt="" fill className="object-cover object-bottom" />
+                    <Image src={serviceDesignPhoto} alt="Customer using a touchscreen kiosk in a modern lobby" fill className="object-cover object-bottom" />
                 </motion.div>
             </div>
         </section>

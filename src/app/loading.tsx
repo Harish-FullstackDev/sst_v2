@@ -11,7 +11,7 @@ import {
 } from "@/components/skeletons/SkeletonPrimitives";
 
 
-export default function AscendusLoading() {
+export default function SstLoading() {
   return (
     <div className="relative w-full bg-white overflow-hidden min-h-screen">
       <SkeletonNavbar />

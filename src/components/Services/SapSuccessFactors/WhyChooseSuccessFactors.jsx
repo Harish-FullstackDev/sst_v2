@@ -65,7 +65,7 @@ export default function WhyChooseSuccessFactors() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full h-[300px] sm:h-[420px] lg:h-auto lg:min-h-[420px] lg:flex-[475_1_0%] overflow-hidden"
                 >
-                    <Image src={teamPhoto} alt="" fill className="object-cover object-center" />
+                    <Image src={teamPhoto} alt="Diverse HR team collaborating around a meeting table" fill className="object-cover object-center" />
                 </motion.div>
             </div>
         </section>

@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
-import webDevelopmentPhoto from "@/assets/Services/FullStackDevelopment/web-development.jpg";
-import apiDevelopmentPhoto from "@/assets/Services/FullStackDevelopment/api-development.jpg";
+import webDevelopmentPhoto from "@/assets/Services/FullStackDevelopment/web-development.webp";
+import apiDevelopmentPhoto from "@/assets/Services/FullStackDevelopment/api-development.webp";
 import databasePhoto from "@/assets/Services/FullStackDevelopment/database-management.webp";
 import uiUxPhoto from "@/assets/Services/FullStackDevelopment/ui-ux-design.webp";
 import serverPhoto from "@/assets/Services/FullStackDevelopment/server-management.webp";

@@ -113,7 +113,7 @@ export default function ScalableAIDeployment() {
                         <div className="relative w-full lg:w-[560px] h-[220px] lg:h-[297px] shrink-0 bg-[#565656]">
                             <Image
                                 src={integrationImage1}
-                                alt=""
+                                alt="Server cabinets and edge computing hardware in a data centre"
                                 fill
                                 className="object-cover"
                             />
@@ -135,7 +135,7 @@ export default function ScalableAIDeployment() {
                         <div className="relative w-full lg:w-[560px] h-[220px] lg:h-[297px] shrink-0 bg-[#565656]">
                             <Image
                                 src={integrationImage2}
-                                alt=""
+                                alt="Rows of server racks behind glass in a data centre"
                                 fill
                                 className="object-cover"
                             />

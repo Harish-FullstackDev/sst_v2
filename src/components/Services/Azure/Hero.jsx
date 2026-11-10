@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import heroBg from "@/assets/Services/Azure/hero.png";
+import heroBg from "@/assets/Services/Azure/hero.webp";
 
 export default function Hero() {
     return (

@@ -4,10 +4,10 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/services/e-invoicing/" },
-  description: "E-Invoicing services from Support Studio Technologies: invoice validation, generation, transmission, tax compliance, audit reporting and ERP integration that accelerate payment cycles.",
+  description: "E-Invoicing services: invoice validation, generation, transmission, tax compliance, audit reporting and ERP integration that accelerate payment cycles.",
   openGraph: {
     title: "E-Invoicing | Support Studio Technologies",
-    description: "E-Invoicing services from Support Studio Technologies: invoice validation, generation, transmission, tax compliance, audit reporting and ERP integration that accelerate payment cycles.",
+    description: "E-Invoicing services: invoice validation, generation, transmission, tax compliance, audit reporting and ERP integration that accelerate payment cycles.",
     url: "/services/e-invoicing/",
     images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },

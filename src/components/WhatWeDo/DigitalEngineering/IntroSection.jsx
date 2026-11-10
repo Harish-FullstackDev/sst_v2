@@ -38,7 +38,7 @@ export default function IntroSection() {
                 >
                     <Image
                         src={introImage}
-                        alt=""
+                        alt="Tablets running digital applications on a display desk"
                         fill
                         className="object-cover"
                     />

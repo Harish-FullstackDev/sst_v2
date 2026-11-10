@@ -51,6 +51,7 @@ function mapJob(row) {
         typeOfWork: row.type_of_work,
         experienceLevel: row.experience_level,
         postedAgo: formatPostedAgo(row.posted_at),
+        postedAt: row.posted_at ?? null,
         categories: row.categories || [],
         aboutJob: row.about_job,
         responsibilities: row.responsibilities || [],

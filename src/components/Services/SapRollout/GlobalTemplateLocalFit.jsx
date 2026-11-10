@@ -38,7 +38,7 @@ export default function GlobalTemplateLocalFit() {
                         </p>
                     </div>
                     <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656]">
-                        <Image src={templateImage} alt="" fill className="object-cover" />
+                        <Image src={templateImage} alt="Technician connecting network cables in an equipment cabinet" fill className="object-cover" />
                     </div>
                 </motion.div>
 
@@ -52,7 +52,7 @@ export default function GlobalTemplateLocalFit() {
                     className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-[clamp(3rem,7vw,6.25rem)]"
                 >
                     <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656]">
-                        <Image src={localizationImage} alt="" fill className="object-cover" />
+                        <Image src={localizationImage} alt="Robotic arm in an automated manufacturing facility" fill className="object-cover" />
                     </div>
                     <div className="flex flex-col gap-5 w-full">
                         <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">

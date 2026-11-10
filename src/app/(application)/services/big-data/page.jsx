@@ -4,10 +4,10 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/services/big-data/" },
-  description: "Big Data services from Support Studio Technologies: data storage, integration, visualization, analytics, processing and management for real-time, data-driven decisions.",
+  description: "Big Data services: data storage, integration, visualization, analytics, processing and management for real-time, data-driven business decisions.",
   openGraph: {
     title: "Big Data | Support Studio Technologies",
-    description: "Big Data services from Support Studio Technologies: data storage, integration, visualization, analytics, processing and management for real-time, data-driven decisions.",
+    description: "Big Data services: data storage, integration, visualization, analytics, processing and management for real-time, data-driven business decisions.",
     url: "/services/big-data/",
     images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },

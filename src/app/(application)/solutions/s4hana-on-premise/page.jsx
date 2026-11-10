@@ -4,10 +4,10 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/solutions/s4hana-on-premise/" },
-  description: "SAP S/4HANA On-Premises: SAP's next-generation ERP suite on dedicated infrastructure you control, with real-time insights, end-to-end visibility, advanced automation, and full customization.",
+  description: "SAP S/4HANA On-Premises: SAP's next-generation ERP on infrastructure you control, with real-time insights, end-to-end visibility and full customization.",
   openGraph: {
     title: "SAP S/4HANA On-Premises | Support Studio Technologies",
-    description: "SAP S/4HANA On-Premises: SAP's next-generation ERP suite on dedicated infrastructure you control, with real-time insights, end-to-end visibility, advanced automation, and full customization.",
+    description: "SAP S/4HANA On-Premises: SAP's next-generation ERP on infrastructure you control, with real-time insights, end-to-end visibility and full customization.",
     url: "/solutions/s4hana-on-premise/",
     images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },

@@ -2,7 +2,7 @@
 // Add an entry here whenever a new /what-we-do/* (or other) route is created.
 export const ROUTE_LABELS: Record<string, string> = {
   "what-we-do": "What We Do",
-  "who-we-are": "About Us",
+  "about-us": "About Us",
   "enterprise-transformation": "Enterprise Transformation",
   "sap-transformation": "SAP Transformation",
   "microsoft-services": "Microsoft Services",
@@ -65,10 +65,24 @@ export const ROUTE_LABELS: Record<string, string> = {
   privacy: "Privacy Policy",
   security: "Security & Privacy Policy",
   cookies: "Cookie Policy",
+  disclaimer: "Disclaimer",
   privacyCommitment: "Privacy Commitment",
+  "sst-partner": "SST Partner Program",
+  "sst-errors": "Errors",
+  trustcenter: "Trust Center",
+  whitepapers: "Whitepapers",
+  "case-studies": "Case Studies",
+  "industry-reports": "Industry Reports",
+  careers: "Careers",
+  blog: "Blog",
+  contact: "Contact",
 };
 
-export type BreadcrumbItem = { name: string; item: string };
+// Path prefixes that are only grouping folders, with no page of their own.
+// Their crumb is shown as plain text and left out of the JSON-LD.
+const NO_PAGE = new Set(["/what-we-do", "/legal"]);
+
+export type BreadcrumbItem = { name: string; item: string | null };
 
 // Builds breadcrumb items (Home first) from a path like "/what-we-do/experience-design".
 // Falls back to a title-cased version of the segment when it isn't in ROUTE_LABELS.
@@ -85,7 +99,9 @@ export function buildBreadcrumbItems(pathname: string): BreadcrumbItem[] {
         .split("-")
         .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
         .join(" ");
-    items.push({ name: label, item: running });
+    // Trailing slash to match the canonical URLs (trailingSlash is on), so
+    // crumb links don't go through a 308 redirect.
+    items.push({ name: label, item: NO_PAGE.has(running) ? null : `${running}/` });
   }
 
   return items;

@@ -143,7 +143,7 @@ const ContentHeader = ({
             >
               <Image
                 src={backgroundSrc}
-                alt="Background"
+                alt=""
                 fill
                 priority
                 sizes="100vw"

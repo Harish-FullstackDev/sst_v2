@@ -62,7 +62,7 @@ export default function ConversionApproaches() {
                         <div className="relative w-full aspect-[335/200] overflow-hidden">
                             <Image
                                 src={approach.image}
-                                alt=""
+                                alt={approach.title}
                                 fill
                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                             />

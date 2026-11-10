@@ -34,7 +34,7 @@ const ContactInfo = () => {
             <div className="w-6 h-6 flex-shrink-0">
               <Image
                 src={careercall}
-                alt="Phone"
+                alt=""
                 width={24}
                 height={24}
                 className="text-gray-700"
@@ -49,7 +49,7 @@ const ContactInfo = () => {
             <div className="w-6 h-6 flex-shrink-0">
               <Image
                 src={careermsg}
-                alt="Email"
+                alt=""
                 width={24}
                 height={24}
                 className="text-gray-700"
@@ -80,7 +80,7 @@ const ContactInfo = () => {
               >
                 <Image
                   src={careerlocation}
-                  alt="Location Pin Icon"
+                  alt=""
                   width={24}
                   height={24}
                   className="pointer-events-none"
@@ -107,7 +107,7 @@ const ContactInfo = () => {
             <div className="relative w-6 h-6 flex-shrink-0 mt-1">
               <Image
                 src={careerlocation}
-                alt="Location Pin Icon"
+                alt=""
                 width={24}
                 height={24}
                 className="pointer-events-none"

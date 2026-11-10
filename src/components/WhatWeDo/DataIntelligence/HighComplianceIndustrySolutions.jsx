@@ -49,7 +49,7 @@ export default function HighComplianceIndustrySolutions() {
                         </div>
                     </div>
                     <div className="relative w-full lg:w-[46%] lg:max-w-[569px] aspect-[569/252] shrink-0 bg-[#565656]">
-                        <Image src={overviewImage} alt="" fill className="object-cover" />
+                        <Image src={overviewImage} alt="Secure turnstile entrance with an access control reader" fill className="object-cover" />
                     </div>
                 </motion.div>
             </div>

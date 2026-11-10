@@ -38,7 +38,7 @@ export default function PositioningStatement() {
                     }}
                     className="relative w-full lg:w-[467px] lg:max-w-[40%] lg:ml-auto shrink-0 aspect-[467/357] overflow-hidden"
                 >
-                    <Image src={matterPhoto} alt="" fill className="object-cover" />
+                    <Image src={matterPhoto} alt="Workflow automation dashboard on a monitor in a modern office" fill className="object-cover" />
                 </motion.div>
             </div>
         </section>

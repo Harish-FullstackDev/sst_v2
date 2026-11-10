@@ -162,7 +162,7 @@ const SecuritySection = () => {
           >
             <Image
               src={currentData.icon}
-              alt="Security Icon"
+              alt=""
               className="text-blue-600"
               fill
               style={{ objectFit: "contain" }}
@@ -370,7 +370,7 @@ const SecuritySection = () => {
             {/* Dynamic SVG Image */}
             <Image
               src={currentData.icon}
-              alt="Security Icon"
+              alt=""
               className="text-blue-600"
               fill
               style={{ objectFit: "contain" }}

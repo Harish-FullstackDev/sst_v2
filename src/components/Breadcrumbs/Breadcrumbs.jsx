@@ -20,7 +20,7 @@ export default function Breadcrumbs({ className = "" }) {
                 {items.map((crumb, index) => {
                     const isLast = index === items.length - 1;
                     return (
-                        <li key={crumb.item} className="flex items-center gap-1.5">
+                        <li key={`${index}-${crumb.name}`} className="flex items-center gap-1.5">
                             {index > 0 && (
                                 <ChevronRight className="w-3.5 h-3.5 text-current/50" aria-hidden="true" />
                             )}
@@ -28,6 +28,8 @@ export default function Breadcrumbs({ className = "" }) {
                                 <span aria-current="page" className="font-medium">
                                     {crumb.name}
                                 </span>
+                            ) : !crumb.item ? (
+                                <span>{crumb.name}</span>
                             ) : (
                                 <Link href={crumb.item} className="hover:underline">
                                     {crumb.name}

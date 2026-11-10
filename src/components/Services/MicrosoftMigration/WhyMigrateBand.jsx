@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import bgImage from "@/assets/Services/MicrosoftMigration/why-migrate-band.png";
+import bgImage from "@/assets/Services/MicrosoftMigration/why-migrate-band.webp";
 
 export default function WhyMigrateBand() {
     return (

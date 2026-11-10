@@ -51,7 +51,7 @@ export default function PrivateCloudOverview() {
                         </div>
                     </div>
                     <div className="relative w-full sm:ml-[54px] lg:ml-0 sm:w-auto lg:w-[46%] lg:max-w-[569px] aspect-[569/300] shrink-0 bg-[#565656]">
-                        <Image src={overviewImage} alt="" fill className="object-cover" />
+                        <Image src={overviewImage} alt="Access-controlled entrance gates in a secure facility" fill className="object-cover" />
                     </div>
                 </motion.div>
             </div>

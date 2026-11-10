@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { supabase } from '@/lib/supabaseClient';
 import { hrmsSelect } from '@/lib/hrmsClient';
 import { industryReportsData } from '@/data/industryReportsData';
+import { staticBlogsData } from '@/data/blogsData';
 import { SITE_URL } from '@/lib/siteUrl';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -11,12 +12,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 1. Core static routes
   const staticRoutes: MetadataRoute.Sitemap = [
     '',
-    '/who-we-are',
+    '/about-us',
     '/contact',
     '/careers',
     '/book-a-consultation',
     '/trustcenter',
-    '/ascenduspartner',
+    '/sst-partner',
     '/blog',
     '/case-studies',
     '/industry-reports',
@@ -26,6 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/legal/privacyCommitment',
     '/legal/security',
     '/legal/cookies',
+    '/legal/disclaimer',
     '/what-we-do/enterprise-transformation',
     '/what-we-do/enterprise-transformation/broader-technology-services',
     '/what-we-do/enterprise-transformation/microsoft-services',
@@ -97,49 +99,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  // 4. Dynamic content from Supabase (blog, case studies, whitepapers)
+  // 4. Dynamic content from Supabase (blog, case studies, whitepapers).
+  // Supabase returns { data, error } instead of throwing, so the error is
+  // checked explicitly — a bad column name used to empty a section silently.
   const dynamicRoutes: MetadataRoute.Sitemap = [];
+  const seen = new Set<string>();
+  const push = (path: string, date: string | null | undefined, changeFrequency: 'weekly' | 'monthly', priority: number) => {
+    const url = `${baseUrl}${path}`;
+    if (seen.has(url)) return;
+    seen.add(url);
+    dynamicRoutes.push({ url, lastModified: date ? new Date(date).toISOString() : now, changeFrequency, priority });
+  };
 
-  try {
-    const { data: blogs } = await supabase.from('blogs').select('slug, updated_at');
-    (blogs || []).forEach((row: any) => {
-      dynamicRoutes.push({
-        url: `${baseUrl}/blog/${row.slug}/`,
-        lastModified: row.updated_at ? new Date(row.updated_at).toISOString() : now,
-        changeFrequency: 'weekly' as const,
-        priority: 0.6,
-      });
-    });
-  } catch (error) {
-    console.error('Sitemap: blogs fetch failed', error);
-  }
+  // Static blog posts rendered by blog/[slug] alongside the Supabase ones.
+  staticBlogsData.forEach((post: any) => push(`/blog/${post.slug}/`, post.publish_date, 'weekly', 0.6));
 
-  try {
-    const { data: caseStudies } = await supabase.from('case_studies').select('slug, updated_at');
-    (caseStudies || []).forEach((row: any) => {
-      dynamicRoutes.push({
-        url: `${baseUrl}/case-studies/${row.slug}/`,
-        lastModified: row.updated_at ? new Date(row.updated_at).toISOString() : now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-      });
-    });
-  } catch (error) {
-    console.error('Sitemap: case studies fetch failed', error);
-  }
-
-  try {
-    const { data: whitepapers } = await supabase.from('white_papers').select('slug, updated_at');
-    (whitepapers || []).forEach((row: any) => {
-      dynamicRoutes.push({
-        url: `${baseUrl}/whitepapers/${row.slug}/`,
-        lastModified: row.updated_at ? new Date(row.updated_at).toISOString() : now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      });
-    });
-  } catch (error) {
-    console.error('Sitemap: whitepapers fetch failed', error);
+  const tables = [
+    { table: 'blogs', select: 'slug, publish_date, created_at', base: '/blog', freq: 'weekly' as const, priority: 0.6 },
+    { table: 'case_studies', select: 'slug, updated_at, publish_date', base: '/case-studies', freq: 'monthly' as const, priority: 0.7 },
+    { table: 'white_papers', select: 'slug, updated_at, publish_date', base: '/whitepapers', freq: 'monthly' as const, priority: 0.6 },
+  ];
+  for (const t of tables) {
+    try {
+      // Untyped on purpose: the table name is a loop variable.
+      const { data, error } = await (supabase as any).from(t.table).select(t.select);
+      if (error) throw error;
+      (data || []).forEach((row: any) =>
+        push(`${t.base}/${row.slug}/`, row.updated_at || row.publish_date || row.created_at, t.freq, t.priority)
+      );
+    } catch (error) {
+      console.error(`Sitemap: ${t.table} fetch failed`, error);
+    }
   }
 
   try {

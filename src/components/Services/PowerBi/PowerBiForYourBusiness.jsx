@@ -50,7 +50,7 @@ export default function PowerBiForYourBusiness() {
                         </div>
                     </div>
                     <div className="relative w-full lg:w-[46%] lg:max-w-[569px] aspect-[569/340] shrink-0 bg-[#565656] overflow-hidden">
-                        <Image src={overviewImage} alt="" fill className="object-cover" />
+                        <Image src={overviewImage} alt="Analyst reviewing printed bar charts at a computer desk" fill className="object-cover" />
                     </div>
                 </motion.div>
             </div>

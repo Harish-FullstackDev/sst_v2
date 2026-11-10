@@ -38,7 +38,7 @@ export default function IntroSection() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full lg:w-[503px] h-[280px] sm:h-[340px] lg:h-[396px] shrink-0 bg-black lg:ml-auto"
                 >
-                    <Image src={introImage} alt="" fill className="object-cover" />
+                    <Image src={introImage} alt="Data professional with a laptop beside illuminated server racks" fill className="object-cover" />
                 </motion.div>
             </div>
         </section>

@@ -63,7 +63,7 @@ export default function EnterpriseUXModernization() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full h-[300px] sm:h-[420px] lg:h-auto lg:flex-[475_1_0%] aspect-auto lg:aspect-[475/563] overflow-hidden"
                 >
-                    <Image src={serviceDesignPhoto} alt="" fill className="object-cover object-bottom" />
+                    <Image src={serviceDesignPhoto} alt="Design system components and UI cards laid out on a desk" fill className="object-cover object-bottom" />
                 </motion.div>
             </div>
         </section>

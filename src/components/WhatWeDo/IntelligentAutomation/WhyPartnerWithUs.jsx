@@ -72,7 +72,7 @@ export default function WhyPartnerWithUs() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="absolute left-0 bottom-0 w-[41%] max-w-[540px] h-[78%] z-10 overflow-hidden"
                 >
-                    <Image src={workflowPhoto} alt="" fill className="object-cover" />
+                    <Image src={workflowPhoto} alt="Operations dashboard on a widescreen monitor at a workstation" fill className="object-cover" />
                 </motion.div>
 
                 {/* Accent lines — the vertical one sits in front of the image
@@ -89,7 +89,7 @@ export default function WhyPartnerWithUs() {
             {/* ===== Mobile: simple stacked layout, still edge-to-edge ===== */}
             <div className="sm:hidden w-full flex flex-col">
                 <div className="relative w-full h-[220px] overflow-hidden">
-                    <Image src={workflowPhoto} alt="" fill className="object-cover" />
+                    <Image src={workflowPhoto} alt="Operations dashboard on a widescreen monitor at a workstation" fill className="object-cover" />
                 </div>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

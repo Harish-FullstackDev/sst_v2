@@ -145,7 +145,7 @@ function AnimatedImage({ active, src }) {
       >
         <Image
           src={src}
-          alt="Digital Twins"
+          alt=""
           fill
           className="object-cover"
           priority

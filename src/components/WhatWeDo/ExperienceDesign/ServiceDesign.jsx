@@ -65,7 +65,7 @@ export default function ServiceDesign() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full lg:w-[475px] h-[300px] sm:h-[420px] shrink-0 bg-[#e2dcdc] overflow-hidden"
                 >
-                    <Image src={serviceDesignPhoto} alt="" fill className="object-cover" />
+                    <Image src={serviceDesignPhoto} alt="Designers mapping service journeys with printed materials on a table" fill className="object-cover" />
                 </motion.div>
             </div>
         </section>

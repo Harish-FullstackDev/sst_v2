@@ -14,7 +14,7 @@ export default function BestCloudSolution() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative w-full lg:w-[40%] lg:max-w-[520px] aspect-[442/417] shrink-0 overflow-hidden"
             >
-                <Image src={bestCloudImage} alt="Network infrastructure in a data centre" fill className="object-cover" />
+                <Image src={bestCloudImage} alt="Rows of server cabinets in a data centre hall" fill className="object-cover" />
             </motion.div>
 
             {/* Image on the left, text on the right; the image drops below the text on mobile. */}

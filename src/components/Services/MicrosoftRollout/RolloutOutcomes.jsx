@@ -51,7 +51,7 @@ export default function RolloutOutcomes() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full lg:w-[42%] shrink-0 aspect-square overflow-hidden"
                 >
-                    <Image src={outcomesPhoto} alt="" fill className="object-cover" />
+                    <Image src={outcomesPhoto} alt="Consultants reviewing rollout results with a client over a laptop" fill className="object-cover" />
                 </motion.div>
             </div>
         </section>

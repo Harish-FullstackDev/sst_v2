@@ -77,7 +77,7 @@ export default function BlogCreationModal({
                                         <div className="relative w-full h-44 rounded-xl overflow-hidden shadow-inner">
                                             <img
                                                 src={imagePreview}
-                                                alt="Preview"
+                                                alt="Cover image preview"
                                                 className="w-full h-full object-cover"
                                             />
                                             <button

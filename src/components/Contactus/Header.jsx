@@ -43,7 +43,7 @@ const ContactHeader = () => {
           {/* Background Image */}
           <Image
             src={contact}
-            alt="Contact Background"
+            alt=""
             fill
             priority
             className="object-cover z-0"

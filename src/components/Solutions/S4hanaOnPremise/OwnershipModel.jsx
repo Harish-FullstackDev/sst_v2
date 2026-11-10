@@ -62,7 +62,7 @@ export default function OwnershipModel() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full h-[300px] sm:h-[420px] lg:h-auto lg:flex-[475_1_0%] aspect-auto lg:aspect-[475/563] overflow-hidden"
                 >
-                    <Image src={ownershipPhoto} alt="" fill className="object-cover object-center" />
+                    <Image src={ownershipPhoto} alt="Network switch with patch cables in an on-premises server room" fill className="object-cover object-center" />
                 </motion.div>
             </div>
         </section>

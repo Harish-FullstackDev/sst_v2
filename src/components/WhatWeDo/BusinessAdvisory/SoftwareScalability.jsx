@@ -84,7 +84,7 @@ export default function SoftwareScalability() {
                 >
                     <Image
                         src={codeBg}
-                        alt="RESTful & GraphQL APIs"
+                        alt="Two colleagues reviewing a software architecture roadmap on a wall display"
                         fill
                         className="object-cover"
                     />

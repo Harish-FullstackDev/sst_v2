@@ -92,7 +92,7 @@ export default function PrivacyAndDataprotection() {
           <div className="absolute inset-0 z-0">
             <Image
               src="/trustcenter/Data.webp"
-              alt="Data Protection Background"
+              alt=""
               fill
               className="object-cover rounded-3xl"
               priority

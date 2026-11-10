@@ -62,7 +62,7 @@ export default function GrowIntro() {
                     transition={{ duration: 0.5 }}
                     className="relative w-full sm:flex-1 sm:self-start aspect-[4/3] sm:aspect-[27/29]"
                 >
-                    <Image src={introImage} alt="" fill className="object-cover" />
+                    <Image src={introImage} alt="Business analytics dashboard on a desktop monitor" fill className="object-cover" />
                 </motion.div>
             </div>
         </section>

@@ -136,7 +136,7 @@ export default function CyberServices() {
                                 className="snap-start shrink-0 w-[260px] sm:w-[335px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col"
                             >
                                 <div className="relative w-full aspect-[335/200] overflow-hidden">
-                                    <Image src={card.image} alt="" fill className="object-cover" />
+                                    <Image src={card.image} alt={card.title} fill className="object-cover" />
                                 </div>
                                 <div className="flex flex-col gap-3 px-6 sm:px-7 py-6 sm:py-7">
                                     <h2 className="text-[#2E3033] text-xl font-semibold">{card.title}</h2>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import glanceImage1 from "@/assets/Services/Azure/at-a-glance-1.png";
+import glanceImage1 from "@/assets/Services/Azure/at-a-glance-1.webp";
 import glanceImage2 from "@/assets/Services/Azure/at-a-glance-2.webp";
 
 export default function AzureAtAGlance() {
@@ -40,7 +40,7 @@ export default function AzureAtAGlance() {
                         </p>
                     </div>
                     <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656] overflow-hidden">
-                        <Image src={glanceImage1} alt="Cloud infrastructure in a modern data centre" fill className="object-cover" />
+                        <Image src={glanceImage1} alt="Professional reviewing documents at a desk in a glass office" fill className="object-cover" />
                     </div>
                 </motion.div>
 
@@ -54,7 +54,7 @@ export default function AzureAtAGlance() {
                     className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-[clamp(3rem,7vw,100px)]"
                 >
                     <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656] overflow-hidden">
-                        <Image src={glanceImage2} alt="Analytics dashboard on a workstation" fill className="object-cover" />
+                        <Image src={glanceImage2} alt="Smiling professional working on a laptop in a bright office" fill className="object-cover" />
                     </div>
                     <div className="flex flex-col gap-5 w-full">
                         <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">Why Azure?</h2>

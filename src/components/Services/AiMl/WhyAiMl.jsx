@@ -74,7 +74,7 @@ export default function WhyAiMl() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full h-[300px] sm:h-[420px] lg:h-auto lg:min-h-[420px] lg:flex-[475_1_0%] overflow-hidden"
                 >
-                    <Image src={whyPhoto} alt="" fill className="object-cover" />
+                    <Image src={whyPhoto} alt="Engineer and humanoid robot fitting puzzle pieces together" fill className="object-cover" />
                 </motion.div>
             </div>
         </section>

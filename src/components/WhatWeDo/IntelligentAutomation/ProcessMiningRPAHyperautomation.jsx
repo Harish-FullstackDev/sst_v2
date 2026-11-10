@@ -70,7 +70,7 @@ export default function ProcessMiningRPAHyperautomation() {
                             <div className="relative w-full flex-1 min-h-0 border-[0.5px] border-[#1c5f85]">
                                 <Image
                                     src={card.image}
-                                    alt=""
+                                    alt={card.title}
                                     fill
                                     className={`object-cover ${index === 0 ? "object-bottom" : ""}`}
                                 />

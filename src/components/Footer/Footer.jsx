@@ -32,7 +32,7 @@ const Footer = () => {
         <div className="relative h-8 w-auto aspect-[358.7/80] mb-6 md:hidden">
           <Image
             src={logo}
-            alt="Support Studio Technologies Logo"
+            alt="Support Studio Technologies logo"
             fill
             style={{
               objectFit: "contain",
@@ -48,7 +48,7 @@ const Footer = () => {
             <div className="hidden md:block relative h-10 w-auto aspect-[358.7/80] mb-[46px]">
               <Image
                 src={logo}
-                alt="Support Studio Technologies Logo"
+                alt="Support Studio Technologies logo"
                 fill
                 style={{
                   objectFit: "contain",
@@ -81,7 +81,7 @@ const Footer = () => {
 
                 <li>
                   <Link
-                    href="/who-we-are"
+                    href="/about-us"
                     className="hover:text-white transition-colors duration-200"
                   >
                     About Us
@@ -115,7 +115,7 @@ const Footer = () => {
                 </li>
                 {/* <li>
                 <Link
-                  href="/ascenduspartner"
+                  href="/sst-partner"
                   className="hover:text-white transition-colors duration-200"
                 >
                   SST Partnership
@@ -409,7 +409,7 @@ const Footer = () => {
               >
                 <Image
                   src={LinkedinIcon}
-                  alt="LinkedIn"
+                  alt=""
                   className="w-10 h-10"
                   width={24}
                   height={24}
@@ -424,7 +424,7 @@ const Footer = () => {
               >
                 <Image
                   src={InstagramIcon}
-                  alt="Instagram"
+                  alt=""
                   className="w-10 h-10"
                   width={24}
                   height={24}
@@ -439,7 +439,7 @@ const Footer = () => {
               >
                 <Image
                   src={TwitterIcon}
-                  alt="Twitter"
+                  alt=""
                   className="w-10 h-10"
                   width={24}
                   height={24}
@@ -450,7 +450,7 @@ const Footer = () => {
 
         </div>
 
-        {/* Legal row — links above the copyright, right-aligned under a hairline rule, as on ascendus_website_dev's footer. */}
+        {/* Legal row — links above the copyright, right-aligned under a hairline rule. */}
         <div className="border-t border-white/20 mt-8 pt-8 flex flex-col items-center md:items-end gap-3 text-sm text-white text-center md:text-right">
           <p className="flex flex-wrap justify-center md:justify-end gap-x-2 gap-y-1">
                 <a href="/legal/terms" className="whitespace-nowrap hover:text-gray-300 transition-colors">
@@ -467,6 +467,10 @@ const Footer = () => {
                 <span aria-hidden="true">|</span>
                 <a href="/legal/cookies" className="whitespace-nowrap hover:text-gray-300 transition-colors">
                   Cookie Policy
+                </a>
+                <span aria-hidden="true">|</span>
+                <a href="/legal/disclaimer" className="whitespace-nowrap hover:text-gray-300 transition-colors">
+                  Disclaimer
                 </a>
           </p>
           <p className="md:whitespace-nowrap">© 2026 Support Studio Technologies. All Rights Reserved.</p>

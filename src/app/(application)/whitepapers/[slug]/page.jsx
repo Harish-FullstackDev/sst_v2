@@ -1,4 +1,7 @@
+import { notFound } from "next/navigation";
 import InsightDetail from "@/components/Insights/InsightDetail";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/seo";
+import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 import { getWhitepaperBySlug } from "@/lib/whitepapers";
 
 export async function generateMetadata({ params }) {
@@ -6,7 +9,7 @@ export async function generateMetadata({ params }) {
     const whitepaper = await getWhitepaperBySlug(slug);
 
     if (!whitepaper) {
-        return { title: "Whitepaper Not Found" };
+        return { title: "Whitepaper Not Found", robots: { index: false, follow: false } };
     }
 
     return {
@@ -23,7 +26,7 @@ export async function generateMetadata({ params }) {
             authors: whitepaper.author ? [whitepaper.author] : undefined,
             images: whitepaper.cover_image
                 ? [{ url: whitepaper.cover_image, width: 1200, height: 630, alt: whitepaper.title }]
-                : undefined,
+                : [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
         },
     };
 }
@@ -31,8 +34,30 @@ export async function generateMetadata({ params }) {
 export default async function WhitepaperDetailPage({ params }) {
     const { slug } = await params;
     const whitepaper = await getWhitepaperBySlug(slug);
+    if (!whitepaper) notFound();
+
+    const url = `/whitepapers/${slug}/`;
+    const crumbs = buildBreadcrumbItems(url);
+    crumbs[crumbs.length - 1].name = whitepaper.title;
+    const schemas = [
+        generateBreadcrumbSchema(crumbs),
+        generateArticleSchema({
+            type: "Report",
+            title: whitepaper.title,
+            description: whitepaper.summary,
+            url,
+            image: whitepaper.cover_image,
+            author: whitepaper.author,
+            datePublished: whitepaper.publish_date,
+        }),
+    ];
 
     return (
+        <>
+            {schemas.map((schema, i) => (
+                <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+            ))}
         <InsightDetail item={whitepaper} basePath="/whitepapers" backLabel="Back to Whitepapers" />
+        </>
     );
 }

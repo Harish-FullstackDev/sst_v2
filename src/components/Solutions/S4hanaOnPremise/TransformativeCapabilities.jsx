@@ -60,7 +60,7 @@ export default function TransformativeCapabilities() {
                         {/* Portrait on desktop (Figma 546/806); a landscape crop when stacked so
                             the image doesn't push the list a full screen down on phones. */}
                         <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-full lg:min-h-[640px]">
-                            <Image src={capabilitiesImage} alt="" fill className="object-cover" />
+                            <Image src={capabilitiesImage} alt="Server rack with a monitoring display in an enterprise data centre" fill className="object-cover" />
                         </div>
                     </motion.div>
 
