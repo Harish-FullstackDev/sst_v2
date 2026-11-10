@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import heroBg from "@/assets/Solutions/S4hanaOnPremise/hero.png";
+import heroBg from "@/assets/Solutions/S4hanaOnPremise/hero.webp";
 
 export default function Hero() {
     return (
