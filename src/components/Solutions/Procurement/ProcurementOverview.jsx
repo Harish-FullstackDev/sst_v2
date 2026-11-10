@@ -6,13 +6,13 @@ import overviewImage from "@/assets/Solutions/Procurement/overview.webp";
 
 export default function ProcurementOverview() {
     return (
-        <section className="w-full bg-white px-8 py-10 sm:px-[64px] sm:py-[64px] flex flex-col lg:flex-row gap-8 lg:gap-[48px] items-center">
+        <section className="w-full bg-white px-8 py-8 sm:px-[64px] sm:py-[64px] flex flex-col sm:flex-row gap-8 sm:gap-[48px] items-start">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col gap-4 w-full lg:flex-1"
+                className="flex flex-col gap-4 w-full sm:flex-1"
             >
                 <p className="text-[#2d8ec5] text-base sm:text-lg font-light">
                     Welcome to SAP SSM Supply Spend Management
@@ -33,7 +33,7 @@ export default function ProcurementOverview() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="relative w-full lg:w-[48%] lg:max-w-[620px] aspect-[1024/400] shrink-0 overflow-hidden"
+                className="relative w-full sm:w-[518px] aspect-[518/325] shrink-0 self-start overflow-hidden"
             >
                 <Image src={overviewImage} alt="" fill className="object-cover" />
             </motion.div>

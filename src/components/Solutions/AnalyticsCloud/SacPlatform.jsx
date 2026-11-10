@@ -1,8 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
+import serviceDesignPhoto from "@/assets/Solutions/AnalyticsCloud/platform.jpg";
 
-const PILLARS = [
+const BOXES = [
     {
         title: "Cloud-based",
         desc: "SAP Analytics Cloud operates entirely on the cloud, offering scalability, accessibility from anywhere, and minimizing on-premises hardware and maintenance needs.",
@@ -15,42 +17,52 @@ const PILLARS = [
 
 export default function SacPlatform() {
     return (
-        <section className="w-full bg-[#f5f6f6] px-8 py-10 sm:px-[64px] sm:py-[64px] flex flex-col gap-10 sm:gap-14">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center"
-            >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">One Platform for Analysis and Planning</h2>
-                <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    Integrated business intelligence and planning, delivered from the cloud.
-                </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-                {PILLARS.map((pillar, index) => (
+        <section className="w-full py-16 px-8 sm:px-[64px] bg-[#f5f6f6]">
+            <div className="flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-8 w-full">
+                <div className="flex flex-col gap-10 lg:gap-16 w-full lg:flex-[654_1_0%]">
                     <motion.div
-                        key={pillar.title}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
-                        className="relative bg-white border-t-[3px] border-[#2d8ec5] flex flex-col gap-4 px-6 py-8 sm:px-10 sm:py-10 overflow-hidden"
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="flex flex-col gap-2"
                     >
-                        {/* Oversized faded index sits behind the copy as a quiet marker */}
-                        <span
-                            aria-hidden="true"
-                            className="absolute right-4 sm:right-8 -top-2 text-[72px] sm:text-[110px] font-semibold leading-none text-[#2d8ec5]/10 select-none"
-                        >
-                            0{index + 1}
-                        </span>
-                        <h3 className="relative text-[#2E3033] text-xl sm:text-2xl font-semibold">{pillar.title}</h3>
-                        <p className="relative text-[#55595E] text-base sm:text-lg font-light">{pillar.desc}</p>
+                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">One Platform for Analysis and Planning</h2>
+                        <p className="text-[#55595E] text-base sm:text-lg font-light">
+                            Integrated business intelligence and planning, delivered from the cloud.
+                        </p>
                     </motion.div>
-                ))}
+
+                    <motion.div
+                        initial={{ opacity: 0, x: -24 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="flex flex-col sm:flex-row gap-8 w-full lg:flex-1"
+                    >
+                        {BOXES.map((box) => (
+                            <div
+                                key={box.title}
+                                className="bg-white w-full sm:flex-1 lg:h-full flex flex-col items-start gap-12 lg:gap-16 px-6 py-8"
+                            >
+                                <h2 className="text-[#2E3033] text-xl font-semibold">{box.title}</h2>
+                                <p className="text-[#55595E] text-base sm:text-lg font-light">{box.desc}</p>
+                            </div>
+                        ))}
+                    </motion.div>
+                </div>
+
+                <motion.div
+                    initial={{ opacity: 0, x: 24 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                    className="relative w-full h-[300px] sm:h-[420px] lg:h-auto lg:flex-[475_1_0%] aspect-auto lg:aspect-[475/563] overflow-hidden"
+                >
+                    <Image src={serviceDesignPhoto} alt="" fill className="object-cover object-bottom" />
+                </motion.div>
             </div>
         </section>
     );
 }
+
