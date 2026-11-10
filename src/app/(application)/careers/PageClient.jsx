@@ -11,7 +11,6 @@ import WhatYouWantToDo from "@/components/Careers/WhatYouWantToDo";
 import TeamStory from "@/components/Careers/TeamStory";
 import LearningDevelopment from "@/components/Careers/LearningDevelopment";
 import OurCulture from "@/components/Careers/OurCulture";
-import GrowthQuoteBand from "@/components/Careers/GrowthQuoteBand";
 import WhatSetsUsApart from "@/components/Careers/WhatSetsUsApart";
 import LinkedInCarousel from "@/components/WhoWeAre/LinkedInCarousel";
 
@@ -34,9 +33,8 @@ const page = () => {
                 <JoinUsPanel />
                 <JobListingSection />
                 <WhatYouWantToDo />
-                <TeamStory />
                 <LearningDevelopment />
-                <GrowthQuoteBand />
+                <TeamStory />
                 <OurCulture />
                 {/* <WhatSetsUsApart /> */}
                 {/* <LinkedInCarousel /> */}

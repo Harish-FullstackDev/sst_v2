@@ -15,7 +15,7 @@ import nextPageIcon from "@/assets/career/icons/Next page toggle arrow.svg";
 import { getAllJobs } from "@/lib/jobs";
 import { AREA_OF_INTEREST } from "@/components/Constants/Career/filterCategories";
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 5;
 
 // Filters sit in one row above the list (search first, then the dropdowns),
 // following ascendus_website_dev's /careers/open-positions/. Area
@@ -188,11 +188,19 @@ export default function JobListingSection() {
         setPage(1);
     }, [search, filters]);
 
-    // Each page starts from its first role rather than wherever the previous
-    // page's list was scrolled to.
+    // Changing page brings the top of the list back into view when the reader
+    // has scrolled past it; the first render never scrolls.
+    const isFirstPage = useRef(true);
     useEffect(() => {
-        listRef.current?.scrollTo({ top: 0 });
-    }, [page, search, filters]);
+        if (isFirstPage.current) {
+            isFirstPage.current = false;
+            return;
+        }
+        const top = listRef.current?.getBoundingClientRect().top;
+        if (top !== undefined && top < 96) {
+            listRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    }, [page]);
 
     const hasActiveFilters = search !== "" || Object.values(filters).some(Boolean);
 
@@ -273,12 +281,8 @@ export default function JobListingSection() {
                     </p>
                 )}
 
-                {/* Up to 10 roles per page, scrolling inside this box so the page
-                    itself stays short; the pagination below moves to the next 10. */}
-                <div
-                    ref={listRef}
-                    className="max-h-[clamp(480px,70vh,760px)] overflow-y-auto pr-2 sm:pr-3 [scrollbar-width:thin] [scrollbar-color:#c5c2c2_#ececec]"
-                >
+                {/* Five roles per page, no inner scroll box; the pagination below moves to the next five. */}
+                <div ref={listRef} className="scroll-mt-28">
                     {loading ? (
                         <ul className="flex flex-col gap-4" aria-busy="true">
                             {Array.from({ length: 3 }).map((_, index) => (
