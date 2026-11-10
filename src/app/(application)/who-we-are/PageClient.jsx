@@ -31,10 +31,10 @@ const page = () => {
       <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
         <WhatShapesHowWeDeliver />
         <TrustedByBand />
-        <DiscoverWhatSetsUsApart />
         <WhereWeHeadedAndWhy />
+        <DiscoverWhatSetsUsApart />
         <OurStrength />
-        <ClientTestimonials />
+        {/* <ClientTestimonials /> */}
         {/* <FutureFocusedInsights /> */}
         <ReadyToTransform />
       </div>

@@ -104,7 +104,7 @@ export default function WhereWeHeadedAndWhy() {
                 translucent so the photo keeps reading through it. */}
             <div className="relative w-full overflow-hidden">
                 <Image src={missionBg} alt="" fill sizes="100vw" className="object-cover" />
-                <div className="h-[200px] sm:h-[320px] lg:h-[380px]" />
+                <div className="h-[96px] sm:h-[140px] lg:h-[160px]" />
 
                 <motion.div
                     variants={containerVariants}
@@ -133,7 +133,7 @@ export default function WhereWeHeadedAndWhy() {
                 </motion.div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 px-8 py-10 sm:px-[64px] sm:py-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 px-8 pt-10 pb-8 sm:px-[64px] sm:pt-16 sm:pb-8">
                 {STATEMENTS.map((statement, index) => (
                     <motion.div
                         key={statement.title}

@@ -31,13 +31,13 @@ const page = () => {
             </div>
             <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
                 <WhySwitchToS4hana />
-                <ConversionKeyAspects />
+                <ConversionAccelerator />
             </div>
-            <ConversionAccelerator />
             <ConversionApproaches />
             <DeploymentOptions />
             <ConversionReadiness />
             <ConversionRoadmap />
+            <ConversionKeyAspects />
 
             <ReadyToTransform
                 title="Upgrade to S/4HANA and Gain a Competitive Edge"

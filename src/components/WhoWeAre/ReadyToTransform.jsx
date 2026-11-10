@@ -25,10 +25,10 @@ export default function ReadyToTransform() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-12 px-8 sm:px-[64px] pb-16 sm:pb-24 lg:pb-32 pt-32 sm:pt-[160px] lg:pt-[246px]"
+                    className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-12 px-6 sm:px-[64px] pt-32 sm:pt-30 lg:pt-32 pb-16 sm:pb-24 lg:pb-32"
                 >
-                    <div className="flex flex-col w-full md:gap-12 sm:w-[60%] text-center sm:text-left items-center sm:items-start">
-                        <h2 className="text-xl sm:text-5xl font-semibold text-white">
+                    <div className="flex flex-col w-full md:gap-12 sm:w-[60%] lg:w-[74%] text-center sm:text-left items-center sm:items-start">
+                        <h2 className="text-xl sm:text-4xl md:text-5xl font-semibold text-white">
                             Want to know more about how we work?
                         </h2>
 
