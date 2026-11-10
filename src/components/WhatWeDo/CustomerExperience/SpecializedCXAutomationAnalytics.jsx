@@ -82,7 +82,7 @@ export default function SpecializedCXAutomationAnalytics() {
                                         className="flex h-full flex-col items-start gap-6 overflow-hidden p-6 sm:gap-[34px] sm:p-[40px]"
                                     >
                                         <div className="relative w-full h-[180px] sm:h-[243px] bg-black shrink-0">
-                                            <Image src={tab.image} alt="" fill className="object-cover" />
+                                            <Image src={tab.image} alt={tab.title} fill className="object-cover" />
                                         </div>
                                         <p className="text-[#55595E] text-base sm:text-lg font-light">{tab.desc}</p>
                                         <h2 className="text-[#2D8EC5] text-xl sm:text-2xl font-semibold">{tab.title}</h2>

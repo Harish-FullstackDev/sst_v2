@@ -18,7 +18,7 @@ import { AREA_OF_INTEREST } from "@/components/Constants/Career/filterCategories
 const PAGE_SIZE = 5;
 
 // Filters sit in one row above the list (search first, then the dropdowns),
-// following ascendus_website_dev's /careers/open-positions/. Area
+// following the reference site's /careers/open-positions/. Area
 // of Interest uses the fixed department list; the other dropdowns are built
 // from the live jobs so they only ever offer values that return results.
 // `field` is the key on a mapped job (see mapJob in src/lib/jobs.js).

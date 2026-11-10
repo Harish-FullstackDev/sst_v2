@@ -30,7 +30,7 @@ export default function OurAutomationApproach() {
 
             <div className="max-w-[1280px] w-full flex flex-col lg:flex-row">
                 <div className="relative w-full h-[260px] lg:h-[653px] lg:w-[567px] shrink-0">
-                    <Image src={approachPhoto} alt="" fill className="object-cover" />
+                    <Image src={approachPhoto} alt="Team members discussing an automation approach in a meeting room" fill className="object-cover" />
                 </div>
                 <div className="flex flex-col gap-6 sm:gap-0 flex-1 justify-center px-0 lg:pl-[77px]">
                     {STEPS.map((step, index) => (

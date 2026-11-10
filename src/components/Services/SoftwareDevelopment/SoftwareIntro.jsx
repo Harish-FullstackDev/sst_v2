@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import introPhoto from "@/assets/Services/SoftwareDevelopment/intro.jpg";
+import introPhoto from "@/assets/Services/SoftwareDevelopment/intro.webp";
 
 const CREDENTIALS = ["Software Development Expert", "Certified Agile Practitioner", "DevOps Specialist"];
 
@@ -18,7 +18,7 @@ export default function SoftwareIntro() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="relative w-full lg:w-[520px] lg:max-w-[45%] shrink-0 aspect-[4/3] overflow-hidden"
                 >
-                    <Image src={introPhoto} alt="Laptop running a business application" fill className="object-cover" />
+                    <Image src={introPhoto} alt="Developer writing code on a laptop at a desk" fill className="object-cover" />
                 </motion.div>
 
                 <motion.div

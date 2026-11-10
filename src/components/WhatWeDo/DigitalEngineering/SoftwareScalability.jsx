@@ -62,7 +62,7 @@ export default function SoftwareScalability() {
                 >
                     <Image
                         src={scalabilityPhoto}
-                        alt=""
+                        alt="Rows of server cabinets in a bright data centre corridor"
                         width={467}
                         height={357}
                         className="h-auto w-full object-cover sm:h-full"

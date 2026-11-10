@@ -22,7 +22,7 @@ export default function IotOverview() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="relative w-full lg:w-[520px] lg:max-w-[42%] shrink-0 aspect-[520/380] overflow-hidden"
                 >
-                    <Image src={overviewPhoto} alt="" fill className="object-cover" />
+                    <Image src={overviewPhoto} alt="Close-up of wireless connectivity controls on a smartphone screen" fill className="object-cover" />
                 </motion.div>
 
                 <motion.div

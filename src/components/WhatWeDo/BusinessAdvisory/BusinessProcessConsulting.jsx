@@ -89,7 +89,7 @@ export default function BusinessProcessConsulting() {
                             transition={{ duration: 0.4 }}
                             className="absolute inset-0 w-full h-full"
                         >
-                            <Image src={slide.image} alt="" fill className="object-cover" />
+                            <Image src={slide.image} alt={slide.title} fill className="object-cover" />
                             <div className="absolute inset-0 bg-gradient-to-b from-black/68 to-transparent" />
                         </motion.div>
                     </AnimatePresence>

@@ -21,7 +21,7 @@ const Bookacall = () => {
             <div className="text-center">
               <div className="flex justify-center mb-4">
                 <div className=" flex items-center justify-center">
-                  <Image src={msg} alt="Email" className="w-12 h-12 rounded-2xl" />
+                  <Image src={msg} alt="" className="w-12 h-12 rounded-2xl" />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Email us</h3>
@@ -41,7 +41,7 @@ const Bookacall = () => {
             <div className="text-center">
               <div className="flex justify-center mb-4">
                 <div className=" flex items-center justify-center">
-                  <Image src={call} alt="Phone" className="w-12 h-12 rounded-2xl" />
+                  <Image src={call} alt="" className="w-12 h-12 rounded-2xl" />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Call us</h3>
@@ -61,7 +61,7 @@ const Bookacall = () => {
             <div className="text-center">
               <div className="flex justify-center mb-4">
                 <div className="  flex items-center justify-center">
-                  <Image src={people} alt="Support" className="w-12 h-12 rounded-2xl" />
+                  <Image src={people} alt="" className="w-12 h-12 rounded-2xl" />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Book a call</h3>

@@ -16,7 +16,7 @@ export default function TmOverview() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full lg:w-[520px] lg:max-w-[42%] shrink-0 aspect-[520/360] overflow-hidden"
                 >
-                    <Image src={processFlowPhoto} alt="" fill className="object-cover" />
+                    <Image src={processFlowPhoto} alt="Laptop showing code beside a phone and coffee mug on a desk" fill className="object-cover" />
                 </motion.div>
 
                 <motion.div

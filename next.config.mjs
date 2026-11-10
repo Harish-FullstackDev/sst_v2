@@ -23,6 +23,9 @@ const nextConfig = {
       { source: '/securityPrivacyPolicy', destination: '/legal/security/', permanent: true },
       { source: '/cookiePolicy', destination: '/legal/cookies/', permanent: true },
       { source: '/whatWeDo/:path*', destination: '/what-we-do/:path*/', permanent: true },
+      { source: '/who-we-are', destination: '/about-us/', permanent: true },
+      { source: '/ascenduspartner', destination: '/sst-partner/', permanent: true },
+      { source: '/ascenduserrors', destination: '/sst-errors/', permanent: true },
       // Applications are taken by the HRMS portal (Apply Now on each job page).
       { source: '/careers/apply', destination: '/careers/', permanent: false },
     ];

@@ -4,14 +4,14 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/solutions/analytics-cloud/" },
-  description: "SAP Analytics Cloud: cloud-based business intelligence, enterprise planning, and predictive analytics that connect SAP and non-SAP data for faster, better-informed decisions.",
+  description: "SAP Analytics Cloud: cloud-based business intelligence, enterprise planning and predictive analytics connecting SAP and non-SAP data for faster decisions.",
   openGraph: {
-    title: "SAP Analytics Cloud | Support Studio Technologies",
-    description: "SAP Analytics Cloud: cloud-based business intelligence, enterprise planning, and predictive analytics that connect SAP and non-SAP data for faster, better-informed decisions.",
+    title: "SAP Analytics Cloud Solution | Support Studio Technologies",
+    description: "SAP Analytics Cloud: cloud-based business intelligence, enterprise planning and predictive analytics connecting SAP and non-SAP data for faster decisions.",
     url: "/solutions/analytics-cloud/",
     images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
-  title: "SAP Analytics Cloud",
+  title: "SAP Analytics Cloud Solution",
 };
 
 export default function Page() {

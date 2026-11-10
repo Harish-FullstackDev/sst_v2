@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import panelImage from "@/assets/Services/Azure/services-panel.png";
+import panelImage from "@/assets/Services/Azure/services-panel.webp";
 import azureLogo from "@/assets/Services/Azure/icons/microsoft-azure.svg";
 
 const ITEMS = [
@@ -38,7 +38,7 @@ function ServiceCard({ item, large }) {
     return (
         <div className="flex flex-col gap-4 sm:gap-6">
             <div className="relative h-10 w-36 shrink-0">
-                <Image src={azureLogo} alt="" fill className="object-contain object-left" />
+                <Image src={azureLogo} alt="Microsoft Azure logo" fill className="object-contain object-left" />
             </div>
             <div className="flex flex-col gap-1">
                 <p className="text-[#2D8EC5] text-sm sm:text-base font-normal">{item.title}</p>

@@ -4,10 +4,10 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/solutions/business-technology-platform/" },
-  description: "SAP Business Technology Platform (BTP): one foundation for developing, integrating, and managing business applications in the cloud, with built-in analytics, AI, and enterprise security.",
+  description: "SAP Business Technology Platform (BTP): one foundation to develop, integrate and manage cloud business applications, with built-in analytics, AI and security.",
   openGraph: {
     title: "SAP Business Technology Platform | Support Studio Technologies",
-    description: "SAP Business Technology Platform (BTP): one foundation for developing, integrating, and managing business applications in the cloud, with built-in analytics, AI, and enterprise security.",
+    description: "SAP Business Technology Platform (BTP): one foundation to develop, integrate and manage cloud business applications, with built-in analytics, AI and security.",
     url: "/solutions/business-technology-platform/",
     images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },

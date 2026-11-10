@@ -160,7 +160,7 @@ const InteractiveLocationPreview = () => {
                     >
                         <Image
                             src={careerlocation}
-                            alt="Location Pin Icon"
+                            alt=""
                             width={24}
                             height={24}
                             className="text-gray-700 pointer-events-none"

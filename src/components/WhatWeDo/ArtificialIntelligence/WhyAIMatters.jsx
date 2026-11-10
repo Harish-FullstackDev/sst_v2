@@ -30,7 +30,7 @@ export default function WhyAIMatters() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full lg:w-[414px] h-[220px] sm:h-[268px] md:ml-[100px] shrink-0 bg-black"
                 >
-                    <Image src={sectionImage} alt="" fill className="object-cover" />
+                    <Image src={sectionImage} alt="Tablets and laptops showing AI applications on a desk" fill className="object-cover" />
                 </motion.div>
             </div>
         </section>

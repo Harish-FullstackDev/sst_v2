@@ -4,10 +4,10 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/solutions/procurement/" },
-  description: "SAP Supply Spend Management procurement: strategic sourcing management, streamlined procurement processes and robust contract life-cycle management for spend visibility and cost savings.",
+  description: "SAP Supply Spend Management procurement: strategic sourcing, streamlined procurement processes and contract lifecycle management for spend visibility.",
   openGraph: {
     title: "Procurement | Support Studio Technologies",
-    description: "SAP Supply Spend Management procurement: strategic sourcing management, streamlined procurement processes and robust contract life-cycle management for spend visibility and cost savings.",
+    description: "SAP Supply Spend Management procurement: strategic sourcing, streamlined procurement processes and contract lifecycle management for spend visibility.",
     url: "/solutions/procurement/",
     images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },

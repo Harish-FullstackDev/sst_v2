@@ -109,7 +109,7 @@ export default function RolloutFeatures() {
                                                 </p>
                                                 {/* Inline image on mobile/tablet */}
                                                 <div className="relative lg:hidden w-full aspect-[16/10] overflow-hidden">
-                                                    <Image src={item.image} alt="" fill className="object-cover" />
+                                                    <Image src={item.image} alt={item.title} fill className="object-cover" />
                                                 </div>
                                             </div>
                                         </motion.div>
@@ -131,7 +131,7 @@ export default function RolloutFeatures() {
                             transition={{ duration: 0.5, ease: "easeOut" }}
                             className="absolute inset-0"
                         >
-                            <Image src={FEATURES[openIndex].image} alt="" fill className="object-cover" />
+                            <Image src={FEATURES[openIndex].image} alt={FEATURES[openIndex].title} fill className="object-cover" />
                         </motion.div>
                     </AnimatePresence>
                 </div>

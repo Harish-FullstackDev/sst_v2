@@ -112,7 +112,7 @@ export default function WhyEnterprisePartnerWithUs() {
                 reduced opacity — a solid 1px line at full strength reads bolder on
                 screen than it does in the Figma canvas. Same /opacity treatment
                 the project already uses elsewhere for subtle dividers (see
-                Ascendus/WhyUs.jsx's divide-[#4a5568]/30) rather than inventing an
+                the home page WhyUs.jsx's divide-[#4a5568]/30) rather than inventing an
                 unrelated lighter hex. */}
             <div className="hidden sm:flex w-full items-stretch">
                 <div className="flex-1 flex flex-col pt-12">

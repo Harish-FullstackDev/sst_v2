@@ -58,7 +58,7 @@ export default function FutureFocusedInsights({
                     </p>
                 </motion.div>
 
-                {/* overlapCTA: cards bleed into the CTA section below (used on /who-we-are,
+                {/* overlapCTA: cards bleed into the CTA section below (used on /about-us,
                     which pads its CTA top enough to clear it). When false, the cards stay
                     fully within this section and hand off a normal white→colored boundary
                     gap instead (full 64px, not halved — see design system padding rule). */}

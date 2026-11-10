@@ -60,7 +60,7 @@ export default function CrmApproach() {
                         <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#565656]">
                             <Image
                                 src={step.image}
-                                alt=""
+                                alt={step.title}
                                 fill
                                 className="object-cover grayscale-[40%] transition-[filter] duration-700 ease-in-out group-hover:grayscale-0"
                             />

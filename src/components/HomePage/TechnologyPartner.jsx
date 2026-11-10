@@ -159,7 +159,7 @@ export default function TechnologyPartner() {
                     </div>
 
                     <Link
-                        href="/who-we-are"
+                        href="/about-us"
                         className="self-start sm:self-center shrink-0 border border-[#0a3a52] px-8 py-3 text-lg font-light text-[#0a3a52] text-center transition-colors hover:bg-[#0a3a52] hover:text-white"
                     >
                         More About Us

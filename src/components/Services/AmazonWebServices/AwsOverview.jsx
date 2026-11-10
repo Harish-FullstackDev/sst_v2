@@ -69,7 +69,7 @@ export default function AwsOverview() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full h-[300px] sm:h-[420px] lg:h-auto lg:flex-[475_1_0%] lg:aspect-[475/563] overflow-hidden"
                 >
-                    <Image src={overviewPhoto} alt="Server racks in a cloud data centre" fill className="object-cover" />
+                    <Image src={overviewPhoto} alt="Close-up of storage server drive bays in a rack" fill className="object-cover" />
                 </motion.div>
             </div>
         </section>

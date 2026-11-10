@@ -44,7 +44,7 @@ export default function GcpOverview() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="relative w-full lg:w-[40%] lg:max-w-[518px] aspect-[518/325] shrink-0 self-start overflow-hidden"
             >
-                <Image src={overviewImage} alt="Cloud data centre infrastructure" fill className="object-cover" />
+                <Image src={overviewImage} alt="Team working on laptops with charts and reports on the desk" fill className="object-cover" />
             </motion.div>
         </section>
     );

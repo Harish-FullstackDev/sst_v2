@@ -144,7 +144,7 @@ export default function CRMStrategy() {
                                     <div className="relative w-full h-[164px] overflow-hidden">
                                         <Image
                                             src={card.image}
-                                            alt=""
+                                            alt={card.title}
                                             fill
                                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                                         />
@@ -225,7 +225,7 @@ export default function CRMStrategy() {
                             <div className="relative w-full h-[164px] overflow-hidden">
                                 <Image
                                     src={card.image}
-                                    alt=""
+                                    alt={card.title}
                                     fill
                                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 />

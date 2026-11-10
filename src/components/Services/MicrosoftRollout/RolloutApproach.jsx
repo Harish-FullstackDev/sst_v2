@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import approachBg from "@/assets/Services/MicrosoftRollout/approach-bg.png";
+import approachBg from "@/assets/Services/MicrosoftRollout/approach-bg.webp";
 
 const STEPS = [
     { title: "Plan", desc: "Define scope, sites, and timelines, and align the rollout strategy with business goals." },

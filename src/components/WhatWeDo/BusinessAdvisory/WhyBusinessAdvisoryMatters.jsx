@@ -29,7 +29,7 @@ export default function WhyBusinessAdvisoryMatters() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="relative w-full sm:w-[467px] sm:h-[301px] h-[220px] shrink-0"
             >
-                <Image src={matterPhoto} alt="" fill className="object-cover" />
+                <Image src={matterPhoto} alt="Tablets displaying business applications on a showroom desk" fill className="object-cover" />
             </motion.div>
         </section>
     );

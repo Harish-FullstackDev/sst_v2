@@ -19,7 +19,7 @@ const OurCommitment = () => {
         <div className="absolute inset-0 z-0">
           <Image
             src={OurCommitmentBg}
-            alt="Our Commitment Background"
+            alt=""
             fill
             className="object-cover object-right"
             priority

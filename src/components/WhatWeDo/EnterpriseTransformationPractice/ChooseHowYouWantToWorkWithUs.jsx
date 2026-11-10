@@ -40,7 +40,7 @@ export default function ChooseHowYouWantToWorkWithUs() {
                     }}
                     className="relative w-full lg:w-[467px] lg:max-w-[40%] lg:ml-auto shrink-0 aspect-[467/357] overflow-hidden"
                 >
-                    <Image src={serverRoomImage} alt="" fill className="object-cover" />
+                    <Image src={serverRoomImage} alt="Enterprise server cabinets in a large modern data centre" fill className="object-cover" />
                 </motion.div>
             </div>
         </section>

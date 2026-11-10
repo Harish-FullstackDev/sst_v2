@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     default: "Support Studio Technologies | Enterprise SAP & IT Consulting GCC",
     template: "%s | Support Studio Technologies"
   },
-  description: "Support Studio Technologies provides premium SAP consulting, IT managed services, and digital transformation solutions for enterprises in the UAE, Saudi Arabia, and the wider GCC region.",
+  description: "Support Studio Technologies delivers SAP consulting, IT managed services and digital transformation for enterprises in Saudi Arabia, the UAE and the GCC.",
   authors: [{ name: "Support Studio Technologies", url: SITE_URL }],
-  creator: "SST Engineering",
+  creator: "Support Studio Technologies",
   publisher: "Support Studio Technologies",
   formatDetection: {
     email: false,
@@ -32,11 +32,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/",
-    languages: {
-      "en-US": "/en-us",
-      "en-AE": "/en-ae",
-      "en-SA": "/en-sa",
-    },
   },
   openGraph: {
     type: "website",
@@ -44,7 +39,7 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "Support Studio Technologies",
     title: "Support Studio Technologies | Enterprise Technology, SAP and Managed Services",
-    description: "Support Studio Technologies designs, builds and runs enterprise technology — SAP, cloud, data, AI, engineering, security and managed operations — under one accountable team.",
+    description: "Support Studio Technologies designs, builds and runs enterprise technology: SAP, cloud, data, AI, security and managed operations, under one team.",
     images: [
       {
         url: "/og-image.png?v=2",
@@ -65,8 +60,16 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: "pending_verification_code", // TODO: Add once provided
+  // Search Console verification: set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION once
+  // Google provides the code. No tag is emitted until then.
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+    : {}),
+  twitter: {
+    card: "summary_large_image",
+    title: "Support Studio Technologies | Enterprise Technology, SAP and Managed Services",
+    description: "Support Studio Technologies designs, builds and runs enterprise technology: SAP, cloud, data, AI, security and managed operations, under one team.",
+    images: ["/og-image.png?v=2"],
   },
 };
 

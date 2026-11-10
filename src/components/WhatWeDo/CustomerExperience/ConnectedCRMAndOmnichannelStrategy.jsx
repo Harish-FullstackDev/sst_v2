@@ -80,7 +80,7 @@ export default function ConnectedCRMAndOmnichannelStrategy() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="relative w-full sm:my-10 h-[320px] sm:h-[500px] lg:h-[803px] lg:w-[610px] lg:ml-auto shrink-0 overflow-hidden"
                 >
-                    <Image src={journeyMapImg} alt="" fill className="object-cover" />
+                    <Image src={journeyMapImg} alt="Self-service kiosk and digital screens in a customer area" fill className="object-cover" />
                 </motion.div>
             </div>
         </section>

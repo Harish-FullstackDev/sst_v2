@@ -4,10 +4,10 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/solutions/s4hana-private-cloud/" },
-  description: "SAP S/4HANA Private Cloud: the benefits of cloud ERP with a dedicated environment, enhanced control over data privacy, security, and compliance, and deployment options tailored to your business.",
+  description: "SAP S/4HANA Private Cloud: cloud ERP in a dedicated environment, with greater control over data privacy, security and compliance, and tailored deployment.",
   openGraph: {
     title: "SAP S/4HANA Private Cloud | Support Studio Technologies",
-    description: "SAP S/4HANA Private Cloud: the benefits of cloud ERP with a dedicated environment, enhanced control over data privacy, security, and compliance, and deployment options tailored to your business.",
+    description: "SAP S/4HANA Private Cloud: cloud ERP in a dedicated environment, with greater control over data privacy, security and compliance, and tailored deployment.",
     url: "/solutions/s4hana-private-cloud/",
     images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },

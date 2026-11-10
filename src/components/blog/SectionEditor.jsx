@@ -138,7 +138,7 @@ export default function SectionEditor({ sec, idx, sections, setSections }) {
                         />
                         {sec.imagePreview ? (
                             <div className="relative w-full h-32 rounded-lg overflow-hidden shadow-inner">
-                                <img src={sec.imagePreview} alt="Preview" className="w-full h-full object-cover" />
+                                <img src={sec.imagePreview} alt="Section image preview" className="w-full h-full object-cover" />
                                 <button
                                     type="button"
                                     onClick={(e) => {

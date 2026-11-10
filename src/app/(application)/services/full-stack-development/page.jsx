@@ -4,10 +4,10 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/services/full-stack-development/" },
-  description: "Full-stack development services: end-to-end web solutions integrating advanced front-end interfaces with robust back-end systems for performance and seamless user experiences.",
+  description: "Full-stack development services: end-to-end web solutions that pair advanced front-end interfaces with robust back-end systems for performance and UX.",
   openGraph: {
     title: "Full Stack Development | Support Studio Technologies",
-    description: "Full-stack development services: end-to-end web solutions integrating advanced front-end interfaces with robust back-end systems for performance and seamless user experiences.",
+    description: "Full-stack development services: end-to-end web solutions that pair advanced front-end interfaces with robust back-end systems for performance and UX.",
     url: "/services/full-stack-development/",
     images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },

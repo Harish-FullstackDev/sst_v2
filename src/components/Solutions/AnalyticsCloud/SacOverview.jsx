@@ -35,7 +35,7 @@ export default function SacOverview() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="relative w-full lg:w-[42%] lg:max-w-[518px] aspect-[518/340] shrink-0 self-start overflow-hidden bg-[#565656]"
             >
-                <Image src={introImage} alt="" fill className="object-cover" />
+                <Image src={introImage} alt="Analytics dashboard on a monitor in a modern office" fill className="object-cover" />
             </motion.div>
         </section>
     );

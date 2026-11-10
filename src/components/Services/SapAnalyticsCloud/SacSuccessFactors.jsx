@@ -68,7 +68,7 @@ export default function SacSuccessFactors() {
                         </p>
                     </div>
                     <div className="relative w-full aspect-[912/480] overflow-hidden">
-                        <Image src={factorsPhoto} alt="" fill className="object-cover" />
+                        <Image src={factorsPhoto} alt="Consultant presenting SAP Analytics Cloud dashboards to colleagues" fill className="object-cover" />
                     </div>
                 </motion.div>
 

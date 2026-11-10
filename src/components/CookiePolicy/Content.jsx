@@ -194,8 +194,8 @@ export default function CookiePolicy() {
       {/* Version / Last Updated Bar */}
       <div className="bg-[#dadada] px-[59px] py-[38px]">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-[7px] text-black">
-          <p className="font-medium">Label Version: 2.0</p>
-          <p className="font-normal">Last updated on: 20th July 2026</p>
+          <p className="font-medium">Label Version: 2.1</p>
+          <p className="font-normal">Last updated on: 10th November 2026</p>
         </div>
       </div>
     </div>

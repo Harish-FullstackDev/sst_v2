@@ -207,7 +207,7 @@ const Success = () => {
                   >
                     <Image
                       src={arrow}
-                      alt="arrow icon"
+                      alt=""
                       width={12}
                       height={12}
                     />

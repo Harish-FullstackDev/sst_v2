@@ -1,5 +1,7 @@
 import PageClient from "./PageClient";
 import { getJobBySlug, getOtherJobs } from "@/lib/jobs";
+import { generateBreadcrumbSchema, generateJobPostingSchema } from "@/lib/seo";
+import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -7,7 +9,7 @@ export async function generateMetadata({ params }) {
   if (!job) {
     return {
       title: "Job Not Found",
-      alternates: { canonical: `/careers/${slug}/` },
+      robots: { index: false, follow: false },
     };
   }
   const description =
@@ -32,5 +34,21 @@ export default async function Page({ params }) {
   const job = await getJobBySlug(slug);
   const otherJobs = job ? await getOtherJobs(job.slug) : [];
 
-  return <PageClient job={job} otherJobs={otherJobs} />;
+  // A closed or unknown job keeps the friendly "Job Not Found" view (noindex via
+  // generateMetadata) instead of the global 404, and emits no schema.
+  let schemas = [];
+  if (job) {
+    const crumbs = buildBreadcrumbItems(`/careers/${slug}/`);
+    crumbs[crumbs.length - 1].name = job.title;
+    schemas = [generateBreadcrumbSchema(crumbs), generateJobPostingSchema(job)];
+  }
+
+  return (
+    <>
+      {schemas.map((schema, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      ))}
+      <PageClient job={job} otherJobs={otherJobs} />
+    </>
+  );
 }

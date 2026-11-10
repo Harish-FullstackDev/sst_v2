@@ -62,7 +62,7 @@ export default function SecurityAssessmentCloudDefense() {
                             width scales, instead of a fixed 750px height that only matched at one
                             specific viewport width. */}
                         <div className="relative w-full aspect-[546/806]">
-                            <Image src={assessmentImage} alt="" fill className="object-cover" />
+                            <Image src={assessmentImage} alt="Network rack with a monitoring display in a server room" fill className="object-cover" />
                         </div>
                     </motion.div>
 

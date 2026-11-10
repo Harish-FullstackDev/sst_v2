@@ -4,10 +4,10 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/services/microsoft-ams/" },
-  description: "Microsoft Application & Management Services: certified, end-to-end management that monitors, maintains and optimizes your business applications for performance and reliability.",
+  description: "Microsoft Application & Management Services: certified end-to-end management that monitors, maintains and optimizes business applications for reliability.",
   openGraph: {
     title: "Microsoft Application & Management Services | Support Studio Technologies",
-    description: "Microsoft Application & Management Services: certified, end-to-end management that monitors, maintains and optimizes your business applications for performance and reliability.",
+    description: "Microsoft Application & Management Services: certified end-to-end management that monitors, maintains and optimizes business applications for reliability.",
     url: "/services/microsoft-ams/",
     images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },

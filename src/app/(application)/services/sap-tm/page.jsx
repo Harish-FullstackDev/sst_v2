@@ -4,10 +4,10 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/services/sap-tm/" },
-  description: "SAP T&M provides accurate tracking of project costs and resources, integrates seamlessly with billing systems, and offers real-time insights for efficient project management and financial control.",
+  description: "SAP T&M tracks project costs and resources accurately, integrates with billing systems and gives real-time insights for project and financial control.",
   openGraph: {
     title: "SAP Time & Materials (T&M) | Support Studio Technologies",
-    description: "SAP T&M provides accurate tracking of project costs and resources, integrates seamlessly with billing systems, and offers real-time insights for efficient project management and financial control.",
+    description: "SAP T&M tracks project costs and resources accurately, integrates with billing systems and gives real-time insights for project and financial control.",
     url: "/services/sap-tm/",
     images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },

@@ -35,7 +35,7 @@ export default function Intro() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="relative w-full lg:w-full h-[260px] lg:h-[360px] justify-self-end overflow-hidden"
             >
-                <Image src={introPhoto} alt="" fill className="object-cover" />
+                <Image src={introPhoto} alt="Person using a generative AI chat tool on a laptop" fill className="object-cover" />
             </motion.div>
         </section>
     );

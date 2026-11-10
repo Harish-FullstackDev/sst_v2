@@ -42,7 +42,7 @@ export default function ScalingPilotsSmartOperations() {
                         </p>
                     </div>
                     <div className="relative w-full lg:w-[560px] h-[220px] lg:h-[297px] shrink-0 bg-[#565656]">
-                        <Image src={integrationImage1} alt="" fill className="object-cover" />
+                        <Image src={integrationImage1} alt="Technician connecting cables to an IoT gateway in an equipment cabinet" fill className="object-cover" />
                     </div>
                 </motion.div>
 
@@ -59,7 +59,7 @@ export default function ScalingPilotsSmartOperations() {
                         className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-[100px]"
                     >
                         <div className="relative w-full lg:w-[560px] h-[220px] lg:h-[297px] shrink-0 bg-[#565656]">
-                            <Image src={integrationImage2} alt="" fill className="object-cover" />
+                            <Image src={integrationImage2} alt="Robotic arm on an automated production line" fill className="object-cover" />
                         </div>
                         <div className="flex flex-col gap-5 w-full">
                             <h2 className="text-[#2E3033] text-base sm:text-2xl font-semibold">

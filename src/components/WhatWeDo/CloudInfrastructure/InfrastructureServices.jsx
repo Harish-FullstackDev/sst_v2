@@ -30,7 +30,7 @@ export default function InfrastructureServices() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="relative w-full max-w-[503px] h-[240px] sm:h-[340px] lg:h-[412px] lg:ml-auto shrink-0 overflow-hidden"
                 >
-                    <Image src={infraPhoto} alt="" fill className="object-cover" />
+                    <Image src={infraPhoto} alt="IT professional with a laptop beside server racks in a data centre" fill className="object-cover" />
                 </motion.div>
             </div>
         </section>

@@ -75,7 +75,7 @@ const Header = () => {
         <div className="absolute inset-0 z-[-100]">
           <Image
             src={bookacallimg}
-            alt="Header Background"
+            alt=""
             fill
             priority
             className="object-cover object-center"

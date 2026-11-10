@@ -5,6 +5,7 @@ import SessionExpired from '@/components/sstErrorPage/SessionExpired'
 import React from 'react'
 
 export const metadata = {
+  title: "Something Went Wrong",
   robots: { index: false, follow: false },
 }
 

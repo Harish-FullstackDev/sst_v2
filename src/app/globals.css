@@ -885,19 +885,19 @@ h2 {
 
 :root {
   /* SST brand palette (see SST Brand Guidelines 2026) */
-  --ascendus-green-light: #7FBE3F;
-  --ascendus-green-dark: #008E59;
-  --ascendus-blue-dark: #0061AF;
-  --ascendus-blue-light: #00ACEC;
-  --ascendus-data-amber: #F2A93C;
-  --ascendus-data-violet: #7C5FB0;
-  --ascendus-white: #FFFFFF;
-  --ascendus-gray-100: #F5F6F6;
-  --ascendus-gray-300: #D4D6D8;
-  --ascendus-gray-500: #A1A5AA;
-  --ascendus-gray-700: #55595E;
-  --ascendus-gray-900: #2E3033;
-  --ascendus-black: #16171A;
+  --sst-green-light: #7FBE3F;
+  --sst-green-dark: #008E59;
+  --sst-blue-dark: #0061AF;
+  --sst-blue-light: #00ACEC;
+  --sst-data-amber: #F2A93C;
+  --sst-data-violet: #7C5FB0;
+  --sst-white: #FFFFFF;
+  --sst-gray-100: #F5F6F6;
+  --sst-gray-300: #D4D6D8;
+  --sst-gray-500: #A1A5AA;
+  --sst-gray-700: #55595E;
+  --sst-gray-900: #2E3033;
+  --sst-black: #16171A;
 
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

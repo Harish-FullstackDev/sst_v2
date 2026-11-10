@@ -147,7 +147,7 @@ export default function Services() {
     const translateXPct = trackIndex * STEP_PCT;
 
     return (
-        <section id="ascendus-services" className="w-full bg-white py-10 sm:py-16 px-6 sm:px-16">
+        <section id="sst-services" className="w-full bg-white py-10 sm:py-16 px-6 sm:px-16">
             <div className="flex flex-col gap-8 sm:gap-16">
                 <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-10">
                     <motion.div

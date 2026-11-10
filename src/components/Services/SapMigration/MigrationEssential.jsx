@@ -37,7 +37,7 @@ export default function MigrationEssential() {
                         className="flex flex-col gap-4 sm:gap-[15px] w-full lg:flex-1"
                     >
                         <div className="relative w-full aspect-[546/700]">
-                            <Image src={gainsImage} alt="" fill className="object-cover" />
+                            <Image src={gainsImage} alt="Consultant presenting SAP migration priorities to business leaders" fill className="object-cover" />
                         </div>
                     </motion.div>
                     <div className="flex flex-col gap-8 sm:gap-10 lg:gap-0 lg:justify-between w-full lg:flex-1">

@@ -165,7 +165,7 @@ export default function JobDescription({ job, otherJobs = [] }) {
             content: (
                 <p>
                     {ABOUT_SST}{" "}
-                    <Link href="/who-we-are" className="text-[#0061af] underline-offset-2 hover:underline">
+                    <Link href="/about-us" className="text-[#0061af] underline-offset-2 hover:underline">
                         Learn more about us
                     </Link>
                 </p>
