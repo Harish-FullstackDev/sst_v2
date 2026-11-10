@@ -52,7 +52,7 @@ export default function WhySwitchToS4hana() {
                     {CREDENTIALS.map((item) => (
                         <li
                             key={item}
-                            className="border border-[#d3dae2] rounded-2xl px-4 py-2 text-[#55595E] text-sm sm:text-base font-light"
+                            className="border border-[#d3dae2] px-4 py-2 text-[#55595E] text-sm sm:text-base font-light"
                         >
                             {item}
                         </li>

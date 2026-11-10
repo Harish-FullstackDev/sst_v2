@@ -47,7 +47,7 @@ export default function ConversionKeyAspects() {
                 {ASPECTS.map((item, index) => (
                     <li
                         key={item}
-                        className="flex items-center gap-3 bg-white border border-[#d3dae2] hover:border-[#2d8ec5] rounded-2xl px-4 py-3 transition-colors duration-300"
+                        className="flex items-center gap-3 bg-white border border-[#d3dae2] hover:border-[#2d8ec5] px-4 py-3 transition-colors duration-300"
                     >
                         <span className="text-[#2d8ec5] text-sm font-light tabular-nums">
                             {String(index + 1).padStart(2, "0")}
