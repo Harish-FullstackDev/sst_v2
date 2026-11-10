@@ -1,43 +1,23 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Hanken_Grotesk } from "next/font/google";
+import { motion, useInView } from "framer-motion";
 import missionBg from "@/assets/WhoWeAre/mission_vision.webp";
 
-// AktivGrotesk (used in the Figma design) isn't a freely licensed font, so this
-// substitutes Hanken Grotesk, a similar neo-grotesque with matching thin/light weights.
-const cardFont = Hanken_Grotesk({
-    subsets: ["latin"],
-    weight: ["200", "300"],
-});
+// Layout: section title, then a photo with a translucent brand band across its
+// lower edge carrying the four metrics (the number sits in the white circle where
+// an icon would go, the card copy underneath), then Mission and Vision side by side.
+// The metrics used to be their own section (StartedAroundGapNotProduct) and were
+// folded in here when that section was removed.
+const METRICS = [
+    { value: "95%", description: "Customer satisfaction rate, reflecting our dedication" },
+    { value: "87%", description: "Projects delivered on time, showcasing our commitment" },
+    { value: "92%", description: "Client retention year over year, proving lasting trust" },
+    { value: "78%", description: "Team productivity growth, driving innovation forward" },
+];
 
-const SEGMENT_MS = 300;
-// How long each card holds the active state when the row is cycling on its own,
-// and how long a manual hover suppresses that cycle after the pointer leaves.
-// 4500ms matches the autoplay beat of the Industries and Services carousels.
-const AUTOPLAY_MS = 4500;
-const RESUME_MS = 4500;
-
-// each edge's transition-delay depends on hover direction: the edge that draws/retracts
-// first in a given direction gets 0ms, the one that continues from its meeting point waits
-// for the first to finish (SEGMENT_MS).
-function edgeStyle(firstOnEnter) {
-    return (isHovered) => ({
-        transitionDuration: `${SEGMENT_MS}ms`,
-        transitionDelay: `${isHovered === firstOnEnter ? 0 : SEGMENT_MS}ms`,
-        transitionTimingFunction: "ease-in-out",
-        transitionProperty: "transform",
-    });
-}
-
-const topStyle = edgeStyle(true);
-const rightStyle = edgeStyle(false);
-const leftStyle = edgeStyle(true);
-const bottomStyle = edgeStyle(false);
-
-const CARDS = [
+const STATEMENTS = [
     {
         title: "Mission",
         description:
@@ -48,135 +28,69 @@ const CARDS = [
         description:
             "To be the enterprise technology practice GCC organizations turn to first, not because we cover every capability on a page, but because our SAP foundation, cloud engineering, and compliance fluency operate as one coordinated practice instead of five separate vendor relationships.",
     },
-    {
-        title: "Culture & Values",
-        description:
-            "We foster a culture of collaboration, integrity, continuous learning, and innovation. By empowering our people and embracing diverse perspectives, we create an environment where great ideas thrive and exceptional results follow.",
-    },
-    {
-        title: "CSR",
-        description:
-            "We believe business success goes hand in hand with social responsibility. Through ethical practices, environmental awareness, community engagement, and sustainable initiatives, we strive to create a positive impact for society and future generations.",
-    },
 ];
 
-// `isActive` is owned by the section, not the card: the row cycles the active
-// card on a timer, and a hover simply overrides which index is active. The card
-// itself only reports pointer enter/leave and renders whichever state it is told.
-function AnimatedBorderCard({ title, description, isActive, onActivate, onDeactivate }) {
-    const isHovered = isActive;
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+// Splits e.g. "95%" into its numeric part and the text around it so only the
+// number counts up, and the final render matches the original string exactly.
+function parseStatValue(raw) {
+    const match = raw.match(/^([^\d.]*)([\d.]+)(.*)$/);
+    if (!match) return { prefix: "", number: 0, suffix: raw, decimals: 0 };
+    const [, prefix, numberStr, suffix] = match;
+    const decimals = numberStr.includes(".") ? numberStr.split(".")[1].length : 0;
+    return { prefix, number: parseFloat(numberStr), suffix, decimals };
+}
+
+function AnimatedStat({ value, className }) {
+    const { prefix, number, suffix, decimals } = parseStatValue(value);
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, amount: 0.5 });
+    // Starts at the real value so SSR / no-JS HTML always shows the true number;
+    // the count-up is a cosmetic replay once it scrolls into view.
+    const [display, setDisplay] = useState(number);
+
+    useEffect(() => {
+        if (!isInView) return;
+        const duration = 1400;
+        let start;
+        let frame;
+        const tick = (timestamp) => {
+            if (start === undefined) start = timestamp;
+            const progress = Math.min((timestamp - start) / duration, 1);
+            setDisplay(number * (1 - Math.pow(1 - progress, 3)));
+            if (progress < 1) frame = requestAnimationFrame(tick);
+        };
+        frame = requestAnimationFrame(tick);
+        return () => cancelAnimationFrame(frame);
+    }, [isInView, number]);
 
     return (
-        <div
-            className="relative flex-1 h-[320px] sm:h-[600px] px-[30px] py-10 flex flex-col justify-start overflow-hidden"
-            onMouseEnter={onActivate}
-            onMouseLeave={onDeactivate}
-        >
-            {/* Tint: the card darkens its own slice of the parallax photo so the active
-                card reads as active against its neighbours (Figma node 2270:1884 shows
-                the card over a near-black ground). Its own layer rather than a background
-                colour on the card, so it cross-fades independently of the border draw —
-                500ms ease-out, slower than the 300ms border segments so the darkening
-                reads as a settle, not a flash. First in the DOM, with the border spans
-                and the `relative` text painting over it.
-
-                Below sm the section holds every card active at once (see allActive
-                there): a phone shows one ~420px card at a time, so a highlight that walks
-                the row would never be seen beside an unlit neighbour — it would just read
-                as a card that randomly dims. */}
-            <span
-                aria-hidden
-                className="absolute inset-0 bg-black pointer-events-none transition-opacity ease-out"
-                style={{ opacity: isHovered ? 0.55 : 0, transitionDuration: "500ms" }}
-            />
-
-            {/* border draws from the top-left corner: top+right and left+bottom each animate in sequence, meeting at bottom-right.
-                On leave, each line un-draws along the same path it drew in on, so the edge that finished last (right/bottom)
-                retracts first, and the edge that started first (top/left) only starts retracting once its partner returns.
-                The scale lives in an inline transform, not a Tailwind scale-* class: in v4 those write the CSS
-                `scale` property, which transition-property: transform does not animate — the border would snap. */}
-            <span
-                className="absolute left-0 top-0 h-px w-full origin-left bg-[#d0d0d0]"
-                style={{ ...topStyle(isHovered), transform: isHovered ? "scaleX(1)" : "scaleX(0)" }}
-            />
-            <span
-                className="absolute right-0 top-0 h-full w-px origin-top bg-[#d0d0d0]"
-                style={{ ...rightStyle(isHovered), transform: isHovered ? "scaleY(1)" : "scaleY(0)" }}
-            />
-            <span
-                className="absolute left-0 top-0 h-full w-px origin-top bg-[#d0d0d0]"
-                style={{ ...leftStyle(isHovered), transform: isHovered ? "scaleY(1)" : "scaleY(0)" }}
-            />
-            <span
-                className="absolute left-0 bottom-0 h-px w-full origin-left bg-[#d0d0d0]"
-                style={{ ...bottomStyle(isHovered), transform: isHovered ? "scaleX(1)" : "scaleX(0)" }}
-            />
-
-            <h2 className={`${cardFont.className} relative text-xl font-semibold text-white`}>{title}</h2>
-            <p
-                className={`${cardFont.className} relative text-lg font-light mt-10 leading-relaxed origin-left transition-all ease-in-out ${isHovered ? "text-white scale-105" : "text-white/50"
-                    }`}
-                style={{ transitionDuration: `${SEGMENT_MS}ms` }}
-            >
-                {description}
-            </p>
-        </div>
+        <span ref={ref} className={className}>
+            {prefix}
+            {display.toFixed(decimals)}
+            {suffix}
+        </span>
     );
 }
 
 export default function WhereWeHeadedAndWhy() {
-    // The row highlights one card at a time and walks through them on its own, so
-    // the panel reads as alive on touch screens too, where hover never fires.
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [hoveredIndex, setHoveredIndex] = useState(null);
-    // Below sm the cards stack and only one ~420px card is on screen at a time, so a
-    // highlight walking the row is never seen against an unlit neighbour. There, every
-    // card holds the active look instead and the timer is switched off entirely.
-    const [allActive, setAllActive] = useState(false);
-    const resumeTimer = useRef(null);
-
-    useEffect(() => {
-        const query = window.matchMedia("(max-width: 639px)");
-        const apply = () => setAllActive(query.matches);
-        apply();
-        query.addEventListener("change", apply);
-        return () => query.removeEventListener("change", apply);
-    }, []);
-
-    useEffect(() => {
-        if (allActive || hoveredIndex !== null) return undefined;
-        const id = setInterval(() => setActiveIndex((i) => (i + 1) % CARDS.length), AUTOPLAY_MS);
-        return () => clearInterval(id);
-    }, [allActive, hoveredIndex]);
-
-    useEffect(() => {
-        return () => {
-            if (resumeTimer.current) clearTimeout(resumeTimer.current);
-        };
-    }, []);
-
-    // Hovering takes over the active state; releasing leaves that card lit for
-    // RESUME_MS before the cycle picks up again from there, so the highlight never
-    // jumps away the instant the pointer moves off.
-    const activate = useCallback((index) => {
-        if (resumeTimer.current) clearTimeout(resumeTimer.current);
-        setHoveredIndex(index);
-        setActiveIndex(index);
-    }, []);
-
-    const deactivate = useCallback(() => {
-        if (resumeTimer.current) clearTimeout(resumeTimer.current);
-        resumeTimer.current = setTimeout(() => setHoveredIndex(null), RESUME_MS);
-    }, []);
-
     return (
-        <section className="w-full pt-10 pb-10 sm:pt-8 sm:pb-0">
+        <section className="w-full pt-10 sm:pt-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="text-center max-w-3xl mx-auto mb-16 px-6 sm:px-[64px]"
+                className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 px-8 sm:px-[64px]"
             >
                 <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">Where We&apos;re Headed, and Why</h2>
                 <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
@@ -185,26 +99,57 @@ export default function WhereWeHeadedAndWhy() {
                 </p>
             </motion.div>
 
-            <div className="relative w-full">
-                {/* Fixed Background */}
-                <div
-                    className="absolute inset-0 bg-fixed bg-cover bg-center bg-no-repeat"
-                    style={{
-                        backgroundImage: `url(${missionBg.src})`,
-                    }}
-                />
-                <div className="absolute inset-0 bg-black/60" />
-                <div className="relative flex flex-col gap-4 py-10 sm:py-16 sm:flex-row sm:items-center px-6 sm:px-[64px]">
-                    {CARDS.map((card, index) => (
-                        <AnimatedBorderCard
-                            key={card.title}
-                            {...card}
-                            isActive={allActive || (hoveredIndex === null ? index === activeIndex : index === hoveredIndex)}
-                            onActivate={() => activate(index)}
-                            onDeactivate={deactivate}
-                        />
+            {/* Photo with the metrics band laid over its lower edge. The spacer sets
+                how much clear photo shows above the band; the band itself is
+                translucent so the photo keeps reading through it. */}
+            <div className="relative w-full overflow-hidden">
+                <Image src={missionBg} alt="" fill sizes="100vw" className="object-cover" />
+                <div className="h-[200px] sm:h-[320px] lg:h-[380px]" />
+
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="relative bg-black/60 backdrop-blur-[2px] grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 px-6 sm:px-[64px] py-8 sm:py-10"
+                >
+                    {METRICS.map((metric) => (
+                        <motion.div
+                            key={metric.value}
+                            variants={itemVariants}
+                            className="flex flex-col items-center text-center"
+                        >
+                            <div className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white shadow-[0_6px_16px_rgba(0,0,0,0.25)]">
+                                <AnimatedStat
+                                    value={metric.value}
+                                    className="font-['Houschka_Pro'] text-lg sm:text-2xl font-semibold text-[#2d8ec5]"
+                                />
+                            </div>
+                            <p className="mt-4 max-w-[240px] text-sm sm:text-base font-light text-white leading-relaxed">
+                                {metric.description}
+                            </p>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 px-8 py-10 sm:px-[64px] sm:py-16">
+                {STATEMENTS.map((statement, index) => (
+                    <motion.div
+                        key={statement.title}
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
+                        className="flex flex-col items-center text-center"
+                    >
+                        <h3 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">{statement.title}</h3>
+                        <span aria-hidden className="mt-3 block h-1 w-12 bg-[#2d8ec5]" />
+                        <p className="mt-6 max-w-xl text-base sm:text-lg font-light text-[#55595E] leading-relaxed">
+                            {statement.description}
+                        </p>
+                    </motion.div>
+                ))}
             </div>
         </section>
     );

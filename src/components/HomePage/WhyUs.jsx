@@ -68,7 +68,7 @@ export default function WhyUs() {
                         </p>
                         <UnderlineArrowLink
                             href="/who-we-are"
-                            label="Who We Are"
+                            label="About Us"
                             className="shrink-0 mt-2"
                         />
                     </div>

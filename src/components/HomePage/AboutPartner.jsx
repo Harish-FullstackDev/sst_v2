@@ -26,7 +26,7 @@ export default function AboutPartner() {
                     </p>
                     <UnderlineArrowLink
                         href="/who-we-are"
-                        label="Who We Are"
+                        label="About Us"
                         className="mt-6 self-start"
                     />
                 </motion.div>

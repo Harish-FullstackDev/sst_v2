@@ -84,7 +84,7 @@ const Footer = () => {
                     href="/who-we-are"
                     className="hover:text-white transition-colors duration-200"
                   >
-                    Who we are
+                    About Us
                   </Link>
                 </li>
 

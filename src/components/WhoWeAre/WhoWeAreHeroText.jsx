@@ -12,7 +12,7 @@ export default function WhoWeAreHeroText() {
                 className="w-full max-w-[1057px]"
             >
                 <p className="text-white/90 text-sm sm:text-lg lg:text-xl uppercase tracking-wide font-light">
-                    Who we are</p>
+                    About Us</p>
 
                 <div className="mt-3 sm:mt-1 h-px w-full bg-white/40" />
 

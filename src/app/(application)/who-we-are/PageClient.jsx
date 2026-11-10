@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import WhoWeAreHero from "@/components/WhoWeAre/WhoWeAreHero";
 import WhoWeAreHeroText from "@/components/WhoWeAre/WhoWeAreHeroText";
-import StartedAroundGapNotProduct from "@/components/WhoWeAre/StartedAroundGapNotProduct";
 import WhatShapesHowWeDeliver from "@/components/WhoWeAre/WhatShapesHowWeDeliver";
 import TrustedByBand from "@/components/WhoWeAre/TrustedByBand";
 import DiscoverWhatSetsUsApart from "@/components/WhoWeAre/DiscoverWhatSetsUsApart";
@@ -30,7 +29,6 @@ const page = () => {
       </div>
 
       <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
-        <StartedAroundGapNotProduct />
         <WhatShapesHowWeDeliver />
         <TrustedByBand />
         <DiscoverWhatSetsUsApart />

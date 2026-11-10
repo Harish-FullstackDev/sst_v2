@@ -350,84 +350,84 @@ const Navbar = () => {
                                 backdrop-filter element that is itself a scroll container
                                 loses its blur in Chrome. */}
                             <div className="flex-1 min-h-0 overflow-y-auto flex flex-col">
-                            <div className="flex-1 grid grid-cols-[minmax(220px,0.9fr)_1fr_1fr] gap-x-[clamp(24px,4vw,64px)] px-[64px] py-[clamp(24px,4vh,48px)]">
-                              {/* Column 1 — categories */}
-                              <div className={`flex flex-col min-h-0 border-r pr-[clamp(16px,2vw,32px)] ${isNavbarLight ? "border-gray-200" : "border-white/15"}`}>
-                                <p className={`text-xs uppercase tracking-[0.2em] ${isNavbarLight ? "text-gray-500" : "text-white/50"}`}>
-                                  {menu.label}
-                                </p>
-                                <ul className="mt-4 flex-1 space-y-1">
-                                  {menu.items.map((category) => {
-                                    const isCurrent = activeCategory?.id === category.id;
+                              <div className="flex-1 grid grid-cols-[minmax(220px,0.9fr)_1fr_1fr] gap-x-[clamp(24px,4vw,64px)] px-[64px] py-[clamp(24px,4vh,48px)]">
+                                {/* Column 1 — categories */}
+                                <div className={`flex flex-col min-h-0 border-r pr-[clamp(16px,2vw,32px)] ${isNavbarLight ? "border-gray-200" : "border-white/15"}`}>
+                                  <p className={`text-xs uppercase tracking-[0.2em] ${isNavbarLight ? "text-gray-500" : "text-white/50"}`}>
+                                    {menu.label}
+                                  </p>
+                                  <ul className="mt-4 flex-1 space-y-1">
+                                    {menu.items.map((category) => {
+                                      const isCurrent = activeCategory?.id === category.id;
+                                      return (
+                                        <li key={category.id}>
+                                          <Link
+                                            href={category.href}
+                                            onMouseEnter={() => {
+                                              setActiveCategory(category);
+                                              setActiveItem(null);
+                                            }}
+                                            onFocus={() => {
+                                              setActiveCategory(category);
+                                              setActiveItem(null);
+                                            }}
+                                            onClick={closeMega}
+                                            className={megaRowClass(isCurrent)}
+                                          >
+                                            <span className="text-[clamp(1rem,1.25vw,1.25rem)] font-medium">{category.name}</span>
+                                            <MegaChevron />
+                                          </Link>
+                                        </li>
+                                      );
+                                    })}
+                                  </ul>
+                                  <Link
+                                    href={menu.href}
+                                    onClick={closeMega}
+                                    className={`mt-4 inline-flex items-center gap-2 text-sm font-medium underline-offset-4 hover:underline ${isNavbarLight ? "text-gray-900" : "text-white"}`}
+                                  >
+                                    View all {menu.label.toLowerCase()}
+                                    <span aria-hidden="true">→</span>
+                                  </Link>
+                                </div>
+
+                                {/* Column 2 — the hovered category's items */}
+                                <ul className="space-y-1 pt-8">
+                                  {activeCategory?.items.map((item) => {
+                                    const isCurrent = activeItem?.name === item.name;
+                                    const rowProps = {
+                                      onMouseEnter: () => setActiveItem(item),
+                                      onFocus: () => setActiveItem(item),
+                                      className: megaRowClass(isCurrent),
+                                    };
                                     return (
-                                      <li key={category.id}>
-                                        <Link
-                                          href={category.href}
-                                          onMouseEnter={() => {
-                                            setActiveCategory(category);
-                                            setActiveItem(null);
-                                          }}
-                                          onFocus={() => {
-                                            setActiveCategory(category);
-                                            setActiveItem(null);
-                                          }}
-                                          onClick={closeMega}
-                                          className={megaRowClass(isCurrent)}
-                                        >
-                                          <span className="text-[clamp(1rem,1.25vw,1.25rem)] font-medium">{category.name}</span>
-                                          <MegaChevron />
-                                        </Link>
+                                      <li key={item.name}>
+                                        {item.children ? (
+                                          <button type="button" {...rowProps} className={`${rowProps.className} w-full text-left`}>
+                                            <span className="text-sm uppercase tracking-wide">{item.name}</span>
+                                            <MegaChevron />
+                                          </button>
+                                        ) : (
+                                          <Link href={item.href} onClick={closeMega} {...rowProps}>
+                                            <span className="text-sm uppercase tracking-wide">{item.name}</span>
+                                          </Link>
+                                        )}
                                       </li>
                                     );
                                   })}
                                 </ul>
-                                <Link
-                                  href={menu.href}
-                                  onClick={closeMega}
-                                  className={`mt-4 inline-flex items-center gap-2 text-sm font-medium underline-offset-4 hover:underline ${isNavbarLight ? "text-gray-900" : "text-white"}`}
-                                >
-                                  View all {menu.label.toLowerCase()}
-                                  <span aria-hidden="true">→</span>
-                                </Link>
-                              </div>
 
-                              {/* Column 2 — the hovered category's items */}
-                              <ul className="space-y-1 pt-8">
-                                {activeCategory?.items.map((item) => {
-                                  const isCurrent = activeItem?.name === item.name;
-                                  const rowProps = {
-                                    onMouseEnter: () => setActiveItem(item),
-                                    onFocus: () => setActiveItem(item),
-                                    className: megaRowClass(isCurrent),
-                                  };
-                                  return (
-                                    <li key={item.name}>
-                                      {item.children ? (
-                                        <button type="button" {...rowProps} className={`${rowProps.className} w-full text-left`}>
-                                          <span className="text-sm uppercase tracking-wide">{item.name}</span>
-                                          <MegaChevron />
-                                        </button>
-                                      ) : (
-                                        <Link href={item.href} onClick={closeMega} {...rowProps}>
-                                          <span className="text-sm uppercase tracking-wide">{item.name}</span>
-                                        </Link>
-                                      )}
+                                {/* Column 3 — the hovered item's children, when it has any */}
+                                <ul className="space-y-1 pt-8">
+                                  {activeItem?.children?.map((child) => (
+                                    <li key={child.href}>
+                                      <Link href={child.href} onClick={closeMega} className={megaRowClass(pathname.startsWith(child.href))}>
+                                        <span className="text-sm uppercase tracking-wide">{child.name}</span>
+                                      </Link>
                                     </li>
-                                  );
-                                })}
-                              </ul>
-
-                              {/* Column 3 — the hovered item's children, when it has any */}
-                              <ul className="space-y-1 pt-8">
-                                {activeItem?.children?.map((child) => (
-                                  <li key={child.href}>
-                                    <Link href={child.href} onClick={closeMega} className={megaRowClass(pathname.startsWith(child.href))}>
-                                      <span className="text-sm uppercase tracking-wide">{child.name}</span>
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
+                                  ))}
+                                </ul>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -442,7 +442,7 @@ const Navbar = () => {
                       className={`${navLinkClass} ${pathname === "/who-we-are/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
-                      Who we are
+                      About Us
                     </Link>
                   </li>
 
@@ -660,7 +660,7 @@ const Navbar = () => {
                   }`}
                 onClick={closeMenu}
               >
-                Who we are
+                About Us
               </Link>
             </li>
 

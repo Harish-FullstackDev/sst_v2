@@ -2,6 +2,7 @@
 // Add an entry here whenever a new /what-we-do/* (or other) route is created.
 export const ROUTE_LABELS: Record<string, string> = {
   "what-we-do": "What We Do",
+  "who-we-are": "About Us",
   "enterprise-transformation": "Enterprise Transformation",
   "sap-transformation": "SAP Transformation",
   "microsoft-services": "Microsoft Services",
