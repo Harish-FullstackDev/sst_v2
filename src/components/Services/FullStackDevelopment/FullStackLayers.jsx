@@ -48,7 +48,7 @@ export default function FullStackLayers() {
                         transition={{ duration: 0.4, delay: index * 0.06 }}
                         className="border border-[#a5a5a5] bg-[#f5f6f6] flex flex-col gap-4 px-6 py-8"
                     >
-                        <h2 className="text-[#2E3033] text-xl font-semibold">{card.title}</h2>
+                        <h2 className="text-[#2E3033] text-xl font-semibold text-center">{card.title}</h2>
                         <p className="text-[#55595E] text-base font-light">{card.desc}</p>
                     </motion.div>
                 ))}
@@ -71,7 +71,7 @@ export default function FullStackLayers() {
                             transition={{ duration: 0.4, delay: index * 0.06 }}
                             className="flex flex-col"
                         >
-                            <div className="bg-white border border-[#a5a5a5] h-[121px] flex items-center px-8">
+                            <div className="bg-white border border-[#a5a5a5] h-[121px] flex items-center justify-center text-center px-8">
                                 <h2 className="text-[#2E3033] text-2xl font-semibold">{card.title}</h2>
                             </div>
                             <p className="text-[#55595E] text-lg font-light pt-6 pb-16 px-2">{card.desc}</p>
