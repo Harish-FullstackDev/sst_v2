@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import useAutoScroll from "@/lib/useAutoScroll";
 import threatPhoto from "@/assets/Services/CyberSecurity/service-threat-detection.webp";
 import networkPhoto from "@/assets/Services/CyberSecurity/service-network.webp";
 import endpointPhoto from "@/assets/Services/CyberSecurity/service-endpoint.webp";
@@ -64,6 +65,7 @@ function ArrowIcon({ direction }) {
 
 export default function CyberServices() {
     const trackRef = useRef(null);
+    const pauseAutoScroll = useAutoScroll(trackRef);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
 
@@ -150,7 +152,7 @@ export default function CyberServices() {
                         <button
                             type="button"
                             aria-label="Previous"
-                            onClick={() => scrollByCard(-1)}
+                            onClick={() => { pauseAutoScroll(); scrollByCard(-1); }}
                             disabled={!canScrollLeft}
                             className={`flex items-center justify-center size-9 sm:size-[46px] transition-[color,transform] disabled:cursor-not-allowed ${canScrollLeft ? "text-black hover:scale-110" : "text-[#c7c7c7]"
                                 }`}
@@ -160,7 +162,7 @@ export default function CyberServices() {
                         <button
                             type="button"
                             aria-label="Next"
-                            onClick={() => scrollByCard(1)}
+                            onClick={() => { pauseAutoScroll(); scrollByCard(1); }}
                             disabled={!canScrollRight}
                             className={`flex items-center justify-center size-9 sm:size-[46px] transition-[color,transform] disabled:cursor-not-allowed ${canScrollRight ? "text-black hover:scale-110" : "text-[#c7c7c7]"
                                 }`}
