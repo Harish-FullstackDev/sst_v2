@@ -57,11 +57,8 @@ export default function WhyPrivateCloud() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full lg:max-w-[800px] self-center lg:min-h-[480px] bg-white shadow-[2px_2px_46px_rgba(0,0,0,0.15)] flex flex-col justify-center gap-8 px-8 sm:px-12 py-12"
                 >
-                    {REASONS.map((reason, index) => (
-                        <div key={reason.title} className="flex gap-5">
-                            <span className="text-[#2d8ec5] text-xl sm:text-2xl font-light leading-tight">
-                                {String(index + 1).padStart(2, "0")}
-                            </span>
+                    {REASONS.map((reason) => (
+                        <div key={reason.title} className="flex">
                             <div className="flex flex-col gap-2">
                                 <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{reason.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{reason.desc}</p>

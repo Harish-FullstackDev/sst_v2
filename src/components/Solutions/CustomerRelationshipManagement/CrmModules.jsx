@@ -62,7 +62,7 @@ export default function CrmModules() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:w-[32%] shrink-0 lg:sticky lg:top-28"
                 >
-                    <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Six Modules</p>
+                    <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Core Modules</p>
                     <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Modules of Customer Relationship Management</h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Sales, marketing, service, commerce, interactions, and analytics, connected around one view of
@@ -83,10 +83,7 @@ export default function CrmModules() {
                                 >
                                     <span className="flex items-center gap-4 sm:gap-6 min-w-0">
                                         <item.icon aria-hidden="true" strokeWidth={1.5} className="size-9 sm:size-11 shrink-0 text-[#1C5F85]" />
-                                        <span className="text-[#2E3033] text-lg sm:text-2xl font-semibold">
-                                            <span className="text-[#2d8ec5] mr-3">{String(index + 1).padStart(2, "0")}</span>
-                                            {item.title}
-                                        </span>
+                                        <span className="text-[#2E3033] text-lg sm:text-2xl font-semibold">{item.title}</span>
                                     </span>
                                     <span className="relative shrink-0 size-8 sm:size-[37px] flex items-center justify-center">
                                         <Image src={circleIcon} alt="" fill className="object-contain" />

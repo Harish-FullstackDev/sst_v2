@@ -31,7 +31,7 @@ const SUPPORTING_FEATURES = [
 // Two core modules in the wide row, three supporting capabilities below. Cards
 // size to their copy (the grid stretches each row to its tallest card), so no
 // min-height is needed to keep a row aligned.
-function Card({ number, title, desc }) {
+function Card({ title, desc }) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,6 @@ function Card({ number, title, desc }) {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="border border-[#d3d5d8] bg-[#E4E6E7] flex flex-col gap-3 px-6 py-7 sm:px-8 sm:py-8 h-full"
         >
-            <span className="text-[#2d8ec5] text-base sm:text-lg font-semibold">{number}</span>
             <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{title}</h2>
             <p className="text-[#55595E] text-base sm:text-lg font-light">{desc}</p>
         </motion.div>
@@ -59,19 +58,19 @@ export default function FicoFeatures() {
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Features of Finance and Controlling</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    Two core modules, and the integrated capabilities that turn them into one finance function.
+                    The core modules, and the integrated capabilities that turn them into one finance function.
                 </p>
             </motion.div>
 
             <div className="w-full max-w-screen flex flex-col gap-6 sm:gap-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-                    {CORE_MODULES.map((card, index) => (
-                        <Card key={card.title} number={`0${index + 1}`} {...card} />
+                    {CORE_MODULES.map((card) => (
+                        <Card key={card.title} {...card} />
                     ))}
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                    {SUPPORTING_FEATURES.map((card, index) => (
-                        <Card key={card.title} number={`0${index + 3}`} {...card} />
+                    {SUPPORTING_FEATURES.map((card) => (
+                        <Card key={card.title} {...card} />
                     ))}
                 </div>
             </div>

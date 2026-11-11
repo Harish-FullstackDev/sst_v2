@@ -1,32 +1,28 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import assessPhoto from "@/assets/Solutions/CustomerRelationshipManagement/approach-assess.webp";
-import designPhoto from "@/assets/Solutions/CustomerRelationshipManagement/approach-design.webp";
-import integratePhoto from "@/assets/Solutions/CustomerRelationshipManagement/approach-integrate.webp";
-import adoptPhoto from "@/assets/Solutions/CustomerRelationshipManagement/approach-adopt.webp";
+import { LuChartColumn, LuPencilRuler, LuPlug, LuSearch } from "react-icons/lu";
 
 const STEPS = [
     {
         title: "Assess",
         desc: "Review how sales, marketing, and service teams work today and where customer data lives.",
-        image: assessPhoto,
+        icon: LuSearch,
     },
     {
         title: "Design",
         desc: "Shape the CRM modules, processes, and channels around your customer journeys.",
-        image: designPhoto,
+        icon: LuPencilRuler,
     },
     {
         title: "Integrate",
         desc: "Connect SAP CRM with SAP ERP and back-end systems so customer data and processes stay synchronized.",
-        image: integratePhoto,
+        icon: LuPlug,
     },
     {
         title: "Adopt",
         desc: "Enable teams with dashboards and reports, then refine the solution as the business grows.",
-        image: adoptPhoto,
+        icon: LuChartColumn,
     },
 ];
 
@@ -43,7 +39,7 @@ export default function CrmApproach() {
                 <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Our Approach</p>
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How We Deliver SAP CRM</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    Four stages that take customer processes from today&apos;s state to one connected platform.
+                    The stages that take customer processes from today&apos;s state to one connected platform.
                 </p>
             </motion.div>
 
@@ -57,19 +53,9 @@ export default function CrmApproach() {
                         transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
                         className="group flex flex-col"
                     >
-                        <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#565656]">
-                            <Image
-                                src={step.image}
-                                alt={step.title}
-                                fill
-                                className="object-cover grayscale-[40%] transition-[filter] duration-700 ease-in-out group-hover:grayscale-0"
-                            />
-                        </div>
-                        {/* Step rail: number on a line that links the four stages */}
-                        <div className="flex items-center gap-3 mt-5">
-                            <span className="text-[#2d8ec5] text-base sm:text-lg font-semibold">
-                                {String(index + 1).padStart(2, "0")}
-                            </span>
+                        {/* Step rail: the stage's Lucide icon on a line that links the stages */}
+                        <div className="flex items-center gap-3">
+                            <step.icon aria-hidden="true" strokeWidth={1.5} className="size-10 sm:size-12 shrink-0 text-[#1C5F85]" />
                             <div className="h-px flex-1 bg-[#d3dae2] relative overflow-hidden">
                                 <div className="absolute inset-0 origin-left scale-x-0 bg-[#2d8ec5] transition-transform duration-700 ease-in-out group-hover:scale-x-100" />
                             </div>

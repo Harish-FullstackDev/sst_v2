@@ -57,11 +57,8 @@ export default function WhyHcm() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative mx-8 sm:mx-[64px] lg:mx-0 lg:ml-[-48px] lg:mr-[64px] lg:my-16 lg:flex-1 self-center bg-white shadow-[2px_2px_46px_rgba(0,0,0,0.15)] flex flex-col justify-center gap-8 px-6 sm:px-12 py-10 sm:py-12 mt-8 sm:mt-10 lg:mt-16"
                 >
-                    {REASONS.map((reason, index) => (
-                        <div key={reason.title} className="flex gap-5">
-                            <span className="text-[#2d8ec5] text-lg sm:text-xl font-semibold leading-tight">
-                                {String(index + 1).padStart(2, "0")}
-                            </span>
+                    {REASONS.map((reason) => (
+                        <div key={reason.title} className="flex">
                             <div className="flex flex-col gap-2">
                                 <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">{reason.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{reason.desc}</p>
