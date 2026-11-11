@@ -67,7 +67,7 @@ export default function HcmIntro() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full h-[300px] sm:h-[420px] lg:h-auto lg:flex-[475_1_0%] aspect-auto lg:aspect-[475/563] overflow-hidden"
                 >
-                    <Image src={workforcePhoto} alt="Two managers in hard hats reviewing a tablet on the factory floor" fill className="object-cover" />
+                    <Image src={workforcePhoto} alt="Site team in hard hats reviewing plans around a table" fill className="object-cover" />
                 </motion.div>
             </div>
         </section>
