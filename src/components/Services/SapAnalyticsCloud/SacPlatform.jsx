@@ -47,11 +47,8 @@ export default function SacPlatform() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.45, delay: index * 0.1 }}
-                        className="relative bg-white flex flex-col gap-4 px-6 py-8 sm:px-8 sm:py-10 border-t-[3px] border-[#2d8ec5]"
+                        className="bg-white flex flex-col gap-4 px-6 py-8 sm:px-8 sm:py-10 border-t-[3px] border-[#2d8ec5]"
                     >
-                        <span className="absolute top-6 right-6 text-[#E2E5EA] text-4xl sm:text-5xl font-semibold leading-none">
-                            {String(index + 1).padStart(2, "0")}
-                        </span>
                         <pillar.icon aria-hidden="true" strokeWidth={1.5} className="size-10 sm:size-12 text-[#1C5F85]" />
                         <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{pillar.title}</h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{pillar.desc}</p>

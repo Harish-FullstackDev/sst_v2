@@ -1,40 +1,43 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { LuBlocks, LuDatabase, LuLifeBuoy, LuTrendingUp, LuUsers } from "react-icons/lu";
 
-import dataMigrationPhoto from "@/assets/Services/MicrosoftMigration/benefit-data-migration.webp";
-import changeManagementPhoto from "@/assets/Services/MicrosoftMigration/benefit-change-management.webp";
-import ongoingSupportPhoto from "@/assets/Services/MicrosoftMigration/benefit-ongoing-support.webp";
-import scalablePhoto from "@/assets/Services/MicrosoftMigration/benefit-scalable.webp";
-import ecosystemPhoto from "@/assets/Services/MicrosoftMigration/benefit-ecosystem.webp";
+// No photos. The panel is a quiet navy field (#0A2B3E to #003756) with two
+// restrained touches, different from the hairline-frame cards above:
+// - a watermark: the active benefit's Lucide icon (same set as the rest of the
+//   site), drawn large in a thin faint line, sitting fully inside the panel's
+//   right side; it cross-fades and drifts in slightly when the tab changes;
+// - a 3px brand-blue timeline along the foot that fills over the autoplay
+//   interval, so the next switch never feels abrupt; it hides while paused.
+const INTERVAL = 5000;
 
 const TABS = [
     {
         title: "Comprehensive Data Migration",
         desc: "Secure and accurate migration of your business data to Microsoft ERP solutions without disruption.",
-        img: dataMigrationPhoto,
+        icon: LuDatabase,
     },
     {
         title: "Change Management",
         desc: "Equip your team with the tools, training, and support to successfully adapt to the new system.",
-        img: changeManagementPhoto,
+        icon: LuUsers,
     },
     {
         title: "Ongoing Support & Optimization",
         desc: "Post-migration support to ensure smooth operations, system optimization, and continuous improvement.",
-        img: ongoingSupportPhoto,
+        icon: LuLifeBuoy,
     },
     {
         title: "Scalable Solutions",
         desc: "Ensure your ERP solution can grow with your business needs, providing flexibility and scalability.",
-        img: scalablePhoto,
+        icon: LuTrendingUp,
     },
     {
         title: "Microsoft Ecosystem Integration",
         desc: "Seamlessly connect your migrated ERP with Microsoft 365, Power BI, and Azure for a unified digital environment.",
-        img: ecosystemPhoto,
+        icon: LuBlocks,
     },
 ];
 
@@ -47,7 +50,7 @@ export default function MigrationBenefits() {
 
         const interval = setInterval(() => {
             setActive((prev) => (prev + 1) % TABS.length);
-        }, 5000);
+        }, INTERVAL);
 
         return () => clearInterval(interval);
     }, [isPaused]);
@@ -98,42 +101,56 @@ export default function MigrationBenefits() {
                     ))}
                 </div>
 
-                {/* Image panel */}
+                {/* Navy panel */}
                 <div className="w-full lg:flex-1 min-w-0">
-                    <div className="relative w-full aspect-[798/446] overflow-hidden">
-                        {/* Every image stays mounted and cross-fades on opacity, so switching tabs never blanks the box; only the copy swaps, after the image has started to change. */}
-                        <div className="absolute inset-0">
-                            {TABS.map((tab, index) => (
-                                <Image
-                                    key={index}
-                                    src={tab.img}
-                                    alt={index === active ? "" : ""}
-                                    fill
-                                    className={`object-cover transition-opacity duration-700 ease-in-out ${index === active ? "opacity-100" : "opacity-0"}`}
-                                    priority={index === 0}
-                                />
-                            ))}
+                    <div className="relative w-full aspect-[798/446] overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+                        {/* Faint deep-blue rise behind the copy, for depth. */}
+                        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.35),rgba(28,95,133,0)_65%)]" />
 
-                                {/* Gradient + overlaid text from sm up; on phones the image is too
-                                    short to hold the copy, so it renders below instead. */}
-                                <div className="absolute inset-0 hidden sm:block bg-gradient-to-t from-black/70 to-transparent" />
-                                <AnimatePresence mode="wait">
+                        {/* Watermark icon, cross-fading per tab. */}
+                        <AnimatePresence>
+                            <motion.div
+                                key={active}
+                                aria-hidden="true"
+                                initial={{ opacity: 0, x: 24 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: -12 }}
+                                transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                                className="absolute top-1/2 right-[6%] -translate-y-1/2 h-[72%] aspect-square text-white/[0.08]"
+                            >
+                                <activeTab.icon strokeWidth={0.6} className="size-full" />
+                            </motion.div>
+                        </AnimatePresence>
+
+                        {/* Copy from sm up; on phones the panel is too short, so it renders below instead. */}
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={active}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -6 }}
+                                transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
+                                className="absolute hidden sm:flex left-10 right-10 bottom-10 lg:left-[55px] lg:right-auto lg:bottom-[46px] lg:max-w-[462px] text-white flex-col gap-3"
+                            >
+                                <h2 className="text-xl font-semibold">{activeTab.title}</h2>
+                                <p className="text-white/90 text-base sm:text-lg font-light leading-relaxed">
+                                    {activeTab.desc}
+                                </p>
+                            </motion.div>
+                        </AnimatePresence>
+
+                        {/* Autoplay timeline: restarts on each tab (keyed), hidden while paused. */}
+                        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[3px] bg-white/15">
+                            {!isPaused && (
                                 <motion.div
                                     key={active}
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -6 }}
-                                    transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
-                                    className="absolute hidden sm:flex left-10 right-10 bottom-10 lg:left-[55px] lg:right-auto lg:bottom-[46px] lg:max-w-[462px] text-white flex-col gap-3"
-                                >
-                                    <h2 className="text-xl font-semibold">{activeTab.title}</h2>
-                                    <p className="text-white/90 text-base sm:text-lg font-light leading-relaxed">
-                                        {activeTab.desc}
-                                    </p>
-                                </motion.div>
-                                </AnimatePresence>
-                            </div>
-                        
+                                    initial={{ scaleX: 0 }}
+                                    animate={{ scaleX: 1 }}
+                                    transition={{ duration: INTERVAL / 1000, ease: "linear" }}
+                                    className="h-full origin-left bg-[#2D8EC5]"
+                                />
+                            )}
+                        </div>
                     </div>
                     <p className="sm:hidden mt-4 text-[#55595E] text-base font-light">{activeTab.desc}</p>
                 </div>

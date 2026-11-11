@@ -1,37 +1,65 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import s4hanaPhoto from "@/assets/Services/SapMigration/scenario-s4hana.webp";
-import hanaDbPhoto from "@/assets/Services/SapMigration/scenario-hana-db.webp";
-import cloudPhoto from "@/assets/Services/SapMigration/scenario-cloud.webp";
-import legacyPhoto from "@/assets/Services/SapMigration/scenario-legacy.webp";
 
 const SCENARIOS = [
     {
-        image: s4hanaPhoto,
         title: "ECC to SAP S/4HANA",
         desc: "Move from SAP ECC onto SAP S/4HANA for improved performance, simplified processes, and real-time analytics.",
     },
     {
-        image: hanaDbPhoto,
         title: "Database to SAP HANA",
         desc: "Shift existing SAP systems onto the SAP HANA database to speed up processing and reporting.",
     },
     {
-        image: cloudPhoto,
         title: "On-Premise to Cloud",
         desc: "Relocate SAP workloads from ageing data centres to scalable cloud infrastructure.",
     },
     {
-        image: legacyPhoto,
         title: "Legacy Systems to SAP",
         desc: "Bring data and processes from non-SAP or home-grown systems into a modern SAP environment.",
     },
 ];
 
 const AUTOPLAY_INTERVAL = 2500;
+
+// No photos: quiet navy cards, kept in the site's darker blues (navy #0A2B3E,
+// #003756, deep blue #1C5F85, brand blue #2D8EC5 only as a fine line).
+// The open state is deliberately restrained rather than a colour swap:
+// - a soft deep-blue lift rises from the foot,
+// - a 1px brand-blue hairline frame draws itself around the card (top and
+//   bottom from the left, sides from the top, a beat apart), sharp corners,
+// - a single faint light sweep crosses the card once as it opens (it resets
+//   instantly on close so it never plays backwards).
+function Hairline({ isActive, className, axis, delay }) {
+    const scale = axis === "x" ? (isActive ? "scale-x-100" : "scale-x-0") : isActive ? "scale-y-100" : "scale-y-0";
+    return (
+        <span
+            className={`absolute bg-[#2D8EC5]/80 transition-transform duration-700 ease-out ${scale} ${className}`}
+            style={{ transitionDelay: isActive ? delay : "0ms" }}
+        />
+    );
+}
+
+function MigrationBackground({ isActive }) {
+    return (
+        <div aria-hidden="true" className="absolute inset-0 overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+            <div
+                className={`absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.45),rgba(28,95,133,0)_70%)] transition-opacity duration-700 ease-out ${isActive ? "opacity-100" : "opacity-0"
+                    }`}
+            />
+            <div
+                className={`absolute inset-y-0 -left-1/2 w-1/2 -skew-x-12 bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.07),transparent)] transition-transform ease-out ${isActive ? "translate-x-[300%] duration-[1400ms]" : "translate-x-0 duration-0"
+                    }`}
+            />
+            <Hairline isActive={isActive} axis="x" delay="0ms" className="inset-x-0 top-0 h-px origin-left" />
+            <Hairline isActive={isActive} axis="y" delay="150ms" className="inset-y-0 right-0 w-px origin-top" />
+            <Hairline isActive={isActive} axis="y" delay="150ms" className="inset-y-0 left-0 w-px origin-top" />
+            <Hairline isActive={isActive} axis="x" delay="300ms" className="inset-x-0 bottom-0 h-px origin-left" />
+        </div>
+    );
+}
 
 // Desktop reveals one card at a time on a timer; hover takes over.
 export default function MigrationScenarios() {
@@ -73,8 +101,7 @@ export default function MigrationScenarios() {
                         transition={{ duration: 0.5, delay: index * 0.08 }}
                         className="relative w-full h-[220px] overflow-hidden"
                     >
-                        <Image src={scenario.image} alt={scenario.title} fill className="object-cover" />
-                        <div className="absolute inset-0 bg-black/60" />
+                        <MigrationBackground isActive />
                         <div className="absolute inset-0 flex flex-col justify-start gap-2 px-4 pt-5">
                             <h2 className="text-white text-xl font-semibold">{scenario.title}</h2>
                             <p className="text-white/85 text-sm font-light max-w-[280px]">{scenario.desc}</p>
@@ -98,15 +125,7 @@ export default function MigrationScenarios() {
                             onMouseLeave={() => setHoveredIndex(null)}
                             className="relative aspect-[258/335] overflow-hidden"
                         >
-                            <Image
-                                src={scenario.image}
-                                alt={scenario.title}
-                                fill
-                                className={`object-cover transition-transform duration-700 ease-out ${isActive ? "scale-105" : ""}`}
-                            />
-                            <div
-                                className={`absolute inset-0 transition-colors duration-500 ${isActive ? "bg-black/70" : "bg-black/20"}`}
-                            />
+                            <MigrationBackground isActive={isActive} />
                             <div className="absolute inset-0 flex items-start justify-start px-6 py-10 text-left">
                                 <h2 className="text-white text-xl sm:text-2xl font-semibold">{scenario.title}</h2>
                             </div>

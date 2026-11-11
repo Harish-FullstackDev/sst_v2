@@ -22,19 +22,16 @@ export default function Intro() {
                 </div>
 
                 <ul className="flex flex-col border-t border-[#d9dcdf]">
-                    {CATEGORIES.map((category, i) => (
+                    {CATEGORIES.map((category) => (
                         <li key={category.id} className="border-b border-[#d9dcdf]">
                             <a
                                 href={`#${category.id}`}
                                 className="group flex items-center justify-between gap-4 py-4 text-[#2E3033] transition-colors hover:text-[#2d8ec5]"
                             >
-                                <span className="flex items-baseline gap-4">
-                                    <span className="text-sm text-[#55595E] tabular-nums">{String(i + 1).padStart(2, "0")}</span>
-                                    <span className="text-lg sm:text-xl font-medium">{category.title}</span>
-                                </span>
-                                <span className="shrink-0 whitespace-nowrap text-sm text-[#55595E]">
-                                    {category.cards.length} {category.cards.length === 1 ? "solution" : "solutions"}
-                                </span>
+                                <span className="text-lg sm:text-xl font-medium">{category.title}</span>
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="size-5 shrink-0 text-[#55595E] transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[#2d8ec5]">
+                                    <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
                             </a>
                         </li>
                     ))}

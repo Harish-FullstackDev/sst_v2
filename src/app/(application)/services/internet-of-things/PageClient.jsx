@@ -37,7 +37,7 @@ const page = () => {
             <IotDelivery />
             <IotIndustries />
             <ReadyToTransform
-                title="Elevate Your Business with IoT (Internet of Things) – Where Innovation Meets Efficiency."
+                title="Elevate Your Business with IoT, Where Innovation Meets Efficiency."
                 description="Discover the possibilities. Contact us for a personalized demo."
                 buttonLabel="Get in Touch"
             />

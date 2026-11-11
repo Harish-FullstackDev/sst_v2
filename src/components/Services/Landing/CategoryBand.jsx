@@ -46,10 +46,7 @@ export default function CategoryBand({ category, index }) {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] gap-4 lg:gap-16"
             >
-                <div className="flex items-baseline gap-4">
-                    <span className="text-base sm:text-lg text-[#55595E] tabular-nums">{String(index + 1).padStart(2, "0")}</span>
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">{category.title}</h2>
-                </div>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">{category.title}</h2>
                 <div className="flex flex-col gap-4">
                     {category.paragraphs.map((p) => (
                         <p key={p.slice(0, 24)} className="text-[#55595E] text-base sm:text-lg font-light">{p}</p>

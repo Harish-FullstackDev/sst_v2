@@ -1,29 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { LuActivity, LuHeartPulse, LuMapPin, LuMonitorSmartphone, LuWorkflow, LuWrench } from "react-icons/lu";
 
 const SERVICES = [
     {
+        icon: LuMonitorSmartphone,
         title: "Smart Device Management",
         desc: "Effortlessly monitor, control, and manage IoT-enabled devices remotely, including smart thermostats, lighting systems, and industrial machinery.",
     },
     {
+        icon: LuActivity,
         title: "Real-Time Data Analytics",
         desc: "Utilize IoT-generated data for advanced analytics, enabling improved decision-making and operational efficiency.",
     },
     {
+        icon: LuWrench,
         title: "Predictive Maintenance",
         desc: "Leverage sensors and analytics to predict and prevent equipment failures, minimizing downtime and optimizing resource allocation.",
     },
     {
+        icon: LuWorkflow,
         title: "Automation & Control",
         desc: "Automate operations using data-driven triggers, like adjusting climate controls or optimizing machinery performance.",
     },
     {
+        icon: LuMapPin,
         title: "Asset Tracking",
         desc: "Enhance logistics and supply chain efficiency by tracking assets in real-time using IoT sensors and GPS technology.",
     },
     {
+        icon: LuHeartPulse,
         title: "Health Monitoring",
         desc: "Support remote health management with wearable IoT devices that track vital signs and enable timely interventions.",
     },
@@ -43,7 +50,7 @@ export default function IotServices() {
                     IoT Services Driving SST&apos;s Digital Transformation
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    Six ways connected devices and their data put your operations to work.
+                    The ways connected devices and their data put your operations to work.
                 </p>
             </motion.div>
 
@@ -59,9 +66,7 @@ export default function IotServices() {
                     >
                         {/* Top accent that draws in on hover */}
                         <span className="absolute top-0 left-0 h-[3px] w-full bg-[#2d8ec5] origin-left scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100" />
-                        <span className="text-[#2d8ec5] text-[32px] sm:text-[40px] font-light leading-none">
-                            0{index + 1}
-                        </span>
+                        <service.icon aria-hidden="true" strokeWidth={1.5} className="size-10 sm:size-12 text-[#1C5F85]" />
                         <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{service.title}</h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{service.desc}</p>
                     </motion.div>

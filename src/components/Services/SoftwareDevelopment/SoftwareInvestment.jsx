@@ -2,18 +2,18 @@
 
 import { motion } from "framer-motion";
 const ROW_1 = [
-    { number: "01", title: "Efficiency & Productivity", desc: "Tailored solutions automate processes and improve efficiency, increasing productivity across teams." },
-    { number: "02", title: "Better User Experiences", desc: "Software built around your business needs delivers enhanced experiences for customers and employees." },
-    { number: "03", title: "Competitive Edge", desc: "Custom capabilities that off-the-shelf tools cannot offer help you stand apart in your market." },
+    { title: "Efficiency & Productivity", desc: "Tailored solutions automate processes and improve efficiency, increasing productivity across teams." },
+    { title: "Better User Experiences", desc: "Software built around your business needs delivers enhanced experiences for customers and employees." },
+    { title: "Competitive Edge", desc: "Custom capabilities that off-the-shelf tools cannot offer help you stand apart in your market." },
 ];
 
 const ROW_2 = [
-    { number: "04", title: "Scalability & Flexibility", desc: "Room to innovate and adapt as market demands change and the organization grows." },
-    { number: "05", title: "Data Management & Security", desc: "Better control over how data is stored, managed, and protected." },
-    { number: "06", title: "Integration & Growth", desc: "Integration with existing systems supports improved decision-making and long-term growth." },
+    { title: "Scalability & Flexibility", desc: "Room to innovate and adapt as market demands change and the organization grows." },
+    { title: "Data Management & Security", desc: "Better control over how data is stored, managed, and protected." },
+    { title: "Integration & Growth", desc: "Integration with existing systems supports improved decision-making and long-term growth." },
 ];
 
-const Card = ({ number, title, desc, index }) => (
+const Card = ({ title, desc, index }) => (
     <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -21,7 +21,6 @@ const Card = ({ number, title, desc, index }) => (
         transition={{ duration: 0.4, delay: index * 0.06 }}
         className="flex flex-col gap-4"
     >
-        <span className="text-[#2d8ec5] text-2xl font-light tabular-nums">{number}</span>
         <h2 className="text-[#2E3033] text-xl font-semibold">{title}</h2>
         <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">{desc}</p>
     </motion.div>
@@ -65,15 +64,10 @@ export default function SoftwareInvestment() {
                     Why Invest in Software Development for Your Business?
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light max-w-[960px]">
-                    Software development enables businesses to create tailored solutions that improve efficiency,
-                    enhance user experiences, and meet specific business needs. By developing custom software,
-                    businesses can automate processes, increase productivity, and gain a competitive edge.
-                </p>
-                <p className="text-[#55595E] text-base sm:text-lg font-light max-w-[960px]">
-                    Software development allows for scalability, flexibility, and innovation, empowering
-                    organizations to adapt to changing market demands. Additionally, custom software can provide
-                    better data management, security, and integration with existing systems, leading to improved
-                    decision-making and long-term growth.
+                    Custom software gives your business solutions built around its own needs, automating processes,
+                    lifting productivity, and improving the experience for customers and employees. It scales and
+                    adapts as market demands change, and brings better data management, security, and integration
+                    with existing systems, supporting sharper decisions, a competitive edge, and long-term growth.
                 </p>
             </motion.div>
 

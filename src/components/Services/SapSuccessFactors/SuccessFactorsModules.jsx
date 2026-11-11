@@ -1,34 +1,39 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
-import employeeCentralPhoto from "@/assets/Services/SapSuccessFactors/employee-central.webp";
-import recruitingPhoto from "@/assets/Services/SapSuccessFactors/recruiting.webp";
-import performancePhoto from "@/assets/Services/SapSuccessFactors/performance.webp";
-import learningPhoto from "@/assets/Services/SapSuccessFactors/learning.webp";
+// No photos: the panel uses the same navy-to-blue family as the Methodology cards
+// further down the page, but where those step in brightness, this one is told
+// apart by sharp-edged facets, two lighter planes cut into the gradient at hard
+// diagonals. Each tab sets its own cut and the planes slide between them
+// (clip-path polygons with matching point counts interpolate), drifting left as
+// the tabs run from hire to retire. Straight edges only, to match the site.
 
 const TABS = [
     {
         label: "Employee Central",
         desc: "A single core HR record for every employee, covering organisation structure, job data, time off, and self-service across countries.",
-        img: employeeCentralPhoto,
+        facetLarge: "polygon(60% 0, 100% 0, 100% 100%, 85% 100%)",
+        facetSmall: "polygon(80% 0, 100% 0, 100% 40%, 100% 40%)",
     },
     {
         label: "Recruiting & Onboarding",
         desc: "Job requisitions, candidate pipelines, and guided onboarding that help new hires become productive from their first day.",
-        img: recruitingPhoto,
+        facetLarge: "polygon(50% 0, 100% 0, 100% 100%, 72% 100%)",
+        facetSmall: "polygon(72% 0, 100% 0, 100% 50%, 100% 50%)",
     },
     {
         label: "Performance & Goals",
         desc: "Goal setting, continuous feedback, and review cycles that connect individual performance to business objectives.",
-        img: performancePhoto,
+        facetLarge: "polygon(40% 0, 100% 0, 100% 100%, 64% 100%)",
+        facetSmall: "polygon(64% 0, 100% 0, 100% 60%, 100% 60%)",
     },
     {
         label: "Learning & Development",
         desc: "Course catalogues, compliance training, and development plans that build the skills your workforce needs next.",
-        img: learningPhoto,
+        facetLarge: "polygon(32% 0, 100% 0, 100% 100%, 56% 100%)",
+        facetSmall: "polygon(56% 0, 100% 0, 100% 70%, 100% 70%)",
     },
 ];
 
@@ -88,22 +93,21 @@ export default function SuccessFactorsModules() {
                     ))}
                 </div>
 
-                {/* Image panel */}
+                {/* Gradient panel */}
                 <div className="relative w-full lg:flex-1 aspect-[4/3] sm:aspect-[798/446] mx-auto lg:mx-0 overflow-hidden">
-                    {/* Every image stays mounted and cross-fades on opacity, so switching tabs never blanks the box; only the copy swaps, after the image has started to change. */}
-                    <div className="absolute inset-0">
-                        {TABS.map((tab, index) => (
-                            <Image
-                                key={index}
-                                src={tab.img}
-                                alt={index === active ? tab.label : ""}
-                                fill
-                                className={`object-cover transition-opacity duration-700 ease-in-out ${index === active ? "opacity-100" : "opacity-0"}`}
-                                priority={index === 0}
-                            />
-                        ))}
-
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
+                    {/* One persistent panel: the gradient never changes, only the facets
+                        slide to the active tab's cut, so switching never blanks the box. */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_top_right,#0A2B3E,#1C5F85)]">
+                        <div
+                            aria-hidden="true"
+                            className="absolute inset-0 bg-white/[0.06] transition-[clip-path] duration-700 ease-in-out"
+                            style={{ clipPath: activeTab.facetLarge }}
+                        />
+                        <div
+                            aria-hidden="true"
+                            className="absolute inset-0 bg-white/[0.05] transition-[clip-path] duration-700 ease-in-out"
+                            style={{ clipPath: activeTab.facetSmall }}
+                        />
 
                             <AnimatePresence mode="wait">
                             <motion.div

@@ -1,35 +1,53 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import planPhoto from "@/assets/Services/SapSuccessFactors/step-plan.webp";
-import configurePhoto from "@/assets/Services/SapSuccessFactors/step-configure.webp";
-import trainPhoto from "@/assets/Services/SapSuccessFactors/step-train.webp";
-import goLivePhoto from "@/assets/Services/SapSuccessFactors/step-go-live.webp";
+
+// No photos: each phase card is a gradient drawn from the site's own blue ramp
+// (navy #0A2B3E, #003756, #00447A, deep blue #1C5F85, brand blue #2D8EC5). Every
+// card starts from the same navy; the light end steps one notch brighter per card,
+// so the row itself reads as progress from planning to go-live. Light end sits
+// top-right, the navy bottom-left where the description lands, keeping white
+// copy readable on every card.
 
 const STEPS = [
     {
-        image: planPhoto,
+        from: "#0A2B3E",
+        to: "#003756",
         title: "Plan & Design",
         desc: "We map your HR processes, policies, and data, then design the SuccessFactors solution around SAP best practices.",
     },
     {
-        image: configurePhoto,
+        from: "#0A2B3E",
+        to: "#00447A",
         title: "Configure & Integrate",
         desc: "We configure each module and connect it to payroll, SAP S/4HANA, and the other systems your HR team relies on.",
     },
     {
-        image: trainPhoto,
+        from: "#0A2B3E",
+        to: "#1C5F85",
         title: "Test & Train",
         desc: "We test end-to-end scenarios with your team and prepare instructional material so users are ready on day one.",
     },
     {
-        image: goLivePhoto,
+        from: "#0A2B3E",
+        to: "#2D8EC5",
         title: "Go Live & Optimize",
         desc: "We support the launch, then adopt SAP's regular releases and refine the solution as your workforce evolves.",
     },
 ];
+
+// Card face: the phase gradient only. (Arc motif dropped: curves clashed with
+// the site's sharp-cornered look.)
+function PhaseBackground({ step }) {
+    return (
+        <div
+            aria-hidden="true"
+            className="absolute inset-0"
+            style={{ backgroundImage: `linear-gradient(to top right, ${step.from}, ${step.to})` }}
+        />
+    );
+}
 
 export default function SuccessFactorsMethodology() {
     // Hover-to-grow card row: the first card is open by default, hovering opens another
@@ -75,8 +93,7 @@ export default function SuccessFactorsMethodology() {
                         transition={{ duration: 0.5, delay: index * 0.08 }}
                         className="relative w-full min-h-[220px] overflow-hidden"
                     >
-                        <Image src={step.image} alt="" fill className="object-cover" />
-                        <div className="absolute inset-0 bg-black/60" />
+                        <PhaseBackground step={step} />
                         <div className="relative flex flex-col justify-start gap-2 px-4 pt-5 pb-6">
                             <h2 className="text-white text-xl font-semibold">{step.title}</h2>
                             <p className="text-white/85 text-sm font-light max-w-[280px]">{step.desc}</p>
@@ -107,12 +124,7 @@ export default function SuccessFactorsMethodology() {
                                 className={`absolute bottom-0 inset-x-0 overflow-hidden transition-[aspect-ratio] duration-500 ease-out ${isActive ? "aspect-[4/5] min-h-[300px] z-20" : "aspect-[16/15] z-10"
                                     }`}
                             >
-                                <Image src={step.image} alt="" fill className="object-cover" />
-
-                                <div
-                                    className={`absolute inset-0 transition-colors duration-500 ${isActive ? "bg-black/65" : "bg-black/35"
-                                        }`}
-                                />
+                                <PhaseBackground step={step} />
 
                                 <div
                                     className={`absolute inset-0 flex flex-col justify-between gap-3 transition-[padding] duration-500 ${isActive ? "p-6" : "p-4"

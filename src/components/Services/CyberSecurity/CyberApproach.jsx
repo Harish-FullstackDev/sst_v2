@@ -43,7 +43,7 @@ export default function CyberApproach() {
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Our Cybersecurity Approach</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    Five connected functions covering threat detection, response, and prevention end to end.
+                    Connected functions covering threat detection, response, and prevention end to end.
                 </p>
             </motion.div>
 
@@ -65,7 +65,6 @@ export default function CyberApproach() {
                                 <step.icon aria-hidden="true" strokeWidth={1.5} className="size-9 text-[#1C5F85]" />
                             </div>
                             <div className="flex flex-col gap-2 min-w-0">
-                                <span className="text-[#2d8ec5] text-sm sm:text-base font-light">0{index + 1}</span>
                                 <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{step.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{step.desc}</p>
                             </div>

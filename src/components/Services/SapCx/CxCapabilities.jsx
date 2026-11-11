@@ -1,35 +1,43 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import salesPhoto from "@/assets/Services/SapCx/sales.webp";
-import marketingPhoto from "@/assets/Services/SapCx/marketing.webp";
-import commercePhoto from "@/assets/Services/SapCx/commerce.webp";
-import servicePhoto from "@/assets/Services/SapCx/service.webp";
 
 const STEPS = [
     {
-        image: salesPhoto,
         title: "Sales",
         desc: "Give sellers a complete view of each customer, with real-time insights that help them respond quickly to customer needs.",
     },
     {
-        image: marketingPhoto,
         title: "Marketing",
         desc: "Use unified customer data and AI-driven insights to deliver targeted, personalized campaigns across every channel.",
     },
     {
-        image: commercePhoto,
         title: "Commerce",
         desc: "Offer seamless buying experiences across channels, connected to the same customer data that drives sales and service.",
     },
     {
-        image: servicePhoto,
         title: "Service",
         desc: "Automate service workflows and equip support teams with the context they need to resolve issues and build loyalty.",
     },
 ];
+
+// No photos: same card row and blue family as the SuccessFactors Methodology
+// section, with one difference. Methodology steps brightness card by card because
+// its phases run in order; sales, marketing, commerce and service sit side by side,
+// so here every card shares one gradient (navy #0A2B3E to deep blue #1C5F85) and
+// only the open card lights up, a brighter layer (up to brand blue #2D8EC5) fading
+// in over it. Light end top-right, navy bottom-left under the description.
+function CardBackground({ isActive }) {
+    return (
+        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top_right,#0A2B3E,#1C5F85)]">
+            <div
+                className={`absolute inset-0 bg-[linear-gradient(to_top_right,#0A2B3E,#2D8EC5)] transition-opacity duration-700 ease-out ${isActive ? "opacity-100" : "opacity-0"
+                    }`}
+            />
+        </div>
+    );
+}
 
 export default function CxCapabilities() {
     // First card opens by default; hover opens another and it stays open.
@@ -77,8 +85,7 @@ export default function CxCapabilities() {
                         transition={{ duration: 0.5, delay: index * 0.08 }}
                         className="relative w-full h-[220px] overflow-hidden"
                     >
-                        <Image src={step.image} alt="" fill className="object-cover" />
-                        <div className="absolute inset-0 bg-black/60" />
+                        <CardBackground isActive />
                         <div className="absolute inset-0 flex flex-col justify-start gap-2 px-4 pt-5">
                             <h2 className="text-white text-xl font-semibold">{step.title}</h2>
                             <p className="text-white/85 text-sm font-light max-w-[280px]">{step.desc}</p>
@@ -88,8 +95,8 @@ export default function CxCapabilities() {
             </div>
 
             {/* Desktop: hover-to-grow row, first card open by default. Height comes
-                from aspect-ratio (4:5 open, 16:15 closed) so the photos keep their
-                proportions as the cards go fluid. */}
+                from aspect-ratio (4:5 open, 16:15 closed) so the cards keep their
+                proportions as they go fluid. */}
             <div
                 className="hidden sm:flex sm:items-end gap-[clamp(12px,3.7%,42.67px)] w-full"
                 onMouseEnter={() => setIsPaused(true)}
@@ -109,12 +116,7 @@ export default function CxCapabilities() {
                                 className={`absolute bottom-0 inset-x-0 overflow-hidden transition-[aspect-ratio] duration-500 ease-out ${isActive ? "aspect-[4/5] z-20" : "aspect-[16/15] z-10"
                                     }`}
                             >
-                                <Image src={step.image} alt="" fill className="object-cover" />
-
-                                <div
-                                    className={`absolute inset-0 transition-colors duration-500 ${isActive ? "bg-black/65" : "bg-black/35"
-                                        }`}
-                                />
+                                <CardBackground isActive={isActive} />
 
                                 <div
                                     className={`absolute inset-0 flex flex-col justify-between gap-3 transition-[padding] duration-500 ${isActive ? "p-6" : "p-4"

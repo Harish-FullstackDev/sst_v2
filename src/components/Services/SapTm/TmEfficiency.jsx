@@ -1,24 +1,29 @@
 "use client";
 
+import { LuActivity, LuCalendarCheck, LuTimer, LuUsers } from "react-icons/lu";
 import { motion } from "framer-motion";
 
 const PILLARS = [
     {
+        icon: LuTimer,
         label: "Automate",
         title: "No More Manual Entry",
         desc: "Time and materials are tracked automatically, freeing project managers from manual data entry.",
     },
     {
+        icon: LuUsers,
         label: "Focus",
         title: "Better Resource Allocation",
         desc: "Managers can concentrate on optimizing performance, resource allocation, and overall project execution.",
     },
     {
+        icon: LuActivity,
         label: "Anticipate",
         title: "Real-Time Insights",
         desc: "Teams proactively address potential issues and improve decision-making as the project runs.",
     },
     {
+        icon: LuCalendarCheck,
         label: "Deliver",
         title: "On Time, Within Budget",
         desc: "Projects are completed on schedule, on budget, and with greater accuracy.",
@@ -45,7 +50,7 @@ export default function TmEfficiency() {
                 </p>
             </motion.div>
 
-            {/* Stats-band style row: oversized index numbers over a top rule */}
+            {/* Row of pillars over a top rule, each marked by a Lucide icon (same set as the other service pages) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
                 {PILLARS.map((item, index) => (
                     <motion.div
@@ -56,10 +61,8 @@ export default function TmEfficiency() {
                         transition={{ duration: 0.4, delay: index * 0.08 }}
                         className="flex flex-col gap-3 border-t-2 border-[#2E3033] pt-5"
                     >
-                        <div className="flex items-baseline justify-between gap-4">
-                            <span className="text-[#2d8ec5] text-4xl sm:text-5xl font-light leading-none">
-                                {String(index + 1).padStart(2, "0")}
-                            </span>
+                        <div className="flex items-center justify-between gap-4">
+                            <item.icon aria-hidden="true" strokeWidth={1.5} className="size-10 sm:size-12 shrink-0 text-[#1C5F85]" />
                             <span className="text-[#55595E] text-sm sm:text-base font-light uppercase tracking-wide">
                                 {item.label}
                             </span>

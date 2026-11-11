@@ -88,11 +88,16 @@ function ImageCard({ item }) {
             </div>
 
             {/* Desktop/tablet: title + description share the card face, description
-                fades and slides in on hover as the image fades out. */}
-            <div className="hidden sm:flex relative z-10 h-full flex-col justify-between p-8">
+                fades and slides in on hover as the image fades out. The spacer under
+                the title holds it at the top; on hover the spacer's flex-grow eases to
+                ~0 and justify-end keeps the description pinned at the bottom, so only
+                the title glides down to sit just above it. (0.0001,
+                not 0, so browsers interpolate the grow instead of snapping.) */}
+            <div className="hidden sm:flex relative z-10 h-full flex-col justify-end p-8">
                 <p className="text-2xl font-medium leading-normal text-white transition-colors duration-500 group-hover:text-[#10161d]">
                     {item.title}
                 </p>
+                <div aria-hidden="true" className="grow min-h-4 transition-[flex-grow] duration-500 ease-out group-hover:grow-[0.0001]" />
                 <p className="text-lg font-light leading-normal text-[#4a5568] opacity-0 translate-y-2 transition-all duration-500 delay-100 group-hover:opacity-100 group-hover:translate-y-0">
                     {item.desc}
                 </p>

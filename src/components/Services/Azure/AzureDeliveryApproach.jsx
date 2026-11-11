@@ -8,17 +8,15 @@ import migrateIcon from "@/assets/Services/Azure/icons/delivery-end-to-end.svg";
 import governIcon from "@/assets/Services/Azure/icons/delivery-long-run.svg";
 
 // Two independently flowing columns (left starts lower) so the steps read
-// in a staggered zigzag: 1 and 3 on the left, 2 and 4 on the right.
+// in a staggered zigzag: first and third on the left, second and fourth on the right.
 const LEFT_COLUMN = [
     {
         icon: assessIcon,
-        step: "01",
         title: "Assess",
         desc: "Discover servers, databases, and applications with Azure Migrate, and size and cost the target environment before anything moves.",
     },
     {
         icon: migrateIcon,
-        step: "03",
         title: "Migrate & Modernize",
         desc: "Rehost to Azure Virtual Machines, or modernize to Azure SQL Managed Instance, Azure App Service, or AKS where it adds value.",
     },
@@ -27,13 +25,11 @@ const LEFT_COLUMN = [
 const RIGHT_COLUMN = [
     {
         icon: landingZoneIcon,
-        step: "02",
         title: "Build the Landing Zone",
         desc: "Subscriptions, networking, identity, and policies set up following Microsoft's Cloud Adoption Framework.",
     },
     {
         icon: governIcon,
-        step: "04",
         title: "Govern & Optimize",
         desc: "Azure Policy, Microsoft Defender for Cloud, Azure Cost Management, and Azure Advisor keep the estate secure and efficient.",
     },
@@ -41,7 +37,7 @@ const RIGHT_COLUMN = [
 
 const ALL_STEPS = [LEFT_COLUMN[0], RIGHT_COLUMN[0], LEFT_COLUMN[1], RIGHT_COLUMN[1]];
 
-function StepItem({ icon, step, title, desc, delay }) {
+function StepItem({ icon, title, desc, delay }) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -50,10 +46,7 @@ function StepItem({ icon, step, title, desc, delay }) {
             transition={{ duration: 0.6, ease: "easeOut", delay }}
             className="flex flex-col gap-4"
         >
-            <div className="flex items-center gap-4">
-                <Image src={icon} alt="" className="size-12" />
-                <span className="text-[#2D8EC5] text-lg font-light">{step}</span>
-            </div>
+            <Image src={icon} alt="" className="size-12" />
             <div className="flex flex-col gap-4">
                 <h3 className="text-[#2E3033] text-xl sm:text-2xl font-semibold font-houschka-pro">{title}</h3>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-normal">{desc}</p>
@@ -74,7 +67,7 @@ export default function AzureDeliveryApproach() {
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How We Deliver on Azure</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
-                    Four stages aligned with Microsoft&apos;s Cloud Adoption Framework, from first assessment to an
+                    Stages aligned with Microsoft&apos;s Cloud Adoption Framework, from first assessment to an
                     estate that keeps improving.
                 </p>
             </motion.div>

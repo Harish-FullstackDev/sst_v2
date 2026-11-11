@@ -1,21 +1,26 @@
 "use client";
 
 import { Fragment, useEffect, useState } from "react";
-import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import ingestPhoto from "@/assets/Services/BigData/pipeline-ingest.webp";
-import processPhoto from "@/assets/Services/BigData/pipeline-process.webp";
-import storePhoto from "@/assets/Services/BigData/pipeline-store.webp";
-import governPhoto from "@/assets/Services/BigData/pipeline-govern.webp";
+import { LuCpu, LuDatabase, LuImport, LuShieldCheck } from "react-icons/lu";
 
 const ITEMS = [
-    { title: "Ingest", desc: "Integrate diverse sources so data flows seamlessly into one platform for comprehensive analysis.", image: ingestPhoto },
-    { title: "Process", desc: "Process data at speed with distributed engines built for efficient large-scale analytics.", image: processPhoto },
-    { title: "Store", desc: "Securely store and scale structured and unstructured data in the cloud.", image: storePhoto },
-    { title: "Govern", desc: "Keep data governed, high quality, and compliant so every decision rests on reliable information.", image: governPhoto },
+    { title: "Ingest", desc: "Integrate diverse sources so data flows seamlessly into one platform for comprehensive analysis.", icon: LuImport },
+    { title: "Process", desc: "Process data at speed with distributed engines built for efficient large-scale analytics.", icon: LuCpu },
+    { title: "Store", desc: "Securely store and scale structured and unstructured data in the cloud.", icon: LuDatabase },
+    { title: "Govern", desc: "Keep data governed, high quality, and compliant so every decision rests on reliable information.", icon: LuShieldCheck },
 ];
 
 const ROTATE_INTERVAL = 4500;
+
+// No photos. The left panel is navy (#0A2B3E to #003756) with a soft deep-blue
+// rise. The active stage's Lucide icon (same set as the rest of the site) sits
+// centred in a fine line and draws itself stroke by stroke on every change (the
+// pen-sketch motion used on other pages), with the stage name set lightly below.
+// Along the panel's right edge, beside the stage list, a 3px brand-blue line
+// fills top to bottom over the rotate interval: the timeline from other pages,
+// stood upright so it reads as data flowing down the pipeline.
+const DRAW_KEYFRAMES = "@keyframes pipeline-draw { to { stroke-dashoffset: 0; } }";
 
 export default function BigDataPipeline() {
     const [active, setActive] = useState(0);
@@ -41,26 +46,43 @@ export default function BigDataPipeline() {
             </motion.div>
 
             <div className="flex flex-col lg:flex-row max-w-screen mx-auto lg:h-[500px] pt-16 md:pt-16">
-                <div className="relative hidden lg:block w-full h-[220px] lg:h-full lg:w-[35%] shrink-0 overflow-hidden">
+                <div className="relative hidden lg:block w-full lg:h-full lg:w-[35%] shrink-0 overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+                    <style>{DRAW_KEYFRAMES}</style>
+                    <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.4),rgba(28,95,133,0)_65%)]" />
 
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={ITEMS[active].title}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.5 }}
-                            className="absolute inset-0"
+                            exit={{ opacity: 0, transition: { duration: 0.25 } }}
+                            transition={{ duration: 0.4 }}
+                            className="absolute inset-0 flex flex-col items-center justify-center gap-6"
                         >
-                            <Image
-                                src={ITEMS[active].image}
-                                alt={ITEMS[active].title}
-                                fill
-                                className="object-cover"
-                            />
+                            {(() => {
+                                const Icon = ITEMS[active].icon;
+                                return (
+                                    <Icon
+                                        aria-hidden="true"
+                                        strokeWidth={0.6}
+                                        className="w-[42%] h-auto text-white/55 [&_*]:[stroke-dasharray:100] [&_*]:[stroke-dashoffset:100] [&_*]:animate-[pipeline-draw_2s_cubic-bezier(0.65,0,0.35,1)_forwards]"
+                                    />
+                                );
+                            })()}
+                            <p className="text-white/80 text-lg font-light uppercase tracking-[0.25em]">{ITEMS[active].title}</p>
                         </motion.div>
                     </AnimatePresence>
 
+                    {/* Upright timeline, restarts on every change (keyed). */}
+                    <div aria-hidden="true" className="absolute inset-y-0 right-0 w-[3px] bg-white/15">
+                        <motion.div
+                            key={active}
+                            initial={{ scaleY: 0 }}
+                            animate={{ scaleY: 1 }}
+                            transition={{ duration: ROTATE_INTERVAL / 1000, ease: "linear" }}
+                            className="w-full h-full origin-top bg-[#2D8EC5]"
+                        />
+                    </div>
                 </div>
 
                 <div className="flex flex-col w-full lg:flex-1">
@@ -71,25 +93,6 @@ export default function BigDataPipeline() {
                             // sm:h-1/4 against this flex column, which a per-item wrapper would
                             // reparent and break at lg.
                             <Fragment key={item.title}>
-                                <AnimatePresence initial={false}>
-                                    {isActive && (
-                                        <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: 220, opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            transition={{ duration: 0.4, ease: "easeInOut" }}
-                                            className="relative w-full shrink-0 overflow-hidden lg:hidden"
-                                        >
-                                            <Image
-                                                src={item.image}
-                                                alt={item.title}
-                                                fill
-                                                className="object-cover"
-                                            />
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-
                                 <button
                                     type="button"
                                     onClick={() => setActive(index)}

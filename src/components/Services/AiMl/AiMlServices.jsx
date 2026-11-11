@@ -1,46 +1,49 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { LuBot, LuMessagesSquare, LuScanEye, LuTextSearch, LuThumbsUp, LuTrendingUp } from "react-icons/lu";
 
-import nlpPhoto from "@/assets/Services/AiMl/service-nlp.webp";
-import visionPhoto from "@/assets/Services/AiMl/service-computer-vision.webp";
-import predictivePhoto from "@/assets/Services/AiMl/service-predictive.webp";
-import recommendationPhoto from "@/assets/Services/AiMl/service-recommendation.webp";
-import rpaPhoto from "@/assets/Services/AiMl/service-rpa.webp";
-import chatbotsPhoto from "@/assets/Services/AiMl/service-chatbots.webp";
+// No photos. Navy panel (#0A2B3E to #003756) with a soft deep-blue rise, and two
+// motions the user liked elsewhere, combined here:
+// - the active service's Lucide icon (same set as the rest of the site) sits in
+//   the panel's upper right in a fine line and redraws itself stroke by stroke
+//   on every tab change (pen-sketch, as on Microsoft Rollout / GCP);
+// - a 3px brand-blue timeline along the foot fills over the autoplay interval
+//   (as on Microsoft Migration's benefits), hidden while a tab is hovered.
+const INTERVAL = 5000;
+const DRAW_KEYFRAMES = "@keyframes aiml-draw { to { stroke-dashoffset: 0; } }";
 
 const TABS = [
     {
         title: "Natural Language Processing (NLP)",
         desc: "Empower your business with advanced text analysis, sentiment detection, machine translation, and automated speech recognition to unlock deeper insights from customer communications, documents, and more.",
-        img: nlpPhoto,
+        icon: LuTextSearch,
     },
     {
         title: "Computer Vision",
         desc: "Leverage cutting-edge image classification, object detection, facial recognition, and optical character recognition (OCR) to transform visual data into actionable insights across industries like retail, security, healthcare, and more.",
-        img: visionPhoto,
+        icon: LuScanEye,
     },
     {
         title: "Predictive Analytics",
         desc: "Utilize historical data to forecast future trends, customer behavior, sales performance, and risk management, enabling proactive decision-making and more effective business strategies.",
-        img: predictivePhoto,
+        icon: LuTrendingUp,
     },
     {
         title: "Recommendation Systems",
         desc: "Deliver personalized experiences through intelligent recommendation engines for content, products, or services, based on user preferences, behaviors, and browsing patterns, improving customer satisfaction and engagement.",
-        img: recommendationPhoto,
+        icon: LuThumbsUp,
     },
     {
         title: "Robotic Process Automation (RPA)",
         desc: "Automate repetitive tasks, from data entry to document processing and customer inquiries, using intelligent bots that increase operational efficiency and reduce human error.",
-        img: rpaPhoto,
+        icon: LuBot,
     },
     {
         title: "Chatbots & Virtual Assistants",
         desc: "Provide seamless, automated customer support and personal task management, delivering instant responses and streamlining workflows for enhanced user satisfaction and reduced operational costs.",
-        img: chatbotsPhoto,
+        icon: LuMessagesSquare,
     },
 ];
 
@@ -53,7 +56,7 @@ export default function AiMlServices() {
 
         const interval = setInterval(() => {
             setActive((prev) => (prev + 1) % TABS.length);
-        }, 5000);
+        }, INTERVAL);
 
         return () => clearInterval(interval);
     }, [isPaused]);
@@ -75,7 +78,7 @@ export default function AiMlServices() {
                 </h2>
 
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    Six capability areas that turn text, images, data, and conversations into business outcomes.
+                    The capability areas that turn text, images, data, and conversations into business outcomes.
                 </p>
             </motion.div>
 
@@ -108,46 +111,52 @@ export default function AiMlServices() {
                     ))}
                 </div>
 
-                {/* Image panel; below lg the description sits under the image instead of
+                {/* Navy panel; below xl the description sits under the panel instead of
                     over it, because these descriptions are too long for a phone-sized overlay. */}
                 <div className="flex flex-col gap-5 w-full lg:flex-1 lg:min-w-0">
-                    <div className="relative w-full aspect-[798/446] overflow-hidden bg-[#565656]">
-                        {/* Every image stays mounted and cross-fades on opacity, so switching tabs never blanks the box; only the copy swaps, after the image has started to change. */}
-                        <div className="absolute inset-0">
-                            {TABS.map((tab, index) => (
-                                <Image
-                                    key={index}
-                                    src={tab.img}
-                                    alt={index === active ? tab.title : ""}
-                                    fill
-                                    className={`object-cover transition-opacity duration-700 ease-in-out ${index === active ? "opacity-100" : "opacity-0"}`}
-                                    priority={index === 0}
-                                />
-                            ))}
+                    <div className="relative w-full aspect-[798/446] overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+                        <style>{DRAW_KEYFRAMES}</style>
+                        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.35),rgba(28,95,133,0)_65%)]" />
 
-                                {/* Gradient */}
-                                <div className="hidden lg:block absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
+                        {/* Self-drawing icon, upper right, clear of the copy column (keyed so it redraws per tab). */}
+                        <activeTab.icon
+                            key={active}
+                            aria-hidden="true"
+                            strokeWidth={0.6}
+                            className="absolute top-[12%] right-[7%] h-[48%] w-auto text-white/45 [&_*]:[stroke-dasharray:100] [&_*]:[stroke-dashoffset:100] [&_*]:animate-[aiml-draw_2s_cubic-bezier(0.65,0,0.35,1)_forwards]"
+                        />
 
-                                {/* Text (desktop overlay) */}
-                                <AnimatePresence mode="wait">
+                        {/* Text (desktop overlay), kept to the left so it never meets the icon */}
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={active}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -6 }}
+                                transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
+                                className="hidden xl:flex absolute left-[48px] bottom-[40px] w-[58%] max-w-[560px] text-white flex-col gap-3"
+                            >
+                                <h2 className="text-xl font-semibold">{activeTab.title}</h2>
+                                <p className="text-white/90 text-lg font-light leading-relaxed">{activeTab.desc}</p>
+                            </motion.div>
+                        </AnimatePresence>
+
+                        {/* Autoplay timeline: restarts on each tab (keyed), hidden while paused. */}
+                        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[3px] bg-white/15">
+                            {!isPaused && (
                                 <motion.div
                                     key={active}
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -6 }}
-                                    transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
-                                    className="hidden lg:flex absolute left-[48px] right-[48px] bottom-[40px] max-w-[560px] text-white flex-col gap-3"
-                                >
-                                    <h2 className="text-xl font-semibold">{activeTab.title}</h2>
-                                    <p className="text-white/90 text-lg font-light leading-relaxed">{activeTab.desc}</p>
-                                </motion.div>
-                                </AnimatePresence>
-                            </div>
-                        
+                                    initial={{ scaleX: 0 }}
+                                    animate={{ scaleX: 1 }}
+                                    transition={{ duration: INTERVAL / 1000, ease: "linear" }}
+                                    className="h-full origin-left bg-[#2D8EC5]"
+                                />
+                            )}
+                        </div>
                     </div>
 
                     {/* Text (mobile / tablet) */}
-                    <div className="lg:hidden flex flex-col gap-2">
+                    <div className="xl:hidden flex flex-col gap-2">
                         <h2 className="text-[#2E3033] text-xl font-semibold">{activeTab.title}</h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{activeTab.desc}</p>
                     </div>

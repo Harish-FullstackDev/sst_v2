@@ -44,14 +44,11 @@ export default function ConversionKeyAspects() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="flex flex-wrap items-center justify-center gap-4 sm:gap-x-8 sm:gap-y-6 max-w-[1240px] mx-auto"
             >
-                {ASPECTS.map((item, index) => (
+                {ASPECTS.map((item) => (
                     <li
                         key={item}
-                        className="flex items-center gap-3 bg-white border border-[#d3dae2] hover:border-[#2d8ec5] px-4 py-3 transition-colors duration-300"
+                        className="flex items-center bg-white border border-[#d3dae2] hover:border-[#2d8ec5] px-4 py-3 transition-colors duration-300"
                     >
-                        <span className="text-[#2d8ec5] text-sm font-light tabular-nums">
-                            {String(index + 1).padStart(2, "0")}
-                        </span>
                         <span className="text-[#55595E] text-base sm:text-xl font-light text-center">{item}</span>
                     </li>
                 ))}

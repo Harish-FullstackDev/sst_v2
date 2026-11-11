@@ -22,7 +22,7 @@ export default function WhyRpa() {
                 className="relative z-10 min-h-[300px] sm:min-h-[380px] flex flex-col justify-center gap-4 sm:gap-8 px-8 sm:px-[64px] py-10 sm:py-16"
             >
                 <h2 className="text-white text-base sm:text-2xl font-light">Why RPA?</h2>
-                <p className="text-white text-xl sm:text-[32px] font-light leading-snug max-w-[900px]">
+                <p className="text-white text-2xl sm:text-[36px] lg:text-[44px] font-medium leading-tight text-balance">
                     “Enhance and Evolve with Robotic Process Automation.”
                 </p>
                 <p className="text-white/90 text-base sm:text-lg font-light max-w-[760px]">

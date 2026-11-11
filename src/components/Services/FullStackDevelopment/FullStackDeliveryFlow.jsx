@@ -3,14 +3,15 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { LuClipboardCheck, LuCodeXml, LuPencilRuler, LuRocket, LuSearch } from "react-icons/lu";
 import flowBg from "@/assets/Services/FullStackDevelopment/delivery-flow.webp";
 
 const STEPS = [
-    { title: "Discover", desc: "Goals, users, and requirements are captured and turned into a prioritized backlog." },
-    { title: "Design", desc: "Wireframes, prototypes, and the technical architecture are agreed before build starts." },
-    { title: "Build", desc: "Front end, back end, and database are developed together in short agile sprints." },
-    { title: "Test", desc: "Automated and manual testing covers functionality, performance, and security." },
-    { title: "Deploy & Support", desc: "Releases go out through CI/CD pipelines, followed by monitoring and ongoing updates." },
+    { icon: LuSearch, title: "Discover", desc: "Goals, users, and requirements are captured and turned into a prioritized backlog." },
+    { icon: LuPencilRuler, title: "Design", desc: "Wireframes, prototypes, and the technical architecture are agreed before build starts." },
+    { icon: LuCodeXml, title: "Build", desc: "Front end, back end, and database are developed together in short agile sprints." },
+    { icon: LuClipboardCheck, title: "Test", desc: "Automated and manual testing covers functionality, performance, and security." },
+    { icon: LuRocket, title: "Deploy & Support", desc: "Releases go out through CI/CD pipelines, followed by monitoring and ongoing updates." },
 ];
 
 export default function FullStackDeliveryFlow() {
@@ -42,7 +43,7 @@ export default function FullStackDeliveryFlow() {
                 </p>
             </motion.div>
 
-            {/* Below lg: stacked numbered list; the five-column banner needs desktop width. */}
+            {/* Below lg: stacked icon-marked list; the five-column banner needs desktop width. */}
             <div className="flex lg:hidden w-full flex-col gap-3 px-8 sm:px-[64px]">
                 {STEPS.map((step, index) => (
                     <motion.div
@@ -53,8 +54,8 @@ export default function FullStackDeliveryFlow() {
                         transition={{ duration: 0.4, delay: index * 0.06 }}
                         className="flex gap-4 rounded-[10px] bg-[#F5F6F6] px-5 py-4"
                     >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#00447A] text-sm font-semibold text-white">
-                            {index + 1}
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#00447A] text-white">
+                            <step.icon aria-hidden="true" strokeWidth={1.5} className="size-5" />
                         </div>
                         <div className="flex flex-col gap-1">
                             <h3 className="text-[#2E3033] text-base sm:text-lg font-semibold">{step.title}</h3>
@@ -84,7 +85,7 @@ export default function FullStackDeliveryFlow() {
                                 }}
                                 className={`relative flex-1 min-w-0 flex flex-col justify-center gap-5 px-6 xl:px-10 cursor-pointer transition-colors duration-300 ${isHovered ? "bg-[#00447A]/80" : ""}`}
                             >
-                                <span className="text-white/70 text-lg font-light">{String(index + 1).padStart(2, "0")}</span>
+                                <step.icon aria-hidden="true" strokeWidth={1.5} className="size-8 text-white/70" />
                                 <h2 className="text-white text-xl xl:text-2xl font-semibold">{step.title}</h2>
                                 {isHovered && (
                                     <motion.p

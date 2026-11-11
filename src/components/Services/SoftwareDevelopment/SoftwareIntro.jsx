@@ -40,7 +40,7 @@ export default function SoftwareIntro() {
                     <ul className="flex flex-col gap-3 pt-5">
                         {CREDENTIALS.map((label) => (
                             <li key={label} className="flex items-center gap-3 text-[#2E3033] text-base sm:text-lg font-light">
-                                <span className="h-px w-6 shrink-0 bg-[#2d8ec5]" aria-hidden />
+                                <span className="size-1.5 shrink-0 bg-[#2d8ec5]" aria-hidden />
                                 {label}
                             </li>
                         ))}

@@ -56,7 +56,7 @@ export default function MigrationProducts() {
                     SST&apos;s Principal Products for a Smooth Transition
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    Six workstreams that carry your data, applications, and people safely onto the new SAP landscape.
+                    The workstreams that carry your data, applications, and people safely onto the new SAP landscape.
                 </p>
             </motion.div>
 
@@ -71,12 +71,7 @@ export default function MigrationProducts() {
                         className="group relative flex flex-col gap-4 sm:gap-5 border-r border-b border-[#E2E5EA] p-6 sm:p-8 lg:p-10 transition-colors duration-300 hover:bg-[#f5f6f6]"
                     >
                         <span className="absolute left-0 top-0 h-[3px] w-0 bg-[#2d8ec5] transition-all duration-500 group-hover:w-full" />
-                        <div className="flex items-center justify-between">
-                            <Image src={item.icon} alt="" width={48} height={48} className="size-10 sm:size-12" />
-                            <span className="text-[#2d8ec5]/60 text-2xl sm:text-[32px] font-light">
-                                {String(index + 1).padStart(2, "0")}
-                            </span>
-                        </div>
+                        <Image src={item.icon} alt="" width={48} height={48} className="size-10 sm:size-12" />
                         <h3 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h3>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                     </motion.div>

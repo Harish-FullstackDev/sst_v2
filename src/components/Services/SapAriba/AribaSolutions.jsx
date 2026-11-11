@@ -1,35 +1,56 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import sourcingPhoto from "@/assets/Services/SapAriba/sourcing.webp";
-import contractsPhoto from "@/assets/Services/SapAriba/contracts.webp";
-import buyingPhoto from "@/assets/Services/SapAriba/buying.webp";
-import suppliersPhoto from "@/assets/Services/SapAriba/suppliers.webp";
 
 const CARDS = [
     {
         title: "Strategic Sourcing",
         desc: "Run sourcing events and supplier bids in one place, with full visibility into every offer.",
-        image: sourcingPhoto,
     },
     {
         title: "Contract Management",
         desc: "Author, approve, and store contracts centrally, with renewals and obligations tracked automatically.",
-        image: contractsPhoto,
     },
     {
         title: "Buying & Invoicing",
         desc: "Guided buying and automated invoice matching that keep spend on contract and payments on time.",
-        image: buyingPhoto,
     },
     {
         title: "Supplier Management",
         desc: "Onboard, qualify, and monitor suppliers with a single view of performance and risk.",
-        image: suppliersPhoto,
     },
 ];
+
+// No photos: same navy-to-blue family as the SuccessFactors page, told apart by
+// one continuous gradient running across the whole row. Each card shows its own
+// quarter of it (background sized 400% wide, shifted per card), so the four
+// areas read as one connected source-to-pay flow. A navy wash at the foot keeps
+// the description readable; the open card gets a sharp lighter facet that slides
+// in from the right edge (clip-path polygons with matching points interpolate).
+const FLOW_GRADIENT =
+    "linear-gradient(to top, rgba(10,43,62,0.85), rgba(10,43,62,0) 60%), linear-gradient(to right, #0A2B3E, #003756 40%, #1C5F85)";
+const FACET_OPEN = "polygon(45% 0, 100% 0, 100% 100%, 75% 100%)";
+const FACET_CLOSED = "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)";
+
+function FlowBackground({ index, isActive }) {
+    return (
+        <div
+            aria-hidden="true"
+            className="absolute inset-0"
+            style={{
+                backgroundImage: FLOW_GRADIENT,
+                backgroundSize: "100% 100%, 400% 100%",
+                backgroundPosition: `0 0, ${(index / (CARDS.length - 1)) * 100}% 0`,
+            }}
+        >
+            <div
+                className="absolute inset-0 bg-white/[0.06] transition-[clip-path] duration-700 ease-out"
+                style={{ clipPath: isActive ? FACET_OPEN : FACET_CLOSED }}
+            />
+        </div>
+    );
+}
 
 export default function AribaSolutions() {
     // Cycles the revealed card every few seconds, pausing whenever the grid is
@@ -71,8 +92,7 @@ export default function AribaSolutions() {
                         transition={{ duration: 0.5, delay: index * 0.08 }}
                         className="relative w-full min-h-[220px] overflow-hidden"
                     >
-                        <Image src={card.image} alt="" fill className="object-cover" />
-                        <div className="absolute inset-0 bg-black/60" />
+                        <FlowBackground index={index} isActive />
                         <div className="relative flex flex-col justify-start gap-2 px-4 pt-5 pb-6">
                             <h2 className="text-white text-xl font-semibold">{card.title}</h2>
                             <p className="text-white/85 text-sm font-light max-w-[280px]">{card.desc}</p>
@@ -106,17 +126,7 @@ export default function AribaSolutions() {
                             }}
                             className="relative aspect-[258/335] overflow-hidden"
                         >
-                            <Image
-                                src={card.image}
-                                alt=""
-                                fill
-                                className={`object-cover transition-transform duration-700 ease-out ${isActive ? "scale-105" : ""
-                                    }`}
-                            />
-                            <div
-                                className={`absolute inset-0 transition-colors duration-500 ${isActive ? "bg-black/70" : "bg-black/25"
-                                    }`}
-                            />
+                            <FlowBackground index={index} isActive={isActive} />
                             <div className="absolute inset-x-0 top-0 px-6 py-8 text-left">
                                 <h2 className="text-white text-xl sm:text-2xl font-semibold">{card.title}</h2>
                             </div>

@@ -51,7 +51,7 @@ export default function CyberAssessment() {
                     <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Security Self-Assessment</p>
                     <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Where Does Your Security Stand?</h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
-                        Six questions every business should be able to answer, and how each gap is closed.
+                        The questions every business should be able to answer, and how each gap is closed.
                     </p>
                 </motion.div>
 
@@ -66,12 +66,7 @@ export default function CyberAssessment() {
                                     className="flex w-full items-center justify-between gap-4 py-5 sm:py-6 text-left"
                                     aria-expanded={isOpen}
                                 >
-                                    <span className="flex items-baseline gap-3 sm:gap-5 min-w-0">
-                                        <span className="text-[#2d8ec5] text-sm sm:text-base font-light shrink-0">
-                                            0{index + 1}
-                                        </span>
-                                        <span className="text-[#2E3033] text-lg sm:text-xl font-semibold">{item.title}</span>
-                                    </span>
+                                    <span className="min-w-0 text-[#2E3033] text-lg sm:text-xl font-semibold">{item.title}</span>
                                     <span className="relative shrink-0 size-8 rounded-full border border-[#2D8EC5] flex items-center justify-center">
                                         <span className="absolute w-[12px] h-[2px] bg-[#2D8EC5] rounded-full" />
                                         <motion.span
@@ -91,7 +86,7 @@ export default function CyberAssessment() {
                                             transition={{ duration: 0.35, ease: "easeInOut" }}
                                             className="overflow-hidden"
                                         >
-                                            <p className="pb-5 sm:pb-6 pl-8 sm:pl-10 pr-10 text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">
+                                            <p className="pb-5 sm:pb-6 pr-10 text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">
                                                 {item.desc}
                                             </p>
                                         </motion.div>

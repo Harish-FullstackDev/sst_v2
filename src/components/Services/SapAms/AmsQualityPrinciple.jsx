@@ -18,18 +18,27 @@ export default function AmsQualityPrinciple() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative z-10 w-full flex flex-col justify-center gap-4 sm:gap-8 px-8 py-10 sm:px-16 sm:py-12"
+                className="relative z-10 w-full flex flex-col justify-center gap-6 sm:gap-10 px-8 py-10 sm:px-16 sm:py-12"
             >
-                <h2 className="text-white text-2xl font-light">Quality &amp; Assurance</h2>
+                {/* Heading + subtitle use the same scale, weight and gap-2 as the
+                    section headings on this page (What Our SAP AMS Covers). */}
+                <div className="flex flex-col gap-2">
+                    <h2 className="text-white text-xl sm:text-[28px] font-semibold">Quality &amp; Assurance</h2>
+                    <p className="text-white/85 text-base sm:text-lg font-light">
+                        The standard every SST support ticket is held to.
+                    </p>
+                </div>
 
-                <p className="text-white text-base sm:text-lg font-light sm:pb-5">
-                    The standard every SST support ticket is held to.
-                </p>
-                <figure className="flex flex-col gap-3 max-w-[820px]">
-                    <blockquote className="text-white text-xl sm:text-[32px] font-light leading-snug">
-                        &ldquo;Quality means doing it right when no one is looking.&rdquo;
+                {/* w-fit so the figure is exactly as wide as the quote's longest line,
+                    letting the attribution align right with where the quote ends. */}
+                <figure className="flex flex-col gap-3 w-fit">
+                    <blockquote className="text-white text-2xl sm:text-[36px] lg:text-[44px] font-medium leading-tight text-balance relative">
+                        {/* Full stop + closing mark hang past "looking" (absolute, no offsets, so
+                            they stay at their spot in the line but add no width), letting the
+                            figure, and the right-aligned attribution, end at the final "g". */}
+                        &ldquo;Quality means doing it right when no one is looking<span className="absolute">.&rdquo;</span>
                     </blockquote>
-                    <figcaption className="text-white/80 text-base sm:text-lg font-light">Henry Ford</figcaption>
+                    <figcaption className="self-end text-right text-white/80 text-base sm:text-lg font-medium">- Henry Ford</figcaption>
                 </figure>
             </motion.div>
         </section>

@@ -58,7 +58,7 @@ export default function RolloutStages() {
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Stages Involved in Rollout</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    Six stages take each new site from preparation to a stable, continuously improving system.
+                    The stages that take each new site from preparation to a stable, continuously improving system.
                 </p>
             </motion.div>
 
@@ -87,16 +87,11 @@ export default function RolloutStages() {
                                 aria-hidden
                                 className={`absolute inset-0 bg-[#002C4F] transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0"}`}
                             />
-                            <div className="relative flex flex-col gap-8 sm:gap-14">
-                                <span className={`text-lg font-light tabular-nums ${isActive ? "text-white/70" : "text-[#2d8ec5]"}`}>
-                                    {String(index + 1).padStart(2, "0")}
-                                </span>
-                                <div className="flex flex-col gap-4 sm:gap-6">
-                                    <h2 className="text-xl sm:text-[28px] font-semibold">{stage.title}</h2>
-                                    <p className={`text-base sm:text-lg font-light ${isActive ? "text-white/90" : "text-[#55595E]"}`}>
-                                        {stage.desc}
-                                    </p>
-                                </div>
+                            <div className="relative flex flex-col gap-4 sm:gap-6">
+                                <h2 className="text-xl sm:text-[28px] font-semibold">{stage.title}</h2>
+                                <p className={`text-base sm:text-lg font-light ${isActive ? "text-white/90" : "text-[#55595E]"}`}>
+                                    {stage.desc}
+                                </p>
                             </div>
                         </motion.div>
                     );

@@ -64,7 +64,7 @@ export default function SacSuccessFactors() {
                             Our Key Success Factors with SAP SAC
                         </h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
-                            Eight strengths behind every SAP Analytics Cloud engagement we deliver.
+                            The strengths behind every SAP Analytics Cloud engagement we deliver.
                         </p>
                     </div>
                     <div className="relative w-full aspect-[912/480] overflow-hidden">
@@ -83,14 +83,7 @@ export default function SacSuccessFactors() {
                                     className="flex w-full items-center justify-between gap-4 py-5 sm:py-6 text-left"
                                     aria-expanded={isOpen}
                                 >
-                                    <span className="flex items-baseline gap-4 min-w-0">
-                                        <span className="text-[#2d8ec5] text-sm sm:text-base font-light shrink-0">
-                                            {String(index + 1).padStart(2, "0")}
-                                        </span>
-                                        <span className="text-[#2E3033] text-lg sm:text-2xl font-semibold">
-                                            {item.title}
-                                        </span>
-                                    </span>
+                                    <span className="min-w-0 text-[#2E3033] text-lg sm:text-2xl font-semibold">{item.title}</span>
                                     <span className="relative shrink-0 size-8 sm:size-[37px] flex items-center justify-center">
                                         <Image src={circleIcon} alt="" fill className="object-contain" />
                                         <span className="absolute w-[14px] h-[2px] bg-[#2D8EC5] rounded-full" />
@@ -111,7 +104,7 @@ export default function SacSuccessFactors() {
                                             transition={{ duration: 0.35, ease: "easeInOut" }}
                                             className="overflow-hidden"
                                         >
-                                            <p className="pb-5 sm:pb-6 pl-8 sm:pl-10 pr-10 sm:pr-16 text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">
+                                            <p className="pb-5 sm:pb-6 pr-10 sm:pr-16 text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">
                                                 {item.desc}
                                             </p>
                                         </motion.div>

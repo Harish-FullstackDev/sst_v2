@@ -69,7 +69,7 @@ export default function UiUxServices() {
                     Transforming User Experiences With UI/UX Design Services at SST
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    Six disciplines that take an idea from user insight to a polished, tested interface.
+                    The disciplines that take an idea from user insight to a polished, tested interface.
                 </p>
             </motion.div>
 
@@ -87,7 +87,6 @@ export default function UiUxServices() {
                         <Image src={card.image} alt="" fill className="object-cover" />
                         <div className="absolute inset-0 bg-black/60" />
                         <div className="relative flex flex-col gap-2 px-5 pt-5 pb-6">
-                            <span className="text-white/70 text-sm font-light">{String(index + 1).padStart(2, "0")}</span>
                             <h3 className="text-white text-xl font-semibold">{card.title}</h3>
                             <p className="text-white/85 text-sm font-light max-w-[300px]">{card.desc}</p>
                         </div>
@@ -130,7 +129,6 @@ export default function UiUxServices() {
                                 className={`absolute inset-0 transition-colors duration-500 ${isActive ? "bg-[#00447A]/80" : "bg-black/35"}`}
                             />
                             <div className="absolute inset-x-0 bottom-0 px-6 pb-6 flex flex-col">
-                                <span className="text-white/70 text-base font-light">{String(index + 1).padStart(2, "0")}</span>
                                 <h3 className="text-white text-xl lg:text-2xl font-semibold">{card.title}</h3>
                                 <div
                                     className={`grid transition-[grid-template-rows] duration-500 ease-out ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
