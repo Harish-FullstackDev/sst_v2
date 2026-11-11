@@ -1,45 +1,46 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { LuArrowRightLeft, LuFlaskConical, LuLifeBuoy, LuListFilter, LuSearch } from "react-icons/lu";
 
-import assessPhoto from "@/assets/Services/SapMigration/phase-assess.webp";
-import cleansePhoto from "@/assets/Services/SapMigration/phase-cleanse.webp";
-import mockPhoto from "@/assets/Services/SapMigration/phase-mock.webp";
-import cutoverPhoto from "@/assets/Services/SapMigration/phase-cutover.webp";
-import hypercarePhoto from "@/assets/Services/SapMigration/phase-hypercare.webp";
+// Same panel as Microsoft Migration's key benefits: a quiet navy field
+// (#0A2B3E to #003756) with the active item's Lucide icon (same set as the rest
+// of the site) drawn large in a thin, faint line as a watermark on the right,
+// cross-fading and drifting in on each change, and a 3px brand-blue timeline
+// along the foot that fills over the autoplay interval (hidden while paused).
+const INTERVAL = 5000;
 
 const TABS = [
     {
         label: "Assess & Plan",
         title: "Assess & Plan",
         desc: "We review the current landscape, data volumes, custom code, and interfaces, then agree the migration approach and timeline.",
-        img: assessPhoto,
+        icon: LuSearch,
     },
     {
         label: "Cleanse & Map",
         title: "Cleanse & Map",
         desc: "Legacy data is cleansed, deduplicated, and mapped to the target SAP structures so only accurate, consistent data moves across.",
-        img: cleansePhoto,
+        icon: LuListFilter,
     },
     {
         label: "Mock Migrations",
         title: "Mock Migrations",
         desc: "Repeatable trial loads and comprehensive testing validate migrated data and applications before anything touches production.",
-        img: mockPhoto,
+        icon: LuFlaskConical,
     },
     {
         label: "Cutover",
         title: "Cutover",
         desc: "A rehearsed cutover plan moves the business onto the new SAP system within a controlled window, with minimal disruption.",
-        img: cutoverPhoto,
+        icon: LuArrowRightLeft,
     },
     {
         label: "Hypercare",
         title: "Hypercare",
         desc: "Users and support teams are trained and supported while the new system settles, so issues are resolved quickly after go-live.",
-        img: hypercarePhoto,
+        icon: LuLifeBuoy,
     },
 ];
 
@@ -52,7 +53,7 @@ export default function MigrationPhases() {
 
         const interval = setInterval(() => {
             setActive((prev) => (prev + 1) % TABS.length);
-        }, 5000);
+        }, INTERVAL);
 
         return () => clearInterval(interval);
     }, [isPaused]);
@@ -74,7 +75,7 @@ export default function MigrationPhases() {
                 </h2>
 
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    Five phases that keep data integrity and business continuity intact from first assessment to go-live.
+                    The phases that keep data integrity and business continuity intact from first assessment to go-live.
                 </p>
             </motion.div>
 
@@ -106,23 +107,26 @@ export default function MigrationPhases() {
                     ))}
                 </div>
 
-                {/* Image panel */}
-                <div className="relative w-full lg:flex-1 aspect-[798/446] mx-auto lg:mx-0 overflow-hidden">
-                    {/* Every image stays mounted and cross-fades on opacity, so switching tabs never blanks the box; only the copy swaps, after the image has started to change. */}
+                {/* Navy panel */}
+                <div className="relative w-full lg:flex-1 aspect-[798/446] mx-auto lg:mx-0 overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
                     <div className="absolute inset-0">
-                        {TABS.map((tab, index) => (
-                            <Image
-                                key={index}
-                                src={tab.img}
-                                alt={index === active ? tab.title : ""}
-                                fill
-                                className={`object-cover transition-opacity duration-700 ease-in-out ${index === active ? "opacity-100" : "opacity-0"}`}
-                                priority={index === 0}
-                            />
-                        ))}
+                        {/* Faint deep-blue rise behind the copy, for depth. */}
+                        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.35),rgba(28,95,133,0)_65%)]" />
 
-                            {/* Gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                        {/* Watermark icon, cross-fading per tab. */}
+                        <AnimatePresence>
+                            <motion.div
+                                key={active}
+                                aria-hidden="true"
+                                initial={{ opacity: 0, x: 24 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: -12 }}
+                                transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                                className="absolute top-1/2 right-[6%] -translate-y-1/2 h-[72%] aspect-square text-white/[0.08]"
+                            >
+                                <activeTab.icon strokeWidth={0.6} className="size-full" />
+                            </motion.div>
+                        </AnimatePresence>
 
                             {/* Text */}
                             <AnimatePresence mode="wait">
@@ -143,8 +147,20 @@ export default function MigrationPhases() {
                                 </p>
                             </motion.div>
                             </AnimatePresence>
+
+                        {/* Autoplay timeline: restarts on each tab (keyed), hidden while paused. */}
+                        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[3px] bg-white/15">
+                            {!isPaused && (
+                                <motion.div
+                                    key={active}
+                                    initial={{ scaleX: 0 }}
+                                    animate={{ scaleX: 1 }}
+                                    transition={{ duration: INTERVAL / 1000, ease: "linear" }}
+                                    className="h-full origin-left bg-[#2D8EC5]"
+                                />
+                            )}
                         </div>
-                    
+                        </div>
                 </div>
             </div>
         </section>

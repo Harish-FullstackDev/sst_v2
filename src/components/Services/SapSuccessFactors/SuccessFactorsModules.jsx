@@ -2,38 +2,35 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { LuGraduationCap, LuIdCard, LuTarget, LuUserPlus } from "react-icons/lu";
 
-// No photos: the panel uses the same navy-to-blue family as the Methodology cards
-// further down the page, but where those step in brightness, this one is told
-// apart by sharp-edged facets, two lighter planes cut into the gradient at hard
-// diagonals. Each tab sets its own cut and the planes slide between them
-// (clip-path polygons with matching point counts interpolate), drifting left as
-// the tabs run from hire to retire. Straight edges only, to match the site.
+// Same panel as Microsoft Migration's key benefits: a quiet navy field
+// (#0A2B3E to #003756) with the active item's Lucide icon (same set as the rest
+// of the site) drawn large in a thin, faint line as a watermark on the right,
+// cross-fading and drifting in on each change, and a 3px brand-blue timeline
+// along the foot that fills over the autoplay interval (hidden while paused).
+const INTERVAL = 5000;
 
 const TABS = [
     {
+        icon: LuIdCard,
         label: "Employee Central",
         desc: "A single core HR record for every employee, covering organisation structure, job data, time off, and self-service across countries.",
-        facetLarge: "polygon(60% 0, 100% 0, 100% 100%, 85% 100%)",
-        facetSmall: "polygon(80% 0, 100% 0, 100% 40%, 100% 40%)",
     },
     {
+        icon: LuUserPlus,
         label: "Recruiting & Onboarding",
         desc: "Job requisitions, candidate pipelines, and guided onboarding that help new hires become productive from their first day.",
-        facetLarge: "polygon(50% 0, 100% 0, 100% 100%, 72% 100%)",
-        facetSmall: "polygon(72% 0, 100% 0, 100% 50%, 100% 50%)",
     },
     {
+        icon: LuTarget,
         label: "Performance & Goals",
         desc: "Goal setting, continuous feedback, and review cycles that connect individual performance to business objectives.",
-        facetLarge: "polygon(40% 0, 100% 0, 100% 100%, 64% 100%)",
-        facetSmall: "polygon(64% 0, 100% 0, 100% 60%, 100% 60%)",
     },
     {
+        icon: LuGraduationCap,
         label: "Learning & Development",
         desc: "Course catalogues, compliance training, and development plans that build the skills your workforce needs next.",
-        facetLarge: "polygon(32% 0, 100% 0, 100% 100%, 56% 100%)",
-        facetSmall: "polygon(56% 0, 100% 0, 100% 70%, 100% 70%)",
     },
 ];
 
@@ -46,7 +43,7 @@ export default function SuccessFactorsModules() {
 
         const interval = setInterval(() => {
             setActive((prev) => (prev + 1) % TABS.length);
-        }, 5000);
+        }, INTERVAL);
 
         return () => clearInterval(interval);
     }, [isPaused]);
@@ -93,21 +90,26 @@ export default function SuccessFactorsModules() {
                     ))}
                 </div>
 
-                {/* Gradient panel */}
+                {/* Navy panel */}
                 <div className="relative w-full lg:flex-1 aspect-[4/3] sm:aspect-[798/446] mx-auto lg:mx-0 overflow-hidden">
-                    {/* One persistent panel: the gradient never changes, only the facets
-                        slide to the active tab's cut, so switching never blanks the box. */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_top_right,#0A2B3E,#1C5F85)]">
-                        <div
-                            aria-hidden="true"
-                            className="absolute inset-0 bg-white/[0.06] transition-[clip-path] duration-700 ease-in-out"
-                            style={{ clipPath: activeTab.facetLarge }}
-                        />
-                        <div
-                            aria-hidden="true"
-                            className="absolute inset-0 bg-white/[0.05] transition-[clip-path] duration-700 ease-in-out"
-                            style={{ clipPath: activeTab.facetSmall }}
-                        />
+                    <div className="absolute inset-0 bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+                        {/* Faint deep-blue rise behind the copy, for depth. */}
+                        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.35),rgba(28,95,133,0)_65%)]" />
+
+                        {/* Watermark icon, cross-fading per tab. */}
+                        <AnimatePresence>
+                            <motion.div
+                                key={active}
+                                aria-hidden="true"
+                                initial={{ opacity: 0, x: 24 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: -12 }}
+                                transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                                className="absolute top-1/2 right-[6%] -translate-y-1/2 h-[72%] aspect-square text-white/[0.08]"
+                            >
+                                <activeTab.icon strokeWidth={0.6} className="size-full" />
+                            </motion.div>
+                        </AnimatePresence>
 
                             <AnimatePresence mode="wait">
                             <motion.div
@@ -124,8 +126,20 @@ export default function SuccessFactorsModules() {
                                 </p>
                             </motion.div>
                             </AnimatePresence>
+
+                        {/* Autoplay timeline: restarts on each tab (keyed), hidden while paused. */}
+                        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[3px] bg-white/15">
+                            {!isPaused && (
+                                <motion.div
+                                    key={active}
+                                    initial={{ scaleX: 0 }}
+                                    animate={{ scaleX: 1 }}
+                                    transition={{ duration: INTERVAL / 1000, ease: "linear" }}
+                                    className="h-full origin-left bg-[#2D8EC5]"
+                                />
+                            )}
                         </div>
-                    
+                        </div>
                 </div>
             </div>
         </section>
