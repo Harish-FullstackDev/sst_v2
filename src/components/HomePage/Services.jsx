@@ -10,12 +10,12 @@ import { motion } from "framer-motion";
 // (/services#sap, …).
 import { CATEGORIES } from "@/components/Services/Landing/servicesLandingData";
 
-// Photos reuse the home page's existing capability images, one per category.
-import sapImg from "@/assets/HomePage/Capabilities/enterprise_transformation.webp";
-import microsoftImg from "@/assets/HomePage/Capabilities/data_intelligence.webp";
-import cloudImg from "@/assets/HomePage/Capabilities/cloud_infrastructure.webp";
-import digitalImg from "@/assets/HomePage/Capabilities/intelligent_automation.webp";
-import designDevImg from "@/assets/HomePage/capab/digital_engineering.webp";
+// One photo per service category.
+import sapImg from "@/assets/HomePage/Services/sap.webp";
+import microsoftImg from "@/assets/HomePage/Services/microsoft.webp";
+import cloudImg from "@/assets/HomePage/Services/cloud.webp";
+import digitalImg from "@/assets/HomePage/Services/digital-transformation.webp";
+import designDevImg from "@/assets/HomePage/Services/design-development.webp";
 
 const IMAGES = {
     sap: sapImg,
