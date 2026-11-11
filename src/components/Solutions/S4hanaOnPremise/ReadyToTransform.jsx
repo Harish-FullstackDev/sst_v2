@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import ctaBg from "@/assets/Solutions/S4hanaOnPremise/cta.webp";
+import ctaBg from "@/assets/Solutions/sst-cta.webp";
 import CalendlyModal from "@/components/CommonComponents/CommonCalendy";
 
 export default function ReadyToTransform({

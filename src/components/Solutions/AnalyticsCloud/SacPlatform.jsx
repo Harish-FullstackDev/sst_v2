@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import serviceDesignPhoto from "@/assets/Solutions/AnalyticsCloud/platform.jpg";
+import serviceDesignPhoto from "@/assets/Solutions/AnalyticsCloud/platform.webp";
 
 const BOXES = [
     {
@@ -59,7 +59,7 @@ export default function SacPlatform() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full h-[300px] sm:h-[420px] lg:h-auto lg:flex-[475_1_0%] aspect-auto lg:aspect-[475/563] overflow-hidden"
                 >
-                    <Image src={serviceDesignPhoto} alt="Planning interface components and cards laid out on a desk" fill className="object-cover object-bottom" />
+                    <Image src={serviceDesignPhoto} alt="Analyst studying a wall of live charts and maps" fill className="object-cover object-center" />
                 </motion.div>
             </div>
         </section>

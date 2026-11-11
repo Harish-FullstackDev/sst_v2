@@ -13,7 +13,7 @@ import WhyOnPremise from "@/components/Solutions/S4hanaOnPremise/WhyOnPremise";
 import WhenOnPremiseFits from "@/components/Solutions/S4hanaOnPremise/WhenOnPremiseFits";
 import OnPremiseFaq from "@/components/Solutions/S4hanaOnPremise/OnPremiseFaq";
 import ReadyToTransform from "@/components/Solutions/S4hanaOnPremise/ReadyToTransform";
-import customBg from "@/assets/Solutions/S4hanaOnPremise/cta.webp";
+import customBg from "@/assets/Solutions/sst-cta.webp";
 
 const page = () => {
     return (

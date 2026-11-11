@@ -26,7 +26,7 @@ export default function ScmPillars() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="relative w-full lg:w-[44%] aspect-[4/3] lg:aspect-auto lg:min-h-[460px] shrink-0 overflow-hidden bg-[#565656]"
                 >
-                    <Image src={pillarsImage} alt="Glass-walled server room within an open-plan office" fill className="object-cover" />
+                    <Image src={pillarsImage} alt="Warehouse manager tracking inventory on a tablet in the aisles" fill className="object-cover" />
                 </motion.div>
 
                 <div className="flex flex-col justify-center gap-8 sm:gap-10 w-full lg:flex-1 lg:min-w-0">
