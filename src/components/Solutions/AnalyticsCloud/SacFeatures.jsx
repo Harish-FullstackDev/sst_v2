@@ -136,7 +136,7 @@ export default function SacFeatures() {
                                         initial={{ opacity: 0, x: -8 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 + i * 0.2 }}
-                                        className="flex items-center gap-3 text-white/80 text-xs sm:text-base font-light"
+                                        className="flex items-center gap-3 text-white/80 text-base sm:text-lg font-light"
                                     >
                                         <span className="size-1.5 shrink-0 bg-[#2D8EC5]" />
                                         {point}

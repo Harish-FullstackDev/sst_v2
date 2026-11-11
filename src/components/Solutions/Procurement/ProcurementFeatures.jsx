@@ -145,7 +145,7 @@ export default function ProcurementFeatures() {
                                         initial={{ opacity: 0, x: -8 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 + i * 0.2 }}
-                                        className="flex items-center gap-3 text-white/80 text-base xl:text-lg font-light"
+                                        className="flex items-center gap-3 text-white/80 text-base font-light"
                                     >
                                         <span className="size-1.5 shrink-0 bg-[#2D8EC5]" />
                                         {point}

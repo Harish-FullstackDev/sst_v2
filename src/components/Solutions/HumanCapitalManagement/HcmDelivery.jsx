@@ -58,7 +58,7 @@ function PhaseBanner({ item }) {
                 {item.points.map((point, i) => (
                     <li
                         key={point}
-                        className={`flex items-center gap-3 text-white/80 text-xs sm:text-base lg:text-sm xl:text-base font-light transition-all duration-700 ease-out ${inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2"}`}
+                        className={`flex items-center gap-3 text-white/80 text-sm sm:text-xl lg:text-base xl:text-xl 2xl:text-2xl font-light transition-all duration-700 ease-out ${inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2"}`}
                         style={{ transitionDelay: inView ? `${500 + i * 220}ms` : "0ms" }}
                     >
                         <span className="size-1.5 shrink-0 bg-[#2D8EC5]" />

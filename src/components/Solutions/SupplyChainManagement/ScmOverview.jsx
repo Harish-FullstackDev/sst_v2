@@ -71,9 +71,14 @@ export default function ScmOverview() {
                         className="justify-self-start max-w-[467px] flex flex-col gap-4 max-sm:mt-4 max-sm:justify-self-center"
                     >
                         <h3 className="text-[#2E3033] text-xl font-semibold lg:pl-16 max-sm:text-center">Key features include</h3>
-                        <ul className="list-disc marker:text-[#7f7f7f] pl-16 max-sm:pl-5 space-y-3 text-[#55595E] text-base sm:text-lg font-light">
+                        {/* Drawn bullets instead of list-disc markers, so each dot starts
+                            exactly where the heading's "K" starts (same lg:pl-16). */}
+                        <ul className="lg:pl-16 space-y-3 text-[#55595E] text-base sm:text-lg font-light">
                             {KEY_FEATURES.map((point) => (
-                                <li key={point}>{point}</li>
+                                <li key={point} className="flex items-start gap-3">
+                                    <span aria-hidden="true" className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-[#7f7f7f]" />
+                                    <span>{point}</span>
+                                </li>
                             ))}
                         </ul>
                     </motion.div>
