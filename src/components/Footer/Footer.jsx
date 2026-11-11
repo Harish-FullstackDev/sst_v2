@@ -137,14 +137,14 @@ const Footer = () => {
                   Trust Center
                 </Link>
               </li> */}
-                <li>
+                {/* <li>
                   <Link
                     href="/book-a-consultation"
                     className="hover:text-white transition-colors duration-200"
                   >
                     Book a call
                   </Link>
-                </li>
+                </li> */}
                 {/* <li>
                 <Link
                   href="#contact"
