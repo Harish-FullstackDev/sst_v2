@@ -1,40 +1,44 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { LuChartColumn, LuCpu, LuRocket, LuScaling, LuUsers } from "react-icons/lu";
 
-import quickSetupPhoto from "@/assets/Solutions/S4hanaPublicCloud/feature-quick-setup.webp";
-import flexibleScalingPhoto from "@/assets/Solutions/S4hanaPublicCloud/feature-flexible-scaling.webp";
-import cuttingEdgePhoto from "@/assets/Solutions/S4hanaPublicCloud/feature-cutting-edge.webp";
-import instantInsightsPhoto from "@/assets/Solutions/S4hanaPublicCloud/feature-instant-insights.webp";
-import collaborationPhoto from "@/assets/Solutions/S4hanaPublicCloud/feature-collaboration.webp";
+// No photos. A navy panel (#0A2B3E to #003756, soft deep-blue rise) holds the
+// active feature's title and description in a left column and its Lucide icon
+// (same set as the rest of the site) in its own right column, sketching itself
+// stroke by stroke on every tab change, so copy and icon never overlap. One
+// faint band of light passes across on each change, and a 3px brand-blue
+// timeline along the foot fills over the autoplay interval (hidden while a tab
+// is hovered). Panel height follows the copy, with a floor.
+const INTERVAL = 5000;
+const DRAW_KEYFRAMES = "@keyframes pc-draw { to { stroke-dashoffset: 0; } }";
 
 const TABS = [
     {
         title: "Quick Setup",
         desc: "Get started quickly with a rapid deployment model designed to bypass complex setup processes. Businesses implement the solution swiftly, minimizing downtime and reducing the need for extensive configuration, so they can quickly begin leveraging the system's capabilities to enhance productivity and streamline operations.",
-        img: quickSetupPhoto,
+        icon: LuRocket,
     },
     {
         title: "Flexible Scaling",
         desc: "Easily adapt to changing business needs with a flexible solution that supports seamless scalability and agility. Whether your organization is expanding or adjusting to shifts in demand, the system's modular design and configurable features let you respond swiftly and efficiently, maintaining optimal performance and meeting market requirements.",
-        img: flexibleScalingPhoto,
+        icon: LuScaling,
     },
     {
         title: "Cutting-Edge Features",
         desc: "Leverage advanced tools such as predictive analytics and IoT integration to drive innovation and gain a competitive edge. Predictive analytics helps you anticipate trends and make data-driven decisions, while IoT integration enables real-time data collection and monitoring, optimizing operations and creating new opportunities through smart, connected technologies.",
-        img: cuttingEdgePhoto,
+        icon: LuCpu,
     },
     {
         title: "Instant Insights",
         desc: "Access real-time data and analytics instantly, empowering confident decision-making. With SAP's in-memory computing, businesses retrieve and analyze data in real time, gaining insight into operational performance, customer behavior, and market trends, so they can make proactive adjustments and strategic decisions based on current, accurate information.",
-        img: instantInsightsPhoto,
+        icon: LuChartColumn,
     },
     {
         title: "Improved Collaboration",
         desc: "Foster teamwork with intuitive interfaces and seamless integration across SAP solutions. User-friendly interfaces help teams work efficiently across departments, while integration with other SAP applications streamlines workflows and keeps data consistent, enabling a unified approach to business processes that improves productivity and alignment.",
-        img: collaborationPhoto,
+        icon: LuUsers,
     },
 ];
 
@@ -47,7 +51,7 @@ export default function PublicCloudFeatures() {
 
         const interval = setInterval(() => {
             setActive((prev) => (prev + 1) % TABS.length);
-        }, 5000);
+        }, INTERVAL);
 
         return () => clearInterval(interval);
     }, [isPaused]);
@@ -68,7 +72,7 @@ export default function PublicCloudFeatures() {
                     Features in S/4HANA Public Cloud
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    Five capabilities that set the public cloud edition apart.
+                    The capabilities that set the public cloud edition apart.
                 </p>
             </motion.div>
 
@@ -96,48 +100,56 @@ export default function PublicCloudFeatures() {
                     ))}
                 </div>
 
-                {/* Image panel. The description overlays the image only at xl, where the image
-                    is tall enough to hold it; below xl it sits under the image so it never clips. */}
+                {/* Navy panel holding title, description and the self-drawing icon */}
                 <div className="w-full lg:flex-1 lg:min-w-0">
-                    {/* Every image stays mounted and cross-fades on opacity, so switching tabs never blanks the box; only the copy swaps, after the image has started to change. */}
-                    <div className="flex flex-col gap-5">
-                            <div className="relative w-full aspect-[798/446] overflow-hidden bg-[#e6e6e6]">
-                                {TABS.map((tab, index) => (
-                                    <Image
-                                        key={index}
-                                        src={tab.img}
-                                        alt={index === active ? tab.title : ""}
-                                        fill
-                                        sizes="(min-width: 1024px) 60vw, 100vw"
-                                        className={`object-cover transition-opacity duration-700 ease-in-out ${index === active ? "opacity-100" : "opacity-0"}`}
-                                        priority={index === 0}
+                    <div className="relative w-full min-h-[320px] lg:min-h-[420px] overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+                        <style>{DRAW_KEYFRAMES}</style>
+                        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.4),rgba(28,95,133,0)_65%)]" />
+
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={active}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0, transition: { duration: 0.25 } }}
+                                transition={{ duration: 0.4 }}
+                                className="relative flex flex-col-reverse sm:flex-row sm:items-center gap-6 sm:gap-10 h-full min-h-[inherit] px-6 py-8 sm:px-10 sm:py-10 xl:px-12"
+                            >
+                                {/* One light sweep per change */}
+                                <motion.div
+                                    aria-hidden="true"
+                                    initial={{ x: "0%" }}
+                                    animate={{ x: "300%" }}
+                                    transition={{ duration: 1.6, ease: "easeOut" }}
+                                    className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/2 -skew-x-12 bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.07),transparent)]"
+                                />
+                                <div className="relative flex flex-col gap-3 sm:gap-4 flex-1 min-w-0">
+                                    <h2 className="text-white text-xl sm:text-2xl xl:text-[28px] font-semibold">{activeTab.title}</h2>
+                                    <p className="text-white/85 text-base sm:text-lg font-light leading-relaxed">{activeTab.desc}</p>
+                                </div>
+                                <div className="relative shrink-0 w-16 sm:w-[30%] max-w-[220px] self-start sm:self-center">
+                                    <activeTab.icon
+                                        aria-hidden="true"
+                                        strokeWidth={0.6}
+                                        className="w-full h-auto text-white/50 [&_*]:[stroke-dasharray:100] [&_*]:[stroke-dashoffset:100] [&_*]:animate-[pc-draw_2.2s_cubic-bezier(0.65,0,0.35,1)_0.1s_forwards]"
                                     />
-                                ))}
+                                </div>
+                            </motion.div>
+                        </AnimatePresence>
 
-                                {/* Gradient */}
-                                <div className="hidden xl:block absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
-
-                                <AnimatePresence mode="wait">
+                        {/* Autoplay timeline: restarts on each tab (keyed), hidden while paused. */}
+                        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[3px] bg-white/15">
+                            {!isPaused && (
                                 <motion.div
                                     key={active}
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -6 }}
-                                    transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
-                                    className="hidden xl:flex absolute left-[55px] bottom-[46px] w-[520px] text-white flex-col gap-3"
-                                >
-                                    <h2 className="text-xl font-semibold">{activeTab.title}</h2>
-                                    <p className="text-white/90 text-lg font-light leading-relaxed">{activeTab.desc}</p>
-                                </motion.div>
-                                </AnimatePresence>
-                            </div>
-
-                            <div className="flex xl:hidden flex-col gap-3">
-                                <h2 className="text-[#2E3033] text-xl font-semibold">{activeTab.title}</h2>
-                                <p className="text-[#55595E] text-base sm:text-lg font-light">{activeTab.desc}</p>
-                            </div>
+                                    initial={{ scaleX: 0 }}
+                                    animate={{ scaleX: 1 }}
+                                    transition={{ duration: INTERVAL / 1000, ease: "linear" }}
+                                    className="h-full origin-left bg-[#2D8EC5]"
+                                />
+                            )}
                         </div>
-                    
+                    </div>
                 </div>
             </div>
         </section>

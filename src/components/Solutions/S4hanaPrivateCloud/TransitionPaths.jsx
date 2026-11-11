@@ -78,10 +78,7 @@ export default function TransitionPaths() {
                                 aria-hidden
                                 className={`absolute inset-0 bg-[#002C4F] transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0"}`}
                             />
-                            <div className="relative flex flex-col gap-8 sm:gap-16 lg:mt-12">
-                                <span className={`text-sm sm:text-base font-light tracking-wide ${isActive ? "text-white/70" : "text-[#2d8ec5]"}`}>
-                                    {String(index + 1).padStart(2, "0")}
-                                </span>
+                            <div className="relative flex flex-col gap-4 sm:gap-6 lg:mt-12">
                                 <h2 className="text-xl sm:text-[28px] lg:text-[32px] font-semibold leading-tight">{path.title}</h2>
                                 <p className="text-base sm:text-xl font-light">{path.desc}</p>
                             </div>

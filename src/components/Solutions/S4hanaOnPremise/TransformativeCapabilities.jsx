@@ -75,10 +75,7 @@ export default function TransformativeCapabilities() {
                                 className="group flex flex-col gap-4 w-full"
                             >
                                 <div className="flex flex-col gap-3">
-                                    <h2 className="text-[#2E3033] text-xl font-semibold">
-                                        <span className="text-[#2d8ec5] mr-3">{String(index + 1).padStart(2, "0")}</span>
-                                        {item.title}
-                                    </h2>
+                                    <h2 className="text-[#2E3033] text-xl font-semibold">{item.title}</h2>
                                     <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                                 </div>
                                 <div className="relative w-[139px] h-[2px]">

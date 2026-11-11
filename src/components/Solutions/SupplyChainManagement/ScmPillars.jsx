@@ -52,11 +52,8 @@ export default function ScmPillars() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 + index * 0.1 }}
-                            className="group flex gap-5 sm:gap-8 bg-white border-l-2 border-[#2d8ec5] px-6 py-6 sm:px-8 sm:py-8 transition-shadow duration-300 hover:shadow-lg"
+                            className="group flex bg-white border-l-2 border-[#2d8ec5] px-6 py-6 sm:px-8 sm:py-8 transition-shadow duration-300 hover:shadow-lg"
                         >
-                            <span className="text-[#2d8ec5] text-2xl sm:text-[32px] font-semibold leading-none shrink-0">
-                                {String(index + 1).padStart(2, "0")}
-                            </span>
                             <div className="flex flex-col gap-2 min-w-0">
                                 <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{pillar.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{pillar.desc}</p>

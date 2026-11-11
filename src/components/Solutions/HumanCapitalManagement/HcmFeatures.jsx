@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { LuBanknote, LuChartColumn, LuClock, LuScale, LuStar, LuUserCog, LuUserPlus, LuUsers } from "react-icons/lu";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 const CARDS = [
     {
@@ -66,6 +66,8 @@ function ArrowIcon({ direction }) {
     );
 }
 
+const AUTOPLAY_INTERVAL = 4000;
+
 export default function HcmFeatures() {
     const trackRef = useRef(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -93,6 +95,31 @@ export default function HcmFeatures() {
         el.scrollBy({ left: dir * amount, behavior: "smooth" });
     };
 
+    // Autoplay: advance one card every AUTOPLAY_INTERVAL, looping back to the start
+    // after the last card. It runs only while the track is on screen, pauses while
+    // the pointer is over the carousel or a finger is on it, and restarts its
+    // countdown after a manual arrow click so it never jumps right after one.
+    const isInView = useInView(trackRef, { amount: 0.3 });
+    const [isPaused, setIsPaused] = useState(false);
+    const [manualTick, setManualTick] = useState(0);
+
+    useEffect(() => {
+        if (!isInView || isPaused) return undefined;
+        const id = setInterval(() => {
+            const el = trackRef.current;
+            if (!el) return;
+            const atEnd = el.scrollLeft >= el.scrollWidth - el.clientWidth - 4;
+            if (atEnd) el.scrollTo({ left: 0, behavior: "smooth" });
+            else scrollByCard(1);
+        }, AUTOPLAY_INTERVAL);
+        return () => clearInterval(id);
+    }, [isInView, isPaused, manualTick]);
+
+    const handleArrow = (dir) => {
+        scrollByCard(dir);
+        setManualTick((t) => t + 1);
+    };
+
     return (
         <section className="w-full py-10 sm:py-16 px-8 sm:px-[64px]">
             <div className="flex flex-col lg:flex-row lg:items-start gap-8 sm:gap-10 lg:gap-[80px] max-w-[1637px] mx-auto">
@@ -105,12 +132,18 @@ export default function HcmFeatures() {
                 >
                     <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Features of Human Capital Management</h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
-                        Eight capabilities that cover the employee lifecycle, from the first job posting to the last
+                        The capabilities that cover the employee lifecycle, from the first job posting to the last
                         payslip.
                     </p>
                 </motion.div>
 
-                <div className="flex flex-col gap-6 w-full min-w-0">
+                <div
+                    className="flex flex-col gap-6 w-full min-w-0"
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                    onTouchStart={() => setIsPaused(true)}
+                    onTouchEnd={() => setIsPaused(false)}
+                >
                     {/* whileInView lives on the track, not per card: horizontally scrolled
                         cards keep their layout box, so a per-card trigger would re-animate
                         them mid-scroll. One trigger with staggered variants avoids that. */}
@@ -134,10 +167,7 @@ export default function HcmFeatures() {
                                 // card grows with its copy and the stretch alignment keeps the row even.
                                 className="snap-start shrink-0 w-[min(300px,80vw)] sm:w-[380px] min-h-[320px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col items-start text-left px-6 sm:px-8 py-7 sm:py-8"
                             >
-                                <div className="flex items-center justify-between w-full mb-5">
-                                    <card.icon aria-hidden="true" strokeWidth={1.5} className="size-11 text-[#1C5F85]" />
-                                    <span className="text-[#2d8ec5] text-base font-semibold">{String(index + 1).padStart(2, "0")}</span>
-                                </div>
+                                <card.icon aria-hidden="true" strokeWidth={1.5} className="size-11 mb-5 text-[#1C5F85]" />
                                 <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{card.title}</h2>
                                 <p className="text-[#55595E] text-base font-light mt-4">{card.desc}</p>
                             </motion.div>
@@ -148,7 +178,7 @@ export default function HcmFeatures() {
                         <button
                             type="button"
                             aria-label="Previous"
-                            onClick={() => scrollByCard(-1)}
+                            onClick={() => handleArrow(-1)}
                             disabled={!canScrollLeft}
                             className={`flex items-center justify-center size-9 sm:size-[46px] transition-[color,transform] disabled:cursor-not-allowed ${canScrollLeft ? "text-black hover:scale-110" : "text-[#c7c7c7]"
                                 }`}
@@ -158,7 +188,7 @@ export default function HcmFeatures() {
                         <button
                             type="button"
                             aria-label="Next"
-                            onClick={() => scrollByCard(1)}
+                            onClick={() => handleArrow(1)}
                             disabled={!canScrollRight}
                             className={`flex items-center justify-center size-9 sm:size-[46px] transition-[color,transform] disabled:cursor-not-allowed ${canScrollRight ? "text-black hover:scale-110" : "text-[#c7c7c7]"
                                 }`}

@@ -62,7 +62,7 @@ export default function CxMethodology() {
                         transition={{ duration: 0.5, delay: index * 0.08 }}
                         className="relative flex lg:flex-col gap-5 lg:gap-6"
                     >
-                        <span className="relative z-10 flex size-11 shrink-0 items-center justify-center bg-[#2d8ec5] text-white">
+                        <span className="relative z-10 flex size-11 shrink-0 items-center justify-center bg-[linear-gradient(to_top_right,#0A2B3E,#003756)] text-white">
                             <step.icon aria-hidden="true" strokeWidth={1.5} className="size-6" />
                         </span>
                         <div className="flex flex-col gap-2 min-w-0">
