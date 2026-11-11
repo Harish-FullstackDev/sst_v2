@@ -32,17 +32,17 @@ const itemVariants = {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-// No photos: same blue family as the other service pages. These four are the
-// parts of one SAP package, so every card shares one gradient, deep blue
-// #1C5F85 at the top settling into navy #0A2B3E at the foot where the copy sits.
-// The open card is marked by a sharp brand-blue (#2D8EC5) bar that wipes in
-// along its top edge, a straight-edged cue in place of the old photo darkening.
+// Figma 2205:2114. Solid cards, no photos or icons: a resting card is the
+// inverse surface (#00223D) under a black/30 wash; the open card (hover or
+// autoplay) fades to primary/700 (#004174). Title and description sit as one
+// block centred vertically, inset 10% left and right; the description opens
+// under the title on the active card.
 function CardBackground({ isActive }) {
     return (
-        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_bottom,#1C5F85,#003756_55%,#0A2B3E)]">
+        <div aria-hidden="true" className="absolute inset-0 bg-[#00223D]">
+            <div className="absolute inset-0 bg-black/30" />
             <div
-                className={`absolute inset-x-0 top-0 h-1 bg-[#2D8EC5] origin-left transition-transform duration-500 ease-out ${isActive ? "scale-x-100" : "scale-x-0"
-                    }`}
+                className={`absolute inset-0 bg-[#004174] transition-opacity duration-500 ease-out ${isActive ? "opacity-100" : "opacity-0"}`}
             />
         </div>
     );
@@ -93,7 +93,7 @@ export default function WhatIsGrow() {
                         className="relative w-full min-h-[220px] overflow-hidden"
                     >
                         <CardBackground isActive />
-                        <div className="relative flex flex-col justify-start gap-2 px-4 pt-5 pb-6">
+                        <div className="relative flex min-h-[inherit] flex-col justify-center gap-2 px-[10%] py-6">
                             <h2 className="text-white text-xl font-semibold">{card.title}</h2>
                             <p className="text-white/85 text-sm font-light max-w-[280px]">{card.desc}</p>
                         </div>
@@ -118,16 +118,14 @@ export default function WhatIsGrow() {
                             key={card.title}
                             variants={itemVariants}
                             onMouseEnter={() => setActiveIndex(index)}
-                            className="relative w-full aspect-[278/290] overflow-hidden shadow-[0px_2px_8px_rgba(0,0,0,0.19)]"
+                            className="relative w-full min-h-[240px] overflow-hidden shadow-[0px_2px_8px_rgba(0,0,0,0.19)]"
                         >
                             <CardBackground isActive={isActive} />
-                            {/* Anchored to the bottom so the block grows upward as the
-                                description expands. */}
-                            <div className="absolute left-[10%] right-[10%] bottom-[10%] flex flex-col text-white">
-                                <h2 className="text-xl font-semibold">{card.title}</h2>
+                            <div className="absolute inset-0 flex flex-col justify-center px-[10%] text-white">
+                                <h2 className="text-xl font-semibold leading-7">{card.title}</h2>
                                 <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
                                     <div className="overflow-hidden">
-                                        <p className="text-base font-light pt-2">{card.desc}</p>
+                                        <p className="text-base font-light leading-6 pt-2">{card.desc}</p>
                                     </div>
                                 </div>
                             </div>

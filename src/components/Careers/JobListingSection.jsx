@@ -218,7 +218,7 @@ export default function JobListingSection() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center mb-10 sm:mb-12"
             >
-                <p className="text-base sm:text-xl font-medium uppercase tracking-[0.18em] text-black">Opportunities</p>
+                <p className="text-[#2d8ec5] text-base sm:text-lg font-normal">Opportunities</p>
                 <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033] mt-2">Find Work That Matches Your Expertise.</h2>
             </motion.div>
 

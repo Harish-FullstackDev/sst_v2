@@ -16,7 +16,7 @@ export default function CareersHeroText({ as: Heading = "h1" }) {
                 </p>
                 <div className="mt-3 sm:mt-1 h-px w-full bg-white/40" />
                 <Heading className="text-white text-2xl sm:text-4xl lg:text-5xl font-medium capitalize mt-6 sm:mt-6 leading-tight">
-                    Build what enterprises depend on.
+                    Grow your career with SST.
                 </Heading>
 
             </motion.div>

@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 // unconfirmed and says to drop to a 3-stat row rather than publish a
 // placeholder number — so there are 3 here, not 4.
 const STRENGTHS = [
-    { value: "150+", title: "SAP engagements delivered", description: "" },
+    { value: "200+", title: "SAP engagements delivered", description: "" },
     { value: "400+", title: "Specialists across the practice", description: "" },
     { value: "6", title: "Delivery locations across the GCC", description: "" },
 ];

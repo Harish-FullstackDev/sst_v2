@@ -12,16 +12,13 @@ export default function HeroText() {
                 className="w-full max-w-[1057px]"
             >
                 <p className="text-white/90 text-sm sm:text-lg lg:text-xl uppercase tracking-wide font-light">
-                    Cloud · Google Cloud Platform
+                    Google Cloud Platform
                 </p>
                 <div className="mt-3 sm:mt-1 h-px w-full bg-white/40" />
                 <h1 className="text-white text-xl sm:text-4xl lg:text-5xl font-semibold capitalize mt-6 sm:mt-6 leading-tight">
                     Transform Your Enterprise with
                     <br className="hidden sm:inline" /> GCP&apos;s Advanced Capabilities
                 </h1>
-                <p className="mt-4 sm:mt-6 text-white/90 text-base sm:text-xl lg:text-2xl font-light">
-                    Migrate, Innovate, Accelerate.
-                </p>
             </motion.div>
         </div>
     );

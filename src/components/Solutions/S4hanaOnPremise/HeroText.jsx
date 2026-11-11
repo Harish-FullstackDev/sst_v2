@@ -12,16 +12,12 @@ export default function HeroText() {
                 className="w-full max-w-[1057px]"
             >
                 <p className="text-white/90 text-sm sm:text-lg lg:text-xl uppercase tracking-wide font-light">
-                    ERP Solutions · SAP S/4HANA
+                    SAP S/4HANA
                 </p>
                 <div className="mt-3 sm:mt-1 h-px w-full bg-white/40" />
                 <h1 className="text-white text-xl sm:text-4xl lg:text-5xl font-semibold capitalize mt-6 sm:mt-6 leading-tight">
                     SAP S/4HANA On-Premises
                 </h1>
-                {/* Credentials strip from the old page, kept as the hero subline */}
-                <p className="mt-4 sm:mt-6 text-white/80 text-sm sm:text-lg font-light">
-                    Dedicated IT Infrastructure • Comprehensive System Maintenance • Skilled In-House Support Team
-                </p>
             </motion.div>
         </div>
     );
