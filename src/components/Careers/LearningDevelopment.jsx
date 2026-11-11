@@ -22,7 +22,7 @@ export default function LearningDevelopment() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="relative w-full h-[280px] sm:h-[380px] lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-[65.078%] bg-[#5c5c5c]"
                 >
-                    <Image src={learningImage} alt="Employees collaborating during a learning session" fill className="object-cover" />
+                    <Image src={learningImage} alt="Two colleagues mapping out a strategy on a chalkboard" fill className="object-cover" />
                 </motion.div>
 
                 <motion.div

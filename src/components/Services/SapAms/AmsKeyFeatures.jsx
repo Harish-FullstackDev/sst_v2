@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import useAutoScroll from "@/lib/useAutoScroll";
 import carryForwardIcon from "@/assets/Services/SapAms/icons/carry-forward.svg";
 import coeTeamIcon from "@/assets/Services/SapAms/icons/coe-team.svg";
 import frameworkIcon from "@/assets/Services/SapAms/icons/framework.svg";
@@ -78,6 +79,7 @@ function ArrowIcon({ direction }) {
 
 export default function AmsKeyFeatures() {
     const trackRef = useRef(null);
+    const pauseAutoScroll = useAutoScroll(trackRef);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
 
@@ -155,7 +157,7 @@ export default function AmsKeyFeatures() {
                         <button
                             type="button"
                             aria-label="Previous"
-                            onClick={() => scrollByCard(-1)}
+                            onClick={() => { pauseAutoScroll(); scrollByCard(-1); }}
                             disabled={!canScrollLeft}
                             className={`flex items-center justify-center size-9 sm:size-[46px] transition-[color,transform] disabled:cursor-not-allowed ${canScrollLeft ? "text-black hover:scale-110" : "text-[#c7c7c7]"
                                 }`}
@@ -165,7 +167,7 @@ export default function AmsKeyFeatures() {
                         <button
                             type="button"
                             aria-label="Next"
-                            onClick={() => scrollByCard(1)}
+                            onClick={() => { pauseAutoScroll(); scrollByCard(1); }}
                             disabled={!canScrollRight}
                             className={`flex items-center justify-center size-9 sm:size-[46px] transition-[color,transform] disabled:cursor-not-allowed ${canScrollRight ? "text-black hover:scale-110" : "text-[#c7c7c7]"
                                 }`}

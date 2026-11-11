@@ -2,6 +2,139 @@
 // Schema matches the Supabase 'blogs' table shape used across the app.
 
 export const staticBlogsData = [
+  {
+    id: "static-sap-migration-paths",
+    slug: "choosing-your-s4hana-migration-path",
+    title: "Conversion, Greenfield or Selective: Choosing Your SAP S/4HANA Migration Path",
+    type: "Blog",
+    category: "SAP",
+    author: "SST Editorial Team",
+    publish_date: "2026-11-04",
+    cover_image: "/insights/blog/s4hana-migration-paths.webp",
+    sections: [
+      {
+        heading: "Why the Path Matters More Than the Date",
+        content:
+          "Most SAP ECC customers already know they are moving to S/4HANA. The harder question is how. The migration approach decides how much of your current system you carry forward, how much process change the business absorbs at once, and how long the programme runs.\n\nThere are three broad options: a system conversion (often called brownfield), a new implementation (greenfield), and a selective data transition that sits between the two. None is right for everyone, and picking one before you understand your own landscape is the most common way programmes overrun.",
+      },
+      {
+        heading: "System Conversion: Keep What Works",
+        content:
+          "A conversion moves your existing ECC system to S/4HANA in place. Configuration, custom code and history come with you, so users see familiar processes on day one.\n\nIt suits organisations whose processes are broadly sound and whose custom code is well understood. The work concentrates on the technical side: simplification item checks, custom code remediation, finance data migration to the Universal Journal, and a carefully rehearsed cutover. The trade-off is that you also carry forward any process debt the old system has built up.",
+      },
+      {
+        heading: "Greenfield: Start Clean",
+        content:
+          "A new implementation builds S/4HANA from a clean configuration, usually close to SAP standard, and loads only the master data and open items you need.\n\nIt is the better fit when existing processes no longer match how the business runs, after mergers, or when heavy customisation has made the current system hard to change. Expect more business involvement in design workshops and more change management, but a cleaner core that is easier to upgrade later.",
+      },
+      {
+        heading: "Selective Data Transition: The Middle Ground",
+        content:
+          "Selective transition lets you redesign some areas while carrying others forward, for example moving selected company codes or years of history into a new, cleaner system. It needs specialist tooling and careful planning, but it is valuable when a full conversion would keep too much baggage and a greenfield would lose history the business genuinely needs.",
+      },
+      {
+        heading: "How to Decide",
+        content:
+          "Start with an assessment rather than a preference. Run the SAP readiness check, review custom code usage, map which processes the business wants to change, and agree how much history must remain reportable.\n\nWith that evidence, the decision usually becomes clear. SST's migration assessments are built around exactly these questions, so the chosen path is backed by your own data rather than a vendor's default.",
+      },
+    ],
+  },
+  {
+    id: "static-rise-vs-grow",
+    slug: "rise-with-sap-vs-grow-with-sap",
+    title: "RISE with SAP or GROW with SAP: Which One Fits Your Business?",
+    type: "Blog",
+    category: "SAP",
+    author: "SST Editorial Team",
+    publish_date: "2026-10-21",
+    cover_image: "/insights/blog/rise-vs-grow-with-sap.webp",
+    sections: [
+      {
+        heading: "Two Offers, Different Starting Points",
+        content:
+          "RISE with SAP and GROW with SAP both bundle S/4HANA Cloud with infrastructure, tools and services under one subscription. The difference is who they are designed for.\n\nRISE is aimed at existing SAP customers moving their current landscape to the cloud. GROW is aimed at companies adopting SAP ERP for the first time, typically fast-growing mid-sized businesses that want a standard, ready-to-run system.",
+      },
+      {
+        heading: "When RISE Makes Sense",
+        content:
+          "If you run ECC today, have meaningful customisation, and want to keep control over your process design, RISE is usually the route. It is built on S/4HANA Cloud Private Edition, which allows more flexibility in configuration and extensions, and it supports both conversion and new implementation approaches.\n\nRISE also changes the commercial model: infrastructure, technical operations and many tools move into one contract, which simplifies vendor management but needs a clear view of what remains your responsibility.",
+      },
+      {
+        heading: "When GROW Makes Sense",
+        content:
+          "GROW is built on S/4HANA Cloud Public Edition. Processes follow SAP best practice, updates arrive on SAP's schedule, and the implementation is faster because most design decisions are already made.\n\nIt suits businesses that would rather adopt a proven standard than design their own processes, and that value predictable timelines and quarterly innovation over deep customisation.",
+      },
+      {
+        heading: "Questions to Ask Before Choosing",
+        content:
+          "How far do your processes differ from industry standard, and is that difference a competitive advantage or simply history? How much customisation do you rely on today? Who will own extensions, and will they be built on SAP BTP to keep the core clean?\n\nAnswering these honestly usually points to one option. SST helps customers work through them before any subscription is signed.",
+      },
+    ],
+  },
+  {
+    id: "static-gcc-e-invoicing",
+    slug: "preparing-finance-teams-for-gcc-e-invoicing",
+    title: "Preparing Your Finance Team for E-Invoicing in the GCC",
+    type: "Blog",
+    category: "Compliance",
+    author: "SST Editorial Team",
+    publish_date: "2026-10-07",
+    cover_image: "/insights/blog/gcc-e-invoicing-readiness.webp",
+    sections: [
+      {
+        heading: "E-Invoicing Is a Process Change, Not Just a File Format",
+        content:
+          "Governments across the GCC are moving from paper and PDF invoices to structured electronic invoices that tax authorities can validate. Saudi Arabia's FATOORA programme is already well established, and other countries in the region are introducing their own frameworks.\n\nThe technical integration gets most of the attention, but the larger impact falls on finance operations: how invoices are created, approved, corrected and archived.",
+      },
+      {
+        heading: "Start With Your Data",
+        content:
+          "Structured invoices expose data quality issues that paper invoices hid. Customer tax registration numbers, addresses, product classifications and VAT treatment all need to be correct at the moment the invoice is issued.\n\nA data review across customer and material master records is usually the most valuable first step, and it pays off well beyond compliance.",
+      },
+      {
+        heading: "Map Every Invoice Flow",
+        content:
+          "List every place an invoice or credit note is created: SAP billing, manual journal processes, subsidiary systems, and third-party platforms. Each flow needs a defined route to the tax authority, clear error handling, and an owner.\n\nPay particular attention to corrections. Many frameworks restrict how issued invoices can be changed, so credit and debit note processes often need redesign.",
+      },
+      {
+        heading: "Plan for Rejection and Exceptions",
+        content:
+          "Invoices will occasionally be rejected by validation. Teams need a monitoring view, a playbook for common errors, and agreed response times so rejected invoices do not delay customer billing or cash collection.\n\nAlways confirm the current requirements and deadlines with the relevant tax authority, as timelines and technical specifications are updated over time. SST's e-invoicing team works with clients to build compliant SAP integrations and the operating processes around them.",
+      },
+    ],
+  },
+  {
+    id: "static-ams-after-go-live",
+    slug: "what-good-application-support-looks-like-after-go-live",
+    title: "What Good Application Support Looks Like After Go-Live",
+    type: "Blog",
+    category: "Managed Services",
+    author: "SST Editorial Team",
+    publish_date: "2026-09-23",
+    cover_image: "/insights/blog/application-support-after-go-live.webp",
+    sections: [
+      {
+        heading: "Go-Live Is the Start of the System's Life",
+        content:
+          "Implementation projects end, but the system keeps running for a decade or more. How it is supported in that period decides whether the investment keeps paying back or slowly erodes through workarounds and unresolved issues.",
+      },
+      {
+        heading: "Clear Tiers and Clear Ownership",
+        content:
+          "Good application management separates the work into tiers: a service desk that logs and triages, functional consultants who resolve process and configuration issues, technical specialists for code, integration and performance, and a continuous improvement layer that removes recurring problems.\n\nEvery ticket should have an owner, a priority and an agreed response time, and users should always know where their request stands.",
+      },
+      {
+        heading: "Fix Causes, Not Just Tickets",
+        content:
+          "Closing tickets quickly is only half the job. A strong support partner tracks which issues recur, publishes known-issue articles so fixes are fast the next time, and proposes small changes that stop the problem happening at all. Over time the ticket volume should fall, not grow.",
+      },
+      {
+        heading: "Measure What the Business Feels",
+        content:
+          "SLA compliance matters, but so do user satisfaction, backlog age and the number of business disruptions. Regular service reviews that cover all of these keep both sides honest.\n\nSST's AMS engagements are built around these principles, with carry-forward support hours, per-ticket satisfaction surveys and a knowledge base that grows with every resolved issue.",
+      },
+    ],
+  },
   // {
   //   id: "static-1",
   //   slug: "software-projects-outsourcing-guide",

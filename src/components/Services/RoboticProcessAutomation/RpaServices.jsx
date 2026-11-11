@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { LuBot, LuChartColumn, LuKeyboard, LuReceipt, LuUserPlus, LuWorkflow } from "react-icons/lu";
 import { motion } from "framer-motion";
+import useAutoScroll from "@/lib/useAutoScroll";
 
 const CARDS = [
     {
@@ -58,6 +59,7 @@ function ArrowIcon({ direction }) {
 
 export default function RpaServices() {
     const trackRef = useRef(null);
+    const pauseAutoScroll = useAutoScroll(trackRef);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
 
@@ -153,7 +155,7 @@ export default function RpaServices() {
                         <button
                             type="button"
                             aria-label="Previous"
-                            onClick={() => scrollByCard(-1)}
+                            onClick={() => { pauseAutoScroll(); scrollByCard(-1); }}
                             disabled={!canScrollLeft}
                             className={`flex items-center justify-center size-9 sm:size-[46px] transition-[color,transform] disabled:cursor-not-allowed ${canScrollLeft ? "text-black hover:scale-110" : "text-[#c7c7c7]"
                                 }`}
@@ -163,7 +165,7 @@ export default function RpaServices() {
                         <button
                             type="button"
                             aria-label="Next"
-                            onClick={() => scrollByCard(1)}
+                            onClick={() => { pauseAutoScroll(); scrollByCard(1); }}
                             disabled={!canScrollRight}
                             className={`flex items-center justify-center size-9 sm:size-[46px] transition-[color,transform] disabled:cursor-not-allowed ${canScrollRight ? "text-black hover:scale-110" : "text-[#c7c7c7]"
                                 }`}

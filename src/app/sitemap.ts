@@ -3,6 +3,7 @@ import { supabase } from '@/lib/supabaseClient';
 import { hrmsSelect } from '@/lib/hrmsClient';
 import { industryReportsData } from '@/data/industryReportsData';
 import { staticBlogsData } from '@/data/blogsData';
+import { staticCaseStudiesData } from '@/data/caseStudiesData';
 import { SITE_URL } from '@/lib/siteUrl';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -113,6 +114,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Static blog posts rendered by blog/[slug] alongside the Supabase ones.
   staticBlogsData.forEach((post: any) => push(`/blog/${post.slug}/`, post.publish_date, 'weekly', 0.6));
+  staticCaseStudiesData.forEach((cs: any) => push(`/case-studies/${cs.slug}/`, cs.publish_date, 'monthly', 0.7));
 
   const tables = [
     { table: 'blogs', select: 'slug, publish_date, created_at', base: '/blog', freq: 'weekly' as const, priority: 0.6 },
