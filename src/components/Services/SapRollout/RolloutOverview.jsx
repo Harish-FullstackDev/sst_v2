@@ -76,7 +76,7 @@ export default function RolloutOverview() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full h-[300px] sm:h-[420px] lg:h-auto lg:flex-[475_1_0%] overflow-hidden"
                 >
-                    <Image src={overviewPhoto} alt="SAP rollout plan laid out on a desk" fill className="object-cover" />
+                    <Image src={overviewPhoto} alt="Hand pointing to locations pinned across a world map" fill className="object-cover" />
                 </motion.div>
             </div>
         </section>

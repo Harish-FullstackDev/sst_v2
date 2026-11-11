@@ -13,7 +13,7 @@ import DeploymentOptions from "@/components/Services/SapConversionEccToS4hana/De
 import ConversionReadiness from "@/components/Services/SapConversionEccToS4hana/ConversionReadiness";
 import ConversionRoadmap from "@/components/Services/SapConversionEccToS4hana/ConversionRoadmap";
 import ReadyToTransform from "@/components/Services/SapConversionEccToS4hana/ReadyToTransform";
-import customBg from "@/assets/Services/SapConversionEccToS4hana/cta.png";
+import customBg from "@/assets/sst-cta.webp";
 
 const page = () => {
     return (

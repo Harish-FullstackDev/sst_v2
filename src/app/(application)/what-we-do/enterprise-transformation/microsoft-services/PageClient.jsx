@@ -13,7 +13,7 @@ import WhyItMatters from "@/components/WhatWeDo/EnterpriseTransformationPractice
 import WhyPartnerWithUs from "@/components/WhatWeDo/EnterpriseTransformationPractice/MicrosoftServices/WhyPartnerWithUs";
 import ProofInNumbers from "@/components/WhatWeDo/EnterpriseTransformationPractice/MicrosoftServices/ProofInNumbers";
 
-import ctaBg from "@/assets/WhatWeDo/Enterprise Transformation Practice/MicrosoftServices/cta-bg.png";
+import ctaBg from "@/assets/sst-cta.webp";
 
 const page = () => {
     return (

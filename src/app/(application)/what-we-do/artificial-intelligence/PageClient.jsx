@@ -21,7 +21,7 @@ import AIGovernance from "@/components/WhatWeDo/ArtificialIntelligence/AIGoverna
 import AILifecycle from "@/components/WhatWeDo/ArtificialIntelligence/AILifecycle";
 import WhyPartnerWithUs from "@/components/WhatWeDo/ArtificialIntelligence/WhyPartnerWithUs";
 import AIUseCaseValueEnablement from "@/components/WhatWeDo/ArtificialIntelligence/AIUseCaseValueEnablement";
-import customBg from "@/assets/WhatWeDo/Artificial Intelligence/AI_Imgs/AI_CTA_2560_1200.webp";
+import customBg from "@/assets/sst-cta.webp";
 
 const page = () => {
     return (

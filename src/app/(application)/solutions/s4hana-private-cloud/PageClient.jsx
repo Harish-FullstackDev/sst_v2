@@ -12,7 +12,7 @@ import SecurityLayers from "@/components/Solutions/S4hanaPrivateCloud/SecurityLa
 import TransitionPaths from "@/components/Solutions/S4hanaPrivateCloud/TransitionPaths";
 import WhyPrivateCloud from "@/components/Solutions/S4hanaPrivateCloud/WhyPrivateCloud";
 import ReadyToTransform from "@/components/Solutions/S4hanaPrivateCloud/ReadyToTransform";
-import customBg from "@/assets/Solutions/S4hanaPrivateCloud/cta.webp";
+import customBg from "@/assets/sst-cta.webp";
 
 const page = () => {
     return (

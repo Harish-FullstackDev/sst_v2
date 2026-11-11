@@ -40,7 +40,7 @@ export default function FicoCoreStrengths() {
                         </p>
                     </div>
                     <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656]">
-                        <Image src={integrationImage} alt="Financial analytics dashboard on a monitor in a bright office" fill className="object-cover" />
+                        <Image src={integrationImage} alt="Manager reviewing financial figures on a tablet beside a calculator" fill className="object-cover" />
                     </div>
                 </motion.div>
 
@@ -54,7 +54,7 @@ export default function FicoCoreStrengths() {
                     className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-[100px]"
                 >
                     <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656]">
-                        <Image src={reportingImage} alt="Financial reporting application on a desktop monitor" fill className="object-cover" />
+                        <Image src={reportingImage} alt="Accountant working through charts and figures with a calculator" fill className="object-cover" />
                     </div>
                     <div className="flex flex-col gap-5 w-full">
                         <h2 className="text-[#2E3033] text-base sm:text-2xl font-semibold">

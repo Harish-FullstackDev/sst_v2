@@ -35,7 +35,7 @@ export default function ProcurementOverview() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="relative w-full sm:w-[518px] aspect-[518/325] shrink-0 self-start overflow-hidden"
             >
-                <Image src={overviewImage} alt="Document scanner and procurement software on an office desk" fill className="object-cover" />
+                <Image src={overviewImage} alt="Warehouse worker checking a shipment against the procurement system" fill className="object-cover" />
             </motion.div>
         </section>
     );

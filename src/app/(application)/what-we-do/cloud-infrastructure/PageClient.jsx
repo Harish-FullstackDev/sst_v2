@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
 import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
-import customBg from "@/assets/WhatWeDo/Cloud and Infrastructure/webp/Cloud_CTA.webp";
+import customBg from "@/assets/sst-cta.webp";
 import Hero from "@/components/WhatWeDo/CloudInfrastructure/Hero";
 import HeroText from "@/components/WhatWeDo/CloudInfrastructure/HeroText";
 import CloudConsulting from "@/components/WhatWeDo/CloudInfrastructure/CloudConsulting";

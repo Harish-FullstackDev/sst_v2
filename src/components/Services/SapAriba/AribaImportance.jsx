@@ -43,7 +43,7 @@ export default function AribaImportance() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="relative w-full lg:w-[467px] lg:max-w-[40%] lg:ml-auto shrink-0 aspect-[467/357] overflow-hidden"
                 >
-                    <Image src={importancePhoto} alt="Warehouse staff checking orders and paperwork beside stocked shelves" fill className="object-cover" />
+                    <Image src={importancePhoto} alt="Overhead view of a forklift moving stock through a warehouse aisle" fill className="object-cover" />
                 </motion.div>
             </div>
         </section>

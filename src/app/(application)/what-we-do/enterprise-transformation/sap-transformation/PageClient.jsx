@@ -14,7 +14,7 @@ import EndToEndMigration from "@/components/WhatWeDo/EnterpriseTransformationPra
 import WhyPartnerWithUs from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/WhyPartnerWithUs";
 import ProofInNumbers from "@/components/WhatWeDo/EnterpriseTransformationPractice/SapTransformation/ProofInNumbers";
 
-import ctaBg from "@/assets/WhatWeDo/Enterprise Transformation Practice/SapTransformation/cta-bg.png";
+import ctaBg from "@/assets/sst-cta.webp";
 
 const page = () => {
     return (
