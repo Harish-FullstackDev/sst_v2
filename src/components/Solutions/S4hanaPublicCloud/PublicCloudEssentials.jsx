@@ -64,7 +64,7 @@ export default function PublicCloudEssentials() {
                     transition={{ duration: 0.5 }}
                     className="relative w-full sm:flex-1 sm:self-start aspect-[4/3] sm:aspect-[27/29]"
                 >
-                    <Image src={essentialsPhoto} alt="Two colleagues working together on laptops at a shared desk" fill className="object-cover" />
+                    <Image src={essentialsPhoto} alt="Team gathered around a laptop working through a plan" fill className="object-cover" />
                 </motion.div>
             </div>
         </section>

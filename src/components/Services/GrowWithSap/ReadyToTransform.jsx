@@ -22,7 +22,7 @@ export default function ReadyToTransform({
     return (
         <>
             <section className="relative z-0 w-full overflow-hidden">
-                <Image src={bgImage} alt="" fill className="object-cover" />
+                <Image src={bgImage} alt="" fill className="object-cover object-bottom" />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/72 to-black/36" />
 
                 <motion.div
@@ -30,7 +30,7 @@ export default function ReadyToTransform({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-12 px-6 sm:px-[64px] pt-32 sm:pt-30 lg:pt-32 pb-16 sm:pb-24 lg:pb-32"
+                    className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-12 px-6 sm:px-[64px] pt-16 sm:pt-20 pb-12 sm:pb-16 lg:pb-20"
                 >
                     <div className="flex flex-col w-full md:gap-12 sm:w-[60%] text-center sm:text-left items-center sm:items-start">
                         <h2 className="text-xl sm:text-4xl md:text-5xl font-semibold text-white">

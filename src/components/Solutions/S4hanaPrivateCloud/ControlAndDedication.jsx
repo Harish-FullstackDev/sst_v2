@@ -26,7 +26,7 @@ export default function ControlAndDedication() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative w-full sm:w-[38%] sm:max-w-[442px] aspect-[442/417] shrink-0 self-start overflow-hidden"
             >
-                <Image src={controlImage} alt="Colleagues reviewing system data together on laptops" fill className="object-cover" />
+                <Image src={controlImage} alt="Colleagues reviewing documents together beside their laptops" fill className="object-cover" />
             </motion.div>
 
             <motion.div

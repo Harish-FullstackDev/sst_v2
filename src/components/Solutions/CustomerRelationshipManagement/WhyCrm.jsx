@@ -35,7 +35,7 @@ export default function WhyCrm() {
                         className="flex flex-col gap-4 sm:gap-[15px] w-full lg:flex-1"
                     >
                         <div className="relative w-full aspect-[546/440]">
-                            <Image src={gainsImage} alt="Sales team reviewing customer dashboards on laptops" fill className="object-cover" />
+                            <Image src={gainsImage} alt="Three colleagues reviewing customer details on a laptop" fill className="object-cover" />
                         </div>
                     </motion.div>
                     <div className="flex flex-col gap-8 sm:gap-10 lg:gap-0 lg:justify-between w-full lg:flex-1">
