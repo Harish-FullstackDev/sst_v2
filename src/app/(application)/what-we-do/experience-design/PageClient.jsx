@@ -5,7 +5,7 @@ import Footer from "@/components/Footer/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
 import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
-import customBg from "@/assets/WhatWeDo/Experience Design/webp/Experience_CTA.webp";
+import customBg from "@/assets/sst-cta.webp";
 import Hero from "@/components/WhatWeDo/ExperienceDesign/Hero";
 import HeroText from "@/components/WhatWeDo/ExperienceDesign/HeroText";
 import UIUXDesign from "@/components/WhatWeDo/ExperienceDesign/UIUXDesign";

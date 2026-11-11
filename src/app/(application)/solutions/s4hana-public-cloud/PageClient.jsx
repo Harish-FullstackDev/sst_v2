@@ -12,7 +12,7 @@ import AdoptionJourney from "@/components/Solutions/S4hanaPublicCloud/AdoptionJo
 import TypicalScenarios from "@/components/Solutions/S4hanaPublicCloud/TypicalScenarios";
 import WhyPublicCloud from "@/components/Solutions/S4hanaPublicCloud/WhyPublicCloud";
 import ReadyToTransform from "@/components/Solutions/S4hanaPublicCloud/ReadyToTransform";
-import customBg from "@/assets/Solutions/sst-cta.webp";
+import customBg from "@/assets/sst-cta.webp";
 
 const page = () => {
     return (

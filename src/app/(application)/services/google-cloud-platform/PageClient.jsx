@@ -13,7 +13,7 @@ import GcpAdoptionJourney from "@/components/Services/GoogleCloudPlatform/GcpAdo
 import GcpUseCases from "@/components/Services/GoogleCloudPlatform/GcpUseCases";
 import GcpFaq from "@/components/Services/GoogleCloudPlatform/GcpFaq";
 import ReadyToTransform from "@/components/Services/GoogleCloudPlatform/ReadyToTransform";
-import customBg from "@/assets/Services/GoogleCloudPlatform/cta.webp";
+import customBg from "@/assets/sst-cta.webp";
 
 const page = () => {
     return (

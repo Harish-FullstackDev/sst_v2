@@ -8,7 +8,7 @@
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import ReadyToTransform from "@/components/HomePage/ReadyToTransform";
-import customBg from "@/assets/HomePage/Homepage_CTA.webp";
+import customBg from "@/assets/sst-cta.webp";
 
 import Hero from "@/components/HomePage/Hero";
 import HeroText from "@/components/HomePage/HeroText";

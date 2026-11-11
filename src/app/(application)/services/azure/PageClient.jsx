@@ -12,7 +12,7 @@ import AzureDeliveryApproach from "@/components/Services/Azure/AzureDeliveryAppr
 import AzureMicrosoftEcosystem from "@/components/Services/Azure/AzureMicrosoftEcosystem";
 import AzureScenarios from "@/components/Services/Azure/AzureScenarios";
 import ReadyToTransform from "@/components/Services/Azure/ReadyToTransform";
-import customBg from "@/assets/Services/Azure/cta.png";
+import customBg from "@/assets/sst-cta.webp";
 
 const page = () => {
     return (

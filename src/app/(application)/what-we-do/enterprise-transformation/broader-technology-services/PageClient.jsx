@@ -12,7 +12,7 @@ import WhyItMatters from "@/components/WhatWeDo/EnterpriseTransformationPractice
 import WhyPartnerWithUs from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/WhyPartnerWithUs";
 import ProofInNumbers from "@/components/WhatWeDo/EnterpriseTransformationPractice/BroaderTechnologyServices/ProofInNumbers";
 
-import ctaBg from "@/assets/WhatWeDo/Enterprise Transformation Practice/BroaderTechnologyServices/cta-bg.png";
+import ctaBg from "@/assets/sst-cta.webp";
 
 const page = () => {
     return (

@@ -12,7 +12,7 @@ import GlobalTemplateLocalFit from "@/components/Services/SapRollout/GlobalTempl
 import RolloutOutcomes from "@/components/Services/SapRollout/RolloutOutcomes";
 import RolloutFaq from "@/components/Services/SapRollout/RolloutFaq";
 import ReadyToTransform from "@/components/Services/SapRollout/ReadyToTransform";
-import customBg from "@/assets/Services/SapRollout/cta.webp";
+import customBg from "@/assets/sst-cta.webp";
 
 const page = () => {
     return (

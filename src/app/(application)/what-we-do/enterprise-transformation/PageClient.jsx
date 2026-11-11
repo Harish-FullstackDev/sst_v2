@@ -16,7 +16,7 @@ import WhyPartnerProofInNumbers from "@/components/WhatWeDo/EnterpriseTransforma
 import IndustriesWeServe from "@/components/WhatWeDo/EnterpriseTransformationPractice/IndustriesWeServe";
 import TrustedByBand from "@/components/WhatWeDo/EnterpriseTransformationPractice/TrustedByBand";
 
-import ctaBg from "@/assets/WhatWeDo/Enterprise Transformation Practice/CTA/cta-bg.png";
+import ctaBg from "@/assets/sst-cta.webp";
 
 const page = () => {
     return (

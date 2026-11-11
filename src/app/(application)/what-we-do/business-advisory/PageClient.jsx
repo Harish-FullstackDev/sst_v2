@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import FutureFocusedInsights from "@/components/WhoWeAre/FutureFocusedInsights";
 import ReadyToTransform from "@/components/WhatWeDo/ReadyToTransform";
-import customBg from "@/assets/WhatWeDo/Business Advisory/webp/Business_CTA.webp";
+import customBg from "@/assets/sst-cta.webp";
 
 import Hero from "@/components/WhatWeDo/BusinessAdvisory/Hero";
 import HeroText from "@/components/WhatWeDo/BusinessAdvisory/HeroText";

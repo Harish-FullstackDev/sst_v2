@@ -10,7 +10,7 @@ import CategoryBand from "@/components/Services/Landing/CategoryBand";
 import ReadyToTransform from "@/components/Services/Landing/ReadyToTransform";
 import { CATEGORIES } from "@/components/Services/Landing/servicesLandingData";
 
-import ctaBg from "@/assets/Services/Landing/cta-bg.png";
+import ctaBg from "@/assets/sst-cta.webp";
 
 const page = () => {
     return (
