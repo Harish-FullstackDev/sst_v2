@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const STEPS = [
@@ -31,9 +31,16 @@ export default function HowWeWork() {
     // the hover/active look. That look is now driven by state so any card
     // can show it: it starts on card index 1 (matching the original default),
     // responds to hover/focus, and otherwise auto-advances every few seconds,
-    // pausing while the grid is hovered/focused.
+    // pausing while the grid is hovered/focused. The active step gets a soft
+    // blue wash, a 2px line that draws down its border (timed to the
+    // auto-advance), a blue number and a darker title that eases in 6px.
     const [activeIndex, setActiveIndex] = useState(1);
     const [isPaused, setIsPaused] = useState(false);
+    // Short hover intent: a cursor just passing over a step on its way
+    // somewhere else doesn't trigger it, so sweeping across stays calm.
+    const hoverTimer = useRef(null);
+    const clearHover = () => clearTimeout(hoverTimer.current);
+    useEffect(() => clearHover, []);
 
     useEffect(() => {
         if (isPaused) return;
@@ -44,7 +51,7 @@ export default function HowWeWork() {
     }, [isPaused]);
 
     return (
-        <section className="w-full bg-[#f3f6f9] pt-10 pb-10 sm:pt-16 sm:pb-16 px-6 sm:px-[64px]">
+        <section className="w-full bg-white pt-10 pb-10 sm:pt-16 sm:pb-16 px-6 sm:px-[64px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +62,6 @@ export default function HowWeWork() {
                 <h2 className="text-[#10161d] text-[28px] font-semibold">
                     A Delivery Approach Built Around <span className="text-[#0061AF]">SAP</span>, Not Adapted to It
                 </h2>
-
             </motion.div>
 
             <motion.div
@@ -75,46 +81,57 @@ export default function HowWeWork() {
                             tabIndex={0}
                             onMouseEnter={() => {
                                 setIsPaused(true);
-                                setActiveIndex(index);
+                                clearHover();
+                                hoverTimer.current = setTimeout(() => setActiveIndex(index), 120);
                             }}
+                            onMouseLeave={clearHover}
                             onFocus={() => {
                                 setIsPaused(true);
                                 setActiveIndex(index);
                             }}
                             onBlur={() => setIsPaused(false)}
                             // lg:pr-8: the 4 steps sit edge to edge (lg:gap-0), so without it each
-                            // description could run right up to the next step's border line.
-                            className={`flex flex-1 flex-col gap-6 pl-4 lg:pr-8 pb-10 border-l cursor-pointer transition-colors duration-300 ${isActive
-                                ? "border-[#2d8ec5]"
-                                : "border-[#d3dae2]"
-                                }`}
+                            // title could run right up to the next step's border line.
+                            className="relative flex flex-1 flex-col gap-6 pl-5 lg:pr-8 pt-2 pb-10 border-l border-[#d3dae2] cursor-pointer outline-none"
                         >
+                            {/* Soft brand-blue wash from the line, fading in behind the active step. */}
+                            <span
+                                aria-hidden="true"
+                                className={`pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(45,142,197,0.08),rgba(45,142,197,0)_75%)] transition-opacity duration-[900ms] ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none ${isActive ? "opacity-100" : "opacity-0"
+                                    }`}
+                            />
+                            {/* 2px brand-blue line drawing down over the grey border. While
+                                auto-playing it fills across the whole interval, so it doubles
+                                as a timer for the next step; on hover/focus it completes
+                                smoothly over a second; leaving, it fades out. Hover timings are long
+                                and eased on purpose so moving across steps feels soft. */}
+                            <span
+                                aria-hidden="true"
+                                className={`pointer-events-none absolute -left-px top-0 bottom-0 w-[2px] origin-top bg-[#2d8ec5] motion-reduce:transition-none ${isActive
+                                    ? `scale-y-100 opacity-100 ${isPaused
+                                        ? "transition-transform duration-[1000ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+                                        : "transition-transform duration-[3000ms] ease-linear"
+                                    }`
+                                    : "scale-y-0 opacity-0 transition-[opacity,scale] duration-[700ms,0ms] [transition-delay:0ms,700ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+                                    }`}
+                            />
+
                             <p
-                                className={`text-lg font-medium transition-colors duration-300 ${isActive
-                                    ? "text-[#1c5f85]"
-                                    : "text-[#8794a3]"
+                                className={`relative text-lg font-medium transition-colors duration-[800ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${isActive ? "text-[#2d8ec5]" : "text-[#8794a3]"
                                     }`}
                             >
                                 {step.number}
                             </p>
 
                             <p
-                                className={`text-lg font-medium transition-colors duration-300 ${isActive
-                                    ? "text-[#1c5f85]"
-                                    : "text-[#8794a3]"
+                                className={`relative text-lg sm:text-xl font-medium transition-[color,translate] duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${isActive ? "translate-x-1.5 text-[#10161d]" : "translate-x-0 text-[#8794a3]"
                                     }`}
                             >
                                 {step.title}
                             </p>
 
-                            <p
-                                className={`text-base font-extralight leading-[1.59] transition-colors duration-300 ${isActive
-                                    ? "text-[#10161d]"
-                                    : "text-[#4a5568]"
-                                    }`}
-                            >
-                                {step.desc}
-                            </p>
+                            {/* Step descriptions hidden for now (2026-11-12); the copy is
+                                still in STEPS[].desc if they come back. */}
                         </div>
                     );
                 })}

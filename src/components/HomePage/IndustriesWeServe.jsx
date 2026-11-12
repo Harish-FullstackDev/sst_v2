@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import bannerImg from "@/assets/HomePage/IndustriesWeServe/public-sector.png";
 import arrowIcon from "@/assets/HomePage/IndustriesWeServe/arrow-right-bold.svg";
 import manufacturingImg from "@/assets/HomePage/Industries/manufacturing.webp";
@@ -75,6 +75,10 @@ const PAGE_SIZE = 3;
 // Furthest-left card the track can start at — the view always ends on a full
 // row of PAGE_SIZE cards, so with 10 industries the last step moves 1, not 3.
 const MAX_START = Math.max(0, INDUSTRIES.length - PAGE_SIZE);
+// Auto-scroll: one card every AUTOPLAY_MS while the section is on screen,
+// wrapping back to the start after the last card. Hovering, focusing or
+// touching the cards pauses it; any manual move restarts the countdown.
+const AUTOPLAY_MS = 4000;
 
 function ImageCard({ item }) {
     return (
@@ -169,36 +173,89 @@ export default function IndustriesWeServe() {
     const [start, setStart] = useState(0);
     const mobileScrollerRef = useRef(null);
     const mobileArrows = useCarouselArrows(mobileScrollerRef);
+    const sectionRef = useRef(null);
+    const inView = useInView(sectionRef, { amount: 0.3 });
+    const reduceMotion = useReducedMotion();
+    const [paused, setPaused] = useState(false);
+    const resumeTimer = useRef(null);
+    const autoplay = inView && !paused && !reduceMotion;
+
+    useEffect(() => () => clearTimeout(resumeTimer.current), []);
+
+    // Desktop track: advance one card, wrap to the start after the end.
+    useEffect(() => {
+        if (!autoplay) return;
+        const id = setTimeout(() => setStart((s) => (s >= MAX_START ? 0 : s + 1)), AUTOPLAY_MS);
+        return () => clearTimeout(id);
+    }, [autoplay, start]);
+
+    // Mobile/tablet scroller: same rhythm, only when that scroller is showing.
+    useEffect(() => {
+        if (!autoplay) return;
+        const id = setInterval(() => {
+            const el = mobileScrollerRef.current;
+            if (!el || el.offsetParent === null) return;
+            if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 4) {
+                el.scrollTo({ left: 0, behavior: "smooth" });
+            } else {
+                scrollByOneCard(mobileScrollerRef, 1);
+            }
+        }, AUTOPLAY_MS);
+        return () => clearInterval(id);
+    }, [autoplay]);
+
+    const pause = () => {
+        clearTimeout(resumeTimer.current);
+        setPaused(true);
+    };
+    const resume = () => setPaused(false);
+    // After a touch, give the reader a moment before auto-scroll picks up again.
+    const resumeLater = () => {
+        clearTimeout(resumeTimer.current);
+        resumeTimer.current = setTimeout(resume, AUTOPLAY_MS);
+    };
+    const pauseHandlers = {
+        onMouseEnter: pause,
+        onMouseLeave: resume,
+        onFocus: pause,
+        onBlur: resume,
+        onTouchStart: pause,
+        onTouchEnd: resumeLater,
+    };
 
     return (
-        <section className="w-full">
-            {/* Banner */}
+        <section ref={sectionRef} className="w-full">
+            {/* Banner: the photo runs full width behind everything. The heading
+                block keeps the old black panel's exact footprint (457px wide, full
+                banner height, 32px top/bottom padding; stacked above a 160px photo strip on
+                phones) but is now frosted navy glass: translucent navy over a blur
+                of the photo, with a 1px light hairline on its open edge. */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="w-full bg-[#10161d] flex flex-col sm:flex-row"
+                className="relative w-full overflow-hidden flex flex-col sm:flex-row"
             >
-                <div className="flex flex-col justify-center gap-2 px-6 py-10 sm:px-[64px] sm:py-16 sm:w-[457px] shrink-0">
+                <Image src={bannerImg} alt="" fill sizes="100vw" className="object-cover" />
+                <div className="absolute inset-0 bg-[#1c5f85]/50 mix-blend-overlay" />
+                <div className="relative flex flex-col justify-center gap-2 px-6 py-8 sm:px-[64px] sm:py-8 sm:w-[457px] shrink-0 bg-[#0A2B3E]/70 backdrop-blur-md border-b sm:border-b-0 sm:border-r border-white/15">
                     <h2 className="text-white text-[28px] font-semibold">
-                        <span className="text-[#0061AF]">Industries</span> We Serve
+                        <span className="text-[#2D8EC5]">Industries</span> We Serve
                     </h2>
-                    <p className="text-white/70 text-lg font-light">
+                    <p className="text-white/85 text-lg font-light">
                         Built for the sectors that can&apos;t afford disruption
                     </p>
                 </div>
-                <div className="relative w-full h-[160px] sm:h-auto sm:w-full">
-                    <Image src={bannerImg} alt="" fill className="object-cover" />
-                    <div className="absolute inset-0 bg-[#1c5f85]/50 mix-blend-overlay" />
-                </div>
+                {/* Photo-only area: 160px strip on phones, the rest of the row on desktop. */}
+                <div aria-hidden="true" className="h-[160px] sm:h-auto sm:flex-1" />
             </motion.div>
 
             {/* Cards */}
-            <div className="w-full bg-[#f3f6f9] px-6 py-10 sm:px-[64px] sm:py-8">
+            <div className="w-full bg-[#f3f6f9] px-6 py-10 sm:px-[64px] sm:pt-8 sm:pb-16">
                 {/* Desktop/tablet: 3-cards-in-view track, stepping 3 cards per click
                     (clamped at MAX_START so the last step only moves what's left) */}
-                <div className="hidden lg:flex flex-col gap-6">
+                <div className="hidden lg:flex flex-col gap-6" {...pauseHandlers}>
                     <div className="w-full overflow-hidden">
                         {/* One card + one gap-8 = (100% - 64px)/3 + 32px = (100% + 32px)/3,
                             where 100% is the track's own width — the visible row's width. */}
@@ -237,7 +294,7 @@ export default function IndustriesWeServe() {
                 </div>
 
                 {/* Mobile / tablet: horizontal snap-scroll */}
-                <div className="lg:hidden flex flex-col gap-6">
+                <div className="lg:hidden flex flex-col gap-6" {...pauseHandlers}>
                     <div
                         ref={mobileScrollerRef}
                         onScroll={mobileArrows.update}
@@ -264,15 +321,9 @@ export default function IndustriesWeServe() {
                 </div>
             </div>
 
-            {/* Figma's frame is taller than the banner + white cards panel combined
-                (800px vs. 240+469=709px) — the white panel doesn't reach the bottom
-                of the frame, so the same banner photo shows through, unobscured, in
-                a thin reveal strip before the section ends. Same tint overlay as the
-                banner so it reads as one continuous photo, not a new image. */}
-            <div className="relative w-full h-[61px] sm:h-[91px]">
-                <Image src={bannerImg} alt="" fill className="object-cover" />
-                <div className="absolute inset-0 bg-[#1c5f85]/50 mix-blend-overlay" />
-            </div>
+            {/* Full-width hairline separating this section from Our Proud Partners
+                (same grey background on both sides), 64px from each. */}
+            <div className="h-px w-full bg-[#d3dae2]" />
         </section>
     );
 }

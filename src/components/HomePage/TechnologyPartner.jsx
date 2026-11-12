@@ -92,13 +92,14 @@ export default function TechnologyPartner() {
 
     // No scroll-lock: the reveal plays while the section scrolls in normally.
     // It starts once the section's top edge is 20% up from the bottom of the
-    // viewport ("start 0.8") and is complete by the time that edge reaches the
-    // top ("start start"), so the text is fully readable before the section
-    // owns the screen. The spring smooths out wheel/trackpad steps so the wave
-    // glides rather than jumps.
+    // viewport ("start 0.8") and is complete by the time that edge reaches 45%
+    // of the viewport height from the top ("start 0.45"), so the whole
+    // paragraph is readable while the section is still only partly scrolled
+    // in. The spring smooths out wheel/trackpad steps so the wave glides
+    // rather than jumps.
     const { scrollYProgress } = useScroll({
         target: sectionRef,
-        offset: ["start 0.8", "start start"],
+        offset: ["start 0.8", "start 0.45"],
     });
     const smoothProgress = useSpring(scrollYProgress, { stiffness: 140, damping: 30, mass: 0.4 });
 
@@ -160,7 +161,7 @@ export default function TechnologyPartner() {
 
                     <Link
                         href="/about-us"
-                        className="self-start sm:self-center shrink-0 border border-[#0a3a52] px-8 py-3 text-lg font-light text-[#0a3a52] text-center transition-colors hover:bg-[#0a3a52] hover:text-white"
+                        className="self-start sm:self-center shrink-0 btn-premium px-8 py-3 text-lg font-light text-center"
                     >
                         More About Us
                     </Link>

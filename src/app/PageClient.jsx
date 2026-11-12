@@ -16,7 +16,8 @@ import TechnologyPartner from "@/components/HomePage/TechnologyPartner";
 import ProofInNumbers from "@/components/HomePage/ProofInNumbers";
 import Services from "@/components/HomePage/Services";
 import WhyEnterprisePartnerWithUs from "@/components/HomePage/WhyEnterprisePartnerWithUs";
-import BuiltForHowEnterprisesRun from "@/components/HomePage/BuiltForHowEnterprisesRun";
+// Hidden for now (2026-11-12); re-enable by uncommenting this and the JSX below.
+// import BuiltForHowEnterprisesRun from "@/components/HomePage/BuiltForHowEnterprisesRun";
 import HowWeWork from "@/components/HomePage/HowWeWork";
 import IndustriesWeServe from "@/components/HomePage/IndustriesWeServe";
 import OurProudPartners from "@/components/HomePage/OurProudPartners";
@@ -42,7 +43,7 @@ const page = () => {
                 <ProofInNumbers />
                 <Services />
                 <WhyEnterprisePartnerWithUs />
-                <BuiltForHowEnterprisesRun />
+                {/* <BuiltForHowEnterprisesRun /> */}
                 <HowWeWork />
                 <IndustriesWeServe />
             </div>
