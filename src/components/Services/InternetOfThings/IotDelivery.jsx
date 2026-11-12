@@ -27,7 +27,7 @@ export default function IotDelivery() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-col gap-2"
                     >
-                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">From Pilot to Scale</h2>
+                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">From Pilot to <span className="text-[#2D8EC5]">Scale</span></h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             How we take IoT from a first connected use case to an enterprise-wide capability.
                         </p>

@@ -47,7 +47,7 @@ export default function AmsCoreFeatures() {
                 className="flex flex-col items-center gap-2 max-w-[900px] text-center"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Exploring the Core Features of Application &amp; Management Services
+                    Exploring the <span className="text-[#2D8EC5]">Core Features</span> of Application &amp; Management Services
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Microsoft Application &amp; Management Services enable businesses to optimize processes, manage

@@ -20,7 +20,7 @@ export default function HowRpaTransforms() {
                             transition={{ duration: 0.6 }}
                             className="text-xl sm:text-[28px] font-semibold text-[#2E3033]"
                         >
-                            How RPA Transforms Your Business
+                            How RPA <span className="text-[#2D8EC5]">Transforms</span> Your Business
                         </motion.h2>
 
                         <motion.p

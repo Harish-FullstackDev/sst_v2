@@ -165,7 +165,7 @@ export default function JobDescription({ job, otherJobs = [] }) {
             content: (
                 <p>
                     {ABOUT_SST}{" "}
-                    <Link href="/about-us" className="text-[#0061af] underline-offset-2 hover:underline">
+                    <Link href="/about-us" className="text-[#2D8EC5] underline-offset-2 hover:underline">
                         Learn more about us
                     </Link>
                 </p>
@@ -201,7 +201,7 @@ export default function JobDescription({ job, otherJobs = [] }) {
 
                 {otherJobs.length > 0 && (
                     <aside className="flex flex-col gap-6 lg:pl-4">
-                        <h2 className="text-lg leading-[1.2] font-medium text-[#0061af]">Similar jobs</h2>
+                        <h2 className="text-lg leading-[1.2] font-medium text-[#2D8EC5]">Similar jobs</h2>
                         <ul className="flex flex-col gap-10">
                             {otherJobs.map((other) => (
                                 <li key={other.slug}>
@@ -211,7 +211,7 @@ export default function JobDescription({ job, otherJobs = [] }) {
                         </ul>
                         <Link
                             href="/careers"
-                            className="flex h-11 items-center justify-center border border-[#8695a7] text-base font-medium text-[#0e2b4b] transition-colors hover:border-[#0061af] hover:text-[#0061af]"
+                            className="flex h-11 items-center justify-center border border-[#8695a7] text-base font-medium text-[#0e2b4b] transition-colors hover:border-[#2D8EC5] hover:text-[#2D8EC5]"
                         >
                             View all open roles
                         </Link>

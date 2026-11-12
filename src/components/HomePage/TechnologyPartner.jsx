@@ -151,7 +151,7 @@ export default function TechnologyPartner() {
                         {/* Same size, weight and accent as the other home headings. */}
                         <h3 className="font-houschka-pro text-xl sm:text-[28px] font-semibold leading-[1.4]">
                             <span className="text-[#2E3033]">Built for </span>
-                            <span className="text-[#0061AF]">Enterprise Execution</span>
+                            <span className="text-[#2D8EC5]">Enterprise Execution</span>
                         </h3>
                         <p className="capitalize text-[#4a5568] text-lg font-light leading-[1.6] tracking-[0.18px]">
                             We bring SAP, cloud, data, AI, and digital solutions together to help businesses

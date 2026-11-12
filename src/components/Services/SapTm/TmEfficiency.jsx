@@ -41,7 +41,7 @@ export default function TmEfficiency() {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-16"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    How Can SAP T&amp;M Help Increase Project Efficiency?
+                    How Can SAP T&amp;M Help Increase <span className="text-[#2D8EC5]">Project Efficiency?</span>
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-relaxed">
                     SAP T&amp;M enhances project efficiency by automating the tracking of time and materials. With

@@ -30,7 +30,7 @@ export default function SimilarJobCard({ job }) {
                 </div>
 
                 {/* Figma turns the 21×16 arrow -47° to point up-right. */}
-                <span className="flex size-[38px] shrink-0 items-center justify-center bg-[#0061af] transition-colors duration-300 group-hover:bg-[#005192]">
+                <span className="flex size-[38px] shrink-0 items-center justify-center bg-[#2D8EC5] transition-colors duration-300 group-hover:bg-[#005192]">
                     <Image
                         src={iconArrow}
                         alt=""

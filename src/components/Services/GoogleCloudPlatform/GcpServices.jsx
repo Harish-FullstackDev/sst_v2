@@ -102,7 +102,7 @@ export default function GcpServices() {
                 className="flex flex-col items-center gap-2 max-w-[1074px] mx-auto text-center mb-10 sm:mb-16"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold lg:whitespace-nowrap">
-                    Unlocking the Power of Google Cloud Platform Services at SST
+                    Unlocking the Power of <span className="text-[#2D8EC5]">Google Cloud Platform</span> Services at SST
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light max-w-[767px]">
                     The Google Cloud service families we design, deploy, and run for our clients

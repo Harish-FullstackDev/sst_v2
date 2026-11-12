@@ -17,7 +17,7 @@ export default function ProcurementOverview() {
                 <p className="text-[#2d8ec5] text-base sm:text-lg font-light">
                     Welcome to SAP SSM Supply Spend Management
                 </p>
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">SSM Procurement</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">SSM <span className="text-[#2D8EC5]">Procurement</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
                     Revolutionize your procurement journey with SAP SSM (Supply Spend Management), the ultimate ERP
                     solution engineered to revolutionize how your organization manages spending.

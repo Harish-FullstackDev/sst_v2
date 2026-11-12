@@ -52,7 +52,7 @@ export default function GcpAdoptionJourney() {
             {/* Below lg: stacked numbered cards. The five-column strip needs the
                 full desktop width to keep its copy readable. */}
             <div className="flex lg:hidden flex-col items-center gap-2 text-center px-8 sm:px-[64px]">
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">{HEADING}</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How We Take You to <span className="text-[#2D8EC5]">Google Cloud</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">{SUBHEADING}</p>
             </div>
 

@@ -27,7 +27,7 @@ export default function ProcurementPillars() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-col gap-2"
                     >
-                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Two Foundations of Smarter Spending</h2>
+                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Two Foundations of <span className="text-[#2D8EC5]">Smarter Spending</span></h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             How SAP SSM brings control to who you buy from and how every purchase moves through the business.
                         </p>

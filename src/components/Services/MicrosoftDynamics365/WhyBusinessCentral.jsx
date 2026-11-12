@@ -32,7 +32,7 @@ export default function WhyBusinessCentral() {
                     ))}
                 </ul>
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Why Dynamics 365 Business Central?
+                    Why <span className="text-[#2D8EC5]">Dynamics 365 Business Central?</span>
                 </h2>
                 <p className="text-[#2E3033] text-base sm:text-xl font-light">
                     Optimize and streamline business operations.

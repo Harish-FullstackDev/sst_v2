@@ -88,7 +88,7 @@ export default function RolloutFeatures() {
                 className="flex flex-col gap-2 max-w-[767px] mb-8 sm:mb-12"
             >
                 <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Plan, Deploy, Succeed.</p>
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Key Features of Microsoft Rollout Services</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Key Features of <span className="text-[#2D8EC5]">Microsoft Rollout</span> Services</h2>
             </motion.div>
 
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-stretch">

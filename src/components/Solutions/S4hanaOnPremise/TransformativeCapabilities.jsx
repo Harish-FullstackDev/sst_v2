@@ -40,7 +40,7 @@ export default function TransformativeCapabilities() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Transformative Capabilities</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Transformative <span className="text-[#2D8EC5]">Capabilities</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         What SAP S/4HANA On-Premises brings to finance, supply chain, sales, and service operations.
                     </p>
@@ -83,7 +83,7 @@ export default function TransformativeCapabilities() {
                                     <div className="absolute left-0 top-1/2 w-full h-px -translate-y-1/2 bg-[#3d3d4e]/40" />
 
                                     {/* Hover line */}
-                                    <div className="absolute left-0 top-1/2 w-full h-[2px] -translate-y-1/2 origin-left bg-[#0061AF] scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100" />
+                                    <div className="absolute left-0 top-1/2 w-full h-[2px] -translate-y-1/2 origin-left bg-[#2D8EC5] scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100" />
                                 </div>
                             </motion.div>
                         ))}

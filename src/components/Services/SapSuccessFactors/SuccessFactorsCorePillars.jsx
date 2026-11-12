@@ -62,7 +62,7 @@ export default function SuccessFactorsCorePillars() {
                 className="flex flex-col items-center gap-2 max-w-[900px] text-center"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Our Core Pillars of SuccessFactors at SST
+                    Our <span className="text-[#2D8EC5]">Core Pillars</span> of SuccessFactors at SST
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     How we deliver SAP SuccessFactors, from the first workshop to long-term support.

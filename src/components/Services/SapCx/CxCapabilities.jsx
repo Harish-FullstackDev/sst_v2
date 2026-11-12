@@ -67,7 +67,7 @@ export default function CxCapabilities() {
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-[50px]"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    One Unified Customer Experience
+                    One Unified <span className="text-[#2D8EC5]">Customer Experience</span>
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     SAP CX brings sales, marketing, commerce, and service together in a single solution.

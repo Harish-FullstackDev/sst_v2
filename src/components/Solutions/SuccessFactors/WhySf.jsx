@@ -27,7 +27,7 @@ export default function WhySf() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center px-8"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why Choose SAP SuccessFactors?</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why Choose <span className="text-[#2D8EC5]">SAP SuccessFactors?</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Three reasons organizations move their HR processes onto SuccessFactors.
                 </p>

@@ -68,7 +68,7 @@ export default function WhyChooseAms() {
                         ))}
                     </ul>
                     <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">
-                        Reasons for Choosing AMS for Your Business
+                        Reasons for Choosing <span className="text-[#2D8EC5]">AMS</span> for Your Business
                     </h2>
                     <ul className="list-disc pl-5 text-base sm:text-lg font-light leading-[1.5] text-[#55595E] sm:pl-6 flex flex-col gap-3">
                         {REASONS.map((reason) => (

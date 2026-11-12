@@ -75,7 +75,7 @@ export default function SfModules() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">What SAP SuccessFactors Offers</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">What <span className="text-[#2D8EC5]">SAP SuccessFactors</span> Offers</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Seven modules that cover hiring, performance, learning, pay, and the data behind them.
                 </p>

@@ -96,7 +96,7 @@ export default function EInvoicingServices() {
                 className="flex flex-col items-center gap-2 text-center mb-10 sm:mb-16 w-full"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Streamlining Invoicing at SST with E-Invoicing Services
+                    Streamlining Invoicing at SST with <span className="text-[#2D8EC5]">E-Invoicing</span> Services
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light text-pretty">
                     Capabilities across the invoice lifecycle, from creation and delivery to tax and audit.

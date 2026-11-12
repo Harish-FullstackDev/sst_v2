@@ -16,7 +16,7 @@ export default function AzureAtAGlance() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Transform, Optimize, Thrive.</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Transform, Optimize, <span className="text-[#2D8EC5]">Thrive.</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Azure Specialist • Certified Cloud Architect • Agile Implementation
                     </p>
@@ -31,7 +31,7 @@ export default function AzureAtAGlance() {
                 >
                     <div className="flex flex-col gap-5 w-full">
                         <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">
-                            A Cloud Platform Beyond Traditional IT
+                            A Cloud Platform <span className="text-[#2D8EC5]">Beyond Traditional IT</span>
                         </h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             Microsoft Azure delivers a state-of-the-art cloud platform, surpassing traditional IT
@@ -57,7 +57,7 @@ export default function AzureAtAGlance() {
                         <Image src={glanceImage2} alt="Colleagues discussing a plan over a tablet in a bright office" fill className="object-cover" />
                     </div>
                     <div className="flex flex-col gap-5 w-full">
-                        <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">Why Azure?</h2>
+                        <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">Why <span className="text-[#2D8EC5]">Azure?</span></h2>
                         <p className="text-[#2E3033] text-base sm:text-lg font-normal">
                             Reimagine your cloud infrastructure for a competitive edge.
                         </p>

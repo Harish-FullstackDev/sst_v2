@@ -43,7 +43,7 @@ export default function AmsEngagementFlow() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-4 w-full lg:w-[43%] shrink-0 lg:sticky lg:top-28"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How an AMS Engagement Runs</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How an <span className="text-[#2D8EC5]">AMS Engagement</span> Runs</h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Every engagement moves through the same four stages, so support quality does not depend on
                         who happens to pick up the ticket.

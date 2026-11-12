@@ -18,7 +18,7 @@ export default function BigDataAdvantages() {
                     Insights, predictions, and data-driven decisions from information at scale.
                 </p>
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Advantages of Big Data for Your Business
+                    Advantages of <span className="text-[#2D8EC5]">Big Data</span> for Your Business
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
                     Big Data allows businesses to harness vast amounts of information to uncover insights, predict

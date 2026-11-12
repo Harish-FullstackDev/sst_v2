@@ -35,7 +35,7 @@ export default function SacConnections() {
                 className="flex flex-col items-center gap-2 max-w-[1074px] mx-auto text-center"
             >
                 <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Data Connectivity</p>
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Two Ways to Connect Your Data</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Two Ways to Connect <span className="text-[#2D8EC5]">Your Data</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Analytics Cloud connects to SAP and non-SAP systems, cloud-based and on-premises, either live or by
                     importing the data.

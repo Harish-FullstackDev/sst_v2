@@ -21,7 +21,7 @@ export default function RolloutOverview() {
                         Achieve seamless deployment for maximum efficiency.
                     </p>
                     <h2 className="text-xl sm:text-[28px] text-[#2E3033] font-semibold leading-normal">
-                        Why Choose Microsoft Rollout Services?
+                        Why Choose <span className="text-[#2D8EC5]">Microsoft Rollout Services?</span>
                     </h2>
 
                     <div className="flex flex-col gap-4 pt-2 text-base sm:text-lg text-[#55595E] font-light leading-relaxed">

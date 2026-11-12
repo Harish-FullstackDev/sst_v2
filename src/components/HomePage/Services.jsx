@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Cloud, CodeXml, Layers, LayoutGrid } from "lucide-react";
+import { Cloud, CodeXml, Layers, LayoutGrid } from "lucide-react";
 
 // The five service categories from the /services landing page. Ids and titles
 // come straight from its data file so this section can never drift out of sync
@@ -14,14 +14,17 @@ import { CATEGORIES } from "@/components/Services/Landing/servicesLandingData";
 // square and then a circle, read left to right as "one form becoming another".
 // Same API and stroke style as the lucide icons beside it.
 function MorphIcon({ strokeWidth = 2, className }) {
+    // A row of three shapes is short and wide, so it draws on a cropped
+    // viewBox at 1.45x the width of the square icons; the stroke is scaled
+    // down to match their line weight.
     return (
         <svg
-            viewBox="0 0 24 24"
+            viewBox="0 7 24 10"
             fill="none"
             stroke="currentColor"
-            strokeWidth={strokeWidth}
+            strokeWidth={strokeWidth * 0.69}
             strokeLinejoin="round"
-            className={className}
+            className={`${className} !w-[58px]`}
         >
             <rect x="0.75" y="8.75" width="6.5" height="6.5" />
             <rect x="8.75" y="8.75" width="6.5" height="6.5" rx="1.8" />
@@ -30,8 +33,7 @@ function MorphIcon({ strokeWidth = 2, className }) {
     );
 }
 
-// One hairline icon per category, floating free (no frame) and centred in the
-// open space between the title and the summary, like a faint watermark.
+// One fine-line icon per category, unframed, at the top of each card.
 const ICONS = {
     sap: Layers,
     microsoft: LayoutGrid,
@@ -42,9 +44,9 @@ const ICONS = {
 
 // One-line summaries for the home page, written from each category's service list.
 const SUMMARIES = {
-    sap: "Implementation, line-of-business solutions, conversion, rollout, migration, and AMS support across SAP.",
-    microsoft: "Dynamics 365 and Power BI implementation, with AMS, migration, and rollout services.",
-    cloud: "Design, migration, and management on Google Cloud Platform, Amazon Web Services, and Azure.",
+    sap: "Implementation, rollout, migration, conversion, and AMS support across SAP.",
+    microsoft: "Dynamics 365 and Power BI implementation, migration, and support.",
+    cloud: "Design, migration, and management on GCP, AWS, and Azure.",
     "digital-transformation": "RPA, AI and machine learning, e-invoicing, IoT, big data, and cyber security.",
     "design-development": "Full-stack development, UI/UX design, and custom software development.",
 };
@@ -75,9 +77,7 @@ const itemVariants = {
 //   never slides out from under the cursor,
 // - a deep-blue lift from the foot, one light sweep, and a 1px hairline frame
 //   that draws itself (top, then sides, then bottom),
-// - the arrow's circle fills white and the arrow turns from pointing right to
-//   up-right with a gentle settle,
-// - the summary brightens a touch.
+// - the icon and summary brighten a touch and the "Explore" arrow eases right.
 const EASE = "ease-[cubic-bezier(0.22,1,0.36,1)]";
 
 function Hairline({ className, delay }) {
@@ -98,7 +98,7 @@ function ServiceCard({ card }) {
                 className={`pointer-events-none absolute inset-x-4 -bottom-1 top-1/2 bg-[#0A2B3E]/45 blur-2xl opacity-0 transition-opacity duration-700 ${EASE} group-hover:opacity-100 group-focus-visible:opacity-100`}
             />
             <div
-                className={`relative flex h-full min-h-[320px] lg:min-h-[340px] flex-col justify-between overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)] p-6 lg:p-5 xl:p-6 will-change-transform transition-transform duration-700 ${EASE} group-hover:-translate-y-[3px] group-focus-visible:-translate-y-[3px]`}
+                className={`relative flex h-full min-h-[320px] lg:min-h-[340px] flex-col overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)] p-6 lg:p-5 xl:p-6 will-change-transform transition-transform duration-700 ${EASE} group-hover:-translate-y-[3px] group-focus-visible:-translate-y-[3px]`}
             >
                 <div aria-hidden="true" className="pointer-events-none absolute inset-0">
                     <div className="absolute inset-0 opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100 bg-[linear-gradient(to_top,rgba(28,95,133,0.45),rgba(28,95,133,0)_70%)]" />
@@ -110,33 +110,30 @@ function ServiceCard({ card }) {
                     <Hairline delay="300ms" className="inset-x-0 bottom-0 h-px origin-left scale-x-0 group-hover:scale-x-100" />
                 </div>
 
-                <div className="relative flex items-start justify-between gap-4">
-                    <h3 className="text-white text-xl font-semibold leading-[1.4]">{card.title}</h3>
-                    <span
+                {/* Same order as the /services page cards: icon at the top; title,
+                    description and "Explore ->" grouped at the foot. */}
+                <div className="relative flex h-full flex-col items-start gap-4">
+                    <Icon
                         aria-hidden="true"
-                        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/35 text-white transition-[background-color,border-color,color] duration-500 ${EASE} group-hover:border-white group-hover:bg-white group-hover:text-[#0A2B3E]`}
-                    >
-                        <ArrowRight
-                            strokeWidth={2.25}
-                            className="h-[18px] w-[18px] transition-transform duration-700 ease-[cubic-bezier(0.34,1.4,0.64,1)] group-hover:-rotate-45"
-                        />
+                        strokeWidth={1}
+                        className={`h-10 w-10 text-white opacity-70 transition-opacity duration-700 ${EASE} group-hover:opacity-100`}
+                    />
+                    <h3 className="mt-auto text-white text-xl font-semibold leading-[1.4]">{card.title}</h3>
+                    <p className="text-white/75 text-base font-light leading-[1.5] transition-colors duration-700 ease-out group-hover:text-white/95">
+                        {card.desc}
+                    </p>
+                    <span className="inline-flex items-center gap-2 pt-2 text-sm font-medium text-white">
+                        Explore
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            aria-hidden="true"
+                            className={`size-5 transition-transform duration-700 ${EASE} group-hover:translate-x-1`}
+                        >
+                            <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                     </span>
                 </div>
-
-                {/* Watermark icon, centred across the card and at the same height in
-                    every card so the row lines up. On hover
-                    it only fades up and grows 6% (opacity + scale on their own
-                    layer, no colour or layout animation) so it stays smooth. */}
-                <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-[44%] -translate-x-1/2 -translate-y-1/2">
-                    <Icon
-                        strokeWidth={0.55}
-                        className={`h-[88px] w-[88px] text-white opacity-[0.12] will-change-[scale,opacity] transition-[scale,opacity] duration-[900ms] ${EASE} group-hover:scale-[1.06] group-hover:opacity-[0.22]`}
-                    />
-                </div>
-
-                <p className="relative pt-4 text-white/75 text-base font-light leading-[1.5] transition-colors duration-700 ease-out group-hover:text-white/95">
-                    {card.desc}
-                </p>
             </div>
         </Link>
     );
@@ -158,7 +155,7 @@ export default function Services() {
                             (Our Proud Partners, Questions Enterprise Buyers Actually Ask). */}
                         <h2 className="text-xl sm:text-[28px] font-semibold leading-[1.4]">
                             <span className="text-[#2E3033]">Everything an </span>
-                            <span className="text-[#0061AF]">Enterprise Needs</span>
+                            <span className="text-[#2D8EC5]">Enterprise Needs</span>
                             <span className="text-[#2E3033]"> to Run on Modern Technology</span>
                         </h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5] max-w-[600px]">

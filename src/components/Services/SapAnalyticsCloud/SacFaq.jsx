@@ -44,7 +44,7 @@ export default function SacFaq() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 text-center w-full"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Frequently Asked Questions</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Frequently <span className="text-[#2D8EC5]">Asked Questions</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light max-w-[840px] leading-[1.4]">
                     Answers to the questions teams most often ask before adopting SAP Analytics Cloud.
                 </p>

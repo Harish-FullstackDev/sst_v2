@@ -42,7 +42,7 @@ export default function UiUxProcess() {
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center"
             >
                 <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Our Design Process</p>
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">From Insight to Interface</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">From Insight to <span className="text-[#2D8EC5]">Interface</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     A user-centred, iterative path that keeps real people at the heart of every decision.
                 </p>

@@ -30,7 +30,7 @@ export default function WhySwitchToS4hana() {
             >
                 <div className="flex flex-col gap-2">
                     <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                        Why Switch From ECC to S/4HANA?
+                        Why Switch From ECC to <span className="text-[#2D8EC5]">S/4HANA?</span>
                     </h2>
                     <p className="text-[#2d8ec5] text-lg sm:text-xl font-light">Upgrade and modernize ERP.</p>
                 </div>

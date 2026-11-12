@@ -16,7 +16,7 @@ export default function SacIdealSolution() {
                     <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Simplify, Analyze, Succeed.</p>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">Unlock data-driven insights to drive success.</p>
                     <h2 className="text-xl sm:text-[28px] text-[#2E3033] font-semibold leading-normal">
-                        Why Is SAP SAC the Ideal Solution for Data Analytics in Your Business?
+                        Why Is SAP SAC the <span className="text-[#2D8EC5]">Ideal Solution</span> for Data Analytics in Your Business?
                     </h2>
                 </motion.div>
 

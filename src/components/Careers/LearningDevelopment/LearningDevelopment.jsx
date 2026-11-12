@@ -30,7 +30,7 @@ export default function LearningDevelopment() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-xl sm:text-3xl font-semibold text-black text-center mb-8"
             >
-                Learning and Development
+                Learning and <span className="text-[#2D8EC5]">Development</span>
             </motion.h2>
 
             <div

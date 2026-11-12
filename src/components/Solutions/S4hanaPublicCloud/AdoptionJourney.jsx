@@ -43,7 +43,7 @@ export default function AdoptionJourney() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-4 w-full lg:w-[43%] shrink-0 lg:sticky lg:top-28"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How We Take You Live</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How We Take You <span className="text-[#2D8EC5]">Live</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         A public cloud rollout follows the phases of SAP Activate, so the standard processes are
                         understood before anything is configured or extended.

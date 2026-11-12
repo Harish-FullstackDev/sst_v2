@@ -34,7 +34,7 @@ export default function IotOverview() {
                 >
                     <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Connect, Automate, Excel.</p>
                     <h2 className="text-xl sm:text-[28px] text-[#2E3033] font-semibold leading-normal">
-                        Intelligent Connectivity for Smarter Operations
+                        Intelligent Connectivity for <span className="text-[#2D8EC5]">Smarter Operations</span>
                     </h2>
                     <p className="text-base sm:text-lg text-[#55595E] font-light leading-relaxed">
                         The Internet of Things (IoT) revolutionizes industries with intelligent connectivity, real-time

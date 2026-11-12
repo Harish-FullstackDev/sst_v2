@@ -46,7 +46,7 @@ export default function RolloutFaq() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full xl:w-[32%] shrink-0"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Rollout Questions, Answered</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Rollout Questions, <span className="text-[#2D8EC5]">Answered</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">
                         What organizations usually ask before extending SAP to a new location.
                     </p>

@@ -21,7 +21,7 @@ export default function EInvoicingOverview() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 max-w-[760px] mx-auto text-center px-8"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Billing Built for the Digital Era</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Billing Built for the <span className="text-[#2D8EC5]">Digital Era</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light text-pretty">
                         Automated, compliant, real-time invoicing from creation to payment.
                     </p>
@@ -38,7 +38,7 @@ export default function EInvoicingOverview() {
                     <div className="hidden lg:block absolute left-0 top-[64px] bottom-0 w-[9px] bg-[#1c5f85]" />
 
                     <div className="flex flex-col items-center text-center sm:items-start sm:text-left gap-5 w-full lg:flex-1 lg:pl-[54px] lg:pr-16 xl:pr-32">
-                        <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">Overview</h2>
+                        <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold"><span className="text-[#2D8EC5]">Overview</span></h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light leading-relaxed text-pretty">
                             E-Invoicing revolutionizes billing with automated workflows, compliance-ready systems, and
                             real-time processing that drive efficiency and reduce errors.

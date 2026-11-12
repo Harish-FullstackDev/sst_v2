@@ -17,7 +17,7 @@ export default function WhyImplementAms() {
                 className="flex flex-col gap-4 w-full sm:flex-1"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Why Implement Application Management Services?
+                    Why Implement <span className="text-[#2D8EC5]">Application Management Services?</span>
                 </h2>
                 <p className="text-[#2d8ec5] text-lg sm:text-xl font-light">Reduce, Secure, Enhance.</p>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">

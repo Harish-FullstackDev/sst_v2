@@ -69,7 +69,7 @@ export default function MigrationBenefits() {
                 className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Key Benefits of ERP Migration to Microsoft
+                    Key Benefits of <span className="text-[#2D8EC5]">ERP Migration</span> to Microsoft
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     What a well-run migration delivers, from the first data load to long after go-live.

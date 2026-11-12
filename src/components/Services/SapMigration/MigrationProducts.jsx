@@ -53,7 +53,7 @@ export default function MigrationProducts() {
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-14"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    SST&apos;s Principal Products for a Smooth Transition
+                    SST&apos;s Principal Products for a <span className="text-[#2D8EC5]">Smooth Transition</span>
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     The workstreams that carry your data, applications, and people safely onto the new SAP landscape.

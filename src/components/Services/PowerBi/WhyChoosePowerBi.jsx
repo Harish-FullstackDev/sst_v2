@@ -19,7 +19,7 @@ export default function WhyChoosePowerBi() {
                             transition={{ duration: 0.6 }}
                             className="text-xl sm:text-[28px] font-semibold text-[#2E3033]"
                         >
-                            Why Choose Power BI?
+                            Why Choose <span className="text-[#2D8EC5]">Power BI?</span>
                         </motion.h2>
 
                         <motion.p

@@ -26,7 +26,7 @@ export default function BestCloudSolution() {
                 className="flex flex-col gap-8 sm:gap-12 w-full lg:flex-1"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold leading-[1.4]">
-                    What Makes AWS the Best Cloud Solution for Your Business?
+                    What Makes AWS the <span className="text-[#2D8EC5]">Best Cloud Solution</span> for Your Business?
                 </h2>
                 <div className="flex flex-col gap-4 text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
                     <p>

@@ -24,7 +24,7 @@ export default function RolloutOutcomes() {
                         className="flex flex-col gap-2"
                     >
                         <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Maximum impact</p>
-                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">What a Well-Run Rollout Delivers</h2>
+                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">What a <span className="text-[#2D8EC5]">Well-Run Rollout</span> Delivers</h2>
                     </motion.div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">

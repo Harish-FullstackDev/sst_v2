@@ -76,7 +76,7 @@ export default function SuccessFactorsMethodology() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-[50px]"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">SAP SuccessFactors Methodology</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">SAP SuccessFactors <span className="text-[#2D8EC5]">Methodology</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Four phases that take your HR processes from design to a live, continuously improving system.
                 </p>

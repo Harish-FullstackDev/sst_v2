@@ -43,7 +43,7 @@ export default function SacMethodology() {
                     className="flex flex-col gap-4 w-full lg:w-[43%] shrink-0 lg:sticky lg:top-28"
                 >
                     <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Real-Time Analytics for Success</p>
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">SAP SAC Methodology</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">SAP SAC <span className="text-[#2D8EC5]">Methodology</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Best practices for data-driven decision making, in four phases.
                     </p>

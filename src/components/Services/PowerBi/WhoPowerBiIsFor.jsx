@@ -29,7 +29,7 @@ export default function WhoPowerBiIsFor() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-col gap-2"
                     >
-                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Who Power BI Is For</h2>
+                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Who <span className="text-[#2D8EC5]">Power BI</span> Is For</h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             The situations where a Power BI implementation pays off fastest.
                         </p>

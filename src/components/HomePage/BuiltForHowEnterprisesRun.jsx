@@ -48,7 +48,7 @@ export default function BuiltForHowEnterprisesRun() {
                 className="flex flex-col items-center gap-1 max-w-[714px] mx-auto text-center mb-10 sm:mb-14"
             >
                 <h2 className="text-[#10161d] text-[28px] font-semibold">
-                    Built for How Enterprises <span className="text-[#0061AF]">Actually Run</span>
+                    Built for How Enterprises <span className="text-[#2D8EC5]">Actually Run</span>
                 </h2>
                 <p className="text-[#4a5568] text-lg font-light">
                     The details that keep an engagement predictable long after the contract is signed.

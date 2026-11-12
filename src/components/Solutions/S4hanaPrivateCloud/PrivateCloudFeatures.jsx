@@ -47,7 +47,7 @@ export default function PrivateCloudFeatures() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:w-[38%] shrink-0 lg:sticky lg:top-28"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Features in S/4HANA Private Cloud</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Features in <span className="text-[#2D8EC5]">S/4HANA Private Cloud</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Dedicated resources, enterprise-grade security, and deployment choices built around your
                         organization.

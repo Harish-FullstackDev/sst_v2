@@ -28,7 +28,7 @@ export default function CrmOverview() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-4 max-w-[1074px] mx-auto text-center"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Customer Relationship Management</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Customer <span className="text-[#2D8EC5]">Relationship Management</span></h2>
                 {/* 1074px block (was 900) with text-balance: three long, even desktop
                     lines, so "and support." no longer sits alone on the last one. */}
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5] text-balance">

@@ -206,7 +206,7 @@ export default function CoreCapabilities() {
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-medium">
                     Everything an Enterprise Technology Estate Needs, Under <br />
-                    <span className="text-[#0061AF]">One Roof</span>
+                    <span className="text-[#2D8EC5]">One Roof</span>
                 </h2>
 
             </motion.div>

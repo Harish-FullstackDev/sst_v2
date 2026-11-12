@@ -30,7 +30,7 @@ export default function SoftwareIntro() {
                 >
                     <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Develop, Innovate, Excel.</p>
                     <h2 className="text-xl sm:text-[28px] text-[#2E3033] font-semibold leading-normal">
-                        Cutting-Edge Software Solutions for Your Business
+                        Cutting-Edge <span className="text-[#2D8EC5]">Software Solutions</span> for Your Business
                     </h2>
                     <p className="pt-2 text-base sm:text-lg text-[#55595E] font-light leading-relaxed">
                         Software Development delivers cutting-edge solutions, surpassing traditional methods with

@@ -23,7 +23,7 @@ export default function CyberOverview() {
                 >
                     <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Connect, Innovate, Succeed.</p>
                     <h2 className="text-xl sm:text-[28px] text-[#2E3033] font-semibold leading-normal">
-                        Proactive Defense Against Evolving Threats
+                        <span className="text-[#2D8EC5]">Proactive Defense</span> Against Evolving Threats
                     </h2>
 
                     <p className="text-base sm:text-lg text-[#55595E] font-light leading-relaxed">

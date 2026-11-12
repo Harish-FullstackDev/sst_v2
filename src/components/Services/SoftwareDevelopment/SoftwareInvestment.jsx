@@ -61,7 +61,7 @@ export default function SoftwareInvestment() {
                 className="flex flex-col items-center gap-4 text-center mb-10 sm:mb-16 w-full"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Why Invest in Software Development for Your Business?
+                    Why Invest in <span className="text-[#2D8EC5]">Software Development</span> for Your Business?
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light max-w-[960px] text-balance">
                     Custom software gives your business solutions built around its own needs, automating processes,

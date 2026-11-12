@@ -33,7 +33,7 @@ export default function WhyBtp() {
             >
                 <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Why SAP BTP</p>
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Why Choose SAP Business Technology Platform?
+                    Why Choose <span className="text-[#2D8EC5]">SAP Business Technology Platform?</span>
                 </h2>
             </motion.div>
 

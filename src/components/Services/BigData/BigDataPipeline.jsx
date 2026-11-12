@@ -41,7 +41,7 @@ export default function BigDataPipeline() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[780px] mx-auto text-center"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">The Big Data Pipeline</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">The Big <span className="text-[#2D8EC5]">Data Pipeline</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">How data moves from raw sources to trusted, analysis-ready information.</p>
             </motion.div>
 

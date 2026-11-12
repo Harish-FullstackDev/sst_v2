@@ -21,7 +21,7 @@ export default function WhyCrm() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why Choose Customer Relationship Management?</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why Choose <span className="text-[#2D8EC5]">Customer Relationship Management?</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         What SAP CRM adds to the way you win and keep customers.
                     </p>
@@ -54,7 +54,7 @@ export default function WhyCrm() {
                                 </div>
                                 <div className="relative w-[139px] h-[2px]">
                                     <div className="absolute left-0 top-1/2 w-full h-px -translate-y-1/2 bg-[#3d3d4e]/40" />
-                                    <div className="absolute left-0 top-1/2 w-full h-[2px] -translate-y-1/2 origin-left bg-[#0061AF] scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100" />
+                                    <div className="absolute left-0 top-1/2 w-full h-[2px] -translate-y-1/2 origin-left bg-[#2D8EC5] scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100" />
                                 </div>
                             </motion.div>
                         ))}

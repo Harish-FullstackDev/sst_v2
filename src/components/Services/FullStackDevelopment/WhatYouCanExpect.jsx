@@ -26,7 +26,7 @@ export default function WhatYouCanExpect() {
                         transition={{ duration: 0.6 }}
                         className="text-xl sm:text-[28px] font-semibold text-[#2E3033]"
                     >
-                        What You Can Expect
+                        What You Can <span className="text-[#2D8EC5]">Expect</span>
                     </motion.h2>
 
                     <motion.p

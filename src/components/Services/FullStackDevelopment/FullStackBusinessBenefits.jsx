@@ -35,7 +35,7 @@ export default function FullStackBusinessBenefits() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center px-6 sm:px-0"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Benefits of Full-Stack Development for Your Business</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Benefits of <span className="text-[#2D8EC5]">Full-Stack Development</span> for Your Business</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     A comprehensive approach that integrates front-end and back-end development in one solution.
                 </p>

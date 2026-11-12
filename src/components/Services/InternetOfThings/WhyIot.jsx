@@ -26,7 +26,7 @@ export default function WhyIot() {
                             transition={{ duration: 0.6 }}
                             className="text-xl sm:text-[28px] font-semibold text-[#2E3033]"
                         >
-                            Why Internet of Things (IoT)?
+                            Why <span className="text-[#2D8EC5]">Internet of Things (IoT)?</span>
                         </motion.h2>
 
                         <motion.p
@@ -72,7 +72,7 @@ export default function WhyIot() {
                         className="justify-self-start max-w-[467px] flex flex-col gap-4 max-sm:mt-4 max-sm:justify-self-center"
                     >
                         <h3 className="text-[#2E3033] text-xl font-semibold lg:pl-16 max-sm:text-center">Benefits of IoT for Your Business</h3>
-                        <ul className="list-disc marker:text-[#7f7f7f] pl-16 max-sm:pl-5 space-y-3 text-[#55595E] text-base sm:text-lg font-light">
+                        <ul className="list-disc list-inside marker:text-[#7f7f7f] lg:pl-16 space-y-3 text-[#55595E] text-base sm:text-lg font-light">
                             {POINTS.map((point) => (
                                 <li key={point}>{point}</li>
                             ))}

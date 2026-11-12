@@ -64,7 +64,7 @@ export default function SfJourney() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-3 sm:gap-5 max-w-[818px] text-center"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Your SuccessFactors Journey</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Your <span className="text-[#2D8EC5]">SuccessFactors Journey</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
                     How a SuccessFactors rollout moves from first decisions to a system that keeps improving.
                 </p>

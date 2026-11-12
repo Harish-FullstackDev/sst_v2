@@ -28,7 +28,7 @@ export default function JoinUsSocialBand() {
                     <div className="flex flex-col sm:flex-row items-start sm:items-end gap-8 sm:gap-10">
                         <div className="flex flex-col max-w-5xl gap-6">
                             <div>
-                                <h2 className="text-xl text-[#2E3033] font-semibold">Your Next Opportunity</h2>
+                                <h2 className="text-xl text-[#2E3033] font-semibold">Your Next <span className="text-[#2D8EC5]">Opportunity</span></h2>
                                 <p className="mt-2 text-base sm:text-lg sm:w-[80%] font-light text-[#55595E]">
                                     Ready to work on problems worth solving? Explore our current openings and find
                                     an opportunity where your expertise can contribute to work that matters to

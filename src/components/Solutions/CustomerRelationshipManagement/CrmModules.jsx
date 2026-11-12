@@ -63,7 +63,7 @@ export default function CrmModules() {
                     className="flex flex-col gap-2 w-full lg:w-[32%] shrink-0 lg:sticky lg:top-28"
                 >
                     <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Core Modules</p>
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Modules of Customer Relationship Management</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Modules of <span className="text-[#2D8EC5]">Customer Relationship Management</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Sales, marketing, service, commerce, interactions, and analytics, connected around one view of
                         the customer.

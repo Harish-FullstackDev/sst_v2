@@ -50,7 +50,7 @@ export default function SureStepApproach() {
                     className="flex flex-col gap-4 w-full lg:w-[43%] shrink-0 lg:sticky lg:top-28"
                 >
                     <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                        How We Implement: Microsoft Sure Step
+                        How We Implement: <span className="text-[#2D8EC5]">Microsoft Sure Step</span>
                     </h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Every Business Central implementation follows Microsoft&apos;s Sure Step phases, with guided

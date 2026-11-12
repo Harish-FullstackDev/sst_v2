@@ -18,7 +18,7 @@ export default function CxOverview() {
                 >
                     <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Simplify, Automate, Delight.</p>
                     <h2 className="text-xl sm:text-[28px] text-[#2E3033] font-semibold leading-normal">
-                        What Makes SAP CX the Right Choice for Your Business?
+                        What Makes SAP CX the <span className="text-[#2D8EC5]">Right Choice</span> for Your Business?
                     </h2>
                     <p className="text-[#2E3033] text-base sm:text-lg font-light pt-1">
                         Enhance customer engagement and satisfaction.

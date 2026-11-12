@@ -17,7 +17,7 @@ export default function FicoCoreStrengths() {
                     className="flex flex-col items-center gap-2 max-w-[620px] mx-auto text-center"
                 >
                     <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                        Where SAP FICO Makes the Difference
+                        Where SAP FICO Makes <span className="text-[#2D8EC5]">the Difference</span>
                     </h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         One connected finance function, from the posting of a transaction to the report that explains it.
@@ -32,7 +32,7 @@ export default function FicoCoreStrengths() {
                     className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[100px]"
                 >
                     <div className="flex flex-col gap-5 w-full">
-                        <h2 className="text-[#2E3033] text-base sm:text-2xl font-semibold">Integration</h2>
+                        <h2 className="text-[#2E3033] text-base sm:text-2xl font-semibold"><span className="text-[#2D8EC5]">Integration</span></h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             SAP FICO integrates FI and CO for smooth financial data flow, real-time visibility,
                             accurate reporting, and enhanced decision-making, ensuring cohesive financial management
@@ -58,7 +58,7 @@ export default function FicoCoreStrengths() {
                     </div>
                     <div className="flex flex-col gap-5 w-full">
                         <h2 className="text-[#2E3033] text-base sm:text-2xl font-semibold">
-                            Comprehensive Financial Reporting &amp; Analysis
+                            Comprehensive <span className="text-[#2D8EC5]">Financial Reporting</span> &amp; Analysis
                         </h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             SAP FICO enables detailed financial reporting, variance analysis, and profitability

@@ -113,7 +113,7 @@ export default function RiseDifferentiators() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:w-[340px] shrink-0 lg:pt-8"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Our Key Differentiators</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Our Key <span className="text-[#2D8EC5]">Differentiators</span></h2>
                     <p className="text-[#55595E] text-xl font-light">
                         What Rise with SAP brings to the business, and what we focus on while delivering it.
                     </p>

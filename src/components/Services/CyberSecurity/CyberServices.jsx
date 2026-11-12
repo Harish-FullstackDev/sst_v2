@@ -101,7 +101,7 @@ export default function CyberServices() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:w-[340px] shrink-0 lg:pt-8"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Top Cybersecurity Services Keeping SST's Data Safe</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Top Cybersecurity Services Keeping SST's <span className="text-[#2D8EC5]">Data Safe</span></h2>
                     <p className="text-[#55595E] text-xl font-light">
                         Layered protection across threats, networks, devices, identities, data, and recovery.
                     </p>

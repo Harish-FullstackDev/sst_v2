@@ -74,7 +74,7 @@ export default function TmKeyFactors() {
             >
                 <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Optimize, Track, Succeed.</p>
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Key Factors that Enhance Project Efficiency at SST through T&amp;M
+                    Key Factors that Enhance <span className="text-[#2D8EC5]">Project Efficiency</span> at SST through T&amp;M
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Six capabilities that keep every project measured, costed, and billed accurately.

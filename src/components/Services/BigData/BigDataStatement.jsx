@@ -21,7 +21,7 @@ export default function BigDataStatement() {
                             transition={{ duration: 0.6 }}
                             className="text-xl sm:text-[28px] font-semibold text-[#2E3033]"
                         >
-                            Analyze, Adapt, Achieve
+                            Analyze, Adapt, <span className="text-[#2D8EC5]">Achieve</span>
                         </motion.h2>
 
                         <motion.p

@@ -26,7 +26,7 @@ export default function PublicCloudEssentials() {
                 className="flex flex-col items-center gap-2 max-w-[880px] mx-auto text-center mb-10 sm:mb-16 sm:px-[64px] lg:px-0"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Cloud ERP Built to Move at Your Pace
+                    Cloud ERP Built to Move at <span className="text-[#2D8EC5]">Your Pace</span>
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Embark on a journey towards digital transformation with SAP S/4HANA Public Cloud, the agile and

@@ -14,7 +14,7 @@ export default function GrowIntro() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Simplify, Automate, Grow.</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Simplify, Automate, <span className="text-[#2D8EC5]">Grow.</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Grow with SAP Methodology · Best Course of Action · Supervised Configuration Support
                 </p>
@@ -31,7 +31,7 @@ export default function GrowIntro() {
                     className="w-full sm:w-[59.5%] bg-white flex items-center"
                 >
                     <div className="flex flex-col gap-5 sm:gap-[34px] text-[#2E3033] w-full">
-                        <h2 className="text-xl sm:text-2xl font-semibold">Scale on the SAP S/4HANA ERP Suite</h2>
+                        <h2 className="text-xl sm:text-2xl font-semibold">Scale on the <span className="text-[#2D8EC5]">SAP S/4HANA</span> ERP Suite</h2>
 
                         <p className="text-base sm:text-lg text-[#55595E] font-light">
                             Grow with SAP enables businesses to scale efficiently by integrating and managing
@@ -39,7 +39,7 @@ export default function GrowIntro() {
                             suite, driving innovation and operational excellence.
                         </p>
                         <div className="flex flex-col gap-2">
-                            <h2 className="text-xl sm:text-2xl text-[#2E3033] font-semibold">Why Grow with SAP</h2>
+                            <h2 className="text-xl sm:text-2xl text-[#2E3033] font-semibold">Why <span className="text-[#2D8EC5]">Grow with SAP</span></h2>
                             <p className="text-base sm:text-lg text-[#2d8ec5] font-light">
                                 Streamline and optimize operations.
                             </p>

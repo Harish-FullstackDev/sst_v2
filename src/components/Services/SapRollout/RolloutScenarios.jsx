@@ -40,7 +40,7 @@ export default function RolloutScenarios() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-14 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Typical Rollout Scenarios</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Typical <span className="text-[#2D8EC5]">Rollout Scenarios</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     The situations where a rollout, rather than a fresh implementation, is the right way to grow SAP.
                 </p>

@@ -30,7 +30,7 @@ export default function CxUseCases() {
                             transition={{ duration: 0.6 }}
                             className="text-xl sm:text-[28px] font-semibold text-[#2E3033]"
                         >
-                            Where SAP CX Makes a Difference
+                            Where SAP CX Makes <span className="text-[#2D8EC5]">a Difference</span>
                         </motion.h2>
 
                         <motion.p

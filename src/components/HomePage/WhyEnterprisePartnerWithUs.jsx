@@ -42,7 +42,7 @@ export default function WhyEnterprisePartnerWithUs() {
                     className="flex flex-col gap-2 w-full lg:w-[38%] shrink-0 lg:sticky lg:top-28"
                 >
                     <h2 className="text-[#10161d] text-[28px] font-semibold">
-                        A Partnership Built on <span className="text-[#0061AF]">Delivery Discipline</span>
+                        A Partnership Built on <span className="text-[#2D8EC5]">Delivery Discipline</span>
                     </h2>
                     <p className="text-[#4a5568] text-lg font-light">
                         Everything an enterprise technology estate needs,under one roof

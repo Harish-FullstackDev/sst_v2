@@ -27,7 +27,7 @@ export default function WhyProcurement() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center px-6 sm:px-0"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why Choose SAP Supply Spend Management?</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why Choose <span className="text-[#2D8EC5]">SAP Supply Spend Management?</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Every category of spend, one view of it, and a platform that connects to the systems you already run.
                 </p>

@@ -227,7 +227,7 @@ const InteractiveLocationPreview = () => {
                                     />
                                     <defs>
                                         <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stopColor="#0061af" />
+                                            <stop offset="0%" stopColor="#2D8EC5" />
                                             <stop offset="100%" stopColor="#008e59" />
                                         </linearGradient>
                                     </defs>

@@ -23,7 +23,7 @@ export default function FullStackOverview() {
                 <p className="text-[#2d8ec5] text-base sm:text-lg font-light">
                     Innovate and streamline web applications.
                 </p>
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why Full-Stack Development?</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why <span className="text-[#2D8EC5]">Full-Stack Development?</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
                     Full-Stack Development provides comprehensive web solutions, integrating advanced front-end
                     interfaces with robust back-end systems for optimal performance and seamless user experiences.

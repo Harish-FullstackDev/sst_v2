@@ -61,7 +61,7 @@ export default function SacSuccessFactors() {
                 >
                     <div className="flex flex-col gap-2">
                         <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                            Our Key Success Factors with SAP SAC
+                            Our Key <span className="text-[#2D8EC5]">Success Factors</span> with SAP SAC
                         </h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             The strengths behind every SAP Analytics Cloud engagement we deliver.

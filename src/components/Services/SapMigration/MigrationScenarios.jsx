@@ -67,7 +67,7 @@ export default function MigrationScenarios() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Migration Scenarios We Deliver</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Migration Scenarios <span className="text-[#2D8EC5]">We Deliver</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Migrate, Modernize, Thrive. Wherever your landscape starts, the move is planned around your data and your processes.
                 </p>

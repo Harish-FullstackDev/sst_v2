@@ -102,7 +102,7 @@ export default function AwsServices() {
                     className="flex flex-col gap-2 w-full lg:w-[30%] lg:max-w-[340px] shrink-0 lg:pt-8"
                 >
                     <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                        Unlocking Business Potential with AWS at SST
+                        Unlocking <span className="text-[#2D8EC5]">Business Potential</span> with AWS at SST
                     </h2>
                     <p className="text-[#55595E] text-base sm:text-xl font-light">
                         The core AWS services we architect, deploy, and optimize for our clients.

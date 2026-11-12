@@ -19,7 +19,7 @@ export default function UiUxIntro() {
                 >
                     <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Design, Optimize, Delight.</p>
                     <h2 className="text-xl sm:text-[28px] text-[#2E3033] font-semibold leading-normal">
-                        Elevate Your Brand With Intuitive, User-Centric Design
+                        Elevate Your Brand With Intuitive, <span className="text-[#2D8EC5]">User-Centric Design</span>
                     </h2>
 
                     <p className="pt-2 text-base sm:text-lg text-[#55595E] font-light leading-relaxed">

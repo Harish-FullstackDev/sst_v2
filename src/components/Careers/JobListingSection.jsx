@@ -47,7 +47,7 @@ function FilterSelect({ label, value, options, onChange, width }) {
             <select
                 value={value}
                 onChange={(event) => onChange(event.target.value)}
-                className={`h-[34px] cursor-pointer appearance-none truncate w-full ${width} border border-[#c9d0d8] bg-white py-[7px] pl-[13px] pr-[43px] text-[14px] leading-[1.4] text-[#374151] outline-none focus:border-[#0061af]`}
+                className={`h-[34px] cursor-pointer appearance-none truncate w-full ${width} border border-[#c9d0d8] bg-white py-[7px] pl-[13px] pr-[43px] text-[14px] leading-[1.4] text-[#374151] outline-none focus:border-[#2D8EC5]`}
             >
                 <option value="">{label}</option>
                 {options.map((option) => (
@@ -86,7 +86,7 @@ function JobRow({ job }) {
             <div className="flex flex-col gap-4 border-b-[0.5px] border-[#8695a7] pb-2 sm:min-h-[67px] sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex flex-col gap-[6px] text-[#0e2b4b]">
                     <h3 className="text-xl sm:text-2xl font-medium leading-[1.2]">
-                        <Link href={href} className="transition-colors hover:text-[#0061af]">
+                        <Link href={href} className="transition-colors hover:text-[#2D8EC5]">
                             {job.title}
                         </Link>
                     </h3>
@@ -95,7 +95,7 @@ function JobRow({ job }) {
 
                 <Link
                     href={href}
-                    className="flex h-[33px] w-[126px] shrink-0 items-center justify-center bg-[#0061af] text-[14px] leading-[1.4] text-[#f8f8f8] transition-colors hover:bg-[#005192]"
+                    className="flex h-[33px] w-[126px] shrink-0 items-center justify-center bg-[#2D8EC5] text-[14px] leading-[1.4] text-[#f8f8f8] transition-colors hover:bg-[#005192]"
                 >
                     View More
                 </Link>
@@ -218,8 +218,7 @@ export default function JobListingSection() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center mb-10 sm:mb-12"
             >
-                <p className="text-[#2d8ec5] text-base sm:text-lg font-normal">Opportunities</p>
-                <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033] mt-2">Find Work That Matches Your Expertise.</h2>
+                <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">Find Work That Matches <span className="text-[#2D8EC5]">Your Expertise.</span></h2>
             </motion.div>
 
             <motion.div
@@ -247,7 +246,7 @@ export default function JobListingSection() {
                                 value={search}
                                 onChange={(event) => setSearch(event.target.value)}
                                 placeholder="Search by job title, keyword or location"
-                                className="h-[34px] w-full border border-[#c9d0d8] bg-white pl-[41px] pr-[17px] text-[14px] leading-[1.4] text-[#111827] outline-none placeholder:text-[#8695a7] focus:border-[#0061af]"
+                                className="h-[34px] w-full border border-[#c9d0d8] bg-white pl-[41px] pr-[17px] text-[14px] leading-[1.4] text-[#111827] outline-none placeholder:text-[#8695a7] focus:border-[#2D8EC5]"
                             />
                         </label>
 
@@ -324,7 +323,7 @@ export default function JobListingSection() {
                                 onClick={() => setPage(pageNumber)}
                                 aria-current={pageNumber === page ? "page" : undefined}
                                 className={`flex items-center justify-center size-6 text-sm font-semibold transition-colors ${pageNumber === page
-                                    ? "border border-[#0061af] text-[#0061af]"
+                                    ? "border border-[#2D8EC5] text-[#2D8EC5]"
                                     : "text-black opacity-50 hover:opacity-80"
                                     }`}
                             >

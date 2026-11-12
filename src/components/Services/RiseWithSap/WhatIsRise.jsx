@@ -40,7 +40,7 @@ export default function WhatIsRise() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-14 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">What is Rise with SAP?</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">What is <span className="text-[#2D8EC5]">Rise with SAP?</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     One subscription that combines cloud ERP, the tools around it, and SAP-managed infrastructure
                     and technical operations under a single contract.

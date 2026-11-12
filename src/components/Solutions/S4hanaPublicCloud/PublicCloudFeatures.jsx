@@ -71,7 +71,7 @@ export default function PublicCloudFeatures() {
                 className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Features in S/4HANA Public Cloud
+                    Features in <span className="text-[#2D8EC5]">S/4HANA Public Cloud</span>
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     The capabilities that set the public cloud edition apart.

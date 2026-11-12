@@ -105,7 +105,7 @@ export default function RolloutOutcomes() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex max-w-[772px] flex-col items-center gap-2 text-center"
                 >
-                    <h2 className="text-xl font-semibold text-[#2E3033] sm:text-[28px]">What a Well-Run Rollout Delivers</h2>
+                    <h2 className="text-xl font-semibold text-[#2E3033] sm:text-[28px]">What a <span className="text-[#2D8EC5]">Well-Run Rollout</span> Delivers</h2>
                     <p className="text-base font-light text-[#55595E] sm:text-lg">
                         The outcomes a standardized, template-based deployment is designed to produce.
                     </p>

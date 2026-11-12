@@ -226,10 +226,11 @@ export default function IndustriesWeServe() {
     return (
         <section ref={sectionRef} className="w-full">
             {/* Banner: the photo runs full width behind everything. The heading
-                block keeps the old black panel's exact footprint (457px wide, full
-                banner height, 32px top/bottom padding; stacked above a 160px photo strip on
-                phones) but is now frosted navy glass: translucent navy over a blur
-                of the photo, with a 1px light hairline on its open edge. */}
+                keeps the old black panel's footprint (457px wide, 32px top/bottom
+                padding; stacked above a 160px photo strip on phones). A deep navy
+                gradient sits behind it instead of a panel: near-solid under the
+                text, then fading out across the photo (px stops on desktop so the
+                text is always covered whatever the screen width). */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -239,10 +240,12 @@ export default function IndustriesWeServe() {
             >
                 <Image src={bannerImg} alt="" fill sizes="100vw" className="object-cover" />
                 <div className="absolute inset-0 bg-[#1c5f85]/50 mix-blend-overlay" />
-                <div className="relative flex flex-col justify-center gap-2 px-6 py-8 sm:px-[64px] sm:py-8 sm:w-[457px] shrink-0 bg-[#0A2B3E]/70 backdrop-blur-md border-b sm:border-b-0 sm:border-r border-white/15">
-                    <h2 className="text-white text-[28px] font-semibold">
-                        <span className="text-[#2D8EC5]">Industries</span> We Serve
-                    </h2>
+                <div
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(10,43,62,0.92)_0%,rgba(10,43,62,0.8)_45%,rgba(10,43,62,0.15)_100%)] sm:bg-[linear-gradient(to_right,rgba(10,43,62,0.94)_0px,rgba(10,43,62,0.82)_360px,rgba(10,43,62,0.35)_620px,rgba(10,43,62,0)_900px)]"
+                />
+                <div className="relative flex flex-col justify-center gap-2 px-6 py-8 sm:px-[64px] sm:py-8 sm:w-[457px] shrink-0">
+                    <h2 className="text-white text-[28px] font-semibold">Industries We Serve</h2>
                     <p className="text-white/85 text-lg font-light">
                         Built for the sectors that can&apos;t afford disruption
                     </p>

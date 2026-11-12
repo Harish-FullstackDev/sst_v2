@@ -57,7 +57,7 @@ export default function RolloutEcosystem() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-3 text-center"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">One Unified Microsoft Environment</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">One Unified <span className="text-[#2D8EC5]">Microsoft Environment</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light max-w-[700px]">
                         Rollouts that connect seamlessly with Microsoft 365, Azure, and Dynamics 365 for a unified digital workplace.
                     </p>
