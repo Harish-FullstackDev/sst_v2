@@ -34,7 +34,7 @@ const STEPS = [
 // each row closed by its own hairline divider.
 export default function AmsEngagementFlow() {
     return (
-        <section className="w-full bg-[#f5f6f6] px-8 py-10 sm:px-[64px] sm:py-16">
+        <section className="w-full bg-[#f3f6f9] px-8 py-10 sm:px-[64px] sm:py-16">
             <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-12">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}

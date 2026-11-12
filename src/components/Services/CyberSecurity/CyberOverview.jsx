@@ -12,7 +12,7 @@ const CREDENTIALS = [
 
 export default function CyberOverview() {
     return (
-        <section className="w-full px-8 py-10 sm:px-[64px] sm:py-[64px] bg-[#f5f6f6]">
+        <section className="w-full px-8 py-10 sm:px-[64px] sm:py-[64px] bg-[#f3f6f9]">
             <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-12 xl:gap-[143px]">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

@@ -59,7 +59,7 @@ export default function FullStackServices() {
     const activeTab = TABS[active];
 
     return (
-        <section className="w-full bg-[#f5f6f6] px-8 py-10 sm:px-[64px] sm:py-[64px] flex flex-col items-center gap-8 sm:gap-[45px]">
+        <section className="w-full bg-[#f3f6f9] px-8 py-10 sm:px-[64px] sm:py-[64px] flex flex-col items-center gap-8 sm:gap-[45px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

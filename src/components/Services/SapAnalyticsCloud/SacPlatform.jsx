@@ -23,7 +23,7 @@ const PILLARS = [
 
 export default function SacPlatform() {
     return (
-        <section className="w-full bg-[#f5f6f6] py-10 px-8 sm:p-16 flex flex-col gap-10 sm:gap-[50px]">
+        <section className="w-full bg-[#f3f6f9] py-10 px-8 sm:p-16 flex flex-col gap-10 sm:gap-[50px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

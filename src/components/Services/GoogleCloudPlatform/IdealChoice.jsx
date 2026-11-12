@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function IdealChoice() {
     return (
-        <section className="w-full bg-[#f5f6f6] px-8 py-10 sm:px-[64px] sm:py-[64px]">
+        <section className="w-full bg-[#f3f6f9] px-8 py-10 sm:px-[64px] sm:py-[64px]">
             <div className="grid w-full lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-stretch gap-0">
                 {/* Left: heading + lead. Centered when stacked, left aligned at lg. */}
                 <div className="flex flex-col justify-center max-lg:text-center">

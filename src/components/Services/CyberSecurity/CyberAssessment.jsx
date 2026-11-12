@@ -39,7 +39,7 @@ export default function CyberAssessment() {
     };
 
     return (
-        <section className="w-full bg-[#f5f6f6] px-8 py-10 sm:px-[64px] sm:py-[64px]">
+        <section className="w-full bg-[#f3f6f9] px-8 py-10 sm:px-[64px] sm:py-[64px]">
             <div className="flex flex-col lg:flex-row lg:items-start gap-10 lg:gap-16 w-full">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}

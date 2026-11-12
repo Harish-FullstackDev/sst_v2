@@ -7,7 +7,7 @@ import reportingImage from "@/assets/Solutions/FinanceAndControlling/Business_PM
 
 export default function FicoCoreStrengths() {
     return (
-        <section className="w-full bg-[#f5f6f6] py-10 sm:py-16 px-8 sm:px-[64px]">
+        <section className="w-full bg-[#f3f6f9] py-10 sm:py-16 px-8 sm:px-[64px]">
             <div className="flex flex-col gap-10 sm:gap-16 max-w-screen mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

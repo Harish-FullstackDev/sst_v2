@@ -13,7 +13,7 @@ const POINTS = [
 
 export default function WhatYouCanExpect() {
     return (
-        <section className="w-full bg-[#f5f6f6] px-8 py-10 sm:px-[64px] sm:py-[64px]">
+        <section className="w-full bg-[#f3f6f9] px-8 py-10 sm:px-[64px] sm:py-[64px]">
             {/* From xl the list column is auto (sized to its longest point) so every
                 point stays on one line; the heading column takes what is left. */}
             <div className="grid w-full lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_auto_auto] items-stretch gap-0">

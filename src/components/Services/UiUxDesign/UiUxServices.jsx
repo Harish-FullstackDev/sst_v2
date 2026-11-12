@@ -57,7 +57,7 @@ export default function UiUxServices() {
     }, [isPaused]);
 
     return (
-        <section className="w-full bg-[#f5f6f6] py-10 px-8 sm:p-16">
+        <section className="w-full bg-[#f3f6f9] py-10 px-8 sm:p-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

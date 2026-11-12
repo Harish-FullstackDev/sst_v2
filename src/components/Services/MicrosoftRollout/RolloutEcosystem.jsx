@@ -48,7 +48,7 @@ export default function RolloutEcosystem() {
     const activeTab = TABS[active];
 
     return (
-        <section className="w-full bg-[#f5f6f6] py-10 sm:p-16 px-8">
+        <section className="w-full bg-[#f3f6f9] py-10 sm:p-16 px-8">
             <div className="w-full flex flex-col items-center gap-10 sm:gap-16 lg:gap-20">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

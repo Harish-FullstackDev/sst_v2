@@ -95,7 +95,7 @@ function CompanionBlock({ item }) {
 
 export default function RolloutOutcomes() {
     return (
-        <section className="w-full bg-[#f5f6f6]">
+        <section className="w-full bg-[#f3f6f9]">
             <style>{DRAW_KEYFRAMES}</style>
             <div className="flex w-full flex-col items-center gap-10 px-8 py-10 sm:gap-16 sm:px-[64px] sm:py-16">
                 <motion.div

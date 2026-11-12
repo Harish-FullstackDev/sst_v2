@@ -17,7 +17,7 @@ const BOXES = [
 
 export default function IotDelivery() {
     return (
-        <section className="w-full py-16 px-8 sm:px-[64px] bg-[#f5f6f6]">
+        <section className="w-full py-16 px-8 sm:px-[64px] bg-[#f3f6f9]">
             <div className="flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-8 w-full">
                 <div className="flex flex-col gap-10 lg:gap-16 w-full lg:flex-[654_1_0%]">
                     <motion.div

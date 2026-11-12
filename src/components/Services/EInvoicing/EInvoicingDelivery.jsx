@@ -28,7 +28,7 @@ const STEPS = [
 
 export default function EInvoicingDelivery() {
     return (
-        <section className="w-full bg-[#f5f6f6] px-8 py-10 sm:p-16">
+        <section className="w-full bg-[#f3f6f9] px-8 py-10 sm:p-16">
             <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-12 max-w-[1390px] mx-auto">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}

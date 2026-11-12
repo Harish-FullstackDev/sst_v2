@@ -32,7 +32,7 @@ export default function TransformativeCapabilities() {
         // Vertical breathing room lives on the outer section, outside the grey block,
         // so the grey block runs edge to edge.
         <section className="w-full py-10 sm:py-[32px]">
-            <div className="w-full bg-[#F5F6F6] flex flex-col items-center gap-10 sm:gap-16 px-8 sm:px-[64px] py-10 sm:py-[64px]">
+            <div className="w-full bg-[#f3f6f9] flex flex-col items-center gap-10 sm:gap-16 px-8 sm:px-[64px] py-10 sm:py-[64px]">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

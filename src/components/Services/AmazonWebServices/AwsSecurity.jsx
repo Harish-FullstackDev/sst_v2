@@ -32,7 +32,7 @@ const ITEMS = [
 
 export default function AwsSecurity() {
     return (
-        <section className="w-full px-8 py-10 sm:px-[64px] sm:py-[64px] bg-[#F5F6F6] flex flex-col items-center gap-10 sm:gap-16">
+        <section className="w-full px-8 py-10 sm:px-[64px] sm:py-[64px] bg-[#f3f6f9] flex flex-col items-center gap-10 sm:gap-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

@@ -83,7 +83,7 @@ export default function MigrationStartingPoints() {
     }, [isPaused]);
 
     return (
-        <section className="w-full bg-[#f5f6f6] px-8 py-10 sm:px-[64px] sm:py-[64px]">
+        <section className="w-full bg-[#f3f6f9] px-8 py-10 sm:px-[64px] sm:py-[64px]">
             {/* Below lg: intro stacked above, then simple stacked cards with the
                 description always visible — no hover on touch. */}
             <div className="flex lg:hidden flex-col gap-6">

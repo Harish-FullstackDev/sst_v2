@@ -57,7 +57,7 @@ export default function AribaOutcomes() {
             {/* Desktop layout: white title boxes floating on a full-bleed grey band that holds
                 the descriptions. The band starts halfway down the fixed-height title boxes. */}
             <div className="hidden lg:block relative w-full">
-                <div className="absolute inset-x-0 top-[60px] bottom-0 bg-[#F5F6F6]" />
+                <div className="absolute inset-x-0 top-[60px] bottom-0 bg-[#f3f6f9]" />
 
                 <div className="relative z-10 px-[64px] grid grid-cols-4 gap-x-8">
                     {CARDS.map((card, index) => (

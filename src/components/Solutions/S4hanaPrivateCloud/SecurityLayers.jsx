@@ -58,7 +58,7 @@ export default function SecurityLayers() {
                 descriptions. The band starts at the vertical middle of the title boxes (a
                 fixed-height row), so it stays aligned however long the descriptions run. */}
             <div className="hidden lg:block relative w-full">
-                <div className="absolute inset-x-0 top-[60px] bottom-0 bg-[#F5F6F6]" />
+                <div className="absolute inset-x-0 top-[60px] bottom-0 bg-[#f3f6f9]" />
 
                 <div className="relative z-10 px-[64px] grid grid-cols-4 gap-x-8">
                     {LAYERS.map((layer, index) => (

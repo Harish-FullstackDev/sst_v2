@@ -7,7 +7,7 @@ const HIGHLIGHTS = ["Real-Time Decisions", "Predictive Analytics", "Advanced Bus
 
 export default function WhyBigData() {
     return (
-        <section className="w-full bg-[#f5f6f6]">
+        <section className="w-full bg-[#f3f6f9]">
             <div className="w-full px-8 py-10 sm:px-[64px] sm:py-[64px]">
                 <div className="grid w-full lg:grid-cols-[1fr_auto_1.4fr] lg:items-stretch gap-0">
                     {/* Left */}

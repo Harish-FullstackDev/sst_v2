@@ -54,7 +54,7 @@ export default function WhySf() {
                 descriptions. The band starts at the title boxes' vertical centre, and every
                 box shares one fixed min-height so that offset stays correct. */}
             <div className="hidden lg:block relative w-full">
-                <div className="absolute inset-x-0 top-[60px] bottom-0 bg-[#F5F6F6]" />
+                <div className="absolute inset-x-0 top-[60px] bottom-0 bg-[#f3f6f9]" />
 
                 <div className="relative z-10 px-[64px] grid grid-cols-3 gap-x-8 pb-6">
                     {REASONS.map((card, index) => (

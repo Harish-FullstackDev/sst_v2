@@ -17,7 +17,7 @@ const BOXES = [
 
 export default function WhyChooseSuccessFactors() {
     return (
-        <section className="w-full py-10 sm:py-16 px-8 sm:px-[64px] bg-[#f5f6f6]">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[64px] bg-[#f3f6f9]">
             {/* The image has no aspect lock at lg: it stretches to the text column's height
                 so the boxes never sit in empty space below their copy.
                 Two columns share the padded width through proportional flex-grow (≈654:475)

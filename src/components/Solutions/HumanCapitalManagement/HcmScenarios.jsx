@@ -32,7 +32,7 @@ const CARDS = [
 
 export default function HcmScenarios() {
     return (
-        <section className="w-full py-10 px-8 sm:p-16 bg-[#f5f6f6]">
+        <section className="w-full py-10 px-8 sm:p-16 bg-[#f3f6f9]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

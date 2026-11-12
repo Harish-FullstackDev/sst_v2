@@ -48,7 +48,7 @@ const ITEMS = [
 
 export default function AribaSuccessFactors() {
     return (
-        <section className="w-full bg-[#f5f6f6] py-10 sm:py-16 px-8 sm:px-[64px] flex flex-col lg:flex-row gap-10 lg:gap-[72px] items-start">
+        <section className="w-full bg-[#f3f6f9] py-10 sm:py-16 px-8 sm:px-[64px] flex flex-col lg:flex-row gap-10 lg:gap-[72px] items-start">
             {/* Heading sticks beside the taller eight-item grid on desktop instead of
                 centring against it, so it stays in view while the grid scrolls past. */}
             <motion.div

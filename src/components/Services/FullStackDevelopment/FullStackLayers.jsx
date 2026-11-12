@@ -59,7 +59,7 @@ export default function FullStackLayers() {
                 fixed-height title boxes (h-[121px] → top-[60px]), so the offset can't
                 drift from the box height. */}
             <div className="hidden lg:block relative w-full">
-                <div className="absolute inset-x-0 top-[60px] bottom-0 bg-[#f5f6f6]" />
+                <div className="absolute inset-x-0 top-[60px] bottom-0 bg-[#f3f6f9]" />
 
                 <div className="relative z-10 px-[64px] grid grid-cols-4 gap-x-[clamp(1.5rem,3.5vw,50px)]">
                     {CARDS.map((card, index) => (
