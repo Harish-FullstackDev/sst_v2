@@ -188,16 +188,19 @@ const ContactForm = () => {
   return (
     <>
       <div
-        className="rounded-none shadow-lg p-8 lg:p-8 m-4 lg:m-8 overflow-x-hidden overflow-hidden border"
+        className="rounded-none shadow-lg p-8 lg:p-8 m-4 lg:m-8 overflow-x-hidden overflow-hidden"
         style={{
-          backdropFilter: "blur(14px)",
-          WebkitBackdropFilter: "blur(14px)",
-          background: "rgba(255, 255, 255, 0.75)",
-          borderColor: "rgba(229, 231, 235, 0.5)"
+          // Figma 2243:3782: one flat slate tone (#47545C where it sits on white),
+          // kept translucent over a blur of the hero photo like the earlier frame.
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
+          // No border: with a transparent 1px border the gradient tiles under it,
+          // drawing a light line along the bottom edge and a dark one along the top.
+          background: "rgba(25, 41, 51, 0.8)"
         }}
       >
         <div className="mb-8">
-          <h3 className="text-xl lg:text-xl font-semibold text-gray-900 mb-2">
+          <h3 className="text-xl lg:text-xl font-semibold text-white mb-2">
             Personal information
           </h3>
         </div>
@@ -206,7 +209,7 @@ const ContactForm = () => {
           {/* First Name and Second Name Row */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="firstName" className="block text-sm font-medium text-[#e5e5e5]">
                 First Name *
               </label>
               <input
@@ -222,12 +225,12 @@ const ContactForm = () => {
                   }`}
               />
               {errors.firstName && (
-                <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>
+                <p className="text-red-300 text-xs mt-1">{errors.firstName}</p>
               )}
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="secondName" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="secondName" className="block text-sm font-medium text-[#e5e5e5]">
                 Last Name *
               </label>
               <input
@@ -243,7 +246,7 @@ const ContactForm = () => {
                   }`}
               />
               {errors.secondName && (
-                <p className="text-red-500 text-xs mt-1">{errors.secondName}</p>
+                <p className="text-red-300 text-xs mt-1">{errors.secondName}</p>
               )}
             </div>
           </div>
@@ -251,7 +254,7 @@ const ContactForm = () => {
           {/* Company Email and Contact Number Row */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label htmlFor="companyEmail" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="companyEmail" className="block text-sm font-medium text-[#e5e5e5]">
                 Company Email *
               </label>
               <input
@@ -267,12 +270,12 @@ const ContactForm = () => {
                   }`}
               />
               {errors.companyEmail && (
-                <p className="text-red-500 text-xs mt-1">{errors.companyEmail}</p>
+                <p className="text-red-300 text-xs mt-1">{errors.companyEmail}</p>
               )}
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="contactNumber" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="contactNumber" className="block text-sm font-medium text-[#e5e5e5]">
                 Contact Number *
               </label>
               <input
@@ -288,7 +291,7 @@ const ContactForm = () => {
                   }`}
               />
               {errors.contactNumber && (
-                <p className="text-red-500 text-xs mt-1">{errors.contactNumber}</p>
+                <p className="text-red-300 text-xs mt-1">{errors.contactNumber}</p>
               )}
             </div>
           </div>
@@ -296,7 +299,7 @@ const ContactForm = () => {
           {/* Country and Company Name Row */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label htmlFor="country" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="country" className="block text-sm font-medium text-[#e5e5e5]">
                 Country *
               </label>
               <input
@@ -312,12 +315,12 @@ const ContactForm = () => {
                   }`}
               />
               {errors.country && (
-                <p className="text-red-500 text-xs mt-1">{errors.country}</p>
+                <p className="text-red-300 text-xs mt-1">{errors.country}</p>
               )}
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="companyName" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="companyName" className="block text-sm font-medium text-[#e5e5e5]">
                 Company Name *
               </label>
               <input
@@ -333,7 +336,7 @@ const ContactForm = () => {
                   }`}
               />
               {errors.companyName && (
-                <p className="text-red-500 text-xs mt-1">{errors.companyName}</p>
+                <p className="text-red-300 text-xs mt-1">{errors.companyName}</p>
               )}
             </div>
           </div>
@@ -341,7 +344,7 @@ const ContactForm = () => {
           {/* Enquiries Field */}
           <div className="space-y-6">
             <div className="space-y-2">
-              <label htmlFor="enquiries" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="enquiries" className="block text-sm font-medium text-[#e5e5e5]">
                 Enquiries *
               </label>
               <textarea
@@ -357,7 +360,7 @@ const ContactForm = () => {
                   }`}
               />
               {errors.enquiries && (
-                <p className="text-red-500 text-xs mt-1">{errors.enquiries}</p>
+                <p className="text-red-300 text-xs mt-1">{errors.enquiries}</p>
               )}
             </div>
           </div>
