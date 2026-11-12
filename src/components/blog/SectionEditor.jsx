@@ -8,7 +8,7 @@ export default function SectionEditor({ sec, idx, sections, setSections }) {
 
             {/* Section Header with Actions */}
             <div className="flex justify-between items-center">
-                <span className="text-sm font-bold text-blue-500">
+                <span className="text-sm font-bold text-[#2d8ec5]">
                     Section #{idx + 1}
                 </span>
                 <div className="flex items-center gap-1">
@@ -74,7 +74,7 @@ export default function SectionEditor({ sec, idx, sections, setSections }) {
                     }}
                     placeholder="e.g. Introduction or Clean Core"
                     required
-                    className="w-full px-3 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2d8ec5]"
                 />
             </div>
 
@@ -93,7 +93,7 @@ export default function SectionEditor({ sec, idx, sections, setSections }) {
                     placeholder="Enter paragraph text..."
                     required
                     rows={4}
-                    className="w-full px-3 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
+                    className="w-full px-3 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2d8ec5] resize-y"
                 />
             </div>
 
@@ -117,7 +117,7 @@ export default function SectionEditor({ sec, idx, sections, setSections }) {
                     <label className="block text-xs font-semibold text-neutral-600 dark:text-neutral-400">
                         Section Image (optional)
                     </label>
-                    <div className="relative border border-dashed border-neutral-300 dark:border-neutral-700 rounded-xl p-4 flex flex-col items-center justify-center bg-white dark:bg-neutral-900 cursor-pointer hover:border-blue-500 transition-colors">
+                    <div className="relative border border-dashed border-neutral-300 dark:border-neutral-700 rounded-xl p-4 flex flex-col items-center justify-center bg-white dark:bg-neutral-900 cursor-pointer hover:border-[#2d8ec5] transition-colors">
                         <input
                             type="file"
                             accept="image/*"
@@ -176,7 +176,7 @@ export default function SectionEditor({ sec, idx, sections, setSections }) {
                                 updated[idx].caption = e.target.value;
                                 setSections(updated);
                             }}
-                            className="w-full px-3 py-2 rounded-xl border border-neutral-350 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white text-xs focus:outline-none focus:ring-1 focus:ring-blue-500"
+                            className="w-full px-3 py-2 rounded-xl border border-neutral-350 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white text-xs focus:outline-none focus:ring-1 focus:ring-[#2d8ec5]"
                         />
                     </div>
                 </div>

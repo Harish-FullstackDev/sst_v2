@@ -114,7 +114,7 @@ export default function GrowDifferentiators() {
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Our Key <span className="text-[#2D8EC5]">Differentiators</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    The strengths Grow with SAP brings to a business that is ready to scale.
+                    The strengths GROW with SAP brings to a business that is ready to scale.
                 </p>
             </motion.div>
 

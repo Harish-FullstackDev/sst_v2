@@ -16,8 +16,8 @@ export const CATEGORIES = [
             "From initial setup and customization to ongoing support and optimization, SAP services ensure that organizations can leverage the full potential of their SAP investments to enhance efficiency, streamline workflows, and achieve strategic objectives.",
         ],
         cards: [
-            { title: "Rise with SAP", href: "/services/rise-with-sap", desc: "Rise with SAP empowers businesses to transform and streamline their operations by integrating and managing finances, operations, and customer relationships efficiently through the SAP S/4HANA ERP suite." },
-            { title: "Grow with SAP", href: "/services/grow-with-sap", desc: "Grow with SAP enables businesses to scale efficiently by integrating and managing finances, operations, and customer relationships through the SAP S/4HANA ERP suite." },
+            { title: "RISE with SAP", href: "/services/rise-with-sap", desc: "RISE with SAP empowers businesses to transform and streamline their operations by integrating and managing finances, operations, and customer relationships efficiently through the SAP S/4HANA ERP suite." },
+            { title: "GROW with SAP", href: "/services/grow-with-sap", desc: "GROW with SAP enables businesses to scale efficiently by integrating and managing finances, operations, and customer relationships through the SAP S/4HANA ERP suite." },
             { title: "SAP SuccessFactors", href: "/services/sap-successfactors", desc: "SAP SuccessFactors integrates employee data, recruitment, performance, and development for a streamlined approach to managing your workforce from hire to retire." },
             { title: "SAP Ariba", href: "/services/sap-ariba", desc: "SAP Ariba simplifies procurement processes, enhances supplier collaboration, and enables real-time insights for smarter, data-driven decisions." },
             { title: "SAP CX", href: "/services/sap-cx", desc: "SAP CX enables businesses to deliver personalized, seamless customer experiences across all channels, backed by real-time insights." },

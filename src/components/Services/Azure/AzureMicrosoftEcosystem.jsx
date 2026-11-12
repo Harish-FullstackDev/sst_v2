@@ -73,7 +73,7 @@ export default function AzureMicrosoftEcosystem() {
                         >
                             <div
                                 aria-hidden
-                                className={`absolute inset-0 bg-[#002C4F] transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0"}`}
+                                className={`absolute inset-0 bg-[#0A3A52] transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0"}`}
                             />
                             <div className="relative flex flex-col gap-8 sm:gap-16">
                                 <h2 className="text-xl sm:text-[28px] xl:text-[32px] font-semibold leading-tight">{col.title}</h2>

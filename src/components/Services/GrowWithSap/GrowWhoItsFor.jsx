@@ -26,7 +26,7 @@ export default function GrowWhoItsFor() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative z-10 flex flex-col items-center gap-4 text-center"
             >
-                <h2 className="text-white text-xl sm:text-[28px] font-semibold">Who Grow with SAP Is For</h2>
+                <h2 className="text-white text-xl sm:text-[28px] font-semibold">Who GROW with SAP Is For</h2>
                 <p className="text-white text-base sm:text-lg font-light">
                     Businesses of all sizes that want to scale on a standard cloud ERP
                 </p>

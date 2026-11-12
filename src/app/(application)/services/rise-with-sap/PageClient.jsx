@@ -38,7 +38,7 @@ const page = () => {
             <RiseOutcomes />
             <RiseFaq />
             <ReadyToTransform
-                title="Streamline Your Business with Rise with SAP Today"
+                title="Streamline Your Business with RISE with SAP Today"
                 description="Discover the possibilities. Contact us for a personalized demo."
                 buttonLabel="Get in Touch"
             />

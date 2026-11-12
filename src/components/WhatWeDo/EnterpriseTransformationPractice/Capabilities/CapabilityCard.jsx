@@ -93,7 +93,7 @@ const CapabilityCard = forwardRef(function CapabilityCard(
                             <Link
                                 href={href}
                                 onClick={(event) => event.stopPropagation()}
-                                className="inline-flex h-11 w-[175px] shrink-0 items-center justify-center border border-[#d0d0d0] bg-[#002C4F] px-6 text-lg font-light text-white text-center transition-colors hover:bg-white hover:text-[#0a3a52]"
+                                className="inline-flex h-11 w-[175px] shrink-0 items-center justify-center border border-[#d0d0d0] bg-[#0A3A52] px-6 text-lg font-light text-white text-center transition-colors hover:bg-white hover:text-[#0a3a52]"
                             >
                                 View More
                             </Link>

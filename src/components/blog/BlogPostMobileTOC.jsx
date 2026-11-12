@@ -20,7 +20,7 @@ export default function BlogPostMobileTOC({
                     className="w-full flex justify-between items-center text-sm font-bold text-slate-800 dark:text-white cursor-pointer"
                 >
                     <span className="flex items-center gap-2">
-                        <span className="text-blue-500 font-semibold">📑</span>
+                        <span className="text-[#2d8ec5] font-semibold">📑</span>
                         {activeHeadingName || "Table of Contents"}
                     </span>
                     <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`} />
@@ -45,12 +45,12 @@ export default function BlogPostMobileTOC({
                                             setIsDropdownOpen(false);
                                         }}
                                         className={`flex items-center justify-between px-6 py-2.5 text-left text-sm transition-colors cursor-pointer ${isActive
-                                            ? "text-[#0061AF] bg-blue-50/50 dark:bg-blue-900/10 font-semibold"
+                                            ? "text-[#2d8ec5] bg-[#2d8ec5]/5 dark:bg-[#2d8ec5]/10 font-semibold"
                                             : "text-slate-655 dark:text-slate-350 hover:bg-slate-50 dark:hover:bg-neutral-800"
                                             }`}
                                     >
                                         <span>{sec.heading}</span>
-                                        {isActive && <Check className="w-4 h-4 text-[#0061AF]" />}
+                                        {isActive && <Check className="w-4 h-4 text-[#2d8ec5]" />}
                                     </button>
                                 );
                             })}

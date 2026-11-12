@@ -4,7 +4,7 @@
 // Each top-level entry is a category (SAP, Cloud, ERP…). Categories are not
 // pages of their own: their href is an anchor on the landing page. An item
 // either links to a page (href) or groups further items (children), e.g.
-// SAP → Implementation → Rise with SAP.
+// SAP → Implementation → RISE with SAP.
 export const SERVICES = [
   {
     id: "sap",
@@ -14,8 +14,8 @@ export const SERVICES = [
       {
         name: "Implementation",
         children: [
-          { name: "Rise with SAP", href: "/services/rise-with-sap" },
-          { name: "Grow with SAP", href: "/services/grow-with-sap" },
+          { name: "RISE with SAP", href: "/services/rise-with-sap" },
+          { name: "GROW with SAP", href: "/services/grow-with-sap" },
         ],
       },
       {

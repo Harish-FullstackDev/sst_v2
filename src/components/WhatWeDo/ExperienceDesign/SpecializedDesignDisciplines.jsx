@@ -87,7 +87,7 @@ export default function SpecializedDesignDisciplines() {
                                 aria-hidden
                                 className={`absolute inset-0 transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0"}`}
                             >
-                                <div className="absolute inset-0 bg-[#002C4F]" />
+                                <div className="absolute inset-0 bg-[#0A3A52]" />
                             </div>
                             <div className="relative md:mt-15 flex flex-col gap-12 sm:gap-20">
                                 <h2 className="text-xl sm:text-[32px] font-semibold">

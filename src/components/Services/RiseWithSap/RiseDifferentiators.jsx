@@ -115,7 +115,7 @@ export default function RiseDifferentiators() {
                 >
                     <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Our Key <span className="text-[#2D8EC5]">Differentiators</span></h2>
                     <p className="text-[#55595E] text-xl font-light">
-                        What Rise with SAP brings to the business, and what we focus on while delivering it.
+                        What RISE with SAP brings to the business, and what we focus on while delivering it.
                     </p>
                 </motion.div>
 

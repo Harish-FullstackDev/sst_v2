@@ -195,7 +195,7 @@ export default function BlogPostClient() {
             <div className="min-h-screen bg-slate-50 dark:bg-neutral-950 flex flex-col font-sans">
                 <Navbar />
                 <div className="flex-grow flex items-center justify-center py-40">
-                    <div className="w-12 h-12 border-4 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" />
+                    <div className="w-12 h-12 border-4 border-[#2d8ec5]/20 border-t-[#2d8ec5] rounded-full animate-spin" />
                 </div>
                 <Footer />
             </div>
@@ -215,7 +215,7 @@ export default function BlogPostClient() {
                     </p>
                     <Link
                         href="/blog"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-2xl transition-all shadow-md"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#2d8ec5] hover:bg-[#1C5F85] text-white font-bold rounded-2xl transition-all shadow-md"
                     >
                         <ArrowLeft className="w-5 h-5" /> Back to Blogs
                     </Link>

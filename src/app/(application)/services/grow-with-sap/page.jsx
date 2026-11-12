@@ -4,14 +4,14 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/services/grow-with-sap/" },
-  description: "Grow with SAP implementation services: scale efficiently by integrating finances, operations, and customer relationships through the SAP S/4HANA ERP suite.",
+  description: "GROW with SAP implementation services: scale efficiently by integrating finances, operations, and customer relationships through the SAP S/4HANA ERP suite.",
   openGraph: {
-    title: "Grow with SAP | Support Studio Technologies",
-    description: "Grow with SAP implementation services: scale efficiently by integrating finances, operations, and customer relationships through the SAP S/4HANA ERP suite.",
+    title: "GROW with SAP | Support Studio Technologies",
+    description: "GROW with SAP implementation services: scale efficiently by integrating finances, operations, and customer relationships through the SAP S/4HANA ERP suite.",
     url: "/services/grow-with-sap/",
     images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "Support Studio Technologies" }],
   },
-  title: "Grow with SAP",
+  title: "GROW with SAP",
 };
 
 export default function Page() {

@@ -85,8 +85,8 @@ export default function InsightsListing({
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 rounded-none text-sm border transition-all cursor-pointer ${activeCategory === cat
-                  ? "bg-blue-500 border-blue-500 text-white shadow-md shadow-blue-500/20"
-                  : "bg-white border-neutral-200 text-neutral-600 hover:border-blue-300 hover:text-blue-600"
+                  ? "bg-[#2d8ec5] border-[#2d8ec5] text-white shadow-md shadow-[#2d8ec5]/20"
+                  : "bg-white border-neutral-200 text-neutral-600 hover:border-[#2d8ec5]/40 hover:text-[#2d8ec5]"
                   }`}
               >
                 {cat}
@@ -97,7 +97,7 @@ export default function InsightsListing({
 
         {loading ? (
           <div className="flex items-center justify-center py-40">
-            <div className="w-12 h-12 border-4 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" />
+            <div className="w-12 h-12 border-4 border-[#2d8ec5]/20 border-t-[#2d8ec5] rounded-full animate-spin" />
           </div>
         ) : filteredItems.length === 0 ? (
           <div className="text-center py-40 border border-dashed border-neutral-200 rounded-none p-8 bg-white">
@@ -122,7 +122,7 @@ export default function InsightsListing({
               >
 
                 <CardContainer className="inter-var w-full h-full" containerClassName="py-0 flex-grow">
-                  <CardBody className="bg-[#F5F6F6] relative shadow-md hover:shadow-2xl group/card dark:hover:shadow-2xl dark:hover:shadow-blue-500/[0.1] dark:bg-neutral-900 dark:border-neutral-850 border-neutral-100 w-full h-full rounded-none p-6 border flex flex-col justify-between">
+                  <CardBody className="bg-[#F5F6F6] relative shadow-md hover:shadow-2xl group/card dark:hover:shadow-2xl dark:hover:shadow-[#2d8ec5]/[0.1] dark:bg-neutral-900 dark:border-neutral-850 border-neutral-100 w-full h-full rounded-none p-6 border flex flex-col justify-between">
 
                     <div className="flex flex-col flex-grow">
                       <CardItem translateZ="0" className="w-full mt-4 relative">
@@ -132,7 +132,7 @@ export default function InsightsListing({
                           alt={item.title}
                         />
 
-                        {/* <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-blue-500/90 text-white text-[11px] font-bold uppercase tracking-wider shadow-md">
+                        {/* <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#2d8ec5]/90 text-white text-[11px] font-bold uppercase tracking-wider shadow-md">
                           {item.type}
                         </span> */}
                       </CardItem>
@@ -145,7 +145,7 @@ export default function InsightsListing({
                       </CardItem>
                       <CardItem
                         translateZ="0"
-                        className="text-xs font-semibold text-blue-500 uppercase tracking-wider block mt-4 mb-2"
+                        className="text-xs font-semibold text-[#2d8ec5] uppercase tracking-wider block mt-4 mb-2"
                       >
                         {item.category}
                       </CardItem>
@@ -167,7 +167,7 @@ export default function InsightsListing({
                       <CardItem
                         translateZ={20}
                         as="div"
-                        className="w-8 h-8 rounded-full bg-blue-500/10 text-blue-500 flex items-center justify-center group-hover/card:bg-blue-50 group-hover/card:text-black transition-all duration-350 transform group-hover/card:translate-x-0.5"
+                        className="w-8 h-8 rounded-full bg-[#2d8ec5]/10 text-[#2d8ec5] flex items-center justify-center group-hover/card:bg-[#2d8ec5]/10 group-hover/card:text-black transition-all duration-350 transform group-hover/card:translate-x-0.5"
                       >
                         <ArrowRight className="w-4 h-4" />
                       </CardItem>

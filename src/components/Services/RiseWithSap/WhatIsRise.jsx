@@ -40,7 +40,7 @@ export default function WhatIsRise() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-14 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">What is <span className="text-[#2D8EC5]">Rise with SAP?</span></h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">What is <span className="text-[#2D8EC5]">RISE with SAP?</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     One subscription that combines cloud ERP, the tools around it, and SAP-managed infrastructure
                     and technical operations under a single contract.
@@ -57,7 +57,7 @@ export default function WhatIsRise() {
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         className="group relative flex flex-col min-h-[240px] sm:min-h-[339px] mt-10 border border-[#7f7f7f]/40 bg-white text-center transition-shadow duration-300 hover:shadow-xl"
                     >
-                        <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[120px] h-[94px] bg-[#002C4F] flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-105">
+                        <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[120px] h-[94px] bg-[#0A3A52] flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-105">
                             <Image src={card.icon} alt="" width={48} height={48} className="size-[48px]" />
                         </div>
                         <div className="flex flex-col flex-1 gap-4 px-8 pt-16 sm:pt-20 pb-10">

@@ -39,7 +39,7 @@ export default function RiseOutcomes() {
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="mb-4 text-[#55595E] text-base sm:text-lg font-light"
                         >
-                            The practical outcomes of running SAP S/4HANA through Rise with SAP.
+                            The practical outcomes of running SAP S/4HANA through RISE with SAP.
                         </motion.p>
                     </div>
 

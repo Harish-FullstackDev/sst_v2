@@ -85,7 +85,7 @@ export default function RolloutStages() {
                         >
                             <div
                                 aria-hidden
-                                className={`absolute inset-0 bg-[#002C4F] transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0"}`}
+                                className={`absolute inset-0 bg-[#0A3A52] transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0"}`}
                             />
                             <div className="relative flex flex-col gap-4 sm:gap-6">
                                 <h2 className="text-xl sm:text-[28px] font-semibold">{stage.title}</h2>
