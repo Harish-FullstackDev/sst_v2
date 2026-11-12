@@ -62,7 +62,7 @@ const MARQUEE_CSS = `
 
 export default function OurProudPartners() {
     return (
-        <section className="w-full bg-[#f3f6f9] pt-10 pb-12 sm:pt-16 sm:pb-16 px-8 sm:px-[64px]">
+        <section className="w-full bg-white pt-10 sm:pt-16 px-8 sm:px-[64px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -101,6 +101,10 @@ export default function OurProudPartners() {
                     </div>
                 </div>
             </motion.div>
+            {/* Full-width hairline separating Our Proud Partners from the FAQ below
+                (both white), 64px from each; the negative margins cancel the
+                section's side padding so it runs edge to edge. */}
+            <div className="-mx-8 sm:-mx-[64px] mt-12 sm:mt-16 h-px bg-[#d3dae2]" />
         </section>
     );
 }

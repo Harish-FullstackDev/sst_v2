@@ -59,10 +59,9 @@ function AnimatedStat({ value }) {
 
 export default function ProofInNumbers() {
     return (
-        // Bottom hairline matches the Figma frame's border-b (top edge is already
-        // provided by TechnologyPartner's trailing rule right above this section —
-        // adding a top border here too would double that line).
-        <section className="w-full bg-white border-b border-[#8794a3] px-6 py-10 sm:px-[64px] sm:py-[64px]">
+        // Grey band (#f3f6f9) between the white sections above and below; the
+        // colour change does the separating, so no hairlines on either edge.
+        <section className="w-full bg-[#f3f6f9] px-6 py-10 sm:px-[64px] sm:py-[64px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

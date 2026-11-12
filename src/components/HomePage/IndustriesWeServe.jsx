@@ -324,9 +324,6 @@ export default function IndustriesWeServe() {
                 </div>
             </div>
 
-            {/* Full-width hairline separating this section from Our Proud Partners
-                (same grey background on both sides), 64px from each. */}
-            <div className="h-px w-full bg-[#d3dae2]" />
         </section>
     );
 }

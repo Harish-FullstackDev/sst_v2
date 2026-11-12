@@ -113,12 +113,18 @@ function ServiceCard({ card }) {
                 {/* Same order as the /services page cards: icon at the top; title,
                     description and "Explore ->" grouped at the foot. */}
                 <div className="relative flex h-full flex-col items-start gap-4">
-                    <Icon
-                        aria-hidden="true"
-                        strokeWidth={1}
-                        className={`h-10 w-10 text-white opacity-70 transition-opacity duration-700 ${EASE} group-hover:opacity-100`}
-                    />
-                    <h3 className="mt-auto text-white text-xl font-semibold leading-[1.4]">{card.title}</h3>
+                    {/* The icon sits vertically centred in the free space between the
+                        card's top edge and the title: the negative margins cancel the
+                        card's top padding and the gap below, so the space above and
+                        below the icon is equal. */}
+                    <div className="flex flex-1 items-center -mt-6 lg:-mt-5 xl:-mt-6 -mb-4">
+                        <Icon
+                            aria-hidden="true"
+                            strokeWidth={1}
+                            className={`h-10 w-10 text-white opacity-70 transition-opacity duration-700 ${EASE} group-hover:opacity-100`}
+                        />
+                    </div>
+                    <h3 className="text-white text-xl font-semibold leading-[1.4]">{card.title}</h3>
                     <p className="text-white/75 text-base font-light leading-[1.5] transition-colors duration-700 ease-out group-hover:text-white/95">
                         {card.desc}
                     </p>

@@ -110,7 +110,7 @@ export default function TechnologyPartner() {
 
     return (
         <section ref={sectionRef} className="relative w-full bg-white">
-            <div className="flex flex-col gap-10 sm:gap-16 px-6 pt-10 pb-6 sm:px-[64px] sm:pt-[64px] sm:pb-0">
+            <div className="flex flex-col gap-10 sm:gap-16 px-6 py-10 sm:px-[64px] sm:py-[64px]">
                 <div className="flex flex-col gap-6">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -167,13 +167,6 @@ export default function TechnologyPartner() {
                     </Link>
                 </motion.div>
 
-                {/* Fixed 64px (gap-10/16, same rhythm as above) below "Built for
-                    Enterprise Execution" — never anything but that distance.
-                    Negative margins matching this wrapper's own px-6/sm:px-[64px]
-                    break the rule out of that padding so it spans the full section
-                    width (edge to edge of the screen) instead of stopping at the
-                    64px inset like the text above it. */}
-                <div className="-mx-6 sm:-mx-[64px] h-px shrink-0 bg-[#8794a3]" />
             </div>
         </section>
     );
