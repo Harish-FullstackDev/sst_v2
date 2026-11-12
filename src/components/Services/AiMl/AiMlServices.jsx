@@ -87,7 +87,7 @@ export default function AiMlServices() {
             {/* Content */}
             <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-[100px] w-full lg:pl-[64px]">
                 {/* Tabs spread down the panel height at lg, as in How a Migration Runs. */}
-                <div className="flex flex-col justify-between w-full lg:w-96 lg:h-[420px] gap-2 lg:gap-0 shrink-0">
+                <div className="flex flex-col justify-between w-full lg:w-96 lg:h-[520px] gap-2 lg:gap-0 shrink-0">
                     {TABS.map((tab, index) => (
                         <button
                             key={tab.title}
@@ -117,16 +117,28 @@ export default function AiMlServices() {
                 <div className="flex flex-col gap-5 w-full lg:flex-1 lg:min-w-0">
                     {/* lg:h-[420px] matches the tab column exactly; an aspect ratio would let the
                         panel drift taller or shorter than the list as the width changes. */}
-                    <div className="relative w-full aspect-[798/446] lg:aspect-auto lg:h-[420px] overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+                    <div className="relative w-full aspect-[798/446] lg:aspect-auto lg:h-[520px] overflow-hidden bg-[linear-gradient(to_bottom_right,#0A2B3E,#003756_60%,#00447A)]">
                         <style>{DRAW_KEYFRAMES}</style>
-                        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.35),rgba(28,95,133,0)_65%)]" />
+                        {/* Depth, as in What SAP SuccessFactors Offers: a deep-blue rise from the foot,
+                            brand-blue light from the bottom-right corner behind the icon, and one
+                            faint light sweep each time the tab changes. */}
+                        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.4),rgba(28,95,133,0)_60%)]" />
+                        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(315deg,rgba(45,142,197,0.3),rgba(45,142,197,0)_45%)]" />
+                        <motion.div
+                            key={`sweep-${active}`}
+                            aria-hidden="true"
+                            initial={{ x: "-120%" }}
+                            animate={{ x: "320%" }}
+                            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+                            className="absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.07),transparent)]"
+                        />
 
                         {/* Self-drawing icon, bottom right (keyed so it redraws per tab). */}
                         <activeTab.icon
                             key={active}
                             aria-hidden="true"
                             strokeWidth={0.6}
-                            className="absolute bottom-[8%] right-[5%] h-[55%] w-auto text-white/25 [&_*]:[stroke-dasharray:100] [&_*]:[stroke-dashoffset:100] [&_*]:animate-[aiml-draw_2s_cubic-bezier(0.65,0,0.35,1)_forwards]"
+                            className="absolute bottom-[8%] right-[5%] h-[55%] w-auto text-white/35 [&_*]:[stroke-dasharray:100] [&_*]:[stroke-dashoffset:100] [&_*]:animate-[aiml-draw_2s_cubic-bezier(0.65,0,0.35,1)_forwards]"
                         />
 
                         {/* Text (desktop overlay), top left. */}

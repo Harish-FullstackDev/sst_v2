@@ -113,7 +113,7 @@ export default function SuccessFactorsMethodology() {
                 {STEPS.map((step, index) => {
                     const isActive = index === activeIndex;
                     return (
-                        <div key={step.title} className="relative flex-1 aspect-[4/5] min-h-[300px]">
+                        <div key={step.title} className="relative flex-1 aspect-square min-h-[260px]">
                             <motion.div
                                 initial={{ opacity: 0, y: 24 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ export default function SuccessFactorsMethodology() {
                                 transition={{ duration: 0.5, delay: index * 0.08 }}
                                 onMouseEnter={() => setActiveIndex(index)}
                                 onFocus={() => setActiveIndex(index)}
-                                className={`absolute bottom-0 inset-x-0 overflow-hidden transition-[aspect-ratio] duration-500 ease-out ${isActive ? "aspect-[4/5] min-h-[300px] z-20" : "aspect-[16/15] z-10"
+                                className={`absolute bottom-0 inset-x-0 overflow-hidden transition-[aspect-ratio] duration-500 ease-out ${isActive ? "aspect-square min-h-[260px] z-20" : "aspect-[4/3] z-10"
                                     }`}
                             >
                                 <PhaseBackground step={step} />

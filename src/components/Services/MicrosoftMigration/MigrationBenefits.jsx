@@ -17,27 +17,27 @@ const INTERVAL = 5000;
 const TABS = [
     {
         title: "Comprehensive Data Migration",
-        desc: "Secure and accurate migration of your business data to Microsoft ERP solutions without disruption.",
+        desc: "Secure and accurate migration of your business data to Microsoft ERP solutions without disruption. Master data, open transactions, and history are mapped, cleansed, and validated before cutover, so the new system starts with records your teams can trust.",
         icon: LuDatabase,
     },
     {
         title: "Change Management",
-        desc: "Equip your team with the tools, training, and support to successfully adapt to the new system.",
+        desc: "Equip your team with the tools, training, and support to successfully adapt to the new system. Role-based training, clear communication, and hands-on support around go-live help people move to new ways of working with confidence.",
         icon: LuUsers,
     },
     {
         title: "Ongoing Support & Optimization",
-        desc: "Post-migration support to ensure smooth operations, system optimization, and continuous improvement.",
+        desc: "Post-migration support to ensure smooth operations, system optimization, and continuous improvement. We stay on after go-live to resolve issues quickly, tune performance, and refine processes as your business settles into the new platform.",
         icon: LuLifeBuoy,
     },
     {
         title: "Scalable Solutions",
-        desc: "Ensure your ERP solution can grow with your business needs, providing flexibility and scalability.",
+        desc: "Ensure your ERP solution can grow with your business needs, providing flexibility and scalability. New entities, users, and modules can be added as you expand, without reworking the foundation that was put in place during migration.",
         icon: LuTrendingUp,
     },
     {
         title: "Microsoft Ecosystem Integration",
-        desc: "Seamlessly connect your migrated ERP with Microsoft 365, Power BI, and Azure for a unified digital environment.",
+        desc: "Seamlessly connect your migrated ERP with Microsoft 365, Power BI, and Azure for a unified digital environment. Data flows between the tools your teams already use, giving one connected view of operations, reporting, and collaboration.",
         icon: LuBlocks,
     },
 ];
@@ -104,9 +104,21 @@ export default function MigrationBenefits() {
 
                 {/* Navy panel */}
                 <div className="w-full lg:flex-1 min-w-0">
-                    <div className="relative w-full aspect-[798/446] overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+                    <div className="relative w-full aspect-[798/446] overflow-hidden bg-[linear-gradient(to_bottom_right,#0A2B3E,#003756_60%,#00447A)]">
                         {/* Faint deep-blue rise behind the copy, for depth. */}
-                        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.35),rgba(28,95,133,0)_65%)]" />
+                        {/* Depth, as in What SAP SuccessFactors Offers: a deep-blue rise from the foot,
+                            brand-blue light from the bottom-right corner behind the icon, and one
+                            faint light sweep each time the tab changes. */}
+                        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.4),rgba(28,95,133,0)_60%)]" />
+                        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(315deg,rgba(45,142,197,0.3),rgba(45,142,197,0)_45%)]" />
+                        <motion.div
+                            key={`sweep-${active}`}
+                            aria-hidden="true"
+                            initial={{ x: "-120%" }}
+                            animate={{ x: "320%" }}
+                            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+                            className="absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.07),transparent)]"
+                        />
 
                         {/* Watermark icon, cross-fading per tab. */}
                         <AnimatePresence>
@@ -117,9 +129,9 @@ export default function MigrationBenefits() {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -12 }}
                                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                                className="absolute bottom-[8%] right-[5%] h-[55%] aspect-square text-white/[0.08]"
+                                className="absolute bottom-[8%] right-[5%] h-[38%] lg:bottom-[10%] lg:right-[6%] lg:h-[50%] aspect-square text-white/[0.22]"
                             >
-                                <activeTab.icon strokeWidth={0.6} className="size-full" />
+                                <activeTab.icon strokeWidth={0.8} className="size-full" />
                             </motion.div>
                         </AnimatePresence>
 

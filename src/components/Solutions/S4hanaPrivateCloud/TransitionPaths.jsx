@@ -79,7 +79,7 @@ export default function TransitionPaths() {
                                 className={`absolute inset-0 bg-[#002C4F] transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0"}`}
                             />
                             <div className="relative flex flex-col gap-4 sm:gap-6 lg:mt-12">
-                                <h2 className="text-xl sm:text-[28px] lg:text-[32px] font-semibold leading-tight">{path.title}</h2>
+                                <h2 className="text-xl sm:text-2xl font-semibold leading-tight">{path.title}</h2>
                                 <p className="text-base sm:text-xl font-light">{path.desc}</p>
                             </div>
                         </motion.div>

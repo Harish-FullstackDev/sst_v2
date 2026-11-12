@@ -13,7 +13,7 @@ const OUTCOMES = [
 
 export default function RolloutOutcomes() {
     return (
-        <section className="w-full bg-[#f3f6f9] px-8 py-10 sm:px-[64px] sm:py-[64px]">
+        <section className="w-full bg-white px-8 py-10 sm:px-[64px] sm:py-[64px]">
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
                 <div className="w-full lg:flex-1 lg:min-w-0 flex flex-col gap-8">
                     <motion.div
@@ -35,7 +35,7 @@ export default function RolloutOutcomes() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.3 }}
                                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                                className="flex flex-col gap-2 bg-white p-6 border-l-[3px] border-[#2d8ec5]"
+                                className="flex flex-col gap-2 bg-[#f3f6f9] p-6 border-l-[3px] border-[#2d8ec5]"
                             >
                                 <h3 className="text-[#2E3033] text-lg sm:text-xl font-semibold">{item.title}</h3>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
