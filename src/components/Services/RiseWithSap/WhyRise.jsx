@@ -24,7 +24,7 @@ export default function WhyRise() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative flex flex-col gap-2 max-w-[767px]"
             >
-                <h2 className="text-white text-xl sm:text-[28px] font-semibold">Why Rise with SAP?</h2>
+                <h2 className="text-white text-xl sm:text-[28px] font-semibold">Why RISE with SAP?</h2>
                 <p className="text-white/90 text-base sm:text-lg font-light">Streamline and optimize operations.</p>
             </motion.div>
 
@@ -36,7 +36,7 @@ export default function WhyRise() {
                 className="relative w-full max-w-[1152px] flex flex-col gap-6 text-white/90 text-lg sm:text-2xl font-light leading-[1.4]"
             >
                 <p>
-                    Rise with SAP streamlines business functions, improves decision-making, and enhances customer
+                    RISE with SAP streamlines business functions, improves decision-making, and enhances customer
                     relationships through its modular design.
                 </p>
                 <p>The result is cost savings and a competitive advantage.</p>

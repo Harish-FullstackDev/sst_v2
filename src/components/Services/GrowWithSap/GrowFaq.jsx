@@ -7,11 +7,11 @@ import circleIcon from "@/assets/Services/GrowWithSap/icons/accordion-toggle-cir
 
 const ITEMS = [
     {
-        title: "How is Grow with SAP different from Rise with SAP?",
-        desc: "Both offerings are built around SAP S/4HANA Cloud. Grow with SAP centres on the public cloud edition, with standard preconfigured processes and fast adoption. Rise with SAP is typically chosen by organisations that need more flexibility, such as the private cloud edition or a move of an existing SAP system.",
+        title: "How is GROW with SAP different from RISE with SAP?",
+        desc: "Both offerings are built around SAP S/4HANA Cloud. GROW with SAP centres on the public cloud edition, with standard preconfigured processes and fast adoption. RISE with SAP is typically chosen by organisations that need more flexibility, such as the private cloud edition or a move of an existing SAP system.",
     },
     {
-        title: "Is Grow with SAP only for small companies?",
+        title: "Is GROW with SAP only for small companies?",
         desc: "No. It is designed for businesses of all sizes, and is often chosen by midsize and fast-growing companies, or by subsidiaries of larger groups that want a standard cloud ERP.",
     },
     {
@@ -23,7 +23,7 @@ const ITEMS = [
         desc: "SAP delivers updates on a regular release schedule. We help you review each release, test the processes that matter to you, and adopt the new features worth using.",
     },
     {
-        title: "What does SST provide during a Grow with SAP project?",
+        title: "What does SST provide during a GROW with SAP project?",
         desc: "Assessment and the best course of action, fit-to-standard workshops, supervised configuration, data migration, testing, go-live support, and ongoing help as your business grows.",
     },
 ];
@@ -46,7 +46,7 @@ export default function GrowFaq() {
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Frequently <span className="text-[#2D8EC5]">Asked Questions</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light max-w-[840px] leading-[1.4]">
-                    Common questions from businesses considering Grow with SAP.
+                    Common questions from businesses considering GROW with SAP.
                 </p>
             </motion.div>
 

@@ -7,7 +7,7 @@ export default function BlogCardGrid({ blogs, loading, onCardClick, onWriteFirst
     if (loading) {
         return (
             <div className="flex items-center justify-center py-40">
-                <div className="w-12 h-12 border-4 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" />
+                <div className="w-12 h-12 border-4 border-[#2d8ec5]/20 border-t-[#2d8ec5] rounded-full animate-spin" />
             </div>
         );
     }
@@ -20,7 +20,7 @@ export default function BlogCardGrid({ blogs, loading, onCardClick, onWriteFirst
                 </p>
                 {/* <button
                     onClick={onWriteFirstPost}
-                    className="inline-flex items-center gap-2 px-5 py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl transition-colors"
+                    className="inline-flex items-center gap-2 px-5 py-3 bg-[#2d8ec5] hover:bg-[#1C5F85] text-white font-bold rounded-xl transition-colors"
                 >
                     <Plus className="w-5 h-5" />
                     Write First Post

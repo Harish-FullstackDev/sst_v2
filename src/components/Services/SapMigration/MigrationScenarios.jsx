@@ -24,7 +24,7 @@ const SCENARIOS = [
 
 const AUTOPLAY_INTERVAL = 2500;
 
-// Same colours as the Grow with SAP "What is Grow with SAP?" cards: a resting
+// Same colours as the GROW with SAP "What is GROW with SAP?" cards: a resting
 // card is the inverse surface (#00223D) under a black/30 wash, and the open
 // card (hover or autoplay) fades to primary/700 (#004174). A single faint
 // light sweep crosses the card once as it opens; it resets instantly on close
@@ -107,7 +107,7 @@ export default function MigrationScenarios() {
                             onMouseEnter={() => setHoveredIndex(index)}
                             onMouseLeave={() => setHoveredIndex(null)}
                             // Same 240px height and centred title-plus-description block as
-                            // the Grow with SAP "What is Grow with SAP?" cards, so the
+                            // the GROW with SAP "What is GROW with SAP?" cards, so the
                             // description opens under the title rather than from the foot.
                             className="relative min-h-[240px] overflow-hidden shadow-[0px_2px_8px_rgba(0,0,0,0.19)]"
                         >

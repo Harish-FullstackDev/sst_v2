@@ -7,8 +7,8 @@ import circleIcon from "@/assets/Services/RiseWithSap/icons/accordion-toggle-cir
 
 const ITEMS = [
     {
-        title: "Is Rise with SAP a product or a service?",
-        desc: "Rise with SAP is a subscription offering rather than a single product. It bundles SAP S/4HANA Cloud with process intelligence tools, SAP Business Technology Platform access, and SAP-managed infrastructure and technical operations.",
+        title: "Is RISE with SAP a product or a service?",
+        desc: "RISE with SAP is a subscription offering rather than a single product. It bundles SAP S/4HANA Cloud with process intelligence tools, SAP Business Technology Platform access, and SAP-managed infrastructure and technical operations.",
     },
     {
         title: "Do we have to start from scratch?",
@@ -16,14 +16,14 @@ const ITEMS = [
     },
     {
         title: "Who manages the infrastructure?",
-        desc: "Under Rise with SAP, SAP is responsible for the infrastructure, the technical operation of the system, and the service levels. Your team, with our support, stays focused on business processes, configuration, and adoption.",
+        desc: "Under RISE with SAP, SAP is responsible for the infrastructure, the technical operation of the system, and the service levels. Your team, with our support, stays focused on business processes, configuration, and adoption.",
     },
     {
         title: "Where will our system be hosted?",
-        desc: "Rise with SAP can run on the major hyperscalers as well as in SAP data centres, depending on the edition and region. We help you weigh the options against data residency, integration, and cost requirements.",
+        desc: "RISE with SAP can run on the major hyperscalers as well as in SAP data centres, depending on the edition and region. We help you weigh the options against data residency, integration, and cost requirements.",
     },
     {
-        title: "What does SST do in a Rise with SAP engagement?",
+        title: "What does SST do in a RISE with SAP engagement?",
         desc: "We guide the full journey: assessing your landscape, recommending the best course of action, fit-to-standard design, supervised configuration, data migration, testing, cutover, and support after go-live.",
     },
 ];
@@ -46,7 +46,7 @@ export default function RiseFaq() {
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Frequently <span className="text-[#2D8EC5]">Asked Questions</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light max-w-[840px] leading-[1.4]">
-                    Common questions from teams evaluating Rise with SAP.
+                    Common questions from teams evaluating RISE with SAP.
                 </p>
             </motion.div>
 

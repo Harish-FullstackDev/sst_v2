@@ -18,7 +18,7 @@ export default function AuthorCard() {
                     />
 
                     <div className="flex-1">
-                        <p className="text-sm text-blue-600 font-semibold uppercase">
+                        <p className="text-sm text-[#2d8ec5] font-semibold uppercase">
                             About the Author
                         </p>
 
@@ -39,7 +39,7 @@ export default function AuthorCard() {
                                 href={author.linkedin}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-blue-600 hover:underline"
+                                className="flex items-center gap-2 text-[#2d8ec5] hover:underline"
                             >
                                 <Linkedin size={18} />
                                 LinkedIn
@@ -49,7 +49,7 @@ export default function AuthorCard() {
                                 href={author.website}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-blue-600 hover:underline"
+                                className="flex items-center gap-2 text-[#2d8ec5] hover:underline"
                             >
                                 <Globe size={18} />
                                 Website

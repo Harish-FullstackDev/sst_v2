@@ -58,7 +58,7 @@ export default function BenefitsForYourOrganization() {
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         className="group relative flex flex-col mt-10 border border-[#7f7f7f]/40 bg-white text-center transition-shadow duration-300 hover:shadow-xl"
                     >
-                        <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[120px] h-[94px] bg-[#002C4F] flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-105">
+                        <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[120px] h-[94px] bg-[#0A3A52] flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-105">
                             <Image src={card.icon} alt="" width={48} height={48} className="size-[48px]" />
                         </div>
                         <div className="flex flex-col flex-1 gap-4 px-8 pt-16 sm:pt-20 pb-10">

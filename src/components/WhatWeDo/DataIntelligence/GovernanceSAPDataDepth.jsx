@@ -126,7 +126,7 @@ export default function GovernanceSAPDataDepth() {
                             transition={{ duration: 0.5, ease: "easeInOut" }}
                             className="flex flex-col sm:flex-row gap-4 sm:gap-[21px]"
                         >
-                            <div className="bg-[#002C4F] w-full sm:w-[439px] h-[280px] sm:h-[377px] px-6 sm:px-[27px] pb-6 sm:pb-[27px] pt-12 flex flex-col justify-between gap-4 text-white">
+                            <div className="bg-[#0A3A52] w-full sm:w-[439px] h-[280px] sm:h-[377px] px-6 sm:px-[27px] pb-6 sm:pb-[27px] pt-12 flex flex-col justify-between gap-4 text-white">
                                 <div className="flex flex-col gap-4 sm:gap-6">
                                     <h2 className="text-xl sm:text-2xl font-semibold">{active.title}</h2>
                                     <p className="text-white sm:mt-25 text-sm sm:text-lg font-light leading-relaxed">

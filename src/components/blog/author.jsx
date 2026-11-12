@@ -40,7 +40,7 @@ export default function AuthorSection() {
                                     <h2 className="text-xl font-semibold text-[#2E3033]">
                                         {author.name}
                                     </h2>
-                                    <p className="text-base sm:text-lg text-blue-600 font-light">
+                                    <p className="text-base sm:text-lg text-[#2d8ec5] font-light">
                                         {author.role}
                                     </p>
                                 </div>

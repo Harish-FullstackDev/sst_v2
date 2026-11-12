@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import overviewImage from "@/assets/Services/RiseWithSap/intro.webp";
 
-const CREDENTIALS = ["Rise with SAP Methodology", "Best Course of Action", "Supervised Configuration Support"];
+const CREDENTIALS = ["RISE with SAP Methodology", "Best Course of Action", "Supervised Configuration Support"];
 
 export default function RiseIntro() {
     return (
@@ -18,7 +18,7 @@ export default function RiseIntro() {
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Simplify, Automate, <span className="text-[#2D8EC5]">Grow.</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
-                    Rise with SAP empowers businesses to transform and streamline their operations by integrating
+                    RISE with SAP empowers businesses to transform and streamline their operations by integrating
                     and managing finances, operations, and customer relationships efficiently through the SAP
                     S/4HANA ERP suite.
                 </p>

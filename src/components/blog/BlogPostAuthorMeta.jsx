@@ -9,7 +9,7 @@ export default function BlogPostAuthorMeta({ blog }) {
                 <div className="flex flex-wrap items-center gap-8">
                     {/* Author */}
                     <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                        <div className="w-12 h-12 rounded-full bg-[#2d8ec5]/10 flex items-center justify-center text-[#2d8ec5]">
                             <User className="w-6 h-6" />
                         </div>
                         <div>
@@ -24,7 +24,7 @@ export default function BlogPostAuthorMeta({ blog }) {
 
                     {/* Published */}
                     <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                        <div className="w-12 h-12 rounded-full bg-[#2d8ec5]/10 flex items-center justify-center text-[#2d8ec5]">
                             <Calendar className="w-6 h-6" />
                         </div>
                         <div>

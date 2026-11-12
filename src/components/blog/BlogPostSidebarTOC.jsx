@@ -19,14 +19,14 @@ export default function BlogPostSidebarTOC({ sections, activeSectionId, scrollTo
                                 <button
                                     onClick={() => scrollToSection(targetId)}
                                     className={`relative w-full pl-6 pr-2 py-4 text-left transition-colors duration-200 ${isActive
-                                        ? "text-[#0061AF] font-semibold"
+                                        ? "text-[#2d8ec5] font-semibold"
                                         : "text-slate-700 hover:text-slate-900"
                                         }`}
                                 >
                                     {isActive && (
                                         <motion.span
                                             layoutId="toc-indicator"
-                                            className="absolute left-[-2px] top-0 h-full w-[3px] rounded-full bg-[#0061AF]"
+                                            className="absolute left-[-2px] top-0 h-full w-[3px] rounded-full bg-[#2d8ec5]"
                                             transition={{
                                                 type: "spring",
                                                 stiffness: 450,

@@ -16,7 +16,7 @@ export default function GrowIntro() {
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Simplify, Automate, <span className="text-[#2D8EC5]">Grow.</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
-                    Grow with SAP Methodology · Best Course of Action · Supervised Configuration Support
+                    GROW with SAP Methodology · Best Course of Action · Supervised Configuration Support
                 </p>
             </motion.div>
 
@@ -34,19 +34,19 @@ export default function GrowIntro() {
                         <h2 className="text-xl sm:text-2xl font-semibold">Scale on the <span className="text-[#2D8EC5]">SAP S/4HANA</span> ERP Suite</h2>
 
                         <p className="text-base sm:text-lg text-[#55595E] font-light">
-                            Grow with SAP enables businesses to scale efficiently by integrating and managing
+                            GROW with SAP enables businesses to scale efficiently by integrating and managing
                             finances, operations, and customer relationships through the powerful SAP S/4HANA ERP
                             suite, driving innovation and operational excellence.
                         </p>
                         <div className="flex flex-col gap-2">
-                            <h2 className="text-xl sm:text-2xl text-[#2E3033] font-semibold">Why <span className="text-[#2D8EC5]">Grow with SAP</span></h2>
+                            <h2 className="text-xl sm:text-2xl text-[#2E3033] font-semibold">Why <span className="text-[#2D8EC5]">GROW with SAP</span></h2>
                             <p className="text-base sm:text-lg text-[#2d8ec5] font-light">
                                 Streamline and optimize operations.
                             </p>
                         </div>
 
                         <p className="text-base sm:text-lg text-[#55595E] font-light">
-                            Grow with SAP helps businesses of all sizes accelerate their growth through SAP&apos;s
+                            GROW with SAP helps businesses of all sizes accelerate their growth through SAP&apos;s
                             innovative solutions, offering scalable, flexible, and efficient tools to optimize key
                             operations.
                         </p>

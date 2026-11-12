@@ -38,7 +38,7 @@ const itemVariants = {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-// Same card as Grow with SAP's "What is Grow with SAP?" (Figma 2205:2114): a
+// Same card as GROW with SAP's "What is GROW with SAP?" (Figma 2205:2114): a
 // resting card is the inverse surface (#00223D) under a black/30 wash; the open
 // card (hover or autoplay) fades to primary/700 (#004174). Title and description
 // sit as one block centred vertically, inset 10% left and right; the description

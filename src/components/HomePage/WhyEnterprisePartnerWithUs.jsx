@@ -45,7 +45,7 @@ export default function WhyEnterprisePartnerWithUs() {
                         A Partnership Built on <span className="text-[#2D8EC5]">Delivery Discipline</span>
                     </h2>
                     <p className="text-[#4a5568] text-lg font-light">
-                        Everything an enterprise technology estate needs,under one roof
+                        Everything an enterprise technology estate needs, under one roof
                     </p>
                 </motion.div>
 
