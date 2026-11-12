@@ -37,8 +37,8 @@ const page = () => {
             <Dynamics365Faq />
 
             <ReadyToTransform
-                title="Empower Your Business with Dynamics 365 Business Central – Where Agility Meets Intelligence"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Bring Your Business Together."
+                description="Connect business operations through intelligent, integrated enterprise applications."
                 buttonLabel="Get in Touch"
             />
             <Footer />

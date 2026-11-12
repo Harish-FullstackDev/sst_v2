@@ -40,8 +40,8 @@ const page = () => {
             <AmsFaq />
 
             <ReadyToTransform
-                title="Enhance Efficiency With SAP Application & Managed Services Today"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Keep Your SAP Systems Performing."
+                description="Maintain performance through proactive support and continuous system optimization."
                 buttonLabel="Get in Touch"
                 bgImage={customBg}
             />

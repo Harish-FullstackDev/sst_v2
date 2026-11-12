@@ -37,8 +37,8 @@ const page = () => {
             <PowerBiFaq />
 
             <ReadyToTransform
-                title="Transform Data into Decisions with Microsoft Power BI – Where Insights Drive Success"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Make Every Insight Count."
+                description="Transform complex data into actionable insights for smarter decisions."
                 buttonLabel="Get in Touch"
             />
             <Footer />

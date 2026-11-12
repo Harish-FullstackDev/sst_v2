@@ -37,8 +37,8 @@ const page = () => {
             <CxMethodology />
 
             <ReadyToTransform
-                title="Transform Customer Experiences With SAP CX Today!"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Create Experiences Customers Remember."
+                description="Strengthen customer engagement through connected and personalized experiences."
                 buttonLabel="Get in Touch"
             />
             <Footer />

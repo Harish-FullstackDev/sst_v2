@@ -37,8 +37,8 @@ const page = () => {
             <AwsEngagementPath />
             <AwsOutcomes />
             <ReadyToTransform
-                title="Unlock the Full Potential of Your Business with AWS's Secure, Scalable, and Innovative Cloud Solutions"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Scale Your Business With AWS."
+                description="Improve performance and resilience through flexible cloud infrastructure."
                 buttonLabel="Get in Touch"
                 bgImage={customBg}
             />

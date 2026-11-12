@@ -37,8 +37,8 @@ const page = () => {
             <AzureMicrosoftEcosystem />
             <AzureScenarios />
             <ReadyToTransform
-                title="Harness the Power of Azure for Innovation, Scalability, and Efficiency in Your Digital Transformation Journey"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Take Your Enterprise Further With Azure."
+                description="Build secure cloud solutions that adapt to evolving requirements."
                 buttonLabel="Get in Touch"
                 bgImage={customBg}
             />

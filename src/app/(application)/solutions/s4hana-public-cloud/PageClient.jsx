@@ -37,8 +37,8 @@ const page = () => {
             <TypicalScenarios />
             <WhyPublicCloud />
             <ReadyToTransform
-                title="Unlock the Potential of S/4HANA Public Cloud Today!"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Move Forward With Cloud ERP."
+                description="Simplify operations through scalable cloud ERP and standardized processes."
                 buttonLabel="Get in Touch"
                 bgImage={customBg}
             />

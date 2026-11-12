@@ -39,8 +39,8 @@ const page = () => {
             <SacAdoption />
             <WhySac />
             <ReadyToTransform
-                title="Turn Data Into Decisions With SAP Analytics Cloud Today!"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Make Better Decisions With Better Insights."
+                description="Combine planning, analytics and predictive insights for informed decisions."
                 buttonLabel="Get in Touch"
             />
             <Footer />

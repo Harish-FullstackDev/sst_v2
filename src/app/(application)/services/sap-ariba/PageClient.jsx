@@ -37,8 +37,8 @@ const page = () => {
             <AribaSuccessFactors />
 
             <ReadyToTransform
-                title="Transform Procurement With SAP Ariba Today!"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Make Procurement Work Smarter."
+                description="Connect suppliers, simplify purchasing and improve procurement visibility."
                 buttonLabel="Get in Touch"
             />
             <Footer />

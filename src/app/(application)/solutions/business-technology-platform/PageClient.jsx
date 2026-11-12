@@ -36,8 +36,8 @@ const page = () => {
             <BtpCleanCore />
             <WhyBtp />
             <ReadyToTransform
-                title="Innovate Faster With SAP Business Technology Platform Today!"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Build a Smarter, Connected Enterprise."
+                description="Integrate systems, develop applications and unlock enterprise data."
                 buttonLabel="Get in Touch"
             />
             <Footer />

@@ -40,8 +40,8 @@ const page = () => {
             <ConversionKeyAspects />
 
             <ReadyToTransform
-                title="Upgrade to S/4HANA and Gain a Competitive Edge"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Make the Move to S/4HANA."
+                description="Modernize SAP systems while minimizing disruption and protecting business continuity."
                 buttonLabel="Get in Touch"
                 bgImage={customBg}
             />

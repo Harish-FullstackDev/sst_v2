@@ -39,8 +39,8 @@ const page = () => {
             <GcpUseCases />
             <GcpFaq />
             <ReadyToTransform
-                title="Propel Your Business with GCP's Advanced Cloud Ecosystem and Drive Transformative Innovation"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Build What's Next on Google Cloud."
+                description="Modernize infrastructure with scalable cloud services and intelligent capabilities."
                 buttonLabel="Get in Touch"
                 bgImage={customBg}
             />

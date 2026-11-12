@@ -35,8 +35,8 @@ const page = () => {
             </div>
 
             <ReadyToTransform
-                title="Discover the Possibilities."
-                description="Contact us for a personalized demo."
+                title="Find the Right Solution for Your Business."
+                description="Connect processes, improve efficiency and drive sustainable business growth."
                 buttonLabel="Get in Touch"
                 bgImage={ctaBg}
             />

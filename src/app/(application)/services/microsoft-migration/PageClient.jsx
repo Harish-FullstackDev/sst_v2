@@ -37,8 +37,8 @@ const page = () => {
             <MigrationBenefits />
 
             <ReadyToTransform
-                title="Start Your Microsoft ERP Migration Today!"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Move Your Business to Modern Platforms."
+                description="Migrate applications securely while minimizing disruption and protecting continuity."
                 buttonLabel="Get in Touch"
             />
             <Footer />

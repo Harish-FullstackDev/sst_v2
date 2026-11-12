@@ -38,8 +38,8 @@ const page = () => {
             <GrowWhoItsFor />
             <GrowFaq />
             <ReadyToTransform
-                title="Streamline Your Business with GROW with SAP Today"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Ready to Accelerate Your Growth?"
+                description="Build scalable cloud ERP foundations for evolving business needs."
                 buttonLabel="Get in Touch"
             />
             <Footer />

@@ -37,8 +37,8 @@ const page = () => {
             <BigDataPipeline />
             <BigDataOutcomes />
             <ReadyToTransform
-                title="Empower Your Business with Big Data for Unparalleled Growth."
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Unlock the Value Hidden in Your Data."
+                description="Transform large datasets into insights that reveal business opportunities."
                 buttonLabel="Get in Touch"
             />
             <Footer />

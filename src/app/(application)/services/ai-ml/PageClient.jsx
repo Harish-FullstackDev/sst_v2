@@ -37,8 +37,8 @@ const page = () => {
             <AiMlIndustries />
             <AiMlPrinciples />
             <ReadyToTransform
-                title="Embrace the Future with AI and ML – Where Data Becomes Destiny."
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Put Intelligence to Work."
+                description="Turn business data into intelligence for smarter decisions."
                 buttonLabel="Get in Touch"
             />
             <Footer />

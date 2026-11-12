@@ -38,8 +38,8 @@ const page = () => {
             <HcmStatement />
             <HcmFaq />
             <ReadyToTransform
-                title="Unlock the Power of SAP Human Capital Management for Your Enterprise Today!"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Empower Your Workforce to Do More."
+                description="Simplify workforce management and improve employee experiences across organizations."
                 buttonLabel="Get in Touch"
             />
             <Footer />

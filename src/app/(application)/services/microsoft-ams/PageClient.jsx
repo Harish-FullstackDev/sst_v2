@@ -37,8 +37,8 @@ const page = () => {
             <ApplicationsWeManage />
 
             <ReadyToTransform
-                title="Streamline Your Business Operations with AMS – Where Performance Meets Reliability"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Keep Your Applications Running Smoothly."
+                description="Maintain application performance through proactive support and continuous improvements."
                 buttonLabel="Get in Touch"
             />
             <Footer />

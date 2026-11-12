@@ -37,8 +37,8 @@ const page = () => {
             <TmIndustries />
 
             <ReadyToTransform
-                title="Empower Your Project Management With SAP T&M Time Tracking and Cost Control"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Get the Right Expertise, When Needed."
+                description="Access skilled SAP professionals through flexible project engagement models."
                 buttonLabel="Get in Touch"
             />
             <Footer />

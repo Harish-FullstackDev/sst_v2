@@ -37,8 +37,8 @@ const page = () => {
             <UiUxFaq />
 
             <ReadyToTransform
-                title="Elevate Your Brand With Cutting-Edge UI/UX Design and Stand Out"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Design Experiences People Love."
+                description="Create intuitive digital experiences that improve usability and engagement."
                 buttonLabel="Get in Touch"
             />
             <Footer />
