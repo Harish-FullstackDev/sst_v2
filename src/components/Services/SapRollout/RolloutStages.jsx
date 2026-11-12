@@ -48,7 +48,7 @@ export default function RolloutStages() {
     }, [isPaused]);
 
     return (
-        <section className="w-full bg-white py-10 sm:py-16">
+        <section className="w-full bg-white pt-10 sm:pt-16 pb-0">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

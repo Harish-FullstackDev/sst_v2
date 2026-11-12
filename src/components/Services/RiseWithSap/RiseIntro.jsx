@@ -8,7 +8,7 @@ const CREDENTIALS = ["Rise with SAP Methodology", "Best Course of Action", "Supe
 
 export default function RiseIntro() {
     return (
-        <section className="w-full bg-white px-8 py-10 sm:px-[64px] sm:py-[64px] flex flex-col sm:flex-row gap-8 sm:gap-[48px] items-start">
+        <section className="w-full bg-[#f3f6f9] px-8 py-10 sm:px-[64px] sm:py-[64px] flex flex-col sm:flex-row gap-8 sm:gap-[48px] items-start">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

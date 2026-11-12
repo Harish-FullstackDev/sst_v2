@@ -15,7 +15,7 @@ const BENEFITS = [
 
 export default function AmsBenefits() {
     return (
-        <section className="relative z-10 w-full py-10 sm:py-16">
+        <section className="relative z-10 w-full bg-[#f3f6f9] py-10 sm:py-16">
             {/* The photo reaches the real browser edge on the left, so this row is
                 deliberately not wrapped in a padded container. The photo keeps a
                 capped width at lg; the bullet panel takes the remaining space. */}

@@ -66,7 +66,7 @@ export default function WhatIsGrow() {
     }, [isPaused]);
 
     return (
-        <div className="w-full h-full flex flex-col items-center justify-center gap-10 sm:gap-[64px] px-8 sm:px-[64px] pt-10 sm:pt-[32px] pb-10 sm:pb-[64px]">
+        <div className="w-full h-full flex flex-col items-center justify-center gap-10 sm:gap-[64px] px-8 sm:px-[64px] pt-10 sm:pt-[64px] pb-10 sm:pb-[64px] border-t border-[#d3dae2]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
