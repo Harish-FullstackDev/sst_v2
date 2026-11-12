@@ -53,7 +53,7 @@ export default function SuccessFactorsModules() {
     const activeTab = TABS[active];
 
     return (
-        <section className="w-full py-10 sm:py-16 px-8 sm:px-[64px] lg:px-0 flex flex-col items-center gap-8 sm:gap-[45px]">
+        <section className="w-full border-t border-[#d3dae2] py-10 sm:py-16 px-8 sm:px-[64px] lg:px-0 flex flex-col items-center gap-8 sm:gap-[45px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

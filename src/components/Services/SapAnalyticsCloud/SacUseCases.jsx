@@ -13,7 +13,7 @@ const POINTS = [
 
 export default function SacUseCases() {
     return (
-        <section className="w-full">
+        <section className="w-full border-t border-[#d3dae2]">
             <div className="w-full px-8 py-10 sm:p-16">
                 {/* Right column is auto (sized to its longest point) so every point
                     stays on one line at lg; the heading column takes what is left. */}

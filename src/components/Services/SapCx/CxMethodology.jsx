@@ -33,9 +33,9 @@ const STEPS = [
 
 export default function CxMethodology() {
     return (
-        <section className="w-full px-8 pt-8 pb-10 sm:px-[64px] sm:pt-8 sm:pb-[64px]">
-            {/* Hairline separating this section from Where SAP CX Makes a Difference; 32px sits on either side. */}
-            <div aria-hidden="true" className="h-px w-full bg-[#2E3033]/15 -mt-8 mb-8" />
+        <section className="w-full bg-[#f3f6f9] px-8 pt-10 pb-10 sm:px-[64px] sm:pt-[64px] sm:pb-[64px]">
+            {/* Grey band after the white Where SAP CX Makes a Difference: the colour
+                change separates them, so no hairline and a full 64px top. */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

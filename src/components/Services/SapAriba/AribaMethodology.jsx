@@ -33,7 +33,7 @@ const PHASES = [
 
 export default function AribaMethodology() {
     return (
-        <section className="w-full py-10 sm:py-16 px-8 sm:px-[64px]">
+        <section className="w-full bg-[#f3f6f9] py-10 sm:py-16 px-8 sm:px-[64px]">
             <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-12 max-w-[1390px] mx-auto">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}
