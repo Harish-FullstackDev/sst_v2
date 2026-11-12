@@ -150,7 +150,10 @@ export default function MigrationStartingPoints() {
                                 setIsPaused(true);
                                 setActive(index);
                             }}
-                            className="relative flex-[282_0_0] aspect-[282/368] overflow-hidden"
+                            // Shorter from xl (282:300, about 300px tall at 1280); between lg
+                            // and xl the cards are narrower, so they keep 282:368 to leave the
+                            // description room under the title.
+                            className="relative flex-[282_0_0] aspect-[282/368] xl:aspect-[282/300] overflow-hidden"
                         >
                             <CardBackground isActive={isActive} />
                             <div className="absolute inset-0 flex flex-col justify-start p-6">

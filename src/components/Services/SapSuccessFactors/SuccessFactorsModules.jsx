@@ -6,7 +6,9 @@ import { LuGraduationCap, LuIdCard, LuTarget, LuUserPlus } from "react-icons/lu"
 
 // Same panel as Microsoft Migration's key benefits: a quiet navy field
 // (#0A2B3E to #003756) with the active item's Lucide icon (same set as the rest
-// of the site) drawn large in a thin, faint line as a watermark on the right,
+// of the site) drawn large in a thin, faint line as a watermark in the bottom
+// right corner (the copy sits top left), laid out like SAP Migration's
+// "How a Migration Runs" (panel runs to the right edge on desktop),
 // cross-fading and drifting in on each change, and a 3px brand-blue timeline
 // along the foot that fills over the autoplay interval (hidden while paused).
 const INTERVAL = 5000;
@@ -51,7 +53,7 @@ export default function SuccessFactorsModules() {
     const activeTab = TABS[active];
 
     return (
-        <section className="w-full py-10 sm:py-16 px-8 sm:px-[64px] flex flex-col items-center gap-8 sm:gap-[45px]">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[64px] lg:px-0 flex flex-col items-center gap-8 sm:gap-[45px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -65,9 +67,9 @@ export default function SuccessFactorsModules() {
                 </p>
             </motion.div>
 
-            <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-[80px] w-full">
-                {/* Tabs — height follows the tab count (gap-based) instead of a fixed h-96. */}
-                <div className="flex flex-col w-full lg:w-[380px] gap-2 lg:gap-10 shrink-0">
+            <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-[100px] w-full lg:pl-[64px]">
+                {/* Tabs spread down the panel height at lg, as in How a Migration Runs. */}
+                <div className="flex flex-col w-full lg:w-96 lg:h-[420px] justify-between gap-2 lg:gap-0 shrink-0">
                     {TABS.map((tab, index) => (
                         <button
                             key={tab.label}
@@ -105,7 +107,7 @@ export default function SuccessFactorsModules() {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -12 }}
                                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                                className="absolute top-1/2 right-[6%] -translate-y-1/2 h-[72%] aspect-square text-white/[0.08]"
+                                className="absolute bottom-[8%] right-[5%] h-[55%] aspect-square text-white/[0.08]"
                             >
                                 <activeTab.icon strokeWidth={0.6} className="size-full" />
                             </motion.div>
@@ -118,7 +120,7 @@ export default function SuccessFactorsModules() {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -6 }}
                                 transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
-                                className="absolute left-6 right-6 sm:left-[48px] sm:right-auto bottom-6 sm:bottom-[40px] sm:max-w-[462px] text-white flex flex-col gap-3"
+                                className="absolute left-6 right-6 sm:left-[55px] sm:right-auto top-6 sm:top-[46px] sm:max-w-[462px] text-white flex flex-col gap-3"
                             >
                                 <h2 className="text-xl font-semibold">{activeTab.label}</h2>
                                 <p className="text-white/90 text-base sm:text-lg font-light leading-relaxed">

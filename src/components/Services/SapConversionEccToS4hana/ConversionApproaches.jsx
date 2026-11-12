@@ -1,32 +1,30 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import brownfieldImage from "@/assets/Services/SapConversionEccToS4hana/brownfield.webp";
-import smartBrownfieldImage from "@/assets/Services/SapConversionEccToS4hana/smart-brownfield.webp";
-import greenfieldImage from "@/assets/Services/SapConversionEccToS4hana/greenfield.webp";
 
+// Each card carries a thick top bar in its topic's colour in place of a photo:
+// deep brown for Brownfield, a lighter tan for Smart Brownfield (a selective
+// take on the same path) and green for Greenfield.
 const APPROACHES = [
     {
         title: "Brownfield",
         desc: "Brownfield implementations involve upgrading or enhancing an existing SAP system, allowing organizations to leverage their existing infrastructure while making necessary improvements. These implementations are often more complex, transitioning from older versions to newer ones or introducing new functionalities.",
-        image: brownfieldImage,
+        color: "#8B5E3C",
     },
     {
         title: "Smart Brownfield",
         desc: "Smart Brownfield is a flexible approach that enables customers to make selective enhancements to their existing systems, even in complex environments like SAP. It speeds up S/4HANA implementations and standardizes the new environment.",
-        image: smartBrownfieldImage,
+        color: "#C4935A",
     },
     {
         title: "Greenfield",
         desc: "A Greenfield implementation builds a new SAP system from scratch, allowing organizations to replace legacy systems or implement SAP for the first time. The system is designed and configured around the organization’s business requirements, promoting a fresh start and best practices.",
-        image: greenfieldImage,
+        color: "#3E9B5C",
     },
 ];
 
-// Three approaches side by side as photo-topped cards (the card style of the
-// Managed Services operations carousel), so each one reads in full and the
-// three can be compared at a glance.
+// Three approaches side by side, so each one reads in full and the three can
+// be compared at a glance.
 export default function ConversionApproaches() {
     return (
         <section className="w-full bg-[#f5f6f6] px-8 py-10 sm:px-[64px] sm:py-[64px]">
@@ -57,16 +55,9 @@ export default function ConversionApproaches() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="group bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col"
+                        className="bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col"
                     >
-                        <div className="relative w-full aspect-[335/200] overflow-hidden">
-                            <Image
-                                src={approach.image}
-                                alt={approach.title}
-                                fill
-                                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            />
-                        </div>
+                        <div aria-hidden className="h-2 w-full" style={{ backgroundColor: approach.color }} />
                         <div className="flex flex-col gap-3 px-6 sm:px-7 py-6 sm:py-7">
                             <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{approach.title}</h2>
                             <p className="text-[#55595E] text-base sm:text-lg font-light">{approach.desc}</p>

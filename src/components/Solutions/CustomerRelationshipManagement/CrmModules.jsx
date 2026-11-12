@@ -83,7 +83,7 @@ export default function CrmModules() {
                                 >
                                     <span className="flex items-center gap-4 sm:gap-6 min-w-0">
                                         <item.icon aria-hidden="true" strokeWidth={1.5} className="size-9 sm:size-11 shrink-0 text-[#1C5F85]" />
-                                        <span className="text-[#2E3033] text-lg sm:text-2xl font-semibold">{item.title}</span>
+                                        <span className="font-['Houschka_Pro'] text-[#2E3033] text-lg sm:text-2xl font-semibold">{item.title}</span>
                                     </span>
                                     <span className="relative shrink-0 size-8 sm:size-[37px] flex items-center justify-center">
                                         <Image src={circleIcon} alt="" fill className="object-contain" />
@@ -112,7 +112,7 @@ export default function CrmModules() {
                                             <div className="flex flex-col gap-4 pb-6 sm:pl-[68px] pr-2 sm:pr-16">
                                                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">{item.desc}</p>
                                                 <div className="bg-white border-l-[3px] border-[#2d8ec5] px-4 py-3 sm:px-5 sm:py-4">
-                                                    <p className="text-[#2E3033] text-base sm:text-lg font-semibold">Benefits</p>
+                                                    <p className="font-['Houschka_Pro'] text-[#2E3033] text-base sm:text-lg font-semibold">Benefits</p>
                                                     <p className="text-[#55595E] text-base sm:text-lg font-light">{item.benefits}</p>
                                                 </div>
                                             </div>

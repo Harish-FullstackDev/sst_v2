@@ -33,7 +33,8 @@ const Card = ({ icon, title, desc, index }) => (
             <Image src={icon} alt="" fill className="object-contain" />
         </div>
         <h2 className="text-[#2E3033] text-xl font-semibold">{title}</h2>
-        <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">{desc}</p>
+        {/* text-pretty keeps the last line from ending on a single word. */}
+        <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4] text-pretty">{desc}</p>
     </motion.div>
 );
 

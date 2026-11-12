@@ -66,7 +66,7 @@ export default function CyberApproach() {
                             </div>
                             <div className="flex flex-col gap-2 min-w-0">
                                 <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{step.title}</h2>
-                                <p className="text-[#55595E] text-base sm:text-lg font-light">{step.desc}</p>
+                                <p className="text-[#55595E] text-base sm:text-lg font-light text-pretty lg:text-balance">{step.desc}</p>
                             </div>
                         </motion.div>
                     ))}

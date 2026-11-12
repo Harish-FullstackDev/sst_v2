@@ -67,7 +67,7 @@ export default function SoftwareLifecycle() {
                             <div
                                 className={`col-start-2 row-start-1 flex flex-col gap-2 bg-white border border-[#d3d5d8] px-6 py-6 sm:px-8 ${isRight ? "lg:col-start-3" : "lg:col-start-1 lg:text-right"}`}
                             >
-                                <h3 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{step.title}</h3>
+                                <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{step.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{step.desc}</p>
                             </div>
                         </motion.li>

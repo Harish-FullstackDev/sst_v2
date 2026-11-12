@@ -7,8 +7,9 @@ import { LuBlocks, LuDatabase, LuLifeBuoy, LuTrendingUp, LuUsers } from "react-i
 // No photos. The panel is a quiet navy field (#0A2B3E to #003756) with two
 // restrained touches, different from the hairline-frame cards above:
 // - a watermark: the active benefit's Lucide icon (same set as the rest of the
-//   site), drawn large in a thin faint line, sitting fully inside the panel's
-//   right side; it cross-fades and drifts in slightly when the tab changes;
+//   site), drawn large in a thin faint line in the panel's bottom-right corner
+//   while the copy sits top left (laid out like SAP Migration's "How a
+//   Migration Runs", panel running to the right edge on desktop); it cross-fades and drifts in slightly when the tab changes;
 // - a 3px brand-blue timeline along the foot that fills over the autoplay
 //   interval, so the next switch never feels abrupt; it hides while paused.
 const INTERVAL = 5000;
@@ -58,7 +59,7 @@ export default function MigrationBenefits() {
     const activeTab = TABS[active];
 
     return (
-        <section className="w-full bg-white py-10 sm:py-16 px-8 sm:px-[64px] flex flex-col items-center gap-8 sm:gap-[45px]">
+        <section className="w-full bg-white py-10 sm:py-16 px-8 sm:px-[64px] lg:px-0 flex flex-col items-center gap-8 sm:gap-[45px]">
             {/* Heading */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -76,9 +77,9 @@ export default function MigrationBenefits() {
             </motion.div>
 
             {/* Content */}
-            <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-16 w-full">
-                {/* Tabs — a gap-spaced column rather than a fixed h-96, so any tab count fits */}
-                <div className="flex flex-col w-full lg:w-[34%] gap-2 lg:gap-4 shrink-0">
+            <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-[100px] w-full lg:pl-[64px]">
+                {/* Tabs spread down the panel height at lg, as in How a Migration Runs. */}
+                <div className="flex flex-col w-full lg:w-96 lg:h-[420px] justify-between gap-2 lg:gap-0 shrink-0">
                     {TABS.map((tab, index) => (
                         <button
                             key={tab.title}
@@ -116,7 +117,7 @@ export default function MigrationBenefits() {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -12 }}
                                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                                className="absolute top-1/2 right-[6%] -translate-y-1/2 h-[72%] aspect-square text-white/[0.08]"
+                                className="absolute bottom-[8%] right-[5%] h-[55%] aspect-square text-white/[0.08]"
                             >
                                 <activeTab.icon strokeWidth={0.6} className="size-full" />
                             </motion.div>
@@ -130,7 +131,7 @@ export default function MigrationBenefits() {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -6 }}
                                 transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
-                                className="absolute hidden sm:flex left-10 right-10 bottom-10 lg:left-[55px] lg:right-auto lg:bottom-[46px] lg:max-w-[462px] text-white flex-col gap-3"
+                                className="absolute hidden sm:flex left-10 right-10 top-10 lg:left-[55px] lg:right-auto lg:top-[46px] lg:max-w-[462px] text-white flex-col gap-3"
                             >
                                 <h2 className="text-xl font-semibold">{activeTab.title}</h2>
                                 <p className="text-white/90 text-base sm:text-lg font-light leading-relaxed">

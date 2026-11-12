@@ -53,8 +53,8 @@ export default function BtpStrengths() {
                             transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 + index * 0.08 }}
                             className="flex flex-col gap-3 border-l-[3px] border-[#2d8ec5] pl-5 sm:pl-6"
                         >
-                            <h3 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">{item.title}</h3>
-                            <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
+                            <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">{item.title}</h2>
+                            <p className="text-[#55595E] text-base sm:text-lg font-light text-pretty">{item.desc}</p>
                         </motion.div>
                     ))}
                 </div>

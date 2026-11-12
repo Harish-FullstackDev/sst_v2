@@ -22,7 +22,7 @@ const Card = ({ title, desc, index }) => (
         className="flex flex-col gap-4"
     >
         <h2 className="text-[#2E3033] text-xl font-semibold">{title}</h2>
-        <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">{desc}</p>
+        <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4] text-pretty">{desc}</p>
     </motion.div>
 );
 
@@ -63,7 +63,7 @@ export default function SoftwareInvestment() {
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
                     Why Invest in Software Development for Your Business?
                 </h2>
-                <p className="text-[#55595E] text-base sm:text-lg font-light max-w-[960px]">
+                <p className="text-[#55595E] text-base sm:text-lg font-light max-w-[960px] text-balance">
                     Custom software gives your business solutions built around its own needs, automating processes,
                     lifting productivity, and improving the experience for customers and employees. It scales and
                     adapts as market demands change, and brings better data management, security, and integration

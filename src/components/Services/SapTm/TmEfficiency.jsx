@@ -62,12 +62,14 @@ export default function TmEfficiency() {
                         className="flex flex-col gap-3 border-t-2 border-[#2E3033] pt-5"
                     >
                         <div className="flex items-center justify-between gap-4">
-                            <item.icon aria-hidden="true" strokeWidth={1.5} className="size-10 sm:size-12 shrink-0 text-[#1C5F85]" />
+                            {/* Lucide draws on a 24px grid, so 0.5 renders a ~1px line at 48px:
+                                the same weight as the 48px line icons in Key Factors on this page. */}
+                            <item.icon aria-hidden="true" strokeWidth={0.5} className="size-10 sm:size-12 shrink-0 text-[#1C5F85]" />
                             <span className="text-[#55595E] text-sm sm:text-base font-light uppercase tracking-wide">
                                 {item.label}
                             </span>
                         </div>
-                        <h3 className="text-[#2E3033] text-lg sm:text-xl font-semibold pt-2">{item.title}</h3>
+                        <h3 className="text-[#2E3033] text-lg sm:text-xl font-medium pt-2">{item.title}</h3>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                     </motion.div>
                 ))}

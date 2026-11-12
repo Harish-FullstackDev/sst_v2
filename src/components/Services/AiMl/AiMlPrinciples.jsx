@@ -16,8 +16,9 @@ export default function AiMlPrinciples() {
         <section className="w-full">
             <div className="w-full px-8 py-10 sm:p-16">
                 {/* items-stretch so the middle rule spans the bullet column's height
-                    instead of a fixed h-60. */}
-                <div className="grid w-full lg:grid-cols-[1fr_auto_1fr] lg:items-stretch gap-0">
+                    instead of a fixed h-60. From xl the list column is auto (sized to its
+                    longest point) so every point stays on one line. */}
+                <div className="grid w-full lg:grid-cols-[1fr_auto_1fr] xl:grid-cols-[1fr_auto_auto] lg:items-stretch gap-0">
 
                     {/* Left — centered in the stacked mobile layout; at lg it is the left
                         column of the three-column row and stays left aligned. */}
@@ -54,13 +55,13 @@ export default function AiMlPrinciples() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="justify-self-start max-w-[520px] max-lg:mt-8 max-sm:justify-self-center"
+                        className="justify-self-start max-w-[520px] xl:max-w-none max-lg:mt-8 max-sm:justify-self-center"
                     >
                         {/* pl-16 is desktop-only: it clears the vertical divider in the lg
                             three-column row. Below lg the 5 (20px) is just room for the markers. */}
                         <ul className="list-disc marker:text-[#7f7f7f] lg:pl-16 pl-5 space-y-3 text-[#55595E] text-base sm:text-lg font-light">
                             {PRINCIPLES.map((point) => (
-                                <li key={point}>{point}</li>
+                                <li key={point} className="xl:whitespace-nowrap">{point}</li>
                             ))}
                         </ul>
                     </motion.div>

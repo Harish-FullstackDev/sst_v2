@@ -32,7 +32,7 @@ export default function EInvoicingScenarios() {
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center px-8"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Who E-Invoicing Is For</h2>
-                <p className="text-[#55595E] text-base sm:text-lg font-light">
+                <p className="text-[#55595E] text-base sm:text-lg font-light text-pretty">
                     Typical situations where moving to electronic invoicing pays off quickly.
                 </p>
             </motion.div>
@@ -49,7 +49,7 @@ export default function EInvoicingScenarios() {
                         className="border border-[#a5a5a5] bg-[#f5f6f6] flex flex-col gap-4 px-6 py-8"
                     >
                         <h2 className="text-[#2E3033] text-lg sm:text-xl font-semibold">{item.title}</h2>
-                        <p className="text-[#55595E] text-base font-light">{item.desc}</p>
+                        <p className="text-[#55595E] text-base font-light text-pretty">{item.desc}</p>
                     </motion.div>
                 ))}
             </div>
@@ -72,7 +72,7 @@ export default function EInvoicingScenarios() {
                             <div className="bg-white border border-[#a5a5a5] h-[120px] flex items-center justify-center text-center px-8">
                                 <h2 className="text-[#2E3033] text-xl font-semibold leading-tight">{item.title}</h2>
                             </div>
-                            <p className="text-[#55595E] text-center text-lg font-light p-6">{item.desc}</p>
+                            <p className="text-[#55595E] text-center text-lg font-light p-6 text-balance">{item.desc}</p>
                         </motion.div>
                     ))}
                 </div>

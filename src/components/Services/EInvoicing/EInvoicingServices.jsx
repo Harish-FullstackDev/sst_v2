@@ -51,7 +51,7 @@ const Card = ({ icon: Icon, title, desc, index }) => (
             <Icon aria-hidden="true" strokeWidth={1.5} className="size-full text-[#1C5F85]" />
         </div>
         <h2 className="text-[#2E3033] text-xl font-semibold">{title}</h2>
-        <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">{desc}</p>
+        <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4] text-pretty">{desc}</p>
     </motion.div>
 );
 
@@ -98,7 +98,7 @@ export default function EInvoicingServices() {
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
                     Streamlining Invoicing at SST with E-Invoicing Services
                 </h2>
-                <p className="text-[#55595E] text-base sm:text-lg font-light">
+                <p className="text-[#55595E] text-base sm:text-lg font-light text-pretty">
                     Capabilities across the invoice lifecycle, from creation and delivery to tax and audit.
                 </p>
             </motion.div>

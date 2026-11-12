@@ -4,10 +4,12 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { LuChartColumn, LuCpu, LuRocket, LuScaling, LuUsers } from "react-icons/lu";
 
-// No photos. A navy panel (#0A2B3E to #003756, soft deep-blue rise) holds the
-// active feature's title and description in a left column and its Lucide icon
-// (same set as the rest of the site) in its own right column, sketching itself
-// stroke by stroke on every tab change, so copy and icon never overlap. One
+// No photos. Laid out like SAP Migration's "How a Migration Runs": tabs on the
+// left, and a navy panel (#0A2B3E to #003756, soft deep-blue rise) running to
+// the right edge on desktop, with the active feature's title and description at
+// the top left and its Lucide icon (same set as the rest of the site) in the
+// bottom-right corner, faint and sketching itself stroke by stroke on every
+// tab change. One
 // faint band of light passes across on each change, and a 3px brand-blue
 // timeline along the foot fills over the autoplay interval (hidden while a tab
 // is hovered). Panel height follows the copy, with a floor.
@@ -59,7 +61,7 @@ export default function PublicCloudFeatures() {
     const activeTab = TABS[active];
 
     return (
-        <section className="w-full py-10 sm:py-16 px-8 sm:px-[64px] flex flex-col items-center gap-8 sm:gap-[45px]">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[64px] lg:px-0 flex flex-col items-center gap-8 sm:gap-[45px]">
             {/* Heading */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -77,9 +79,9 @@ export default function PublicCloudFeatures() {
             </motion.div>
 
             {/* Content */}
-            <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-16 xl:gap-[100px] w-full">
-                {/* Tabs: a gapped column sized by its content, not a fixed h-96, so five tabs fit */}
-                <div className="flex flex-col w-full lg:w-[340px] xl:w-96 gap-2 lg:gap-6 shrink-0 lg:pt-4">
+            <div className="flex flex-col lg:flex-row lg:items-stretch gap-8 lg:gap-[100px] w-full lg:pl-[64px]">
+                {/* Tabs spread down the panel height at lg (420px floor), as in How a Migration Runs. */}
+                <div className="flex flex-col w-full lg:w-96 lg:min-h-[420px] justify-between gap-2 lg:gap-0 shrink-0">
                     {TABS.map((tab, index) => (
                         <button
                             key={tab.title}
@@ -100,9 +102,9 @@ export default function PublicCloudFeatures() {
                     ))}
                 </div>
 
-                {/* Navy panel holding title, description and the self-drawing icon */}
+                {/* Navy panel: copy top left, self-drawing icon bottom right */}
                 <div className="w-full lg:flex-1 lg:min-w-0">
-                    <div className="relative w-full min-h-[320px] lg:min-h-[420px] overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+                    <div className="relative w-full min-h-[320px] lg:min-h-[420px] lg:h-full overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
                         <style>{DRAW_KEYFRAMES}</style>
                         <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.4),rgba(28,95,133,0)_65%)]" />
 
@@ -113,7 +115,7 @@ export default function PublicCloudFeatures() {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0, transition: { duration: 0.25 } }}
                                 transition={{ duration: 0.4 }}
-                                className="relative flex flex-col-reverse sm:flex-row sm:items-center gap-6 sm:gap-10 h-full min-h-[inherit] px-6 py-8 sm:px-10 sm:py-10 xl:px-12"
+                                className="relative flex flex-col h-full min-h-[inherit] px-6 pt-8 pb-10 sm:pl-[55px] sm:pr-10 sm:pt-[46px] sm:pb-12"
                             >
                                 {/* One light sweep per change */}
                                 <motion.div
@@ -123,15 +125,15 @@ export default function PublicCloudFeatures() {
                                     transition={{ duration: 1.6, ease: "easeOut" }}
                                     className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/2 -skew-x-12 bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.07),transparent)]"
                                 />
-                                <div className="relative flex flex-col gap-3 sm:gap-4 flex-1 min-w-0">
-                                    <h2 className="text-white text-xl sm:text-2xl xl:text-[28px] font-semibold">{activeTab.title}</h2>
-                                    <p className="text-white/85 text-base sm:text-lg font-light leading-relaxed">{activeTab.desc}</p>
+                                <div className="relative z-10 flex flex-col gap-3 max-w-[520px]">
+                                    <h2 className="text-white text-xl sm:text-2xl font-semibold">{activeTab.title}</h2>
+                                    <p className="text-white/85 text-base sm:text-lg font-light leading-relaxed text-pretty">{activeTab.desc}</p>
                                 </div>
-                                <div className="relative shrink-0 w-16 sm:w-[30%] max-w-[220px] self-start sm:self-center">
+                                <div aria-hidden="true" className="absolute bottom-[8%] right-[5%] h-[55%] aspect-square">
                                     <activeTab.icon
                                         aria-hidden="true"
                                         strokeWidth={0.6}
-                                        className="w-full h-auto text-white/50 [&_*]:[stroke-dasharray:100] [&_*]:[stroke-dashoffset:100] [&_*]:animate-[pc-draw_2.2s_cubic-bezier(0.65,0,0.35,1)_0.1s_forwards]"
+                                        className="size-full text-white/20 [&_*]:[stroke-dasharray:100] [&_*]:[stroke-dashoffset:100] [&_*]:animate-[pc-draw_2.2s_cubic-bezier(0.65,0,0.35,1)_0.1s_forwards]"
                                     />
                                 </div>
                             </motion.div>

@@ -77,6 +77,9 @@ export default function SacSuccessFactors() {
                         const isOpen = openIndex === index;
                         return (
                             <div key={item.title} className="w-full border-b border-[#a4a7a5]">
+                                {/* The h2 wraps the button (a heading can't sit inside one), so the
+                                    title inherits Houschka Pro like the Ariba and CX factor titles. */}
+                                <h2>
                                 <button
                                     type="button"
                                     onClick={() => handleClick(index)}
@@ -94,6 +97,7 @@ export default function SacSuccessFactors() {
                                         />
                                     </span>
                                 </button>
+                                </h2>
 
                                 <AnimatePresence initial={false}>
                                     {isOpen && (

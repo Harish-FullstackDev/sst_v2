@@ -58,8 +58,8 @@ export default function SoftwareQuality() {
                         className="group flex flex-col gap-4 sm:gap-6 border-r border-b border-[#d3d5d8] px-6 py-8 sm:px-8 sm:py-10 transition-colors duration-300 hover:bg-[#f5f6f6]"
                     >
                         <Image src={item.icon} alt="" width={48} height={48} className="size-10 sm:size-12 transition-transform duration-300 group-hover:-translate-y-1" />
-                        <h3 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h3>
-                        <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
+                        <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h2>
+                        <p className="text-[#55595E] text-base sm:text-lg font-light text-pretty">{item.desc}</p>
                     </motion.div>
                 ))}
             </div>

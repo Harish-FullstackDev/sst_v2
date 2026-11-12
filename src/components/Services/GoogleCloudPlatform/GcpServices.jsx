@@ -97,12 +97,14 @@ export default function GcpServices() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-16"
+                // Wider block so the ~800px heading fits on one line from lg; the
+                // description keeps its 767px measure.
+                className="flex flex-col items-center gap-2 max-w-[1074px] mx-auto text-center mb-10 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold lg:whitespace-nowrap">
                     Unlocking the Power of Google Cloud Platform Services at SST
                 </h2>
-                <p className="text-[#55595E] text-base sm:text-lg font-light">
+                <p className="text-[#55595E] text-base sm:text-lg font-light max-w-[767px]">
                     The Google Cloud service families we design, deploy, and run for our clients
                 </p>
             </motion.div>
@@ -123,7 +125,7 @@ export default function GcpServices() {
                         <div className="relative flex flex-col justify-start gap-2 px-4 py-5">
                             <h2 className="text-white text-xl font-semibold">{service.title}</h2>
                             <ServiceIcon service={service} isActive={false} className="self-center size-20 my-2" />
-                            <p className="text-white/85 text-sm font-light">{service.desc}</p>
+                            <p className="text-white/85 text-sm font-light text-pretty">{service.desc}</p>
                         </div>
                     </motion.div>
                 ))}
@@ -158,7 +160,7 @@ export default function GcpServices() {
                                     className={`grid transition-[grid-template-rows] duration-500 ease-out ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
                                 >
                                     <div className="overflow-hidden">
-                                        <p className="text-white/85 text-base xl:text-lg font-light pt-4">{service.desc}</p>
+                                        <p className="text-white/85 text-base xl:text-lg font-light pt-4 text-pretty">{service.desc}</p>
                                     </div>
                                 </div>
                             </div>

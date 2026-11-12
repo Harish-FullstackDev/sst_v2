@@ -61,7 +61,7 @@ export default function AzureScenarios() {
                         </div>
                         <div className="flex flex-col flex-1 gap-4 px-6 sm:px-8 pt-16 sm:pt-20 pb-10">
                             <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{card.title}</h2>
-                            <p className="text-[#55595E] text-base sm:text-lg font-light">{card.desc}</p>
+                            <p className="text-[#55595E] text-base sm:text-lg font-light text-balance">{card.desc}</p>
                         </div>
                     </motion.div>
                 ))}

@@ -42,7 +42,8 @@ export default function TmLifecycle() {
                             {index + 1}
                         </span>
                         <h3 className="text-[#2E3033] text-lg sm:text-xl font-semibold pt-1.5">{step.title}</h3>
-                        <p className="text-[#55595E] text-base sm:text-lg font-light">{step.desc}</p>
+                        {/* text-pretty keeps the last line from ending on a single word. */}
+                        <p className="text-[#55595E] text-base sm:text-lg font-light text-pretty">{step.desc}</p>
                     </motion.li>
                 ))}
             </ol>
@@ -70,7 +71,9 @@ export default function TmLifecycle() {
                             {index + 1}
                         </span>
                         <h3 className="text-[#2E3033] text-xl font-semibold">{step.title}</h3>
-                        <p className="text-[#55595E] text-base xl:text-lg font-light">{step.desc}</p>
+                        {/* text-balance evens the line lengths in these narrow centred columns,
+                            so no description ends on a lone word (works in all current browsers). */}
+                        <p className="text-[#55595E] text-base xl:text-lg font-light text-balance">{step.desc}</p>
                     </motion.li>
                 ))}
             </ol>

@@ -15,7 +15,7 @@ const CARDS = [
     {
         title: "Threat Detection and Response",
         desc: "Monitor systems in real-time to identify and neutralize threats before they escalate.",
-        image: threatPhoto,
+        image: endpointPhoto,
     },
     {
         title: "Network Security",
@@ -25,7 +25,7 @@ const CARDS = [
     {
         title: "Endpoint Protection",
         desc: "Secure devices such as laptops, desktops, and mobile devices with advanced malware protection and encryption.",
-        image: endpointPhoto,
+        image: threatPhoto,
     },
     {
         title: "Identity and Access Management (IAM)",

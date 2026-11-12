@@ -65,7 +65,6 @@ export default function IotArchitecture() {
                                 <div className="relative size-10 sm:size-12 shrink-0">
                                     <layer.icon aria-hidden="true" strokeWidth={1.5} className="size-full text-[#1C5F85]" />
                                 </div>
-                                <span className="text-[#2d8ec5] text-sm sm:text-base font-light">Layer 0{index + 1}</span>
                             </div>
                             <h2 className="text-[#2E3033] text-xl font-semibold">{layer.title}</h2>
                             <p className="text-[#55595E] text-base sm:text-lg font-light">{layer.desc}</p>

@@ -40,7 +40,7 @@ export default function EInvoicingBenefits() {
                         <h2 className="text-xl sm:text-[28px] font-semibold text-white">
                             How E-Invoicing Benefits Your Business
                         </h2>
-                        <p className="text-base font-light leading-snug text-white/90 sm:text-lg">
+                        <p className="text-base font-light leading-snug text-white/90 sm:text-lg text-pretty">
                             E-invoicing simplifies billing by digitizing the entire invoicing process.
                         </p>
                     </div>
@@ -56,7 +56,7 @@ export default function EInvoicingBenefits() {
                 >
                     <ul className="list-disc pl-5 sm:pl-6 space-y-4 text-base sm:text-lg font-light leading-relaxed text-[#55595E]">
                         {BENEFITS.map((benefit) => (
-                            <li key={benefit}>{benefit}</li>
+                            <li key={benefit} className="text-pretty">{benefit}</li>
                         ))}
                     </ul>
                 </motion.div>

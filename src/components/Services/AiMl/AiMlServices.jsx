@@ -7,8 +7,10 @@ import { LuBot, LuMessagesSquare, LuScanEye, LuTextSearch, LuThumbsUp, LuTrendin
 // No photos. Navy panel (#0A2B3E to #003756) with a soft deep-blue rise, and two
 // motions the user liked elsewhere, combined here:
 // - the active service's Lucide icon (same set as the rest of the site) sits in
-//   the panel's upper right in a fine line and redraws itself stroke by stroke
-//   on every tab change (pen-sketch, as on Microsoft Rollout / GCP);
+//   the panel's bottom-right corner in a fine line and redraws itself stroke by
+//   stroke on every tab change (pen-sketch, as on Microsoft Rollout / GCP);
+// - the copy sits top left, and the layout follows SAP Migration's "How a
+//   Migration Runs" (panel running to the right edge on desktop);
 // - a 3px brand-blue timeline along the foot fills over the autoplay interval
 //   (as on Microsoft Migration's benefits), hidden while a tab is hovered.
 const INTERVAL = 5000;
@@ -64,7 +66,7 @@ export default function AiMlServices() {
     const activeTab = TABS[active];
 
     return (
-        <section className="w-full py-10 sm:py-16 px-8 sm:px-[64px] flex flex-col items-center gap-8 sm:gap-[45px]">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[64px] lg:px-0 flex flex-col items-center gap-8 sm:gap-[45px]">
             {/* Heading */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -83,10 +85,9 @@ export default function AiMlServices() {
             </motion.div>
 
             {/* Content */}
-            <div className="flex flex-col lg:flex-row lg:items-stretch gap-8 lg:gap-[64px] w-full">
-                {/* Tabs — six rows spaced by a gap rather than a fixed h-96 column, so the
-                    list height follows the number of tabs. */}
-                <div className="flex flex-col justify-between w-full lg:w-[380px] xl:w-[420px] gap-2 shrink-0">
+            <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-[100px] w-full lg:pl-[64px]">
+                {/* Tabs spread down the panel height at lg, as in How a Migration Runs. */}
+                <div className="flex flex-col justify-between w-full lg:w-96 lg:h-[420px] gap-2 lg:gap-0 shrink-0">
                     {TABS.map((tab, index) => (
                         <button
                             key={tab.title}
@@ -114,19 +115,21 @@ export default function AiMlServices() {
                 {/* Navy panel; below xl the description sits under the panel instead of
                     over it, because these descriptions are too long for a phone-sized overlay. */}
                 <div className="flex flex-col gap-5 w-full lg:flex-1 lg:min-w-0">
-                    <div className="relative w-full aspect-[798/446] overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+                    {/* lg:h-[420px] matches the tab column exactly; an aspect ratio would let the
+                        panel drift taller or shorter than the list as the width changes. */}
+                    <div className="relative w-full aspect-[798/446] lg:aspect-auto lg:h-[420px] overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
                         <style>{DRAW_KEYFRAMES}</style>
                         <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.35),rgba(28,95,133,0)_65%)]" />
 
-                        {/* Self-drawing icon, upper right, clear of the copy column (keyed so it redraws per tab). */}
+                        {/* Self-drawing icon, bottom right (keyed so it redraws per tab). */}
                         <activeTab.icon
                             key={active}
                             aria-hidden="true"
                             strokeWidth={0.6}
-                            className="absolute top-[12%] right-[7%] h-[48%] w-auto text-white/45 [&_*]:[stroke-dasharray:100] [&_*]:[stroke-dashoffset:100] [&_*]:animate-[aiml-draw_2s_cubic-bezier(0.65,0,0.35,1)_forwards]"
+                            className="absolute bottom-[8%] right-[5%] h-[55%] w-auto text-white/25 [&_*]:[stroke-dasharray:100] [&_*]:[stroke-dashoffset:100] [&_*]:animate-[aiml-draw_2s_cubic-bezier(0.65,0,0.35,1)_forwards]"
                         />
 
-                        {/* Text (desktop overlay), kept to the left so it never meets the icon */}
+                        {/* Text (desktop overlay), top left. */}
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={active}
@@ -134,7 +137,7 @@ export default function AiMlServices() {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -6 }}
                                 transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
-                                className="hidden xl:flex absolute left-[48px] bottom-[40px] w-[58%] max-w-[560px] text-white flex-col gap-3"
+                                className="hidden xl:flex absolute left-[55px] top-[46px] w-[58%] max-w-[462px] text-white flex-col gap-3"
                             >
                                 <h2 className="text-xl font-semibold">{activeTab.title}</h2>
                                 <p className="text-white/90 text-lg font-light leading-relaxed">{activeTab.desc}</p>

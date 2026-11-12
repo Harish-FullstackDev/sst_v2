@@ -2,7 +2,6 @@
 // /solutions/ page. Category ids and page hrefs match Navbar/menuLinks.js, so
 // the mega menu's category links (/solutions#erp…) land on these bands.
 export const INTRO = {
-    eyebrow: "Welcome to SST",
     title: "Explore our innovative solutions designed to propel your success",
     body: "Discover unparalleled commitment at Solutions Hub. Our comprehensive range of services guarantees cutting-edge solutions, personalized support, and a proven track record of achieving tangible success for your business.",
 };

@@ -64,8 +64,8 @@ export default function UiUxProcess() {
                             <step.icon aria-hidden="true" strokeWidth={1.5} className="size-5" />
                         </span>
                         <div className="flex flex-col gap-1 pt-2">
-                            <h3 className="text-[#2E3033] text-lg sm:text-xl font-semibold">{step.title}</h3>
-                            <p className="text-[#55595E] text-base sm:text-lg font-light">{step.desc}</p>
+                            <h2 className="text-[#2E3033] text-lg sm:text-xl font-semibold">{step.title}</h2>
+                            <p className="text-[#55595E] text-base sm:text-lg font-light text-pretty">{step.desc}</p>
                         </div>
                     </motion.li>
                 ))}
@@ -86,8 +86,8 @@ export default function UiUxProcess() {
                         <span className="relative z-10 flex size-14 items-center justify-center rounded-full border border-[#2d8ec5] bg-white text-[#2d8ec5] transition-colors duration-300 group-hover:bg-[#2d8ec5] group-hover:text-white">
                             <step.icon aria-hidden="true" strokeWidth={1.5} className="size-6" />
                         </span>
-                        <h3 className="text-[#2E3033] text-xl font-semibold">{step.title}</h3>
-                        <p className="text-[#55595E] text-base font-light">{step.desc}</p>
+                        <h2 className="text-[#2E3033] text-xl font-semibold">{step.title}</h2>
+                        <p className="text-[#55595E] text-base font-light text-balance">{step.desc}</p>
                     </motion.li>
                 ))}
             </ol>

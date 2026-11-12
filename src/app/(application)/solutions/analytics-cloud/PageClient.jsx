@@ -8,7 +8,7 @@ import HeroText from "@/components/Solutions/AnalyticsCloud/HeroText";
 import SacOverview from "@/components/Solutions/AnalyticsCloud/SacOverview";
 import SacPlatform from "@/components/Solutions/AnalyticsCloud/SacPlatform";
 import SacFeatures from "@/components/Solutions/AnalyticsCloud/SacFeatures";
-import SacConnections from "@/components/Solutions/AnalyticsCloud/SacConnections";
+// import SacConnections from "@/components/Solutions/AnalyticsCloud/SacConnections";
 import SacAudience from "@/components/Solutions/AnalyticsCloud/SacAudience";
 import SacAdoption from "@/components/Solutions/AnalyticsCloud/SacAdoption";
 import WhySac from "@/components/Solutions/AnalyticsCloud/WhySac";
@@ -33,7 +33,8 @@ const page = () => {
                 <SacPlatform />
             </div>
             <SacFeatures />
-            <SacConnections />
+            {/* Section hidden for now; the component is kept to restore later. */}
+            {/* <SacConnections /> */}
             <SacAudience />
             <SacAdoption />
             <WhySac />

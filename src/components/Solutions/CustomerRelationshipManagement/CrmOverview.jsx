@@ -26,10 +26,12 @@ export default function CrmOverview() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-4 max-w-[900px] mx-auto text-center"
+                className="flex flex-col items-center gap-4 max-w-[1074px] mx-auto text-center"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Customer Relationship Management</h2>
-                <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
+                {/* 1074px block (was 900) with text-balance: three long, even desktop
+                    lines, so "and support." no longer sits alone on the last one. */}
+                <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5] text-balance">
                     SAP Customer Relationship Management is a comprehensive customer relationship management software
                     solution provided by SAP SE, a leading enterprise software company. SAP CRM helps organizations
                     manage customer relationships by integrating various business processes such as sales, marketing,
@@ -51,7 +53,7 @@ export default function CrmOverview() {
                             <Image src={item.icon} alt="" width={48} height={48} className="size-9 sm:size-10" />
                         </div>
                         <div className="flex flex-col gap-2 min-w-0">
-                            <h3 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">{item.title}</h3>
+                            <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">{item.title}</h2>
                             <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                         </div>
                     </motion.div>

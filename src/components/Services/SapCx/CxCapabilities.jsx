@@ -95,7 +95,7 @@ export default function CxCapabilities() {
             </div>
 
             {/* Desktop: hover-to-grow row, first card open by default. Height comes
-                from aspect-ratio (4:5 open, 16:15 closed) so the cards keep their
+                from aspect-ratio (1:1 open, 4:3 closed; was 4:5 and 16:15) so the cards keep their
                 proportions as they go fluid. */}
             <div
                 className="hidden sm:flex sm:items-end gap-[clamp(12px,3.7%,42.67px)] w-full"
@@ -105,7 +105,7 @@ export default function CxCapabilities() {
                 {STEPS.map((step, index) => {
                     const isActive = index === activeIndex;
                     return (
-                        <div key={step.title} className="relative flex-1 aspect-[4/5] min-h-[280px]">
+                        <div key={step.title} className="relative flex-1 aspect-square min-h-[240px]">
                             <motion.div
                                 initial={{ opacity: 0, y: 24 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -113,7 +113,7 @@ export default function CxCapabilities() {
                                 transition={{ duration: 0.5, delay: index * 0.08 }}
                                 onMouseEnter={() => setActiveIndex(index)}
                                 onFocus={() => setActiveIndex(index)}
-                                className={`absolute bottom-0 inset-x-0 overflow-hidden transition-[aspect-ratio] duration-500 ease-out ${isActive ? "aspect-[4/5] z-20" : "aspect-[16/15] z-10"
+                                className={`absolute bottom-0 inset-x-0 overflow-hidden transition-[aspect-ratio] duration-500 ease-out ${isActive ? "aspect-square z-20" : "aspect-[4/3] z-10"
                                     }`}
                             >
                                 <CardBackground isActive={isActive} />

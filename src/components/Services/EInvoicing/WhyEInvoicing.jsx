@@ -23,7 +23,7 @@ export default function WhyEInvoicing() {
                 className="relative flex flex-col gap-2 max-w-[767px]"
             >
                 <h2 className="text-white text-xl sm:text-[28px] font-semibold">Why E-Invoicing?</h2>
-                <p className="text-white/90 text-base sm:text-lg font-light">
+                <p className="text-white/90 text-base sm:text-lg font-light text-pretty">
                     Optimize and evolve your billing processes with e-invoicing.
                 </p>
             </motion.div>
@@ -33,7 +33,7 @@ export default function WhyEInvoicing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="relative w-full max-w-[1000px] text-white/90 text-lg sm:text-2xl font-light leading-[1.4]"
+                className="relative w-full max-w-[1000px] text-white/90 text-lg sm:text-2xl font-light leading-[1.4] text-pretty"
             >
                 E-Invoicing enables seamless digital transactions, automates invoicing workflows, ensures compliance
                 with tax regulations, and accelerates payment cycles for improved cash flow management.

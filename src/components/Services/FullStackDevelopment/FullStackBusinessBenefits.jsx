@@ -51,7 +51,7 @@ export default function FullStackBusinessBenefits() {
                         className="border border-[#a5a5a5] bg-[#f5f6f6] flex flex-col gap-4 px-6 py-8"
                     >
                         <p className="text-[#2E3033] text-base sm:text-lg font-semibold">{card.title}</p>
-                        <p className="text-[#55595E] text-sm font-light">{card.desc}</p>
+                        <p className="text-[#55595E] text-sm font-light text-pretty">{card.desc}</p>
                     </motion.div>
                 ))}
             </div>
@@ -71,7 +71,7 @@ export default function FullStackBusinessBenefits() {
                             <div className="bg-white border border-[#a5a5a5] min-h-[121px] flex items-center justify-center text-center px-5">
                                 <h2 className="text-[#2E3033] text-xl  font-semibold leading-tight">{card.title}</h2>
                             </div>
-                            <p className="text-[#55595E] justify-center text-center text-base font-light px-3 py-6">{card.desc}</p>
+                            <p className="text-[#55595E] justify-center text-center text-base font-light px-3 py-6 text-balance">{card.desc}</p>
                         </motion.div>
                     ))}
                 </div>

@@ -41,7 +41,9 @@ export default function AwsSecurity() {
                 className="flex flex-col items-center gap-2 max-w-[900px] text-center"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Security Built Into Every AWS Workload</h2>
-                <p className="text-[#55595E] text-base sm:text-lg font-light">
+                {/* ~1150px of text: a 680px cap plus text-balance splits it into two
+                    even lines on desktop. */}
+                <p className="text-[#55595E] text-base sm:text-lg font-light max-w-[680px] text-balance">
                     Controls we design in from the first account, so security is part of the architecture rather than
                     a later remediation project.
                 </p>
@@ -60,7 +62,7 @@ export default function AwsSecurity() {
                         <Image src={item.icon} alt="" width={32} height={32} />
                         <div className="flex flex-col gap-5">
                             <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h2>
-                            <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
+                            <p className="text-[#55595E] text-base sm:text-lg font-light text-pretty">{item.desc}</p>
                         </div>
                     </motion.div>
                 ))}

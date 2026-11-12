@@ -45,7 +45,7 @@ export default function UiUxBusinessImpact() {
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
                     How Does UI/UX Design Impact Your Business Success?
                 </h2>
-                <p className="text-[#55595E] text-base sm:text-lg font-light leading-relaxed">
+                <p className="text-[#55595E] text-base sm:text-lg font-light leading-relaxed text-pretty">
                     UI/UX design plays a pivotal role in boosting user engagement and satisfaction. A seamless,
                     intuitive design improves user navigation, increases conversion rates, and fosters customer
                     loyalty. By creating a positive user experience, businesses can enhance brand perception, drive
@@ -66,8 +66,8 @@ export default function UiUxBusinessImpact() {
                         <div className="flex size-14 items-center justify-center rounded-full bg-white transition-colors duration-300 group-hover:bg-[#f5f6f6]">
                             <item.icon aria-hidden="true" strokeWidth={1.5} className="size-8 text-[#1C5F85]" />
                         </div>
-                        <h3 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h3>
-                        <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
+                        <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h2>
+                        <p className="text-[#55595E] text-base sm:text-lg font-light text-pretty">{item.desc}</p>
                     </motion.div>
                 ))}
             </div>

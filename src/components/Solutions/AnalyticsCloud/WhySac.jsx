@@ -51,7 +51,7 @@ export default function WhySac() {
                         <div className="flex items-center justify-center size-16 sm:size-[72px] rounded-full bg-[#2d8ec5]/10">
                             <reason.icon aria-hidden="true" strokeWidth={1.5} className="size-9 sm:size-10 text-[#1C5F85]" />
                         </div>
-                        <h3 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{reason.title}</h3>
+                        <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{reason.title}</h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{reason.desc}</p>
                     </motion.div>
                 ))}

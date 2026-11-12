@@ -6,7 +6,8 @@ import { LuArrowRightLeft, LuFlaskConical, LuLifeBuoy, LuListFilter, LuSearch } 
 
 // Same panel as Microsoft Migration's key benefits: a quiet navy field
 // (#0A2B3E to #003756) with the active item's Lucide icon (same set as the rest
-// of the site) drawn large in a thin, faint line as a watermark on the right,
+// of the site) drawn large in a thin, faint line as a watermark in the bottom
+// right corner (the copy sits top left),
 // cross-fading and drifting in on each change, and a 3px brand-blue timeline
 // along the foot that fills over the autoplay interval (hidden while paused).
 const INTERVAL = 5000;
@@ -122,7 +123,7 @@ export default function MigrationPhases() {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -12 }}
                                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                                className="absolute top-1/2 right-[6%] -translate-y-1/2 h-[72%] aspect-square text-white/[0.08]"
+                                className="absolute bottom-[8%] right-[5%] h-[55%] aspect-square text-white/[0.08]"
                             >
                                 <activeTab.icon strokeWidth={0.6} className="size-full" />
                             </motion.div>
@@ -136,7 +137,7 @@ export default function MigrationPhases() {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -6 }}
                                 transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
-                                className="absolute left-6 right-6 sm:left-[55px] sm:right-auto bottom-6 sm:bottom-[46px] sm:w-[462px] text-white flex flex-col gap-3"
+                                className="absolute left-6 right-6 sm:left-[55px] sm:right-auto top-6 sm:top-[46px] sm:w-[462px] text-white flex flex-col gap-3"
                             >
                                 <h2 className="text-xl font-semibold">
                                     {activeTab.title}

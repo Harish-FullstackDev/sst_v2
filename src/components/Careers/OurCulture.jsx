@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import cultureImage from "@/assets/career/webp/Careers_Cultural.webp";
+import cultureImage from "@/assets/career/webp/career-life.webp";
 
 export default function OurCulture() {
     // overflow-x-clip on the section: the text panel enters from x: 24 and the

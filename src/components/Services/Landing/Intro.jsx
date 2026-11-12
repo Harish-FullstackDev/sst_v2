@@ -16,7 +16,6 @@ export default function Intro() {
                 className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16"
             >
                 <div className="flex flex-col gap-4">
-                    <p className="text-[#2d8ec5] text-sm uppercase tracking-[0.2em]">{INTRO.eyebrow}</p>
                     <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold capitalize">{INTRO.title}</h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light max-w-[720px]">{INTRO.body}</p>
                 </div>

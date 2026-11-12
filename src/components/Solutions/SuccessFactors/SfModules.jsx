@@ -67,7 +67,7 @@ export default function SfModules() {
     const activeTab = TABS[active];
 
     return (
-        <section className="w-full bg-[#f5f6f6] py-10 sm:py-16 px-8 sm:px-[64px] flex flex-col items-center gap-8 sm:gap-[45px]">
+        <section className="w-full bg-[#f5f6f6] py-10 sm:py-16 px-8 sm:px-[64px] lg:px-0 flex flex-col items-center gap-8 sm:gap-[45px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -81,10 +81,11 @@ export default function SfModules() {
                 </p>
             </motion.div>
 
-            {/* The tab column sizes to its seven rows instead of a fixed height, and the
-                image panel stretches to match it on desktop. */}
-            <div className="flex flex-col lg:flex-row lg:items-stretch gap-8 lg:gap-16 w-full">
-                <div className="flex flex-col w-full lg:w-[34%] lg:max-w-96 gap-2 shrink-0">
+            {/* Layout follows SAP Migration's "How a Migration Runs": a 384px tab column
+                spread down the panel height, a 100px gap, and the image panel running
+                to the right edge on desktop. The panel stretches to match the list. */}
+            <div className="flex flex-col lg:flex-row lg:items-stretch gap-8 lg:gap-[100px] w-full lg:pl-[64px]">
+                <div className="flex flex-col w-full lg:w-96 lg:min-h-[446px] justify-between gap-2 lg:gap-0 shrink-0">
                     {TABS.map((tab, index) => (
                         <button
                             key={tab.label}

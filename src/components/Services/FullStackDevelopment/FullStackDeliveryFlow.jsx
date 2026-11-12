@@ -59,7 +59,7 @@ export default function FullStackDeliveryFlow() {
                         </div>
                         <div className="flex flex-col gap-1">
                             <h3 className="text-[#2E3033] text-base sm:text-lg font-semibold">{step.title}</h3>
-                            <p className="text-[#55595E] text-sm sm:text-base font-light leading-snug">{step.desc}</p>
+                            <p className="text-[#55595E] text-sm sm:text-base font-light leading-snug text-pretty">{step.desc}</p>
                         </div>
                     </motion.div>
                 ))}
@@ -92,7 +92,7 @@ export default function FullStackDeliveryFlow() {
                                         initial={{ opacity: 0, y: 8 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.3 }}
-                                        className="text-white text-base xl:text-lg font-light leading-snug"
+                                        className="text-white text-base xl:text-lg font-light leading-snug text-pretty"
                                     >
                                         {step.desc}
                                     </motion.p>

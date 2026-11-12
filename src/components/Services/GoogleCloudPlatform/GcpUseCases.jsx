@@ -59,7 +59,7 @@ export default function GcpUseCases() {
                     >
                         <Image src={item.icon} alt="" width={48} height={48} />
                         <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h2>
-                        <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
+                        <p className="text-[#55595E] text-base sm:text-lg font-light text-pretty">{item.desc}</p>
                     </motion.div>
                 ))}
             </div>

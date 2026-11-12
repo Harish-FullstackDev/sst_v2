@@ -161,7 +161,7 @@ export default function SacFeatures() {
                             transition={{ duration: 0.35 }}
                             className="flex flex-col gap-4"
                         >
-                            <h3 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{activeTab.title}</h3>
+                            <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{activeTab.title}</h2>
                             <p className="text-[#55595E] text-base sm:text-lg font-light leading-relaxed">{activeTab.desc}</p>
                         </motion.div>
                     </AnimatePresence>

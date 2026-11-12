@@ -6,12 +6,10 @@ import pilotPhoto from "@/assets/Services/InternetOfThings/pilot.webp";
 
 const BOXES = [
     {
-        label: "Phase 01",
         title: "Start with a Focused Pilot",
         desc: "We begin with one high-value use case, such as predictive maintenance on critical equipment or real-time tracking of key assets, connecting the right devices and proving the value of the data quickly.",
     },
     {
-        label: "Phase 02",
         title: "Scale Across the Business",
         desc: "Once the pilot proves its value, we extend the solution across sites and processes, adding automation and control and feeding device data into wider analytics.",
     },
@@ -47,10 +45,7 @@ export default function IotDelivery() {
                                 key={box.title}
                                 className="bg-white w-full sm:flex-1 lg:h-full flex flex-col items-start gap-12 lg:gap-16 px-6 py-8"
                             >
-                                <div className="flex flex-col gap-2">
-                                    <p className="text-[#2d8ec5] text-sm uppercase tracking-[0.18em]">{box.label}</p>
-                                    <h2 className="text-[#2E3033] text-xl font-semibold">{box.title}</h2>
-                                </div>
+                                <h2 className="text-[#2E3033] text-xl font-semibold">{box.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{box.desc}</p>
                             </div>
                         ))}

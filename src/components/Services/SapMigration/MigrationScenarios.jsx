@@ -24,39 +24,22 @@ const SCENARIOS = [
 
 const AUTOPLAY_INTERVAL = 2500;
 
-// No photos: quiet navy cards, kept in the site's darker blues (navy #0A2B3E,
-// #003756, deep blue #1C5F85, brand blue #2D8EC5 only as a fine line).
-// The open state is deliberately restrained rather than a colour swap:
-// - a soft deep-blue lift rises from the foot,
-// - a 1px brand-blue hairline frame draws itself around the card (top and
-//   bottom from the left, sides from the top, a beat apart), sharp corners,
-// - a single faint light sweep crosses the card once as it opens (it resets
-//   instantly on close so it never plays backwards).
-function Hairline({ isActive, className, axis, delay }) {
-    const scale = axis === "x" ? (isActive ? "scale-x-100" : "scale-x-0") : isActive ? "scale-y-100" : "scale-y-0";
-    return (
-        <span
-            className={`absolute bg-[#2D8EC5]/80 transition-transform duration-700 ease-out ${scale} ${className}`}
-            style={{ transitionDelay: isActive ? delay : "0ms" }}
-        />
-    );
-}
-
+// Same colours as the Grow with SAP "What is Grow with SAP?" cards: a resting
+// card is the inverse surface (#00223D) under a black/30 wash, and the open
+// card (hover or autoplay) fades to primary/700 (#004174). A single faint
+// light sweep crosses the card once as it opens; it resets instantly on close
+// so it never plays backwards.
 function MigrationBackground({ isActive }) {
     return (
-        <div aria-hidden="true" className="absolute inset-0 overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+        <div aria-hidden="true" className="absolute inset-0 overflow-hidden bg-[#00223D]">
+            <div className="absolute inset-0 bg-black/30" />
             <div
-                className={`absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.45),rgba(28,95,133,0)_70%)] transition-opacity duration-700 ease-out ${isActive ? "opacity-100" : "opacity-0"
-                    }`}
+                className={`absolute inset-0 bg-[#004174] transition-opacity duration-500 ease-out ${isActive ? "opacity-100" : "opacity-0"}`}
             />
             <div
                 className={`absolute inset-y-0 -left-1/2 w-1/2 -skew-x-12 bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.07),transparent)] transition-transform ease-out ${isActive ? "translate-x-[300%] duration-[1400ms]" : "translate-x-0 duration-0"
                     }`}
             />
-            <Hairline isActive={isActive} axis="x" delay="0ms" className="inset-x-0 top-0 h-px origin-left" />
-            <Hairline isActive={isActive} axis="y" delay="150ms" className="inset-y-0 right-0 w-px origin-top" />
-            <Hairline isActive={isActive} axis="y" delay="150ms" className="inset-y-0 left-0 w-px origin-top" />
-            <Hairline isActive={isActive} axis="x" delay="300ms" className="inset-x-0 bottom-0 h-px origin-left" />
         </div>
     );
 }
@@ -123,18 +106,21 @@ export default function MigrationScenarios() {
                             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
                             onMouseEnter={() => setHoveredIndex(index)}
                             onMouseLeave={() => setHoveredIndex(null)}
-                            className="relative aspect-[258/335] overflow-hidden"
+                            // Same 240px height and centred title-plus-description block as
+                            // the Grow with SAP "What is Grow with SAP?" cards, so the
+                            // description opens under the title rather than from the foot.
+                            className="relative min-h-[240px] overflow-hidden shadow-[0px_2px_8px_rgba(0,0,0,0.19)]"
                         >
                             <MigrationBackground isActive={isActive} />
-                            <div className="absolute inset-0 flex items-start justify-start px-6 py-10 text-left">
-                                <h2 className="text-white text-xl sm:text-2xl font-semibold">{scenario.title}</h2>
-                            </div>
-                            <div
-                                className={`absolute inset-x-0 bottom-0 px-6 pb-6 grid transition-[grid-template-rows] duration-500 ease-out ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                                    }`}
-                            >
-                                <div className="overflow-hidden">
-                                    <p className="text-white/85 text-base sm:text-lg font-light pt-2">{scenario.desc}</p>
+                            <div className="absolute inset-0 flex flex-col justify-center px-6 text-left">
+                                <h2 className="text-white text-xl font-semibold leading-7">{scenario.title}</h2>
+                                <div
+                                    className={`grid transition-[grid-template-rows] duration-500 ease-out ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                                        }`}
+                                >
+                                    <div className="overflow-hidden">
+                                        <p className="text-white/85 text-base font-light leading-6 pt-2">{scenario.desc}</p>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

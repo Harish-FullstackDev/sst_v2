@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { LuChartColumn, LuCloud, LuGlobe, LuHandshake, LuLightbulb, LuRefreshCw, LuShieldCheck, LuTrendingUp, LuZap } from "react-icons/lu";
 import { motion } from "framer-motion";
+import useAutoScroll from "@/lib/useAutoScroll";
 
 const CARDS = [
     {
@@ -75,6 +76,9 @@ export default function RiseDifferentiators() {
     const trackRef = useRef(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
+    // Advances one card every few seconds and loops; waits while the visitor
+    // hovers, focuses, swipes or uses the arrows.
+    const pauseAutoScroll = useAutoScroll(trackRef, { gap: 32 });
 
     const updateScrollState = () => {
         const el = trackRef.current;
@@ -93,6 +97,7 @@ export default function RiseDifferentiators() {
     const scrollByCard = (dir) => {
         const el = trackRef.current;
         if (!el) return;
+        pauseAutoScroll();
         const card = el.querySelector("[data-card]");
         const amount = card ? card.offsetWidth + 32 : 335;
         el.scrollBy({ left: dir * amount, behavior: "smooth" });

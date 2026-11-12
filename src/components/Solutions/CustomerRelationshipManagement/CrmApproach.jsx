@@ -60,8 +60,8 @@ export default function CrmApproach() {
                                 <div className="absolute inset-0 origin-left scale-x-0 bg-[#2d8ec5] transition-transform duration-700 ease-in-out group-hover:scale-x-100" />
                             </div>
                         </div>
-                        <h3 className="text-[#2E3033] text-xl sm:text-2xl font-semibold mt-3">{step.title}</h3>
-                        <p className="text-[#55595E] text-base sm:text-lg font-light mt-2">{step.desc}</p>
+                        <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold mt-3">{step.title}</h2>
+                        <p className="text-[#55595E] text-base sm:text-lg font-light mt-2 text-pretty">{step.desc}</p>
                     </motion.div>
                 ))}
             </div>

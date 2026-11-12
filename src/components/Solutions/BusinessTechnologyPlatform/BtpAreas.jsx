@@ -103,9 +103,9 @@ export default function BtpAreas() {
                     >
                         <CardBackground isActive />
                         <div className="relative flex flex-col justify-start gap-2 px-4 pt-5 pb-6">
-                            <h3 className="text-white text-xl font-semibold">{card.title}</h3>
+                            <h2 className="text-white text-xl font-semibold">{card.title}</h2>
                             <CardIcon card={card} isActive={false} className="self-center size-20 my-2" />
-                            <p className="text-white/85 text-sm font-light max-w-[280px]">{card.desc}</p>
+                            <p className="text-white/85 text-sm font-light max-w-[280px] text-pretty">{card.desc}</p>
                         </div>
                     </motion.div>
                 ))}
@@ -139,7 +139,7 @@ export default function BtpAreas() {
                         >
                             <CardBackground isActive={isActive} />
                             <div className="absolute inset-0 flex flex-col px-6 pt-8 pb-6 text-left">
-                                <h3 className="text-white text-xl sm:text-2xl font-semibold">{card.title}</h3>
+                                <h2 className="text-white text-xl sm:text-2xl font-semibold">{card.title}</h2>
                                 <div className="flex-1 min-h-0 flex justify-center items-start pt-5">
                                     <CardIcon card={card} isActive={isActive} className="h-full max-h-[9rem] w-auto" />
                                 </div>
@@ -147,7 +147,7 @@ export default function BtpAreas() {
                                     className={`grid transition-[grid-template-rows] duration-500 ease-out ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
                                 >
                                     <div className="overflow-hidden">
-                                        <p className="text-white/85 text-base lg:text-lg font-light leading-relaxed pt-4">{card.desc}</p>
+                                        <p className="text-white/85 text-base lg:text-lg font-light leading-relaxed pt-4 text-pretty">{card.desc}</p>
                                     </div>
                                 </div>
                             </div>

@@ -60,10 +60,8 @@ export default function AiMlLifecycle() {
                             <Image src={step.icon} alt="" width={48} height={48} className="size-[48px]" />
                         </div>
                         <div className="flex flex-col flex-1 gap-4 px-8 pt-16 sm:pt-20 pb-10">
-                            {/* Step number above the title, since these cards read as a sequence */}
-                            <span className="text-[#2d8ec5] text-sm sm:text-base font-light">0{index + 1}</span>
                             <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{step.title}</h2>
-                            <p className="text-[#55595E] text-base sm:text-lg font-light">{step.desc}</p>
+                            <p className="text-[#55595E] text-base sm:text-lg font-light text-balance">{step.desc}</p>
                         </div>
                     </motion.div>
                 ))}

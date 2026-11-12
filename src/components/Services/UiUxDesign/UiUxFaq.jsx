@@ -61,7 +61,7 @@ export default function UiUxFaq() {
                                 className="flex w-full items-center justify-between gap-4 py-5 sm:py-6 lg:py-[26px] text-left"
                                 aria-expanded={isOpen}
                             >
-                                <span className="text-[#2E3033] text-lg sm:text-2xl font-semibold">{item.title}</span>
+                                <span className="font-['Houschka_Pro'] text-[#2E3033] text-lg sm:text-2xl font-semibold">{item.title}</span>
                                 <span className="relative shrink-0 size-8 sm:size-[37px] flex items-center justify-center">
                                     <Image src={circleIcon} alt="" fill className="object-contain" />
                                     <span className="absolute w-[14px] h-[2px] bg-[#2D8EC5] rounded-full" />

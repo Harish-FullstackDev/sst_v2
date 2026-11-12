@@ -89,7 +89,7 @@ export default function SoftwareServices() {
                         <div className="absolute inset-0 bg-black/60" />
                         <div className="absolute inset-0 flex flex-col justify-start gap-2 px-4 pt-5">
                             <h2 className="text-white text-xl font-semibold">{service.title}</h2>
-                            <p className="text-white/85 text-sm font-light max-w-[280px]">{service.desc}</p>
+                            <p className="text-white/85 text-sm font-light max-w-[280px] text-pretty">{service.desc}</p>
                         </div>
                     </motion.div>
                 ))}
@@ -127,7 +127,7 @@ export default function SoftwareServices() {
                                     }`}
                             >
                                 <div className="overflow-hidden">
-                                    <p className="text-white/85 text-base sm:text-lg font-light pt-2">{service.desc}</p>
+                                    <p className="text-white/85 text-base sm:text-lg font-light pt-2 text-pretty">{service.desc}</p>
                                 </div>
                             </div>
                         </motion.div>

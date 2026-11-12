@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import integrationImage from "@/assets/Solutions/FinanceAndControlling/Data_Advanced_Analytics.webp";
+import integrationImage from "@/assets/Solutions/FinanceAndControlling/Customer_Analytics.webp";
 import reportingImage from "@/assets/Solutions/FinanceAndControlling/Business_PMO.webp";
 
 export default function FicoCoreStrengths() {
@@ -40,7 +40,7 @@ export default function FicoCoreStrengths() {
                         </p>
                     </div>
                     <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656]">
-                        <Image src={integrationImage} alt="Manager reviewing financial figures on a tablet beside a calculator" fill className="object-cover" />
+                        <Image src={integrationImage} alt="Team reviewing financial charts and reports around a tablet" fill className="object-cover" />
                     </div>
                 </motion.div>
 
