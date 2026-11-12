@@ -36,8 +36,8 @@ const page = () => {
             <WhyProcurement />
             <ProcurementFaq />
             <ReadyToTransform
-                title="Transform Your Procurement Journey with SAP SSM for Your Enterprise Today!"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Take Control of Your Procurement."
+                description="Simplify purchasing, strengthen supplier collaboration and improve spending visibility."
                 buttonLabel="Get in Touch"
             />
             <Footer />

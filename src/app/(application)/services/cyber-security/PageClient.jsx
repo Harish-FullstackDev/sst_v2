@@ -37,8 +37,8 @@ const page = () => {
             <CyberApproach />
             <CyberAssessment />
             <ReadyToTransform
-                title="Protect Your Business with Cybersecurity – Where Trust Meets Innovation."
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Secure Your Business With Confidence."
+                description="Strengthen digital protection through proactive security and threat detection."
                 buttonLabel="Get in Touch"
             />
             <Footer />

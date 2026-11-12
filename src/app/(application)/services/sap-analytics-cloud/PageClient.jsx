@@ -37,8 +37,8 @@ const page = () => {
             <SacFaq />
 
             <ReadyToTransform
-                title="Unlock Smarter Decisions With SAP SAC Today!"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Turn Business Data Into Decisions."
+                description="Unify analytics and planning to enable confident business decisions."
                 buttonLabel="Get in Touch"
             />
             <Footer />

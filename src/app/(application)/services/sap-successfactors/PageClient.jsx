@@ -36,8 +36,8 @@ const page = () => {
             <SuccessFactorsMethodology />
             <SuccessFactorsOutcomes />
             <ReadyToTransform
-                title="Achieve Business Success with SAP SuccessFactors Today"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Build a More Connected Workforce."
+                description="Simplify talent management and strengthen employee experiences across your organization."
                 buttonLabel="Get in Touch"
             />
             <Footer />

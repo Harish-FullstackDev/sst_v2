@@ -35,8 +35,8 @@ const page = () => {
             <MigrationPhases />
 
             <ReadyToTransform
-                title="Transform Your Enterprise Through SAP Migration Excellence"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Move Your SAP Landscape Forward."
+                description="Transition systems and data securely while maintaining business continuity."
                 buttonLabel="Get in Touch"
             />
             <Footer />

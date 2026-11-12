@@ -36,8 +36,8 @@ const page = () => {
             <SfScenarios />
             <SfJourney />
             <ReadyToTransform
-                title="Empower Your HR Strategy with SAP SuccessFactors Today!"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Make Every Employee Experience Count."
+                description="Strengthen talent management and support growth through connected solutions."
                 buttonLabel="Get in Touch"
             />
             <Footer />

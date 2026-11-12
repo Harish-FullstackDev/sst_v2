@@ -39,8 +39,8 @@ const page = () => {
             <EInvoicingDelivery />
             <EInvoicingFaq />
             <ReadyToTransform
-                title="Empower Your Business with E-Invoicing – Simplify Billing, Enhance and Accelerate Growth."
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Simplify Compliance. Accelerate Payments."
+                description="Streamline invoicing, strengthen compliance and improve financial accuracy."
                 buttonLabel="Get in Touch"
             />
             <Footer />

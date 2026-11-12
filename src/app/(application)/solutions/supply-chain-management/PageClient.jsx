@@ -36,8 +36,8 @@ const page = () => {
             <WhyScm />
             <ScmFaq />
             <ReadyToTransform
-                title="Optimize Operations with SAP SCM for Efficient Supply Chain Management"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Build a More Resilient Supply Chain."
+                description="Connect planning, procurement and logistics for improved operational efficiency."
                 buttonLabel="Get in Touch"
             />
             <Footer />

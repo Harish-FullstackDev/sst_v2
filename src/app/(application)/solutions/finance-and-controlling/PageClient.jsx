@@ -38,8 +38,8 @@ const page = () => {
             <FicoDelivery />
             <FicoFaq />
             <ReadyToTransform
-                title="Empower Your Enterprise with SAP FICO for Enhanced Financial Management"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Bring Greater Clarity to Finance."
+                description="Streamline financial operations and gain real-time business performance visibility."
                 buttonLabel="Get in Touch"
             />
             <Footer />

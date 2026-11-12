@@ -52,7 +52,7 @@ const page = () => {
             <EnterpriseBuyerFAQ />
             <ReadyToTransform
                 title="Ready to Transform Your Business?"
-                description="Let's talk about where your technology is holding you back and what it would take to fix it for good."
+                description="Discover technology that simplifies operations, accelerates growth and delivers value."
                 bgImage={customBg}
             />
             <Footer />

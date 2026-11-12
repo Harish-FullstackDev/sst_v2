@@ -25,7 +25,7 @@ import CalendlyModal from "@/components/CommonComponents/CommonCalendy";
 // content's internal layout changed, not the section's overall size.
 export default function ReadyToTransform({
     title = "Ready to Transform Your Business?",
-    description = "Let's talk about where your technology is holding you back and what it would take to fix it for good.",
+    description = "Discover technology that simplifies operations, accelerates growth and delivers value.",
     buttonLabel = "Book a Consultation",
     bgImage = ctaBg,
 }) {

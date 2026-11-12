@@ -38,8 +38,8 @@ const page = () => {
             <RiseOutcomes />
             <RiseFaq />
             <ReadyToTransform
-                title="Streamline Your Business with RISE with SAP Today"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Ready to Transform Your Enterprise?"
+                description="Modernize your ERP landscape with expert guidance and seamless implementation."
                 buttonLabel="Get in Touch"
             />
             <Footer />

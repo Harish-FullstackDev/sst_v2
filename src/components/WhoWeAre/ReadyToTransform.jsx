@@ -29,12 +29,11 @@ export default function ReadyToTransform() {
                 >
                     <div className="flex flex-col gap-3 w-full sm:w-[60%] lg:w-[74%] text-center sm:text-left items-center sm:items-start">
                         <h2 className="text-2xl sm:text-[32px] lg:text-[40px] leading-tight font-semibold text-white">
-                            Want to know more about how we work?
+                            Let&apos;s Shape What&apos;s Next, Together.
                         </h2>
 
                         <p className="text-base sm:text-xl font-light text-white/90">
-                            Talk to us about your technology landscape, and we&apos;ll show you what a single
-                            accountable partner changes about the roadmap.
+                            Transform business ambitions into measurable outcomes through trusted expertise.
                         </p>
                     </div>
 

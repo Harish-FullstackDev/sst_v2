@@ -39,8 +39,8 @@ const page = () => {
             <WhenOnPremiseFits />
             <OnPremiseFaq />
             <ReadyToTransform
-                title="Harness the Power of S/4HANA On-Premises for Your Enterprise Today!"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Take Full Control of Your ERP."
+                description="Gain infrastructure control through tailored configurations and integrated processes."
                 buttonLabel="Get in Touch"
                 bgImage={customBg}
             />

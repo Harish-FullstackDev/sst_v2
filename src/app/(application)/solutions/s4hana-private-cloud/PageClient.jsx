@@ -37,8 +37,8 @@ const page = () => {
             <TransitionPaths />
             <WhyPrivateCloud />
             <ReadyToTransform
-                title="Unlock Your Business's Potential with S/4HANA Private Cloud Today!"
-                description="Discover the possibilities. Contact us for a personalized demo."
+                title="Get the Cloud on Your Terms."
+                description="Combine dedicated infrastructure, enhanced control and cloud flexibility."
                 buttonLabel="Get in Touch"
                 bgImage={customBg}
             />
