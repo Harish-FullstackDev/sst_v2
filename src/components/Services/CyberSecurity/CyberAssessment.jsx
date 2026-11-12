@@ -49,7 +49,7 @@ export default function CyberAssessment() {
                     className="flex flex-col gap-2 w-full lg:w-[36%] shrink-0 lg:sticky lg:top-28"
                 >
                     <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Security Self-Assessment</p>
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Where Does Your Security Stand?</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Where Does Your <span className="text-[#2D8EC5]">Security</span> Stand?</h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         The questions every business should be able to answer, and how each gap is closed.
                     </p>

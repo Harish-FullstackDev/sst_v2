@@ -18,7 +18,7 @@ export default function GcpOverview() {
                 className="flex flex-col gap-4 w-full lg:flex-1"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Migrate, Innovate, Accelerate with Google Cloud Platform
+                    Migrate, Innovate, Accelerate with <span className="text-[#2D8EC5]">Google Cloud Platform</span>
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
                     Google Cloud Platform redefines IT with modern infrastructure, real-time insights, and

@@ -71,7 +71,7 @@ export default function ProofInNumbers() {
                 className="flex flex-col items-center gap-10 sm:gap-16 "
             >
                 <h2 className="text-[#10161d] text-[28px] font-semibold text-center">
-                    Numbers Worth Having a <span className="text-[#0061AF]">Conversation</span> About
+                    Numbers Worth Having a <span className="text-[#2D8EC5]">Conversation</span> About
                 </h2>
 
                 {/* Single row, never wraps to a second level — matches Figma. A 2x2 grid

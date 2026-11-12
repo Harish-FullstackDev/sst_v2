@@ -38,7 +38,7 @@ export default function ScmPillars() {
                         className="flex flex-col gap-2"
                     >
                         <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                            Connected Today, Optimized for Tomorrow
+                            Connected Today, <span className="text-[#2D8EC5]">Optimized for Tomorrow</span>
                         </h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             The two strengths SAP SCM brings to every link in the supply chain.

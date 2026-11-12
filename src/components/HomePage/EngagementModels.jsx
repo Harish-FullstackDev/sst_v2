@@ -42,7 +42,7 @@ export default function EngagementModels() {
             >
                 <h2 className="text-xl sm:text-[28px] font-medium">
                     <span className="text-[#2E3033]">An Engagement Model Built Around </span>
-                    <span className="text-[#0061AF]">Flexibility</span>
+                    <span className="text-[#2D8EC5]">Flexibility</span>
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Choose the engagement model that fits your needs, from focused projects to ongoing support and

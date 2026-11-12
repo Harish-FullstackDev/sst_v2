@@ -16,7 +16,7 @@ export default function PrivateCloudOverview() {
                     className="flex flex-col items-center gap-2 max-w-[760px] mx-auto text-center px-8"
                 >
                     <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                        The Cloud, on Infrastructure Dedicated to You
+                        The Cloud, on Infrastructure <span className="text-[#2D8EC5]">Dedicated to You</span>
                     </h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Cloud ERP for organizations that want to keep control over their data and infrastructure.
@@ -35,7 +35,7 @@ export default function PrivateCloudOverview() {
 
                     <div className="flex flex-col items-start text-left gap-5 w-full lg:flex-1 sm:pl-[54px] lg:pr-16 xl:pr-28">
                         <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">
-                            Discover SAP S/4HANA Private Cloud
+                            Discover <span className="text-[#2D8EC5]">SAP S/4HANA Private Cloud</span>
                         </h2>
                         <div className="text-[#55595E] text-base sm:text-lg font-light leading-relaxed flex flex-col gap-4">
                             <p>

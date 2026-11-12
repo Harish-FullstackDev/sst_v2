@@ -2,8 +2,9 @@
 // /solutions/ page. Category ids and page hrefs match Navbar/menuLinks.js, so
 // the mega menu's category links (/solutions#erp…) land on these bands.
 export const INTRO = {
-    eyebrow: "Welcome to SST",
-    title: "Explore our innovative solutions designed to propel your success",
+    title: "Explore our",
+    titleAccent: "innovative solutions",
+    titleAfter: "designed to propel your success",
     body: "Discover unparalleled commitment at Solutions Hub. Our comprehensive range of services guarantees cutting-edge solutions, personalized support, and a proven track record of achieving tangible success for your business.",
 };
 
@@ -12,8 +13,7 @@ export const CATEGORIES = [
         id: "erp",
         title: "ERP Services",
         paragraphs: [
-            "ERP services have evolved to meet diverse organizational needs. S/4HANA On-Premise integrates finance, procurement, and sales for efficiency and transparency. S/4HANA Public Cloud enhances scalability and flexibility, enabling swift adaptation to market changes.",
-            "Meanwhile, S/4HANA Private Cloud offers secure, dedicated data control. Business ByDesign aids mid-sized enterprises with CRM, supply chain, and HR management, enhancing agility and fostering growth in dynamic market landscapes.",
+            "SAP ERP solutions cater to diverse business needs. S/4HANA On-Premise streamlines core operations, while Public Cloud offers scalability and flexibility. Private Cloud ensures secure data control, and Business ByDesign empowers mid-sized enterprises with integrated CRM, supply chain, and HR management.",
         ],
         cards: [
             { title: "S/4HANA On-Premise", href: "/solutions/s4hana-on-premise", desc: "S/4HANA On-Premise offers customizable ERP solutions integrating finance, procurement, and sales for operational efficiency." },
@@ -36,8 +36,7 @@ export const CATEGORIES = [
         id: "crm",
         title: "Customer Experience",
         paragraphs: [
-            "SAP Customer Relationship Management (CRM) integrates marketing, sales, and service processes to enhance customer interactions and drive business growth. Marketing in SAP CRM targets customer segments with tailored campaigns and analytics, optimizing engagement and conversion rates.",
-            "Sales in SAP CRM streamlines sales processes, from lead generation to closing deals, ensuring efficiency and better customer relationships. Service in SAP CRM focuses on delivering exceptional customer support through efficient case management and timely resolution of issues.",
+            "SAP Customer Relationship Management (CRM) integrates marketing, sales, and service to enhance customer interactions and drive growth. Its marketing capabilities use targeted campaigns and analytics to optimize engagement and conversions.",
         ],
         cards: [
             { title: "Customer Relationship Management", href: "/solutions/customer-relationship-management", desc: "SAP Customer Relationship Management (CRM) focuses on enhancing customer interactions and relationships through integrated marketing, sales, and service processes." },

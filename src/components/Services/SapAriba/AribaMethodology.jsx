@@ -42,7 +42,7 @@ export default function AribaMethodology() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:w-[43%] shrink-0 lg:sticky lg:top-28"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">SAP Ariba Methodology</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">SAP Ariba <span className="text-[#2D8EC5]">Methodology</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Five phases that move procurement from assessment to a live, supplier-connected platform.
                     </p>

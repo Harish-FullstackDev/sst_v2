@@ -58,7 +58,7 @@ export default function AribaSuccessFactors() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-2 w-full lg:flex-[2] lg:sticky lg:top-28"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Our Key Success Factors with SAP Ariba</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Our Key <span className="text-[#2D8EC5]">Success Factors</span> with SAP Ariba</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     What we bring to every SAP Ariba engagement, from the first design workshop onwards.
                 </p>

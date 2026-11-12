@@ -40,7 +40,7 @@ export default function ConversionReadiness() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-2 w-full lg:flex-1"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Preparing ECC for Conversion</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Preparing ECC for <span className="text-[#2D8EC5]">Conversion</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     A system conversion succeeds or fails on preparation. These four checks tell us what has to
                     change in your ECC system before the technical conversion begins.

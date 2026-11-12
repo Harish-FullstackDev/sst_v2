@@ -27,7 +27,7 @@ export default function SacUseCases() {
                             transition={{ duration: 0.6 }}
                             className="text-xl sm:text-[28px] font-semibold text-[#2E3033]"
                         >
-                            Where SAP Analytics Cloud Delivers
+                            Where <span className="text-[#2D8EC5]">SAP Analytics Cloud</span> Delivers
                         </motion.h2>
 
                         <motion.p

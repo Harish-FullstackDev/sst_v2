@@ -40,7 +40,7 @@ export default function AwsSecurity() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[900px] text-center"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Security Built Into Every AWS Workload</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Security Built Into <span className="text-[#2D8EC5]">Every AWS Workload</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Controls we design in from the first account, so security is part of the architecture rather than
                     a later remediation project.

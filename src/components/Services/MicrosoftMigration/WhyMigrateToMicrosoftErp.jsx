@@ -53,7 +53,7 @@ export default function WhyMigrateToMicrosoftErp() {
                     ))}
                 </ul>
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Why Migrate to Microsoft ERP for Your Business?
+                    Why Migrate to <span className="text-[#2D8EC5]">Microsoft ERP</span> for Your Business?
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Migrating to Microsoft ERP solutions streamlines operations, integrates data, and enhances

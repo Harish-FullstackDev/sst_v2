@@ -95,7 +95,7 @@ export default function BusinessCentralFeatures() {
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-16"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Dynamics 365 Business Central Features
+                    Dynamics 365 <span className="text-[#2D8EC5]">Business Central</span> Features
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     One connected application for finance, sales, supply chain, projects, and reporting.

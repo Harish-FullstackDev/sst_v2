@@ -130,7 +130,7 @@ export default function HcmFeatures() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:w-[300px] shrink-0 lg:pt-8"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Features of Human Capital Management</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Features of <span className="text-[#2D8EC5]">Human Capital Management</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         The capabilities that cover the employee lifecycle, from the first job posting to the last
                         payslip.

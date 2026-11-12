@@ -50,7 +50,7 @@ export default function ConversionRoadmap() {
         <section className="w-full py-10 lg:py-0 flex flex-col items-center gap-8">
             {/* Mobile / tablet: numbered card list; the five-column banner needs lg width */}
             <div className="flex lg:hidden flex-col items-center gap-2 text-center px-8">
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">{HEADING}</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Our Conversion <span className="text-[#2D8EC5]">Roadmap</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">{SUBHEADING}</p>
             </div>
 

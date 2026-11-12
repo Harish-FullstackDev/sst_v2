@@ -41,7 +41,7 @@ export default function OnboardingJourney() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:w-[43%] shrink-0 lg:sticky lg:top-28"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How We Take Over Support</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How We <span className="text-[#2D8EC5]">Take Over Support</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         A structured transition, so your applications keep running while responsibility moves to us.
                     </p>

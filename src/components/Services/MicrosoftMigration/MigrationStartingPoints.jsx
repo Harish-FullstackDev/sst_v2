@@ -58,7 +58,7 @@ function CardBackground({ isActive }) {
 function IntroText() {
     return (
         <>
-            <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Any ERP to Microsoft</h2>
+            <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Any ERP to <span className="text-[#2D8EC5]">Microsoft</span></h2>
             <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">
                 Wherever your data lives today, the migration is planned around your systems, your history, and
                 your cutover window.

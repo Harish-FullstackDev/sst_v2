@@ -22,7 +22,7 @@ const ContactInfo = () => {
     <div className="bg-white py-8 lg:py-12">
       <div className="max-w-md">
         <h2 className="text-xl lg:text-2xl text-[#2E3033] font-semibold mb-2">
-          Contact Information
+          Contact <span className="text-[#2D8EC5]">Information</span>
         </h2>
         <p className="text-[#55595E] font-light mb-8 lg:mb-12">
           We're here to help. Reach out using the details below.

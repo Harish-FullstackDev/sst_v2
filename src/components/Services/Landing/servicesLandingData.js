@@ -2,8 +2,8 @@
 // /services/ page. Category ids and page hrefs match Navbar/menuLinks.js, so
 // the mega menu's category links (/services#sap…) land on these bands.
 export const INTRO = {
-    eyebrow: "Welcome to SST",
-    title: "Step into the digital realm with our innovative services",
+    title: "Step into the digital realm with our",
+    titleAccent: "innovative services",
     body: "Our team is committed to providing an unparalleled experience for our clients. With Support Studio, you can anticipate outstanding customer service, cutting-edge solutions, and a dedication to achieving tangible results for your business.",
 };
 

@@ -21,9 +21,9 @@ export default function JobSectionAccordion({ title, items = [], children, defau
             >
                 <span className="text-lg leading-[1.2] font-medium text-[#0e2b4b]">{title}</span>
                 <span aria-hidden="true" className="relative size-[26px] shrink-0 bg-[#afc9e6]">
-                    <span className="absolute top-1/2 left-1/2 h-[1.625px] w-[13px] -translate-1/2 bg-[#0061af]" />
+                    <span className="absolute top-1/2 left-1/2 h-[1.625px] w-[13px] -translate-1/2 bg-[#2D8EC5]" />
                     <span
-                        className={`absolute top-1/2 left-1/2 h-[1.625px] w-[13px] -translate-1/2 bg-[#0061af] transition-transform duration-300 ${
+                        className={`absolute top-1/2 left-1/2 h-[1.625px] w-[13px] -translate-1/2 bg-[#2D8EC5] transition-transform duration-300 ${
                             open ? "rotate-0" : "rotate-90"
                         }`}
                     />

@@ -42,7 +42,7 @@ export default function CyberMatters() {
                     className="flex flex-col gap-4 w-full lg:w-[42%] shrink-0"
                 >
                     <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                        Why Cybersecurity Matters for Your Business
+                        Why <span className="text-[#2D8EC5]">Cybersecurity</span> Matters for Your Business
                     </h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
                         Cybersecurity is vital for protecting sensitive business data, intellectual property, and

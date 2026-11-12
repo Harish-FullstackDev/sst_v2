@@ -59,7 +59,7 @@ export default function SuccessFactorsModules() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">From Hire to Retire</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">From Hire to <span className="text-[#2D8EC5]">Retire</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     The SAP SuccessFactors capabilities we implement, configure, and integrate.
                 </p>

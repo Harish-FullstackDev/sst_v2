@@ -65,7 +65,7 @@ export default function AzureDeliveryApproach() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[818px] text-center"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How We Deliver on Azure</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How We Deliver on <span className="text-[#2D8EC5]">Azure</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
                     Stages aligned with Microsoft&apos;s Cloud Adoption Framework, from first assessment to an
                     estate that keeps improving.

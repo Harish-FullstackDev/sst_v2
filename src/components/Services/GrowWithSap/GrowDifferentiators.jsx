@@ -112,7 +112,7 @@ export default function GrowDifferentiators() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 text-center mb-10 sm:mb-16 w-full"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Our Key Differentiators</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Our Key <span className="text-[#2D8EC5]">Differentiators</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     The strengths Grow with SAP brings to a business that is ready to scale.
                 </p>

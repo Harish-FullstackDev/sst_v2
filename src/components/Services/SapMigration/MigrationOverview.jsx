@@ -23,7 +23,7 @@ export default function MigrationOverview() {
                 >
                     <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Migrate and Moderate.</p>
                     <h2 className="text-xl sm:text-[28px] text-[#2E3033] font-semibold leading-normal">
-                        Why Migration in SAP?
+                        Why <span className="text-[#2D8EC5]">Migration</span> in SAP?
                     </h2>
 
                     <div className="flex flex-col gap-4 pt-2 text-base sm:text-lg text-[#55595E] font-light leading-relaxed">

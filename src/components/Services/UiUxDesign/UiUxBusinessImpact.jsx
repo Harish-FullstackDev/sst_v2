@@ -43,7 +43,7 @@ export default function UiUxBusinessImpact() {
                 className="flex flex-col gap-4 w-full lg:flex-[2] lg:sticky lg:top-28"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    How Does UI/UX Design Impact Your Business Success?
+                    How Does UI/UX Design Impact Your <span className="text-[#2D8EC5]">Business Success?</span>
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-relaxed">
                     UI/UX design plays a pivotal role in boosting user engagement and satisfaction. A seamless,

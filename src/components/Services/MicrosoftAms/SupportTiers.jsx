@@ -64,7 +64,7 @@ export default function SupportTiers() {
                     className="flex max-w-[772px] flex-col items-center gap-2 text-center"
                 >
                     <h2 className="text-xl font-semibold text-[#2E3033] sm:text-[28px]">
-                        A Tiered Support Model
+                        A <span className="text-[#2D8EC5]">Tiered Support</span> Model
                     </h2>
                     <p className="text-base font-light text-[#55595E] sm:text-lg">
                         Every request lands with the right level of expertise, from first contact to root-cause fix.

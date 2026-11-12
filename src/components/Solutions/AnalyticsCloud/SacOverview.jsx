@@ -15,7 +15,7 @@ export default function SacOverview() {
                 className="flex flex-col gap-4 w-full lg:flex-1 min-w-0"
             >
                 <p className="text-[#2d8ec5] text-base sm:text-lg font-light">SAP Analytics Cloud</p>
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Analytics Cloud</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Analytics <span className="text-[#2D8EC5]">Cloud</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
                     SAP Analytics Cloud is SAP&apos;s cloud-based solution for data analysis and visualization. It
                     integrates data from SAP and non-SAP sources, enabling businesses to uncover insights and make

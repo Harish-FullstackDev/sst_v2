@@ -66,7 +66,7 @@ export default function UiUxServices() {
                 className="flex flex-col items-center gap-2 max-w-[841px] mx-auto text-center mb-10 sm:mb-[50px]"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Transforming User Experiences With UI/UX Design Services at SST
+                    Transforming User Experiences With <span className="text-[#2D8EC5]">UI/UX Design</span> Services at SST
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     The disciplines that take an idea from user insight to a polished, tested interface.

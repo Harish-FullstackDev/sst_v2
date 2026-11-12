@@ -31,7 +31,7 @@ export default function MigrationScope() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center sm:px-[64px]"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">What We Migrate</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">What We <span className="text-[#2D8EC5]">Migrate</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Every area of the business moves across, mapped and validated before cutover.
                 </p>

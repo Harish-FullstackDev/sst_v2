@@ -109,7 +109,7 @@ export default function ProcurementFeatures() {
                 className="flex flex-col items-center gap-2 max-w-[780px] mx-auto text-center"
             >
                 <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Every capability, one platform</p>
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Features of SSM Procurement</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Features of <span className="text-[#2D8EC5]">SSM Procurement</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">Select a capability to see how SAP SSM supports it.</p>
             </motion.div>
 

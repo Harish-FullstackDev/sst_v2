@@ -23,7 +23,7 @@ export default function MigrationEssential() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">What Makes Migrating to SAP Essential for Your Business?</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">What Makes Migrating to SAP <span className="text-[#2D8EC5]">Essential</span> for Your Business?</h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         SAP migration enables businesses to upgrade to modern, scalable platforms like SAP S/4HANA, ensuring improved performance, enhanced data management, and real-time analytics. It supports innovation by integrating advanced technologies, reduces system complexity, and provides a foundation for digital transformation, empowering businesses to stay competitive and achieve long-term growth with streamlined processes.
                     </p>
@@ -56,7 +56,7 @@ export default function MigrationEssential() {
                                 </div>
                                 <div className="relative w-[139px] h-[2px]">
                                     <div className="absolute left-0 top-1/2 w-full h-px -translate-y-1/2 bg-[#3d3d4e]/40" />
-                                    <div className="absolute left-0 top-1/2 w-full h-[2px] -translate-y-1/2 origin-left bg-[#0061AF] scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100" />
+                                    <div className="absolute left-0 top-1/2 w-full h-[2px] -translate-y-1/2 origin-left bg-[#2D8EC5] scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100" />
                                 </div>
                             </motion.div>
                         ))}

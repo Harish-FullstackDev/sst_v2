@@ -44,7 +44,7 @@ export default function CxMethodology() {
                 className="flex flex-col gap-2 max-w-[767px] mb-10 sm:mb-[50px]"
             >
                 <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Unified Customer Engagement</p>
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">SAP CX Methodology</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">SAP CX <span className="text-[#2D8EC5]">Methodology</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Best practices for customer experience excellence, from first workshop to continuous improvement.
                 </p>

@@ -41,7 +41,7 @@ export default function FicoDelivery() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-4 w-full lg:w-[43%] shrink-0 lg:sticky lg:top-28"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How We Deliver SAP FICO</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How We Deliver <span className="text-[#2D8EC5]">SAP FICO</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         A finance implementation is sequenced so the structure is settled before anything is configured
                         on top of it.

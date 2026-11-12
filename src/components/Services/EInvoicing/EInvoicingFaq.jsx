@@ -45,7 +45,7 @@ export default function EInvoicingFaq() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 text-center w-full"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">E-Invoicing: Frequently Asked Questions</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">E-Invoicing: <span className="text-[#2D8EC5]">Frequently Asked</span> Questions</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light max-w-[840px] leading-[1.4]">
                     What finance and IT teams usually want to know before moving to electronic invoicing.
                 </p>

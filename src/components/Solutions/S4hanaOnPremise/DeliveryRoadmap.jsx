@@ -107,7 +107,7 @@ export default function DeliveryRoadmap() {
                     className="flex max-w-[772px] flex-col items-center gap-2 text-center"
                 >
                     <h2 className="text-xl font-semibold text-[#2E3033] sm:text-[28px]">
-                        How We Deliver an On-Premises Deployment
+                        How We Deliver an <span className="text-[#2D8EC5]">On-Premises Deployment</span>
                     </h2>
                     <p className="text-base font-light text-[#55595E] sm:text-lg">
                         A phased path from landscape sizing to stable, supported operations.

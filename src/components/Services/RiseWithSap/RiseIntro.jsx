@@ -16,7 +16,7 @@ export default function RiseIntro() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col gap-4 w-full sm:flex-1"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Simplify, Automate, Grow.</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Simplify, Automate, <span className="text-[#2D8EC5]">Grow.</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
                     Rise with SAP empowers businesses to transform and streamline their operations by integrating
                     and managing finances, operations, and customer relationships efficiently through the SAP

@@ -56,7 +56,7 @@ export default function RolloutStages() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-16 px-8 sm:px-[64px]"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Stages Involved in Rollout</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Stages Involved in <span className="text-[#2D8EC5]">Rollout</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     The stages that take each new site from preparation to a stable, continuously improving system.
                 </p>

@@ -46,7 +46,7 @@ export default function BtpFeatures() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Features of Business Technology Platform</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Features of <span className="text-[#2D8EC5]">Business Technology Platform</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     The capabilities that make SAP BTP the foundation for building and running your business applications.
                 </p>

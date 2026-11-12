@@ -12,7 +12,7 @@ export default function TrustedByBand() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="max-w-5xl mx-auto px-4 lg:px-40 text-center text-2xl sm:text-[32px] leading-[1.5] text-[#2E3033]"
             >
-                Trusted by <span className="text-[#2d8ec5]">150+</span> Company for their sustainable growth partner
+                Trusted by <span className="text-[#2d8ec5]">150+</span> Company for their Sustainable Growth Partner
             </motion.p>
         </section>
     );

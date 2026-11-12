@@ -32,7 +32,7 @@ export default function WhyChooseSuccessFactors() {
                         className="flex flex-col gap-2"
                     >
                         <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                            Why Choose SAP SuccessFactors for Your Business?
+                            Why Choose <span className="text-[#2D8EC5]">SAP SuccessFactors</span> for Your Business?
                         </h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             Transform and optimize your operations.

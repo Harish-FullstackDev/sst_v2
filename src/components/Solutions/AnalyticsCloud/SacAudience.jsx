@@ -31,7 +31,7 @@ export default function SacAudience() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center px-6 sm:px-0"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Insight for Every Team</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Insight for <span className="text-[#2D8EC5]">Every Team</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Shared, real-time insight that keeps departments aligned and productive.
                 </p>

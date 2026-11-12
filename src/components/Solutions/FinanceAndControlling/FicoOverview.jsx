@@ -15,7 +15,7 @@ export default function FicoOverview() {
                 className="flex flex-col gap-4 w-full lg:flex-1"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Finance and Controlling
+                    Finance and <span className="text-[#2D8EC5]">Controlling</span>
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
                     Experience the pinnacle of financial management with SAP Finance and Controlling (SAP FICO), a

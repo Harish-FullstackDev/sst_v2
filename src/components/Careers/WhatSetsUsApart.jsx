@@ -30,7 +30,7 @@ export default function WhatSetsUsApart() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center max-w-[1500px] mx-auto"
                 >
-                    <h2 className="text-xl font-medium text-black">What sets us apart</h2>
+                    <h2 className="text-xl font-medium text-black">What sets us <span className="text-[#2D8EC5]">apart</span></h2>
                     <p className="mt-3 text-base text-black">At SST, people are at the heart of everything we do.</p>
                     <p className="mt-2 text-sm sm:text-base text-[#6c6c6c] leading-relaxed">
                         We empower our teams through continuous learning and innovation. Our collaborative culture

@@ -16,7 +16,7 @@ export default function WhyBusinessesUseSuccessFactors() {
                     className="flex flex-col items-center gap-2 max-w-[860px] mx-auto text-center px-8"
                 >
                     <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                        Why Do Businesses Use SuccessFactors?
+                        Why Do Businesses Use <span className="text-[#2D8EC5]">SuccessFactors?</span>
                     </h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         SAP SuccessFactors Methodology · Best Practices for Workforce Transformation · Employee
@@ -37,7 +37,7 @@ export default function WhyBusinessesUseSuccessFactors() {
 
                     <div className="flex flex-col items-center text-center sm:items-start sm:text-left gap-5 w-full lg:flex-1 sm:pl-[54px] lg:pr-20">
                         <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">
-                            HR Strategy Aligned With Business Goals
+                            HR Strategy Aligned With <span className="text-[#2D8EC5]">Business Goals</span>
                         </h2>
                         <div className="text-[#55595E] text-base sm:text-lg font-light leading-relaxed flex flex-col gap-4">
                             <p>

@@ -24,7 +24,7 @@ export default function IotIndustries() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-14 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Where IoT Creates Value</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Where IoT <span className="text-[#2D8EC5]">Creates Value</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     IoT improves quality, safety, and sustainability across industries.
                 </p>

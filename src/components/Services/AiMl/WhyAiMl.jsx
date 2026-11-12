@@ -32,7 +32,7 @@ export default function WhyAiMl() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-col gap-2"
                     >
-                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why AI &amp; ML?</h2>
+                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why <span className="text-[#2D8EC5]">AI &amp; ML?</span></h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">Enhance and Evolve with AI &amp; ML.</p>
 
                         {/* Credentials strip from the old page, shown as chips */}

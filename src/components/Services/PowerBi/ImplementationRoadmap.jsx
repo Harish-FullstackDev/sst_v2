@@ -54,7 +54,7 @@ export default function ImplementationRoadmap() {
                 since the desktop pair lives inside the hidden banner block. */}
             <div className="flex lg:hidden flex-col items-center gap-2 text-center px-8 sm:px-[64px]">
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Our Power BI Implementation Roadmap
+                    Our Power BI <span className="text-[#2D8EC5]">Implementation Roadmap</span>
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Five steps from scattered spreadsheets to trusted, shared reporting
@@ -91,7 +91,7 @@ export default function ImplementationRoadmap() {
                 <Image src={roadmapBg} alt="" fill className="object-cover" />
                 <div className="absolute top-6 sm:top-10 left-1/2 -translate-x-1/2 text-center text-white z-20 px-4 sm:px-0">
                     <h2 className="text-xl sm:text-[28px] font-semibold">
-                        Our Power BI Implementation Roadmap
+                        Our Power BI <span className="text-[#2D8EC5]">Implementation Roadmap</span>
                     </h2>
 
                     <p className="mt-2 sm:mt-2 max-w-3xl text-sm sm:text-lg ">

@@ -74,7 +74,7 @@ export default function AiMlServices() {
                 className="flex flex-col items-center gap-2 max-w-[1074px] text-center"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Top AI &amp; ML-Driven Services Boosting Efficiency at SST
+                    Top AI &amp; ML-Driven Services <span className="text-[#2D8EC5]">Boosting Efficiency</span> at SST
                 </h2>
 
                 <p className="text-[#55595E] text-base sm:text-lg font-light">

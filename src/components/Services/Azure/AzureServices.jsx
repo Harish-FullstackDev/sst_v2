@@ -68,7 +68,7 @@ export default function AzureServices() {
                 className="flex flex-col items-center gap-2 max-w-[880px] text-center px-8 sm:px-[64px]"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Improving Business Operations at SST with Azure Services
+                    Improving Business Operations at SST with <span className="text-[#2D8EC5]">Azure Services</span>
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">
                     The Azure services we design, deploy, and manage across compute, data, containers, identity, and

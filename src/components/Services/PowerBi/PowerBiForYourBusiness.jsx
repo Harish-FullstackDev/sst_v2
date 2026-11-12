@@ -16,7 +16,7 @@ export default function PowerBiForYourBusiness() {
                     className="flex flex-col items-center gap-2 max-w-[760px] mx-auto text-center px-8"
                 >
                     <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                        Why Power BI for Your Business?
+                        Why <span className="text-[#2D8EC5]">Power BI</span> for Your Business?
                     </h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Intuitive, integrated business intelligence for a data-driven world.
@@ -35,7 +35,7 @@ export default function PowerBiForYourBusiness() {
 
                     <div className="flex flex-col items-center text-center sm:items-start sm:text-left gap-5 w-full lg:flex-1 min-w-0">
                         <h2 className="text-[#2E3033] text-base sm:text-2xl font-semibold">
-                            Business Intelligence That Connects Everything
+                            Business Intelligence That <span className="text-[#2D8EC5]">Connects Everything</span>
                         </h2>
                         <div className="text-[#55595E] text-base sm:text-lg font-light leading-relaxed flex flex-col gap-4">
                             <p>

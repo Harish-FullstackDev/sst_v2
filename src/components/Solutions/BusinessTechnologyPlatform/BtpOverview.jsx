@@ -14,7 +14,7 @@ export default function BtpOverview() {
                     className="flex flex-col gap-2 w-full lg:w-[38%] shrink-0"
                 >
                     <p className="text-[#2d8ec5] text-base sm:text-lg font-light">SAP BTP</p>
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Business Technology Platform</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Business <span className="text-[#2D8EC5]">Technology Platform</span></h2>
                     <div className="mt-4 h-[2px] w-[96px] bg-[#2d8ec5]" />
                 </motion.div>
 

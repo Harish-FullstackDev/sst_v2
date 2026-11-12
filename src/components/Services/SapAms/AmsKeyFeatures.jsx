@@ -115,7 +115,7 @@ export default function AmsKeyFeatures() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-2 w-full lg:w-[340px] shrink-0 lg:pt-8"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Key SAP AMS Features at SST</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Key <span className="text-[#2D8EC5]">SAP AMS</span> Features at SST</h2>
                     <p className="text-[#55595E] text-base sm:text-xl font-light">
                         The working practices built into every SST application management engagement.
                     </p>

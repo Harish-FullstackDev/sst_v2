@@ -37,7 +37,7 @@ export default function CrmApproach() {
                 className="flex flex-col gap-2 max-w-[767px]"
             >
                 <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Our Approach</p>
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How We Deliver SAP CRM</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How We Deliver <span className="text-[#2D8EC5]">SAP CRM</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     The stages that take customer processes from today&apos;s state to one connected platform.
                 </p>

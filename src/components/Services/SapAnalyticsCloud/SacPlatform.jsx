@@ -31,7 +31,7 @@ export default function SacPlatform() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[900px] mx-auto text-center"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why SAP SAC for Business Success?</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why <span className="text-[#2D8EC5]">SAP SAC</span> for Business Success?</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-relaxed">
                     SAP SAC is an all-in-one cloud-based solution that combines business intelligence, planning, and
                     predictive analytics. By empowering data-driven decisions, SAP SAC enhances operational

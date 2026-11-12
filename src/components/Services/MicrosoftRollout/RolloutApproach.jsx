@@ -62,7 +62,7 @@ export default function RolloutApproach() {
                 <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-transparent" />
                 <div className="absolute top-6 sm:top-10 left-1/2 -translate-x-1/2 text-center text-white z-20 px-4 sm:px-0">
                     <h2 className="text-xl sm:text-[28px] font-semibold">
-                        Our Rollout Approach
+                        Our <span className="text-[#2D8EC5]">Rollout</span> Approach
                     </h2>
 
                     <p className="mt-2 sm:mt-2 max-w-3xl text-sm sm:text-lg ">

@@ -18,7 +18,7 @@ export default function AribaImportance() {
                 >
                     <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Simplify, Automate, Collaborate.</p>
                     <h2 className="text-xl sm:text-[28px] text-[#2E3033] font-semibold leading-normal">
-                        The Importance of SAP Ariba for Business Success
+                        The Importance of <span className="text-[#2D8EC5]">SAP Ariba</span> for Business Success
                     </h2>
 
                     <div className="flex flex-col gap-4 pt-2 text-base sm:text-lg text-[#55595E] font-light leading-relaxed">

@@ -47,7 +47,7 @@ export default function IotServices() {
                 className="flex flex-col items-center gap-2 max-w-[900px] mx-auto text-center"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    IoT Services Driving SST&apos;s Digital Transformation
+                    IoT Services Driving SST&apos;s <span className="text-[#2D8EC5]">Digital Transformation</span>
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     The ways connected devices and their data put your operations to work.

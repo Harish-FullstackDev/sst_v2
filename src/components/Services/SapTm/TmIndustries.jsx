@@ -20,7 +20,7 @@ export default function TmIndustries() {
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center px-6 sm:px-0"
             >
                 <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Where T&amp;M fits best</p>
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Built for Project-Driven Businesses</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Built for <span className="text-[#2D8EC5]">Project-Driven</span> Businesses</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Organizations whose revenue depends on accurately recording and billing time and materials.
                 </p>

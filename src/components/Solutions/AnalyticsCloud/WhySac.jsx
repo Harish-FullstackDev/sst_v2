@@ -31,7 +31,7 @@ export default function WhySac() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why Choose Analytics Cloud?</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why Choose <span className="text-[#2D8EC5]">Analytics Cloud?</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     What SAP Analytics Cloud adds to the way your business plans and decides.
                 </p>

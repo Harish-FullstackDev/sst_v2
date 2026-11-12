@@ -24,7 +24,7 @@ export default function RpaOverview() {
                     className="w-full lg:flex-1 lg:min-w-0 lg:max-w-[700px] flex flex-col gap-2"
                 >
                     <h2 className="text-xl sm:text-[28px] text-[#2E3033] font-semibold leading-normal">
-                        Automation That Drives Operational Excellence
+                        Automation That Drives <span className="text-[#2D8EC5]">Operational Excellence</span>
                     </h2>
 
                     <p className="text-base sm:text-lg text-[#55595E] font-light leading-relaxed">

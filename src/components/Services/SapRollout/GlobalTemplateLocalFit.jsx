@@ -16,7 +16,7 @@ export default function GlobalTemplateLocalFit() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-2 max-w-[620px] mx-auto text-center"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Global Template, Local Fit</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Global Template, <span className="text-[#2D8EC5]">Local Fit</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         How a rollout keeps every site on one standard while meeting each country&apos;s rules.
                     </p>
@@ -30,7 +30,7 @@ export default function GlobalTemplateLocalFit() {
                     className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[clamp(3rem,7vw,6.25rem)]"
                 >
                     <div className="flex flex-col gap-5 w-full">
-                        <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">A Core Template Built Once</h2>
+                        <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">A <span className="text-[#2D8EC5]">Core Template</span> Built Once</h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             We define the organizational structure, end-to-end processes, master data standards and
                             configuration that every location inherits. New sites adopt the template instead of
@@ -56,7 +56,7 @@ export default function GlobalTemplateLocalFit() {
                     </div>
                     <div className="flex flex-col gap-5 w-full">
                         <h2 className="text-[#2E3033] text-lg sm:text-2xl font-semibold">
-                            Localization Without Fragmentation
+                            Localization <span className="text-[#2D8EC5]">Without Fragmentation</span>
                         </h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             Country-specific requirements such as legal and tax rules, statutory reporting, languages,

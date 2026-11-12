@@ -55,7 +55,7 @@ export default function EnterpriseBuyerFAQ() {
             >
                 <h2 className="text-xl sm:text-[28px] font-semibold">
                     <span className="text-[#2E3033]">Questions Enterprise Buyers </span>
-                    <span className="text-[#0061AF]">Actually Ask</span>
+                    <span className="text-[#2D8EC5]">Actually Ask</span>
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4] max-w-[954px]">
                     Research-led design capabilities that connect user needs, business objectives, and digital

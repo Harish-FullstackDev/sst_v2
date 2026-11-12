@@ -8,12 +8,12 @@ const STATEMENTS = [
     {
         title: "Mission",
         description:
-            "To give enterprises around the world a single, accountable partner for the technology their operations depend on, from the first SAP assessment through years of live production support. We measure our work by whether systems keep running the way they were designed to, long after the project team has moved on.",
+            "To give enterprises globally a single, accountable partner for the technology their operations depend on, from the first SAP assessment through years of live production support. We measure our work by whether systems keep running the way they were designed to, long after the project team has moved on.",
     },
     {
         title: "Vision",
         description:
-            "To be the enterprise technology practice organizations worldwide turn to first, not because we cover every capability on a page, but because our SAP foundation, cloud engineering, and compliance fluency operate as one coordinated practice instead of five separate vendor relationships.",
+            "To be the enterprise technology practice global organizations turn to first, not because we cover every capability on a page, but because our SAP foundation, cloud engineering, and compliance fluency operate as one coordinated practice instead of five separate vendor relationships.",
     },
 ];
 
@@ -27,7 +27,7 @@ export default function WhereWeHeadedAndWhy() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 px-8 sm:px-[64px]"
             >
-                <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">Where We&apos;re Headed, and Why</h2>
+                <h2 className="text-xl sm:text-[28px] font-semibold text-[#2E3033]">Where We&apos;re Headed, <span className="text-[#2D8EC5]">and Why</span></h2>
                 <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
                     Everything we build ties back to two commitments what we exist to do for clients today, and
                     where we intend to take the practice next.

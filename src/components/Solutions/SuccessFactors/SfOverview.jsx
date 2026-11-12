@@ -26,7 +26,7 @@ export default function SfOverview() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center gap-4 max-w-[900px] mx-auto text-center px-8"
                 >
-                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">SAP SuccessFactors</h2>
+                    <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">SAP <span className="text-[#2D8EC5]">SuccessFactors</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
                         Welcome to SAP SuccessFactors, your cloud-based solution for efficient HR management. SuccessFactors
                         is a cloud-based human capital management (HCM) software solution offering a comprehensive suite of

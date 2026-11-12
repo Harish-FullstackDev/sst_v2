@@ -31,7 +31,7 @@ export default function EInvoicingScenarios() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] text-center px-8"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Who E-Invoicing Is For</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Who <span className="text-[#2D8EC5]">E-Invoicing</span> Is For</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Typical situations where moving to electronic invoicing pays off quickly.
                 </p>

@@ -19,7 +19,7 @@ export default function WhyBigData() {
                             transition={{ duration: 0.6 }}
                             className="text-xl sm:text-[28px] font-semibold text-[#2E3033]"
                         >
-                            Why Big Data?
+                            Why <span className="text-[#2D8EC5]">Big Data?</span>
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, x: -20 }}

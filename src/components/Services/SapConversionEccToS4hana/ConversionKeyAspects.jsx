@@ -30,7 +30,7 @@ export default function ConversionKeyAspects() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 text-center max-w-[767px] mx-auto mb-10 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Key Aspects of the Conversion at SST</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Key Aspects of the <span className="text-[#2D8EC5]">Conversion</span> at SST</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Every workstream a conversion touches, covered by one team from planning to post-go-live.
                 </p>

@@ -29,7 +29,7 @@ export default function AiMlPrinciples() {
                             transition={{ duration: 0.6 }}
                             className="text-xl sm:text-[28px] font-semibold text-[#2E3033]"
                         >
-                            Responsible AI by Design
+                            <span className="text-[#2D8EC5]">Responsible AI</span> by Design
                         </motion.h2>
 
                         <motion.p

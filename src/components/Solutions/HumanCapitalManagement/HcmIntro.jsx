@@ -29,7 +29,7 @@ export default function HcmIntro() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-col gap-4"
                     >
-                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Human Capital Management</h2>
+                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Human <span className="text-[#2D8EC5]">Capital Management</span></h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             Welcome to SAP HCM (Human Capital Management), your all-in-one solution for managing HR
                             processes within your organization. SAP HCM is a comprehensive suite of tools and modules

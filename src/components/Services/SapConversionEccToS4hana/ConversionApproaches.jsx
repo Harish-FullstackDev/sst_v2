@@ -38,7 +38,7 @@ export default function ConversionApproaches() {
                 className="flex flex-col items-center gap-2 max-w-[1074px] mx-auto text-center mb-10 sm:mb-16"
             >
                 <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">
-                    Greenfield vs Brownfield Transformation Approaches
+                    Greenfield vs Brownfield <span className="text-[#2D8EC5]">Transformation Approaches</span>
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">
                     Some enterprises, for instance those running earlier editions of SAP software with few components

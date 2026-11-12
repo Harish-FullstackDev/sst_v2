@@ -47,7 +47,7 @@ export const SERVICES = [
         ],
       },
       { name: "AMS", href: "/services/microsoft-ams" },
-      { name: "Migration (Any ERP to Microsoft)", href: "/services/microsoft-migration" },
+      { name: "Migration", href: "/services/microsoft-migration" },
       { name: "Rollout", href: "/services/microsoft-rollout" },
     ],
   },

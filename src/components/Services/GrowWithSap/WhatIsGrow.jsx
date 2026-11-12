@@ -74,7 +74,7 @@ export default function WhatIsGrow() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 text-center max-w-[767px]"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">What is Grow with SAP?</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">What is <span className="text-[#2D8EC5]">Grow with SAP?</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     An SAP offering that packages cloud ERP, a technology platform, and adoption support for
                     businesses that want to scale on a standard cloud core.

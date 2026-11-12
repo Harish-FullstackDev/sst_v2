@@ -14,7 +14,7 @@ export default function TrustedByBand() {
             >
 
                 <h2 className="text-xl sm:text-[32px] leading-[1.5] font-semibold text-[#2E3033]">
-                    &ldquo;Trusted by <span className="text-[#2D8EC5]">150+</span> Company for their sustainable growth partner&rdquo;
+                    &ldquo;Trusted by <span className="text-[#2D8EC5]">150+</span> Company for their Sustainable Growth Partner&rdquo;
                 </h2>
 
                 {/* <h2 className="text-xl sm:text-[32px] leading-[1.5] font-semibold text-[#2E3033]">

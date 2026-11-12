@@ -32,7 +32,7 @@ export default function RolloutOverview() {
                         className="flex flex-col gap-4"
                     >
                         <div className="flex flex-col gap-2">
-                            <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why Conduct an SAP Rollout?</h2>
+                            <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Why Conduct an <span className="text-[#2D8EC5]">SAP Rollout?</span></h2>
                             <p className="text-[#55595E] text-base sm:text-lg font-light">
                                 Extending one proven SAP system to every branch, division and region.
                             </p>

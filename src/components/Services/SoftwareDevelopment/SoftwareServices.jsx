@@ -68,7 +68,7 @@ export default function SoftwareServices() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[960px] mx-auto text-center mb-10 sm:mb-16"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How SST Delivers High-Quality Software Development</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">How SST Delivers <span className="text-[#2D8EC5]">High-Quality</span> Software Development</h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     End-to-end services, from the first strategy conversation to long-term support.
                 </p>

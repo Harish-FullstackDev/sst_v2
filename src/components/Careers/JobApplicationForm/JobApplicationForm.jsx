@@ -458,7 +458,7 @@ export default function JobApplicationForm() {
                     <button
                         type="submit"
                         disabled={status === "submitting"}
-                        className="bg-[#0061AF] hover:bg-[#00447A] text-white text-sm font-medium h-[45px] min-w-[200px] px-6 flex items-center justify-center gap-2 transition-colors disabled:opacity-60 cursor-pointer"
+                        className="bg-[#2D8EC5] hover:bg-[#00447A] text-white text-sm font-medium h-[45px] min-w-[200px] px-6 flex items-center justify-center gap-2 transition-colors disabled:opacity-60 cursor-pointer"
                     >
                         {status === "submitting" ? (
                             <>

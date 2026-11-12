@@ -46,7 +46,7 @@ export default function TransitionPaths() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex flex-col items-center gap-2 max-w-[767px] mx-auto text-center mb-10 sm:mb-16 px-8 sm:px-[64px]"
             >
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Paths to SAP S/4HANA Private Cloud</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Paths to <span className="text-[#2D8EC5]">SAP S/4HANA Private Cloud</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Whether you are starting new or moving an existing SAP system, there is a transition approach to
                     match.

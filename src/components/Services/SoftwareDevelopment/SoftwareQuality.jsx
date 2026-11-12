@@ -41,7 +41,7 @@ export default function SoftwareQuality() {
                 className="flex flex-col gap-2 max-w-[767px]"
             >
                 <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Engineering Standards</p>
-                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Quality at Every Stage</h2>
+                <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Quality at <span className="text-[#2D8EC5]">Every Stage</span></h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     The practices that keep the software we deliver reliable, secure, and ready to grow.
                 </p>

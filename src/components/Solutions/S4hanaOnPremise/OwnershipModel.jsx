@@ -29,7 +29,7 @@ export default function OwnershipModel() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-col gap-2"
                     >
-                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">What On-Premises Ownership Means</h2>
+                        <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">What <span className="text-[#2D8EC5]">On-Premises Ownership</span> Means</h2>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">
                             Running SAP S/4HANA in your own data center gives you full control of the system, and full
                             responsibility for keeping it running.
