@@ -42,7 +42,7 @@ export default function TmIndustries() {
                 ))}
             </div>
             <div className="hidden lg:block relative w-full lg:min-h-[303px]">
-                <div className="absolute inset-x-0 top-[99px] bottom-0 bg-[#F5F6F6]" />
+                <div className="absolute inset-x-0 top-[99px] bottom-0 bg-[#f3f6f9]" />
 
                 <div className="relative z-10 max-w-full mx-auto px-6 sm:px-[64px] grid grid-cols-4 gap-x-6 lg:gap-x-8">
                     {CARDS.map((card, index) => (

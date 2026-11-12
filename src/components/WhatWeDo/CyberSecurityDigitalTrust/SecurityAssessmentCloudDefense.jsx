@@ -34,7 +34,7 @@ export default function SecurityAssessmentCloudDefense() {
         // no horizontal constraint, so it now runs edge-to-edge like the Figma frame instead
         // of leaving page-white gutters on either side.
         <section className="w-full py-10 sm:py-[32px]">
-            <div className="w-full bg-[#F5F6F6] flex flex-col items-center gap-10 sm:gap-16 px-6 sm:px-[64px] py-8 sm:py-[32px]">
+            <div className="w-full bg-[#f3f6f9] flex flex-col items-center gap-10 sm:gap-16 px-6 sm:px-[64px] py-8 sm:py-[32px]">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

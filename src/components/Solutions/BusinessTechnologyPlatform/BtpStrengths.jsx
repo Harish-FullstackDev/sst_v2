@@ -17,7 +17,7 @@ const STRENGTHS = [
 
 export default function BtpStrengths() {
     return (
-        <section className="w-full bg-[#f5f6f6] px-8 py-10 sm:px-[64px] sm:py-[64px]">
+        <section className="w-full bg-[#f3f6f9] px-8 py-10 sm:px-[64px] sm:py-[64px]">
             {/* Image leads on desktop; stacked, the copy comes first so the section opens with its heading. */}
             <div className="flex flex-col-reverse lg:flex-row lg:items-stretch gap-8 lg:gap-16">
                 <motion.div

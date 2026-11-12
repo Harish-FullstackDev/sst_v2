@@ -104,7 +104,7 @@ const FeatureRow = ({ items }) => (
 
 export default function GrowDifferentiators() {
     return (
-        <section className="w-full bg-[#f5f6f6] py-10 sm:py-16 px-8 sm:px-[64px]">
+        <section className="w-full bg-[#f3f6f9] py-10 sm:py-16 px-8 sm:px-[64px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

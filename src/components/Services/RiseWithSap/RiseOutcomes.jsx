@@ -13,7 +13,7 @@ const POINTS = [
 
 export default function RiseOutcomes() {
     return (
-        <section className="w-full bg-[#f5f6f6]">
+        <section className="w-full bg-[#f3f6f9]">
             <div className="w-full px-8 py-10 sm:p-16">
                 {/* From xl the right column is auto (sized to its longest point) so every
                     point stays on one line; the heading column takes what is left. The

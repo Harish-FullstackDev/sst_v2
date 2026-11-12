@@ -20,7 +20,7 @@ const BOXES = [
 
 export default function AwsOverview() {
     return (
-        <section className="w-full px-8 py-10 sm:px-[64px] sm:py-[64px] bg-[#f5f6f6]">
+        <section className="w-full px-8 py-10 sm:px-[64px] sm:py-[64px] bg-[#f3f6f9]">
             {/* Two columns share the padded width by proportional flex-grow (~654:475)
                 rather than fixed px, so they scale together at any desktop width. */}
             <div className="flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-8 w-full">

@@ -13,7 +13,7 @@ const OUTCOMES = [
 
 export default function RolloutOutcomes() {
     return (
-        <section className="w-full bg-[#f5f6f6] px-8 py-10 sm:px-[64px] sm:py-[64px]">
+        <section className="w-full bg-[#f3f6f9] px-8 py-10 sm:px-[64px] sm:py-[64px]">
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
                 <div className="w-full lg:flex-1 lg:min-w-0 flex flex-col gap-8">
                     <motion.div

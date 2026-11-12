@@ -57,7 +57,7 @@ export default function EInvoicingScenarios() {
             {/* Desktop layout — white title cards floating on top of a full-bleed grey band
                 that holds the descriptions. The band starts at half the title-box height. */}
             <div className="hidden lg:block relative w-full">
-                <div className="absolute inset-x-0 top-[60px] bottom-0 bg-[#F5F6F6]" />
+                <div className="absolute inset-x-0 top-[60px] bottom-0 bg-[#f3f6f9]" />
 
                 <div className="relative z-10 px-[64px] grid grid-cols-4 gap-x-8 pb-4">
                     {SCENARIOS.map((item, index) => (

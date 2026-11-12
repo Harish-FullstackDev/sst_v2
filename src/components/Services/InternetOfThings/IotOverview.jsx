@@ -12,7 +12,7 @@ const CREDENTIALS = [
 
 export default function IotOverview() {
     return (
-        <section className="w-full px-8 py-10 sm:px-[64px] sm:py-[64px] bg-[#f5f6f6]">
+        <section className="w-full px-8 py-10 sm:px-[64px] sm:py-[64px] bg-[#f3f6f9]">
             {/* Image leads on desktop for this page; text comes first when stacked */}
             <div className="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-12 xl:gap-[120px]">
                 <motion.div

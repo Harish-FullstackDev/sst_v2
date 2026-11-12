@@ -15,7 +15,7 @@ const OUTCOMES = [
 
 export default function SuccessFactorsOutcomes() {
     return (
-        <section className="relative z-10 w-full pt-10 sm:pt-16 pb-10 sm:pb-16 bg-[#f5f6f6]">
+        <section className="relative z-10 w-full pt-10 sm:pt-16 pb-10 sm:pb-16 bg-[#f3f6f9]">
             {/* The photo is full-bleed on the left, so this row is intentionally not wrapped
                 in a padded container. It holds a 578px cap at lg and the card fills the
                 rest of the row, capped at 800px. */}

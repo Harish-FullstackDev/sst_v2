@@ -17,7 +17,7 @@ const SOCIALS = [
 export default function JoinUsSocialBand() {
     return (
         <section className="w-full">
-            <div className="bg-[#F5F6F6] py-10 sm:py-14 px-4 sm:px-16 lg:p-16">
+            <div className="bg-[#f3f6f9] py-10 sm:py-14 px-4 sm:px-16 lg:p-16">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

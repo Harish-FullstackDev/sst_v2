@@ -36,7 +36,7 @@ export default function HcmFaq() {
     };
 
     return (
-        <section className="w-full bg-[#f5f6f6] py-10 sm:py-[64px] px-8 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16">
+        <section className="w-full bg-[#f3f6f9] py-10 sm:py-[64px] px-8 sm:px-[64px] flex flex-col items-center gap-10 sm:gap-16">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

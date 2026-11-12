@@ -6,7 +6,7 @@ import processFlowPhoto from "@/assets/Services/SapTm/process-flow.webp";
 
 export default function TmOverview() {
     return (
-        <section className="w-full px-8 py-10 sm:px-[64px] sm:py-[64px] bg-[#f5f6f6]">
+        <section className="w-full px-8 py-10 sm:px-[64px] sm:py-[64px] bg-[#f3f6f9]">
             <div className="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-12 xl:gap-[120px]">
                 {/* Image sits left on desktop, below the copy on mobile */}
                 <motion.div

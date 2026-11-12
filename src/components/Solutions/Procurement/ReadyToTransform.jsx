@@ -22,22 +22,22 @@ export default function ReadyToTransform({
     return (
         <>
             <section className="relative z-0 w-full overflow-hidden">
-                <Image src={bgImage} alt="" fill className="object-cover object-bottom" />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/72 to-black/36" />
+                <Image src={bgImage} alt="" fill className="object-cover object-center" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40" />
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-12 px-6 sm:px-[64px] pt-16 sm:pt-20 pb-12 sm:pb-16 lg:pb-20"
+                    className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-12 px-6 sm:px-[64px] py-14 sm:py-16 lg:py-0 lg:min-h-[288px]"
                 >
-                    <div className="flex flex-col w-full md:gap-12 sm:w-[60%] lg:w-[74%] text-center sm:text-left items-center sm:items-start">
-                        <h2 className="text-xl sm:text-4xl md:text-5xl font-semibold text-white">
+                    <div className="flex flex-col gap-3 w-full sm:w-[60%] lg:w-[74%] text-center sm:text-left items-center sm:items-start">
+                        <h2 className="text-2xl sm:text-[32px] lg:text-[40px] leading-tight font-semibold text-white">
                             {title}
                         </h2>
 
-                        <p className=" text-base sm:text-2xl font-light text-white">
+                        <p className="text-base sm:text-xl font-light text-white/90">
                             {description}
                         </p>
                     </div>

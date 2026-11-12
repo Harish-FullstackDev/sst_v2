@@ -6,7 +6,7 @@ import overviewImage from "@/assets/Services/PowerBi/power-bi-for-business.webp"
 
 export default function PowerBiForYourBusiness() {
     return (
-        <section className="w-full bg-[#f5f6f6] py-10 sm:py-16">
+        <section className="w-full bg-[#f3f6f9] py-10 sm:py-16">
             <div className="flex flex-col">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

@@ -17,7 +17,7 @@ const BOXES = [
 
 export default function WhoPowerBiIsFor() {
     return (
-        <section className="w-full py-10 sm:py-16 px-8 sm:px-[64px] bg-[#f5f6f6]">
+        <section className="w-full py-10 sm:py-16 px-8 sm:px-[64px] bg-[#f3f6f9]">
             {/* Two columns share the padded width via proportional flex-grow (≈654:475),
                 so they scale together on any desktop width. */}
             <div className="flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-8 w-full">
