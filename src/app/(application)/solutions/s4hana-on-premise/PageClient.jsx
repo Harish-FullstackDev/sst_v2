@@ -31,9 +31,9 @@ const page = () => {
             </div>
             <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
                 <OnPremiseOverview />
-                <OwnershipModel />
+                <TransformativeCapabilities />
             </div>
-            <TransformativeCapabilities />
+            <OwnershipModel />
             <DeliveryRoadmap />
             <WhyOnPremise />
             <WhenOnPremiseFits />

@@ -109,10 +109,22 @@ export default function MigrationPhases() {
                 </div>
 
                 {/* Navy panel */}
-                <div className="relative w-full lg:flex-1 aspect-[798/446] mx-auto lg:mx-0 overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+                <div className="relative w-full lg:flex-1 aspect-[798/446] mx-auto lg:mx-0 overflow-hidden bg-[linear-gradient(to_bottom_right,#0A2B3E,#003756_60%,#00447A)]">
                     <div className="absolute inset-0">
                         {/* Faint deep-blue rise behind the copy, for depth. */}
-                        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.35),rgba(28,95,133,0)_65%)]" />
+                        {/* Depth, as in What SAP SuccessFactors Offers: a deep-blue rise from the foot,
+                            brand-blue light from the bottom-right corner behind the icon, and one
+                            faint light sweep each time the tab changes. */}
+                        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.4),rgba(28,95,133,0)_60%)]" />
+                        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(315deg,rgba(45,142,197,0.3),rgba(45,142,197,0)_45%)]" />
+                        <motion.div
+                            key={`sweep-${active}`}
+                            aria-hidden="true"
+                            initial={{ x: "-120%" }}
+                            animate={{ x: "320%" }}
+                            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+                            className="absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.07),transparent)]"
+                        />
 
                         {/* Watermark icon, cross-fading per tab. */}
                         <AnimatePresence>
@@ -123,9 +135,9 @@ export default function MigrationPhases() {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -12 }}
                                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                                className="absolute bottom-[8%] right-[5%] h-[55%] aspect-square text-white/[0.08]"
+                                className="absolute bottom-[10%] right-[6%] h-[50%] aspect-square text-white/[0.22]"
                             >
-                                <activeTab.icon strokeWidth={0.6} className="size-full" />
+                                <activeTab.icon strokeWidth={0.8} className="size-full" />
                             </motion.div>
                         </AnimatePresence>
 

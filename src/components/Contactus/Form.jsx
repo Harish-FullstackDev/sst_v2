@@ -192,7 +192,7 @@ const ContactForm = () => {
         style={{
           backdropFilter: "blur(14px)",
           WebkitBackdropFilter: "blur(14px)",
-          background: "rgba(255, 255, 255, 0.55)",
+          background: "rgba(255, 255, 255, 0.75)",
           borderColor: "rgba(229, 231, 235, 0.5)"
         }}
       >

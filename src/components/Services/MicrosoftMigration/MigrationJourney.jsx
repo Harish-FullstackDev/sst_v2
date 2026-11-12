@@ -30,7 +30,7 @@ export default function MigrationJourney() {
     }, [isPaused]);
 
     return (
-        <section className="w-full bg-white py-10 sm:py-16 flex flex-col items-center gap-8 sm:gap-[50px]">
+        <section className="w-full bg-white pt-10 sm:pt-16 pb-0 flex flex-col items-center gap-8 sm:gap-[50px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
