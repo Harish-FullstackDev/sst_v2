@@ -7,42 +7,42 @@ import { motion, useInView } from "framer-motion";
 const CARDS = [
     {
         title: "Core HR Management",
-        desc: "Handle employee data and organizational structures effectively with the Personnel Administration (PA) and Organizational Management (OM) modules. PA manages employee records, personal information, and employment history, keeping data accurate and up to date. OM structures organizational hierarchies, roles, and reporting lines, enabling efficient management of organizational changes and workforce planning. Together, they provide a robust foundation for HR operations, enhancing data accuracy and organizational clarity.",
+        desc: "Keep employee records, roles, and reporting lines accurate with Personnel Administration and Organizational Management.",
         icon: LuUsers,
     },
     {
         title: "Time & Attendance Management",
-        desc: "Track employee time, attendance, and leave efficiently to ensure accurate working-hour calculations and compliance with labor regulations, through automated time tracking, leave request management, and monitoring of attendance patterns. Organizations maintain accurate payroll, improve workforce productivity, and adhere to legal requirements, minimizing compliance risks and administrative burdens.",
+        desc: "Automate time tracking, leave requests, and attendance so working hours stay accurate and compliant.",
         icon: LuClock,
     },
     {
         title: "Payroll Processing",
-        desc: "Process employee salaries, wages, and taxes seamlessly with comprehensive payroll functionality, including automated calculation of gross and net pay, deductions, and tax withholdings. The system ensures timely and accurate payroll processing, adheres to regulatory requirements, and provides detailed reports, enhancing financial accuracy and reducing administrative effort.",
+        desc: "Calculate pay, deductions, and taxes automatically for timely, accurate payroll with detailed reporting.",
         icon: LuBanknote,
     },
     {
         title: "Talent Management",
-        desc: "Support employee development, performance appraisal, and succession planning with specialized modules for recruitment, training, and career development. These modules streamline hiring, facilitate continuous learning through targeted training programs, and enable effective performance evaluations. By fostering career growth and planning for future leadership, organizations cultivate a skilled and motivated workforce.",
+        desc: "Support recruitment, training, performance reviews, and succession planning to grow a skilled workforce.",
         icon: LuStar,
     },
     {
         title: "Employee and Manager Self-Service",
-        desc: "Empower employees and managers to handle HR tasks independently through self-service portals. Employees update personal information, request leave, and view pay slips, while managers approve requests, access team data, and generate reports. This autonomy enhances efficiency, reduces administrative workload, and improves user satisfaction and engagement.",
+        desc: "Let employees update details and request leave while managers approve requests and view team data.",
         icon: LuUserCog,
     },
     {
         title: "Recruitment and Onboarding",
-        desc: "Manage the entire recruitment process seamlessly with SAP HCM, from job posting through to onboarding new hires, including applicant tracking, interview scheduling, and integration with external recruitment channels. The result is a streamlined hiring experience, better candidate engagement, smooth transitions into the organization, and higher overall recruitment efficiency.",
+        desc: "Manage hiring from job posting to onboarding, with applicant tracking and interview scheduling built in.",
         icon: LuUserPlus,
     },
     {
         title: "Reporting and Analytics",
-        desc: "Monitor HR metrics, analyze workforce trends, and gain insights into employee performance and engagement with comprehensive dashboards, customizable reports, and data visualization. Data-driven insights help organizations optimize HR strategies, improve decision-making, and enhance overall workforce effectiveness and satisfaction.",
+        desc: "Track HR metrics and workforce trends with dashboards and custom reports for better decisions.",
         icon: LuChartColumn,
     },
     {
         title: "Compliance & Regulatory Support",
-        desc: "Ensure compliance with labor laws, payroll taxation, and data privacy regulations through capabilities that incorporate country-specific requirements. The system automates regulatory updates, ensures accurate payroll processing, and manages data securely, minimizing compliance risks and maintaining trust with employees and regulatory authorities alike.",
+        desc: "Stay compliant with labor, tax, and data privacy rules through country-specific, automatically updated requirements.",
         icon: LuScale,
     },
 ];
@@ -128,7 +128,7 @@ export default function HcmFeatures() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="flex flex-col gap-2 w-full lg:w-[300px] shrink-0 lg:pt-8"
+                    className="flex flex-col gap-2 w-full lg:w-[340px] shrink-0 lg:pt-8"
                 >
                     <h2 className="text-[#2E3033] text-xl sm:text-[28px] font-semibold">Features of <span className="text-[#2D8EC5]">Human Capital Management</span></h2>
                     <p className="text-[#55595E] text-base sm:text-lg font-light">
@@ -163,13 +163,14 @@ export default function HcmFeatures() {
                                 data-card
                                 variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } }}
                                 transition={{ duration: 0.5, ease: "easeOut" }}
-                                // Heights are a floor, not fixed: these descriptions are long, so the
-                                // card grows with its copy and the stretch alignment keeps the row even.
-                                className="snap-start shrink-0 w-[min(300px,80vw)] sm:w-[380px] min-h-[320px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col items-start text-left px-6 sm:px-8 py-7 sm:py-8"
+                                // Same card as Key Features of Power BI Implementation: centred
+                                // icon, title and short description. Heights are a floor; the
+                                // stretch alignment keeps the row even.
+                                className="snap-start shrink-0 w-[260px] sm:w-[335px] min-h-[280px] sm:min-h-[360px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col items-center text-center px-6 sm:px-7 py-7 sm:py-8"
                             >
-                                <card.icon aria-hidden="true" strokeWidth={1.5} className="size-11 mb-5 text-[#1C5F85]" />
+                                <card.icon aria-hidden="true" strokeWidth={1.5} className="size-[44px] mb-5 text-[#1C5F85]" />
                                 <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">{card.title}</h2>
-                                <p className="text-[#55595E] text-base font-light mt-4">{card.desc}</p>
+                                <p className="text-[#55595E] text-base sm:text-lg font-light mt-5">{card.desc}</p>
                             </motion.div>
                         ))}
                     </motion.div>
